@@ -1,0 +1,21 @@
+machine:
+  node:
+    version: 6.9.1
+  post:
+    - npm install -g npm
+
+
+dependencies:
+  override:
+    - npm install --no-optional
+    - sudo pip install awscli
+
+deployment:
+  production:
+    branch: release
+    commands:
+      - npm run deploy
+  staging:
+    branch: staging
+    commands:
+      - npm run deploy-staging

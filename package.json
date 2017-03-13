@@ -1,0 +1,53 @@
+{
+  "name": "feed-rn",
+  "version": "1.0.0",
+  "description": "Feed React Native application",
+  "main": "index.js",
+  "engine": {
+    "node": "6.9.1",
+    "npm": "4.0.2"
+  },
+  "scripts": {
+    "test": "ava -v",
+    "beautify": "node_modules/.bin/eslint --fix .",
+    "adb": "adb reverse tcp:8081 tcp:8081",
+    "lint": "node_modules/.bin/eslint .",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "build": "npm run build:ios && npm run build:android",
+    "build:ios": "react-native bundle --platform ios --dev false --entry-file index.ios.js --bundle-output build/ios/index.ios.bundle",
+    "build:android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output build/android/index.android.bundle --assets-dest build/android/assets/",
+    "deploy": "npm run deploy:ios && npm run deploy:android",
+    "deploy:ios": "npm run build:ios && aws s3 sync build/ios s3://assets-production.applicaster.com/zapp/react-native-bundles/BUNDLENAME/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "deploy:android": "npm run build:android && aws s3 sync build/android s3://assets-production.applicaster.com/zapp/react-native-bundles/BUNDLENAME/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
+  },
+  "author": "Applicaster | Miami Team | Carlos Pinto",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "immutable": "^3.8.1",
+    "react": "^15.4.2",
+    "react-native": "0.38.0",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.8.2",
+    "reselect": "^2.5.4"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-preset-react-native": "^1.9.1",
+    "babel-register": "^6.18.0",
+    "es-beautifier": "^0.6.1",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-es-beautifier": "^1.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.0.2",
+    "eslint-plugin-react": "^6.8.0",
+    "eslint-plugin-react-native": "^2.2.1",
+    "nock": "^9.0.2",
+    "react-native-debugger-open": "^0.3.2",
+    "redux-mock-store": "^1.2.1",
+    "remote-redux-devtools": "^0.5.7"
+  }
+}
