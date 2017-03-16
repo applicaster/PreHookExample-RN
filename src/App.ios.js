@@ -1,46 +1,16 @@
-import React, { Component } from 'react';
-
-import {
-  AppRegistry,
-  StyleSheet,
-  View,
-  Text,
-} from 'react-native';
+import React, { Component, PropTypes } from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
+import Feed from './components/Feed';
 
 class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>
-          React Native Feed!
-        </Text>
-        <Text style={styles.subTitle}>
-          And this is nice
-        </Text>
-      </View>
+      <Provider store={store()}>
+        <Feed />
+      </ Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#27DA86',
-  },
-  title: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    color: '#ffffff',
-  },
-  subTitle: {
-    textAlign: 'center',
-    color: '#ffffff',
-    marginBottom: 5,
-    opacity: 0.85,
-  },
-});
 
 export default App;
