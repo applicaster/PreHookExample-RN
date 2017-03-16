@@ -23,7 +23,7 @@
   "author": "Applicaster | Miami Team | Carlos Pinto",
   "license": "ISC",
   "dependencies": {
-    "applicaster-stars": "^2.1.1",
+    "applicaster-stars": "^3.0.0",
     "applicaster-utils": "^1.0.1",
     "axios": "^0.15.3",
     "immutable": "^3.8.1",
