@@ -23,6 +23,8 @@
   "author": "Applicaster | Miami Team | Carlos Pinto",
   "license": "ISC",
   "dependencies": {
+    "applicaster-stars": "^2.1.1",
+    "applicaster-utils": "^1.0.1",
     "axios": "^0.15.3",
     "immutable": "^3.8.1",
     "react": "^15.4.2",
@@ -30,6 +32,7 @@
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
     "redux-logger": "^2.8.2",
+    "redux-observable": "^0.14.1",
     "reselect": "^2.5.4",
     "rxjs": "^5.2.0"
   },
