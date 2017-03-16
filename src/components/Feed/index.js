@@ -1,9 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
-  fetchEvents,
-  fetchEventSources,
-  initStarsServices,
+  loadResources,
   setAccountId,
   setTimelineId,
   setTimezone,
@@ -15,9 +13,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchEvents,
-  fetchEventSources,
-  initStarsServices,
+  loadResources,
   setAccountId,
   setTimelineId,
   setTimezone,

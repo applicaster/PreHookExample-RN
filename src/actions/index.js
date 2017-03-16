@@ -13,12 +13,16 @@ export const INIT_STARS_SERVICES = 'INIT_STARS_SERVICES';
 export const STARS_SERVICES_LOADED = 'STARS_SERVICES_LOADED';
 export const STARS_SERVICES_FAILED = 'STARS_SERVICES_FAILED';
 
+export const LOAD_RESOURCES = 'LOAD_RESOURCES';
+
 export const SET_ACCOUNT_ID = 'SET_ACCOUNT_ID';
 export const SET_TIMELINE_ID = 'SET_TIMELINE_ID';
 export const SET_TIMEZONE = 'SET_TIMEZONE';
 export const ERROR = 'ERROR';
 
 /* ACTIONS */
+export const loadResources = () => actionCreator(LOAD_RESOURCES);
+
 export const errorOccured = (error) => actionCreator(ERROR, { error });
 export const setAccountId = (accountId) => actionCreator(SET_ACCOUNT_ID, { accountId });
 export const setTimelineId = (timelineId) => actionCreator(SET_TIMELINE_ID, { timelineId });

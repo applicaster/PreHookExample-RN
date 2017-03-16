@@ -31,12 +31,7 @@ class Feed extends Component {
     this.props.setAccountId('53e9df6c49dd517268000002');
     this.props.setTimelineId('568bb9588bc9f02ce7000001');
     this.props.setTimezone('3600');
-    this.props.initStarsServices();
-    // this.props.fetchEventSources();
-  }
-
-  componentDidMount() {
-    this.props.fetchEvents();
+    this.props.loadResources();
   }
 
   render() {
@@ -55,10 +50,8 @@ class Feed extends Component {
 }
 
 Feed.propTypes = {
-  events: PropTypes.func,
-  initStarsServices: PropTypes.func,
-  fetchEvents: PropTypes.func,
-  fetchEventSources: PropTypes.func,
+  events: PropTypes.array,
+  loadResources: PropTypes.func,
   setAccountId: PropTypes.func,
   setTimelineId: PropTypes.func,
   setTimezone: PropTypes.func,
