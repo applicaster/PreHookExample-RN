@@ -9,6 +9,14 @@
     "airbnb",
     "plugin:es-beautifier/standard"
   ],
+  "env": {
+    "mocha": true
+  },
+  "globals": {
+    "chai": true,
+    "expect": true,
+    "sinon": true
+  },
   "rules": {
     "react/no-unescaped-entities": 0,
     "react/jsx-filename-extension": 0,
