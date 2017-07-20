@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Feed React Native application",
   "main": "index.js",
-  "engine": {
-    "node": "6.9.1",
-    "npm": "4.0.2"
+  "engines": {
+    "node": "8.1.4",
+    "npm": "5.0.4"
   },
   "scripts": {
     "test": "ava -v",
@@ -20,7 +20,7 @@
     "deploy:ios": "npm run build:ios && aws s3 sync build/ios s3://assets-production.applicaster.com/zapp/react-native-bundles/BUNDLENAME/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
     "deploy:android": "npm run build:android && aws s3 sync build/android s3://assets-production.applicaster.com/zapp/react-native-bundles/BUNDLENAME/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
   },
-  "author": "Applicaster | Miami Team | Carlos Pinto",
+  "author": "Applicaster | Miami Team",
   "license": "ISC",
   "dependencies": {
     "applicaster-stars": "^3.0.0",
