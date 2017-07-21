@@ -1,92 +1,37 @@
 import { Observable } from 'rxjs/Observable';
 import { starsInit } from 'applicaster-stars';
 import { combineEpics } from 'redux-observable';
+import { fetchSocialEvents } from '../api/social';
 
 import {
   getAccountId,
-  getStarsServiceState,
   getTimelineId,
-  getTimezone,
+  getEnvironment,
 } from '../selectors';
 
 import {
-    LOAD_RESOURCES,
-    INIT_STARS_SERVICES,
-    FETCH_EVENTS_START,
-    FETCH_EVENT_SOURCES_START,
-    
-    initStarsServices,
-    starsServicesLoaded,
-    
-    fetchEvents,
-    fetchEventSources,
-    fetchEventsDone,
+  // ACTIONS:
+  FETCH_SOCIAL_EVENTS_START,
 
-    fetchEventsFailed,
-    fetchEventSourcesDone,
-    fetchEventSourcesFailed,
-    errorOccured,
+  // ACTION CREATORS:
+  fetchSocialEventsDone,
+  fetchSocialEventsFailed,
 } from '../actions';
 
-let stars;
-let stars$;
-
-const loadResourcesEpic = (action$) =>
+const fetchSocialEventsEpic = (action$, store) =>
   action$
-    .ofType(LOAD_RESOURCES)
-    .mapTo(initStarsServices());
-
-const loadStarsServicesEpic = (action$, store) =>
-  action$
-      .ofType(INIT_STARS_SERVICES)
-      .pluck('payload')
-      .take(1)
-      .flatMap(() => {
-        const accountId = getAccountId(store.getState());
-        const timelineId = getTimelineId(store.getState());
-        const timezone = getTimezone(store.getState());
-        let isStarsServiceActive = getStarsServiceState(store.getState());
-
-        if (!isStarsServiceActive) {
-          if (timelineId) {
-            stars = starsInit({
-              accountId,
-              timelineId,
-              timezone,
-              startTime: 0,
-            });
-            
-            stars$ = stars.createPollingObservable({ pollRate: 5000 });
-
-            isStarsServiceActive = true;
-          }
-        }
-
-        return Observable.of(starsServicesLoaded(), fetchEvents(), fetchEventSources());
-      })
-      .catch(errorOccured());
-
-const fetchEventSourcesEpic = (action$) =>
-  action$
-    .ofType(FETCH_EVENT_SOURCES_START)
+    .filter(action => action.type === FETCH_SOCIAL_EVENTS_START)
     .mergeMap(() =>
-        Observable.fromPromise(stars.fetchFeeds())
-          .map(response => fetchEventSourcesDone(response))
-          .catch(error => fetchEventSourcesFailed(error))
-        );
-
-const fetchEventsEpic = (action$) =>
-  action$
-    .ofType(FETCH_EVENTS_START)
-    .mergeMap(() =>
-        Observable.fromPromise(stars.fetchEvents())
-          .map(response => fetchEventsDone(response))
-          .catch(error => fetchEventsFailed(error))
-        );
+      Observable.fromPromise(fetchSocialEvents({
+        environment: getEnvironment(store.getState()),
+        accountId: getAccountId(store.getState()),
+        timelineId: getTimelineId(store.getState()),
+      }))
+        .map(response => fetchSocialEventsDone(response.data))
+        .catch(error => fetchSocialEventsFailed(error))
+    );
+  
 
 export default combineEpics(
-  loadResourcesEpic,
-  loadStarsServicesEpic,
-  fetchEventsEpic,
-  fetchEventSourcesEpic,
+  fetchSocialEventsEpic,
 );
