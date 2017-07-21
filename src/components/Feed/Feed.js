@@ -2,11 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import {
   StyleSheet,
   View,
+  ListView,
   Text,
 } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 20,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -27,23 +29,41 @@ const styles = StyleSheet.create({
 });
 
 class Feed extends Component {
+  constructor(props) {
+    super(props);
+    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+    this.state = {
+      dataSource: ds.cloneWithRows([
+        'John',
+        'Joel',
+        'James',
+        'Jimmy',
+        'Jackson',
+        'Jillian',
+        'Julie',
+        'Devin',
+      ]),
+    };
+  }
+
   componentWillMount() {
-    this.props.setAccountId('53e9df6c49dd517268000002');
-    this.props.setTimelineId('568bb9588bc9f02ce7000001');
+    this.props.setAccountId('595de7ac8a7c43000914c5a5');
+    this.props.setTimelineId('595df85282e4a41a3e37374b');
     this.props.setTimezone('3600');
-    this.props.loadResources();
+    this.props.setEnvironment('production');
+    this.props.fetchSocialEvents();
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>
-          React Native Feed!
-        </Text>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={(rowData) => <Text style={styles.title}>{rowData}</Text>}
+        />
         <Text style={styles.subTitle}>
           by Applicaster
         </Text>
-
       </View>
     );
   }
@@ -51,10 +71,11 @@ class Feed extends Component {
 
 Feed.propTypes = {
   events: PropTypes.array,
-  loadResources: PropTypes.func,
+  fetchSocialEvents: PropTypes.func,
   setAccountId: PropTypes.func,
   setTimelineId: PropTypes.func,
   setTimezone: PropTypes.func,
+  setEnvironment: PropTypes.func,
 };
 
 export default Feed;

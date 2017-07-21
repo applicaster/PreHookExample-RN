@@ -1,7 +1,5 @@
 import { Map } from 'immutable';
 import {
-    START_LOADING_TIMELINES,
-    DONE_LOADING_TIMELINES,
     SET_ENVIRONMENT,
     SET_ACCOUNT_ID,
     SET_TIMELINE_ID,
@@ -21,14 +19,8 @@ export default (state = appInitialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case START_LOADING_TIMELINES:
-      return state.set('loadingTimelines', true);
-        
-    case DONE_LOADING_TIMELINES:
-      return state.set('loadingTimelines', false);
-    
     case SET_ENVIRONMENT:
-      return state.set('env', payload.env);
+      return state.set('environment', payload.environment);
 
     case SET_ACCOUNT_ID:
       return state.set('accountId', payload.accountId);

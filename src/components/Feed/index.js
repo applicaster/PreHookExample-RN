@@ -1,22 +1,22 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
-  loadResources,
+  fetchSocialEvents,
   setAccountId,
   setTimelineId,
   setTimezone,
+  setEnvironment,
 } from '../../actions';
 import Feed from './Feed';
 
-const mapStateToProps = state => ({
-  something: 1,
-});
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  loadResources,
+  fetchSocialEvents,
   setAccountId,
   setTimelineId,
   setTimezone,
+  setEnvironment,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feed);
