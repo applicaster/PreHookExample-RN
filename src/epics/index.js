@@ -1,5 +1,4 @@
 import { Observable } from 'rxjs/Observable';
-import { starsInit } from 'applicaster-stars';
 import { combineEpics } from 'redux-observable';
 import { fetchSocialEvents } from '../api/social';
 

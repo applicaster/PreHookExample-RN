@@ -8,7 +8,7 @@
     "npm": "5.0.4"
   },
   "scripts": {
-    "test": "NODE_ENV=test nyc --clean --reporter=lcovonly --reporter=json --reporter=text mocha test/setup.js --recursive 'test/*/*.spec.js' --reporter spec",
+    "test": "NODE_ENV=test nyc --clean --reporter=lcovonly --reporter=json --reporter=text mocha --compilers js:babel-core/register test/setup.js --recursive 'test/*/*.spec.js' --reporter spec",
     "beautify": "node_modules/.bin/eslint --fix .",
     "adb": "adb reverse tcp:8081 tcp:8081",
     "lint": "node_modules/.bin/eslint .",
@@ -39,6 +39,7 @@
     "babel": "^6.5.2",
     "babel-preset-react-native": "^1.9.1",
     "babel-register": "^6.18.0",
+    "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
     "es-beautifier": "^0.6.1",
     "eslint": "^3.12.2",
