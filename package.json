@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "NODE_ENV=test nyc --clean --reporter=lcovonly --reporter=json --reporter=text mocha --compilers js:babel-core/register test/setup.js --recursive 'test/*/*.spec.js' --reporter spec",
+    "test-reporter": "NODE_ENV=test mocha -r test/setup.js --recursive 'test/*/*.spec.js' --reporter mocha-junit-reporter --compilers js:babel-core/register",
     "beautify": "node_modules/.bin/eslint --fix .",
     "adb": "adb reverse tcp:8081 tcp:8081",
     "lint": "node_modules/.bin/eslint .",
@@ -53,6 +54,7 @@
     "eslint-plugin-react": "^6.8.0",
     "eslint-plugin-react-native": "^2.2.1",
     "mocha": "^3.4.2",
+    "mocha-junit-reporter": "^1.13.0",
     "nyc": "^11.0.3",
     "react-native-debugger-open": "^0.3.2",
     "redux-mock-store": "^1.2.1",

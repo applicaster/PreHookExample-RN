@@ -10,6 +10,6 @@ dist
 .code
 *.log
 .nyc_output
-.vscode
 coverage
 build
+test-results.xml
