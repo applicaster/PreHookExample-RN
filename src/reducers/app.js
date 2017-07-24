@@ -5,17 +5,16 @@ import {
     SET_TIMELINE_ID,
     SET_TIMEZONE,
 } from '../actions';
-
+import { actionCreator } from '../actions/actionHelpers';
 
 const appInitialState = Map({
-  loadingTimelines: false,
-  env: null,
+  environment: null,
   accountId: null,
   timelineId: null,
   timezone: null,
 });
 
-export default (state = appInitialState, action) => {
+export default (state = appInitialState, action = actionCreator()) => {
   const { type, payload } = action;
 
   switch (type) {
