@@ -1,4 +1,10 @@
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromPromise';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/mergeMap';
 import { combineEpics } from 'redux-observable';
 import { fetchSocialEvents } from '../api/social';
 
@@ -9,7 +15,7 @@ import {
 } from '../selectors';
 
 import {
-  // ACTIONS:
+  // ACTION NAMES:
   FETCH_SOCIAL_EVENTS_START,
 
   // ACTION CREATORS:
@@ -17,7 +23,7 @@ import {
   fetchSocialEventsFailed,
 } from '../actions';
 
-const fetchSocialEventsEpic = (action$, store) =>
+export const fetchSocialEventsEpic = (action$, store) =>
   action$
     .filter(action => action.type === FETCH_SOCIAL_EVENTS_START)
     .mergeMap(() =>
@@ -27,7 +33,7 @@ const fetchSocialEventsEpic = (action$, store) =>
         timelineId: getTimelineId(store.getState()),
       }))
         .map(response => fetchSocialEventsDone(response.data))
-        .catch(error => fetchSocialEventsFailed(error))
+        .catch(error => Observable.of(fetchSocialEventsFailed(error)))
     );
   
 
