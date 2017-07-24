@@ -26,8 +26,8 @@
     "applicaster-utils": "^1.0.1",
     "axios": "^0.15.3",
     "immutable": "^3.8.1",
-    "react": "^15.4.2",
-    "react-native": "0.38.0",
+    "react": "^16.0.0-alpha.12",
+    "react-native": "^0.46.4",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
     "redux-logger": "^2.8.2",
@@ -36,7 +36,9 @@
     "rxjs": "^5.2.0"
   },
   "devDependencies": {
-    "babel": "^6.5.2",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-react-native": "^1.9.1",
     "babel-register": "^6.18.0",
     "chai": "^4.1.0",
@@ -55,6 +57,7 @@
     "react-native-debugger-open": "^0.3.2",
     "redux-mock-store": "^1.2.1",
     "remote-redux-devtools": "^0.5.7",
+    "sinon": "^2.3.8",
     "sinon-chai": "^2.12.0"
   }
 }
