@@ -1,21 +1,15 @@
 machine:
   node:
-    version: 6.9.1
+    version: 8.1.4
   post:
-    - npm install -g npm
+    - npm i -g npm
 
-
-dependencies:
+test:
   override:
-    - npm install --no-optional
-    - sudo pip install awscli
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit
+    - npm run test-reporter
+    - cp test-results.xml $CIRCLE_TEST_REPORTS/junit
 
-deployment:
+deploy:
   production:
-    branch: release
-    commands:
-      - npm run deploy
-  staging:
-    branch: staging
-    commands:
-      - npm run deploy-staging
+    branch: master
