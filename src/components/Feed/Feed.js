@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   StyleSheet,
   View,
@@ -70,7 +71,6 @@ class Feed extends Component {
 }
 
 Feed.propTypes = {
-  events: PropTypes.array,
   fetchSocialEvents: PropTypes.func,
   setAccountId: PropTypes.func,
   setTimelineId: PropTypes.func,
