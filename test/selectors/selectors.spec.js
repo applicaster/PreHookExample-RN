@@ -5,6 +5,8 @@ import {
   getTimelineId,
   getTimezone,
   getEnvironment,
+  getSocialPosts,
+  getLoading,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -12,12 +14,18 @@ const mockStore = configureMockStore();
 describe('selectors', () => {
   let store;
   beforeEach(() => {
-    store = mockStore({ app: Map({
-      accountId: 'someAccountId',
-      timelineId: 'someTimelineId',
-      timezone: 'someTimezone',
-      environment: 'someEnvironment',
-    }) });
+    store = mockStore({
+      app: Map({
+        accountId: 'someAccountId',
+        timelineId: 'someTimelineId',
+        timezone: 'someTimezone',
+        environment: 'someEnvironment',
+      }),
+      events: Map({
+        socialPosts: [1, 2],
+        loading: false,
+      }),
+    });
   });
 
   describe('getAccountid', () => {
@@ -41,6 +49,18 @@ describe('selectors', () => {
   describe('getEnvironment', () => {
     it('should get the account id from the app state', () => {
       expect(getEnvironment(store.getState())).to.equal('someEnvironment');
+    });
+  });
+
+  describe('getSocialPosts', () => {
+    it('should get the socialPosts from the events reducer state', () => {
+      expect(getSocialPosts(store.getState())).to.deep.equal([1, 2]);
+    });
+  });
+
+  describe('loading', () => {
+    it('should get loading property from the events reducer state', () => {
+      expect(getLoading(store.getState())).to.equal(false);
     });
   });
 });
