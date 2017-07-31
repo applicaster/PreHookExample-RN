@@ -38,8 +38,8 @@ class Feed extends Component {
   }
 
   componentWillMount() {
-    this.props.setAccountId('595de7ac8a7c43000914c5a5');
-    this.props.setTimelineId('595df85282e4a41a3e37374b');
+    this.props.setAccountId('100');
+    this.props.setTimelineId('100');
     this.props.setTimezone('3600');
     this.props.setEnvironment('production');
     this.props.fetchSocialEvents();
@@ -54,7 +54,7 @@ class Feed extends Component {
   }
 
   render() {
-    const socialPosts = this.props.socialPosts;
+    const socialEvents = this.props.socialEvents;
     const refreshControl = (
       <RefreshControl
         refreshing={this.props.loading}
@@ -64,13 +64,13 @@ class Feed extends Component {
     return (
       <View style={styles.container}>
         <ScrollView refreshControl={refreshControl}>
-          {socialPosts.map(post =>
-            <View key={post.id}>
+          {socialEvents.map(event =>
+            <View key={event.id}>
               <Image
                 style={{ width: 360, height: 360 }}
-                source={{ uri: post.images.low_resolution.url }}
+                source={{ uri: event.images.low_resolution.url }}
               />
-              <Text>{this.renderCaption(post.caption)}</Text>
+              <Text>{this.renderCaption(event.caption)}</Text>
             </View>
           )}
         </ScrollView>
@@ -84,7 +84,7 @@ class Feed extends Component {
 
 Feed.propTypes = {
   loading: PropTypes.bool,
-  socialPosts: PropTypes.array,
+  socialEvents: PropTypes.array,
   fetchSocialEvents: PropTypes.func,
   setAccountId: PropTypes.func,
   setTimelineId: PropTypes.func,

@@ -9,7 +9,7 @@ import {
 } from '../../actions';
 
 import {
-  getSocialPosts,
+  getSocialEvents,
   getLoading,
 } from '../../selectors';
 
@@ -17,7 +17,7 @@ import Feed from './Feed';
 
 const mapStateToProps = state => ({
   loading: getLoading(state),
-  socialPosts: getSocialPosts(state),
+  socialEvents: getSocialEvents(state),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
