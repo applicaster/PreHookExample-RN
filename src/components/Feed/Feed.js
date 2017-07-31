@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import {
   StyleSheet,
   View,
-  ListView,
+  ScrollView,
+  RefreshControl,
+  Image,
   Text,
 } from 'react-native';
 
@@ -32,19 +34,7 @@ const styles = StyleSheet.create({
 class Feed extends Component {
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = {
-      dataSource: ds.cloneWithRows([
-        'John',
-        'Joel',
-        'James',
-        'Jimmy',
-        'Jackson',
-        'Jillian',
-        'Julie',
-        'Devin',
-      ]),
-    };
+    this.onRefresh = this.onRefresh.bind(this);
   }
 
   componentWillMount() {
@@ -55,13 +45,35 @@ class Feed extends Component {
     this.props.fetchSocialEvents();
   }
 
+  onRefresh() {
+    this.props.fetchSocialEvents();
+  }
+
+  renderCaption(caption) {
+    return (caption && caption.text) ? caption.text : null;
+  }
+
   render() {
+    const socialPosts = this.props.socialPosts;
+    const refreshControl = (
+      <RefreshControl
+        refreshing={this.props.loading}
+        onRefresh={this.onRefresh}
+      />);
+
     return (
       <View style={styles.container}>
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={(rowData) => <Text style={styles.title}>{rowData}</Text>}
-        />
+        <ScrollView refreshControl={refreshControl}>
+          {socialPosts.map(post =>
+            <View key={post.id}>
+              <Image
+                style={{ width: 360, height: 360 }}
+                source={{ uri: post.images.low_resolution.url }}
+              />
+              <Text>{this.renderCaption(post.caption)}</Text>
+            </View>
+          )}
+        </ScrollView>
         <Text style={styles.subTitle}>
           by Applicaster
         </Text>
@@ -71,6 +83,8 @@ class Feed extends Component {
 }
 
 Feed.propTypes = {
+  loading: PropTypes.bool,
+  socialPosts: PropTypes.array,
   fetchSocialEvents: PropTypes.func,
   setAccountId: PropTypes.func,
   setTimelineId: PropTypes.func,

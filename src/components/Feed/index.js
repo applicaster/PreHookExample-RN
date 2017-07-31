@@ -7,9 +7,18 @@ import {
   setTimezone,
   setEnvironment,
 } from '../../actions';
+
+import {
+  getSocialPosts,
+  getLoading,
+} from '../../selectors';
+
 import Feed from './Feed';
 
-const mapStateToProps = () => ({});
+const mapStateToProps = state => ({
+  loading: getLoading(state),
+  socialPosts: getSocialPosts(state),
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   fetchSocialEvents,
