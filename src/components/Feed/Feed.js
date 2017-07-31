@@ -5,29 +5,18 @@ import {
   View,
   ScrollView,
   RefreshControl,
-  Image,
   Text,
 } from 'react-native';
+import EventContainer from '../EventContainer';
 
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: 20,
+  feed: {
     flex: 1,
+    flexDirection: 'column',
+    paddingTop: 20,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#27DA86',
-  },
-  title: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    color: '#ffffff',
-  },
-  subTitle: {
-    textAlign: 'center',
-    color: '#ffffff',
-    marginBottom: 5,
-    opacity: 0.85,
   },
 });
 
@@ -49,10 +38,6 @@ class Feed extends Component {
     this.props.fetchSocialEvents();
   }
 
-  renderCaption(caption) {
-    return (caption && caption.text) ? caption.text : null;
-  }
-
   render() {
     const socialEvents = this.props.socialEvents;
     const refreshControl = (
@@ -62,21 +47,12 @@ class Feed extends Component {
       />);
 
     return (
-      <View style={styles.container}>
+      <View style={styles.feed}>
         <ScrollView refreshControl={refreshControl}>
           {socialEvents.map(event =>
-            <View key={event.id}>
-              <Image
-                style={{ width: 360, height: 360 }}
-                source={{ uri: event.images.low_resolution.url }}
-              />
-              <Text>{this.renderCaption(event.caption)}</Text>
-            </View>
+            <EventContainer key={event.id} event={event} />
           )}
         </ScrollView>
-        <Text style={styles.subTitle}>
-          by Applicaster
-        </Text>
       </View>
     );
   }
