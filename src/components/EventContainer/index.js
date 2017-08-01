@@ -4,7 +4,6 @@ import {
   Dimensions,
   Image,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
 import EventCaption from '../EventCaption';
@@ -12,6 +11,8 @@ import EventCaption from '../EventCaption';
 const width = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   eventContainer: {
+    borderBottomColor: '#696A6B',
+    borderBottomWidth: 1,
     width,
   },
 });
