@@ -7,6 +7,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import EventCaption from '../EventCaption';
 
 const width = Dimensions.get('window').width;
 const styles = StyleSheet.create({
@@ -16,10 +17,6 @@ const styles = StyleSheet.create({
 });
 
 class EventContainer extends Component {
-  renderCaption(caption) {
-    return (caption && caption.text) ? caption.text : null;
-  }
-
   render() {
     const event = this.props.event;
     return (
@@ -28,7 +25,7 @@ class EventContainer extends Component {
           style={{ width, height: width }}
           source={{ uri: event.images.standard_resolution.url }}
         />
-        <Text>{this.renderCaption(event.caption)}</Text>
+        <EventCaption caption={event.caption} />
       </View>
     );
   }
