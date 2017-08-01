@@ -5,7 +5,7 @@ import {
   getTimelineId,
   getTimezone,
   getEnvironment,
-  getSocialPosts,
+  getSocialEvents,
   getLoading,
 } from '../../src/selectors';
 
@@ -22,7 +22,7 @@ describe('selectors', () => {
         environment: 'someEnvironment',
       }),
       events: Map({
-        socialPosts: [1, 2],
+        socialEvents: [1, 2],
         loading: false,
       }),
     });
@@ -52,9 +52,9 @@ describe('selectors', () => {
     });
   });
 
-  describe('getSocialPosts', () => {
-    it('should get the socialPosts from the events reducer state', () => {
-      expect(getSocialPosts(store.getState())).to.deep.equal([1, 2]);
+  describe('getSocialEvents', () => {
+    it('should get the socialEvents from the events reducer state', () => {
+      expect(getSocialEvents(store.getState())).to.deep.equal([1, 2]);
     });
   });
 

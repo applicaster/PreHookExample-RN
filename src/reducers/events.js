@@ -8,7 +8,7 @@ import { actionCreator } from '../actions/actionHelpers';
 
 const appInitialState = Map({
   loading: false,
-  socialPosts: [],
+  socialEvents: [],
 });
 
 export default (state = appInitialState, action = actionCreator()) => {
@@ -24,7 +24,7 @@ export default (state = appInitialState, action = actionCreator()) => {
     case FETCH_SOCIAL_EVENTS_DONE:
       return state
         .set('loading', false)
-        .set('socialPosts', payload.events);
+        .set('socialEvents', payload.events);
 
     default:
       return state;
