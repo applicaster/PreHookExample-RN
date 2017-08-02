@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventContainer component renders correctly with an event 1`] = `
+<View
+  style={
+    Object {
+      "width": 750,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "url",
+      }
+    }
+    style={
+      Object {
+        "height": 750,
+        "width": 750,
+      }
+    }
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  />
+</View>
+`;
