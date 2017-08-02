@@ -13,3 +13,4 @@ dist
 coverage
 build
 test-results.xml
+jest-results.xml
