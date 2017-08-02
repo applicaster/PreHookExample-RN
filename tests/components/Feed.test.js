@@ -6,7 +6,7 @@ import Feed from '../../src/components/Feed/Feed';
 const event = (id) => ({
   id,
   images: {
-    low_resolution: {
+    standard_resolution: {
       url: 'url',
     },
     caption: 'caption',
@@ -22,7 +22,7 @@ test('Feed component renders correctly without events', () => {
       setTimezone={() => {}}
       setEnvironment={() => {}}
       loading={false}
-      socialPosts={[]}
+      socialEvents={[]}
     />
   ).toJSON();
   expect(tree).toMatchSnapshot();
@@ -37,7 +37,7 @@ test('Feed component renders correctly with events', () => {
       setTimezone={() => {}}
       setEnvironment={() => {}}
       loading={false}
-      socialPosts={[event(1), event(2)]}
+      socialEvents={[event(1), event(2)]}
     />
   ).toJSON();
   expect(tree).toMatchSnapshot();
@@ -52,7 +52,7 @@ test('Feed component renders correctly while loading', () => {
       setTimezone={() => {}}
       setEnvironment={() => {}}
       loading={true}
-      socialPosts={[]}
+      socialEvents={[]}
     />
   ).toJSON();
   expect(tree).toMatchSnapshot();
@@ -67,7 +67,7 @@ test('Feed component renders correctly while loading with events', () => {
       setTimezone={() => {}}
       setEnvironment={() => {}}
       loading={true}
-      socialPosts={[event(1), event(2)]}
+      socialEvents={[event(1), event(2)]}
     />
   ).toJSON();
   expect(tree).toMatchSnapshot();

@@ -7,6 +7,7 @@ exports[`Feed component renders correctly while loading 1`] = `
       "alignItems": "center",
       "backgroundColor": "#27DA86",
       "flex": 1,
+      "flexDirection": "column",
       "justifyContent": "center",
       "paddingTop": 20,
     }
@@ -23,22 +24,6 @@ exports[`Feed component renders correctly while loading 1`] = `
     <RCTRefreshControl />
     <View />
   </RCTScrollView>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#ffffff",
-        "marginBottom": 5,
-        "opacity": 0.85,
-        "textAlign": "center",
-      }
-    }
-  >
-    by Applicaster
-  </Text>
 </View>
 `;
 
@@ -49,6 +34,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
       "alignItems": "center",
       "backgroundColor": "#27DA86",
       "flex": 1,
+      "flexDirection": "column",
       "justifyContent": "center",
       "paddingTop": 20,
     }
@@ -64,7 +50,13 @@ exports[`Feed component renders correctly while loading with events 1`] = `
   >
     <RCTRefreshControl />
     <View>
-      <View>
+      <View
+        style={
+          Object {
+            "width": 750,
+          }
+        }
+      >
         <Image
           source={
             Object {
@@ -73,8 +65,8 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           }
           style={
             Object {
-              "height": 360,
-              "width": 360,
+              "height": 750,
+              "width": 750,
             }
           }
         />
@@ -85,7 +77,13 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           ellipsizeMode="tail"
         />
       </View>
-      <View>
+      <View
+        style={
+          Object {
+            "width": 750,
+          }
+        }
+      >
         <Image
           source={
             Object {
@@ -94,8 +92,8 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           }
           style={
             Object {
-              "height": 360,
-              "width": 360,
+              "height": 750,
+              "width": 750,
             }
           }
         />
@@ -108,22 +106,6 @@ exports[`Feed component renders correctly while loading with events 1`] = `
       </View>
     </View>
   </RCTScrollView>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#ffffff",
-        "marginBottom": 5,
-        "opacity": 0.85,
-        "textAlign": "center",
-      }
-    }
-  >
-    by Applicaster
-  </Text>
 </View>
 `;
 
@@ -134,6 +116,7 @@ exports[`Feed component renders correctly with events 1`] = `
       "alignItems": "center",
       "backgroundColor": "#27DA86",
       "flex": 1,
+      "flexDirection": "column",
       "justifyContent": "center",
       "paddingTop": 20,
     }
@@ -149,7 +132,13 @@ exports[`Feed component renders correctly with events 1`] = `
   >
     <RCTRefreshControl />
     <View>
-      <View>
+      <View
+        style={
+          Object {
+            "width": 750,
+          }
+        }
+      >
         <Image
           source={
             Object {
@@ -158,8 +147,8 @@ exports[`Feed component renders correctly with events 1`] = `
           }
           style={
             Object {
-              "height": 360,
-              "width": 360,
+              "height": 750,
+              "width": 750,
             }
           }
         />
@@ -170,7 +159,13 @@ exports[`Feed component renders correctly with events 1`] = `
           ellipsizeMode="tail"
         />
       </View>
-      <View>
+      <View
+        style={
+          Object {
+            "width": 750,
+          }
+        }
+      >
         <Image
           source={
             Object {
@@ -179,8 +174,8 @@ exports[`Feed component renders correctly with events 1`] = `
           }
           style={
             Object {
-              "height": 360,
-              "width": 360,
+              "height": 750,
+              "width": 750,
             }
           }
         />
@@ -193,22 +188,6 @@ exports[`Feed component renders correctly with events 1`] = `
       </View>
     </View>
   </RCTScrollView>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#ffffff",
-        "marginBottom": 5,
-        "opacity": 0.85,
-        "textAlign": "center",
-      }
-    }
-  >
-    by Applicaster
-  </Text>
 </View>
 `;
 
@@ -219,6 +198,7 @@ exports[`Feed component renders correctly without events 1`] = `
       "alignItems": "center",
       "backgroundColor": "#27DA86",
       "flex": 1,
+      "flexDirection": "column",
       "justifyContent": "center",
       "paddingTop": 20,
     }
@@ -235,21 +215,5 @@ exports[`Feed component renders correctly without events 1`] = `
     <RCTRefreshControl />
     <View />
   </RCTScrollView>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#ffffff",
-        "marginBottom": 5,
-        "opacity": 0.85,
-        "textAlign": "center",
-      }
-    }
-  >
-    by Applicaster
-  </Text>
 </View>
 `;
