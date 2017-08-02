@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
+import reactStringReplace from 'react-string-replace';
 
 const styles = StyleSheet.create({
   eventCaption: {
@@ -13,12 +14,23 @@ const styles = StyleSheet.create({
     paddingVertical: 17,
     // TODO: Fonts?
   },
+  highlight: {
+    color: '#7ED321',
+  },
 });
 
 class EventCaption extends Component {
+  highlightHashtagsAndUsers(caption) {
+    const regex = /([@|#][A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)/g;
+    const matchCallback = (match, i) => (<Text key={i} style={styles.highlight}>{match}</Text>);
+    return reactStringReplace(caption, regex, matchCallback);
+  }
+  
   render() {
     return (this.props.caption && this.props.caption.text)
-    ? <Text style={styles.eventCaption}>{this.props.caption.text}</Text>
+    ? <Text style={styles.eventCaption}>
+      {this.highlightHashtagsAndUsers(this.props.caption.text)}
+    </Text>
     : null;
   }
 }
