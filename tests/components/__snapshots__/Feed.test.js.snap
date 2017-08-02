@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feed component renders correctly while loading 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#27DA86",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": 20,
+    }
+  }
+>
+  <RCTScrollView
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={true}
+      />
+    }
+  >
+    <RCTRefreshControl />
+    <View />
+  </RCTScrollView>
+</View>
+`;
+
+exports[`Feed component renders correctly while loading with events 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#27DA86",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": 20,
+    }
+  }
+>
+  <RCTScrollView
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={true}
+      />
+    }
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        style={
+          Object {
+            "width": 750,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "url",
+            }
+          }
+          style={
+            Object {
+              "height": 750,
+              "width": 750,
+            }
+          }
+        />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "width": 750,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "url",
+            }
+          }
+          style={
+            Object {
+              "height": 750,
+              "width": 750,
+            }
+          }
+        />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+        />
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`Feed component renders correctly with events 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#27DA86",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": 20,
+    }
+  }
+>
+  <RCTScrollView
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        style={
+          Object {
+            "width": 750,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "url",
+            }
+          }
+          style={
+            Object {
+              "height": 750,
+              "width": 750,
+            }
+          }
+        />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "width": 750,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "url",
+            }
+          }
+          style={
+            Object {
+              "height": 750,
+              "width": 750,
+            }
+          }
+        />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+        />
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`Feed component renders correctly without events 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#27DA86",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": 20,
+    }
+  }
+>
+  <RCTScrollView
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+  >
+    <RCTRefreshControl />
+    <View />
+  </RCTScrollView>
+</View>
+`;
