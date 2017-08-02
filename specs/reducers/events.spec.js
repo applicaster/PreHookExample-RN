@@ -26,10 +26,10 @@ describe('events reducer', () => {
       expect(newState.get('loading')).to.equal(false);
     });
 
-    it('should set socialPosts', () => {
+    it('should set socialEvents', () => {
       const newState = appReducer(initialState, fetchSocialEventsDone([1, 2]));
 
-      expect(newState.get('socialPosts')).to.deep.equal([1, 2]);
+      expect(newState.get('socialEvents')).to.deep.equal([1, 2]);
     });
   });
 

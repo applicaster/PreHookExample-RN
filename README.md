@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/applicaster/Feed-RN/tree/master.svg?style=shield&circle-token=ba1fbc3334cecc65bfcbd590a4130f67907df08f)](https://circleci.com/gh/applicaster/Feed-RN/tree/master)
+
 # React-Native Feed
 ## WORK IN PROGRESS
 
