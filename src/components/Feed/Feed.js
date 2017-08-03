@@ -5,7 +5,6 @@ import {
   View,
   ScrollView,
   RefreshControl,
-  Text,
 } from 'react-native';
 import EventContainer from '../EventContainer';
 
@@ -16,7 +15,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#27DA86',
+    backgroundColor: '#323232',
   },
 });
 

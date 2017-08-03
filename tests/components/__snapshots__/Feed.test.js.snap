@@ -5,7 +5,7 @@ exports[`Feed component renders correctly while loading 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#27DA86",
+      "backgroundColor": "#323232",
       "flex": 1,
       "flexDirection": "column",
       "justifyContent": "center",
@@ -32,7 +32,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#27DA86",
+      "backgroundColor": "#323232",
       "flex": 1,
       "flexDirection": "column",
       "justifyContent": "center",
@@ -53,6 +53,8 @@ exports[`Feed component renders correctly while loading with events 1`] = `
       <View
         style={
           Object {
+            "borderBottomColor": "#696A6B",
+            "borderBottomWidth": 1,
             "width": 750,
           }
         }
@@ -69,17 +71,13 @@ exports[`Feed component renders correctly while loading with events 1`] = `
               "width": 750,
             }
           }
-        />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
         />
       </View>
       <View
         style={
           Object {
+            "borderBottomColor": "#696A6B",
+            "borderBottomWidth": 1,
             "width": 750,
           }
         }
@@ -96,12 +94,6 @@ exports[`Feed component renders correctly while loading with events 1`] = `
               "width": 750,
             }
           }
-        />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
         />
       </View>
     </View>
@@ -114,7 +106,7 @@ exports[`Feed component renders correctly with events 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#27DA86",
+      "backgroundColor": "#323232",
       "flex": 1,
       "flexDirection": "column",
       "justifyContent": "center",
@@ -135,6 +127,8 @@ exports[`Feed component renders correctly with events 1`] = `
       <View
         style={
           Object {
+            "borderBottomColor": "#696A6B",
+            "borderBottomWidth": 1,
             "width": 750,
           }
         }
@@ -151,17 +145,13 @@ exports[`Feed component renders correctly with events 1`] = `
               "width": 750,
             }
           }
-        />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
         />
       </View>
       <View
         style={
           Object {
+            "borderBottomColor": "#696A6B",
+            "borderBottomWidth": 1,
             "width": 750,
           }
         }
@@ -178,12 +168,6 @@ exports[`Feed component renders correctly with events 1`] = `
               "width": 750,
             }
           }
-        />
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
         />
       </View>
     </View>
@@ -196,7 +180,7 @@ exports[`Feed component renders correctly without events 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#27DA86",
+      "backgroundColor": "#323232",
       "flex": 1,
       "flexDirection": "column",
       "justifyContent": "center",
