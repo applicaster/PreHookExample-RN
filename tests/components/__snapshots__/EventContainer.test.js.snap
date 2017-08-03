@@ -4,6 +4,8 @@ exports[`EventContainer component renders correctly with an event 1`] = `
 <View
   style={
     Object {
+      "borderBottomColor": "#696A6B",
+      "borderBottomWidth": 1,
       "width": 750,
     }
   }
@@ -20,12 +22,6 @@ exports[`EventContainer component renders correctly with an event 1`] = `
         "width": 750,
       }
     }
-  />
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
   />
 </View>
 `;
