@@ -6,11 +6,8 @@ import {
 } from 'react-native';
 import moment from 'moment';
 import {
-  isWithinAnHour,
   isWithinAWeek,
   isWithinAYear,
-  isYesterday,
-  isToday,
 } from '../../utils/time';
 
 const styles = StyleSheet.create({
