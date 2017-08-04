@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   Dimensions,
-  Image,
   StyleSheet,
   View,
 } from 'react-native';
+import EventHeader from '../EventHeader';
 import EventCaption from '../EventCaption';
 
 const width = Dimensions.get('window').width;
@@ -22,10 +22,7 @@ class EventContainer extends Component {
     const event = this.props.event;
     return (
       <View style={styles.eventContainer}>
-        <Image
-          style={{ width, height: width }}
-          source={{ uri: event.images.standard_resolution.url }}
-        />
+        <EventHeader event={event} />
         <EventCaption caption={event.caption} />
       </View>
     );
