@@ -10,18 +10,109 @@ exports[`EventContainer component renders correctly with an event 1`] = `
     }
   }
 >
-  <Image
-    source={
-      Object {
-        "uri": "url",
-      }
-    }
+  <View
     style={
       Object {
-        "height": 750,
-        "width": 750,
+        "flexDirection": "row",
+        "paddingHorizontal": 12,
+        "paddingTop": 12,
       }
     }
-  />
+  >
+    <Image
+      source={
+        Object {
+          "uri": "url",
+        }
+      }
+      style={
+        Object {
+          "height": 40,
+          "width": 40,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "paddingLeft": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#7ED321",
+            "fontSize": 14,
+            "marginBottom": -2,
+          }
+        }
+      >
+        Carlos Pinto
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#DEDEDE",
+            "fontSize": 10,
+          }
+        }
+      >
+        @
+        cpinto7
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "bottom": 0,
+            "color": "#FFFFFF",
+            "fontSize": 12,
+            "left": 10,
+            "position": "absolute",
+          }
+        }
+      >
+        Invalid date
+      </Text>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 30,
+          },
+          Object {
+            "position": "absolute",
+            "right": 9,
+            "top": 9,
+          },
+          Object {
+            "fontFamily": "FontAwesome",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
 </View>
 `;

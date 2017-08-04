@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventTimestamp component renders correctly for a timestamp over a year 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "bottom": 0,
+      "color": "#FFFFFF",
+      "fontSize": 12,
+      "left": 10,
+      "position": "absolute",
+    }
+  }
+>
+  December 4, 2015
+</Text>
+`;
+
+exports[`EventTimestamp component renders correctly for a timestamp within a week 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "bottom": 0,
+      "color": "#FFFFFF",
+      "fontSize": 12,
+      "left": 10,
+      "position": "absolute",
+    }
+  }
+>
+  9 minutes ago
+</Text>
+`;
+
+exports[`EventTimestamp component renders correctly for a timestamp within a year 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "bottom": 0,
+      "color": "#FFFFFF",
+      "fontSize": 12,
+      "left": 10,
+      "position": "absolute",
+    }
+  }
+>
+  December 4
+</Text>
+`;

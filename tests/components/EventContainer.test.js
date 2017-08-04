@@ -5,6 +5,11 @@ import EventContainer from '../../src/components/EventContainer';
 
 const event = (id, text) => ({
   id,
+  user: {
+    full_name: 'Carlos Pinto',
+    username: 'cpinto7',
+    profile_picture: 'url',
+  },
   images: {
     standard_resolution: {
       url: 'url',
