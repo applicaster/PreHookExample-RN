@@ -9,7 +9,7 @@ import reactStringReplace from 'react-string-replace';
 const styles = StyleSheet.create({
   eventCaption: {
     color: '#FFFFFF',
-    fontSize: 18,
+    fontSize: 14,
     paddingHorizontal: 12,
     paddingVertical: 17,
   },
