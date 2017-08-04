@@ -28,14 +28,8 @@ class EventTimestamp extends Component {
     const timestamp = this.props.timestamp;
     const eventMoment = moment.unix(timestamp);
 
-    if (isWithinAnHour(eventMoment)) {
+    if (isWithinAWeek(eventMoment)) {
       return eventMoment.fromNow();
-    } else if (isToday(eventMoment)) {
-      return eventMoment.format('[Today at] h.m A');
-    } else if (isYesterday(eventMoment)) {
-      return eventMoment.format('[Yesterday at] h.m A');
-    } else if (isWithinAWeek(eventMoment)) {
-      return eventMoment.format('dddd [at] h.m A');
     } else if (isWithinAYear(eventMoment)) {
       return eventMoment.format('MMMM D');
     }
