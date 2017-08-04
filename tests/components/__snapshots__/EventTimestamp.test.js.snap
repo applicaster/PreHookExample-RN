@@ -36,7 +36,7 @@ exports[`EventTimestamp component renders correctly for a timestamp within a wee
     }
   }
 >
-  9 minutes ago
+  15 minutes ago
 </Text>
 `;
 
