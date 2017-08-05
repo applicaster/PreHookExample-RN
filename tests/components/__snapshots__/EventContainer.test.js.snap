@@ -5,18 +5,28 @@ exports[`EventContainer component renders correctly with an event 1`] = `
   style={
     Object {
       "borderBottomColor": "#696A6B",
-      "borderBottomWidth": 1,
+      "borderBottomWidth": 0.5,
       "width": 750,
     }
   }
 >
   <View
     style={
-      Object {
-        "flexDirection": "row",
-        "paddingHorizontal": 12,
-        "paddingTop": 12,
-      }
+      Array [
+        Object {
+          "flexDirection": "row",
+          "paddingHorizontal": 12,
+          "paddingTop": 12,
+        },
+        Object {
+          "backgroundColor": "transparent",
+          "left": 0,
+          "position": "absolute",
+          "top": 0,
+          "width": 750,
+          "zIndex": 2,
+        },
+      ]
     }
   >
     <Image
@@ -113,6 +123,51 @@ exports[`EventContainer component renders correctly with an event 1`] = `
     >
       
     </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "height": 750,
+        "width": 750,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "url",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          undefined,
+        ]
+      }
+    />
+    <BVLinearGradient
+      colors={
+        Array [
+          4278190080,
+          0,
+        ]
+      }
+      end={undefined}
+      locations={null}
+      start={undefined}
+      style={
+        Object {
+          "height": 75,
+          "opacity": 0.8,
+        }
+      }
+    />
   </View>
 </View>
 `;

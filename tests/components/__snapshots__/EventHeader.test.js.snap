@@ -3,11 +3,14 @@
 exports[`EventHeader component renders correctly 1`] = `
 <View
   style={
-    Object {
-      "flexDirection": "row",
-      "paddingHorizontal": 12,
-      "paddingTop": 12,
-    }
+    Array [
+      Object {
+        "flexDirection": "row",
+        "paddingHorizontal": 12,
+        "paddingTop": 12,
+      },
+      undefined,
+    ]
   }
 >
   <Image
