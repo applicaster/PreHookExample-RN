@@ -63,7 +63,7 @@ class EventHeader extends Component {
           <Text style={styles.userName}>@{event.user.username}</Text>
           <EventTimestamp timestamp={timestamp} />
         </View>
-        <Icon style={styles.socialIcon} name="instagram" size={30} color="#FFFFFF" />
+        <Image style={styles.socialIcon} source={require('../../assets/images/instagram_icon.png')} />
       </View>
     );
   }
