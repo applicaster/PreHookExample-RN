@@ -5,6 +5,11 @@ import Feed from '../../src/components/Feed/Feed';
 
 const event = (id) => ({
   id,
+  user: {
+    full_name: 'Carlos Pinto',
+    username: 'cpinto7',
+    profile_picture: 'url',
+  },
   images: {
     standard_resolution: {
       url: 'url',

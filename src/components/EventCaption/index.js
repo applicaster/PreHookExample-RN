@@ -9,10 +9,9 @@ import reactStringReplace from 'react-string-replace';
 const styles = StyleSheet.create({
   eventCaption: {
     color: '#FFFFFF',
-    fontSize: 18,
+    fontSize: 14,
     paddingHorizontal: 12,
     paddingVertical: 17,
-    // TODO: Fonts?
   },
   highlight: {
     color: '#7ED321',
@@ -21,7 +20,7 @@ const styles = StyleSheet.create({
 
 class EventCaption extends Component {
   highlightHashtagsAndUsers(caption) {
-    const regex = /([@|#][A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)/g;
+    const regex = /([@|#][\w](?:(?:[\w]|(?:\.(?!\.))){0,28}(?:[\w]))?)/g;
     const matchCallback = (match, i) => (<Text key={i} style={styles.highlight}>{match}</Text>);
     return reactStringReplace(caption, regex, matchCallback);
   }
