@@ -97,32 +97,16 @@ exports[`EventContainer component renders correctly with an event 1`] = `
         Invalid date
       </Text>
     </View>
-    <Text
-      accessible={true}
-      allowFontScaling={false}
-      disabled={false}
-      ellipsizeMode="tail"
+    <Image
+      source={1}
       style={
-        Array [
-          Object {
-            "color": "#FFFFFF",
-            "fontSize": 30,
-          },
-          Object {
-            "position": "absolute",
-            "right": 9,
-            "top": 9,
-          },
-          Object {
-            "fontFamily": "FontAwesome",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-        ]
+        Object {
+          "position": "absolute",
+          "right": 9,
+          "top": 9,
+        }
       }
-    >
-      
-    </Text>
+    />
   </View>
   <View
     style={
