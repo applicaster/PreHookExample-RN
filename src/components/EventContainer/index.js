@@ -20,10 +20,8 @@ const styles = StyleSheet.create({
 
 class EventContainer extends Component {
   renderMedia() {
-    const imageUrl = this.props.event.images.standard_resolution.url;
-    const width = this.props.event.images.standard_resolution.width;
-    const height = this.props.event.images.standard_resolution.height;
-    return <EventMedia imageUrl={imageUrl} width={width} height={height} />;
+    const { url, height, width } = this.props.event.images.standard_resolution;
+    return <EventMedia imageUrl={url} width={width} height={height} />;
   }
   
   renderHeader() {
