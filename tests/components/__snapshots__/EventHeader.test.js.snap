@@ -109,3 +109,120 @@ exports[`EventHeader component renders correctly 1`] = `
   </Text>
 </View>
 `;
+
+exports[`EventHeader component renders correctly when overlayed styles are applied 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "paddingHorizontal": 12,
+        "paddingTop": 12,
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 750,
+        "zIndex": 2,
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "url",
+      }
+    }
+    style={
+      Object {
+        "height": 40,
+        "width": 40,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "paddingLeft": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#7ED321",
+          "fontSize": 14,
+          "marginBottom": -2,
+        }
+      }
+    >
+      Carlos Pinto
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#DEDEDE",
+          "fontSize": 10,
+        }
+      }
+    >
+      @
+      cpinto7
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "bottom": 0,
+          "color": "#FFFFFF",
+          "fontSize": 12,
+          "left": 10,
+          "position": "absolute",
+        }
+      }
+    >
+      Invalid date
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={false}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 30,
+        },
+        Object {
+          "position": "absolute",
+          "right": 9,
+          "top": 9,
+        },
+        Object {
+          "fontFamily": "FontAwesome",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
