@@ -7,23 +7,37 @@ import {
 } from 'react-native';
 import EventHeader from '../EventHeader';
 import EventCaption from '../EventCaption';
+import EventMedia from '../EventMedia';
 
-const width = Dimensions.get('window').width;
+const screenWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   eventContainer: {
     borderBottomColor: '#696A6B',
-    borderBottomWidth: 1,
-    width,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    width: screenWidth,
   },
 });
 
 class EventContainer extends Component {
+  renderMedia() {
+    const { url, height, width } = this.props.event.images.standard_resolution;
+    return <EventMedia imageUrl={url} width={width} height={height} />;
+  }
+  
+  renderHeader() {
+    return <EventHeader event={this.props.event} overlay />;
+  }
+
+  renderCaption() {
+    return <EventCaption caption={this.props.event.caption} />;
+  }
+
   render() {
-    const event = this.props.event;
     return (
       <View style={styles.eventContainer}>
-        <EventHeader event={event} />
-        <EventCaption caption={event.caption} />
+        {this.renderHeader()}
+        {this.renderMedia()}
+        {this.renderCaption()}
       </View>
     );
   }

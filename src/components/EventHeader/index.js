@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   Image,
+  Dimensions,
   StyleSheet,
   Text,
   View,
@@ -9,11 +10,20 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import EventTimestamp from '../EventTimestamp';
 
+const width = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   eventHeader: {
     flexDirection: 'row',
     paddingHorizontal: 12,
     paddingTop: 12,
+  },
+  eventHeaderOverlay: {
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width,
+    zIndex: 2,
   },
   eventHeaderInfo: {
     paddingLeft: 10,
@@ -40,10 +50,10 @@ const styles = StyleSheet.create({
 
 class EventHeader extends Component {
   render() {
-    const event = this.props.event;
+    const { event, overlay } = this.props;
     const timestamp = parseInt(event.created_time);
     return (
-      <View style={styles.eventHeader}>
+      <View style={[styles.eventHeader, overlay && styles.eventHeaderOverlay]}>
         <Image
           style={styles.thumbnail}
           source={{ uri: event.user.profile_picture }}
@@ -61,6 +71,7 @@ class EventHeader extends Component {
 
 EventHeader.propTypes = {
   event: PropTypes.object,
+  overlay: PropTypes.bool,
 };
 
 export default EventHeader;

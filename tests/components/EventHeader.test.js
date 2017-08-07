@@ -28,4 +28,11 @@ describe('EventHeader', () => {
     ).toJSON();
     expect(html).toMatchSnapshot();
   });
+
+  test('component renders correctly when overlayed styles are applied', () => {
+    const html = renderer.create(
+      <EventHeader event={event()} overlay />
+    ).toJSON();
+    expect(html).toMatchSnapshot();
+  });
 });
