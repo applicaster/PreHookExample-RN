@@ -147,12 +147,18 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             </Text>
           </View>
           <Image
-            source={1}
+            source={
+              Object {
+                "uri": "InstagramIcon",
+              }
+            }
             style={
               Object {
+                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
+                "width": 30,
               }
             }
           />
@@ -300,12 +306,18 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             </Text>
           </View>
           <Image
-            source={1}
+            source={
+              Object {
+                "uri": "InstagramIcon",
+              }
+            }
             style={
               Object {
+                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
+                "width": 30,
               }
             }
           />
@@ -481,12 +493,18 @@ exports[`Feed component renders correctly with events 1`] = `
             </Text>
           </View>
           <Image
-            source={1}
+            source={
+              Object {
+                "uri": "InstagramIcon",
+              }
+            }
             style={
               Object {
+                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
+                "width": 30,
               }
             }
           />
@@ -634,12 +652,18 @@ exports[`Feed component renders correctly with events 1`] = `
             </Text>
           </View>
           <Image
-            source={1}
+            source={
+              Object {
+                "uri": "InstagramIcon",
+              }
+            }
             style={
               Object {
+                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
+                "width": 30,
               }
             }
           />

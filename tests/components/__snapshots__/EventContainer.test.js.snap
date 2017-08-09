@@ -98,12 +98,18 @@ exports[`EventContainer component renders correctly with an event 1`] = `
       </Text>
     </View>
     <Image
-      source={1}
+      source={
+        Object {
+          "uri": "InstagramIcon",
+        }
+      }
       style={
         Object {
+          "height": 30,
           "position": "absolute",
           "right": 9,
           "top": 9,
+          "width": 30,
         }
       }
     />

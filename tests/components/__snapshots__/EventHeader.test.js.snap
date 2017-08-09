@@ -82,12 +82,18 @@ exports[`EventHeader component renders correctly 1`] = `
     </Text>
   </View>
   <Image
-    source={1}
+    source={
+      Object {
+        "uri": "InstagramIcon",
+      }
+    }
     style={
       Object {
+        "height": 30,
         "position": "absolute",
         "right": 9,
         "top": 9,
+        "width": 30,
       }
     }
   />
@@ -183,12 +189,18 @@ exports[`EventHeader component renders correctly when overlayed styles are appli
     </Text>
   </View>
   <Image
-    source={1}
+    source={
+      Object {
+        "uri": "InstagramIcon",
+      }
+    }
     style={
       Object {
+        "height": 30,
         "position": "absolute",
         "right": 9,
         "top": 9,
+        "width": 30,
       }
     }
   />

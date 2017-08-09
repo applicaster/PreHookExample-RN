@@ -41,11 +41,15 @@ const styles = StyleSheet.create({
     fontSize: 10,
   },
   socialIcon: {
+    height: 30,
+    width: 30,
     right: 9,
     top: 9,
     position: 'absolute',
   },
 });
+
+const INSTAGRAM_ICON = 'InstagramIcon';
 
 class EventHeader extends Component {
   render() {
@@ -62,7 +66,7 @@ class EventHeader extends Component {
           <Text style={styles.userName}>@{event.user.username}</Text>
           <EventTimestamp timestamp={timestamp} />
         </View>
-        <Image style={styles.socialIcon} source={require('../../assets/images/instagram_icon.png')} />
+        <Image style={styles.socialIcon} source={{ uri: INSTAGRAM_ICON }} />
       </View>
     );
   }
