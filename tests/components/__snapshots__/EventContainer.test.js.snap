@@ -58,6 +58,7 @@ exports[`EventContainer component renders correctly with an event 1`] = `
           Object {
             "color": "#7ED321",
             "fontSize": 14,
+            "fontWeight": "600",
             "marginBottom": -2,
           }
         }
@@ -86,7 +87,7 @@ exports[`EventContainer component renders correctly with an event 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "bottom": 0,
+            "bottom": -2,
             "color": "#FFFFFF",
             "fontSize": 12,
             "left": 10,
@@ -144,7 +145,7 @@ exports[`EventContainer component renders correctly with an event 1`] = `
     <BVLinearGradient
       colors={
         Array [
-          4278190080,
+          3003121664,
           0,
         ]
       }
@@ -153,11 +154,16 @@ exports[`EventContainer component renders correctly with an event 1`] = `
       start={undefined}
       style={
         Object {
-          "height": 75,
-          "opacity": 0.8,
+          "height": 130,
         }
       }
     />
   </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  />
 </View>
 `;
