@@ -14,8 +14,7 @@ const styles = StyleSheet.create({
     width: screenWidth,
   },
   headerVisor: {
-    height: 75,
-    opacity: 0.80,
+    height: 130,
   },
 });
 
@@ -36,7 +35,7 @@ class EventMedia extends Component {
         style={ imageStyles }
         source={{ uri: imageUrl }}
       >
-        <LinearGradient style={ styles.headerVisor } colors={['#000000', 'transparent']} />
+        <LinearGradient style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />
       </ImageBackground>
     );
   }

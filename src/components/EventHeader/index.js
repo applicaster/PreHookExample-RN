@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     color: '#7ED321',
     fontSize: 14,
     marginBottom: -2,
+    fontWeight: '600',
   },
   userName: {
     color: '#DEDEDE',

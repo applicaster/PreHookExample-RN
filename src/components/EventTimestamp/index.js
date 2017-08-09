@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   timestamp: {
     color: '#FFFFFF',
     fontSize: 12,
-    bottom: 0,
+    bottom: -2,
     position: 'absolute',
     left: 10,
   },
