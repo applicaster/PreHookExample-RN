@@ -56,7 +56,7 @@ exports[`EventHeader component renders correctly 1`] = `
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#DEDEDE",
+          "color": "#FFFFFF",
           "fontSize": 10,
         }
       }
@@ -164,7 +164,7 @@ exports[`EventHeader component renders correctly when overlayed styles are appli
       ellipsizeMode="tail"
       style={
         Object {
-          "color": "#DEDEDE",
+          "color": "#FFFFFF",
           "fontSize": 10,
         }
       }
