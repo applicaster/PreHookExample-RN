@@ -121,7 +121,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#DEDEDE",
+                  "color": "#FFFFFF",
                   "fontSize": 10,
                 }
               }
@@ -286,7 +286,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#DEDEDE",
+                  "color": "#FFFFFF",
                   "fontSize": 10,
                 }
               }
@@ -479,7 +479,7 @@ exports[`Feed component renders correctly with events 1`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#DEDEDE",
+                  "color": "#FFFFFF",
                   "fontSize": 10,
                 }
               }
@@ -644,7 +644,7 @@ exports[`Feed component renders correctly with events 1`] = `
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#DEDEDE",
+                  "color": "#FFFFFF",
                   "fontSize": 10,
                 }
               }

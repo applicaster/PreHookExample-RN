@@ -72,7 +72,7 @@ exports[`EventContainer component renders correctly with an event 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#DEDEDE",
+            "color": "#FFFFFF",
             "fontSize": 10,
           }
         }
