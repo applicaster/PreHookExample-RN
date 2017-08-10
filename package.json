@@ -20,8 +20,11 @@
     "build:ios": "react-native bundle --platform ios --dev false --entry-file index.ios.js --bundle-output build/ios/index.ios.bundle",
     "build:android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output build/android/index.android.bundle --assets-dest build/android/assets/",
     "deploy": "npm run deploy:ios && npm run deploy:android",
-    "deploy:ios": "npm run build:ios && aws s3 sync build/ios s3://assets-production.applicaster.com/zapp/react-native-bundles/BUNDLENAME/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
-    "deploy:android": "npm run build:android && aws s3 sync build/android s3://assets-production.applicaster.com/zapp/react-native-bundles/BUNDLENAME/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
+    "stage": "npm run deploy-staging:ios && npm run deploy-staging:android",
+    "deploy-staging:ios": "npm run build:ios && aws s3 sync build/ios s3://assets-development.applicaster.com/zapp/react-native-bundles/Feed-RN/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "deploy-staging:android": "npm run build:android && aws s3 sync build/android s3://assets-development.applicaster.com/zapp/react-native-bundles/Feed-RN/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "deploy:ios": "npm run build:ios && aws s3 sync build/ios s3://assets-production.applicaster.com/zapp/react-native-bundles/Feed-RN/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "deploy:android": "npm run build:android && aws s3 sync build/android s3://assets-production.applicaster.com/zapp/react-native-bundles/Feed-RN/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
   },
   "author": "Applicaster | Miami Team",
   "license": "ISC",

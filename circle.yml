@@ -15,3 +15,6 @@ test:
 deploy:
   production:
     branch: master
+    commands:
+    - npm run stage
+    - npm run deploy
