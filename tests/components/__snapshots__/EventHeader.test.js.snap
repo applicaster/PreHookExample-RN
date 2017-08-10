@@ -81,32 +81,22 @@ exports[`EventHeader component renders correctly 1`] = `
       Invalid date
     </Text>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={false}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
-      Array [
-        Object {
-          "color": "#FFFFFF",
-          "fontSize": 30,
-        },
-        Object {
-          "position": "absolute",
-          "right": 9,
-          "top": 9,
-        },
-        Object {
-          "fontFamily": "FontAwesome",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-      ]
+  <Image
+    source={
+      Object {
+        "uri": "InstagramIcon",
+      }
     }
-  >
-    
-  </Text>
+    style={
+      Object {
+        "height": 30,
+        "position": "absolute",
+        "right": 9,
+        "top": 9,
+        "width": 30,
+      }
+    }
+  />
 </View>
 `;
 
@@ -198,31 +188,21 @@ exports[`EventHeader component renders correctly when overlayed styles are appli
       Invalid date
     </Text>
   </View>
-  <Text
-    accessible={true}
-    allowFontScaling={false}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
-      Array [
-        Object {
-          "color": "#FFFFFF",
-          "fontSize": 30,
-        },
-        Object {
-          "position": "absolute",
-          "right": 9,
-          "top": 9,
-        },
-        Object {
-          "fontFamily": "FontAwesome",
-          "fontStyle": "normal",
-          "fontWeight": "normal",
-        },
-      ]
+  <Image
+    source={
+      Object {
+        "uri": "InstagramIcon",
+      }
     }
-  >
-    
-  </Text>
+    style={
+      Object {
+        "height": 30,
+        "position": "absolute",
+        "right": 9,
+        "top": 9,
+        "width": 30,
+      }
+    }
+  />
 </View>
 `;

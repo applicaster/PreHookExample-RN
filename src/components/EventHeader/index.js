@@ -7,7 +7,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import EventTimestamp from '../EventTimestamp';
 
 const width = Dimensions.get('window').width;
@@ -42,11 +41,15 @@ const styles = StyleSheet.create({
     fontSize: 10,
   },
   socialIcon: {
+    height: 30,
+    width: 30,
     right: 9,
     top: 9,
     position: 'absolute',
   },
 });
+
+const INSTAGRAM_ICON = 'InstagramIcon';
 
 class EventHeader extends Component {
   render() {
@@ -63,7 +66,7 @@ class EventHeader extends Component {
           <Text style={styles.userName}>@{event.user.username}</Text>
           <EventTimestamp timestamp={timestamp} />
         </View>
-        <Icon style={styles.socialIcon} name="instagram" size={30} color="#FFFFFF" />
+        <Image style={styles.socialIcon} source={{ uri: INSTAGRAM_ICON }} />
       </View>
     );
   }
