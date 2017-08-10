@@ -11,7 +11,9 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 14,
     paddingHorizontal: 12,
-    paddingVertical: 17,
+    paddingTop: 17,
+    paddingBottom: 12,
+    lineHeight: 18,
   },
   highlight: {
     color: '#7ED321',
@@ -30,7 +32,7 @@ class EventCaption extends Component {
     ? <Text style={styles.eventCaption}>
       {this.highlightHashtagsAndUsers(this.props.caption.text)}
     </Text>
-    : null;
+    : <Text />;
   }
 }
 
