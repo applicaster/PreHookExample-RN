@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   userName: {
-    color: '#DEDEDE',
+    color: '#FFFFFF',
     fontSize: 10,
   },
   socialIcon: {
