@@ -106,12 +106,3 @@ exports[`EventCaption component renders correctly with no caption 1`] = `
   ellipsizeMode="tail"
 />
 `;
-
-exports[`EventCaption component renders correctly with no caption text 1`] = `
-<Text
-  accessible={true}
-  allowFontScaling={true}
-  disabled={false}
-  ellipsizeMode="tail"
-/>
-`;

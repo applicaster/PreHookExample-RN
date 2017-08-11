@@ -2,23 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import EventContainer from '../../src/components/EventContainer';
-
-const event = (id, text) => ({
-  id,
-  user: {
-    full_name: 'Carlos Pinto',
-    username: 'cpinto7',
-    profile_picture: 'url',
-  },
-  images: {
-    standard_resolution: {
-      url: 'url',
-    },
-    caption: {
-      text,
-    },
-  },
-});
+import { event } from './eventTestDataUtils';
 
 describe('EventContainer', () => {
   test('component renders correctly with an event', () => {
