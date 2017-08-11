@@ -26,8 +26,8 @@ class Feed extends Component {
   }
 
   componentWillMount() {
-    this.props.setAccountId('100');
-    this.props.setTimelineId('100');
+    this.props.setAccountId('500');
+    this.props.setTimelineId('500');
     this.props.setTimezone('3600');
     this.props.setEnvironment('production');
     this.props.fetchSocialEvents();

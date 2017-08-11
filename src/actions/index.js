@@ -12,7 +12,7 @@ export const SET_ENVIRONMENT = 'SET_ENVIRONMENT';
 
 /* ACTIONS */
 export const fetchSocialEvents = () => actionCreator(FETCH_SOCIAL_EVENTS_START);
-export const fetchSocialEventsDone = events => actionCreator(FETCH_SOCIAL_EVENTS_DONE, { events });
+export const fetchSocialEventsDone = events => actionCreator(FETCH_SOCIAL_EVENTS_DONE, events);
 export const fetchSocialEventsFailed = error => actionCreator(FETCH_SOCIAL_EVENTS_FAILED, { error });
 
 export const setAccountId = accountId => actionCreator(SET_ACCOUNT_ID, { accountId });

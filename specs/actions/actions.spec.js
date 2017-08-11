@@ -35,10 +35,10 @@ describe('actions', () => {
       });
 
       it('should pass events to payload', () => {
-        const action = fetchSocialEventsDone({ foo: 'bar' });
+        const action = fetchSocialEventsDone({ data: [1,2], meta: {}, links: {} });
 
-        expect(action.payload.events).to.exist;
-        expect(action.payload.events).to.deep.equal({ foo: 'bar' });
+        expect(action.payload.data).to.exist;
+        expect(action.payload.data).to.deep.equal([1,2]);
       });
     });
 

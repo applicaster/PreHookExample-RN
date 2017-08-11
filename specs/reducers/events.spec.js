@@ -21,13 +21,13 @@ describe('events reducer', () => {
 
   describe('fetchSocialEventsDone is dispatched', () => {
     it('should set loading to false', () => {
-      const newState = appReducer(initialState, fetchSocialEventsDone());
+      const newState = appReducer(initialState, fetchSocialEventsDone({ data: [], meta: {}, links: {} }));
 
       expect(newState.get('loading')).to.equal(false);
     });
 
     it('should set socialEvents', () => {
-      const newState = appReducer(initialState, fetchSocialEventsDone([1, 2]));
+      const newState = appReducer(initialState, fetchSocialEventsDone({ data: [1, 2], meta: {}, links: {} }));
 
       expect(newState.get('socialEvents')).to.deep.equal([1, 2]);
     });

@@ -18,7 +18,7 @@ describe('fetchSocialEventsEpic', () => {
   let store;
   let action$;
   beforeEach(() => {
-    axiosGetStub = sinon.stub(axios, 'get').resolves({ data: { foo: 'bar' } });
+    axiosGetStub = sinon.stub(axios, 'get').resolves({ data: { data: [1,2], meta: {}, links: {} } });
     store = mockStore({ app: Map({}) });
     action$ = ActionsObservable.of({ type: FETCH_SOCIAL_EVENTS_START });
   });
@@ -29,7 +29,7 @@ describe('fetchSocialEventsEpic', () => {
     const expectedOutputActions = [{
       type: FETCH_SOCIAL_EVENTS_DONE,
       meta: undefined,
-      payload: { events: { foo: 'bar' } },
+      payload: { data: [1,2], meta: {}, links: {} },
     }];
 
     fetchSocialEventsEpic(action$, store)

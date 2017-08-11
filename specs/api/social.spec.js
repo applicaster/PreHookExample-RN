@@ -17,7 +17,7 @@ describe('api', () => {
       it('should fetch with the correct url', () => {
         expect(axios.get).to.have.been.calledOnce;
         expect(axios.get).to.have.been.calledWith(
-          'http://assets-production.applicaster.com/social-media-aggregator//someAccountId/someTimelineId/instagram.json'
+          'http://assets-production.applicaster.com/social-media-aggregator/someAccountId/someTimelineId/feed.json'
         );
       });
 
