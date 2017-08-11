@@ -1,4 +1,4 @@
-export const event = (id) => ({
+export const event = (id, type = 'image') => ({
   id,
   user: {
     id: '220971565',
@@ -27,7 +27,7 @@ export const event = (id) => ({
   createdAt: 1501886235,
   caption: 'Low. Tarmac T2 , CasCam, SPC LCAs.\nThanks @azpinstalls for the work, parts, advice and setup.\n#brz #gt86 #ft86',
   likesCount: 30,
-  type: 'image',
+  type,
   commentsCount: 0,
   source: 'instagram',
 });

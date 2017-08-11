@@ -1,6 +1,193 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EventContainer component renders correctly with an event 1`] = `
+exports[`EventContainer component renders correctly with a text event 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomColor": "#696A6B",
+      "borderBottomWidth": 0.5,
+      "width": 750,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "paddingHorizontal": 12,
+          "paddingTop": 12,
+        },
+        false,
+      ]
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+        }
+      }
+      style={
+        Object {
+          "height": 40,
+          "width": 40,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "paddingLeft": 10,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#7ED321",
+            "fontSize": 14,
+            "fontWeight": "600",
+            "marginBottom": -2,
+          }
+        }
+      >
+        Test Name
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 10,
+          }
+        }
+      >
+        @
+        userName
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "bottom": -2,
+            "color": "#FFFFFF",
+            "fontSize": 12,
+            "left": 10,
+            "position": "absolute",
+          }
+        }
+      >
+        7 days ago
+      </Text>
+    </View>
+    <Image
+      source={
+        Object {
+          "uri": "InstagramIcon",
+        }
+      }
+      style={
+        Object {
+          "height": 30,
+          "position": "absolute",
+          "right": 9,
+          "top": 9,
+          "width": 30,
+        }
+      }
+    />
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#FFFFFF",
+        "fontSize": 14,
+        "lineHeight": 18,
+        "paddingBottom": 12,
+        "paddingHorizontal": 12,
+        "paddingTop": 17,
+      }
+    }
+  >
+    Low. Tarmac T2 , CasCam, SPC LCAs.
+    Thanks 
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#7ED321",
+        }
+      }
+    >
+      @azpinstalls
+    </Text>
+     for the work, parts, advice and setup.
+    
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#7ED321",
+        }
+      }
+    >
+      #brz
+    </Text>
+     
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#7ED321",
+        }
+      }
+    >
+      #gt86
+    </Text>
+     
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#7ED321",
+        }
+      }
+    >
+      #ft86
+    </Text>
+    
+  </Text>
+</View>
+`;
+
+exports[`EventContainer component renders correctly with an image event 1`] = `
 <View
   style={
     Object {
