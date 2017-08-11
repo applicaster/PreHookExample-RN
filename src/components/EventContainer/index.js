@@ -25,7 +25,17 @@ class EventContainer extends Component {
   }
   
   renderHeader() {
-    return <EventHeader event={this.props.event} overlay />;
+    const event = this.props.event;
+    const user = event.user;
+    
+    return (<EventHeader
+      avatarImageUrl={user.avatarImageUrl}
+      createdAt={event.createdAt}
+      name={user.name}
+      overlay
+      type={event.type}
+      userName={user.userName}
+    />);
   }
 
   renderCaption() {
