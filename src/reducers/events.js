@@ -22,7 +22,7 @@ export default (state = appInitialState, action = actionCreator()) => {
       return state.set('loading', false);
 
     case FETCH_SOCIAL_EVENTS_DONE:
-      const { data: events, meta, links } = payload;
+      const { data: events = [], meta, links } = payload;
       return state
         .set('loading', false)
         .set('socialEvents', events);
