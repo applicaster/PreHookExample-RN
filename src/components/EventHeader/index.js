@@ -54,18 +54,24 @@ const INSTAGRAM_ICON = 'InstagramIcon';
 
 class EventHeader extends Component {
   render() {
-    const { event, overlay } = this.props;
-    const timestamp = parseInt(event.created_time);
+    const {
+      avatarImageUrl,
+      createdAt,
+      name,
+      overlay,
+      type,
+      userName } = this.props;
+    
     return (
       <View style={[styles.eventHeader, overlay && styles.eventHeaderOverlay]}>
         <Image
           style={styles.thumbnail}
-          source={{ uri: event.user.profile_picture }}
+          source={{ uri: avatarImageUrl }}
         />
         <View style={styles.eventHeaderInfo}>
-          <Text style={styles.fullName}>{event.user.full_name}</Text>
-          <Text style={styles.userName}>@{event.user.username}</Text>
-          <EventTimestamp timestamp={timestamp} />
+          <Text style={styles.fullName}>{name}</Text>
+          <Text style={styles.userName}>@{userName}</Text>
+          <EventTimestamp timestamp={createdAt} />
         </View>
         <Image style={styles.socialIcon} source={{ uri: INSTAGRAM_ICON }} />
       </View>
@@ -74,8 +80,12 @@ class EventHeader extends Component {
 }
 
 EventHeader.propTypes = {
-  event: PropTypes.object,
+  avatarImageUrl: PropTypes.string,
+  createdAt: PropTypes.number,
+  name: PropTypes.string,
   overlay: PropTypes.bool,
+  type: PropTypes.string,
+  userName: PropTypes.string,
 };
 
 export default EventHeader;
