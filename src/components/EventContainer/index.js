@@ -33,7 +33,7 @@ class EventContainer extends Component {
       createdAt={event.createdAt}
       name={user.name}
       overlay
-      type={event.type}
+      source={event.source}
       userName={user.userName}
     />);
   }

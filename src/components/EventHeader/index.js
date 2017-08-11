@@ -59,7 +59,7 @@ class EventHeader extends Component {
       createdAt,
       name,
       overlay,
-      type,
+      source,
       userName } = this.props;
     
     return (
@@ -84,7 +84,7 @@ EventHeader.propTypes = {
   createdAt: PropTypes.number,
   name: PropTypes.string,
   overlay: PropTypes.bool,
-  type: PropTypes.string,
+  source: PropTypes.string,
   userName: PropTypes.string,
 };
 
