@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 
 class EventContainer extends Component {
   renderMedia() {
-    const type = this.props.event.type;
+    const { type } = this.props.event;
 
     if (type === 'image' || type === 'video' || type === 'gallery') {
       const { url, height, width } = this.props.event.images.standard_resolution;
@@ -31,8 +31,8 @@ class EventContainer extends Component {
   }
   
   renderHeader() {
-    const event = this.props.event;
-    const user = event.user;
+    const { event } = this.props;
+    const { user } = event;
     const overlayHeaderOnMedia = (event.type === 'image') || (event.type === 'video') || (event.type === 'gallery');
 
     return (<EventHeader
