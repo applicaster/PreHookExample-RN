@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
 
 const SocialIcon = ({ socialNetwork }) => {
   const socialNetworkToIconMapping = {
-    facebook: 'FacebookIcon',
-    instagram: 'InstagramIcon',
-    twitter: 'TwitterIcon',
+    facebook: 'facebook_icon',
+    instagram: 'instagram_icon',
+    twitter: 'twitter_icon',
   };
 
   return <Image style={styles.socialIcon} source={{ uri: socialNetworkToIconMapping[socialNetwork] }} />;

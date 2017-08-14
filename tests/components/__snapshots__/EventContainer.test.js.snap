@@ -116,7 +116,7 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
       <Image
         source={
           Object {
-            "uri": "InstagramIcon",
+            "uri": "instagram_icon",
           }
         }
         style={
@@ -330,7 +330,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
       <Image
         source={
           Object {
-            "uri": "InstagramIcon",
+            "uri": "instagram_icon",
           }
         }
         style={
