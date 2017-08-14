@@ -25,7 +25,14 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   eventHeaderInfo: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     paddingLeft: 10,
+    height: 40,
+    width: 220,
+  },
+  eventHeaderInfoWithoutUserName: {
+    justifyContent: 'center',
   },
   thumbnail: {
     height: 40,
@@ -50,8 +57,6 @@ const styles = StyleSheet.create({
   },
 });
 
-const INSTAGRAM_ICON = 'InstagramIcon';
-
 class EventHeader extends Component {
   renderSocialIcon() {
     const source = this.props.source;
@@ -64,25 +69,31 @@ class EventHeader extends Component {
     return <Image style={styles.socialIcon} source={{ uri: sourceToIconMapping[source] }} />;
   }
 
+  renderHeaderInfo() {
+    const { createdAt, name, userName } = this.props;
+    const userNameTextView = (userName) ? <Text style={styles.userName}>@{userName}</Text> : null;
+    return (
+      <View style={[styles.eventHeaderInfo, !userName && styles.eventHeaderInfoWithoutUserName]}>
+        <View style={styles.userInfoContainer}>
+          <Text style={styles.fullName}>{name}</Text>
+          {userNameTextView}
+        </View>
+        <View style={styles.timestampContainer}>
+          <EventTimestamp timestamp={createdAt} />
+        </View>
+      </View>
+    );
+  }
+
   render() {
-    const {
-      avatarImageUrl,
-      createdAt,
-      name,
-      overlay,
-      userName } = this.props;
-    
+    const { avatarImageUrl, overlay } = this.props;
     return (
       <View style={[styles.eventHeader, overlay && styles.eventHeaderOverlay]}>
         <Image
           style={styles.thumbnail}
           source={{ uri: avatarImageUrl }}
         />
-        <View style={styles.eventHeaderInfo}>
-          <Text style={styles.fullName}>{name}</Text>
-          <Text style={styles.userName}>@{userName}</Text>
-          <EventTimestamp timestamp={createdAt} />
-        </View>
+        {this.renderHeaderInfo()}
         {this.renderSocialIcon()}
       </View>
     );
