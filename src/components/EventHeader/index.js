@@ -2,84 +2,33 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   Image,
-  Dimensions,
-  Platform,
-  StyleSheet,
   Text,
   View,
 } from 'react-native';
 import EventTimestamp from '../EventTimestamp';
-
-const iOS = 'ios';
-const width = Dimensions.get('window').width;
-const styles = StyleSheet.create({
-  eventHeader: {
-    flexDirection: 'row',
-    paddingHorizontal: 12,
-    paddingTop: 12,
-  },
-  eventHeaderOverlay: {
-    backgroundColor: 'transparent',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width,
-    zIndex: 2,
-  },
-  eventHeaderInfo: {
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    paddingLeft: 10,
-    height: 43,
-    width: 220,
-  },
-  eventHeaderInfoWithoutUserName: {
-    justifyContent: 'center',
-  },
-  thumbnail: {
-    height: 40,
-    width: 40,
-  },
-  fullName: {
-    color: '#7ED321',
-    fontSize: 14,
-    marginTop: (Platform.OS === iOS) ? -3 : -4,
-    marginBottom: -2,
-    fontWeight: '600',
-  },
-  userName: {
-    color: '#FFFFFF',
-    fontSize: 10,
-  },
-  socialIcon: {
-    height: 30,
-    width: 30,
-    right: 9,
-    top: 9,
-    position: 'absolute',
-  },
-});
+import SocialIcon from '../SocialIcon';
+import { styles } from './styles';
 
 class EventHeader extends Component {
   renderSocialIcon() {
-    const source = this.props.source;
-    const sourceToIconMapping = {
-      facebook: 'FacebookIcon',
-      instagram: 'InstagramIcon',
-      twitter: 'TwitterIcon',
-    };
+    return (
+      <View style={styles.socialIconContainer}>
+        <SocialIcon style={styles.socialIconContainer} socialNetwork={this.props.source} />
+      </View>);
+  }
 
-    return <Image style={styles.socialIcon} source={{ uri: sourceToIconMapping[source] }} />;
+  renderUserName() {
+    const { userName } = this.props;
+    return (userName) ? <Text style={styles.userName}>@{userName}</Text> : null;
   }
 
   renderHeaderInfo() {
     const { createdAt, name, userName } = this.props;
-    const userNameTextView = (userName) ? <Text style={styles.userName}>@{userName}</Text> : null;
     return (
       <View style={[styles.eventHeaderInfo, !userName && styles.eventHeaderInfoWithoutUserName]}>
         <View style={styles.userInfoContainer}>
           <Text style={styles.fullName}>{name}</Text>
-          {userNameTextView}
+          {this.renderUserName()}
         </View>
         <View style={styles.timestampContainer}>
           <EventTimestamp timestamp={createdAt} />
@@ -88,14 +37,16 @@ class EventHeader extends Component {
     );
   }
 
+  renderAvatarImage() {
+    const { avatarImageUrl } = this.props;
+    return <Image style={styles.avatar} source={{ uri: avatarImageUrl }} />;
+  }
+
   render() {
-    const { avatarImageUrl, overlay } = this.props;
+    const { overlay } = this.props;
     return (
       <View style={[styles.eventHeader, overlay && styles.eventHeaderOverlay]}>
-        <Image
-          style={styles.thumbnail}
-          source={{ uri: avatarImageUrl }}
-        />
+        {this.renderAvatarImage()}
         {this.renderHeaderInfo()}
         {this.renderSocialIcon()}
       </View>

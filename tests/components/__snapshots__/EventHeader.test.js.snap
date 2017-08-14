@@ -93,22 +93,29 @@ exports[`EventHeader component renders correctly 1`] = `
       </Text>
     </View>
   </View>
-  <Image
-    source={
-      Object {
-        "uri": undefined,
-      }
-    }
+  <View
     style={
       Object {
-        "height": 30,
         "position": "absolute",
         "right": 9,
         "top": 9,
-        "width": 30,
       }
     }
-  />
+  >
+    <Image
+      source={
+        Object {
+          "uri": undefined,
+        }
+      }
+      style={
+        Object {
+          "height": 30,
+          "width": 30,
+        }
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -199,22 +206,29 @@ exports[`EventHeader component renders correctly for Facebook event 1`] = `
       </Text>
     </View>
   </View>
-  <Image
-    source={
-      Object {
-        "uri": undefined,
-      }
-    }
+  <View
     style={
       Object {
-        "height": 30,
         "position": "absolute",
         "right": 9,
         "top": 9,
-        "width": 30,
       }
     }
-  />
+  >
+    <Image
+      source={
+        Object {
+          "uri": undefined,
+        }
+      }
+      style={
+        Object {
+          "height": 30,
+          "width": 30,
+        }
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -318,22 +332,29 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
       </Text>
     </View>
   </View>
-  <Image
-    source={
-      Object {
-        "uri": undefined,
-      }
-    }
+  <View
     style={
       Object {
-        "height": 30,
         "position": "absolute",
         "right": 9,
         "top": 9,
-        "width": 30,
       }
     }
-  />
+  >
+    <Image
+      source={
+        Object {
+          "uri": undefined,
+        }
+      }
+      style={
+        Object {
+          "height": 30,
+          "width": 30,
+        }
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -437,22 +458,29 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
       </Text>
     </View>
   </View>
-  <Image
-    source={
-      Object {
-        "uri": undefined,
-      }
-    }
+  <View
     style={
       Object {
-        "height": 30,
         "position": "absolute",
         "right": 9,
         "top": 9,
-        "width": 30,
       }
     }
-  />
+  >
+    <Image
+      source={
+        Object {
+          "uri": undefined,
+        }
+      }
+      style={
+        Object {
+          "height": 30,
+          "width": 30,
+        }
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -556,21 +584,28 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
       </Text>
     </View>
   </View>
-  <Image
-    source={
-      Object {
-        "uri": undefined,
-      }
-    }
+  <View
     style={
       Object {
-        "height": 30,
         "position": "absolute",
         "right": 9,
         "top": 9,
-        "width": 30,
       }
     }
-  />
+  >
+    <Image
+      source={
+        Object {
+          "uri": undefined,
+        }
+      }
+      style={
+        Object {
+          "height": 30,
+          "width": 30,
+        }
+      }
+    />
+  </View>
 </View>
 `;

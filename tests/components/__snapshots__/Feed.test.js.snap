@@ -160,22 +160,29 @@ exports[`Feed component renders correctly while loading with events 1`] = `
               </Text>
             </View>
           </View>
-          <Image
-            source={
-              Object {
-                "uri": "InstagramIcon",
-              }
-            }
+          <View
             style={
               Object {
-                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
-                "width": 30,
               }
             }
-          />
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "InstagramIcon",
+                }
+              }
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={
@@ -408,22 +415,29 @@ exports[`Feed component renders correctly while loading with events 1`] = `
               </Text>
             </View>
           </View>
-          <Image
-            source={
-              Object {
-                "uri": "InstagramIcon",
-              }
-            }
+          <View
             style={
               Object {
-                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
-                "width": 30,
               }
             }
-          />
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "InstagramIcon",
+                }
+              }
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={
@@ -684,22 +698,29 @@ exports[`Feed component renders correctly with events 1`] = `
               </Text>
             </View>
           </View>
-          <Image
-            source={
-              Object {
-                "uri": "InstagramIcon",
-              }
-            }
+          <View
             style={
               Object {
-                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
-                "width": 30,
               }
             }
-          />
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "InstagramIcon",
+                }
+              }
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={
@@ -932,22 +953,29 @@ exports[`Feed component renders correctly with events 1`] = `
               </Text>
             </View>
           </View>
-          <Image
-            source={
-              Object {
-                "uri": "InstagramIcon",
-              }
-            }
+          <View
             style={
               Object {
-                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
-                "width": 30,
               }
             }
-          />
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "InstagramIcon",
+                }
+              }
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={
