@@ -172,7 +172,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "InstagramIcon",
+                  "uri": "instagram_icon",
                 }
               }
               style={
@@ -427,7 +427,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "InstagramIcon",
+                  "uri": "instagram_icon",
                 }
               }
               style={
@@ -710,7 +710,7 @@ exports[`Feed component renders correctly with events 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "InstagramIcon",
+                  "uri": "instagram_icon",
                 }
               }
               style={
@@ -965,7 +965,7 @@ exports[`Feed component renders correctly with events 1`] = `
             <Image
               source={
                 Object {
-                  "uri": "InstagramIcon",
+                  "uri": "instagram_icon",
                 }
               }
               style={
