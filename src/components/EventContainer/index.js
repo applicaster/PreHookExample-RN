@@ -31,8 +31,8 @@ class EventContainer extends Component {
   }
   
   renderHeader() {
-    const { source, type, user } = this.props.event;
-    const { avatarImageUrl, createdAt, name, userName } = user;
+    const { source, type, user, createdAt } = this.props.event;
+    const { avatarImageUrl, name, userName } = user;
     const overlayHeaderOnMedia = (type === 'image') || (type === 'video') || (type === 'gallery');
 
     return (<EventHeader
