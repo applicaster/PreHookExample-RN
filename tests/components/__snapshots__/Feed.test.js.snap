@@ -156,7 +156,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                   }
                 }
               >
-                August 4
+                Invalid date
               </Text>
             </View>
           </View>
@@ -411,7 +411,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                   }
                 }
               >
-                August 4
+                Invalid date
               </Text>
             </View>
           </View>
@@ -694,7 +694,7 @@ exports[`Feed component renders correctly with events 1`] = `
                   }
                 }
               >
-                August 4
+                Invalid date
               </Text>
             </View>
           </View>
@@ -949,7 +949,7 @@ exports[`Feed component renders correctly with events 1`] = `
                   }
                 }
               >
-                August 4
+                Invalid date
               </Text>
             </View>
           </View>

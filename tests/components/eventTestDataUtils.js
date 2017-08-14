@@ -7,17 +7,12 @@ export const event = (id, type = 'image', source = 'instagram', userName = 'appl
     userName,
   },
   images: {
-    thumbnail: {
-      width: 150,
-      height: 150,
-      url: 'https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c114.0.852.852/20590092_108583273161709_7296810043293302784_n.jpg',
-    },
-    low_resolution: {
+    high_resolution: {
       width: 320,
       height: 252,
       url: 'https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/20590092_108583273161709_7296810043293302784_n.jpg',
     },
-    standard_resolution: {
+    default: {
       width: 640,
       height: 504,
       url: 'https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg',

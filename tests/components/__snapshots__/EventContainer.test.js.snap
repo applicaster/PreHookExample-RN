@@ -100,7 +100,7 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
             }
           }
         >
-          August 4
+          Invalid date
         </Text>
       </View>
     </View>
@@ -314,7 +314,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
             }
           }
         >
-          August 4
+          Invalid date
         </Text>
       </View>
     </View>
