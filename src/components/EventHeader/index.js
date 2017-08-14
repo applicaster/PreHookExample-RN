@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import {
   Image,
   Dimensions,
+  Platform,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
 import EventTimestamp from '../EventTimestamp';
 
+const iOS = 'ios';
 const width = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   eventHeader: {
@@ -28,7 +30,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     paddingLeft: 10,
-    height: 40,
+    height: 43,
     width: 220,
   },
   eventHeaderInfoWithoutUserName: {
@@ -41,6 +43,7 @@ const styles = StyleSheet.create({
   fullName: {
     color: '#7ED321',
     fontSize: 14,
+    marginTop: (Platform.OS === iOS) ? -3 : -4,
     marginBottom: -2,
     fontWeight: '600',
   },
