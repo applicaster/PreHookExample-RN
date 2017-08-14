@@ -23,7 +23,7 @@ class EventContainer extends Component {
     const { type } = this.props.event;
 
     if (type === 'image' || type === 'video' || type === 'gallery') {
-      const { url, height, width } = this.props.event.images.standard_resolution;
+      const { url, height, width } = this.props.event.images.default;
       return <EventMedia imageUrl={url} width={width} height={height} />;
     }
 
@@ -31,17 +31,17 @@ class EventContainer extends Component {
   }
   
   renderHeader() {
-    const { event } = this.props;
-    const { user } = event;
-    const overlayHeaderOnMedia = (event.type === 'image') || (event.type === 'video') || (event.type === 'gallery');
+    const { source, type, user, createdAt } = this.props.event;
+    const { avatarImageUrl, name, userName } = user;
+    const overlayHeaderOnMedia = (type === 'image') || (type === 'video') || (type === 'gallery');
 
     return (<EventHeader
-      avatarImageUrl={user.avatarImageUrl}
-      createdAt={event.createdAt}
-      name={user.name}
+      avatarImageUrl={avatarImageUrl}
+      createdAt={createdAt}
+      name={name}
       overlay={overlayHeaderOnMedia}
-      source={event.source}
-      userName={user.userName}
+      source={source}
+      userName={userName}
     />);
   }
 
