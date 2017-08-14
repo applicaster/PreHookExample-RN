@@ -53,13 +53,23 @@ const styles = StyleSheet.create({
 const INSTAGRAM_ICON = 'InstagramIcon';
 
 class EventHeader extends Component {
+  renderSocialIcon() {
+    const source = this.props.source;
+    const sourceToIconMapping = {
+      facebook: 'FacebookIcon',
+      instagram: 'InstagramIcon',
+      twitter: 'TwitterIcon',
+    };
+
+    return <Image style={styles.socialIcon} source={{ uri: sourceToIconMapping[source] }} />;
+  }
+
   render() {
     const {
       avatarImageUrl,
       createdAt,
       name,
       overlay,
-      source,
       userName } = this.props;
     
     return (
@@ -73,7 +83,7 @@ class EventHeader extends Component {
           <Text style={styles.userName}>@{userName}</Text>
           <EventTimestamp timestamp={createdAt} />
         </View>
-        <Image style={styles.socialIcon} source={{ uri: INSTAGRAM_ICON }} />
+        {this.renderSocialIcon()}
       </View>
     );
   }
