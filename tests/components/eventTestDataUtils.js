@@ -1,11 +1,10 @@
-export const event = (id, type = 'image') => ({
+export const event = (id, type = 'image', source = 'instagram', userName = 'applicaster') => ({
   id,
   user: {
     id: '220971565',
     name: 'Test Name',
     avatarImageUrl: 'https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg',
-    userName: 'userName',
-    type: 'instagram',
+    userName,
   },
   images: {
     thumbnail: {
@@ -29,5 +28,5 @@ export const event = (id, type = 'image') => ({
   likesCount: 30,
   type,
   commentsCount: 0,
-  source: 'instagram',
+  source,
 });

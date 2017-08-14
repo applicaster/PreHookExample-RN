@@ -28,62 +28,419 @@ exports[`EventHeader component renders correctly 1`] = `
   />
   <View
     style={
-      Object {
-        "paddingLeft": 10,
-      }
+      Array [
+        Object {
+          "flexDirection": "column",
+          "height": 43,
+          "justifyContent": "space-between",
+          "paddingLeft": 10,
+          "width": 220,
+        },
+        false,
+      ]
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#7ED321",
-          "fontSize": 14,
-          "fontWeight": "600",
-          "marginBottom": -2,
-        }
-      }
-    />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#FFFFFF",
-          "fontSize": 10,
-        }
-      }
+    <View
+      style={undefined}
     >
-      @
-      userName
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "bottom": -2,
-          "color": "#FFFFFF",
-          "fontSize": 12,
-          "left": 10,
-          "position": "absolute",
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#7ED321",
+            "fontSize": 14,
+            "fontWeight": "600",
+            "marginBottom": -2,
+            "marginTop": -3,
+          }
         }
-      }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 10,
+          }
+        }
+      >
+        @
+        applicaster
+      </Text>
+    </View>
+    <View
+      style={undefined}
     >
-      7 days ago
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 12,
+          }
+        }
+      >
+        August 4
+      </Text>
+    </View>
   </View>
   <Image
     source={
       Object {
-        "uri": "InstagramIcon",
+        "uri": undefined,
+      }
+    }
+    style={
+      Object {
+        "height": 30,
+        "position": "absolute",
+        "right": 9,
+        "top": 9,
+        "width": 30,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`EventHeader component renders correctly for Facebook event 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "paddingHorizontal": 12,
+        "paddingTop": 12,
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 750,
+        "zIndex": 2,
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 40,
+        "width": 40,
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "column",
+          "height": 43,
+          "justifyContent": "space-between",
+          "paddingLeft": 10,
+          "width": 220,
+        },
+        Object {
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <View
+      style={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#7ED321",
+            "fontSize": 14,
+            "fontWeight": "600",
+            "marginBottom": -2,
+            "marginTop": -3,
+          }
+        }
+      />
+    </View>
+    <View
+      style={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 12,
+          }
+        }
+      >
+        August 4
+      </Text>
+    </View>
+  </View>
+  <Image
+    source={
+      Object {
+        "uri": undefined,
+      }
+    }
+    style={
+      Object {
+        "height": 30,
+        "position": "absolute",
+        "right": 9,
+        "top": 9,
+        "width": 30,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`EventHeader component renders correctly for Instagram event 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "paddingHorizontal": 12,
+        "paddingTop": 12,
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 750,
+        "zIndex": 2,
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 40,
+        "width": 40,
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "column",
+          "height": 43,
+          "justifyContent": "space-between",
+          "paddingLeft": 10,
+          "width": 220,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      style={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#7ED321",
+            "fontSize": 14,
+            "fontWeight": "600",
+            "marginBottom": -2,
+            "marginTop": -3,
+          }
+        }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 10,
+          }
+        }
+      >
+        @
+        applicaster
+      </Text>
+    </View>
+    <View
+      style={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 12,
+          }
+        }
+      >
+        August 4
+      </Text>
+    </View>
+  </View>
+  <Image
+    source={
+      Object {
+        "uri": undefined,
+      }
+    }
+    style={
+      Object {
+        "height": 30,
+        "position": "absolute",
+        "right": 9,
+        "top": 9,
+        "width": 30,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`EventHeader component renders correctly for Twitter event 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "paddingHorizontal": 12,
+        "paddingTop": 12,
+      },
+      Object {
+        "backgroundColor": "transparent",
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 750,
+        "zIndex": 2,
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 40,
+        "width": 40,
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "column",
+          "height": 43,
+          "justifyContent": "space-between",
+          "paddingLeft": 10,
+          "width": 220,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      style={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#7ED321",
+            "fontSize": 14,
+            "fontWeight": "600",
+            "marginBottom": -2,
+            "marginTop": -3,
+          }
+        }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 10,
+          }
+        }
+      >
+        @
+        applicaster
+      </Text>
+    </View>
+    <View
+      style={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 12,
+          }
+        }
+      >
+        August 4
+      </Text>
+    </View>
+  </View>
+  <Image
+    source={
+      Object {
+        "uri": undefined,
       }
     }
     style={
@@ -134,62 +491,75 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
   />
   <View
     style={
-      Object {
-        "paddingLeft": 10,
-      }
+      Array [
+        Object {
+          "flexDirection": "column",
+          "height": 43,
+          "justifyContent": "space-between",
+          "paddingLeft": 10,
+          "width": 220,
+        },
+        false,
+      ]
     }
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#7ED321",
-          "fontSize": 14,
-          "fontWeight": "600",
-          "marginBottom": -2,
-        }
-      }
-    />
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#FFFFFF",
-          "fontSize": 10,
-        }
-      }
+    <View
+      style={undefined}
     >
-      @
-      userName
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "bottom": -2,
-          "color": "#FFFFFF",
-          "fontSize": 12,
-          "left": 10,
-          "position": "absolute",
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#7ED321",
+            "fontSize": 14,
+            "fontWeight": "600",
+            "marginBottom": -2,
+            "marginTop": -3,
+          }
         }
-      }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 10,
+          }
+        }
+      >
+        @
+        applicaster
+      </Text>
+    </View>
+    <View
+      style={undefined}
     >
-      7 days ago
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 12,
+          }
+        }
+      >
+        August 4
+      </Text>
+    </View>
   </View>
   <Image
     source={
       Object {
-        "uri": "InstagramIcon",
+        "uri": undefined,
       }
     }
     style={
