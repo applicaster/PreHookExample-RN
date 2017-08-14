@@ -93,76 +93,96 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           />
           <View
             style={
-              Object {
-                "paddingLeft": 10,
-              }
+              Array [
+                Object {
+                  "flexDirection": "column",
+                  "height": 43,
+                  "justifyContent": "space-between",
+                  "paddingLeft": 10,
+                  "width": 220,
+                },
+                false,
+              ]
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#7ED321",
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "marginBottom": -2,
-                }
-              }
+            <View
+              style={undefined}
             >
-              Test Name
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 10,
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#7ED321",
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "marginBottom": -2,
+                    "marginTop": -3,
+                  }
                 }
-              }
-            >
-              @
-              userName
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "bottom": -2,
-                  "color": "#FFFFFF",
-                  "fontSize": 12,
-                  "left": 10,
-                  "position": "absolute",
+              >
+                Test Name
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 10,
+                  }
                 }
-              }
+              >
+                @
+                applicaster
+              </Text>
+            </View>
+            <View
+              style={undefined}
             >
-              7 days ago
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                August 4
+              </Text>
+            </View>
           </View>
-          <Image
-            source={
-              Object {
-                "uri": "InstagramIcon",
-              }
-            }
+          <View
             style={
               Object {
-                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
-                "width": 30,
               }
             }
-          />
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "InstagramIcon",
+                }
+              }
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={
@@ -328,76 +348,96 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           />
           <View
             style={
-              Object {
-                "paddingLeft": 10,
-              }
+              Array [
+                Object {
+                  "flexDirection": "column",
+                  "height": 43,
+                  "justifyContent": "space-between",
+                  "paddingLeft": 10,
+                  "width": 220,
+                },
+                false,
+              ]
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#7ED321",
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "marginBottom": -2,
-                }
-              }
+            <View
+              style={undefined}
             >
-              Test Name
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 10,
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#7ED321",
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "marginBottom": -2,
+                    "marginTop": -3,
+                  }
                 }
-              }
-            >
-              @
-              userName
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "bottom": -2,
-                  "color": "#FFFFFF",
-                  "fontSize": 12,
-                  "left": 10,
-                  "position": "absolute",
+              >
+                Test Name
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 10,
+                  }
                 }
-              }
+              >
+                @
+                applicaster
+              </Text>
+            </View>
+            <View
+              style={undefined}
             >
-              7 days ago
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                August 4
+              </Text>
+            </View>
           </View>
-          <Image
-            source={
-              Object {
-                "uri": "InstagramIcon",
-              }
-            }
+          <View
             style={
               Object {
-                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
-                "width": 30,
               }
             }
-          />
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "InstagramIcon",
+                }
+              }
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={
@@ -591,76 +631,96 @@ exports[`Feed component renders correctly with events 1`] = `
           />
           <View
             style={
-              Object {
-                "paddingLeft": 10,
-              }
+              Array [
+                Object {
+                  "flexDirection": "column",
+                  "height": 43,
+                  "justifyContent": "space-between",
+                  "paddingLeft": 10,
+                  "width": 220,
+                },
+                false,
+              ]
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#7ED321",
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "marginBottom": -2,
-                }
-              }
+            <View
+              style={undefined}
             >
-              Test Name
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 10,
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#7ED321",
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "marginBottom": -2,
+                    "marginTop": -3,
+                  }
                 }
-              }
-            >
-              @
-              userName
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "bottom": -2,
-                  "color": "#FFFFFF",
-                  "fontSize": 12,
-                  "left": 10,
-                  "position": "absolute",
+              >
+                Test Name
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 10,
+                  }
                 }
-              }
+              >
+                @
+                applicaster
+              </Text>
+            </View>
+            <View
+              style={undefined}
             >
-              7 days ago
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                August 4
+              </Text>
+            </View>
           </View>
-          <Image
-            source={
-              Object {
-                "uri": "InstagramIcon",
-              }
-            }
+          <View
             style={
               Object {
-                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
-                "width": 30,
               }
             }
-          />
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "InstagramIcon",
+                }
+              }
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={
@@ -826,76 +886,96 @@ exports[`Feed component renders correctly with events 1`] = `
           />
           <View
             style={
-              Object {
-                "paddingLeft": 10,
-              }
+              Array [
+                Object {
+                  "flexDirection": "column",
+                  "height": 43,
+                  "justifyContent": "space-between",
+                  "paddingLeft": 10,
+                  "width": 220,
+                },
+                false,
+              ]
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#7ED321",
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "marginBottom": -2,
-                }
-              }
+            <View
+              style={undefined}
             >
-              Test Name
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 10,
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#7ED321",
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "marginBottom": -2,
+                    "marginTop": -3,
+                  }
                 }
-              }
-            >
-              @
-              userName
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "bottom": -2,
-                  "color": "#FFFFFF",
-                  "fontSize": 12,
-                  "left": 10,
-                  "position": "absolute",
+              >
+                Test Name
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 10,
+                  }
                 }
-              }
+              >
+                @
+                applicaster
+              </Text>
+            </View>
+            <View
+              style={undefined}
             >
-              7 days ago
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                August 4
+              </Text>
+            </View>
           </View>
-          <Image
-            source={
-              Object {
-                "uri": "InstagramIcon",
-              }
-            }
+          <View
             style={
               Object {
-                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
-                "width": 30,
               }
             }
-          />
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "InstagramIcon",
+                }
+              }
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={

@@ -8,11 +8,8 @@ exports[`EventTimestamp component renders correctly for a timestamp over a year 
   ellipsizeMode="tail"
   style={
     Object {
-      "bottom": -2,
       "color": "#FFFFFF",
       "fontSize": 12,
-      "left": 10,
-      "position": "absolute",
     }
   }
 >
@@ -28,15 +25,12 @@ exports[`EventTimestamp component renders correctly for a timestamp within a wee
   ellipsizeMode="tail"
   style={
     Object {
-      "bottom": -2,
       "color": "#FFFFFF",
       "fontSize": 12,
-      "left": 10,
-      "position": "absolute",
     }
   }
 >
-  30 minutes ago
+  August 4
 </Text>
 `;
 
@@ -48,11 +42,8 @@ exports[`EventTimestamp component renders correctly for a timestamp within a yea
   ellipsizeMode="tail"
   style={
     Object {
-      "bottom": -2,
       "color": "#FFFFFF",
       "fontSize": 12,
-      "left": 10,
-      "position": "absolute",
     }
   }
 >
