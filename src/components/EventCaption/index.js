@@ -28,16 +28,16 @@ class EventCaption extends Component {
   }
   
   render() {
-    return (this.props.caption && this.props.caption.text)
+    return (this.props.caption)
     ? <Text style={styles.eventCaption}>
-      {this.highlightHashtagsAndUsers(this.props.caption.text)}
+      {this.highlightHashtagsAndUsers(this.props.caption)}
     </Text>
     : <Text />;
   }
 }
 
 EventCaption.propTypes = {
-  caption: PropTypes.object,
+  caption: PropTypes.string,
 };
 
 export default EventCaption;

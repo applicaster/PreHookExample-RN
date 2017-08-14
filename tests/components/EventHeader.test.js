@@ -2,36 +2,80 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import EventHeader from '../../src/components/EventHeader';
-
-const event = () => ({
-  id: 1,
-  user: {
-    full_name: 'Carlos Pinto',
-    username: 'cpinto7',
-    profile_picture: 'url',
-  },
-  timestamp: 1501876350,
-  images: {
-    standard_resolution: {
-      url: 'url',
-    },
-    caption: {
-      text: 'blah',
-    },
-  },
-});
+import { event } from './eventTestDataUtils';
 
 describe('EventHeader', () => {
   test('component renders correctly', () => {
+    const someEvent = event(1);
     const html = renderer.create(
-      <EventHeader event={event()} />
+      <EventHeader
+        avatarImageUrl={someEvent.user.avatarImageUrl}
+        createdAt={someEvent.createdAt}
+        name={someEvent.name}
+        overlay={false}
+        type={someEvent.type}
+        userName={someEvent.user.userName}
+      />
     ).toJSON();
     expect(html).toMatchSnapshot();
   });
 
-  test('component renders correctly when overlayed styles are applied', () => {
+  test('component renders correctly when overlayed', () => {
+    const someEvent = event(1);
     const html = renderer.create(
-      <EventHeader event={event()} overlay />
+      <EventHeader
+        avatarImageUrl={someEvent.user.avatarImageUrl}
+        createdAt={someEvent.createdAt}
+        name={someEvent.name}
+        overlay
+        type={someEvent.type}
+        userName={someEvent.user.userName}
+      />
+    ).toJSON();
+    expect(html).toMatchSnapshot();
+  });
+
+  test('component renders correctly for Instagram event', () => {
+    const someEvent = event(1, 'image', 'instagram', 'applicaster');
+    const html = renderer.create(
+      <EventHeader
+        avatarImageUrl={someEvent.user.avatarImageUrl}
+        createdAt={someEvent.createdAt}
+        name={someEvent.name}
+        overlay
+        type={someEvent.type}
+        userName={someEvent.user.userName}
+      />
+    ).toJSON();
+    expect(html).toMatchSnapshot();
+  });
+
+  test('component renders correctly for Twitter event', () => {
+    const someEvent = event(1, 'image', 'twitter', 'applicaster');
+    const html = renderer.create(
+      <EventHeader
+        avatarImageUrl={someEvent.user.avatarImageUrl}
+        createdAt={someEvent.createdAt}
+        name={someEvent.name}
+        overlay
+        type={someEvent.type}
+        userName={someEvent.user.userName}
+      />
+    ).toJSON();
+    expect(html).toMatchSnapshot();
+  });
+
+  test('component renders correctly for Facebook event', () => {
+    const someEvent = event(1, 'image', 'facebook', null);
+    const html = renderer.create(
+      <EventHeader
+        avatarImageUrl={someEvent.user.avatarImageUrl}
+        createdAt={someEvent.createdAt}
+        name={someEvent.name}
+        overlay
+        type={someEvent.type}
+        userName={someEvent.user.userName}
+      />
     ).toJSON();
     expect(html).toMatchSnapshot();
   });

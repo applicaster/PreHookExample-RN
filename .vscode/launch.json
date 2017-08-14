@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Debug Tests",
       "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
-      "args": ["${workspaceRoot}/test/setup.js", "--recursive", "${workspaceRoot}/test/*/*.spec.js", "--reporter", "spec", "--timeout", "120000", "--compilers", "js:babel-core/register"],
+      "args": ["${workspaceRoot}/specs/setup.js", "--recursive", "${workspaceRoot}/specs/*/*.spec.js", "--reporter", "spec", "--timeout", "120000", "--compilers", "js:babel-core/register"],
       "protocol": "inspector",
       "env": {
         "NODE_ENV": "test"

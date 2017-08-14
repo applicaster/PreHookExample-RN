@@ -2,21 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Feed from '../../src/components/Feed/Feed';
-
-const event = (id) => ({
-  id,
-  user: {
-    full_name: 'Carlos Pinto',
-    username: 'cpinto7',
-    profile_picture: 'url',
-  },
-  images: {
-    standard_resolution: {
-      url: 'url',
-    },
-    caption: 'caption',
-  },
-});
+import { event } from './eventTestDataUtils';
 
 describe('Feed', () => {
   test('component renders correctly without events', () => {
@@ -57,7 +43,7 @@ describe('Feed', () => {
         setTimelineId={() => {}}
         setTimezone={() => {}}
         setEnvironment={() => {}}
-        loading={true}
+        loading
         socialEvents={[]}
       />
     ).toJSON();
@@ -72,7 +58,7 @@ describe('Feed', () => {
         setTimelineId={() => {}}
         setTimezone={() => {}}
         setEnvironment={() => {}}
-        loading={true}
+        loading
         socialEvents={[event(1), event(2)]}
       />
     ).toJSON();

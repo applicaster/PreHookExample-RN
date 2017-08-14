@@ -81,7 +81,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           <Image
             source={
               Object {
-                "uri": "url",
+                "uri": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
               }
             }
             style={
@@ -93,81 +93,101 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           />
           <View
             style={
-              Object {
-                "paddingLeft": 10,
-              }
+              Array [
+                Object {
+                  "flexDirection": "column",
+                  "height": 43,
+                  "justifyContent": "space-between",
+                  "paddingLeft": 10,
+                  "width": 220,
+                },
+                false,
+              ]
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#7ED321",
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "marginBottom": -2,
-                }
-              }
+            <View
+              style={undefined}
             >
-              Carlos Pinto
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 10,
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#7ED321",
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "marginBottom": -2,
+                    "marginTop": -3,
+                  }
                 }
-              }
-            >
-              @
-              cpinto7
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "bottom": -2,
-                  "color": "#FFFFFF",
-                  "fontSize": 12,
-                  "left": 10,
-                  "position": "absolute",
+              >
+                Test Name
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 10,
+                  }
                 }
-              }
+              >
+                @
+                applicaster
+              </Text>
+            </View>
+            <View
+              style={undefined}
             >
-              Invalid date
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                August 4
+              </Text>
+            </View>
           </View>
-          <Image
-            source={
-              Object {
-                "uri": "InstagramIcon",
-              }
-            }
+          <View
             style={
               Object {
-                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
-                "width": 30,
               }
             }
-          />
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "InstagramIcon",
+                }
+              }
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={
             Object {
-              "height": 750,
+              "height": 590.625,
               "width": 750,
             }
           }
@@ -175,7 +195,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           <Image
             source={
               Object {
-                "uri": "url",
+                "uri": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
               }
             }
             style={
@@ -213,7 +233,77 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           allowFontScaling={true}
           disabled={false}
           ellipsizeMode="tail"
-        />
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 14,
+              "lineHeight": 18,
+              "paddingBottom": 12,
+              "paddingHorizontal": 12,
+              "paddingTop": 17,
+            }
+          }
+        >
+          Low. Tarmac T2 , CasCam, SPC LCAs.
+          Thanks 
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            @azpinstalls
+          </Text>
+           for the work, parts, advice and setup.
+          
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            #brz
+          </Text>
+           
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            #gt86
+          </Text>
+           
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            #ft86
+          </Text>
+          
+        </Text>
       </View>
       <View
         style={
@@ -246,7 +336,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           <Image
             source={
               Object {
-                "uri": "url",
+                "uri": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
               }
             }
             style={
@@ -258,81 +348,101 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           />
           <View
             style={
-              Object {
-                "paddingLeft": 10,
-              }
+              Array [
+                Object {
+                  "flexDirection": "column",
+                  "height": 43,
+                  "justifyContent": "space-between",
+                  "paddingLeft": 10,
+                  "width": 220,
+                },
+                false,
+              ]
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#7ED321",
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "marginBottom": -2,
-                }
-              }
+            <View
+              style={undefined}
             >
-              Carlos Pinto
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 10,
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#7ED321",
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "marginBottom": -2,
+                    "marginTop": -3,
+                  }
                 }
-              }
-            >
-              @
-              cpinto7
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "bottom": -2,
-                  "color": "#FFFFFF",
-                  "fontSize": 12,
-                  "left": 10,
-                  "position": "absolute",
+              >
+                Test Name
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 10,
+                  }
                 }
-              }
+              >
+                @
+                applicaster
+              </Text>
+            </View>
+            <View
+              style={undefined}
             >
-              Invalid date
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                August 4
+              </Text>
+            </View>
           </View>
-          <Image
-            source={
-              Object {
-                "uri": "InstagramIcon",
-              }
-            }
+          <View
             style={
               Object {
-                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
-                "width": 30,
               }
             }
-          />
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "InstagramIcon",
+                }
+              }
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={
             Object {
-              "height": 750,
+              "height": 590.625,
               "width": 750,
             }
           }
@@ -340,7 +450,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           <Image
             source={
               Object {
-                "uri": "url",
+                "uri": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
               }
             }
             style={
@@ -378,7 +488,77 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           allowFontScaling={true}
           disabled={false}
           ellipsizeMode="tail"
-        />
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 14,
+              "lineHeight": 18,
+              "paddingBottom": 12,
+              "paddingHorizontal": 12,
+              "paddingTop": 17,
+            }
+          }
+        >
+          Low. Tarmac T2 , CasCam, SPC LCAs.
+          Thanks 
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            @azpinstalls
+          </Text>
+           for the work, parts, advice and setup.
+          
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            #brz
+          </Text>
+           
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            #gt86
+          </Text>
+           
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            #ft86
+          </Text>
+          
+        </Text>
       </View>
     </View>
   </RCTScrollView>
@@ -439,7 +619,7 @@ exports[`Feed component renders correctly with events 1`] = `
           <Image
             source={
               Object {
-                "uri": "url",
+                "uri": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
               }
             }
             style={
@@ -451,81 +631,101 @@ exports[`Feed component renders correctly with events 1`] = `
           />
           <View
             style={
-              Object {
-                "paddingLeft": 10,
-              }
+              Array [
+                Object {
+                  "flexDirection": "column",
+                  "height": 43,
+                  "justifyContent": "space-between",
+                  "paddingLeft": 10,
+                  "width": 220,
+                },
+                false,
+              ]
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#7ED321",
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "marginBottom": -2,
-                }
-              }
+            <View
+              style={undefined}
             >
-              Carlos Pinto
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 10,
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#7ED321",
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "marginBottom": -2,
+                    "marginTop": -3,
+                  }
                 }
-              }
-            >
-              @
-              cpinto7
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "bottom": -2,
-                  "color": "#FFFFFF",
-                  "fontSize": 12,
-                  "left": 10,
-                  "position": "absolute",
+              >
+                Test Name
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 10,
+                  }
                 }
-              }
+              >
+                @
+                applicaster
+              </Text>
+            </View>
+            <View
+              style={undefined}
             >
-              Invalid date
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                August 4
+              </Text>
+            </View>
           </View>
-          <Image
-            source={
-              Object {
-                "uri": "InstagramIcon",
-              }
-            }
+          <View
             style={
               Object {
-                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
-                "width": 30,
               }
             }
-          />
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "InstagramIcon",
+                }
+              }
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={
             Object {
-              "height": 750,
+              "height": 590.625,
               "width": 750,
             }
           }
@@ -533,7 +733,7 @@ exports[`Feed component renders correctly with events 1`] = `
           <Image
             source={
               Object {
-                "uri": "url",
+                "uri": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
               }
             }
             style={
@@ -571,7 +771,77 @@ exports[`Feed component renders correctly with events 1`] = `
           allowFontScaling={true}
           disabled={false}
           ellipsizeMode="tail"
-        />
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 14,
+              "lineHeight": 18,
+              "paddingBottom": 12,
+              "paddingHorizontal": 12,
+              "paddingTop": 17,
+            }
+          }
+        >
+          Low. Tarmac T2 , CasCam, SPC LCAs.
+          Thanks 
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            @azpinstalls
+          </Text>
+           for the work, parts, advice and setup.
+          
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            #brz
+          </Text>
+           
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            #gt86
+          </Text>
+           
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            #ft86
+          </Text>
+          
+        </Text>
       </View>
       <View
         style={
@@ -604,7 +874,7 @@ exports[`Feed component renders correctly with events 1`] = `
           <Image
             source={
               Object {
-                "uri": "url",
+                "uri": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
               }
             }
             style={
@@ -616,81 +886,101 @@ exports[`Feed component renders correctly with events 1`] = `
           />
           <View
             style={
-              Object {
-                "paddingLeft": 10,
-              }
+              Array [
+                Object {
+                  "flexDirection": "column",
+                  "height": 43,
+                  "justifyContent": "space-between",
+                  "paddingLeft": 10,
+                  "width": 220,
+                },
+                false,
+              ]
             }
           >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#7ED321",
-                  "fontSize": 14,
-                  "fontWeight": "600",
-                  "marginBottom": -2,
-                }
-              }
+            <View
+              style={undefined}
             >
-              Carlos Pinto
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#FFFFFF",
-                  "fontSize": 10,
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#7ED321",
+                    "fontSize": 14,
+                    "fontWeight": "600",
+                    "marginBottom": -2,
+                    "marginTop": -3,
+                  }
                 }
-              }
-            >
-              @
-              cpinto7
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              disabled={false}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "bottom": -2,
-                  "color": "#FFFFFF",
-                  "fontSize": 12,
-                  "left": 10,
-                  "position": "absolute",
+              >
+                Test Name
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 10,
+                  }
                 }
-              }
+              >
+                @
+                applicaster
+              </Text>
+            </View>
+            <View
+              style={undefined}
             >
-              Invalid date
-            </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                disabled={false}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#FFFFFF",
+                    "fontSize": 12,
+                  }
+                }
+              >
+                August 4
+              </Text>
+            </View>
           </View>
-          <Image
-            source={
-              Object {
-                "uri": "InstagramIcon",
-              }
-            }
+          <View
             style={
               Object {
-                "height": 30,
                 "position": "absolute",
                 "right": 9,
                 "top": 9,
-                "width": 30,
               }
             }
-          />
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "InstagramIcon",
+                }
+              }
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
         </View>
         <View
           style={
             Object {
-              "height": 750,
+              "height": 590.625,
               "width": 750,
             }
           }
@@ -698,7 +988,7 @@ exports[`Feed component renders correctly with events 1`] = `
           <Image
             source={
               Object {
-                "uri": "url",
+                "uri": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
               }
             }
             style={
@@ -736,7 +1026,77 @@ exports[`Feed component renders correctly with events 1`] = `
           allowFontScaling={true}
           disabled={false}
           ellipsizeMode="tail"
-        />
+          style={
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 14,
+              "lineHeight": 18,
+              "paddingBottom": 12,
+              "paddingHorizontal": 12,
+              "paddingTop": 17,
+            }
+          }
+        >
+          Low. Tarmac T2 , CasCam, SPC LCAs.
+          Thanks 
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            @azpinstalls
+          </Text>
+           for the work, parts, advice and setup.
+          
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            #brz
+          </Text>
+           
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            #gt86
+          </Text>
+           
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#7ED321",
+              }
+            }
+          >
+            #ft86
+          </Text>
+          
+        </Text>
       </View>
     </View>
   </RCTScrollView>
