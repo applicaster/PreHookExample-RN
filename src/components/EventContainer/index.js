@@ -5,6 +5,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
+import hexToRgb from 'hex-to-rgb';
 import EventHeader from '../EventHeader';
 import EventCaption from '../EventCaption';
 import EventMedia from '../EventMedia';
@@ -19,9 +20,14 @@ const styles = StyleSheet.create({
 });
 
 class EventContainer extends Component {
+  getEventSeparatorStyles() {
+    const rgb = hexToRgb(this.context.textColor || '#FFFFFF');
+    const rgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.5)`;
+    return { borderBottomColor: rgbaColor };
+  }
+  
   renderMedia() {
     const { type } = this.props.event;
-
     if (type === 'image' || type === 'video' || type === 'gallery') {
       const { url, height, width } = this.props.event.images.default;
       return <EventMedia imageUrl={url} width={width} height={height} />;
@@ -50,8 +56,9 @@ class EventContainer extends Component {
   }
 
   render() {
+    const containerSeparatorColor = this.getEventSeparatorStyles();
     return (
-      <View style={styles.eventContainer}>
+      <View style={[styles.eventContainer, containerSeparatorColor]}>
         {this.renderHeader()}
         {this.renderMedia()}
         {this.renderCaption()}
@@ -62,6 +69,10 @@ class EventContainer extends Component {
 
 EventContainer.propTypes = {
   event: PropTypes.object,
+};
+
+EventContainer.contextTypes = {
+  textColor: PropTypes.string,
 };
 
 export default EventContainer;
