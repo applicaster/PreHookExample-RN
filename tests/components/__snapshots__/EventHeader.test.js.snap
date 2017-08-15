@@ -49,13 +49,18 @@ exports[`EventHeader component renders correctly 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#7ED321",
-            "fontSize": 14,
-            "fontWeight": "600",
-            "marginBottom": -2,
-            "marginTop": -3,
-          }
+          Array [
+            Object {
+              "color": "#7ED321",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "marginBottom": -2,
+              "marginTop": -3,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       />
       <Text
@@ -64,10 +69,15 @@ exports[`EventHeader component renders correctly 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#FFFFFF",
-            "fontSize": 10,
-          }
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 10,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       >
         @
@@ -83,10 +93,15 @@ exports[`EventHeader component renders correctly 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#FFFFFF",
-            "fontSize": 12,
-          }
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 12,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       >
         August 4
@@ -109,10 +124,15 @@ exports[`EventHeader component renders correctly 1`] = `
         }
       }
       style={
-        Object {
-          "height": 30,
-          "width": 30,
-        }
+        Array [
+          Object {
+            "height": 30,
+            "width": 30,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
       }
     />
   </View>
@@ -177,13 +197,18 @@ exports[`EventHeader component renders correctly for Facebook event 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#7ED321",
-            "fontSize": 14,
-            "fontWeight": "600",
-            "marginBottom": -2,
-            "marginTop": -3,
-          }
+          Array [
+            Object {
+              "color": "#7ED321",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "marginBottom": -2,
+              "marginTop": -3,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       />
     </View>
@@ -196,10 +221,15 @@ exports[`EventHeader component renders correctly for Facebook event 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#FFFFFF",
-            "fontSize": 12,
-          }
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 12,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       >
         August 4
@@ -222,10 +252,15 @@ exports[`EventHeader component renders correctly for Facebook event 1`] = `
         }
       }
       style={
-        Object {
-          "height": 30,
-          "width": 30,
-        }
+        Array [
+          Object {
+            "height": 30,
+            "width": 30,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
       }
     />
   </View>
@@ -288,13 +323,18 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#7ED321",
-            "fontSize": 14,
-            "fontWeight": "600",
-            "marginBottom": -2,
-            "marginTop": -3,
-          }
+          Array [
+            Object {
+              "color": "#7ED321",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "marginBottom": -2,
+              "marginTop": -3,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       />
       <Text
@@ -303,10 +343,15 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#FFFFFF",
-            "fontSize": 10,
-          }
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 10,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       >
         @
@@ -322,10 +367,15 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#FFFFFF",
-            "fontSize": 12,
-          }
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 12,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       >
         August 4
@@ -348,10 +398,15 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
         }
       }
       style={
-        Object {
-          "height": 30,
-          "width": 30,
-        }
+        Array [
+          Object {
+            "height": 30,
+            "width": 30,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
       }
     />
   </View>
@@ -414,13 +469,18 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#7ED321",
-            "fontSize": 14,
-            "fontWeight": "600",
-            "marginBottom": -2,
-            "marginTop": -3,
-          }
+          Array [
+            Object {
+              "color": "#7ED321",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "marginBottom": -2,
+              "marginTop": -3,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       />
       <Text
@@ -429,10 +489,15 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#FFFFFF",
-            "fontSize": 10,
-          }
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 10,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       >
         @
@@ -448,10 +513,15 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#FFFFFF",
-            "fontSize": 12,
-          }
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 12,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       >
         August 4
@@ -474,10 +544,15 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
         }
       }
       style={
-        Object {
-          "height": 30,
-          "width": 30,
-        }
+        Array [
+          Object {
+            "height": 30,
+            "width": 30,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
       }
     />
   </View>
@@ -540,13 +615,18 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#7ED321",
-            "fontSize": 14,
-            "fontWeight": "600",
-            "marginBottom": -2,
-            "marginTop": -3,
-          }
+          Array [
+            Object {
+              "color": "#7ED321",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "marginBottom": -2,
+              "marginTop": -3,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       />
       <Text
@@ -555,10 +635,15 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#FFFFFF",
-            "fontSize": 10,
-          }
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 10,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       >
         @
@@ -574,10 +659,15 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
         disabled={false}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "#FFFFFF",
-            "fontSize": 12,
-          }
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 12,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
         }
       >
         August 4
@@ -600,10 +690,15 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
         }
       }
       style={
-        Object {
-          "height": 30,
-          "width": 30,
-        }
+        Array [
+          Object {
+            "height": 30,
+            "width": 30,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
       }
     />
   </View>

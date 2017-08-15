@@ -11,27 +11,46 @@ import { styles } from './styles';
 
 class EventHeader extends Component {
   renderSocialIcon() {
+    const { overlay: iconOverImage } = this.props;
+    const tintColorStyle = { tintColor: (iconOverImage) ? this.context.secondaryColor : this.context.textColor };
+    
     return (
       <View style={styles.socialIconContainer}>
-        <SocialIcon style={styles.socialIconContainer} socialNetwork={this.props.source} />
+        <SocialIcon socialNetwork={this.props.source} tintColorStyle={tintColorStyle} />
       </View>);
   }
 
   renderUserName() {
-    const { userName } = this.props;
-    return (userName) ? <Text style={styles.userName}>@{userName}</Text> : null;
+    const { userName, overlay: textOverImage } = this.props;
+    const colorStyle = { color: (textOverImage) ? this.context.secondaryColor : this.context.textColor };
+    
+    return (userName) ? <Text style={[styles.userName, colorStyle]}>@{userName}</Text> : null;
+  }
+
+  renderName() {
+    const { name, overlay: textOverImage } = this.props;
+    const colorStyle = { color: (textOverImage) ? this.context.secondaryTextColor : this.context.mainColor };
+
+    return <Text style={[styles.name, colorStyle]}>{name}</Text>;
+  }
+
+  renderTimestamp() {
+    const { createdAt, overlay: textOverImage } = this.props;
+    const colorStyle = { color: (textOverImage) ? this.context.secondaryColor : this.context.textColor };
+
+    return <EventTimestamp timestamp={createdAt} colorStyle={colorStyle} />;
   }
 
   renderHeaderInfo() {
-    const { createdAt, name, userName } = this.props;
+    const { userName } = this.props;
     return (
       <View style={[styles.eventHeaderInfo, !userName && styles.eventHeaderInfoWithoutUserName]}>
         <View style={styles.userInfoContainer}>
-          <Text style={styles.fullName}>{name}</Text>
+          {this.renderName()}
           {this.renderUserName()}
         </View>
         <View style={styles.timestampContainer}>
-          <EventTimestamp timestamp={createdAt} />
+          {this.renderTimestamp()}
         </View>
       </View>
     );
@@ -61,6 +80,13 @@ EventHeader.propTypes = {
   overlay: PropTypes.bool,
   source: PropTypes.string,
   userName: PropTypes.string,
+};
+
+EventHeader.contextTypes = {
+  mainColor: PropTypes.string,
+  secondaryColor: PropTypes.string,
+  textColor: PropTypes.string,
+  secondaryTextColor: PropTypes.string,
 };
 
 export default EventHeader;
