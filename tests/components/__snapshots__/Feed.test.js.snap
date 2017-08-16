@@ -242,10 +242,6 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                   "right": 0,
                   "top": 0,
                 },
-                Object {
-                  "height": 590.625,
-                  "width": 750,
-                },
                 undefined,
               ]
             }
@@ -637,10 +633,6 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                   "position": "absolute",
                   "right": 0,
                   "top": 0,
-                },
-                Object {
-                  "height": 590.625,
-                  "width": 750,
                 },
                 undefined,
               ]
@@ -1067,10 +1059,6 @@ exports[`Feed component renders correctly with events 1`] = `
                   "right": 0,
                   "top": 0,
                 },
-                Object {
-                  "height": 590.625,
-                  "width": 750,
-                },
                 undefined,
               ]
             }
@@ -1462,10 +1450,6 @@ exports[`Feed component renders correctly with events 1`] = `
                   "position": "absolute",
                   "right": 0,
                   "top": 0,
-                },
-                Object {
-                  "height": 590.625,
-                  "width": 750,
                 },
                 undefined,
               ]
