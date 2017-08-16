@@ -10,20 +10,25 @@ const styles = StyleSheet.create({
     height: 30,
     width: 30,
   },
+  
 });
-
-const SocialIcon = ({ socialNetwork }) => {
+const SocialIcon = ({ socialNetwork, tintColorStyle }) => {
   const socialNetworkToIconMapping = {
     facebook: 'facebook_icon',
     instagram: 'instagram_icon',
     twitter: 'twitter_icon',
   };
 
-  return <Image style={styles.socialIcon} source={{ uri: socialNetworkToIconMapping[socialNetwork] }} />;
+  return (
+    <Image
+      style={[styles.socialIcon, tintColorStyle]}
+      source={{ uri: socialNetworkToIconMapping[socialNetwork] }}
+    />);
 };
 
 SocialIcon.propTypes = {
   socialNetwork: PropTypes.string,
+  tintColorStyle: PropTypes.object,
 };
 
 export default SocialIcon;

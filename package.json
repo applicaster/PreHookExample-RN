@@ -31,6 +31,7 @@
   "dependencies": {
     "applicaster-utils": "^1.0.1",
     "axios": "^0.15.3",
+    "hex-to-rgb": "^1.0.1",
     "immutable": "^3.8.1",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",

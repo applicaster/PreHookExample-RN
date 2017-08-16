@@ -3,14 +3,19 @@
 exports[`Feed component renders correctly while loading 1`] = `
 <View
   style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#323232",
-      "flex": 1,
-      "flexDirection": "column",
-      "justifyContent": "center",
-      "paddingTop": 20,
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "paddingTop": 20,
+      },
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
   }
 >
   <RCTScrollView
@@ -30,14 +35,19 @@ exports[`Feed component renders correctly while loading 1`] = `
 exports[`Feed component renders correctly while loading with events 1`] = `
 <View
   style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#323232",
-      "flex": 1,
-      "flexDirection": "column",
-      "justifyContent": "center",
-      "paddingTop": 20,
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "paddingTop": 20,
+      },
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
   }
 >
   <RCTScrollView
@@ -52,11 +62,16 @@ exports[`Feed component renders correctly while loading with events 1`] = `
     <View>
       <View
         style={
-          Object {
-            "borderBottomColor": "#696A6B",
-            "borderBottomWidth": 0.5,
-            "width": 750,
-          }
+          Array [
+            Object {
+              "borderBottomColor": "#696A6B",
+              "borderBottomWidth": 0.5,
+              "width": 750,
+            },
+            Object {
+              "borderBottomColor": "rgba(255,255,255, 0.5)",
+            },
+          ]
         }
       >
         <View
@@ -114,13 +129,18 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 disabled={false}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "#7ED321",
-                    "fontSize": 14,
-                    "fontWeight": "600",
-                    "marginBottom": -2,
-                    "marginTop": -3,
-                  }
+                  Array [
+                    Object {
+                      "color": "#7ED321",
+                      "fontSize": 14,
+                      "fontWeight": "600",
+                      "marginBottom": -2,
+                      "marginTop": -3,
+                    },
+                    Object {
+                      "color": undefined,
+                    },
+                  ]
                 }
               >
                 Test Name
@@ -131,10 +151,15 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 disabled={false}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 10,
-                  }
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 10,
+                    },
+                    Object {
+                      "color": undefined,
+                    },
+                  ]
                 }
               >
                 @
@@ -150,10 +175,15 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 disabled={false}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 12,
-                  }
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 12,
+                    },
+                    Object {
+                      "color": undefined,
+                    },
+                  ]
                 }
               >
                 August 4
@@ -176,10 +206,15 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 }
               }
               style={
-                Object {
-                  "height": 30,
-                  "width": 30,
-                }
+                Array [
+                  Object {
+                    "height": 30,
+                    "width": 30,
+                  },
+                  Object {
+                    "tintColor": undefined,
+                  },
+                ]
               }
             />
           </View>
@@ -234,14 +269,18 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           disabled={false}
           ellipsizeMode="tail"
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 14,
-              "lineHeight": 18,
-              "paddingBottom": 12,
-              "paddingHorizontal": 12,
-              "paddingTop": 17,
-            }
+            Array [
+              Object {
+                "fontSize": 14,
+                "lineHeight": 18,
+                "paddingBottom": 12,
+                "paddingHorizontal": 12,
+                "paddingTop": 17,
+              },
+              Object {
+                "color": undefined,
+              },
+            ]
           }
         >
           Low. Tarmac T2 , CasCam, SPC LCAs.
@@ -253,7 +292,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -268,7 +307,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -282,7 +321,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -296,7 +335,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -307,11 +346,16 @@ exports[`Feed component renders correctly while loading with events 1`] = `
       </View>
       <View
         style={
-          Object {
-            "borderBottomColor": "#696A6B",
-            "borderBottomWidth": 0.5,
-            "width": 750,
-          }
+          Array [
+            Object {
+              "borderBottomColor": "#696A6B",
+              "borderBottomWidth": 0.5,
+              "width": 750,
+            },
+            Object {
+              "borderBottomColor": "rgba(255,255,255, 0.5)",
+            },
+          ]
         }
       >
         <View
@@ -369,13 +413,18 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 disabled={false}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "#7ED321",
-                    "fontSize": 14,
-                    "fontWeight": "600",
-                    "marginBottom": -2,
-                    "marginTop": -3,
-                  }
+                  Array [
+                    Object {
+                      "color": "#7ED321",
+                      "fontSize": 14,
+                      "fontWeight": "600",
+                      "marginBottom": -2,
+                      "marginTop": -3,
+                    },
+                    Object {
+                      "color": undefined,
+                    },
+                  ]
                 }
               >
                 Test Name
@@ -386,10 +435,15 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 disabled={false}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 10,
-                  }
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 10,
+                    },
+                    Object {
+                      "color": undefined,
+                    },
+                  ]
                 }
               >
                 @
@@ -405,10 +459,15 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 disabled={false}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 12,
-                  }
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 12,
+                    },
+                    Object {
+                      "color": undefined,
+                    },
+                  ]
                 }
               >
                 August 4
@@ -431,10 +490,15 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 }
               }
               style={
-                Object {
-                  "height": 30,
-                  "width": 30,
-                }
+                Array [
+                  Object {
+                    "height": 30,
+                    "width": 30,
+                  },
+                  Object {
+                    "tintColor": undefined,
+                  },
+                ]
               }
             />
           </View>
@@ -489,14 +553,18 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           disabled={false}
           ellipsizeMode="tail"
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 14,
-              "lineHeight": 18,
-              "paddingBottom": 12,
-              "paddingHorizontal": 12,
-              "paddingTop": 17,
-            }
+            Array [
+              Object {
+                "fontSize": 14,
+                "lineHeight": 18,
+                "paddingBottom": 12,
+                "paddingHorizontal": 12,
+                "paddingTop": 17,
+              },
+              Object {
+                "color": undefined,
+              },
+            ]
           }
         >
           Low. Tarmac T2 , CasCam, SPC LCAs.
@@ -508,7 +576,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -523,7 +591,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -537,7 +605,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -551,7 +619,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -568,14 +636,19 @@ exports[`Feed component renders correctly while loading with events 1`] = `
 exports[`Feed component renders correctly with events 1`] = `
 <View
   style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#323232",
-      "flex": 1,
-      "flexDirection": "column",
-      "justifyContent": "center",
-      "paddingTop": 20,
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "paddingTop": 20,
+      },
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
   }
 >
   <RCTScrollView
@@ -590,11 +663,16 @@ exports[`Feed component renders correctly with events 1`] = `
     <View>
       <View
         style={
-          Object {
-            "borderBottomColor": "#696A6B",
-            "borderBottomWidth": 0.5,
-            "width": 750,
-          }
+          Array [
+            Object {
+              "borderBottomColor": "#696A6B",
+              "borderBottomWidth": 0.5,
+              "width": 750,
+            },
+            Object {
+              "borderBottomColor": "rgba(255,255,255, 0.5)",
+            },
+          ]
         }
       >
         <View
@@ -652,13 +730,18 @@ exports[`Feed component renders correctly with events 1`] = `
                 disabled={false}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "#7ED321",
-                    "fontSize": 14,
-                    "fontWeight": "600",
-                    "marginBottom": -2,
-                    "marginTop": -3,
-                  }
+                  Array [
+                    Object {
+                      "color": "#7ED321",
+                      "fontSize": 14,
+                      "fontWeight": "600",
+                      "marginBottom": -2,
+                      "marginTop": -3,
+                    },
+                    Object {
+                      "color": undefined,
+                    },
+                  ]
                 }
               >
                 Test Name
@@ -669,10 +752,15 @@ exports[`Feed component renders correctly with events 1`] = `
                 disabled={false}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 10,
-                  }
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 10,
+                    },
+                    Object {
+                      "color": undefined,
+                    },
+                  ]
                 }
               >
                 @
@@ -688,10 +776,15 @@ exports[`Feed component renders correctly with events 1`] = `
                 disabled={false}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 12,
-                  }
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 12,
+                    },
+                    Object {
+                      "color": undefined,
+                    },
+                  ]
                 }
               >
                 August 4
@@ -714,10 +807,15 @@ exports[`Feed component renders correctly with events 1`] = `
                 }
               }
               style={
-                Object {
-                  "height": 30,
-                  "width": 30,
-                }
+                Array [
+                  Object {
+                    "height": 30,
+                    "width": 30,
+                  },
+                  Object {
+                    "tintColor": undefined,
+                  },
+                ]
               }
             />
           </View>
@@ -772,14 +870,18 @@ exports[`Feed component renders correctly with events 1`] = `
           disabled={false}
           ellipsizeMode="tail"
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 14,
-              "lineHeight": 18,
-              "paddingBottom": 12,
-              "paddingHorizontal": 12,
-              "paddingTop": 17,
-            }
+            Array [
+              Object {
+                "fontSize": 14,
+                "lineHeight": 18,
+                "paddingBottom": 12,
+                "paddingHorizontal": 12,
+                "paddingTop": 17,
+              },
+              Object {
+                "color": undefined,
+              },
+            ]
           }
         >
           Low. Tarmac T2 , CasCam, SPC LCAs.
@@ -791,7 +893,7 @@ exports[`Feed component renders correctly with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -806,7 +908,7 @@ exports[`Feed component renders correctly with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -820,7 +922,7 @@ exports[`Feed component renders correctly with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -834,7 +936,7 @@ exports[`Feed component renders correctly with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -845,11 +947,16 @@ exports[`Feed component renders correctly with events 1`] = `
       </View>
       <View
         style={
-          Object {
-            "borderBottomColor": "#696A6B",
-            "borderBottomWidth": 0.5,
-            "width": 750,
-          }
+          Array [
+            Object {
+              "borderBottomColor": "#696A6B",
+              "borderBottomWidth": 0.5,
+              "width": 750,
+            },
+            Object {
+              "borderBottomColor": "rgba(255,255,255, 0.5)",
+            },
+          ]
         }
       >
         <View
@@ -907,13 +1014,18 @@ exports[`Feed component renders correctly with events 1`] = `
                 disabled={false}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "#7ED321",
-                    "fontSize": 14,
-                    "fontWeight": "600",
-                    "marginBottom": -2,
-                    "marginTop": -3,
-                  }
+                  Array [
+                    Object {
+                      "color": "#7ED321",
+                      "fontSize": 14,
+                      "fontWeight": "600",
+                      "marginBottom": -2,
+                      "marginTop": -3,
+                    },
+                    Object {
+                      "color": undefined,
+                    },
+                  ]
                 }
               >
                 Test Name
@@ -924,10 +1036,15 @@ exports[`Feed component renders correctly with events 1`] = `
                 disabled={false}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 10,
-                  }
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 10,
+                    },
+                    Object {
+                      "color": undefined,
+                    },
+                  ]
                 }
               >
                 @
@@ -943,10 +1060,15 @@ exports[`Feed component renders correctly with events 1`] = `
                 disabled={false}
                 ellipsizeMode="tail"
                 style={
-                  Object {
-                    "color": "#FFFFFF",
-                    "fontSize": 12,
-                  }
+                  Array [
+                    Object {
+                      "color": "#FFFFFF",
+                      "fontSize": 12,
+                    },
+                    Object {
+                      "color": undefined,
+                    },
+                  ]
                 }
               >
                 August 4
@@ -969,10 +1091,15 @@ exports[`Feed component renders correctly with events 1`] = `
                 }
               }
               style={
-                Object {
-                  "height": 30,
-                  "width": 30,
-                }
+                Array [
+                  Object {
+                    "height": 30,
+                    "width": 30,
+                  },
+                  Object {
+                    "tintColor": undefined,
+                  },
+                ]
               }
             />
           </View>
@@ -1027,14 +1154,18 @@ exports[`Feed component renders correctly with events 1`] = `
           disabled={false}
           ellipsizeMode="tail"
           style={
-            Object {
-              "color": "#FFFFFF",
-              "fontSize": 14,
-              "lineHeight": 18,
-              "paddingBottom": 12,
-              "paddingHorizontal": 12,
-              "paddingTop": 17,
-            }
+            Array [
+              Object {
+                "fontSize": 14,
+                "lineHeight": 18,
+                "paddingBottom": 12,
+                "paddingHorizontal": 12,
+                "paddingTop": 17,
+              },
+              Object {
+                "color": undefined,
+              },
+            ]
           }
         >
           Low. Tarmac T2 , CasCam, SPC LCAs.
@@ -1046,7 +1177,7 @@ exports[`Feed component renders correctly with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -1061,7 +1192,7 @@ exports[`Feed component renders correctly with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -1075,7 +1206,7 @@ exports[`Feed component renders correctly with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -1089,7 +1220,7 @@ exports[`Feed component renders correctly with events 1`] = `
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#7ED321",
+                "color": undefined,
               }
             }
           >
@@ -1106,14 +1237,19 @@ exports[`Feed component renders correctly with events 1`] = `
 exports[`Feed component renders correctly without events 1`] = `
 <View
   style={
-    Object {
-      "alignItems": "center",
-      "backgroundColor": "#323232",
-      "flex": 1,
-      "flexDirection": "column",
-      "justifyContent": "center",
-      "paddingTop": 20,
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "paddingTop": 20,
+      },
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
   }
 >
   <RCTScrollView

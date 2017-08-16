@@ -8,28 +8,26 @@ import reactStringReplace from 'react-string-replace';
 
 const styles = StyleSheet.create({
   eventCaption: {
-    color: '#FFFFFF',
     fontSize: 14,
     paddingHorizontal: 12,
     paddingTop: 17,
     paddingBottom: 12,
     lineHeight: 18,
   },
-  highlight: {
-    color: '#7ED321',
-  },
 });
 
 class EventCaption extends Component {
   highlightHashtagsAndUsers(caption) {
+    const highlightColor = { color: this.context.mainColor };
     const regex = /([@|#][\w](?:(?:[\w]|(?:\.(?!\.))){0,28}(?:[\w]))?)/g;
-    const matchCallback = (match, i) => (<Text key={i} style={styles.highlight}>{match}</Text>);
+    const matchCallback = (match, i) => (<Text key={i} style={highlightColor}>{match}</Text>);
     return reactStringReplace(caption, regex, matchCallback);
   }
   
   render() {
+    const captionColor = { color: this.context.textColor };
     return (this.props.caption)
-    ? <Text style={styles.eventCaption}>
+    ? <Text style={[styles.eventCaption, captionColor]}>
       {this.highlightHashtagsAndUsers(this.props.caption)}
     </Text>
     : <Text />;
@@ -38,6 +36,11 @@ class EventCaption extends Component {
 
 EventCaption.propTypes = {
   caption: PropTypes.string,
+};
+
+EventCaption.contextTypes = {
+  mainColor: PropTypes.string,
+  textColor: PropTypes.string,
 };
 
 export default EventCaption;

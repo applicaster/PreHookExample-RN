@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
     height: 40,
     width: 40,
   },
-  fullName: {
+  name: {
     color: '#7ED321',
     fontSize: 14,
     marginTop: (Platform.OS === iOS) ? -3 : -4,

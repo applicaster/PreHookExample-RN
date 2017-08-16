@@ -7,10 +7,13 @@ exports[`EventTimestamp component renders correctly for a timestamp over a year 
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Object {
-      "color": "#FFFFFF",
-      "fontSize": 12,
-    }
+    Array [
+      Object {
+        "color": "#FFFFFF",
+        "fontSize": 12,
+      },
+      undefined,
+    ]
   }
 >
   December 4, 2015
@@ -24,10 +27,13 @@ exports[`EventTimestamp component renders correctly for a timestamp within a wee
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Object {
-      "color": "#FFFFFF",
-      "fontSize": 12,
-    }
+    Array [
+      Object {
+        "color": "#FFFFFF",
+        "fontSize": 12,
+      },
+      undefined,
+    ]
   }
 >
   August 4
@@ -41,10 +47,13 @@ exports[`EventTimestamp component renders correctly for a timestamp within a yea
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Object {
-      "color": "#FFFFFF",
-      "fontSize": 12,
-    }
+    Array [
+      Object {
+        "color": "#FFFFFF",
+        "fontSize": 12,
+      },
+      undefined,
+    ]
   }
 >
   December 4

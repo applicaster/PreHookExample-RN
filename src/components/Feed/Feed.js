@@ -38,15 +38,16 @@ class Feed extends Component {
   }
 
   render() {
-    const socialEvents = this.props.socialEvents;
+    const { socialEvents, loading } = this.props;
+    const backgroundFeedColor = { backgroundColor: this.context.backgroundColor };
     const refreshControl = (
       <RefreshControl
-        refreshing={this.props.loading}
+        refreshing={loading}
         onRefresh={this.onRefresh}
       />);
-
+    
     return (
-      <View style={styles.feed}>
+      <View style={[styles.feed, backgroundFeedColor]}>
         <ScrollView refreshControl={refreshControl}>
           {socialEvents.map(event =>
             <EventContainer key={event.id} event={event} />
@@ -65,6 +66,10 @@ Feed.propTypes = {
   setTimelineId: PropTypes.func,
   setTimezone: PropTypes.func,
   setEnvironment: PropTypes.func,
+};
+
+Feed.contextTypes = {
+  backgroundColor: PropTypes.string,
 };
 
 export default Feed;

@@ -32,12 +32,15 @@ class EventTimestamp extends Component {
   }
   
   render() {
+    const { colorStyle } = this.props;
     const time = this.renderTime();
-    return (<Text style={styles.timestamp}>{time}</Text>);
+    
+    return (<Text style={[styles.timestamp, colorStyle]}>{time}</Text>);
   }
 }
 
 EventTimestamp.propTypes = {
+  colorStyle: PropTypes.object,
   timestamp: PropTypes.number,
 };
 

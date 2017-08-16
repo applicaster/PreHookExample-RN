@@ -7,14 +7,18 @@ exports[`EventCaption component renders correctly 1`] = `
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Object {
-      "color": "#FFFFFF",
-      "fontSize": 14,
-      "lineHeight": 18,
-      "paddingBottom": 12,
-      "paddingHorizontal": 12,
-      "paddingTop": 17,
-    }
+    Array [
+      Object {
+        "fontSize": 14,
+        "lineHeight": 18,
+        "paddingBottom": 12,
+        "paddingHorizontal": 12,
+        "paddingTop": 17,
+      },
+      Object {
+        "color": undefined,
+      },
+    ]
   }
 >
   hola
@@ -28,14 +32,18 @@ exports[`EventCaption component renders correctly with complex caption with user
   disabled={false}
   ellipsizeMode="tail"
   style={
-    Object {
-      "color": "#FFFFFF",
-      "fontSize": 14,
-      "lineHeight": 18,
-      "paddingBottom": 12,
-      "paddingHorizontal": 12,
-      "paddingTop": 17,
-    }
+    Array [
+      Object {
+        "fontSize": 14,
+        "lineHeight": 18,
+        "paddingBottom": 12,
+        "paddingHorizontal": 12,
+        "paddingTop": 17,
+      },
+      Object {
+        "color": undefined,
+      },
+    ]
   }
 >
   hola 
@@ -46,7 +54,7 @@ exports[`EventCaption component renders correctly with complex caption with user
     ellipsizeMode="tail"
     style={
       Object {
-        "color": "#7ED321",
+        "color": undefined,
       }
     }
   >
@@ -60,7 +68,7 @@ exports[`EventCaption component renders correctly with complex caption with user
     ellipsizeMode="tail"
     style={
       Object {
-        "color": "#7ED321",
+        "color": undefined,
       }
     }
   >
@@ -74,7 +82,7 @@ exports[`EventCaption component renders correctly with complex caption with user
     ellipsizeMode="tail"
     style={
       Object {
-        "color": "#7ED321",
+        "color": undefined,
       }
     }
   >
@@ -88,7 +96,7 @@ exports[`EventCaption component renders correctly with complex caption with user
     ellipsizeMode="tail"
     style={
       Object {
-        "color": "#7ED321",
+        "color": undefined,
       }
     }
   >
