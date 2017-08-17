@@ -419,6 +419,10 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
             "right": 0,
             "top": 0,
           },
+          Object {
+            "height": 590.625,
+            "width": 750,
+          },
           undefined,
         ]
       }
