@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionBar component renders correctly for instagram 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "height": 30,
+        "paddingBottom": 10,
+        "paddingHorizontal": 7,
+      },
+      Object {
+        "marginLeft": 3,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "marginRight": 5,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 12,
+            "marginRight": 3,
+          },
+          Object {
+            "color": "rgba(255,255,255, 0.75)",
+          },
+        ]
+      }
+    >
+      1
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 12,
+          },
+          Object {
+            "color": "rgba(255,255,255, 0.75)",
+          },
+        ]
+      }
+    >
+      Likes
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "marginRight": 5,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 12,
+            "marginRight": 3,
+          },
+          Object {
+            "color": "rgba(255,255,255, 0.75)",
+          },
+        ]
+      }
+    >
+      3
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 12,
+          },
+          Object {
+            "color": "rgba(255,255,255, 0.75)",
+          },
+        ]
+      }
+    >
+      Comments
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`ActionBar component renders correctly for no social network 1`] = `null`;

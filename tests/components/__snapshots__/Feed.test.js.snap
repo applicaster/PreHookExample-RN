@@ -347,6 +347,114 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           </Text>
           
         </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+                "height": 30,
+                "paddingBottom": 10,
+                "paddingHorizontal": 7,
+              },
+              Object {
+                "marginLeft": 3,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "marginRight": 5,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                    "marginRight": 3,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              30
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              Likes
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "marginRight": 5,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                    "marginRight": 3,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              0
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              Comments
+            </Text>
+          </View>
+        </View>
       </View>
       <View
         style={
@@ -635,6 +743,114 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           </Text>
           
         </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+                "height": 30,
+                "paddingBottom": 10,
+                "paddingHorizontal": 7,
+              },
+              Object {
+                "marginLeft": 3,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "marginRight": 5,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                    "marginRight": 3,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              30
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              Likes
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "marginRight": 5,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                    "marginRight": 3,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              0
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              Comments
+            </Text>
+          </View>
+        </View>
       </View>
     </View>
   </RCTScrollView>
@@ -956,6 +1172,114 @@ exports[`Feed component renders correctly with events 1`] = `
           </Text>
           
         </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+                "height": 30,
+                "paddingBottom": 10,
+                "paddingHorizontal": 7,
+              },
+              Object {
+                "marginLeft": 3,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "marginRight": 5,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                    "marginRight": 3,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              30
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              Likes
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "marginRight": 5,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                    "marginRight": 3,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              0
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              Comments
+            </Text>
+          </View>
+        </View>
       </View>
       <View
         style={
@@ -1244,6 +1568,114 @@ exports[`Feed component renders correctly with events 1`] = `
           </Text>
           
         </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "flexDirection": "row",
+                "height": 30,
+                "paddingBottom": 10,
+                "paddingHorizontal": 7,
+              },
+              Object {
+                "marginLeft": 3,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "marginRight": 5,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                    "marginRight": 3,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              30
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              Likes
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "marginRight": 5,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                    "marginRight": 3,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              0
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "rgba(255,255,255, 0.75)",
+                  },
+                ]
+              }
+            >
+              Comments
+            </Text>
+          </View>
+        </View>
       </View>
     </View>
   </RCTScrollView>
