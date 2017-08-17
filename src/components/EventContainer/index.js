@@ -9,6 +9,7 @@ import hexToRgb from 'hex-to-rgb';
 import EventHeader from '../EventHeader';
 import EventCaption from '../EventCaption';
 import EventMedia from '../EventMedia';
+import ActionBar from '../ActionBar';
 
 const screenWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
@@ -55,6 +56,15 @@ class EventContainer extends Component {
     return <EventCaption caption={this.props.event.caption} />;
   }
 
+  renderActionBar() {
+    return (<ActionBar
+      socialNetwork={this.props.event.source}
+      likesCount={this.props.event.likesCount}
+      commentsCount={this.props.event.commentsCount}
+    />
+    );
+  }
+
   render() {
     const containerSeparatorColor = this.getEventSeparatorStyles();
     return (
@@ -62,6 +72,7 @@ class EventContainer extends Component {
         {this.renderHeader()}
         {this.renderMedia()}
         {this.renderCaption()}
+        {this.renderActionBar()}
       </View>
     );
   }
