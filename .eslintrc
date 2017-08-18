@@ -15,7 +15,8 @@
   "globals": {
     "chai": true,
     "expect": true,
-    "sinon": true
+    "sinon": true,
+    "jest": true
   },
   "rules": {
     "radix": 0,

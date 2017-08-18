@@ -69,7 +69,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
               "width": 750,
             },
             Object {
-              "borderBottomColor": "rgba(255,255,255, 0.5)",
+              "borderBottomColor": "rgba(255,255,255, 0.3)",
             },
           ]
         }
@@ -465,7 +465,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
               "width": 750,
             },
             Object {
-              "borderBottomColor": "rgba(255,255,255, 0.5)",
+              "borderBottomColor": "rgba(255,255,255, 0.3)",
             },
           ]
         }
@@ -894,7 +894,7 @@ exports[`Feed component renders correctly with events 1`] = `
               "width": 750,
             },
             Object {
-              "borderBottomColor": "rgba(255,255,255, 0.5)",
+              "borderBottomColor": "rgba(255,255,255, 0.3)",
             },
           ]
         }
@@ -1290,7 +1290,7 @@ exports[`Feed component renders correctly with events 1`] = `
               "width": 750,
             },
             Object {
-              "borderBottomColor": "rgba(255,255,255, 0.5)",
+              "borderBottomColor": "rgba(255,255,255, 0.3)",
             },
           ]
         }
