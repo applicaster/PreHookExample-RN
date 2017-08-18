@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 class EventContainer extends Component {
   getEventSeparatorStyles() {
     const rgb = hexToRgb(this.context.textColor || '#FFFFFF');
-    const rgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.5)`;
+    const rgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.3)`;
     return { borderBottomColor: rgbaColor };
   }
   

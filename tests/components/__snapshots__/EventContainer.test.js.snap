@@ -10,7 +10,7 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
         "width": 750,
       },
       Object {
-        "borderBottomColor": "rgba(255,255,255, 0.5)",
+        "borderBottomColor": "rgba(255,255,255, 0.3)",
       },
     ]
   }
@@ -354,7 +354,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
         "width": 750,
       },
       Object {
-        "borderBottomColor": "rgba(255,255,255, 0.5)",
+        "borderBottomColor": "rgba(255,255,255, 0.3)",
       },
     ]
   }
