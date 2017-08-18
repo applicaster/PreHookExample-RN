@@ -55,6 +55,7 @@ exports[`EventMedia component renders correctly for squared images 1`] = `
 <View
   style={
     Object {
+      "backgroundColor": "black",
       "height": 750,
       "width": 750,
     }

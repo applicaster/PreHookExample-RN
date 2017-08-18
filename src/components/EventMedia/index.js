@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   mediaItem: {
     height: screenWidth,
     width: screenWidth,
+    backgroundColor: 'black',
   },
   videoItem: {
     position: 'absolute',
