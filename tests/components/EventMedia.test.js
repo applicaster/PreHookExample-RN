@@ -3,11 +3,14 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import EventMedia from '../../src/components/EventMedia';
 
-const eventMediaProps = (height, width) => ({
+const eventMediaProps = (height, width, videoUrl) => ({
   imageUrl: 'someurl',
   height,
   width,
+  videoUrl,
 });
+
+jest.mock('react-native-video', () => 'Video');
 
 describe('EventMedia', () => {
   test('component renders correctly for squared images', () => {
@@ -17,9 +20,16 @@ describe('EventMedia', () => {
     expect(html).toMatchSnapshot();
   });
 
-  test('component renders correctly for non symmetric aspect ratios images', () => {
+  test('component renders correctly for squared images', () => {
     const html = renderer.create(
-      <EventMedia {...eventMediaProps(300, 100)} />
+      <EventMedia {...eventMediaProps(300, 300)} />
+    ).toJSON();
+    expect(html).toMatchSnapshot();
+  });
+
+  test('component renders correctly for media items with video', () => {
+    const html = renderer.create(
+      <EventMedia {...eventMediaProps(300, 100, 'someurl')} />
     ).toJSON();
     expect(html).toMatchSnapshot();
   });

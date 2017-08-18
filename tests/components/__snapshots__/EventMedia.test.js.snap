@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EventMedia component renders correctly for non symmetric aspect ratios images 1`] = `
+exports[`EventMedia component renders correctly for media items with video 1`] = `
 <View
   style={
     Object {
@@ -32,6 +32,29 @@ exports[`EventMedia component renders correctly for non symmetric aspect ratios 
       ]
     }
   />
+  <Video
+    muted={true}
+    repeat={true}
+    resizeMode="cover"
+    source={
+      Object {
+        "uri": "someurl",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "height": 2250,
+          "width": 750,
+        },
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "top": 0,
+        },
+      ]
+    }
+  />
   <BVLinearGradient
     colors={
       Array [
@@ -52,6 +75,58 @@ exports[`EventMedia component renders correctly for non symmetric aspect ratios 
 `;
 
 exports[`EventMedia component renders correctly for squared images 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "black",
+      "height": 750,
+      "width": 750,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "someurl",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "height": 750,
+          "width": 750,
+        },
+        undefined,
+      ]
+    }
+  />
+  <BVLinearGradient
+    colors={
+      Array [
+        3003121664,
+        0,
+      ]
+    }
+    end={undefined}
+    locations={null}
+    start={undefined}
+    style={
+      Object {
+        "height": 130,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`EventMedia component renders correctly for squared images 2`] = `
 <View
   style={
     Object {
