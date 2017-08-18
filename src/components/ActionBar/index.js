@@ -33,6 +33,8 @@ class ActionBar extends Component {
     let actionBar;
     switch (this.props.socialNetwork) {
       case 'instagram':
+      case 'facebook':
+      case 'twitter':
         actionBar = this.renderInstagramBar();
         break;
       default:
