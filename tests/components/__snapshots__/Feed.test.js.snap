@@ -454,6 +454,59 @@ exports[`Feed component renders correctly while loading with events 1`] = `
               Comments
             </Text>
           </View>
+          <View
+            style={
+              Object {
+                "bottom": 10,
+                "position": "absolute",
+                "right": 7,
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "share_button",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "width": 30,
+                    },
+                    Object {
+                      "tintColor": undefined,
+                    },
+                  ]
+                }
+              />
+            </View>
+          </View>
         </View>
       </View>
       <View
@@ -849,6 +902,59 @@ exports[`Feed component renders correctly while loading with events 1`] = `
             >
               Comments
             </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "bottom": 10,
+                "position": "absolute",
+                "right": 7,
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "share_button",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "width": 30,
+                    },
+                    Object {
+                      "tintColor": undefined,
+                    },
+                  ]
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -1279,6 +1385,59 @@ exports[`Feed component renders correctly with events 1`] = `
               Comments
             </Text>
           </View>
+          <View
+            style={
+              Object {
+                "bottom": 10,
+                "position": "absolute",
+                "right": 7,
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "share_button",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "width": 30,
+                    },
+                    Object {
+                      "tintColor": undefined,
+                    },
+                  ]
+                }
+              />
+            </View>
+          </View>
         </View>
       </View>
       <View
@@ -1674,6 +1833,59 @@ exports[`Feed component renders correctly with events 1`] = `
             >
               Comments
             </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "bottom": 10,
+                "position": "absolute",
+                "right": 7,
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "share_button",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 30,
+                      "width": 30,
+                    },
+                    Object {
+                      "tintColor": undefined,
+                    },
+                  ]
+                }
+              />
+            </View>
           </View>
         </View>
       </View>
