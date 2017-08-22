@@ -23,20 +23,14 @@ class ShareButton extends Component {
   }
 
   share() {
+    const { defaultMessage, message, url, title } = this.props;
     Share.share({
-      message: 'Applicaster: We\'re helping you with awesome React Native apps',
-      url: 'http://applicaster.com',
-      title: 'Wow, did you see that?',
-    }, {
-      dialogTitle: 'Share BAM goodness',
+      message: `${defaultMessage}\n${message}`,
+      title,
+      url,
     })
-    .then(() => {
-      console.log('share succeeded');
-    })
-    .catch(error => {
-      console.log('share failed!');
-      console.log(error);
-    });
+    .then(() => console.log('share succeeded'))
+    .catch(error => console.log(error));
   }
 
   render() {
@@ -53,6 +47,13 @@ class ShareButton extends Component {
     );
   }
 }
+
+ShareButton.propTypes = {
+  defaultMessage: PropTypes.string,
+  message: PropTypes.string,
+  title: PropTypes.string,
+  url: PropTypes.string,
+};
 
 ShareButton.contextTypes = {
   textColor: PropTypes.string,

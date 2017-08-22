@@ -26,7 +26,9 @@ const styles = StyleSheet.create({
 
 class ActionBar extends Component {
   renderShareButton() {
-    return <View style={styles.shareButtonContainer}><ShareButton /></View>;
+    return (<View style={styles.shareButtonContainer}>
+      <ShareButton message={this.props.textToShare} />
+    </View>);
   }
   
   renderInstagramBar() {
@@ -60,6 +62,7 @@ ActionBar.propTypes = {
   socialNetwork: PropTypes.string,
   likesCount: PropTypes.number,
   commentsCount: PropTypes.number,
+  textToShare: PropTypes.string,
 };
 
 export default ActionBar;
