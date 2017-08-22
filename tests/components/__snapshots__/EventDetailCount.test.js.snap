@@ -21,7 +21,7 @@ exports[`EventDetailCount component renders correctly 1`] = `
           "marginRight": 3,
         },
         Object {
-          "color": "rgba(255,255,255, 0.75)",
+          "color": "rgba(255,255,255, 0.60)",
         },
       ]
     }
@@ -39,7 +39,7 @@ exports[`EventDetailCount component renders correctly 1`] = `
           "fontSize": 12,
         },
         Object {
-          "color": "rgba(255,255,255, 0.75)",
+          "color": "rgba(255,255,255, 0.60)",
         },
       ]
     }
@@ -70,7 +70,7 @@ exports[`EventDetailCount component renders correctly with null data 1`] = `
           "marginRight": 3,
         },
         Object {
-          "color": "rgba(255,255,255, 0.75)",
+          "color": "rgba(255,255,255, 0.60)",
         },
       ]
     }
@@ -86,7 +86,7 @@ exports[`EventDetailCount component renders correctly with null data 1`] = `
           "fontSize": 12,
         },
         Object {
-          "color": "rgba(255,255,255, 0.75)",
+          "color": "rgba(255,255,255, 0.60)",
         },
       ]
     }

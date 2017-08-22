@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 
 const EventDetailCount = ({ label, count = 0 }, { textColor }) => {
   const rgb = hexToRgb(textColor || '#FFFFFF');
-  const rgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.75)`;
+  const rgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.60)`;
   const textColorStyle = { color: rgbaColor };
   return (
     <View style={styles.eventDetailCount}>

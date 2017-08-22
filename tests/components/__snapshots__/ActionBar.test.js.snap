@@ -36,7 +36,7 @@ exports[`ActionBar component renders correctly for instagram 1`] = `
             "marginRight": 3,
           },
           Object {
-            "color": "rgba(255,255,255, 0.75)",
+            "color": "rgba(255,255,255, 0.60)",
           },
         ]
       }
@@ -54,7 +54,7 @@ exports[`ActionBar component renders correctly for instagram 1`] = `
             "fontSize": 12,
           },
           Object {
-            "color": "rgba(255,255,255, 0.75)",
+            "color": "rgba(255,255,255, 0.60)",
           },
         ]
       }
@@ -82,7 +82,7 @@ exports[`ActionBar component renders correctly for instagram 1`] = `
             "marginRight": 3,
           },
           Object {
-            "color": "rgba(255,255,255, 0.75)",
+            "color": "rgba(255,255,255, 0.60)",
           },
         ]
       }
@@ -100,13 +100,66 @@ exports[`ActionBar component renders correctly for instagram 1`] = `
             "fontSize": 12,
           },
           Object {
-            "color": "rgba(255,255,255, 0.75)",
+            "color": "rgba(255,255,255, 0.60)",
           },
         ]
       }
     >
       Comments
     </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 10,
+        "position": "absolute",
+        "right": 7,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Image
+        source={
+          Object {
+            "uri": "share_button",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 30,
+              "width": 30,
+            },
+            Object {
+              "tintColor": "rgba(255,255,255, 0.60)",
+            },
+          ]
+        }
+      />
+    </View>
   </View>
 </View>
 `;
