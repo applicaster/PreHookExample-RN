@@ -25,7 +25,7 @@ class ShareButton extends Component {
   share() {
     const { defaultMessage, message, url, title } = this.props;
     Share.share({
-      message: `${defaultMessage}\n${message}`,
+      message: `${defaultMessage} - ${message}`,
       title,
       url,
     })
