@@ -6,11 +6,13 @@ import {
 } from 'react-native';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import hexToRgb from 'hex-to-rgb';
 
+const buttonSize = 30;
 const styles = StyleSheet.create({
   shareButton: {
-    width: 30,
-    height: 30,
+    width: buttonSize,
+    height: buttonSize,
   },
 });
 
@@ -38,7 +40,9 @@ class ShareButton extends Component {
   }
 
   render() {
-    const imageColor = { tintColor: this.context.textColor };
+    const rgb = hexToRgb(this.context.textColor || '#FFFFFF');
+    const rgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.60)`;
+    const imageColor = { tintColor: rgbaColor };
     return (
       <TouchableOpacity onPress={this.share}>
         <Image
