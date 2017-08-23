@@ -2,17 +2,17 @@ import React from 'react';
 import { addNavigationHelpers } from 'react-navigation';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import AppNavigator from './AppNavigator';
+import Navigator from './Navigator';
 
-const RootNavigation = ({ dispatch, navigation }) => (
-  <AppNavigator navigation={addNavigationHelpers({
+const AppNavigator = ({ dispatch, navigation }) => (
+  <Navigator navigation={addNavigationHelpers({
     dispatch,
     state: navigation,
   })}
   />
 );
 
-RootNavigation.propTypes = {
+AppNavigator.propTypes = {
   dispatch: PropTypes.func,
   navigation: PropTypes.object,
 };
@@ -21,4 +21,4 @@ const mapStateToProps = (state) => ({
   navigation: state.navigation,
 });
 
-export default connect(mapStateToProps)(RootNavigation);
+export default connect(mapStateToProps)(AppNavigator);

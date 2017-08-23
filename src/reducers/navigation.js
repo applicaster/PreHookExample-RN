@@ -1,7 +1,7 @@
-import AppNavigator from '../AppNavigator';
+import Navigator from '../Navigator';
 
-const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('Feed'));
+const initialState = Navigator.router.getStateForAction(Navigator.router.getActionForPathAndParams('Feed'));
 export default (state = initialState, action) => {
-  const nextState = AppNavigator.router.getStateForAction(action, state);
+  const nextState = Navigator.router.getStateForAction(action, state);
   return nextState || state;
 };
