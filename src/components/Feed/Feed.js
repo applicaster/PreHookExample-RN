@@ -20,6 +20,19 @@ const styles = StyleSheet.create({
 });
 
 class Feed extends Component {
+  static navigationOptions = ({ props }) => ({
+    headerTitle: 'Feed',
+    headerTitleStyle: styles.headerTitleStyle,
+    headerStyle: styles.headerStyle,
+  });
+
+  getChildContext() {
+    const { navigation } = this.props;
+    return {
+      navigation,
+    }
+  }
+
   constructor(props) {
     super(props);
     this.onRefresh = this.onRefresh.bind(this);
@@ -70,6 +83,10 @@ Feed.propTypes = {
 
 Feed.contextTypes = {
   backgroundColor: PropTypes.string,
+};
+
+Feed.childContextTypes = {
+  navigation: PropTypes.object,
 };
 
 export default Feed;

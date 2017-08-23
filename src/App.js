@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import store from './store';
-import Feed from './components/Feed';
+import AppNavigator from './AppNavigator';
 
 class App extends Component {
   getChildContext() {
@@ -27,8 +27,8 @@ class App extends Component {
   render() {
     return (
       <Provider store={store()}>
-        <Feed />
-      </ Provider>
+        <AppNavigator />
+      </Provider>
     );
   }
 }
