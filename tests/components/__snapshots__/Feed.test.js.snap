@@ -10,7 +10,6 @@ exports[`Feed component renders correctly while loading 1`] = `
         "flex": 1,
         "flexDirection": "column",
         "justifyContent": "center",
-        "paddingTop": 20,
       },
       Object {
         "backgroundColor": undefined,
@@ -42,7 +41,6 @@ exports[`Feed component renders correctly while loading with events 1`] = `
         "flex": 1,
         "flexDirection": "column",
         "justifyContent": "center",
-        "paddingTop": 20,
       },
       Object {
         "backgroundColor": undefined,
@@ -973,7 +971,6 @@ exports[`Feed component renders correctly with events 1`] = `
         "flex": 1,
         "flexDirection": "column",
         "justifyContent": "center",
-        "paddingTop": 20,
       },
       Object {
         "backgroundColor": undefined,
@@ -1904,7 +1901,6 @@ exports[`Feed component renders correctly without events 1`] = `
         "flex": 1,
         "flexDirection": "column",
         "justifyContent": "center",
-        "paddingTop": 20,
       },
       Object {
         "backgroundColor": undefined,

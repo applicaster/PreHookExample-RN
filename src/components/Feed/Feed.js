@@ -7,17 +7,7 @@ import {
   RefreshControl,
 } from 'react-native';
 import EventContainer from '../EventContainer';
-
-const styles = StyleSheet.create({
-  feed: {
-    flex: 1,
-    flexDirection: 'column',
-    paddingTop: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#323232',
-  },
-});
+import { styles } from './style';
 
 class Feed extends Component {
   static navigationOptions = ({ props }) => ({
