@@ -7,5 +7,4 @@ const RNRoot = props => (
   <App { ...props } platform="iOS" />
 );
 
-// Module name
 AppRegistry.registerComponent('RNRoot', () => RNRoot);
