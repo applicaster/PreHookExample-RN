@@ -35,14 +35,12 @@ export const styles = StyleSheet.create({
     width: 40,
   },
   name: {
-    color: '#7ED321',
     fontSize: 14,
     marginTop: (Platform.OS === iOS) ? -3 : -4,
     marginBottom: -2,
     fontWeight: '600',
   },
   userName: {
-    color: '#FFFFFF',
     fontSize: 10,
   },
   socialIconContainer: {

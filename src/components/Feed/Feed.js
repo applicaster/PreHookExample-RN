@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  StyleSheet,
   View,
   ScrollView,
   RefreshControl,
@@ -10,22 +9,13 @@ import EventContainer from '../EventContainer';
 import { styles } from './style';
 
 class Feed extends Component {
-  static navigationOptions = ({ props }) => ({
-    headerTitle: 'Feed',
-    headerTitleStyle: styles.headerTitleStyle,
-    headerStyle: styles.headerStyle,
-  });
-
-  getChildContext() {
-    const { navigation } = this.props;
-    return {
-      navigation,
-    }
-  }
-
   constructor(props) {
     super(props);
     this.onRefresh = this.onRefresh.bind(this);
+  }
+
+  getChildContext() {
+    return { navigation: this.props.navigation };
   }
 
   componentWillMount() {
@@ -69,6 +59,7 @@ Feed.propTypes = {
   setTimelineId: PropTypes.func,
   setTimezone: PropTypes.func,
   setEnvironment: PropTypes.func,
+  navigation: PropTypes.object,
 };
 
 Feed.contextTypes = {

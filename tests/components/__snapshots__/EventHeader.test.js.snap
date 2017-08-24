@@ -51,7 +51,6 @@ exports[`EventHeader component renders correctly 1`] = `
         style={
           Array [
             Object {
-              "color": "#7ED321",
               "fontSize": 14,
               "fontWeight": "600",
               "marginBottom": -2,
@@ -71,7 +70,6 @@ exports[`EventHeader component renders correctly 1`] = `
         style={
           Array [
             Object {
-              "color": "#FFFFFF",
               "fontSize": 10,
             },
             Object {
@@ -199,7 +197,6 @@ exports[`EventHeader component renders correctly for Facebook event 1`] = `
         style={
           Array [
             Object {
-              "color": "#7ED321",
               "fontSize": 14,
               "fontWeight": "600",
               "marginBottom": -2,
@@ -325,7 +322,6 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
         style={
           Array [
             Object {
-              "color": "#7ED321",
               "fontSize": 14,
               "fontWeight": "600",
               "marginBottom": -2,
@@ -345,7 +341,6 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
         style={
           Array [
             Object {
-              "color": "#FFFFFF",
               "fontSize": 10,
             },
             Object {
@@ -471,7 +466,6 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
         style={
           Array [
             Object {
-              "color": "#7ED321",
               "fontSize": 14,
               "fontWeight": "600",
               "marginBottom": -2,
@@ -491,7 +485,6 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
         style={
           Array [
             Object {
-              "color": "#FFFFFF",
               "fontSize": 10,
             },
             Object {
@@ -617,7 +610,6 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
         style={
           Array [
             Object {
-              "color": "#7ED321",
               "fontSize": 14,
               "fontWeight": "600",
               "marginBottom": -2,
@@ -637,7 +629,6 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
         style={
           Array [
             Object {
-              "color": "#FFFFFF",
               "fontSize": 10,
             },
             Object {
