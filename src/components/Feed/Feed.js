@@ -9,6 +9,10 @@ import EventContainer from '../EventContainer';
 import { styles } from './style';
 
 class Feed extends Component {
+  static navigationOptions = ({ screenProps }) => ({
+    ...screenProps,
+  });
+
   constructor(props) {
     super(props);
     this.onRefresh = this.onRefresh.bind(this);

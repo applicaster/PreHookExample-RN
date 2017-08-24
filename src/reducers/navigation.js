@@ -1,7 +1,5 @@
-import { StackNavigator } from 'react-navigation';
-import navigationRoutes from '../navigationRoutes';
+import Navigator from '../Navigator';
 
-const Navigator = StackNavigator(navigationRoutes);
 const initialState = Navigator.router.getStateForAction(Navigator.router.getActionForPathAndParams('Feed'));
 
 export default (state = initialState, action) => {

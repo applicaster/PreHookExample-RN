@@ -1,34 +1,31 @@
 import React, { Component } from 'react';
-import { StackNavigator, addNavigationHelpers } from 'react-navigation';
+import { addNavigationHelpers } from 'react-navigation';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import hexToRgb from 'hex-to-rgb';
-import navigationRoutes from './navigationRoutes';
+import Navigator from './Navigator';
 
 class AppNavigator extends Component {
-  getNavigationStyles() {
+  screenProperties() {
     const { headerTitle, headerBackgroundColor, headerTitleColor, borderColor } = this.props;
     const rgb = hexToRgb(borderColor);
     const borderRgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.3)`;
     return {
-      navigationOptions: {
-        title: headerTitle || 'No Feed Title',
-        headerStyle: {
-          backgroundColor: headerBackgroundColor,
-          borderWidth: StyleSheet.hairlineWidth,
-          borderBottomColor: borderRgbaColor,
-        },
-        headerTitleStyle: { color: headerTitleColor },
+      title: headerTitle || 'No Feed Title',
+      headerStyle: {
+        backgroundColor: headerBackgroundColor,
+        borderWidth: StyleSheet.hairlineWidth,
+        borderBottomColor: borderRgbaColor,
       },
+      headerTitleStyle: { color: headerTitleColor },
     };
   }
 
   render() {
     const { dispatch, navigation } = this.props;
-    const navigationStyles = this.getNavigationStyles();
-    const Navigator = StackNavigator(navigationRoutes, navigationStyles);
-    return (<Navigator navigation={addNavigationHelpers({
+    const screenProps = this.screenProperties();
+    return (<Navigator screenProps={screenProps} navigation={addNavigationHelpers({
       dispatch,
       state: navigation,
     })}
