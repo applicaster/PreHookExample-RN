@@ -10,7 +10,6 @@ exports[`Feed component renders correctly while loading 1`] = `
         "flex": 1,
         "flexDirection": "column",
         "justifyContent": "center",
-        "paddingTop": 20,
       },
       Object {
         "backgroundColor": undefined,
@@ -42,7 +41,6 @@ exports[`Feed component renders correctly while loading with events 1`] = `
         "flex": 1,
         "flexDirection": "column",
         "justifyContent": "center",
-        "paddingTop": 20,
       },
       Object {
         "backgroundColor": undefined,
@@ -131,7 +129,6 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#7ED321",
                       "fontSize": 14,
                       "fontWeight": "600",
                       "marginBottom": -2,
@@ -153,7 +150,6 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#FFFFFF",
                       "fontSize": 10,
                     },
                     Object {
@@ -580,7 +576,6 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#7ED321",
                       "fontSize": 14,
                       "fontWeight": "600",
                       "marginBottom": -2,
@@ -602,7 +597,6 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#FFFFFF",
                       "fontSize": 10,
                     },
                     Object {
@@ -973,7 +967,6 @@ exports[`Feed component renders correctly with events 1`] = `
         "flex": 1,
         "flexDirection": "column",
         "justifyContent": "center",
-        "paddingTop": 20,
       },
       Object {
         "backgroundColor": undefined,
@@ -1062,7 +1055,6 @@ exports[`Feed component renders correctly with events 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#7ED321",
                       "fontSize": 14,
                       "fontWeight": "600",
                       "marginBottom": -2,
@@ -1084,7 +1076,6 @@ exports[`Feed component renders correctly with events 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#FFFFFF",
                       "fontSize": 10,
                     },
                     Object {
@@ -1511,7 +1502,6 @@ exports[`Feed component renders correctly with events 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#7ED321",
                       "fontSize": 14,
                       "fontWeight": "600",
                       "marginBottom": -2,
@@ -1533,7 +1523,6 @@ exports[`Feed component renders correctly with events 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#FFFFFF",
                       "fontSize": 10,
                     },
                     Object {
@@ -1904,7 +1893,6 @@ exports[`Feed component renders correctly without events 1`] = `
         "flex": 1,
         "flexDirection": "column",
         "justifyContent": "center",
-        "paddingTop": 20,
       },
       Object {
         "backgroundColor": undefined,

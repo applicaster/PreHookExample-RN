@@ -65,7 +65,6 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
           style={
             Array [
               Object {
-                "color": "#7ED321",
                 "fontSize": 14,
                 "fontWeight": "600",
                 "marginBottom": -2,
@@ -87,7 +86,6 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
           style={
             Array [
               Object {
-                "color": "#FFFFFF",
                 "fontSize": 10,
               },
               Object {
@@ -469,7 +467,6 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
           style={
             Array [
               Object {
-                "color": "#7ED321",
                 "fontSize": 14,
                 "fontWeight": "600",
                 "marginBottom": -2,
@@ -491,7 +488,6 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
           style={
             Array [
               Object {
-                "color": "#FFFFFF",
                 "fontSize": 10,
               },
               Object {

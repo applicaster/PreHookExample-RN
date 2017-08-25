@@ -1,28 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  StyleSheet,
   View,
   ScrollView,
   RefreshControl,
 } from 'react-native';
 import EventContainer from '../EventContainer';
-
-const styles = StyleSheet.create({
-  feed: {
-    flex: 1,
-    flexDirection: 'column',
-    paddingTop: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#323232',
-  },
-});
+import { styles } from './style';
 
 class Feed extends Component {
+  static navigationOptions = ({ screenProps }) => ({
+    ...screenProps,
+  });
+
   constructor(props) {
     super(props);
     this.onRefresh = this.onRefresh.bind(this);
+  }
+
+  getChildContext() {
+    return { navigation: this.props.navigation };
   }
 
   componentWillMount() {
@@ -66,10 +63,15 @@ Feed.propTypes = {
   setTimelineId: PropTypes.func,
   setTimezone: PropTypes.func,
   setEnvironment: PropTypes.func,
+  navigation: PropTypes.object,
 };
 
 Feed.contextTypes = {
   backgroundColor: PropTypes.string,
+};
+
+Feed.childContextTypes = {
+  navigation: PropTypes.object,
 };
 
 export default Feed;
