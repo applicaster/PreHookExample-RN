@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LiveButton component renders correctly 1`] = `
+exports[`LiveButton component renders correctly when it is live 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -45,4 +45,26 @@ exports[`LiveButton component renders correctly 1`] = `
     }
   />
 </View>
+`;
+
+exports[`LiveButton component renders correctly when it is not live 1`] = `
+<Image
+  source={
+    Object {
+      "uri": "live_button",
+    }
+  }
+  style={
+    Array [
+      Object {
+        "height": 28,
+        "marginRight": 8,
+        "width": 28,
+      },
+      Object {
+        "tintColor": "rgba(255,255,255, 0.60)",
+      },
+    ]
+  }
+/>
 `;

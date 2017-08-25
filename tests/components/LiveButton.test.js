@@ -4,9 +4,16 @@ import renderer from 'react-test-renderer';
 import LiveButton from '../../src/components/LiveButton';
 
 describe('LiveButton', () => {
-  test('component renders correctly', () => {
+  test('component renders correctly when it is not live', () => {
     const html = renderer.create(
       <LiveButton />
+    ).toJSON();
+    expect(html).toMatchSnapshot();
+  });
+
+  test('component renders correctly when it is live', () => {
+    const html = renderer.create(
+      <LiveButton isLive />
     ).toJSON();
     expect(html).toMatchSnapshot();
   });
