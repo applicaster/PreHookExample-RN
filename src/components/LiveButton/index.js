@@ -34,7 +34,7 @@ class LiveButton extends Component {
 
   openLiveVideo() {
     const { liveUrl } = this.props;
-    Linking.openURL(liveUrl).catch(err => console.error('Unable to open live video', err));
+    Linking.openURL(liveUrl).catch(error => console.warn('Unable to open live video', error));
   }
   
   renderActiveState() {
