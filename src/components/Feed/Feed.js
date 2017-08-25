@@ -6,11 +6,13 @@ import {
   RefreshControl,
 } from 'react-native';
 import EventContainer from '../EventContainer';
+import LiveButton from '../LiveButton';
 import { styles } from './style';
 
 class Feed extends Component {
   static navigationOptions = ({ screenProps }) => ({
     ...screenProps,
+    headerRight: <LiveButton />,
   });
 
   constructor(props) {
