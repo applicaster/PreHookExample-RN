@@ -5,14 +5,16 @@ import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import hexToRgb from 'hex-to-rgb';
 import Navigator from './Navigator';
+import LiveButton from './components/LiveButton';
 
 class AppNavigator extends Component {
   screenProperties() {
-    const { headerTitle, headerBackgroundColor, headerTitleColor, borderColor } = this.props;
+    const { headerTitle, headerBackgroundColor, headerTitleColor, borderColor, isLive, liveUrl } = this.props;
     const rgb = hexToRgb(borderColor);
     const borderRgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.3)`;
     return {
-      title: headerTitle || 'No Feed Title',
+      title: headerTitle || 'Feed Title',
+      headerRight: <LiveButton liveUrl={liveUrl} isLive={isLive} />,
       headerStyle: {
         backgroundColor: headerBackgroundColor,
         borderWidth: StyleSheet.hairlineWidth,
@@ -40,6 +42,8 @@ AppNavigator.propTypes = {
   headerBackgroundColor: PropTypes.string,
   headerTitleColor: PropTypes.string,
   borderColor: PropTypes.string,
+  isLive: PropTypes.bool,
+  liveUrl: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({

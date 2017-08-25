@@ -24,12 +24,19 @@ class App extends Component {
   }
   
   render() {
-    const { feedTitle } = this.props;
+    const { feedTitle, isLive, liveUrl } = this.props;
     const { backgroundColor, mainColor, textColor } = this.getAppStyles();
 
     return (
       <Provider store={store()}>
-        <AppNavigator headerTitle={feedTitle} headerBackgroundColor={backgroundColor} headerTitleColor={mainColor} borderColor={textColor} />
+        <AppNavigator
+          headerTitle={feedTitle}
+          headerBackgroundColor={backgroundColor}
+          headerTitleColor={mainColor}
+          borderColor={textColor}
+          isLive={isLive}
+          liveUrl={liveUrl}
+        />
       </Provider>
     );
   }
@@ -37,6 +44,8 @@ class App extends Component {
 
 App.propTypes = {
   feedTitle: PropTypes.string,
+  isLive: PropTypes.bool,
+  liveUrl: PropTypes.string,
   starlightStyles: PropTypes.object,
 };
 

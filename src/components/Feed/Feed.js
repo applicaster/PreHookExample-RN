@@ -10,7 +10,7 @@ import { styles } from './style';
 
 class Feed extends Component {
   static navigationOptions = ({ screenProps }) => ({
-    ...screenProps,
+    ...screenProps 
   });
 
   constructor(props) {
