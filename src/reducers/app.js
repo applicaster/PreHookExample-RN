@@ -4,6 +4,8 @@ import {
     SET_ACCOUNT_ID,
     SET_TIMELINE_ID,
     SET_TIMEZONE,
+    SHOW_MEDIA_DETAILS_MODAL,
+    HIDE_MEDIA_DETAILS_MODAL,
 } from '../actions';
 import { actionCreator } from '../actions/actionHelpers';
 
@@ -12,6 +14,7 @@ const appInitialState = Map({
   accountId: null,
   timelineId: null,
   timezone: null,
+  isMediaModalVisible: false,
 });
 
 export default (state = appInitialState, action = actionCreator()) => {
@@ -29,6 +32,12 @@ export default (state = appInitialState, action = actionCreator()) => {
 
     case SET_TIMEZONE:
       return state.set('timezone', payload.timezone);
+
+    case SHOW_MEDIA_DETAILS_MODAL:
+      return state.set('isMediaModalVisible', true);
+    
+    case HIDE_MEDIA_DETAILS_MODAL:
+      return state.set('isMediaModalVisible', false);
 
     default:
       return state;

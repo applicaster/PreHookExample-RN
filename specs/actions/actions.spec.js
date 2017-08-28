@@ -7,6 +7,9 @@ import {
   setTimezone,
   setEnvironment,
 
+  showMediaDetailsModal,
+  hideMediaDetailsModal,
+
   FETCH_SOCIAL_EVENTS_START,
   FETCH_SOCIAL_EVENTS_DONE,
   FETCH_SOCIAL_EVENTS_FAILED,
@@ -15,6 +18,9 @@ import {
   SET_TIMELINE_ID,
   SET_TIMEZONE,
   SET_ENVIRONMENT,
+
+  SHOW_MEDIA_DETAILS_MODAL,
+  HIDE_MEDIA_DETAILS_MODAL,
 } from '../../src/actions';
 
 describe('actions', () => {
@@ -114,6 +120,22 @@ describe('actions', () => {
 
         expect(action.payload.environment).to.exist;
         expect(action.payload.environment).to.equal('production');
+      });
+    });
+
+    describe('showMediaDetailsModal', () => {
+      it('should have correct action type', () => {
+        const action = showMediaDetailsModal();
+
+        expect(action.type).to.equal(SHOW_MEDIA_DETAILS_MODAL);
+      });
+    });
+
+    describe('hideMediaDetailsModal', () => {
+      it('should have correct action type', () => {
+        const action = hideMediaDetailsModal();
+
+        expect(action.type).to.equal(HIDE_MEDIA_DETAILS_MODAL);
       });
     });
   });

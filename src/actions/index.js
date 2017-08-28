@@ -10,6 +10,9 @@ export const SET_TIMELINE_ID = 'SET_TIMELINE_ID';
 export const SET_TIMEZONE = 'SET_TIMEZONE';
 export const SET_ENVIRONMENT = 'SET_ENVIRONMENT';
 
+export const SHOW_MEDIA_DETAILS_MODAL = 'SHOW_MEDIA_DETAILS_MODAL';
+export const HIDE_MEDIA_DETAILS_MODAL = 'HIDE_MEDIA_DETAILS_MODAL';
+
 /* ACTIONS */
 export const fetchSocialEvents = () => actionCreator(FETCH_SOCIAL_EVENTS_START);
 export const fetchSocialEventsDone = events => actionCreator(FETCH_SOCIAL_EVENTS_DONE, events);
@@ -19,3 +22,6 @@ export const setAccountId = accountId => actionCreator(SET_ACCOUNT_ID, { account
 export const setTimelineId = timelineId => actionCreator(SET_TIMELINE_ID, { timelineId });
 export const setTimezone = timezone => actionCreator(SET_TIMEZONE, { timezone });
 export const setEnvironment = environment => actionCreator(SET_ENVIRONMENT, { environment });
+
+export const showMediaDetailsModal = () => actionCreator(SHOW_MEDIA_DETAILS_MODAL);
+export const hideMediaDetailsModal = () => actionCreator(HIDE_MEDIA_DETAILS_MODAL);

@@ -3,6 +3,8 @@ import {
     setAccountId,
     setTimelineId,
     setTimezone,
+    showMediaDetailsModal,
+    hideMediaDetailsModal,
 } from '../../src/actions';
 import appReducer from '../../src/reducers/app';
 
@@ -41,6 +43,22 @@ describe('app reducer', () => {
       const newState = appReducer(initialState, setTimezone('someZone'));
 
       expect(newState.get('timezone')).to.equal('someZone');
+    });
+  });
+
+  describe('showMediaDetailsModal is dispatched', () => {
+    it('should set isMediaModalVisible to true', () => {
+      const newState = appReducer(initialState, showMediaDetailsModal());
+
+      expect(newState.get('isMediaModalVisible')).to.equal(true);
+    });
+  });
+
+  describe('hideMediaDetailsModal is dispatched', () => {
+    it('should set isMediaModalVisible to false', () => {
+      const newState = appReducer(initialState, hideMediaDetailsModal());
+
+      expect(newState.get('isMediaModalVisible')).to.equal(false);
     });
   });
 });
