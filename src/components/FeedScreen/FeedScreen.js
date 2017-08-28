@@ -37,7 +37,7 @@ class FeedScreen extends Component {
   }
 
   render() {
-    const { socialEvents, loading, isMediaModalVisible } = this.props;
+    const { socialEvents, loading, isMediaModalVisible, hideMediaDetailsModal } = this.props;
     const backgroundFeedColor = { backgroundColor: this.context.backgroundColor };
     const refreshControl = (
       <RefreshControl
@@ -53,9 +53,10 @@ class FeedScreen extends Component {
           )}
         </ScrollView>
         <Modal
-          animationType={'fade'}
+          animationType={'none'}
           transparent={false}
           visible={isMediaModalVisible}
+          onRequestClose={hideMediaDetailsModal}
         >
           <MediaDetailsScreen />
         </Modal>
@@ -74,7 +75,7 @@ FeedScreen.propTypes = {
   setEnvironment: PropTypes.func,
   navigation: PropTypes.object,
   isMediaModalVisible: PropTypes.bool,
-  showMediaDetailsModal: PropTypes.func,
+  hideMediaDetailsModal: PropTypes.func,
 };
 
 FeedScreen.contextTypes = {
