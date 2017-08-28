@@ -48,6 +48,9 @@ exports[`MediaDetailsScreen component renders correctly 1`] = `
           "width": 25,
           "zIndex": 5,
         },
+        Object {
+          "tintColor": "#FFFFFF99",
+        },
       ]
     }
     testID={undefined}
