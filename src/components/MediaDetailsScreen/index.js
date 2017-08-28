@@ -1,37 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {
-  View,
-} from 'react-native';
+  hideMediaDetailsModal,
+} from '../../actions';
 
-class MediaDetailsScreen extends Component {
-  static navigationOptions = ({ screenProps }) => ({
-    ...screenProps,
-  });
+import MediaDetailsScreen from './MediaDetailsScreen';
 
-  getChildContext() {
-    return { navigation: this.props.navigation };
-  }
+const mapStateToProps = () => ({});
 
-  render() {
-    const backgroundColor = { backgroundColor: this.context.backgroundColor };
-    return (
-      <View style={[backgroundColor]}>
-      </View>
-    );
-  }
-}
+const mapDispatchToProps = dispatch => bindActionCreators({
+  hideMediaDetailsModal,
+}, dispatch);
 
-MediaDetailsScreen.propTypes = {
-  navigation: PropTypes.object,
-};
-
-MediaDetailsScreen.contextTypes = {
-  backgroundColor: PropTypes.string,
-};
-
-MediaDetailsScreen.childContextTypes = {
-  navigation: PropTypes.object,
-};
-
-export default MediaDetailsScreen;
+export default connect(mapStateToProps, mapDispatchToProps)(MediaDetailsScreen);

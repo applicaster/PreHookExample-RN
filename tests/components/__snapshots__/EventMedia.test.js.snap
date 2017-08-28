@@ -2,220 +2,253 @@
 
 exports[`EventMedia component renders correctly for media items with video 1`] = `
 <View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "height": 2250,
-      "width": 750,
+      "opacity": 1,
     }
   }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
-  <Image
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    source={
-      Object {
-        "uri": "someurl",
-      }
-    }
-    style={
-      Array [
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-        Object {
-          "height": 2250,
-          "width": 750,
-        },
-        undefined,
-      ]
-    }
-    testID={undefined}
-  />
-  <Video
-    muted={true}
-    repeat={true}
-    resizeMode="cover"
-    source={
-      Object {
-        "uri": "someurl",
-      }
-    }
-    style={
-      Array [
-        Object {
-          "height": 2250,
-          "width": 750,
-        },
-        Object {
-          "left": 0,
-          "position": "absolute",
-          "top": 0,
-        },
-      ]
-    }
-  />
-  <BVLinearGradient
-    colors={
-      Array [
-        3003121664,
-        0,
-      ]
-    }
-    end={undefined}
-    locations={null}
-    start={undefined}
+  <View
     style={
       Object {
-        "height": 130,
+        "height": 2250,
+        "width": 750,
       }
     }
-  />
+  >
+    <Image
+      source={
+        Object {
+          "uri": "someurl",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": 2250,
+            "width": 750,
+          },
+          undefined,
+        ]
+      }
+    />
+    <Video
+      muted={true}
+      repeat={true}
+      resizeMode="cover"
+      source={
+        Object {
+          "uri": "someurl",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "height": 2250,
+            "width": 750,
+          },
+          Object {
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+          },
+        ]
+      }
+    />
+    <BVLinearGradient
+      colors={
+        Array [
+          3003121664,
+          0,
+        ]
+      }
+      end={undefined}
+      locations={null}
+      start={undefined}
+      style={
+        Object {
+          "height": 130,
+        }
+      }
+    />
+  </View>
 </View>
 `;
 
 exports[`EventMedia component renders correctly for squared images 1`] = `
 <View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "black",
-      "height": 750,
-      "width": 750,
+      "opacity": 1,
     }
   }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
-  <Image
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    source={
-      Object {
-        "uri": "someurl",
-      }
-    }
-    style={
-      Array [
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-        Object {
-          "height": 750,
-          "width": 750,
-        },
-        undefined,
-      ]
-    }
-    testID={undefined}
-  />
-  <BVLinearGradient
-    colors={
-      Array [
-        3003121664,
-        0,
-      ]
-    }
-    end={undefined}
-    locations={null}
-    start={undefined}
+  <View
     style={
       Object {
-        "height": 130,
+        "backgroundColor": "black",
+        "height": 750,
+        "width": 750,
       }
     }
-  />
+  >
+    <Image
+      source={
+        Object {
+          "uri": "someurl",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": 750,
+            "width": 750,
+          },
+          undefined,
+        ]
+      }
+    />
+    <BVLinearGradient
+      colors={
+        Array [
+          3003121664,
+          0,
+        ]
+      }
+      end={undefined}
+      locations={null}
+      start={undefined}
+      style={
+        Object {
+          "height": 130,
+        }
+      }
+    />
+  </View>
 </View>
 `;
 
 exports[`EventMedia component renders correctly for squared images 2`] = `
 <View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "black",
-      "height": 750,
-      "width": 750,
+      "opacity": 1,
     }
   }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
-  <Image
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    source={
-      Object {
-        "uri": "someurl",
-      }
-    }
-    style={
-      Array [
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-        Object {
-          "height": 750,
-          "width": 750,
-        },
-        undefined,
-      ]
-    }
-    testID={undefined}
-  />
-  <BVLinearGradient
-    colors={
-      Array [
-        3003121664,
-        0,
-      ]
-    }
-    end={undefined}
-    locations={null}
-    start={undefined}
+  <View
     style={
       Object {
-        "height": 130,
+        "backgroundColor": "black",
+        "height": 750,
+        "width": 750,
       }
     }
-  />
+  >
+    <Image
+      source={
+        Object {
+          "uri": "someurl",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": 750,
+            "width": 750,
+          },
+          undefined,
+        ]
+      }
+    />
+    <BVLinearGradient
+      colors={
+        Array [
+          3003121664,
+          0,
+        ]
+      }
+      end={undefined}
+      locations={null}
+      start={undefined}
+      style={
+        Object {
+          "height": 130,
+        }
+      }
+    />
+  </View>
 </View>
 `;

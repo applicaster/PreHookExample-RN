@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
+  Modal,
   View,
   ScrollView,
   RefreshControl,
 } from 'react-native';
 import EventContainer from '../EventContainer';
+import MediaDetailsScreen from '../MediaDetailsScreen';
 import { styles } from './style';
 
 class FeedScreen extends Component {
@@ -35,7 +37,7 @@ class FeedScreen extends Component {
   }
 
   render() {
-    const { socialEvents, loading } = this.props;
+    const { socialEvents, loading, isMediaModalVisible } = this.props;
     const backgroundFeedColor = { backgroundColor: this.context.backgroundColor };
     const refreshControl = (
       <RefreshControl
@@ -50,6 +52,13 @@ class FeedScreen extends Component {
             <EventContainer key={event.id} event={event} />
           )}
         </ScrollView>
+        <Modal
+          animationType={'fade'}
+          transparent={false}
+          visible={isMediaModalVisible}
+        >
+          <MediaDetailsScreen />
+        </Modal>
       </View>
     );
   }
@@ -64,6 +73,8 @@ FeedScreen.propTypes = {
   setTimezone: PropTypes.func,
   setEnvironment: PropTypes.func,
   navigation: PropTypes.object,
+  isMediaModalVisible: PropTypes.bool,
+  showMediaDetailsModal: PropTypes.func,
 };
 
 FeedScreen.contextTypes = {

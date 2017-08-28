@@ -7,6 +7,7 @@ import {
   getEnvironment,
   getSocialEvents,
   getLoading,
+  getMediaModalVisibility,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -20,6 +21,7 @@ describe('selectors', () => {
         timelineId: 'someTimelineId',
         timezone: 'someTimezone',
         environment: 'someEnvironment',
+        isMediaModalVisible: true,
       }),
       events: Map({
         socialEvents: [1, 2],
@@ -61,6 +63,12 @@ describe('selectors', () => {
   describe('loading', () => {
     it('should get loading property from the events reducer state', () => {
       expect(getLoading(store.getState())).to.equal(false);
+    });
+  });
+
+  describe('getMediaModalVisibility', () => {
+    it('should get isMediaModalVisible property from the app reducer state', () => {
+      expect(getMediaModalVisibility(store.getState())).to.equal(true);
     });
   });
 });
