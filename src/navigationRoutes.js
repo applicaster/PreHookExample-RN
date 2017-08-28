@@ -1,10 +1,10 @@
-import Feed from './components/Feed';
+import FeedScreen from './components/FeedScreen';
 
 export default {
   Feed: {
-    screen: Feed,
+    screen: FeedScreen,
   },
   Comments: {
-    screen: Feed,
+    screen: FeedScreen,
   },
 };

@@ -1,13 +1,13 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Feed from '../../src/components/Feed/Feed';
+import FeedScreen from '../../src/components/FeedScreen/FeedScreen';
 import { event } from './eventTestDataUtils';
 
-describe('Feed', () => {
+describe('FeedScreen', () => {
   test('component renders correctly without events', () => {
     const tree = renderer.create(
-      <Feed
+      <FeedScreen
         fetchSocialEvents={() => {}}
         setAccountId={() => {}}
         setTimelineId={() => {}}
@@ -22,7 +22,7 @@ describe('Feed', () => {
 
   test('component renders correctly with events', () => {
     const tree = renderer.create(
-      <Feed
+      <FeedScreen
         fetchSocialEvents={() => {}}
         setAccountId={() => {}}
         setTimelineId={() => {}}
@@ -37,7 +37,7 @@ describe('Feed', () => {
 
   test('component renders correctly while loading', () => {
     const tree = renderer.create(
-      <Feed
+      <FeedScreen
         fetchSocialEvents={() => {}}
         setAccountId={() => {}}
         setTimelineId={() => {}}
@@ -52,7 +52,7 @@ describe('Feed', () => {
 
   test('component renders correctly while loading with events', () => {
     const tree = renderer.create(
-      <Feed
+      <FeedScreen
         fetchSocialEvents={() => {}}
         setAccountId={() => {}}
         setTimelineId={() => {}}

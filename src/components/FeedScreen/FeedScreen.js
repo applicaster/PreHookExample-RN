@@ -8,7 +8,7 @@ import {
 import EventContainer from '../EventContainer';
 import { styles } from './style';
 
-class Feed extends Component {
+class FeedScreen extends Component {
   static navigationOptions = ({ screenProps }) => ({
     ...screenProps 
   });
@@ -55,7 +55,7 @@ class Feed extends Component {
   }
 }
 
-Feed.propTypes = {
+FeedScreen.propTypes = {
   loading: PropTypes.bool,
   socialEvents: PropTypes.array,
   fetchSocialEvents: PropTypes.func,
@@ -66,12 +66,12 @@ Feed.propTypes = {
   navigation: PropTypes.object,
 };
 
-Feed.contextTypes = {
+FeedScreen.contextTypes = {
   backgroundColor: PropTypes.string,
 };
 
-Feed.childContextTypes = {
+FeedScreen.childContextTypes = {
   navigation: PropTypes.object,
 };
 
-export default Feed;
+export default FeedScreen;

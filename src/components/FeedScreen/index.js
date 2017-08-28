@@ -13,7 +13,7 @@ import {
   getLoading,
 } from '../../selectors';
 
-import Feed from './Feed';
+import FeedScreen from './FeedScreen';
 
 const mapStateToProps = state => ({
   loading: getLoading(state),
@@ -28,4 +28,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   setEnvironment,
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Feed);
+export default connect(mapStateToProps, mapDispatchToProps)(FeedScreen);

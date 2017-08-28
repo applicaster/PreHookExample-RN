@@ -224,6 +224,19 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           }
         >
           <Image
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             source={
               Object {
                 "uri": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
@@ -245,6 +258,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 undefined,
               ]
             }
+            testID={undefined}
           />
           <BVLinearGradient
             colors={
@@ -671,6 +685,19 @@ exports[`Feed component renders correctly while loading with events 1`] = `
           }
         >
           <Image
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             source={
               Object {
                 "uri": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
@@ -692,6 +719,7 @@ exports[`Feed component renders correctly while loading with events 1`] = `
                 undefined,
               ]
             }
+            testID={undefined}
           />
           <BVLinearGradient
             colors={
@@ -1150,6 +1178,19 @@ exports[`Feed component renders correctly with events 1`] = `
           }
         >
           <Image
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             source={
               Object {
                 "uri": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
@@ -1171,6 +1212,7 @@ exports[`Feed component renders correctly with events 1`] = `
                 undefined,
               ]
             }
+            testID={undefined}
           />
           <BVLinearGradient
             colors={
@@ -1597,6 +1639,19 @@ exports[`Feed component renders correctly with events 1`] = `
           }
         >
           <Image
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            hitSlop={undefined}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             source={
               Object {
                 "uri": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
@@ -1618,6 +1673,7 @@ exports[`Feed component renders correctly with events 1`] = `
                 undefined,
               ]
             }
+            testID={undefined}
           />
           <BVLinearGradient
             colors={

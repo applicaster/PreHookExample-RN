@@ -10,6 +10,19 @@ exports[`EventMedia component renders correctly for media items with video 1`] =
   }
 >
   <Image
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     source={
       Object {
         "uri": "someurl",
@@ -31,6 +44,7 @@ exports[`EventMedia component renders correctly for media items with video 1`] =
         undefined,
       ]
     }
+    testID={undefined}
   />
   <Video
     muted={true}
@@ -85,6 +99,19 @@ exports[`EventMedia component renders correctly for squared images 1`] = `
   }
 >
   <Image
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     source={
       Object {
         "uri": "someurl",
@@ -106,6 +133,7 @@ exports[`EventMedia component renders correctly for squared images 1`] = `
         undefined,
       ]
     }
+    testID={undefined}
   />
   <BVLinearGradient
     colors={
@@ -137,6 +165,19 @@ exports[`EventMedia component renders correctly for squared images 2`] = `
   }
 >
   <Image
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     source={
       Object {
         "uri": "someurl",
@@ -158,6 +199,7 @@ exports[`EventMedia component renders correctly for squared images 2`] = `
         undefined,
       ]
     }
+    testID={undefined}
   />
   <BVLinearGradient
     colors={
