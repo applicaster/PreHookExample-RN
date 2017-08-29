@@ -553,54 +553,12 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
       />
     </View>
   </View>
-  <View
-    style={
-      Object {
-        "height": 590.625,
-        "width": 750,
-      }
-    }
-  >
-    <Image
-      source={
-        Object {
-          "uri": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
-        }
-      }
-      style={
-        Array [
-          Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          Object {
-            "height": 590.625,
-            "width": 750,
-          },
-          undefined,
-        ]
-      }
-    />
-    <BVLinearGradient
-      colors={
-        Array [
-          3003121664,
-          0,
-        ]
-      }
-      end={undefined}
-      locations={null}
-      start={undefined}
-      style={
-        Object {
-          "height": 130,
-        }
-      }
-    />
-  </View>
+  <EventMedia
+    height={504}
+    imageUrl="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg"
+    videoUrl={undefined}
+    width={640}
+  />
   <Text
     accessible={true}
     allowFontScaling={true}

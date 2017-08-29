@@ -4,6 +4,8 @@ import renderer from 'react-test-renderer';
 import EventContainer from '../../src/components/EventContainer';
 import { event } from './eventTestDataUtils';
 
+jest.mock('../../src/components/EventMedia', () => 'EventMedia');
+
 describe('EventContainer', () => {
   test('component renders correctly with an image event', () => {
     const tree = renderer.create(

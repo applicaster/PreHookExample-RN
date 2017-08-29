@@ -4,7 +4,7 @@ import {
   toggleModal,
 } from '../../actions';
 
-import EventMedia from './EventMedia';
+import MediaDetailsScreen from './MediaDetailsScreen';
 
 const mapStateToProps = () => ({});
 
@@ -12,4 +12,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   toggleModal,
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(EventMedia);
+export default connect(mapStateToProps, mapDispatchToProps)(MediaDetailsScreen);

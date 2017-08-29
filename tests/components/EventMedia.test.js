@@ -1,13 +1,14 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import EventMedia from '../../src/components/EventMedia';
+import EventMedia from '../../src/components/EventMedia/EventMedia';
 
 const eventMediaProps = (height, width, videoUrl) => ({
   imageUrl: 'someurl',
   height,
   width,
   videoUrl,
+  showMediaDetailsModal: () => {},
 });
 
 jest.mock('react-native-video', () => 'Video');

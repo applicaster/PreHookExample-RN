@@ -7,6 +7,8 @@ import {
   setTimezone,
   setEnvironment,
 
+  toggleModal,
+
   FETCH_SOCIAL_EVENTS_START,
   FETCH_SOCIAL_EVENTS_DONE,
   FETCH_SOCIAL_EVENTS_FAILED,
@@ -15,6 +17,8 @@ import {
   SET_TIMELINE_ID,
   SET_TIMEZONE,
   SET_ENVIRONMENT,
+
+  TOGGLE_MODAL,
 } from '../../src/actions';
 
 describe('actions', () => {
@@ -114,6 +118,14 @@ describe('actions', () => {
 
         expect(action.payload.environment).to.exist;
         expect(action.payload.environment).to.equal('production');
+      });
+    });
+
+    describe('toggleModal', () => {
+      it('should have correct action type', () => {
+        const action = toggleModal();
+
+        expect(action.type).to.equal(TOGGLE_MODAL);
       });
     });
   });

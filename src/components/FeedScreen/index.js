@@ -6,18 +6,21 @@ import {
   setTimelineId,
   setTimezone,
   setEnvironment,
+  hideMediaDetailsModal,
 } from '../../actions';
 
 import {
   getSocialEvents,
   getLoading,
+  getMediaModalVisibility,
 } from '../../selectors';
 
-import Feed from './Feed';
+import FeedScreen from './FeedScreen';
 
 const mapStateToProps = state => ({
   loading: getLoading(state),
   socialEvents: getSocialEvents(state),
+  isMediaModalVisible: getMediaModalVisibility(state),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
@@ -26,6 +29,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   setTimelineId,
   setTimezone,
   setEnvironment,
+  hideMediaDetailsModal,
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Feed);
+export default connect(mapStateToProps, mapDispatchToProps)(FeedScreen);

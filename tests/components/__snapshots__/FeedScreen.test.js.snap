@@ -1,0 +1,402 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeedScreen component renders correctly while loading 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+      },
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={true}
+      />
+    }
+  >
+    <RCTRefreshControl />
+    <View />
+  </RCTScrollView>
+  <Modal
+    animationType="none"
+    hardwareAccelerated={false}
+    onRequestClose={undefined}
+    transparent={false}
+    visible={true}
+  >
+    <MediaDetailsScreen />
+  </Modal>
+</View>
+`;
+
+exports[`FeedScreen component renders correctly while loading with events 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+      },
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={true}
+      />
+    }
+  >
+    <RCTRefreshControl />
+    <View>
+      <EventContainer
+        event={
+          Object {
+            "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
+          Thanks @azpinstalls for the work, parts, advice and setup.
+          #brz #gt86 #ft86",
+            "commentsCount": 0,
+            "createdAt": 1501886235,
+            "id": 1,
+            "images": Object {
+              "default": Object {
+                "height": 504,
+                "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
+                "width": 640,
+              },
+              "high_resolution": Object {
+                "height": 252,
+                "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/20590092_108583273161709_7296810043293302784_n.jpg",
+                "width": 320,
+              },
+            },
+            "likesCount": 30,
+            "source": "instagram",
+            "type": "image",
+            "user": Object {
+              "avatarImageUrl": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+              "id": "220971565",
+              "name": "Test Name",
+              "userName": "applicaster",
+            },
+          }
+        }
+      />
+      <EventContainer
+        event={
+          Object {
+            "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
+          Thanks @azpinstalls for the work, parts, advice and setup.
+          #brz #gt86 #ft86",
+            "commentsCount": 0,
+            "createdAt": 1501886235,
+            "id": 2,
+            "images": Object {
+              "default": Object {
+                "height": 504,
+                "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
+                "width": 640,
+              },
+              "high_resolution": Object {
+                "height": 252,
+                "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/20590092_108583273161709_7296810043293302784_n.jpg",
+                "width": 320,
+              },
+            },
+            "likesCount": 30,
+            "source": "instagram",
+            "type": "image",
+            "user": Object {
+              "avatarImageUrl": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+              "id": "220971565",
+              "name": "Test Name",
+              "userName": "applicaster",
+            },
+          }
+        }
+      />
+    </View>
+  </RCTScrollView>
+  <Modal
+    animationType="none"
+    hardwareAccelerated={false}
+    onRequestClose={undefined}
+    transparent={false}
+    visible={true}
+  >
+    <MediaDetailsScreen />
+  </Modal>
+</View>
+`;
+
+exports[`FeedScreen component renders correctly with events 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+      },
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+  >
+    <RCTRefreshControl />
+    <View>
+      <EventContainer
+        event={
+          Object {
+            "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
+          Thanks @azpinstalls for the work, parts, advice and setup.
+          #brz #gt86 #ft86",
+            "commentsCount": 0,
+            "createdAt": 1501886235,
+            "id": 1,
+            "images": Object {
+              "default": Object {
+                "height": 504,
+                "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
+                "width": 640,
+              },
+              "high_resolution": Object {
+                "height": 252,
+                "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/20590092_108583273161709_7296810043293302784_n.jpg",
+                "width": 320,
+              },
+            },
+            "likesCount": 30,
+            "source": "instagram",
+            "type": "image",
+            "user": Object {
+              "avatarImageUrl": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+              "id": "220971565",
+              "name": "Test Name",
+              "userName": "applicaster",
+            },
+          }
+        }
+      />
+      <EventContainer
+        event={
+          Object {
+            "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
+          Thanks @azpinstalls for the work, parts, advice and setup.
+          #brz #gt86 #ft86",
+            "commentsCount": 0,
+            "createdAt": 1501886235,
+            "id": 2,
+            "images": Object {
+              "default": Object {
+                "height": 504,
+                "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
+                "width": 640,
+              },
+              "high_resolution": Object {
+                "height": 252,
+                "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/20590092_108583273161709_7296810043293302784_n.jpg",
+                "width": 320,
+              },
+            },
+            "likesCount": 30,
+            "source": "instagram",
+            "type": "image",
+            "user": Object {
+              "avatarImageUrl": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+              "id": "220971565",
+              "name": "Test Name",
+              "userName": "applicaster",
+            },
+          }
+        }
+      />
+    </View>
+  </RCTScrollView>
+  <Modal
+    animationType="none"
+    hardwareAccelerated={false}
+    onRequestClose={undefined}
+    transparent={false}
+    visible={true}
+  >
+    <MediaDetailsScreen />
+  </Modal>
+</View>
+`;
+
+exports[`FeedScreen component renders correctly with modal on top 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+      },
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={true}
+      />
+    }
+  >
+    <RCTRefreshControl />
+    <View>
+      <EventContainer
+        event={
+          Object {
+            "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
+          Thanks @azpinstalls for the work, parts, advice and setup.
+          #brz #gt86 #ft86",
+            "commentsCount": 0,
+            "createdAt": 1501886235,
+            "id": 1,
+            "images": Object {
+              "default": Object {
+                "height": 504,
+                "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
+                "width": 640,
+              },
+              "high_resolution": Object {
+                "height": 252,
+                "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/20590092_108583273161709_7296810043293302784_n.jpg",
+                "width": 320,
+              },
+            },
+            "likesCount": 30,
+            "source": "instagram",
+            "type": "image",
+            "user": Object {
+              "avatarImageUrl": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+              "id": "220971565",
+              "name": "Test Name",
+              "userName": "applicaster",
+            },
+          }
+        }
+      />
+      <EventContainer
+        event={
+          Object {
+            "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
+          Thanks @azpinstalls for the work, parts, advice and setup.
+          #brz #gt86 #ft86",
+            "commentsCount": 0,
+            "createdAt": 1501886235,
+            "id": 2,
+            "images": Object {
+              "default": Object {
+                "height": 504,
+                "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg",
+                "width": 640,
+              },
+              "high_resolution": Object {
+                "height": 252,
+                "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/20590092_108583273161709_7296810043293302784_n.jpg",
+                "width": 320,
+              },
+            },
+            "likesCount": 30,
+            "source": "instagram",
+            "type": "image",
+            "user": Object {
+              "avatarImageUrl": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+              "id": "220971565",
+              "name": "Test Name",
+              "userName": "applicaster",
+            },
+          }
+        }
+      />
+    </View>
+  </RCTScrollView>
+  <Modal
+    animationType="none"
+    hardwareAccelerated={false}
+    onRequestClose={undefined}
+    transparent={false}
+    visible={true}
+  >
+    <MediaDetailsScreen />
+  </Modal>
+</View>
+`;
+
+exports[`FeedScreen component renders correctly without events 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+      },
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+  >
+    <RCTRefreshControl />
+    <View />
+  </RCTScrollView>
+  <Modal
+    animationType="none"
+    hardwareAccelerated={false}
+    onRequestClose={undefined}
+    transparent={false}
+    visible={true}
+  >
+    <MediaDetailsScreen />
+  </Modal>
+</View>
+`;

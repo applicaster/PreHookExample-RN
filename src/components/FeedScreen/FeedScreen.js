@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
+  Modal,
   View,
   ScrollView,
   RefreshControl,
 } from 'react-native';
 import EventContainer from '../EventContainer';
+import MediaDetailsScreen from '../MediaDetailsScreen';
 import { styles } from './style';
 
-class Feed extends Component {
+class FeedScreen extends Component {
   static navigationOptions = ({ screenProps }) => ({
     ...screenProps 
   });
@@ -35,7 +37,7 @@ class Feed extends Component {
   }
 
   render() {
-    const { socialEvents, loading } = this.props;
+    const { socialEvents, loading, isMediaModalVisible, toggleModal } = this.props;
     const backgroundFeedColor = { backgroundColor: this.context.backgroundColor };
     const refreshControl = (
       <RefreshControl
@@ -50,12 +52,20 @@ class Feed extends Component {
             <EventContainer key={event.id} event={event} />
           )}
         </ScrollView>
+        <Modal
+          animationType={'none'}
+          transparent={false}
+          visible={isMediaModalVisible}
+          onRequestClose={toggleModal}
+        >
+          <MediaDetailsScreen />
+        </Modal>
       </View>
     );
   }
 }
 
-Feed.propTypes = {
+FeedScreen.propTypes = {
   loading: PropTypes.bool,
   socialEvents: PropTypes.array,
   fetchSocialEvents: PropTypes.func,
@@ -64,14 +74,16 @@ Feed.propTypes = {
   setTimezone: PropTypes.func,
   setEnvironment: PropTypes.func,
   navigation: PropTypes.object,
+  isMediaModalVisible: PropTypes.bool,
+  toggleModal: PropTypes.func,
 };
 
-Feed.contextTypes = {
+FeedScreen.contextTypes = {
   backgroundColor: PropTypes.string,
 };
 
-Feed.childContextTypes = {
+FeedScreen.childContextTypes = {
   navigation: PropTypes.object,
 };
 
-export default Feed;
+export default FeedScreen;

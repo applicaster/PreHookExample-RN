@@ -3,6 +3,7 @@ import {
     setAccountId,
     setTimelineId,
     setTimezone,
+    toggleModal,
 } from '../../src/actions';
 import appReducer from '../../src/reducers/app';
 
@@ -41,6 +42,21 @@ describe('app reducer', () => {
       const newState = appReducer(initialState, setTimezone('someZone'));
 
       expect(newState.get('timezone')).to.equal('someZone');
+    });
+  });
+
+  describe('toggleModal is dispatched', () => {
+    it('should set isMediaModalVisible to true when it is false', () => {
+      const newState = appReducer(initialState, toggleModal());
+
+      expect(newState.get('isMediaModalVisible')).to.equal(true);
+    });
+
+    it('should set isMediaModalVisible to false when it is true', () => {
+      const visibleModalState = initialState.set('isMediaModalVisible', true);
+      const newState = appReducer(visibleModalState, toggleModal());
+      
+      expect(newState.get('isMediaModalVisible')).to.equal(false);
     });
   });
 });
