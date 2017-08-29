@@ -3,8 +3,7 @@ import {
     setAccountId,
     setTimelineId,
     setTimezone,
-    showMediaDetailsModal,
-    hideMediaDetailsModal,
+    toggleModal,
 } from '../../src/actions';
 import appReducer from '../../src/reducers/app';
 
@@ -46,18 +45,17 @@ describe('app reducer', () => {
     });
   });
 
-  describe('showMediaDetailsModal is dispatched', () => {
-    it('should set isMediaModalVisible to true', () => {
-      const newState = appReducer(initialState, showMediaDetailsModal());
+  describe('toggleModal is dispatched', () => {
+    it('should set isMediaModalVisible to true when it is false', () => {
+      const newState = appReducer(initialState, toggleModal());
 
       expect(newState.get('isMediaModalVisible')).to.equal(true);
     });
-  });
 
-  describe('hideMediaDetailsModal is dispatched', () => {
-    it('should set isMediaModalVisible to false', () => {
-      const newState = appReducer(initialState, hideMediaDetailsModal());
-
+    it('should set isMediaModalVisible to false when it is true', () => {
+      const visibleModalState = initialState.set('isMediaModalVisible', true);
+      const newState = appReducer(visibleModalState, toggleModal());
+      
       expect(newState.get('isMediaModalVisible')).to.equal(false);
     });
   });

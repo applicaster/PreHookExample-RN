@@ -7,8 +7,7 @@ import {
   setTimezone,
   setEnvironment,
 
-  showMediaDetailsModal,
-  hideMediaDetailsModal,
+  toggleModal,
 
   FETCH_SOCIAL_EVENTS_START,
   FETCH_SOCIAL_EVENTS_DONE,
@@ -19,8 +18,7 @@ import {
   SET_TIMEZONE,
   SET_ENVIRONMENT,
 
-  SHOW_MEDIA_DETAILS_MODAL,
-  HIDE_MEDIA_DETAILS_MODAL,
+  TOGGLE_MODAL,
 } from '../../src/actions';
 
 describe('actions', () => {
@@ -123,19 +121,11 @@ describe('actions', () => {
       });
     });
 
-    describe('showMediaDetailsModal', () => {
+    describe('toggleModal', () => {
       it('should have correct action type', () => {
-        const action = showMediaDetailsModal();
+        const action = toggleModal();
 
-        expect(action.type).to.equal(SHOW_MEDIA_DETAILS_MODAL);
-      });
-    });
-
-    describe('hideMediaDetailsModal', () => {
-      it('should have correct action type', () => {
-        const action = hideMediaDetailsModal();
-
-        expect(action.type).to.equal(HIDE_MEDIA_DETAILS_MODAL);
+        expect(action.type).to.equal(TOGGLE_MODAL);
       });
     });
   });

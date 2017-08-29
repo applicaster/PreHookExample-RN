@@ -55,9 +55,9 @@ class EventMedia extends Component {
   }
 
   render() {
-    const { imageUrl, showMediaDetailsModal } = this.props;
+    const { imageUrl, toggleModal } = this.props;
     return (
-      <TouchableOpacity onPress={showMediaDetailsModal}>
+      <TouchableOpacity onPress={toggleModal}>
         <ImageBackground
           style={this.getMediaItemStyles()}
           source={{ uri: imageUrl }}
@@ -75,7 +75,7 @@ EventMedia.propTypes = {
   height: PropTypes.number,
   videoUrl: PropTypes.string,
   width: PropTypes.number,
-  showMediaDetailsModal: PropTypes.func,
+  toggleModal: PropTypes.func,
 };
 
 EventMedia.contextTypes = {

@@ -10,13 +10,13 @@ import { styles } from './style';
 
 class MediaDetailsScreen extends Component {
   render() {
-    const { hideMediaDetailsModal } = this.props;
+    const { toggleModal } = this.props;
     const { backgroundColor, textColor = '#FFFFFF' } = this.context;
     const screenBackgroundColor = { backgroundColor, flex: 1 };
     const closeButtonColor = { tintColor: `${textColor}99` };
     return (
       <View style={[styles.mediaDetailsScreen, screenBackgroundColor]}>
-        <TouchableWithoutFeedback onPress={hideMediaDetailsModal}>
+        <TouchableWithoutFeedback onPress={toggleModal}>
           <Image style={[styles.closeButton, closeButtonColor]} source={{ uri: 'close_button' }} />
         </TouchableWithoutFeedback>
         <Text style={{ color: 'white', alignSelf: 'center', marginTop: 50 }}>Hola Modal!</Text>
@@ -26,7 +26,7 @@ class MediaDetailsScreen extends Component {
 }
 
 MediaDetailsScreen.propTypes = {
-  hideMediaDetailsModal: PropTypes.func,
+  toggleModal: PropTypes.func,
 };
 
 MediaDetailsScreen.contextTypes = {

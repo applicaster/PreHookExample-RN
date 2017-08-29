@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
-  hideMediaDetailsModal,
+  toggleModal,
 } from '../../actions';
 
 import MediaDetailsScreen from './MediaDetailsScreen';
@@ -9,7 +9,7 @@ import MediaDetailsScreen from './MediaDetailsScreen';
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  hideMediaDetailsModal,
+  toggleModal,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(MediaDetailsScreen);
