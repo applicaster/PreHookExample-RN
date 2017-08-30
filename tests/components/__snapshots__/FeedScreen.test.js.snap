@@ -29,7 +29,7 @@ exports[`FeedScreen component renders correctly while loading 1`] = `
     <View />
   </RCTScrollView>
   <Modal
-    animationType="none"
+    animationType="fade"
     hardwareAccelerated={false}
     onRequestClose={undefined}
     transparent={false}
@@ -136,7 +136,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
     </View>
   </RCTScrollView>
   <Modal
-    animationType="none"
+    animationType="fade"
     hardwareAccelerated={false}
     onRequestClose={undefined}
     transparent={false}
@@ -243,7 +243,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
     </View>
   </RCTScrollView>
   <Modal
-    animationType="none"
+    animationType="fade"
     hardwareAccelerated={false}
     onRequestClose={undefined}
     transparent={false}
@@ -350,7 +350,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
     </View>
   </RCTScrollView>
   <Modal
-    animationType="none"
+    animationType="fade"
     hardwareAccelerated={false}
     onRequestClose={undefined}
     transparent={false}
@@ -390,7 +390,7 @@ exports[`FeedScreen component renders correctly without events 1`] = `
     <View />
   </RCTScrollView>
   <Modal
-    animationType="none"
+    animationType="fade"
     hardwareAccelerated={false}
     onRequestClose={undefined}
     transparent={false}

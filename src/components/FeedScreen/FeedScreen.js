@@ -53,7 +53,7 @@ class FeedScreen extends Component {
           )}
         </ScrollView>
         <Modal
-          animationType={'none'}
+          animationType={'fade'}
           transparent={false}
           visible={isMediaModalVisible}
           onRequestClose={toggleModal}
