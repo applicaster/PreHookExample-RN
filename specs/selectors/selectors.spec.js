@@ -8,6 +8,7 @@ import {
   getSocialEvents,
   getLoading,
   getMediaModalVisibility,
+  getActiveEventImageUrl,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -26,6 +27,9 @@ describe('selectors', () => {
       events: Map({
         socialEvents: [1, 2],
         loading: false,
+      }),
+      activeEvent: Map({
+        imageUrl: 'mario64.png',
       }),
     });
   });
@@ -69,6 +73,11 @@ describe('selectors', () => {
   describe('getMediaModalVisibility', () => {
     it('should get isMediaModalVisible property from the app reducer state', () => {
       expect(getMediaModalVisibility(store.getState())).to.equal(true);
+    });
+  });
+  describe('getActiveEventImageUrl', () => {
+    it('should get imageUrl property from the activeEvent reducer state', () => {
+      expect(getActiveEventImageUrl(store.getState())).to.equal('mario64.png');
     });
   });
 });

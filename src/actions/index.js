@@ -22,4 +22,4 @@ export const setTimelineId = timelineId => actionCreator(SET_TIMELINE_ID, { time
 export const setTimezone = timezone => actionCreator(SET_TIMEZONE, { timezone });
 export const setEnvironment = environment => actionCreator(SET_ENVIRONMENT, { environment });
 
-export const toggleModal = () => actionCreator(TOGGLE_MODAL);
+export const toggleModal = modalParams => actionCreator(TOGGLE_MODAL, modalParams);

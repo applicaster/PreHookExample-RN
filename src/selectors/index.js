@@ -5,6 +5,11 @@ export const getTimezone = state => state.app.get('timezone');
 export const getEnvironment = state => state.app.get('environment');
 export const getMediaModalVisibility = state => state.app.get('isMediaModalVisible');
 
+
 // From EVENTS Reducer
 export const getSocialEvents = state => state.events.get('socialEvents');
 export const getLoading = state => state.events.get('loading');
+
+
+// From ACTIVE EVENT Reducer
+export const getActiveEventImageUrl = state => state.activeEvent.get('imageUrl');
