@@ -55,20 +55,75 @@ exports[`MediaDetailsScreen component renders correctly 1`] = `
     }
     testID={undefined}
   />
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
+  <View
+    contentAspectRatio={undefined}
+    enableResistance={true}
+    enableScale={true}
+    enableTransform={false}
+    enableTranslate={true}
+    maxOverScrollDistance={20}
+    maxScale={1}
+    onLayout={[Function]}
+    onTransformGestureReleased={undefined}
+    onViewTransformed={undefined}
     style={
       Object {
-        "alignSelf": "center",
-        "color": "white",
-        "marginTop": 50,
+        "height": 750,
+        "width": 750,
       }
     }
   >
-    Hola Modal!
-  </Text>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "transform": Array [
+            Object {
+              "scale": 1,
+            },
+            Object {
+              "translateX": 0,
+            },
+            Object {
+              "translateY": 0,
+            },
+          ],
+        }
+      }
+    >
+      <Image
+        capInsets={
+          Object {
+            "bottom": 0.1,
+            "left": 0.1,
+            "right": 0.1,
+            "top": 0.1,
+          }
+        }
+        enableScale={true}
+        enableTransform={true}
+        enableTranslate={true}
+        onLoad={[Function]}
+        onLoadStart={[Function]}
+        resizeMode="contain"
+        source={
+          Object {
+            "uri": undefined,
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 750,
+              "width": 750,
+            },
+            Object {
+              "backgroundColor": "transparent",
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
 </View>
 `;
