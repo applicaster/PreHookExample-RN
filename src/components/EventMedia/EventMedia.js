@@ -3,33 +3,23 @@ import PropTypes from 'prop-types';
 import {
   Dimensions,
   ImageBackground,
-  StyleSheet,
   TouchableOpacity,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Video from 'react-native-video';
-
-const screenWidth = Dimensions.get('window').width;
-const styles = StyleSheet.create({
-  mediaItem: {
-    height: screenWidth,
-    width: screenWidth,
-    backgroundColor: 'black',
-  },
-  videoItem: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-  },
-  headerVisor: {
-    height: 130,
-  },
-});
+import { styles } from './style';
 
 class EventMedia extends Component {
+  constructor(props) {
+    super(props);
+    this.showMediaDetails = this.showMediaDetails.bind(this);
+  }
+
   getMediaItemStyles() {
     const { width, height } = this.props;
+    const screenWidth = Dimensions.get('window').width;
     let mediaItemStyles = styles.mediaItem;
+    
     if (width !== height) {
       const aspectRatio = (width / height);
       mediaItemStyles = {
@@ -41,6 +31,15 @@ class EventMedia extends Component {
     return mediaItemStyles;
   }
   
+  showMediaDetails() {
+    const { toggleModal, imageUrl, height, width } = this.props;
+    toggleModal({
+      imageUrl,
+      imageHeight: height,
+      imageWidth: width,
+    });
+  }
+
   renderVideo() {
     const { videoUrl } = this.props;
     return videoUrl
@@ -55,9 +54,9 @@ class EventMedia extends Component {
   }
 
   render() {
-    const { imageUrl, toggleModal } = this.props;
+    const { imageUrl } = this.props;
     return (
-      <TouchableOpacity onPress={toggleModal}>
+      <TouchableOpacity onPress={this.showMediaDetails}>
         <ImageBackground
           style={this.getMediaItemStyles()}
           source={{ uri: imageUrl }}
