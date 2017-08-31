@@ -47,16 +47,30 @@ describe('app reducer', () => {
 
   describe('toggleModal is dispatched', () => {
     it('should set isMediaModalVisible to true when it is false', () => {
-      const newState = appReducer(initialState, toggleModal());
+      const newState = appReducer(initialState, toggleModal({}));
 
       expect(newState.get('isMediaModalVisible')).to.equal(true);
     });
 
     it('should set isMediaModalVisible to false when it is true', () => {
       const visibleModalState = initialState.set('isMediaModalVisible', true);
-      const newState = appReducer(visibleModalState, toggleModal());
+      const newState = appReducer(visibleModalState, toggleModal({}));
       
       expect(newState.get('isMediaModalVisible')).to.equal(false);
+    });
+
+    it('should set activeEventId if present', () => {
+      const visibleModalState = initialState.set('isMediaModalVisible', true);
+      const newState = appReducer(visibleModalState, toggleModal({ activeEventId: 'someId' }));
+      
+      expect(newState.get('activeEventId')).to.equal('someId');
+    });
+
+    it('should set activeEventId to null if not present', () => {
+      const visibleModalState = initialState.set('isMediaModalVisible', true);
+      const newState = appReducer(visibleModalState, toggleModal({}));
+      
+      expect(newState.get('activeEventId')).to.equal(null);
     });
   });
 });

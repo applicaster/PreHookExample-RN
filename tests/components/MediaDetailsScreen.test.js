@@ -3,10 +3,15 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import MediaDetailsScreen from '../../src/components/MediaDetailsScreen/MediaDetailsScreen';
 
-const props = ({ imageHeight, imageWidth, imageUrl }) => ({
-  imageHeight,
-  imageWidth,
-  imageUrl,
+const event = ({ width = 100, height = 100, url = 'someUrl' }) => ({
+  id: 'someId',
+  images: {
+    default: {
+      width,
+      height,
+      url,
+    },
+  },
 });
 
 describe('MediaDetailsScreen', () => {
@@ -20,28 +25,28 @@ describe('MediaDetailsScreen', () => {
   describe('image sizes', () => {
     test('component renders correctly with squared image', () => {
       const tree = renderer.create(
-        <MediaDetailsScreen {...props({ imageHeight: 100, imageWidth: 100, imageUrl: 'squared' })} />
+        <MediaDetailsScreen activeEvent={event({ height: 100, width: 100, url: 'squared' })} />
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     test('component renders correctly with landscape image', () => {
       const tree = renderer.create(
-        <MediaDetailsScreen {...props({ imageHeight: 100, imageWidth: 200, imageUrl: 'lanscape' })} />
+        <MediaDetailsScreen activeEvent={event({ height: 100, width: 200, url: 'lanscape' })} />
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     test('component renders correctly with vertical image with edge to edge width', () => {
       const tree = renderer.create(
-        <MediaDetailsScreen {...props({ imageHeight: 200, imageWidth: 150, imageUrl: 'vertical' })} />
+        <MediaDetailsScreen activeEvent={event({ height: 200, width: 150, url: 'vertical' })} />
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
     test('component renders correctly with vertical image that goes over the', () => {
       const tree = renderer.create(
-        <MediaDetailsScreen {...props({ imageHeight: 5000, imageWidth: 200, imageUrl: 'supertall' })} />
+        <MediaDetailsScreen activeEvent={event({ imageHeight: 5000, imageWidth: 200, imageUrl: 'supertall' })} />
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });

@@ -14,6 +14,7 @@ const appInitialState = Map({
   timelineId: null,
   timezone: null,
   isMediaModalVisible: false,
+  activeEventId: null,
 });
 
 export default (state = appInitialState, action = actionCreator()) => {
@@ -33,7 +34,9 @@ export default (state = appInitialState, action = actionCreator()) => {
       return state.set('timezone', payload.timezone);
 
     case TOGGLE_MODAL:
-      return state.set('isMediaModalVisible', !state.get('isMediaModalVisible'));
+      return state
+        .set('isMediaModalVisible', !state.get('isMediaModalVisible'))
+        .set('activeEventId', payload.activeEventId || null);
 
     default:
       return state;

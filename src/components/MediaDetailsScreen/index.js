@@ -4,13 +4,13 @@ import {
   toggleModal,
 } from '../../actions';
 import {
-  getActiveEventImageUrl,
+  getActiveEvent,
 } from '../../selectors';
 
 import MediaDetailsScreen from './MediaDetailsScreen';
 
 const mapStateToProps = state => ({
-  imageUrl: getActiveEventImageUrl(state),
+  activeEvent: getActiveEvent(state),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

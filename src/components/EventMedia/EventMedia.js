@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   Dimensions,
   ImageBackground,
-  TouchableOpacity,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Video from 'react-native-video';
@@ -32,11 +32,9 @@ class EventMedia extends Component {
   }
   
   showMediaDetails() {
-    const { toggleModal, imageUrl, height, width } = this.props;
+    const { toggleModal, id } = this.props;
     toggleModal({
-      imageUrl,
-      imageHeight: height,
-      imageWidth: width,
+      activeEventId: id,
     });
   }
 
@@ -56,7 +54,7 @@ class EventMedia extends Component {
   render() {
     const { imageUrl } = this.props;
     return (
-      <TouchableOpacity onPress={this.showMediaDetails}>
+      <TouchableWithoutFeedback onPress={this.showMediaDetails}>
         <ImageBackground
           style={this.getMediaItemStyles()}
           source={{ uri: imageUrl }}
@@ -64,12 +62,13 @@ class EventMedia extends Component {
           {this.renderVideo()}
           <LinearGradient style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />
         </ImageBackground>
-      </TouchableOpacity>
+      </TouchableWithoutFeedback>
     );
   }
 }
 
 EventMedia.propTypes = {
+  id: PropTypes.string,
   imageUrl: PropTypes.string,
   height: PropTypes.number,
   videoUrl: PropTypes.string,

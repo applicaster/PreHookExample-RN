@@ -8,13 +8,15 @@ import {
   getSocialEvents,
   getLoading,
   getMediaModalVisibility,
-  getActiveEventImageUrl,
+  getActiveEventId,
+  getActiveEvent,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
 
 describe('selectors', () => {
   let store;
+  const someEvent = { foo: 'bar', id: 'someId' };
   beforeEach(() => {
     store = mockStore({
       app: Map({
@@ -23,13 +25,11 @@ describe('selectors', () => {
         timezone: 'someTimezone',
         environment: 'someEnvironment',
         isMediaModalVisible: true,
+        activeEventId: 'someId',
       }),
       events: Map({
-        socialEvents: [1, 2],
+        socialEvents: [someEvent, 2],
         loading: false,
-      }),
-      activeEvent: Map({
-        imageUrl: 'mario64.png',
       }),
     });
   });
@@ -60,7 +60,7 @@ describe('selectors', () => {
 
   describe('getSocialEvents', () => {
     it('should get the socialEvents from the events reducer state', () => {
-      expect(getSocialEvents(store.getState())).to.deep.equal([1, 2]);
+      expect(getSocialEvents(store.getState())).to.deep.equal([someEvent, 2]);
     });
   });
 
@@ -75,9 +75,16 @@ describe('selectors', () => {
       expect(getMediaModalVisibility(store.getState())).to.equal(true);
     });
   });
-  describe('getActiveEventImageUrl', () => {
-    it('should get imageUrl property from the activeEvent reducer state', () => {
-      expect(getActiveEventImageUrl(store.getState())).to.equal('mario64.png');
+
+  describe('getActiveEventId', () => {
+    it('should get activeEventId property from the app reducer state', () => {
+      expect(getActiveEventId(store.getState())).to.equal('someId');
+    });
+  });
+
+  describe('getActiveEvent', () => {
+    it('should get the event for the activeEventId property from the events reducer state', () => {
+      expect(getActiveEvent(store.getState())).to.deep.equal(someEvent);
     });
   });
 });

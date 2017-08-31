@@ -12,28 +12,28 @@ import { styles } from './style';
 const CLOSE_BUTTON = 'close_button';
 class MediaDetailsScreen extends Component {
   getImageSize() {
-    const { imageHeight, imageWidth } = this.props;
+    const { activeEvent } = this.props;
+    const { height: imageHeight, width: imageWidth } = activeEvent.images.default;
     const screenHeight = Dimensions.get('window').height;
     const screenWidth = Dimensions.get('window').width;
     const aspectRatio = (imageWidth / imageHeight);
     const calculatedHeight = (screenWidth / aspectRatio);
-    const imageSize = styles.imageSize;
+    let imageSize = styles.imageSize;
 
     // TODO: modify screenHeight after accounting for action buttons
     if (imageWidth > imageHeight || calculatedHeight <= screenHeight) {
-      imageSize.width = screenWidth;
-      imageSize.height = calculatedHeight;
+      imageSize = { width: screenWidth, height: calculatedHeight };
     } else if (imageHeight > imageWidth) {
       const calculatedWidth = (screenHeight * aspectRatio);
-      imageSize.width = calculatedWidth;
-      imageSize.height = screenHeight;
+      imageSize = { width: calculatedWidth, height: screenHeight };
     }
     
     return imageSize;
   }
 
   render() {
-    const { imageUrl, toggleModal } = this.props;
+    const { activeEvent, toggleModal } = this.props;
+    const { url: imageUrl } = activeEvent.images.default;
     const { backgroundColor, textColor = '#FFFFFF' } = this.context;
     const screenBackgroundColor = { backgroundColor, flex: 1 };
     const closeButtonColor = { tintColor: `${textColor}99` };
@@ -49,15 +49,21 @@ class MediaDetailsScreen extends Component {
 }
 
 MediaDetailsScreen.propTypes = {
-  imageHeight: PropTypes.number,
-  imageWidth: PropTypes.number,
-  imageUrl: PropTypes.string,
+  activeEvent: PropTypes.object,
   toggleModal: PropTypes.func,
 };
 
 MediaDetailsScreen.contextTypes = {
   backgroundColor: PropTypes.string,
   textColor: PropTypes.string,
+};
+
+MediaDetailsScreen.defaultProps = {
+  activeEvent: {
+    images: {
+      default: {},
+    },
+  },
 };
 
 export default MediaDetailsScreen;

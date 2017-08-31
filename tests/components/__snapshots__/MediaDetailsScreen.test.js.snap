@@ -452,8 +452,8 @@ exports[`MediaDetailsScreen image sizes component renders correctly with vertica
     onViewTransformed={undefined}
     style={
       Object {
-        "height": 1334,
-        "width": 53.36,
+        "height": 750,
+        "width": 750,
       }
     }
   >
@@ -492,14 +492,14 @@ exports[`MediaDetailsScreen image sizes component renders correctly with vertica
         resizeMode="contain"
         source={
           Object {
-            "uri": "supertall",
+            "uri": "someUrl",
           }
         }
         style={
           Array [
             Object {
-              "height": 1334,
-              "width": 53.36,
+              "height": 750,
+              "width": 750,
             },
             Object {
               "backgroundColor": "transparent",
