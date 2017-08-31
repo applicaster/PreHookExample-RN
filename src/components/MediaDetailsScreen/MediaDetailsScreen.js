@@ -6,8 +6,8 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import { styles } from './style';
 import TransformableImage from 'react-native-transformable-image';
+import { styles } from './style';
 
 const CLOSE_BUTTON = 'close_button';
 class MediaDetailsScreen extends Component {
@@ -16,20 +16,19 @@ class MediaDetailsScreen extends Component {
     const screenHeight = Dimensions.get('window').height;
     const screenWidth = Dimensions.get('window').width;
     const aspectRatio = (imageWidth / imageHeight);
-    let imageSize = styles.imageSize;
+    const calculatedHeight = (screenWidth / aspectRatio);
+    const imageSize = styles.imageSize;
 
-    if (imageWidth > imageHeight) {
-      imageSize = {
-        width: screenWidth,
-        height: (screenWidth / aspectRatio),
-      };
+    // TODO: modify screenHeight after accounting for action buttons
+    if (imageWidth > imageHeight || calculatedHeight <= screenHeight) {
+      imageSize.width = screenWidth;
+      imageSize.height = calculatedHeight;
     } else if (imageHeight > imageWidth) {
-      imageSize = {
-        width: (screenHeight / aspectRatio),
-        height: screenHeight, // TODO: modify after adding action buttons
-      };
+      const calculatedWidth = (screenHeight * aspectRatio);
+      imageSize.width = calculatedWidth;
+      imageSize.height = screenHeight;
     }
-
+    
     return imageSize;
   }
 
