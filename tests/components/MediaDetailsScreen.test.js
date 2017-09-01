@@ -14,6 +14,8 @@ const event = ({ width = 100, height = 100, url = 'someUrl' }) => ({
   },
 });
 
+jest.mock('@applicaster/react-native-transformable-image', () => 'TransformableImage');
+
 describe('MediaDetailsScreen', () => {
   test('component renders correctly', () => {
     const tree = renderer.create(
