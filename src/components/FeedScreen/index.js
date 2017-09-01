@@ -6,7 +6,7 @@ import {
   setTimelineId,
   setTimezone,
   setEnvironment,
-  hideMediaDetailsModal,
+  toggleModal,
 } from '../../actions';
 
 import {
@@ -29,7 +29,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   setTimelineId,
   setTimezone,
   setEnvironment,
-  hideMediaDetailsModal,
+  toggleModal,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeedScreen);
