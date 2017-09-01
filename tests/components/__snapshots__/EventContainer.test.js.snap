@@ -555,6 +555,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
   </View>
   <EventMedia
     height={504}
+    id={1}
     imageUrl="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg"
     videoUrl={undefined}
     width={640}

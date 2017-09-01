@@ -29,6 +29,7 @@
   "author": "Applicaster | Miami Team",
   "license": "ISC",
   "dependencies": {
+    "@applicaster/react-native-transformable-image": "0.0.20",
     "applicaster-utils": "^1.0.1",
     "axios": "^0.15.3",
     "hex-to-rgb": "^1.0.1",

@@ -3,10 +3,15 @@ import { bindActionCreators } from 'redux';
 import {
   toggleModal,
 } from '../../actions';
+import {
+  getActiveEvent,
+} from '../../selectors';
 
 import MediaDetailsScreen from './MediaDetailsScreen';
 
-const mapStateToProps = () => ({});
+const mapStateToProps = state => ({
+  activeEvent: getActiveEvent(state),
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   toggleModal,

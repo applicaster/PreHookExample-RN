@@ -25,8 +25,8 @@ class FeedScreen extends Component {
   }
 
   componentWillMount() {
-    this.props.setAccountId('500');
-    this.props.setTimelineId('500');
+    this.props.setAccountId('5656fa2569702d16f3040000');
+    this.props.setTimelineId('59259ed0c6a7ab72c0a02041');
     this.props.setTimezone('3600');
     this.props.setEnvironment('production');
     this.props.fetchSocialEvents();
@@ -53,7 +53,7 @@ class FeedScreen extends Component {
           )}
         </ScrollView>
         <Modal
-          animationType={'none'}
+          animationType={'fade'}
           transparent={false}
           visible={isMediaModalVisible}
           onRequestClose={toggleModal}

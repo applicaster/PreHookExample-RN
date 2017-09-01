@@ -127,6 +127,12 @@ describe('actions', () => {
 
         expect(action.type).to.equal(TOGGLE_MODAL);
       });
+
+      it('should pass params', () => {
+        const action = toggleModal({ bar: 'foo' });
+
+        expect(action.payload).to.deep.equal({ bar: 'foo' });
+      });
     });
   });
 });

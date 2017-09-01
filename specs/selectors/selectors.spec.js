@@ -8,12 +8,15 @@ import {
   getSocialEvents,
   getLoading,
   getMediaModalVisibility,
+  getActiveEventId,
+  getActiveEvent,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
 
 describe('selectors', () => {
   let store;
+  const someEvent = { foo: 'bar', id: 'someId' };
   beforeEach(() => {
     store = mockStore({
       app: Map({
@@ -22,9 +25,10 @@ describe('selectors', () => {
         timezone: 'someTimezone',
         environment: 'someEnvironment',
         isMediaModalVisible: true,
+        activeEventId: 'someId',
       }),
       events: Map({
-        socialEvents: [1, 2],
+        socialEvents: [someEvent, 2],
         loading: false,
       }),
     });
@@ -56,7 +60,7 @@ describe('selectors', () => {
 
   describe('getSocialEvents', () => {
     it('should get the socialEvents from the events reducer state', () => {
-      expect(getSocialEvents(store.getState())).to.deep.equal([1, 2]);
+      expect(getSocialEvents(store.getState())).to.deep.equal([someEvent, 2]);
     });
   });
 
@@ -69,6 +73,18 @@ describe('selectors', () => {
   describe('getMediaModalVisibility', () => {
     it('should get isMediaModalVisible property from the app reducer state', () => {
       expect(getMediaModalVisibility(store.getState())).to.equal(true);
+    });
+  });
+
+  describe('getActiveEventId', () => {
+    it('should get activeEventId property from the app reducer state', () => {
+      expect(getActiveEventId(store.getState())).to.equal('someId');
+    });
+  });
+
+  describe('getActiveEvent', () => {
+    it('should get the event for the activeEventId property from the events reducer state', () => {
+      expect(getActiveEvent(store.getState())).to.deep.equal(someEvent);
     });
   });
 });

@@ -55,20 +55,302 @@ exports[`MediaDetailsScreen component renders correctly 1`] = `
     }
     testID={undefined}
   />
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
+  <TransformableImage
+    source={
       Object {
-        "alignSelf": "center",
-        "color": "white",
-        "marginTop": 50,
+        "uri": undefined,
       }
     }
-  >
-    Hola Modal!
-  </Text>
+    style={
+      Object {
+        "height": 750,
+        "width": 750,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`MediaDetailsScreen image sizes component renders correctly with landscape image 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+      },
+      Object {
+        "backgroundColor": undefined,
+        "flex": 1,
+      },
+    ]
+  }
+>
+  <Image
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    source={
+      Object {
+        "uri": "close_button",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "height": 25,
+          "left": 10,
+          "position": "absolute",
+          "tintColor": "#FFFFFF",
+          "top": 30,
+          "width": 25,
+          "zIndex": 5,
+        },
+        Object {
+          "tintColor": "#FFFFFF99",
+        },
+      ]
+    }
+    testID={undefined}
+  />
+  <TransformableImage
+    source={
+      Object {
+        "uri": "lanscape",
+      }
+    }
+    style={
+      Object {
+        "height": 375,
+        "width": 750,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`MediaDetailsScreen image sizes component renders correctly with squared image 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+      },
+      Object {
+        "backgroundColor": undefined,
+        "flex": 1,
+      },
+    ]
+  }
+>
+  <Image
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    source={
+      Object {
+        "uri": "close_button",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "height": 25,
+          "left": 10,
+          "position": "absolute",
+          "tintColor": "#FFFFFF",
+          "top": 30,
+          "width": 25,
+          "zIndex": 5,
+        },
+        Object {
+          "tintColor": "#FFFFFF99",
+        },
+      ]
+    }
+    testID={undefined}
+  />
+  <TransformableImage
+    source={
+      Object {
+        "uri": "squared",
+      }
+    }
+    style={
+      Object {
+        "height": 750,
+        "width": 750,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`MediaDetailsScreen image sizes component renders correctly with vertical image that goes over the 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+      },
+      Object {
+        "backgroundColor": undefined,
+        "flex": 1,
+      },
+    ]
+  }
+>
+  <Image
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    source={
+      Object {
+        "uri": "close_button",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "height": 25,
+          "left": 10,
+          "position": "absolute",
+          "tintColor": "#FFFFFF",
+          "top": 30,
+          "width": 25,
+          "zIndex": 5,
+        },
+        Object {
+          "tintColor": "#FFFFFF99",
+        },
+      ]
+    }
+    testID={undefined}
+  />
+  <TransformableImage
+    source={
+      Object {
+        "uri": "someUrl",
+      }
+    }
+    style={
+      Object {
+        "height": 750,
+        "width": 750,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`MediaDetailsScreen image sizes component renders correctly with vertical image with edge to edge width 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#323232",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+      },
+      Object {
+        "backgroundColor": undefined,
+        "flex": 1,
+      },
+    ]
+  }
+>
+  <Image
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    source={
+      Object {
+        "uri": "close_button",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "height": 25,
+          "left": 10,
+          "position": "absolute",
+          "tintColor": "#FFFFFF",
+          "top": 30,
+          "width": 25,
+          "zIndex": 5,
+        },
+        Object {
+          "tintColor": "#FFFFFF99",
+        },
+      ]
+    }
+    testID={undefined}
+  />
+  <TransformableImage
+    source={
+      Object {
+        "uri": "vertical",
+      }
+    }
+    style={
+      Object {
+        "height": 1000,
+        "width": 750,
+      }
+    }
+  />
 </View>
 `;
