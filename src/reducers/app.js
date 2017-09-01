@@ -34,9 +34,11 @@ export default (state = appInitialState, action = actionCreator()) => {
       return state.set('timezone', payload.timezone);
 
     case TOGGLE_MODAL:
-      return state
-        .set('isMediaModalVisible', !state.get('isMediaModalVisible'))
-        .set('activeEventId', payload.activeEventId || null);
+      return state.withMutations(map => {
+        map
+          .update('isMediaModalVisible', visibility => !visibility)
+          .set('activeEventId', payload.activeEventId || null);
+      });
 
     default:
       return state;
