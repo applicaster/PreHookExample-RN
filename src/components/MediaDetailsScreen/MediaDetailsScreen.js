@@ -6,7 +6,7 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import TransformableImage from 'react-native-transformable-image';
+import TransformableImage from '@applicaster/react-native-transformable-image';
 import { styles } from './style';
 
 const CLOSE_BUTTON = 'close_button';
