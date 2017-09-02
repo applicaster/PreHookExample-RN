@@ -7,6 +7,7 @@ export const getTimezone = state => state.app.get('timezone');
 export const getEnvironment = state => state.app.get('environment');
 export const getMediaModalVisibility = state => state.app.get('isMediaModalVisible');
 export const getActiveEventId = state => state.app.get('activeEventId');
+export const getEventIdForActiveAudio = state => state.app.get('eventIdForActiveAudio');
 
 // From EVENTS Reducer
 export const getSocialEvents = state => state.events.get('socialEvents');
