@@ -1,41 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Dimensions,
-  ImageBackground,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import { ImageBackground, TouchableWithoutFeedback } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { styles } from './style';
 import EventVideo from '../EventVideo';
+import { getMediaDimensions } from '../../utils/size';
 
 class EventMedia extends Component {
   constructor(props) {
     super(props);
     this.showMediaDetails = this.showMediaDetails.bind(this);
   }
-
-  getMediaItemStyles() {
-    const { width, height } = this.props;
-    const screenWidth = Dimensions.get('window').width;
-    let mediaItemStyles = styles.mediaItem;
-    
-    if (width !== height) {
-      const aspectRatio = (width / height);
-      mediaItemStyles = {
-        height: (screenWidth / aspectRatio),
-        width: screenWidth,
-      };
-    }
-
-    return mediaItemStyles;
-  }
   
   showMediaDetails() {
     const { toggleModal, eventId } = this.props;
-    toggleModal({
-      activeEventId: eventId,
-    });
+    toggleModal({ activeEventId: eventId });
   }
 
   renderVideo() {
@@ -44,11 +23,11 @@ class EventMedia extends Component {
   }
 
   render() {
-    const { imageUrl } = this.props;
+    const { imageUrl, height, width } = this.props;
     return (
       <TouchableWithoutFeedback onPress={this.showMediaDetails}>
         <ImageBackground
-          style={this.getMediaItemStyles()}
+          style={getMediaDimensions({ height, width })}
           source={{ uri: imageUrl }}
         >
           {this.renderVideo()}

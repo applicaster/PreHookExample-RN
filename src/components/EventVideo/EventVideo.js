@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Dimensions,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native';
 import Video from 'react-native-video';
 import { styles } from './style';
+import { getMediaDimensions } from '../../utils/size';
 
 class EventVideo extends Component {
   constructor(props) {
@@ -26,22 +24,6 @@ class EventVideo extends Component {
     }
   }
 
-  getMediaItemStyles() {
-    const { width, height } = this.props;
-    const screenWidth = Dimensions.get('window').width;
-    let mediaItemStyles = styles.mediaItem;
-    
-    if (width !== height) {
-      const aspectRatio = (width / height);
-      mediaItemStyles = {
-        height: (screenWidth / aspectRatio),
-        width: screenWidth,
-      };
-    }
-
-    return mediaItemStyles;
-  }
-
   toggleAudio() {
     const { eventId, setEventIdForActiveAudio } = this.props;
     const { muted } = this.state;
@@ -50,7 +32,7 @@ class EventVideo extends Component {
   }
 
   render() {
-    const { videoUrl } = this.props;
+    const { height, width, videoUrl } = this.props;
     if (!videoUrl) return null;
   
     const { muted } = this.state;
@@ -60,7 +42,7 @@ class EventVideo extends Component {
         muted={muted}
         resizeMode="cover"
         repeat
-        style={[this.getMediaItemStyles(), styles.videoItem]}
+        style={[getMediaDimensions({ height, width }), styles.videoItem]}
       />
     </TouchableWithoutFeedback>);
   }
