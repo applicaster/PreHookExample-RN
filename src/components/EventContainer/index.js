@@ -33,7 +33,7 @@ class EventContainer extends Component {
       const { url, height, width } = this.props.event.images.default;
       const { videoUrl, id } = this.props.event;
       return (<EventMedia
-        id={id}
+        eventId={id}
         imageUrl={url}
         width={width}
         height={height}

@@ -46,28 +46,11 @@ exports[`EventMedia component renders correctly for media items with video 1`] =
     }
     testID={undefined}
   />
-  <Video
-    muted={true}
-    repeat={true}
-    resizeMode="cover"
-    source={
-      Object {
-        "uri": "someurl",
-      }
-    }
-    style={
-      Array [
-        Object {
-          "height": 2250,
-          "width": 750,
-        },
-        Object {
-          "left": 0,
-          "position": "absolute",
-          "top": 0,
-        },
-      ]
-    }
+  <EventVideo
+    eventId={undefined}
+    height={300}
+    videoUrl="someurl"
+    width={100}
   />
   <BVLinearGradient
     colors={
@@ -82,6 +65,11 @@ exports[`EventMedia component renders correctly for media items with video 1`] =
     style={
       Object {
         "height": 130,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 750,
+        "zIndex": 2,
       }
     }
   />
@@ -135,6 +123,12 @@ exports[`EventMedia component renders correctly for squared images 1`] = `
     }
     testID={undefined}
   />
+  <EventVideo
+    eventId={undefined}
+    height={300}
+    videoUrl={undefined}
+    width={300}
+  />
   <BVLinearGradient
     colors={
       Array [
@@ -148,6 +142,11 @@ exports[`EventMedia component renders correctly for squared images 1`] = `
     style={
       Object {
         "height": 130,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 750,
+        "zIndex": 2,
       }
     }
   />
@@ -201,6 +200,12 @@ exports[`EventMedia component renders correctly for squared images 2`] = `
     }
     testID={undefined}
   />
+  <EventVideo
+    eventId={undefined}
+    height={300}
+    videoUrl={undefined}
+    width={300}
+  />
   <BVLinearGradient
     colors={
       Array [
@@ -214,6 +219,11 @@ exports[`EventMedia component renders correctly for squared images 2`] = `
     style={
       Object {
         "height": 130,
+        "left": 0,
+        "position": "absolute",
+        "top": 0,
+        "width": 750,
+        "zIndex": 2,
       }
     }
   />

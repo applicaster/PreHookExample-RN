@@ -6,8 +6,8 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Video from 'react-native-video';
 import { styles } from './style';
+import EventVideo from '../EventVideo';
 
 class EventMedia extends Component {
   constructor(props) {
@@ -32,23 +32,15 @@ class EventMedia extends Component {
   }
   
   showMediaDetails() {
-    const { toggleModal, id } = this.props;
+    const { toggleModal, eventId } = this.props;
     toggleModal({
-      activeEventId: id,
+      activeEventId: eventId,
     });
   }
 
   renderVideo() {
-    const { videoUrl } = this.props;
-    return videoUrl
-    ? (<Video
-      source={{ uri: videoUrl }}
-      muted
-      resizeMode="cover"
-      repeat
-      style={[this.getMediaItemStyles(), styles.videoItem]}
-    />)
-    : null;
+    const { eventId, width, height, videoUrl } = this.props;
+    return <EventVideo eventId={eventId} videoUrl={videoUrl} width={width} height={height} />;
   }
 
   render() {
@@ -68,7 +60,7 @@ class EventMedia extends Component {
 }
 
 EventMedia.propTypes = {
-  id: PropTypes.string,
+  eventId: PropTypes.string,
   imageUrl: PropTypes.string,
   height: PropTypes.number,
   videoUrl: PropTypes.string,
