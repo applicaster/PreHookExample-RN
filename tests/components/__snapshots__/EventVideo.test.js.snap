@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventVideo component renders correctly 1`] = `
+<Video
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  muted={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  repeat={true}
+  resizeMode="cover"
+  source={
+    Object {
+      "uri": "url",
+    }
+  }
+  style={
+    Array [
+      Object {
+        "height": 750,
+        "width": 750,
+      },
+      undefined,
+    ]
+  }
+  testID={undefined}
+/>
+`;
+
+exports[`EventVideo component renders correctly with no video url 1`] = `null`;

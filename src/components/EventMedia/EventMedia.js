@@ -23,14 +23,14 @@ class EventMedia extends Component {
   }
 
   render() {
-    const { imageUrl, height, width } = this.props;
+    const { imageUrl, height, width, videoUrl } = this.props;
     return (
       <TouchableWithoutFeedback onPress={this.showMediaDetails}>
         <ImageBackground
           style={getMediaDimensions({ height, width })}
           source={{ uri: imageUrl }}
         >
-          {this.renderVideo()}
+          {videoUrl && this.renderVideo()}
           <LinearGradient style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />
         </ImageBackground>
       </TouchableWithoutFeedback>
