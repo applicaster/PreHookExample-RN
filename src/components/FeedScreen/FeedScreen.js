@@ -52,11 +52,10 @@ class FeedScreen extends Component {
           onEndReachedThreshold={5}
         />
         <Modal
-           animationType={'fade'}
-           transparent={false}
-           visible={isMediaModalVisible}
-           onRequestClose={toggleModal}
-         >
+          animationType={'fade'}
+          transparent={false}
+          visible={isMediaModalVisible}
+          onRequestClose={toggleModal}>
            <MediaDetailsScreen />
          </Modal>
       </View>
