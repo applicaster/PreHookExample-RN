@@ -65,4 +65,8 @@ ActionBar.propTypes = {
   textToShare: PropTypes.string,
 };
 
+ActionBar.contextTypes = {
+  navigation: PropTypes.object,
+};
+
 export default ActionBar;
