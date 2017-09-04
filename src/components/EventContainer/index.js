@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#696A6B',
     borderBottomWidth: StyleSheet.hairlineWidth,
     width: screenWidth,
+    overflow: 'hidden',
   },
 });
 

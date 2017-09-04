@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
+  Dimensions,
+  FlatList,
   Modal,
   View,
-  ScrollView,
-  RefreshControl,
 } from 'react-native';
 import EventContainer from '../EventContainer';
 import MediaDetailsScreen from '../MediaDetailsScreen';
-import { styles } from './style';
 
 class FeedScreen extends Component {
   static navigationOptions = ({ screenProps }) => ({
@@ -39,27 +38,26 @@ class FeedScreen extends Component {
   render() {
     const { socialEvents, loading, isMediaModalVisible, toggleModal } = this.props;
     const backgroundFeedColor = { backgroundColor: this.context.backgroundColor };
-    const refreshControl = (
-      <RefreshControl
-        refreshing={loading}
-        onRefresh={this.onRefresh}
-      />);
-    
     return (
-      <View style={[styles.feed, backgroundFeedColor]}>
-        <ScrollView refreshControl={refreshControl}>
-          {socialEvents.map(event =>
-            <EventContainer key={event.id} event={event} />
-          )}
-        </ScrollView>
+      <View style={[backgroundFeedColor, { flex: 1 }]}>
+        <FlatList
+          data={socialEvents}
+          renderItem={({item}) => <EventContainer key={item.id} event={item} />}
+          keyExtractor={(item) => item.id }
+          style={[backgroundFeedColor]} contentContainerStyle={[backgroundFeedColor]}
+          refreshing={loading}
+          onRefresh={this.onRefresh}
+          initialNumToRender={10}
+          onEndReached={() => {}}
+          onEndReachedThreshold={5}
+        />
         <Modal
           animationType={'fade'}
           transparent={false}
           visible={isMediaModalVisible}
-          onRequestClose={toggleModal}
-        >
-          <MediaDetailsScreen />
-        </Modal>
+          onRequestClose={toggleModal}>
+           <MediaDetailsScreen />
+         </Modal>
       </View>
     );
   }
