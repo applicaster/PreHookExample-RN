@@ -7,6 +7,7 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
       Object {
         "borderBottomColor": "#696A6B",
         "borderBottomWidth": 0.5,
+        "overflow": "hidden",
         "width": 750,
       },
       Object {
@@ -402,6 +403,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
       Object {
         "borderBottomColor": "#696A6B",
         "borderBottomWidth": 0.5,
+        "overflow": "hidden",
         "width": 750,
       },
       Object {
