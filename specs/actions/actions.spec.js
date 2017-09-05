@@ -9,6 +9,8 @@ import {
 
   toggleModal,
 
+  setEventIdForActiveAudio,
+  
   FETCH_SOCIAL_EVENTS_START,
   FETCH_SOCIAL_EVENTS_DONE,
   FETCH_SOCIAL_EVENTS_FAILED,
@@ -19,6 +21,8 @@ import {
   SET_ENVIRONMENT,
 
   TOGGLE_MODAL,
+
+  SET_EVENT_ID_FOR_ACTIVE_AUDIO,
 } from '../../src/actions';
 
 describe('actions', () => {
@@ -132,6 +136,20 @@ describe('actions', () => {
         const action = toggleModal({ bar: 'foo' });
 
         expect(action.payload).to.deep.equal({ bar: 'foo' });
+      });
+    });
+
+    describe('setEventIdForActiveAudio', () => {
+      it('should have correct action type', () => {
+        const action = setEventIdForActiveAudio();
+
+        expect(action.type).to.equal(SET_EVENT_ID_FOR_ACTIVE_AUDIO);
+      });
+
+      it('should pass params', () => {
+        const action = setEventIdForActiveAudio('foo');
+
+        expect(action.payload).to.deep.equal({ eventId: 'foo' });
       });
     });
   });

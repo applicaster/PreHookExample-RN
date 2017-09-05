@@ -10,6 +10,7 @@ import {
   getMediaModalVisibility,
   getActiveEventId,
   getActiveEvent,
+  getEventIdForActiveAudio,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -26,6 +27,7 @@ describe('selectors', () => {
         environment: 'someEnvironment',
         isMediaModalVisible: true,
         activeEventId: 'someId',
+        eventIdForActiveAudio: 'someId',
       }),
       events: Map({
         socialEvents: [someEvent, 2],
@@ -85,6 +87,12 @@ describe('selectors', () => {
   describe('getActiveEvent', () => {
     it('should get the event for the activeEventId property from the events reducer state', () => {
       expect(getActiveEvent(store.getState())).to.deep.equal(someEvent);
+    });
+  });
+
+  describe('getEventIdForActiveAudio', () => {
+    it('should get the eventId for the video playing audio from the app reducer state', () => {
+      expect(getEventIdForActiveAudio(store.getState())).to.deep.equal('someId');
     });
   });
 });

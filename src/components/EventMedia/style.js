@@ -10,12 +10,12 @@ export const styles = StyleSheet.create({
     width: screenWidth,
     backgroundColor: 'black',
   },
-  videoItem: {
+  headerVisor: {
+    height: 130,
+    width: screenWidth,
     position: 'absolute',
     top: 0,
     left: 0,
-  },
-  headerVisor: {
-    height: 130,
+    zIndex: 2,
   },
 });

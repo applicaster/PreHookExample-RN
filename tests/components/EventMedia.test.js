@@ -3,6 +3,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import EventMedia from '../../src/components/EventMedia/EventMedia';
 
+jest.mock('../../src/components/EventVideo', () => 'EventVideo');
+
 const eventMediaProps = (height, width, videoUrl) => ({
   imageUrl: 'someurl',
   height,
