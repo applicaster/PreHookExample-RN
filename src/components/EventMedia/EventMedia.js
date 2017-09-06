@@ -13,8 +13,9 @@ class EventMedia extends Component {
   }
   
   showMediaDetails() {
-    const { toggleModal, eventId } = this.props;
-    toggleModal({ activeEventId: eventId });
+    const { toggleModal, setActiveEventId, eventId } = this.props;
+    setActiveEventId(eventId);
+    toggleModal();
   }
 
   renderVideo() {
@@ -45,6 +46,7 @@ EventMedia.propTypes = {
   videoUrl: PropTypes.string,
   width: PropTypes.number,
   toggleModal: PropTypes.func,
+  setActiveEventId: PropTypes.func,
 };
 
 EventMedia.contextTypes = {

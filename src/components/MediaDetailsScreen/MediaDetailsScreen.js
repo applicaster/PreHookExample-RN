@@ -20,7 +20,6 @@ class MediaDetailsScreen extends Component {
     const calculatedHeight = (screenWidth / aspectRatio);
     let imageSize = styles.imageSize;
 
-    // TODO: modify screenHeight after accounting for action buttons
     if (imageWidth > imageHeight || calculatedHeight <= screenHeight) {
       imageSize = { width: screenWidth, height: calculatedHeight };
     } else if (imageHeight > imageWidth) {
