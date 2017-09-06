@@ -247,126 +247,16 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
       ]
     }
   >
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "flexDirection": "row",
-          "marginRight": 5,
-        }
-      }
-      testID={undefined}
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "fontSize": 12,
-              "marginRight": 3,
-            },
-            Object {
-              "color": "rgba(255,255,255, 0.60)",
-            },
-          ]
-        }
-      >
-        30
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "fontSize": 12,
-            },
-            Object {
-              "color": "rgba(255,255,255, 0.60)",
-            },
-          ]
-        }
-      >
-        Likes
-      </Text>
-    </View>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "flexDirection": "row",
-          "marginRight": 5,
-        }
-      }
-      testID={undefined}
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "fontSize": 12,
-              "marginRight": 3,
-            },
-            Object {
-              "color": "rgba(255,255,255, 0.60)",
-            },
-          ]
-        }
-      >
-        0
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "fontSize": 12,
-            },
-            Object {
-              "color": "rgba(255,255,255, 0.60)",
-            },
-          ]
-        }
-      >
-        Comments
-      </Text>
-    </View>
+    <EventDetailCount
+      count={30}
+      eventId="someId"
+      label="Likes"
+    />
+    <EventDetailCount
+      count={0}
+      eventId="someId"
+      label="Comments"
+    />
     <View
       style={
         Object {
@@ -584,7 +474,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
     </View>
   </View>
   <EventMedia
-    eventId={1}
+    eventId="someId"
     height={504}
     imageUrl="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg"
     videoUrl={undefined}
@@ -685,126 +575,16 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
       ]
     }
   >
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "flexDirection": "row",
-          "marginRight": 5,
-        }
-      }
-      testID={undefined}
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "fontSize": 12,
-              "marginRight": 3,
-            },
-            Object {
-              "color": "rgba(255,255,255, 0.60)",
-            },
-          ]
-        }
-      >
-        30
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "fontSize": 12,
-            },
-            Object {
-              "color": "rgba(255,255,255, 0.60)",
-            },
-          ]
-        }
-      >
-        Likes
-      </Text>
-    </View>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "flexDirection": "row",
-          "marginRight": 5,
-        }
-      }
-      testID={undefined}
-    >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "fontSize": 12,
-              "marginRight": 3,
-            },
-            Object {
-              "color": "rgba(255,255,255, 0.60)",
-            },
-          ]
-        }
-      >
-        0
-      </Text>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "fontSize": 12,
-            },
-            Object {
-              "color": "rgba(255,255,255, 0.60)",
-            },
-          ]
-        }
-      >
-        Comments
-      </Text>
-    </View>
+    <EventDetailCount
+      count={30}
+      eventId="someId"
+      label="Likes"
+    />
+    <EventDetailCount
+      count={0}
+      eventId="someId"
+      label="Comments"
+    />
     <View
       style={
         Object {

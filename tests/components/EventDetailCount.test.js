@@ -1,7 +1,7 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import EventDetailCount from '../../src/components/EventDetailCount';
+import EventDetailCount from '../../src/components/EventDetailCount/EventDetailCount';
 
 describe('EventDetailCount', () => {
   test('component renders correctly', () => {
