@@ -33,6 +33,7 @@ class App extends Component {
           headerTitle={feedTitle}
           headerBackgroundColor={backgroundColor}
           headerTitleColor={mainColor}
+          headerTintColor={textColor}
           borderColor={textColor}
           isLive={isLive}
           liveUrl={liveUrl}
