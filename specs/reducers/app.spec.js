@@ -4,6 +4,7 @@ import {
     setTimelineId,
     setTimezone,
     toggleModal,
+    setEventIdForActiveAudio,
 } from '../../src/actions';
 import appReducer from '../../src/reducers/app';
 
@@ -42,6 +43,14 @@ describe('app reducer', () => {
       const newState = appReducer(initialState, setTimezone('someZone'));
 
       expect(newState.get('timezone')).to.equal('someZone');
+    });
+  });
+
+  describe('setEventIdForActiveAudio is dispatched', () => {
+    it('should set the eventIdForActiveAudio', () => {
+      const newState = appReducer(initialState, setEventIdForActiveAudio('someId'));
+
+      expect(newState.get('eventIdForActiveAudio')).to.equal('someId');
     });
   });
 

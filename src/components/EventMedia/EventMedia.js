@@ -1,65 +1,36 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Dimensions,
-  ImageBackground,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import { ImageBackground, TouchableWithoutFeedback } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Video from 'react-native-video';
 import { styles } from './style';
+import EventVideo from '../EventVideo';
+import { getMediaDimensions } from '../../utils/size';
 
 class EventMedia extends Component {
   constructor(props) {
     super(props);
     this.showMediaDetails = this.showMediaDetails.bind(this);
   }
-
-  getMediaItemStyles() {
-    const { width, height } = this.props;
-    const screenWidth = Dimensions.get('window').width;
-    let mediaItemStyles = styles.mediaItem;
-    
-    if (width !== height) {
-      const aspectRatio = (width / height);
-      mediaItemStyles = {
-        height: (screenWidth / aspectRatio),
-        width: screenWidth,
-      };
-    }
-
-    return mediaItemStyles;
-  }
   
   showMediaDetails() {
-    const { toggleModal, id } = this.props;
-    toggleModal({
-      activeEventId: id,
-    });
+    const { toggleModal, eventId } = this.props;
+    toggleModal({ activeEventId: eventId });
   }
 
   renderVideo() {
-    const { videoUrl } = this.props;
-    return videoUrl
-    ? (<Video
-      source={{ uri: videoUrl }}
-      muted
-      resizeMode="cover"
-      repeat
-      style={[this.getMediaItemStyles(), styles.videoItem]}
-    />)
-    : null;
+    const { eventId, width, height, videoUrl } = this.props;
+    return <EventVideo eventId={eventId} videoUrl={videoUrl} width={width} height={height} />;
   }
 
   render() {
-    const { imageUrl } = this.props;
+    const { imageUrl, height, width, videoUrl } = this.props;
     return (
       <TouchableWithoutFeedback onPress={this.showMediaDetails}>
         <ImageBackground
-          style={this.getMediaItemStyles()}
+          style={getMediaDimensions({ height, width })}
           source={{ uri: imageUrl }}
         >
-          {this.renderVideo()}
+          {videoUrl && this.renderVideo()}
           <LinearGradient style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />
         </ImageBackground>
       </TouchableWithoutFeedback>
@@ -68,7 +39,7 @@ class EventMedia extends Component {
 }
 
 EventMedia.propTypes = {
-  id: PropTypes.string,
+  eventId: PropTypes.string,
   imageUrl: PropTypes.string,
   height: PropTypes.number,
   videoUrl: PropTypes.string,

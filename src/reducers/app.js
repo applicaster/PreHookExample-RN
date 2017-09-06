@@ -5,6 +5,7 @@ import {
     SET_TIMELINE_ID,
     SET_TIMEZONE,
     TOGGLE_MODAL,
+    SET_EVENT_ID_FOR_ACTIVE_AUDIO,
 } from '../actions';
 import { actionCreator } from '../actions/actionHelpers';
 
@@ -15,6 +16,7 @@ const appInitialState = Map({
   timezone: null,
   isMediaModalVisible: false,
   activeEventId: null,
+  eventIdForActiveAudio: null,
 });
 
 export default (state = appInitialState, action = actionCreator()) => {
@@ -39,6 +41,9 @@ export default (state = appInitialState, action = actionCreator()) => {
           .update('isMediaModalVisible', visibility => !visibility)
           .set('activeEventId', payload.activeEventId || null);
       });
+
+    case SET_EVENT_ID_FOR_ACTIVE_AUDIO:
+      return state.set('eventIdForActiveAudio', payload.eventId);
 
     default:
       return state;
