@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentsScreen component renders correctly 1`] = `
+<RCTScrollView
+  style={
+    Array [
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
+  }
+>
+  <View>
+    <EventContainer
+      event={[Function]}
+    />
+    <Modal
+      animationType="fade"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={false}
+      visible={true}
+    >
+      <MediaDetailsScreen />
+    </Modal>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`CommentsScreen component renders correctly with modal on top 1`] = `
+<RCTScrollView
+  style={
+    Array [
+      Object {
+        "backgroundColor": undefined,
+      },
+    ]
+  }
+>
+  <View>
+    <EventContainer
+      event={[Function]}
+    />
+    <Modal
+      animationType="fade"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={false}
+      visible={true}
+    >
+      <MediaDetailsScreen />
+    </Modal>
+  </View>
+</RCTScrollView>
+`;
