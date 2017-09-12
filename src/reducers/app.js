@@ -6,6 +6,7 @@ import {
     SET_TIMEZONE,
     TOGGLE_MODAL,
     SET_EVENT_ID_FOR_ACTIVE_AUDIO,
+    SET_ACTIVE_EVENT_ID,
 } from '../actions';
 import { actionCreator } from '../actions/actionHelpers';
 
@@ -36,12 +37,11 @@ export default (state = appInitialState, action = actionCreator()) => {
       return state.set('timezone', payload.timezone);
 
     case TOGGLE_MODAL:
-      return state.withMutations(map => {
-        map
-          .update('isMediaModalVisible', visibility => !visibility)
-          .set('activeEventId', payload.activeEventId || null);
-      });
+      return state.update('isMediaModalVisible', visibility => !visibility);
 
+    case SET_ACTIVE_EVENT_ID:
+      return state.set('activeEventId', payload.eventId);
+    
     case SET_EVENT_ID_FOR_ACTIVE_AUDIO:
       return state.set('eventIdForActiveAudio', payload.eventId);
 

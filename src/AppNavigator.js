@@ -9,11 +9,13 @@ import LiveButton from './components/LiveButton';
 
 class AppNavigator extends Component {
   screenProperties() {
-    const { headerTitle, headerBackgroundColor, headerTitleColor, borderColor, isLive, liveUrl } = this.props;
+    const { headerTitle, headerBackgroundColor, headerTitleColor, headerTintColor, borderColor, isLive, liveUrl } = this.props;
     const rgb = hexToRgb(borderColor);
     const borderRgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.3)`;
     return {
-      title: headerTitle || 'Feed Title',
+      headerBackTitle: null,
+      headerTintColor: `${headerTintColor}99`,
+      headerTitle: headerTitle || 'Feed Title',
       headerRight: <LiveButton liveUrl={liveUrl} isLive={isLive} />,
       headerStyle: {
         backgroundColor: headerBackgroundColor,
@@ -39,6 +41,7 @@ AppNavigator.propTypes = {
   dispatch: PropTypes.func,
   navigation: PropTypes.object,
   headerTitle: PropTypes.string,
+  headerTintColor: PropTypes.string,
   headerBackgroundColor: PropTypes.string,
   headerTitleColor: PropTypes.string,
   borderColor: PropTypes.string,

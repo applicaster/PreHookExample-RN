@@ -16,98 +16,16 @@ exports[`ActionBar component renders correctly for instagram 1`] = `
     ]
   }
 >
-  <View
-    style={
-      Object {
-        "flexDirection": "row",
-        "marginRight": 5,
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "fontSize": 12,
-            "marginRight": 3,
-          },
-          Object {
-            "color": "rgba(255,255,255, 0.60)",
-          },
-        ]
-      }
-    >
-      1
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "fontSize": 12,
-          },
-          Object {
-            "color": "rgba(255,255,255, 0.60)",
-          },
-        ]
-      }
-    >
-      Likes
-    </Text>
-  </View>
-  <View
-    style={
-      Object {
-        "flexDirection": "row",
-        "marginRight": 5,
-      }
-    }
-  >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "fontSize": 12,
-            "marginRight": 3,
-          },
-          Object {
-            "color": "rgba(255,255,255, 0.60)",
-          },
-        ]
-      }
-    >
-      3
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      disabled={false}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "fontSize": 12,
-          },
-          Object {
-            "color": "rgba(255,255,255, 0.60)",
-          },
-        ]
-      }
-    >
-      Comments
-    </Text>
-  </View>
+  <EventDetailCount
+    count={1}
+    eventId={undefined}
+    label="Likes"
+  />
+  <EventDetailCount
+    count={3}
+    eventId={undefined}
+    label="Comments"
+  />
   <View
     style={
       Object {

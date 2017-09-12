@@ -6,22 +6,19 @@ import {
   setTimelineId,
   setTimezone,
   setEnvironment,
-
   toggleModal,
-
   setEventIdForActiveAudio,
-  
+  setActiveEventId,
+
   FETCH_SOCIAL_EVENTS_START,
   FETCH_SOCIAL_EVENTS_DONE,
   FETCH_SOCIAL_EVENTS_FAILED,
-
   SET_ACCOUNT_ID,
   SET_TIMELINE_ID,
   SET_TIMEZONE,
   SET_ENVIRONMENT,
-
   TOGGLE_MODAL,
-
+  SET_ACTIVE_EVENT_ID,
   SET_EVENT_ID_FOR_ACTIVE_AUDIO,
 } from '../../src/actions';
 
@@ -145,9 +142,17 @@ describe('actions', () => {
 
         expect(action.type).to.equal(SET_EVENT_ID_FOR_ACTIVE_AUDIO);
       });
+    });
+
+    describe('setActiveEventId', () => {
+      it('should have correct action type', () => {
+        const action = setActiveEventId();
+
+        expect(action.type).to.equal(SET_ACTIVE_EVENT_ID);
+      });
 
       it('should pass params', () => {
-        const action = setEventIdForActiveAudio('foo');
+        const action = setActiveEventId('foo');
 
         expect(action.payload).to.deep.equal({ eventId: 'foo' });
       });

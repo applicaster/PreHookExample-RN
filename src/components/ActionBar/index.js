@@ -32,11 +32,11 @@ class ActionBar extends Component {
   }
   
   renderInstagramBar() {
-    const { likesCount, commentsCount } = this.props;
+    const { likesCount, commentsCount, eventId } = this.props;
     return (
       <View style={[styles.buttonBar, styles.instagramBar]}>
-        <EventDetailCount key={'likes'} count={likesCount} label={'Likes'} />
-        <EventDetailCount key={'comments'} count={commentsCount} label={'Comments'} />
+        <EventDetailCount key={'likes'} eventId={eventId} count={likesCount} label={'Likes'} />
+        <EventDetailCount key={'comments'} eventId={eventId} count={commentsCount} label={'Comments'} />
         {this.renderShareButton()}
       </View>
     );
@@ -59,10 +59,15 @@ class ActionBar extends Component {
 }
 
 ActionBar.propTypes = {
+  eventId: PropTypes.string,
   socialNetwork: PropTypes.string,
   likesCount: PropTypes.number,
   commentsCount: PropTypes.number,
   textToShare: PropTypes.string,
+};
+
+ActionBar.contextTypes = {
+  navigation: PropTypes.object,
 };
 
 export default ActionBar;

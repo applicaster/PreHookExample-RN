@@ -12,6 +12,7 @@ export const SET_ENVIRONMENT = 'SET_ENVIRONMENT';
 
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 export const SET_EVENT_ID_FOR_ACTIVE_AUDIO = 'SET_EVENT_ID_FOR_ACTIVE_AUDIO';
+export const SET_ACTIVE_EVENT_ID = 'SET_ACTIVE_EVENT_ID';
 
 /* ACTIONS */
 export const fetchSocialEvents = () => actionCreator(FETCH_SOCIAL_EVENTS_START);
@@ -26,3 +27,4 @@ export const setEnvironment = environment => actionCreator(SET_ENVIRONMENT, { en
 export const toggleModal = modalParams => actionCreator(TOGGLE_MODAL, modalParams);
 
 export const setEventIdForActiveAudio = eventId => actionCreator(SET_EVENT_ID_FOR_ACTIVE_AUDIO, { eventId }); 
+export const setActiveEventId = eventId => actionCreator(SET_ACTIVE_EVENT_ID, { eventId }); 

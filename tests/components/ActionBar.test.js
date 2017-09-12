@@ -3,6 +3,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import ActionBar from '../../src/components/ActionBar';
 
+jest.mock('../../src/components/EventDetailCount', () => 'EventDetailCount');
+
 describe('ActionBar', () => {
   test('component renders correctly for instagram', () => {
     const html = renderer.create(
