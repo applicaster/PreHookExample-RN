@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import EventContainer from '../EventContainer';
 import MediaDetailsScreen from '../MediaDetailsScreen';
+import CommentContainer from '../CommentContainer';
 
 class CommentsScreen extends Component {
   static navigationOptions = ({ screenProps }) => ({
@@ -24,7 +25,7 @@ class CommentsScreen extends Component {
         <ScrollView style={[backgroundFeedColor]}>
           <EventContainer key={event.id} event={event} />
           {comments.map(comment =>
-            <Text key={comment.id}>{comment.caption}</Text>
+            <CommentContainer key={comment.id} comment={comment} />
           )}
           <Modal
           animationType={'fade'}
