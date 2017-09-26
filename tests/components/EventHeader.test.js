@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import EventHeader from '../../src/components/EventHeader';
-import { event } from './eventTestDataUtils';
+import { event } from './testDataUtils';
 
 describe('EventHeader', () => {
   test('component renders correctly', () => {

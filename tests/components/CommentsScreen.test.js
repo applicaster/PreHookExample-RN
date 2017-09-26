@@ -1,7 +1,7 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { event } from './eventTestDataUtils';
+import { event } from './testDataUtils';
 import CommentsScreen from '../../src/components/CommentsScreen/CommentsScreen';
 
 jest.mock('../../src/components/EventContainer', () => 'EventContainer');
