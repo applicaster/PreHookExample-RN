@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import EventContainer from '../../src/components/EventContainer';
-import { event } from './eventTestDataUtils';
+import { event } from './testDataUtils';
 
 jest.mock('../../src/components/EventMedia', () => 'EventMedia');
 jest.mock('../../src/components/EventDetailCount', () => 'EventDetailCount');

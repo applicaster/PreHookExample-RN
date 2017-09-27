@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comment component renders correctly with hashtags and usertags 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "lineHeight": 18,
+        "paddingBottom": 12,
+        "paddingHorizontal": 12,
+        "paddingTop": 6,
+      },
+      Object {
+        "color": undefined,
+      },
+    ]
+  }
+>
+  Hola 
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": undefined,
+      }
+    }
+  >
+    @cpinto7
+  </Text>
+  , 
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": undefined,
+      }
+    }
+  >
+    #great
+  </Text>
+   
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": undefined,
+      }
+    }
+  >
+    #picture
+  </Text>
+  
+</Text>
+`;
+
+exports[`Comment component renders correctly with plain text 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "lineHeight": 18,
+        "paddingBottom": 12,
+        "paddingHorizontal": 12,
+        "paddingTop": 6,
+      },
+      Object {
+        "color": undefined,
+      },
+    ]
+  }
+>
+  Hola Carlos Pinto, great picture.
+</Text>
+`;

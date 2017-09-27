@@ -1,0 +1,331 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentHeader component renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "paddingHorizontal": 12,
+        "paddingTop": 12,
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 40,
+        "width": 40,
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "column",
+          "height": 43,
+          "justifyContent": "space-between",
+          "paddingLeft": 10,
+          "width": 750,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      style={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "fontSize": 14,
+              "fontWeight": "600",
+              "marginBottom": -2,
+              "marginTop": -3,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
+        }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "fontSize": 10,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
+        }
+      >
+        @
+        applicaster
+      </Text>
+    </View>
+    <View
+      style={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 12,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
+        }
+      >
+        August 4
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`CommentHeader component renders correctly for Facebook comment 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "paddingHorizontal": 12,
+        "paddingTop": 12,
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 40,
+        "width": 40,
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "column",
+          "height": 43,
+          "justifyContent": "space-between",
+          "paddingLeft": 10,
+          "width": 750,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      style={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "fontSize": 14,
+              "fontWeight": "600",
+              "marginBottom": -2,
+              "marginTop": -3,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
+        }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "fontSize": 10,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
+        }
+      >
+        @
+        facebook
+      </Text>
+    </View>
+    <View
+      style={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 12,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
+        }
+      >
+        August 4
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`CommentHeader component renders correctly for Twitter or Instagram comment 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "paddingHorizontal": 12,
+        "paddingTop": 12,
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://scontent.cdninstagram.com/t51.2885-19/11356956_452315591560419_1118499770_a.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 40,
+        "width": 40,
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "column",
+          "height": 43,
+          "justifyContent": "space-between",
+          "paddingLeft": 10,
+          "width": 750,
+        },
+        false,
+      ]
+    }
+  >
+    <View
+      style={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "fontSize": 14,
+              "fontWeight": "600",
+              "marginBottom": -2,
+              "marginTop": -3,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
+        }
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "fontSize": 10,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
+        }
+      >
+        @
+        twitter
+      </Text>
+    </View>
+    <View
+      style={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 12,
+            },
+            Object {
+              "color": undefined,
+            },
+          ]
+        }
+      >
+        August 4
+      </Text>
+    </View>
+  </View>
+</View>
+`;
