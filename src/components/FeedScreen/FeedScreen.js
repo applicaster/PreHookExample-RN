@@ -5,7 +5,7 @@ import {
   FlatList,
   Modal,
   View,
-  NativeModule,
+  NativeModules,
 } from 'react-native';
 import EventContainer from '../EventContainer';
 import MediaDetailsModal from '../MediaDetailsModal';
@@ -14,8 +14,13 @@ import CloseButton from '../CloseButton';
 class FeedScreen extends Component {
   static navigationOptions = ({ screenProps }) => ({
     ...screenProps,
-    headerLeft: <CloseButton onPress={() => { NativeModule.dismiss_modal_view(true) }} />,
+    headerLeft: <CloseButton onPress={FeedScreen.closeFeed} />,
   });
+
+  static closeFeed() {
+    NativeModules.ZPReactNativeBridgeListener
+      .postEvent('dismiss_modal_view', { animated: 1 }, () => { console.log('hola') })
+  }
 
   constructor(props) {
     super(props);
