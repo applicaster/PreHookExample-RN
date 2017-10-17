@@ -15,11 +15,11 @@ class App extends Component {
   getAppStyles() {
     const { starlightStyles = {} } = this.props;
     return {
-      mainColor: starlightStyles.main_color || '#7ED321',
+      mainColor: starlightStyles.main_color || '#00D4ED', // '#7ED321'
       secondaryColor: starlightStyles.secondary_color || '#FFFFFF',
       textColor: starlightStyles.text_color || '#FFFFFF',
-      secondaryTextColor: starlightStyles.text_color || '#83F901',
-      backgroundColor: starlightStyles.background_color || '#272727',
+      secondaryTextColor: starlightStyles.text_color || '#00D4ED', // '#83F901'
+      backgroundColor: starlightStyles.background_color || '#72889F', // '#272727'
     };
   }
   
