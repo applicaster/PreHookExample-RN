@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
+  FlatList,
   Modal,
   View,
   ScrollView,
   Text,
 } from 'react-native';
 import EventContainer from '../EventContainer';
-import MediaDetailsScreen from '../MediaDetailsScreen';
 import CommentContainer from '../CommentContainer';
+import MediaDetailsModal from '../MediaDetailsModal';
 
 class CommentsScreen extends Component {
   static navigationOptions = ({ screenProps }) => ({
@@ -16,26 +17,39 @@ class CommentsScreen extends Component {
     headerTitle: "Comments"
   });
 
+  constructor(props) {
+    super(props);
+    this.renderItem = this.renderItem.bind(this);
+  }
+
+  renderItem(data) {
+    const { event } = this.props;
+    const { item } = data;
+    if (item.id === event.id) {
+      return <EventContainer key={event.id} event={event} />;
+    }
+    
+    return <CommentContainer key={item.id} comment={item} />;
+  }
+
   render() {
     const { event, isMediaModalVisible, toggleModal } = this.props;
-    const { comments = [] } = event; 
     const backgroundFeedColor = { backgroundColor: this.context.backgroundColor };
-    
-    return (
-        <ScrollView style={[backgroundFeedColor]}>
-          <EventContainer key={event.id} event={event} />
-          {comments.map(comment =>
-            <CommentContainer key={comment.id} comment={comment} />
-          )}
-          <Modal
-          animationType={'fade'}
-          transparent={false}
-          visible={isMediaModalVisible}
-          onRequestClose={toggleModal}
-        >
-          <MediaDetailsScreen />
-        </Modal>
-      </ScrollView>
+    const comments = [event].concat(event.comments);;
+  
+    return (<View style={[backgroundFeedColor]}>
+        <FlatList
+          data={comments}
+          renderItem={this.renderItem}
+          keyExtractor={(item) => item.id }
+          style={[backgroundFeedColor]} contentContainerStyle={[backgroundFeedColor]}
+          initialNumToRender={5}
+          onEndReached={() => {}}
+          onEndReachedThreshold={5}
+        />
+        <MediaDetailsModal />
+    </View>
+        
     );
   }
 }
@@ -43,8 +57,6 @@ class CommentsScreen extends Component {
 CommentsScreen.propTypes = {
   event: PropTypes.object,
   navigation: PropTypes.object,
-  isMediaModalVisible: PropTypes.bool,
-  toggleModal: PropTypes.func,
 };
 
 CommentsScreen.contextTypes = {

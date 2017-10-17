@@ -24,6 +24,7 @@ export const event = (id, type = 'image', source = 'instagram', userName = 'appl
   type,
   commentsCount: 0,
   source,
+  comments: [],
 });
 
 export const comment = (id, source = 'instagram', userName = 'applicaster') => ({

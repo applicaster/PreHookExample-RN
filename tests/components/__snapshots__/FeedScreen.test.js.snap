@@ -95,6 +95,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
       Thanks @azpinstalls for the work, parts, advice and setup.
       #brz #gt86 #ft86",
+          "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
           "id": 1,
@@ -124,6 +125,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
       Thanks @azpinstalls for the work, parts, advice and setup.
       #brz #gt86 #ft86",
+          "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
           "id": 2,
@@ -202,6 +204,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
             Thanks @azpinstalls for the work, parts, advice and setup.
             #brz #gt86 #ft86",
+              "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
               "id": 1,
@@ -240,6 +243,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
             Thanks @azpinstalls for the work, parts, advice and setup.
             #brz #gt86 #ft86",
+              "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
               "id": 2,
@@ -301,6 +305,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
       Thanks @azpinstalls for the work, parts, advice and setup.
       #brz #gt86 #ft86",
+          "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
           "id": 1,
@@ -330,6 +335,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
       Thanks @azpinstalls for the work, parts, advice and setup.
       #brz #gt86 #ft86",
+          "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
           "id": 2,
@@ -408,6 +414,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
             Thanks @azpinstalls for the work, parts, advice and setup.
             #brz #gt86 #ft86",
+              "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
               "id": 1,
@@ -446,6 +453,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
             Thanks @azpinstalls for the work, parts, advice and setup.
             #brz #gt86 #ft86",
+              "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
               "id": 2,
@@ -507,6 +515,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
       Thanks @azpinstalls for the work, parts, advice and setup.
       #brz #gt86 #ft86",
+          "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
           "id": 1,
@@ -536,6 +545,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
       Thanks @azpinstalls for the work, parts, advice and setup.
       #brz #gt86 #ft86",
+          "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
           "id": 2,
@@ -614,6 +624,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
             Thanks @azpinstalls for the work, parts, advice and setup.
             #brz #gt86 #ft86",
+              "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
               "id": 1,
@@ -652,6 +663,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
             Thanks @azpinstalls for the work, parts, advice and setup.
             #brz #gt86 #ft86",
+              "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
               "id": 2,
