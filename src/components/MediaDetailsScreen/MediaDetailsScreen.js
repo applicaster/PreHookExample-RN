@@ -9,7 +9,7 @@ import {
 import TransformableImage from '@applicaster/react-native-transformable-image';
 import { styles } from './style';
 
-const CLOSE_BUTTON = 'close_button';
+const CLOSE_BUTTON = 'feed_rn_close_button';
 class MediaDetailsScreen extends Component {
   getImageSize() {
     const { activeEvent } = this.props;
