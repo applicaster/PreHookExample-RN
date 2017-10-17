@@ -5,13 +5,16 @@ import {
   FlatList,
   Modal,
   View,
+  NativeModule,
 } from 'react-native';
 import EventContainer from '../EventContainer';
 import MediaDetailsModal from '../MediaDetailsModal';
+import CloseButton from '../CloseButton';
 
 class FeedScreen extends Component {
   static navigationOptions = ({ screenProps }) => ({
-    ...screenProps 
+    ...screenProps,
+    headerLeft: <CloseButton onPress={() => { NativeModule.dismiss_modal_view(true) }} />,
   });
 
   constructor(props) {

@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   Dimensions,
-  Image,
-  TouchableWithoutFeedback,
   View,
 } from 'react-native';
 import TransformableImage from '@applicaster/react-native-transformable-image';
 import { styles } from './style';
+import CloseButton from '../CloseButton';
 
-const CLOSE_BUTTON = 'feed_rn_close_button';
 class MediaDetailsScreen extends Component {
   getImageSize() {
     const { activeEvent } = this.props;
@@ -33,14 +31,12 @@ class MediaDetailsScreen extends Component {
   render() {
     const { activeEvent, toggleModal } = this.props;
     const { url: imageUrl } = activeEvent.images.default;
-    const { backgroundColor, textColor = '#FFFFFF' } = this.context;
+    const { backgroundColor } = this.context;
     const screenBackgroundColor = { backgroundColor, flex: 1 };
-    const closeButtonColor = { tintColor: `${textColor}99` };
+    
     return (
       <View style={[styles.mediaDetailsScreen, screenBackgroundColor]}>
-        <TouchableWithoutFeedback onPress={toggleModal}>
-          <Image style={[styles.closeButton, closeButtonColor]} source={{ uri: CLOSE_BUTTON }} />
-        </TouchableWithoutFeedback>
+        <CloseButton onPress={toggleModal} isForModal />
         <TransformableImage style={this.getImageSize()} source={{ uri: imageUrl }} />
       </View>
     );

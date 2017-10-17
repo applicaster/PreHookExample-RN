@@ -14,15 +14,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#323232',
   },
-  closeButton: {
-    tintColor: '#FFFFFF',
-    height: closeButtonSize,
-    width: closeButtonSize,
-    position: 'absolute',
-    top: 30,
-    left: 10,
-    zIndex: 5,
-  },
   buttonSlop: {
     right: 5,
     bottom: 5,

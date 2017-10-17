@@ -41,11 +41,14 @@ exports[`MediaDetailsScreen component renders correctly 1`] = `
       Array [
         Object {
           "height": 25,
-          "left": 10,
-          "position": "absolute",
+          "marginLeft": 5,
           "tintColor": "#FFFFFF",
-          "top": 30,
           "width": 25,
+        },
+        Object {
+          "left": 5,
+          "position": "absolute",
+          "top": 30,
           "zIndex": 5,
         },
         Object {
@@ -112,11 +115,14 @@ exports[`MediaDetailsScreen image sizes component renders correctly with landsca
       Array [
         Object {
           "height": 25,
-          "left": 10,
-          "position": "absolute",
+          "marginLeft": 5,
           "tintColor": "#FFFFFF",
-          "top": 30,
           "width": 25,
+        },
+        Object {
+          "left": 5,
+          "position": "absolute",
+          "top": 30,
           "zIndex": 5,
         },
         Object {
@@ -183,11 +189,14 @@ exports[`MediaDetailsScreen image sizes component renders correctly with squared
       Array [
         Object {
           "height": 25,
-          "left": 10,
-          "position": "absolute",
+          "marginLeft": 5,
           "tintColor": "#FFFFFF",
-          "top": 30,
           "width": 25,
+        },
+        Object {
+          "left": 5,
+          "position": "absolute",
+          "top": 30,
           "zIndex": 5,
         },
         Object {
@@ -254,11 +263,14 @@ exports[`MediaDetailsScreen image sizes component renders correctly with vertica
       Array [
         Object {
           "height": 25,
-          "left": 10,
-          "position": "absolute",
+          "marginLeft": 5,
           "tintColor": "#FFFFFF",
-          "top": 30,
           "width": 25,
+        },
+        Object {
+          "left": 5,
+          "position": "absolute",
+          "top": 30,
           "zIndex": 5,
         },
         Object {
@@ -325,11 +337,14 @@ exports[`MediaDetailsScreen image sizes component renders correctly with vertica
       Array [
         Object {
           "height": 25,
-          "left": 10,
-          "position": "absolute",
+          "marginLeft": 5,
           "tintColor": "#FFFFFF",
-          "top": 30,
           "width": 25,
+        },
+        Object {
+          "left": 5,
+          "position": "absolute",
+          "top": 30,
           "zIndex": 5,
         },
         Object {
