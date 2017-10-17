@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MediaDetailsModal component renders correctly when it is invisible 1`] = `
+<Modal
+  animationType="fade"
+  hardwareAccelerated={false}
+  onRequestClose={undefined}
+  transparent={false}
+  visible={false}
+>
+  <MediaDetailsScreen />
+</Modal>
+`;
+
+exports[`MediaDetailsModal component renders correctly when it is visible 1`] = `
+<Modal
+  animationType="fade"
+  hardwareAccelerated={false}
+  onRequestClose={undefined}
+  transparent={false}
+  visible={true}
+>
+  <MediaDetailsScreen />
+</Modal>
+`;

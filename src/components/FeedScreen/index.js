@@ -12,7 +12,6 @@ import {
 import {
   getSocialEvents,
   getLoading,
-  getMediaModalVisibility,
 } from '../../selectors';
 
 import FeedScreen from './FeedScreen';
@@ -20,7 +19,6 @@ import FeedScreen from './FeedScreen';
 const mapStateToProps = state => ({
   loading: getLoading(state),
   socialEvents: getSocialEvents(state),
-  isMediaModalVisible: getMediaModalVisibility(state),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

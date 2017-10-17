@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import EventContainer from '../EventContainer';
-import MediaDetailsScreen from '../MediaDetailsScreen';
+import MediaDetailsModal from '../MediaDetailsModal';
 
 class FeedScreen extends Component {
   static navigationOptions = ({ screenProps }) => ({
@@ -36,7 +36,7 @@ class FeedScreen extends Component {
   }
 
   render() {
-    const { socialEvents, loading, isMediaModalVisible, toggleModal } = this.props;
+    const { socialEvents, loading, toggleModal } = this.props;
     const backgroundFeedColor = { backgroundColor: this.context.backgroundColor };
     return (
       <View style={[backgroundFeedColor, { flex: 1 }]}>
@@ -51,13 +51,7 @@ class FeedScreen extends Component {
           onEndReached={() => {}}
           onEndReachedThreshold={5}
         />
-        <Modal
-          animationType={'fade'}
-          transparent={false}
-          visible={isMediaModalVisible}
-          onRequestClose={toggleModal}>
-           <MediaDetailsScreen />
-         </Modal>
+        <MediaDetailsModal />
       </View>
     );
   }
@@ -72,8 +66,6 @@ FeedScreen.propTypes = {
   setTimezone: PropTypes.func,
   setEnvironment: PropTypes.func,
   navigation: PropTypes.object,
-  isMediaModalVisible: PropTypes.bool,
-  toggleModal: PropTypes.func,
 };
 
 FeedScreen.contextTypes = {

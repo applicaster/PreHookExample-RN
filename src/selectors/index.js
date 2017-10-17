@@ -13,7 +13,6 @@ export const getEventIdForActiveAudio = state => state.app.get('eventIdForActive
 export const getSocialEvents = state => state.events.get('socialEvents');
 export const getLoading = state => state.events.get('loading');
 
-
 export const getActiveEvent = createSelector(
   getActiveEventId,
   getSocialEvents,

@@ -5,7 +5,7 @@ import { event } from './testDataUtils';
 import FeedScreen from '../../src/components/FeedScreen/FeedScreen';
 
 jest.mock('../../src/components/EventContainer', () => 'EventContainer');
-jest.mock('../../src/components/MediaDetailsScreen', () => 'MediaDetailsScreen');
+jest.mock('../../src/components/MediaDetailsModal', () => 'MediaDetailsModal');
 
 describe('FeedScreen', () => {
   test('component renders correctly without events', () => {
@@ -78,7 +78,6 @@ describe('FeedScreen', () => {
         setEnvironment={() => {}}
         loading
         socialEvents={[event(1), event(2)]}
-        isMediaDetailsModalVisible
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
