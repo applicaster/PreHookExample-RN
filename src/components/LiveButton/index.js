@@ -8,7 +8,7 @@ import {
  } from 'react-native';
 import hexToRgb from 'hex-to-rgb';
 
-const LIVE_BUTTON_ASSET = 'live_button';
+const LIVE_BUTTON_ASSET = 'feed_rn_live_button';
 const buttonSize = 28;
 const styles = StyleSheet.create({
   liveButton: {

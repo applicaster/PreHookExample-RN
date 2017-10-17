@@ -24,8 +24,8 @@ class FeedScreen extends Component {
   }
 
   componentWillMount() {
-    this.props.setAccountId('5656fa2569702d16f3040000');
-    this.props.setTimelineId('59259ed0c6a7ab72c0a02041');
+    this.props.setAccountId('59b7a7caf422c00009d974f0');
+    this.props.setTimelineId('59b7cf76044ab9298c61afa3');
     this.props.setTimezone('3600');
     this.props.setEnvironment('production');
     this.props.fetchSocialEvents();

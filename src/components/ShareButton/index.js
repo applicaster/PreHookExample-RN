@@ -41,7 +41,7 @@ class ShareButton extends Component {
       <TouchableOpacity onPress={this.share}>
         <Image
           style={[styles.shareButton, imageColor]}
-          source={{ uri: 'share_button' }}
+          source={{ uri: 'feed_rn_share_button' }}
         />
       </TouchableOpacity>
     );

@@ -28,7 +28,7 @@ exports[`ShareButton component renders correctly 1`] = `
   <Image
     source={
       Object {
-        "uri": "share_button",
+        "uri": "feed_rn_share_button",
       }
     }
     style={

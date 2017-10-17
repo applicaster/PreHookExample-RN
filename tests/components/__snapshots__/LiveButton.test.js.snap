@@ -28,7 +28,7 @@ exports[`LiveButton component renders correctly when it is live 1`] = `
   <Image
     source={
       Object {
-        "uri": "live_button",
+        "uri": "feed_rn_live_button",
       }
     }
     style={
@@ -51,7 +51,7 @@ exports[`LiveButton component renders correctly when it is not live 1`] = `
 <Image
   source={
     Object {
-      "uri": "live_button",
+      "uri": "feed_rn_live_button",
     }
   }
   style={

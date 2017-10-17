@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
 });
 const SocialIcon = ({ socialNetwork, tintColorStyle }) => {
   const socialNetworkToIconMapping = {
-    facebook: 'facebook_icon',
-    instagram: 'instagram_icon',
-    twitter: 'twitter_icon',
+    facebook: 'feed_rn_facebook_icon',
+    instagram: 'feed_rn_instagram_icon',
+    twitter: 'feed_rn_twitter_icon',
   };
 
   return (
