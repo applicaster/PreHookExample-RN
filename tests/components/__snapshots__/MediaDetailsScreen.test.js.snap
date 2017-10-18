@@ -46,7 +46,7 @@ exports[`MediaDetailsScreen component renders correctly 1`] = `
           "width": 25,
         },
         Object {
-          "left": 5,
+          "left": 0,
           "position": "absolute",
           "top": 30,
           "zIndex": 5,
@@ -120,7 +120,7 @@ exports[`MediaDetailsScreen image sizes component renders correctly with landsca
           "width": 25,
         },
         Object {
-          "left": 5,
+          "left": 0,
           "position": "absolute",
           "top": 30,
           "zIndex": 5,
@@ -194,7 +194,7 @@ exports[`MediaDetailsScreen image sizes component renders correctly with squared
           "width": 25,
         },
         Object {
-          "left": 5,
+          "left": 0,
           "position": "absolute",
           "top": 30,
           "zIndex": 5,
@@ -268,7 +268,7 @@ exports[`MediaDetailsScreen image sizes component renders correctly with vertica
           "width": 25,
         },
         Object {
-          "left": 5,
+          "left": 0,
           "position": "absolute",
           "top": 30,
           "zIndex": 5,
@@ -342,7 +342,7 @@ exports[`MediaDetailsScreen image sizes component renders correctly with vertica
           "width": 25,
         },
         Object {
-          "left": 5,
+          "left": 0,
           "position": "absolute",
           "top": 30,
           "zIndex": 5,

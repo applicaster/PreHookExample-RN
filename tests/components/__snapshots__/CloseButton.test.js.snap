@@ -29,7 +29,7 @@ exports[`CloseButton component renders correctly when it is for modal 1`] = `
         "width": 25,
       },
       Object {
-        "left": 5,
+        "left": 0,
         "position": "absolute",
         "top": 30,
         "zIndex": 5,

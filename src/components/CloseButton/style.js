@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
   modalCloseButton: {
     position: 'absolute',
     top: 30,
-    left: 5,
+    left: 0,
     zIndex: 5,
   },
 });
