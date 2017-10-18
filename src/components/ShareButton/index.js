@@ -23,7 +23,13 @@ class ShareButton extends Component {
   }
 
   share() {
-    const { defaultMessage, message, url, title } = this.props;
+    const {
+      defaultMessage = 'Estoy viendo a Arnau Marin ¡Bájate la app y únete!',
+      message = '',
+      url = 'http://its0n.tv/a/jb',
+      title = 'Arnau 360',
+    } = this.props;
+
     Share.share({
       message: `${defaultMessage} - ${message}`,
       title,
