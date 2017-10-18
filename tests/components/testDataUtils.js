@@ -1,4 +1,4 @@
-export const event = (id, type = 'image', source = 'instagram', userName = 'applicaster') => ({
+export const event = (id, type = 'image', source = 'instagram', userName = 'applicaster', comments = []) => ({
   id,
   user: {
     id: '220971565',
@@ -24,7 +24,7 @@ export const event = (id, type = 'image', source = 'instagram', userName = 'appl
   type,
   commentsCount: 0,
   source,
-  comments: [],
+  comments,
 });
 
 export const comment = (id, source = 'instagram', userName = 'applicaster') => ({

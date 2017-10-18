@@ -45,7 +45,7 @@ class CommentsScreen extends Component {
           style={[backgroundFeedColor]} contentContainerStyle={[backgroundFeedColor]}
           initialNumToRender={5}
           onEndReached={() => {}}
-          onEndReachedThreshold={5}
+          onEndReachedThreshold={2}
         />
         <MediaDetailsModal />
     </View>
