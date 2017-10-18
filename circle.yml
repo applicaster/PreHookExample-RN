@@ -12,7 +12,7 @@ test:
     - cp test-results.xml $CIRCLE_TEST_REPORTS/junit
     - cp jest-results.xml $CIRCLE_TEST_REPORTS/junit
 
-deployment:
+deploy:
   production:
     branch: production
     commands:
