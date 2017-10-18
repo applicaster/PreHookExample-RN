@@ -21,7 +21,7 @@ class FeedScreen extends Component {
   static closeFeed() {
     return (Platform.OS === 'ios')
       ? NativeModules.ZPReactNativeBridgeListener.postEvent('dismiss_modal_view', { animated: 1 }, () => {})
-      : NativeModules.APReactNativeBridge.handleCommand('stop', {}, Promise.resolve());
+      : NativeModules.APReactNativeBridge.handleCommand('stop', {});
   }
 
   constructor(props) {
