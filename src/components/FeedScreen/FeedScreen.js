@@ -47,9 +47,9 @@ class FeedScreen extends Component {
           style={[backgroundFeedColor]} contentContainerStyle={[backgroundFeedColor]}
           refreshing={loading}
           onRefresh={this.onRefresh}
-          initialNumToRender={10}
+          initialNumToRender={4}
           onEndReached={() => {}}
-          onEndReachedThreshold={5}
+          onEndReachedThreshold={1}
         />
         <MediaDetailsModal />
       </View>
