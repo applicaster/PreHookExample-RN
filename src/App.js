@@ -28,7 +28,7 @@ class App extends Component {
     const { backgroundColor, mainColor, textColor } = this.getAppStyles();
 
     return (
-      <Provider store={store()}>
+      <Provider store={store(undefined, 'production')}>
         <AppNavigator
           headerTitle={feedTitle}
           headerBackgroundColor={backgroundColor}

@@ -29,8 +29,8 @@ class ShareButton extends Component {
       title,
       url,
     })
-    .then(() => console.log('share succeeded'))
-    .catch(error => console.log(error));
+    .then(() => {})
+    .catch(() => {});
   }
 
   render() {
