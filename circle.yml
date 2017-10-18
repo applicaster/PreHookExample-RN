@@ -12,9 +12,13 @@ test:
     - cp test-results.xml $CIRCLE_TEST_REPORTS/junit
     - cp jest-results.xml $CIRCLE_TEST_REPORTS/junit
 
-deploy:
+deployment:
   production:
+    branch: production
+    commands:
+    - npm run deploy
+
+  development:
     branch: master
     commands:
-    - npm run stage
-    - npm run deploy
+      - npm run stage
