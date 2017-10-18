@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BackButton component renders correctly when it is not live 1`] = `
+exports[`BackButton component renders correctly 1`] = `
 <Image
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -24,7 +24,7 @@ exports[`BackButton component renders correctly when it is not live 1`] = `
     Array [
       Object {
         "height": 25,
-        "marginLeft": 10,
+        "marginLeft": 5,
         "tintColor": "#FFFFFF",
         "width": 25,
       },

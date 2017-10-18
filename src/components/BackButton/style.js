@@ -9,6 +9,6 @@ export const styles = StyleSheet.create({
     tintColor: '#FFFFFF',
     height: backButtonSize,
     width: backButtonSize,
-    marginLeft: 10,
+    marginLeft: 5,
   },
 });
