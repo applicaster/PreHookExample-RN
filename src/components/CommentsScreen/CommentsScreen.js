@@ -10,11 +10,13 @@ import {
 import EventContainer from '../EventContainer';
 import CommentContainer from '../CommentContainer';
 import MediaDetailsModal from '../MediaDetailsModal';
+import BackButton from '../BackButton';
 
 class CommentsScreen extends Component {
-  static navigationOptions = ({ screenProps }) => ({
+  static navigationOptions = ({ navigation, screenProps }) => ({
     ...screenProps,
-    headerTitle: "Comments"
+    headerTitle: "Comments",
+    headerLeft: <BackButton onPress={() => {navigation.goBack(); }} />,
   });
 
   constructor(props) {
