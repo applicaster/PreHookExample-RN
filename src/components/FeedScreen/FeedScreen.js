@@ -6,6 +6,7 @@ import {
   Modal,
   View,
   NativeModules,
+  Platform,
 } from 'react-native';
 import EventContainer from '../EventContainer';
 import MediaDetailsModal from '../MediaDetailsModal';
@@ -18,8 +19,9 @@ class FeedScreen extends Component {
   });
 
   static closeFeed() {
-    NativeModules.ZPReactNativeBridgeListener
-      .postEvent('dismiss_modal_view', { animated: 1 }, () => { console.log('hola') })
+    return (Platform.OS === 'ios')
+      ? NativeModules.ZPReactNativeBridgeListener.postEvent('dismiss_modal_view', { animated: 1 }, () => {})
+      : NativeModules.APReactNativeBridge.handleCommand('stop', {}, Promise.resolve());
   }
 
   constructor(props) {
