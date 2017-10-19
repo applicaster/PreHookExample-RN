@@ -17,9 +17,13 @@ deployment:
   production:
     branch: production
     commands:
-    - npm run deploy
+    - mkdir /tmp/build
+    - npm run build-circle
+    - npm run deploy-circle
 
   development:
     branch: master
     commands:
-      - npm run stage
+      - mkdir /tmp/build
+    - npm run build-circle
+    - npm run stage-circle
