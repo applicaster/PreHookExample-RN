@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Share,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -30,8 +31,12 @@ class ShareButton extends Component {
       title = 'Arnau 360',
     } = this.props;
 
+    const textToShare = (Platform.OS === 'ios')
+    ? `${defaultMessage} - ${message}`
+    : `${defaultMessage} - ${message} ${url}`;
+
     Share.share({
-      message: `${defaultMessage} - ${message}`,
+      message: textToShare,
       title,
       url,
     })
