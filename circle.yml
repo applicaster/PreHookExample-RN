@@ -3,7 +3,7 @@ machine:
     version: 8.1.4
   post:
     - npm i -g npm
-    - npm i -g react-native@2.0.1
+    - npm i -g react-native@0.47.1
 
 test:
   override:
