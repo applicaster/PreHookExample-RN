@@ -25,5 +25,5 @@ deployment:
     branch: master
     commands:
       - mkdir /tmp/build
-    - npm run build-circle
-    - npm run stage-circle
+      - npm run build-circle
+      - npm run stage-circle
