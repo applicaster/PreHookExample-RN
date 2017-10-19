@@ -19,7 +19,7 @@ class App extends Component {
       secondaryColor: starlightStyles.secondary_color || '#FFFFFF',
       textColor: starlightStyles.text_color || '#FFFFFF',
       secondaryTextColor: starlightStyles.text_color || '#00D4ED', // '#83F901'
-      backgroundColor: starlightStyles.background_color || '#304D6D', // '#272727'
+      backgroundColor: starlightStyles.background_color || '#505050', // '#272727'
     };
   }
   
