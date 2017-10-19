@@ -17,13 +17,15 @@ deployment:
   production:
     branch: production
     commands:
-    - mkdir /tmp/build
+    - mkdir /tmp/build/ios/
+    - mkdir /tmp/build/android/
     - npm run build-circle
     - npm run deploy-circle
 
   development:
     branch: master
     commands:
-      - mkdir /tmp/build
+      - mkdir /tmp/build/ios/
+      - mkdir /tmp/build/android/
       - npm run build-circle
       - npm run stage-circle
