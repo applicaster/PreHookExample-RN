@@ -19,12 +19,12 @@ class App extends Component {
       secondaryColor: starlightStyles.secondary_color || '#FFFFFF',
       textColor: starlightStyles.text_color || '#FFFFFF',
       secondaryTextColor: starlightStyles.text_color || '#00D4ED', // '#83F901'
-      backgroundColor: starlightStyles.background_color || '#72889F', // '#272727'
+      backgroundColor: starlightStyles.background_color || '#304D6D', // '#272727'
     };
   }
   
   render() {
-    const { feedTitle, isLive, liveUrl } = this.props;
+    const { feedTitle, isLive, liveUrl, hasLive } = this.props;
     const { backgroundColor, mainColor, textColor } = this.getAppStyles();
 
     return (
@@ -37,6 +37,7 @@ class App extends Component {
           borderColor={textColor}
           isLive={isLive}
           liveUrl={liveUrl}
+          hasLive={hasLive}
         />
       </Provider>
     );
@@ -47,6 +48,7 @@ App.propTypes = {
   feedTitle: PropTypes.string,
   isLive: PropTypes.bool,
   liveUrl: PropTypes.string,
+  hasLive: PropTypes.bool,
   starlightStyles: PropTypes.object,
 };
 

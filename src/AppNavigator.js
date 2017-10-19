@@ -9,14 +9,14 @@ import LiveButton from './components/LiveButton';
 
 class AppNavigator extends Component {
   screenProperties() {
-    const { headerTitle, headerBackgroundColor, headerTitleColor, headerTintColor, borderColor, isLive, liveUrl } = this.props;
+    const { headerTitle, headerBackgroundColor, headerTitleColor, headerTintColor, borderColor, isLive, liveUrl, hasLive } = this.props;
     const rgb = hexToRgb(borderColor);
     const borderRgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.3)`;
     return {
       headerBackTitle: null,
       headerTintColor: `${headerTintColor}99`,
       headerTitle: headerTitle || 'Arnau 360', // 'Feed Title'
-      headerRight: <LiveButton liveUrl={liveUrl} isLive={isLive} />,
+      headerRight: hasLive && <LiveButton liveUrl={liveUrl} isLive={isLive} />,
       headerStyle: {
         backgroundColor: headerBackgroundColor,
         borderWidth: StyleSheet.hairlineWidth,
@@ -40,6 +40,7 @@ class AppNavigator extends Component {
 AppNavigator.propTypes = {
   dispatch: PropTypes.func,
   navigation: PropTypes.object,
+  hasLive: PropTypes.bool,
   headerTitle: PropTypes.string,
   headerTintColor: PropTypes.string,
   headerBackgroundColor: PropTypes.string,
