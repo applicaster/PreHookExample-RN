@@ -24,11 +24,11 @@ You should now see the packager running on port 8081 and open your corresponding
 
 # How to run tests:
 ## Mocha Tests
-### 1. The first set are Mocha tests that cover the Reducer, API, Actions, RXJS Epics, and anything related to the business logic.
+1. The first set are Mocha tests that cover the Reducer, API, Actions, RXJS Epics, and anything related to the business logic.
 - `npm run test`
 
 ## Jest Snapshot Tests
-### 2. The second set are Jest Snapshot tests which ensure that the rendering of the React Components has not changed to avoid regresions.
+2. The second set are Jest Snapshot tests which ensure that the rendering of the React Components has not changed to avoid regresions.
 
 - `npm run jest`
 
