@@ -80,8 +80,8 @@ class EventContainer extends Component {
     const containerSeparatorColor = this.getEventSeparatorStyles();
     return (
       <View style={[styles.eventContainer, containerSeparatorColor]}>
-        {this.renderHeader()}
         {this.renderMedia()}
+        {this.renderHeader()}
         {this.renderCaption()}
         {this.renderActionBar()}
       </View>
