@@ -13,13 +13,12 @@ test:
     - cp test-results.xml $CIRCLE_TEST_REPORTS/junit
     - cp jest-results.xml $CIRCLE_TEST_REPORTS/junit
 
-deploy:
+deployment:
   production:
     branch: production
     commands:
     - mkdir -p /tmp/build/ios
     - mkdir -p /tmp/build/android
-    - npm run build-circle
     - npm run deploy-circle
 
   development:
@@ -27,5 +26,4 @@ deploy:
     commands:
       - mkdir -p /tmp/build/ios
       - mkdir -p /tmp/build/android
-      - npm run build-circle
       - npm run stage-circle
