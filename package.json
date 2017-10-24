@@ -5,7 +5,7 @@
   "main": "index.js",
   "engines": {
     "node": "8.1.4",
-    "npm": "5.0.4"
+    "npm": "5.4.2"
   },
   "scripts": {
     "test": "NODE_ENV=test nyc --clean --reporter=lcovonly --reporter=json --reporter=text mocha --compilers js:babel-core/register specs/setup.js --recursive 'specs/*/*.spec.js' --reporter spec",
@@ -27,7 +27,7 @@
     "deploy-circle:android": "npm run build-circle:android && aws s3 sync /tmp/build/android s3://assets-production.applicaster.com/zapp/react-native-bundles/Feed-RN/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --cache-control max-age=60",
     "build": "npm run build:ios && npm run build:android",
     "build:ios": "react-native bundle --platform ios --dev false --entry-file index.ios.js --bundle-output build/ios/index.ios.bundle",
-    "build:android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output build/android/index.android.bundle --assets-dest build/android/assets/",  
+    "build:android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output build/android/index.android.bundle --assets-dest build/android/assets/",
     "deploy": "npm run deploy:ios && npm run deploy:android",
     "stage": "npm run stage:ios && npm run stage:android",
     "stage:ios": "npm run build:ios && aws s3 sync build/ios s3://assets-development.applicaster.com/zapp/react-native-bundles/Feed-RN/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --cache-control max-age=10",
