@@ -5,13 +5,13 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
   style={
     Array [
       Object {
-        "borderBottomColor": "#696A6B",
-        "borderBottomWidth": 0.5,
+        "borderRadius": 5,
+        "marginBottom": 5,
+        "marginHorizontal": 5,
         "overflow": "hidden",
-        "width": 750,
       },
       Object {
-        "borderBottomColor": "rgba(255,255,255, 0.3)",
+        "backgroundColor": undefined,
       },
     ]
   }
@@ -319,13 +319,13 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
   style={
     Array [
       Object {
-        "borderBottomColor": "#696A6B",
-        "borderBottomWidth": 0.5,
+        "borderRadius": 5,
+        "marginBottom": 5,
+        "marginHorizontal": 5,
         "overflow": "hidden",
-        "width": 750,
       },
       Object {
-        "borderBottomColor": "rgba(255,255,255, 0.3)",
+        "backgroundColor": undefined,
       },
     ]
   }
@@ -350,7 +350,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
           "left": 0,
           "position": "absolute",
           "top": 0,
-          "width": 750,
+          "width": 740,
           "zIndex": 2,
         },
       ]
