@@ -47,7 +47,8 @@ class FeedScreen extends Component {
 
   render() {
     const { socialEvents, loading, toggleModal } = this.props;
-    const backgroundFeedColor = { backgroundColor: this.context.backgroundColor };
+    const backgroundFeedColor = { backgroundColor: '#1D1E19' };
+    
     return (
       <View style={[backgroundFeedColor, { flex: 1 }]}>
         <FlatList

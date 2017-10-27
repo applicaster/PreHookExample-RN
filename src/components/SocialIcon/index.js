@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     height: 30,
     width: 30,
   },
-  
 });
 const SocialIcon = ({ socialNetwork, tintColorStyle }) => {
   const socialNetworkToIconMapping = {

@@ -5,7 +5,7 @@ exports[`FeedScreen component renders correctly while loading 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "#1D1E19",
       },
       Object {
         "flex": 1,
@@ -17,7 +17,7 @@ exports[`FeedScreen component renders correctly while loading 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "#1D1E19",
         },
       ]
     }
@@ -54,7 +54,7 @@ exports[`FeedScreen component renders correctly while loading 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "#1D1E19",
         },
       ]
     }
@@ -73,7 +73,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
   style={
     Array [
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "#1D1E19",
       },
       Object {
         "flex": 1,
@@ -85,7 +85,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "#1D1E19",
         },
       ]
     }
@@ -185,7 +185,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
     style={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "#1D1E19",
         },
       ]
     }
@@ -283,7 +283,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "#1D1E19",
       },
       Object {
         "flex": 1,
@@ -295,7 +295,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "#1D1E19",
         },
       ]
     }
@@ -395,7 +395,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "#1D1E19",
         },
       ]
     }
@@ -493,7 +493,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "#1D1E19",
       },
       Object {
         "flex": 1,
@@ -505,7 +505,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "#1D1E19",
         },
       ]
     }
@@ -605,7 +605,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "#1D1E19",
         },
       ]
     }
@@ -703,7 +703,7 @@ exports[`FeedScreen component renders correctly without events 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": undefined,
+        "backgroundColor": "#1D1E19",
       },
       Object {
         "flex": 1,
@@ -715,7 +715,7 @@ exports[`FeedScreen component renders correctly without events 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "#1D1E19",
         },
       ]
     }
@@ -752,7 +752,7 @@ exports[`FeedScreen component renders correctly without events 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": undefined,
+          "backgroundColor": "#1D1E19",
         },
       ]
     }
