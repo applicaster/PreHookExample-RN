@@ -1,33 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Dimensions,
-  StyleSheet,
-  View,
-} from 'react-native';
-import hexToRgb from 'hex-to-rgb';
+import { View } from 'react-native';
 import EventHeader from '../EventHeader';
 import EventCaption from '../EventCaption';
 import EventMedia from '../EventMedia';
 import ActionBar from '../ActionBar';
-
-const screenWidth = Dimensions.get('window').width;
-const styles = StyleSheet.create({
-  eventContainer: {
-    borderBottomColor: '#696A6B',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    width: screenWidth,
-    overflow: 'hidden',
-  },
-});
+import { styles } from './style';
 
 class EventContainer extends Component {
-  getEventSeparatorStyles() {
-    const rgb = hexToRgb(this.context.textColor || '#FFFFFF');
-    const rgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.3)`;
-    return { borderBottomColor: rgbaColor };
-  }
-  
   renderMedia() {
     const { type } = this.props.event;
     if (type === 'image' || type === 'video' || type === 'gallery') {
@@ -77,9 +57,9 @@ class EventContainer extends Component {
   }
 
   render() {
-    const containerSeparatorColor = this.getEventSeparatorStyles();
+    const backgroundColor = { backgroundColor: this.context.backgroundColor };
     return (
-      <View style={[styles.eventContainer, containerSeparatorColor]}>
+      <View style={[styles.eventContainer, backgroundColor]}>
         {this.renderMedia()}
         {this.renderHeader()}
         {this.renderCaption()}
@@ -94,6 +74,7 @@ EventContainer.propTypes = {
 };
 
 EventContainer.contextTypes = {
+  backgroundColor: PropTypes.string,
   textColor: PropTypes.string,
 };
 
