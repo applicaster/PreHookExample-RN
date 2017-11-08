@@ -11,6 +11,7 @@ import {
 import EventContainer from '../EventContainer';
 import MediaDetailsModal from '../MediaDetailsModal';
 import CloseButton from '../CloseButton';
+import { styles } from './style';
 
 class FeedScreen extends Component {
   static navigationOptions = ({ screenProps }) => ({
@@ -47,7 +48,7 @@ class FeedScreen extends Component {
 
   render() {
     const { socialEvents, loading, toggleModal } = this.props;
-    const backgroundFeedColor = { backgroundColor: '#1D1E19' };
+    const backgroundFeedColor = { backgroundColor: `${this.context.backgroundColor}4D` };
     
     return (
       <View style={[backgroundFeedColor, { flex: 1 }]}>
@@ -55,7 +56,7 @@ class FeedScreen extends Component {
           data={socialEvents}
           renderItem={({item}) => <EventContainer key={item.id} event={item} />}
           keyExtractor={(item) => item.id }
-          style={[backgroundFeedColor]} contentContainerStyle={[backgroundFeedColor]}
+          style={[backgroundFeedColor, styles.feedList]} contentContainerStyle={[backgroundFeedColor, styles.feedListContent]}
           refreshing={loading}
           onRefresh={this.onRefresh}
           initialNumToRender={4}
