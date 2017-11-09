@@ -4,9 +4,9 @@ import {
 
 export const styles = StyleSheet.create({
   feedListContent: {
-    marginTop: 5,
+    paddingTop: 5,
   },
   feedList: {
-    marginBottom: 5,
+    paddingBottom: 5,
   },
 });
