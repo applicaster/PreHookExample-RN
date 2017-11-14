@@ -65,6 +65,53 @@ exports[`FeedScreen component renders correctly while loading 1`] = `
     <View />
   </RCTScrollView>
   <MediaDetailsModal />
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Image
+      source={
+        Object {
+          "uri": "feed_rn_write_post_button",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 15,
+            "height": 60,
+            "position": "absolute",
+            "right": 15,
+            "width": 60,
+            "zIndex": 2,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -275,6 +322,53 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
     </View>
   </RCTScrollView>
   <MediaDetailsModal />
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Image
+      source={
+        Object {
+          "uri": "feed_rn_write_post_button",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 15,
+            "height": 60,
+            "position": "absolute",
+            "right": 15,
+            "width": 60,
+            "zIndex": 2,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -485,6 +579,53 @@ exports[`FeedScreen component renders correctly with events 1`] = `
     </View>
   </RCTScrollView>
   <MediaDetailsModal />
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Image
+      source={
+        Object {
+          "uri": "feed_rn_write_post_button",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 15,
+            "height": 60,
+            "position": "absolute",
+            "right": 15,
+            "width": 60,
+            "zIndex": 2,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -695,6 +836,53 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
     </View>
   </RCTScrollView>
   <MediaDetailsModal />
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Image
+      source={
+        Object {
+          "uri": "feed_rn_write_post_button",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 15,
+            "height": 60,
+            "position": "absolute",
+            "right": 15,
+            "width": 60,
+            "zIndex": 2,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -763,5 +951,52 @@ exports[`FeedScreen component renders correctly without events 1`] = `
     <View />
   </RCTScrollView>
   <MediaDetailsModal />
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Image
+      source={
+        Object {
+          "uri": "feed_rn_write_post_button",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 15,
+            "height": 60,
+            "position": "absolute",
+            "right": 15,
+            "width": 60,
+            "zIndex": 2,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;

@@ -11,6 +11,7 @@ import {
 import EventContainer from '../EventContainer';
 import MediaDetailsModal from '../MediaDetailsModal';
 import CloseButton from '../CloseButton';
+import WritePostButton from '../WritePostButon';
 
 class FeedScreen extends Component {
   static navigationOptions = ({ screenProps }) => ({
@@ -62,6 +63,7 @@ class FeedScreen extends Component {
           onEndReachedThreshold={1}
         />
         <MediaDetailsModal />
+        <WritePostButton />
       </View>
     );
   }
