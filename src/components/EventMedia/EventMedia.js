@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ImageBackground, TouchableWithoutFeedback } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import LinearGradient from '@applicaster/react-native-linear-gradient';
 import { styles } from './style';
 import EventVideo from '../EventVideo';
 import { getMediaDimensions } from '../../utils/size';
