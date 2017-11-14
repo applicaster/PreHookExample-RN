@@ -38,6 +38,7 @@
   "author": "Applicaster | Miami Team",
   "license": "ISC",
   "dependencies": {
+    "@applicaster/feed-rn-utils": "^1.0.4",
     "@applicaster/react-native-transformable-image": "0.0.20",
     "applicaster-utils": "^1.0.1",
     "axios": "^0.15.3",
