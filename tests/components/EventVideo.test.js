@@ -3,7 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import EventVideo from '../../src/components/EventVideo/EventVideo';
 
-jest.mock('react-native-video', () => 'Video');
+jest.mock('@applicaster/react-native-video', () => 'Video');
 
 const eventVideoProps = (height, width, videoUrl) => ({
   height,
