@@ -27,4 +27,4 @@ export const setEnvironment = environment => actionCreator(SET_ENVIRONMENT, { en
 export const toggleModal = modalParams => actionCreator(TOGGLE_MODAL, modalParams);
 
 export const setEventIdForActiveAudio = eventId => actionCreator(SET_EVENT_ID_FOR_ACTIVE_AUDIO, { eventId }); 
-export const setActiveEventId = eventId => actionCreator(SET_ACTIVE_EVENT_ID, { eventId }); 
+export const setActiveEventId = eventId => actionCreator(SET_ACTIVE_EVENT_ID, { eventId });

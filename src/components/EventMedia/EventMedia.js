@@ -15,7 +15,7 @@ class EventMedia extends Component {
   showMediaDetails() {
     const { toggleModal, setActiveEventId, eventId } = this.props;
     setActiveEventId(eventId);
-    toggleModal();
+    toggleModal({ modal: 'MediaModal' });
   }
 
   renderVideo() {
