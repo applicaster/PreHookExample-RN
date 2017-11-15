@@ -39,7 +39,8 @@ class CommentContainer extends Component {
   }
 
   render() {
-    const containerSeparatorColor = { borderBottomColor: `${this.context.textColor}4D` };
+    const { textColor = '#FFFFFF' } = this.context;
+    const containerSeparatorColor = { borderBottomColor: `${textColor}4D` };
     return (
       <View style={[styles.commentContainer, containerSeparatorColor]}>
         {this.renderCommentHeader()}
