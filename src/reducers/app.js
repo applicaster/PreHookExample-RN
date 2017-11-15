@@ -16,6 +16,7 @@ const appInitialState = Map({
   timelineId: null,
   timezone: null,
   isMediaModalVisible: false,
+  isWritePostModalVisible: false,
   activeEventId: null,
   eventIdForActiveAudio: null,
 });
@@ -37,7 +38,13 @@ export default (state = appInitialState, action = actionCreator()) => {
       return state.set('timezone', payload.timezone);
 
     case TOGGLE_MODAL:
-      return state.update('isMediaModalVisible', visibility => !visibility);
+      if (payload.modal === 'MediaModal') {
+        return state.update('isMediaModalVisible', visibility => !visibility);
+      }
+      if (payload.modal === 'WritePostModal') {
+        return state.update('isWritePostModalVisible', visibility => !visibility);
+      }
+      return state;
 
     case SET_ACTIVE_EVENT_ID:
       return state.set('activeEventId', payload.eventId);
