@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Modal,
-} from 'react-native';
+import { Modal } from 'react-native';
 import MediaDetailsScreen from '../MediaDetailsScreen';
 
 class MediaDetailsModal extends Component {
