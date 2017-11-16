@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 import {
   Image,
   TouchableOpacity,
+  View,
 } from 'react-native';
 import { styles } from './style';
 
 const WRITE_POST_BUTTON = 'feed_rn_write_post_button';
+const PENCIL_IMAGE = 'feed_rn_pencil';
+
 class WritePostButton extends Component {
   render() {
     const { mainColor } = this.context;
@@ -14,7 +17,10 @@ class WritePostButton extends Component {
 
     return (
       <TouchableOpacity onPress={() => {}}>
-        <Image style={[styles.writePostButton, buttonTintColor]} source={{ uri: WRITE_POST_BUTTON }} />
+        <View style={styles.writePostButtonContainer}>
+          <Image style={[styles.writePostButton, buttonTintColor]} source={{ uri: WRITE_POST_BUTTON }} />
+          <Image style={[styles.writePostPencil]} source={{ uri: PENCIL_IMAGE }} />
+        </View>
       </TouchableOpacity>
     );
   }

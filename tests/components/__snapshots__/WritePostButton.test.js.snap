@@ -25,27 +25,48 @@ exports[`WritePostButton component renders correctly 1`] = `
   testID={undefined}
   tvParallaxProperties={undefined}
 >
-  <Image
-    source={
-      Object {
-        "uri": "feed_rn_write_post_button",
+  <View
+    style={undefined}
+  >
+    <Image
+      source={
+        Object {
+          "uri": "feed_rn_write_post_button",
+        }
       }
-    }
-    style={
-      Array [
+      style={
+        Array [
+          Object {
+            "bottom": 15,
+            "height": 60,
+            "position": "absolute",
+            "right": 10,
+            "width": 60,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
+      }
+    />
+    <Image
+      source={
         Object {
-          "bottom": 15,
-          "height": 60,
-          "position": "absolute",
-          "right": 15,
-          "width": 60,
-          "zIndex": 2,
-        },
-        Object {
-          "tintColor": undefined,
-        },
-      ]
-    }
-  />
+          "uri": "feed_rn_pencil",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 30,
+            "height": 35,
+            "position": "absolute",
+            "right": 24,
+            "width": 30,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;
