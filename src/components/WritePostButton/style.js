@@ -2,18 +2,22 @@ import { StyleSheet } from 'react-native';
 
 const buttonSize = 60;
 export const styles = StyleSheet.create({
-  writePostButton: {
+  writePostButtonContainer: {
     position: 'absolute',
-    height: buttonSize,
-    width: buttonSize,
     bottom: 15,
     right: 10,
+    height: buttonSize,
+    width: buttonSize,
+  },
+  writePostButton: {
+    height: buttonSize,
+    width: buttonSize,
   },
   writePostPencil: {
     height: 35,
     width: 30,
-    bottom: 30,
-    right: 24,
+    bottom: 15,
+    right: 14,
     position: 'absolute',
   },
 });

@@ -13,10 +13,11 @@ const PENCIL_IMAGE = 'feed_rn_pencil';
 class WritePostButton extends Component {
   render() {
     const { mainColor } = this.context;
+    const { openWritePostModal } = this.props;
     const buttonTintColor = { tintColor: mainColor };
 
     return (
-      <TouchableOpacity onPress={() => {}}>
+      <TouchableOpacity onPress={() => openWritePostModal({ modal: 'WritePostModal' })}>
         <View style={styles.writePostButtonContainer}>
           <Image style={[styles.writePostButton, buttonTintColor]} source={{ uri: WRITE_POST_BUTTON }} />
           <Image style={[styles.writePostPencil]} source={{ uri: PENCIL_IMAGE }} />
@@ -31,7 +32,7 @@ WritePostButton.contextTypes = {
 };
 
 WritePostButton.propTypes = {
-  navigateToWritePostScreen: PropTypes.func,
+  openWritePostModal: PropTypes.func,
 };
 
 export default WritePostButton;

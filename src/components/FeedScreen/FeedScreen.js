@@ -11,7 +11,7 @@ import {
 import EventContainer from '../EventContainer';
 import MediaDetailsModal from '../MediaDetailsModal';
 import CloseButton from '../CloseButton';
-import WritePostButton from '../WritePostButon';
+import WritePostButton from '../WritePostButton';
 
 class FeedScreen extends Component {
   static navigationOptions = ({ screenProps }) => ({

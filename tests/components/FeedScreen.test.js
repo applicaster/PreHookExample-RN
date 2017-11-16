@@ -6,6 +6,7 @@ import FeedScreen from '../../src/components/FeedScreen/FeedScreen';
 
 jest.mock('../../src/components/EventContainer', () => 'EventContainer');
 jest.mock('../../src/components/MediaDetailsModal', () => 'MediaDetailsModal');
+jest.mock('../../src/components/WritePostButton', () => 'WritePostButton');
 
 describe('FeedScreen', () => {
   test('component renders correctly without events', () => {

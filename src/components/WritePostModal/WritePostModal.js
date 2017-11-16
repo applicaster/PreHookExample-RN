@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Modal } from 'react-native';
-import MediaDetailsScreen from '../MediaDetailsScreen';
+import { Modal, Text } from 'react-native';
 
 class WritePostModal extends Component {
   render() {
@@ -13,7 +12,7 @@ class WritePostModal extends Component {
         visible={isWritePostModalVisible}
         onRequestClose={toggleModal}
       >
-        <MediaDetailsScreen />
+        <Text>Hi</Text>
       </Modal>
     );
   }

@@ -1,7 +1,7 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import WritePostButton from '../../src/components/WritePostButon';
+import WritePostButton from '../../src/components/WritePostButton/WritePostButton';
 
 describe('WritePostButton', () => {
   test('component renders correctly', () => {
