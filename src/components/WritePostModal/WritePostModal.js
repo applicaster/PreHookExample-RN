@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Text } from 'react-native';
+import CloseButton from '../CloseButton';
 
 class WritePostModal extends Component {
+  constructor(props) {
+    super(props);
+    this.closeModal = this.closeModal.bind(this);
+  }
+  
+  closeModal() {
+    const { toggleModal } = this.props;
+    toggleModal({ modal: 'MediaModal' });
+  }
+
   render() {
     const { isWritePostModalVisible, toggleModal } = this.props;
     return (
@@ -12,7 +23,8 @@ class WritePostModal extends Component {
         visible={isWritePostModalVisible}
         onRequestClose={toggleModal}
       >
-        <Text>Hi</Text>
+        <Text>Write Post Screen Goes Here</Text>
+        <CloseButton onPress={this.closeModal} isForModal />
       </Modal>
     );
   }

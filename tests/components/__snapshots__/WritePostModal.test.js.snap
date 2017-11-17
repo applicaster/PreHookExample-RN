@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WritePostModal component renders correctly when it is invisible 1`] = `
+<Modal
+  animationType="fade"
+  hardwareAccelerated={false}
+  onRequestClose={undefined}
+  transparent={false}
+  visible={false}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  >
+    Write Post Screen Goes Here
+  </Text>
+  <Image
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    source={
+      Object {
+        "uri": "feed_rn_close_button",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "height": 25,
+          "marginLeft": 5,
+          "tintColor": "#FFFFFF",
+          "width": 25,
+        },
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "top": 30,
+          "zIndex": 5,
+        },
+        Object {
+          "tintColor": "#FFFFFF99",
+        },
+      ]
+    }
+    testID={undefined}
+  />
+</Modal>
+`;
+
+exports[`WritePostModal component renders correctly when it is visible 1`] = `
+<Modal
+  animationType="fade"
+  hardwareAccelerated={false}
+  onRequestClose={undefined}
+  transparent={false}
+  visible={true}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  >
+    Write Post Screen Goes Here
+  </Text>
+  <Image
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    source={
+      Object {
+        "uri": "feed_rn_close_button",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "height": 25,
+          "marginLeft": 5,
+          "tintColor": "#FFFFFF",
+          "width": 25,
+        },
+        Object {
+          "left": 0,
+          "position": "absolute",
+          "top": 30,
+          "zIndex": 5,
+        },
+        Object {
+          "tintColor": "#FFFFFF99",
+        },
+      ]
+    }
+    testID={undefined}
+  />
+</Modal>
+`;
