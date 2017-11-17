@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import EventContainer from '../EventContainer';
 import MediaDetailsModal from '../MediaDetailsModal';
+import WritePostModal from '../WritePostModal';
 import CloseButton from '../CloseButton';
 import WritePostButton from '../WritePostButton';
 
@@ -63,6 +64,7 @@ class FeedScreen extends Component {
           onEndReachedThreshold={1}
         />
         <MediaDetailsModal />
+        <WritePostModal />
         <WritePostButton />
       </View>
     );
