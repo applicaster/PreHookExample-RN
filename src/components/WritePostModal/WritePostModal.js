@@ -18,7 +18,7 @@ class WritePostModal extends Component {
     const { isWritePostModalVisible, toggleModal } = this.props;
     return (
       <Modal
-        animationType={'fade'}
+        animationType={'slide'}
         transparent={false}
         visible={isWritePostModalVisible}
         onRequestClose={toggleModal}
