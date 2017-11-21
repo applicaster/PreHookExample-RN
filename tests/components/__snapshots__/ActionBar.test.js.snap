@@ -19,12 +19,16 @@ exports[`ActionBar component renders correctly for instagram 1`] = `
   <EventDetailCount
     count={1}
     eventId={undefined}
+    eventOriginUrl={undefined}
     label="Likes"
+    openOriginUrl={true}
   />
   <EventDetailCount
     count={3}
     eventId={undefined}
+    eventOriginUrl={undefined}
     label="Comments"
+    openOriginUrl={true}
   />
   <View
     style={
