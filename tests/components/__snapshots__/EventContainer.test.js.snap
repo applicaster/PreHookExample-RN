@@ -250,12 +250,16 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
     <EventDetailCount
       count={30}
       eventId="someId"
+      eventOriginUrl={undefined}
       label="Likes"
+      openOriginUrl={true}
     />
     <EventDetailCount
       count={0}
       eventId="someId"
+      eventOriginUrl={undefined}
       label="Comments"
+      openOriginUrl={true}
     />
     <View
       style={
@@ -578,12 +582,16 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
     <EventDetailCount
       count={30}
       eventId="someId"
+      eventOriginUrl={undefined}
       label="Likes"
+      openOriginUrl={true}
     />
     <EventDetailCount
       count={0}
       eventId="someId"
+      eventOriginUrl={undefined}
       label="Comments"
+      openOriginUrl={true}
     />
     <View
       style={
