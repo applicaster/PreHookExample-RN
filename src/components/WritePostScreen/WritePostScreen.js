@@ -19,7 +19,6 @@ class WritePostScreen extends Component {
     super(props);
     this.state = {
       text: '',
-      numberOfCharacters: 0,
       socialNetworkSelected: 'twitter',
     };
     this.closeModal = this.closeModal.bind(this);
@@ -29,12 +28,11 @@ class WritePostScreen extends Component {
 
   onTextChange(text) {
     this.setState({ text });
-    this.setState({ numberOfCharacters: text.length });
   }
 
   onPostPress() {
-    const { numberOfCharacters, text, socialNetworkSelected } = this.state;
-    if (!numberOfCharacters) return;
+    const { text, socialNetworkSelected } = this.state;
+    if (!text.length) return;
     
 
     if (socialNetworkSelected === 'twitter') {
@@ -73,13 +71,13 @@ class WritePostScreen extends Component {
 
   renderActionBar() {
     const { backgroundColor } = this.context;
-    const { socialNetworkSelected } = this.state;
+    const { socialNetworkSelected, text } = this.state;
     const { isFacebookAvailable, isTwitterAvailable } = this.props;
 
     const backgroundColorStyle = { backgroundColor };
-    const { numberOfCharacters } = this.state;
+
     const characterCounter = (socialNetworkSelected === 'twitter')
-      ? <CharacterCounter currentCharacters={numberOfCharacters} maxCharacters={280} />
+      ? <CharacterCounter currentCharacters={text.length} maxCharacters={280} />
       : null;
 
     const postSwitcher = (isFacebookAvailable && isTwitterAvailable)

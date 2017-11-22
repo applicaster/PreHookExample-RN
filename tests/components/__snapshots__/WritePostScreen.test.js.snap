@@ -181,7 +181,39 @@ exports[`WritePostScreen component renders correctly 1`] = `
           },
         ]
       }
-    />
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "borderRadius": 10,
+              "flexDirection": "column",
+              "height": 22,
+              "justifyContent": "center",
+              "marginLeft": 11,
+              "paddingHorizontal": 5,
+            },
+            Object {
+              "backgroundColor": "#000000",
+            },
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFFFFF",
+            }
+          }
+        >
+          0/280
+        </Text>
+      </View>
+    </View>
   </View>
 </View>
 `;
@@ -367,7 +399,39 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
           },
         ]
       }
-    />
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "borderRadius": 10,
+              "flexDirection": "column",
+              "height": 22,
+              "justifyContent": "center",
+              "marginLeft": 11,
+              "paddingHorizontal": 5,
+            },
+            Object {
+              "backgroundColor": "#000000",
+            },
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFFFFF",
+            }
+          }
+        >
+          0/280
+        </Text>
+      </View>
+    </View>
   </View>
 </View>
 `;
@@ -553,7 +617,39 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
           },
         ]
       }
-    />
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "borderRadius": 10,
+              "flexDirection": "column",
+              "height": 22,
+              "justifyContent": "center",
+              "marginLeft": 11,
+              "paddingHorizontal": 5,
+            },
+            Object {
+              "backgroundColor": "#000000",
+            },
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#FFFFFF",
+            }
+          }
+        >
+          0/280
+        </Text>
+      </View>
+    </View>
   </View>
 </View>
 `;
