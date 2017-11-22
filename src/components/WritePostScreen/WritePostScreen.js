@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
+  Alert,
   KeyboardAvoidingView,
   TextInput,
   Text,
   View,
   TouchableOpacity,
 } from 'react-native';
+import FeedRNUtils from '@applicaster/feed-rn-utils';
 import { styles } from './style';
 import CloseButton from '../CloseButton';
+import CharacterCounter from '../CharacterCounter';
 
 class WritePostScreen extends Component {
   constructor(props) {
@@ -16,15 +19,50 @@ class WritePostScreen extends Component {
     this.state = {
       text: '',
       numberOfCharacters: 0,
-      postSelection: 'twitter',
+      socialNetworkSelected: 'twitter',
     };
     this.closeModal = this.closeModal.bind(this);
-    this.onChange = this.onChange.bind(this);
+    this.onTextChange = this.onTextChange.bind(this);
+    this.onPostPress = this.onPostPress.bind(this);
   }
 
-  onChange(text) {
+  onTextChange(text) {
     this.setState({ text });
     this.setState({ numberOfCharacters: text.length });
+  }
+
+  onPostPress() {
+    const { numberOfCharacters, text, socialNetworkSelected } = this.state;
+    if (!numberOfCharacters) return;
+    
+
+    if (socialNetworkSelected === 'twitter') {
+      const twitterUserName = '@ArnauMarin9';
+      FeedRNUtils.postTweet(`${twitterUserName} ${text}`)
+        .then(() => this.closeModal())
+        .catch(error => {
+          Alert.alert(
+            'Error',
+            'Unable to post to Twitter',
+            [{ text: 'OK', onPress: this.closeModal }],
+            { cancelable: false }
+          );
+        });
+    }
+
+    if (socialNetworkSelected === 'facebook') {
+      const facebookPageId = '';
+      FeedRNUtils.postFacebook({ text, facebookPageId })
+        .then(() => this.closeModal())
+        .catch(error => {
+          Alert.alert(
+            'Error',
+            'Unable to post to Facebook',
+            [{ text: 'OK', onPress: this.closeModal }],
+            { cancelable: false }
+          );
+        });
+    }
   }
 
   closeModal() {
@@ -34,10 +72,18 @@ class WritePostScreen extends Component {
 
   renderActionBar() {
     const { backgroundColor } = this.context;
+    const { socialNetworkSelected } = this.state;
+
     const backgroundColorStyle = { backgroundColor };
+    const { numberOfCharacters } = this.state;
+    const characterCounter = (socialNetworkSelected === 'twitter')
+      ? <CharacterCounter currentCharacters={numberOfCharacters} maxCharacters={280} />
+      : null;
 
     return (
-      <View style={[styles.postOptionsBar, backgroundColorStyle]}></View>
+      <View style={[styles.postOptionsBar, backgroundColorStyle]}>
+        {characterCounter}
+      </View>
     );
   }
 
@@ -57,17 +103,27 @@ class WritePostScreen extends Component {
   renderWritePostLabel() {
     const { mainColor } = this.context;
     const textColorStyle = { color: mainColor };
+    const { isTwitterAvailable, isFacebookAvailable } = this.props;
 
-    return <Text style={[styles.writePostLabel, textColorStyle]}>Write a Post</Text>;
+    const writeAPostLabel = (isTwitterAvailable && !isFacebookAvailable)
+      ? 'Post a Tweet'
+      : 'Write a Post';
+
+    return <Text style={[styles.writePostLabel, textColorStyle]}>{writeAPostLabel}</Text>;
   }
 
   renderPostButton() {
     const { textColor } = this.context;
+    const { isTwitterAvailable, isFacebookAvailable } = this.props;
     const textColorStyle = { color: textColor };
 
+    const postButtonLabel = (isTwitterAvailable && !isFacebookAvailable)
+      ? 'Tweet'
+      : 'Post';
+
     return (
-      <TouchableOpacity style={styles.postButton} onPress={() => {} }>
-        <Text style={[styles.postButtonLabel, textColorStyle]}>Post</Text>
+      <TouchableOpacity style={styles.postButton} onPress={this.onPostPress}>
+        <Text style={[styles.postButtonLabel, textColorStyle]}>{postButtonLabel}</Text>
       </TouchableOpacity>
     );
   }
@@ -88,7 +144,7 @@ class WritePostScreen extends Component {
             multiline
             style={styles.input}
             placeholder="Write a post..."
-            onChangeText={(text) => this.setState({ text })}
+            onChangeText={this.onTextChange}
             value={this.state.text}
           />
           {this.renderActionBar()}
@@ -99,6 +155,8 @@ class WritePostScreen extends Component {
 }
 
 WritePostScreen.propTypes = {
+  isFacebookAvailable: PropTypes.bool,
+  isTwitterAvailable: PropTypes.bool,
   toggleModal: PropTypes.func,
 };
 

@@ -40,6 +40,7 @@ export const styles = StyleSheet.create({
     top: 32,
   },
   postOptionsBar: {
+    alignItems: 'center',
     flexDirection: 'row',
     height: 45,
     width: window.width,
