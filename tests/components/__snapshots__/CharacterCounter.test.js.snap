@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterCounter component renders correctly when number of characters is over 3 digits 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 10,
+        "flexDirection": "column",
+        "height": 22,
+        "justifyContent": "center",
+        "marginLeft": 11,
+        "paddingHorizontal": 5,
+      },
+      Object {
+        "backgroundColor": "#000000",
+      },
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#FF0000",
+      }
+    }
+  >
+    +999/10
+  </Text>
+</View>
+`;
+
+exports[`CharacterCounter component renders correctly when number of characters is over limit 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 10,
+        "flexDirection": "column",
+        "height": 22,
+        "justifyContent": "center",
+        "marginLeft": 11,
+        "paddingHorizontal": 5,
+      },
+      Object {
+        "backgroundColor": "#000000",
+      },
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#FF0000",
+      }
+    }
+  >
+    11/10
+  </Text>
+</View>
+`;
+
+exports[`CharacterCounter component renders correctly when number of characters is within limit 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 10,
+        "flexDirection": "column",
+        "height": 22,
+        "justifyContent": "center",
+        "marginLeft": 11,
+        "paddingHorizontal": 5,
+      },
+      Object {
+        "backgroundColor": "#000000",
+      },
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#FFFFFF",
+      }
+    }
+  >
+    1/10
+  </Text>
+</View>
+`;
