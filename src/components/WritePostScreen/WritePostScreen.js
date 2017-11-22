@@ -12,6 +12,7 @@ import FeedRNUtils from '@applicaster/feed-rn-utils';
 import { styles } from './style';
 import CloseButton from '../CloseButton';
 import CharacterCounter from '../CharacterCounter';
+import PostSwitcher from '../PostSwitcher';
 
 class WritePostScreen extends Component {
   constructor(props) {
@@ -51,8 +52,8 @@ class WritePostScreen extends Component {
     }
 
     if (socialNetworkSelected === 'facebook') {
-      const facebookPageId = '';
-      FeedRNUtils.postFacebook({ text, facebookPageId })
+      const facebookPageId = '416219838419558';
+      FeedRNUtils.postFacebook({ postText: text, facebookPageId })
         .then(() => this.closeModal())
         .catch(error => {
           Alert.alert(
@@ -73,12 +74,17 @@ class WritePostScreen extends Component {
   renderActionBar() {
     const { backgroundColor } = this.context;
     const { socialNetworkSelected } = this.state;
+    const { isFacebookAvailable, isTwitterAvailable } = this.props;
 
     const backgroundColorStyle = { backgroundColor };
     const { numberOfCharacters } = this.state;
     const characterCounter = (socialNetworkSelected === 'twitter')
       ? <CharacterCounter currentCharacters={numberOfCharacters} maxCharacters={280} />
       : null;
+
+    const postSwitcher = (isFacebookAvailable && isTwitterAvailable)
+    ? <PostSwitcher />
+    : null;
 
     return (
       <View style={[styles.postOptionsBar, backgroundColorStyle]}>
