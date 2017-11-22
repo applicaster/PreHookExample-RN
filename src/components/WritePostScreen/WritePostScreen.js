@@ -138,21 +138,16 @@ class WritePostScreen extends Component {
     
     return (
       <View style={[styles.writePostScreen, screenBackgroundColor]}>
-        
         {this.renderPostBar()}
-        <KeyboardAvoidingView
-          behavior="padding"
-        >
-          <TextInput
-            autoFocus
-            multiline
-            style={styles.input}
-            placeholder="Write a post..."
-            onChangeText={this.onTextChange}
-            value={this.state.text}
-          />
-          {this.renderActionBar()}
-        </KeyboardAvoidingView>
+        <TextInput
+          autoFocus
+          multiline
+          style={styles.input}
+          placeholder="Write a post..."
+          onChangeText={this.onTextChange}
+          value={this.state.text}
+        />
+        {this.renderActionBar()}
       </View>
     );
   }
