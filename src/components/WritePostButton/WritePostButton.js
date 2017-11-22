@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {
   Image,
   TouchableOpacity,
-  View,
 } from 'react-native';
 import { styles } from './style';
 
@@ -18,11 +17,9 @@ class WritePostButton extends Component {
     const pencilTintColor = { tintColor: textColor };
 
     return (
-      <TouchableOpacity onPress={() => openWritePostModal({ modal: 'WritePostModal' })}>
-        <View style={styles.writePostButtonContainer}>
-          <Image style={[styles.writePostButton, buttonTintColor]} source={{ uri: WRITE_POST_BUTTON }} />
-          <Image style={[styles.writePostPencil, pencilTintColor]} source={{ uri: PENCIL_IMAGE }} />
-        </View>
+      <TouchableOpacity style={styles.writePostButtonContainer} onPress={() => openWritePostModal({ modal: 'WritePostModal' })}>
+        <Image style={[styles.writePostButton, buttonTintColor]} source={{ uri: WRITE_POST_BUTTON }} />
+        <Image style={[styles.writePostPencil, pencilTintColor]} source={{ uri: PENCIL_IMAGE }} />
       </TouchableOpacity>
     );
   }
