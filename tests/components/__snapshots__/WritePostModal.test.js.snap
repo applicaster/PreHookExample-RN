@@ -8,7 +8,10 @@ exports[`WritePostModal component renders correctly when it is invisible 1`] = `
   transparent={false}
   visible={false}
 >
-  <WritePostScreen />
+  <WritePostScreen
+    isFacebookAvailable={false}
+    isTwitterAvailable={true}
+  />
 </Modal>
 `;
 
@@ -20,6 +23,9 @@ exports[`WritePostModal component renders correctly when it is visible 1`] = `
   transparent={false}
   visible={true}
 >
-  <WritePostScreen />
+  <WritePostScreen
+    isFacebookAvailable={false}
+    isTwitterAvailable={true}
+  />
 </Modal>
 `;
