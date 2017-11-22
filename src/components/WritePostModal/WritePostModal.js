@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Modal, Text } from 'react-native';
+import { Modal } from 'react-native';
 import WritePostScreen from '../WritePostScreen';
 
 class WritePostModal extends Component {
