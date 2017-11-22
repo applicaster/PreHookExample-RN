@@ -138,81 +138,68 @@ exports[`WritePostScreen component renders correctly 1`] = `
       </Text>
     </View>
   </View>
+  <TextInput
+    autoFocus={true}
+    multiline={true}
+    onChangeText={[Function]}
+    placeholder="Write a post..."
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "fontSize": 20,
+        "height": 205,
+        "paddingHorizontal": 10,
+        "paddingTop": 15,
+        "width": 750,
+      }
+    }
+    value=""
+  />
   <View
-    keyboardVerticalOffset={0}
-    onLayout={[Function]}
     style={
       Array [
-        undefined,
         Object {
-          "paddingBottom": 0,
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 45,
+          "width": 750,
+        },
+        Object {
+          "backgroundColor": undefined,
         },
       ]
     }
   >
-    <TextInput
-      autoFocus={true}
-      multiline={true}
-      onChangeText={[Function]}
-      placeholder="Write a post..."
-      style={
-        Object {
-          "backgroundColor": "#FFFFFF",
-          "fontSize": 20,
-          "height": 205,
-          "paddingHorizontal": 10,
-          "paddingTop": 15,
-          "width": 750,
-        }
-      }
-      value=""
-    />
     <View
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 45,
-            "width": 750,
+            "borderRadius": 10,
+            "flexDirection": "column",
+            "height": 22,
+            "justifyContent": "center",
+            "marginLeft": 11,
+            "paddingHorizontal": 5,
           },
           Object {
-            "backgroundColor": undefined,
+            "backgroundColor": "#000000",
           },
         ]
       }
     >
-      <View
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
         style={
-          Array [
-            Object {
-              "borderRadius": 10,
-              "flexDirection": "column",
-              "height": 22,
-              "justifyContent": "center",
-              "marginLeft": 11,
-              "paddingHorizontal": 5,
-            },
-            Object {
-              "backgroundColor": "#000000",
-            },
-          ]
+          Object {
+            "color": "#FFFFFF",
+          }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#FFFFFF",
-            }
-          }
-        >
-          0/280
-        </Text>
-      </View>
+        0/280
+      </Text>
     </View>
   </View>
 </View>
@@ -356,81 +343,68 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
       </Text>
     </View>
   </View>
+  <TextInput
+    autoFocus={true}
+    multiline={true}
+    onChangeText={[Function]}
+    placeholder="Write a post..."
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "fontSize": 20,
+        "height": 205,
+        "paddingHorizontal": 10,
+        "paddingTop": 15,
+        "width": 750,
+      }
+    }
+    value=""
+  />
   <View
-    keyboardVerticalOffset={0}
-    onLayout={[Function]}
     style={
       Array [
-        undefined,
         Object {
-          "paddingBottom": 0,
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 45,
+          "width": 750,
+        },
+        Object {
+          "backgroundColor": undefined,
         },
       ]
     }
   >
-    <TextInput
-      autoFocus={true}
-      multiline={true}
-      onChangeText={[Function]}
-      placeholder="Write a post..."
-      style={
-        Object {
-          "backgroundColor": "#FFFFFF",
-          "fontSize": 20,
-          "height": 205,
-          "paddingHorizontal": 10,
-          "paddingTop": 15,
-          "width": 750,
-        }
-      }
-      value=""
-    />
     <View
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 45,
-            "width": 750,
+            "borderRadius": 10,
+            "flexDirection": "column",
+            "height": 22,
+            "justifyContent": "center",
+            "marginLeft": 11,
+            "paddingHorizontal": 5,
           },
           Object {
-            "backgroundColor": undefined,
+            "backgroundColor": "#000000",
           },
         ]
       }
     >
-      <View
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
         style={
-          Array [
-            Object {
-              "borderRadius": 10,
-              "flexDirection": "column",
-              "height": 22,
-              "justifyContent": "center",
-              "marginLeft": 11,
-              "paddingHorizontal": 5,
-            },
-            Object {
-              "backgroundColor": "#000000",
-            },
-          ]
+          Object {
+            "color": "#FFFFFF",
+          }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#FFFFFF",
-            }
-          }
-        >
-          0/280
-        </Text>
-      </View>
+        0/280
+      </Text>
     </View>
   </View>
 </View>
@@ -574,81 +548,68 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
       </Text>
     </View>
   </View>
+  <TextInput
+    autoFocus={true}
+    multiline={true}
+    onChangeText={[Function]}
+    placeholder="Write a post..."
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "fontSize": 20,
+        "height": 205,
+        "paddingHorizontal": 10,
+        "paddingTop": 15,
+        "width": 750,
+      }
+    }
+    value=""
+  />
   <View
-    keyboardVerticalOffset={0}
-    onLayout={[Function]}
     style={
       Array [
-        undefined,
         Object {
-          "paddingBottom": 0,
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 45,
+          "width": 750,
+        },
+        Object {
+          "backgroundColor": undefined,
         },
       ]
     }
   >
-    <TextInput
-      autoFocus={true}
-      multiline={true}
-      onChangeText={[Function]}
-      placeholder="Write a post..."
-      style={
-        Object {
-          "backgroundColor": "#FFFFFF",
-          "fontSize": 20,
-          "height": 205,
-          "paddingHorizontal": 10,
-          "paddingTop": 15,
-          "width": 750,
-        }
-      }
-      value=""
-    />
     <View
       style={
         Array [
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 45,
-            "width": 750,
+            "borderRadius": 10,
+            "flexDirection": "column",
+            "height": 22,
+            "justifyContent": "center",
+            "marginLeft": 11,
+            "paddingHorizontal": 5,
           },
           Object {
-            "backgroundColor": undefined,
+            "backgroundColor": "#000000",
           },
         ]
       }
     >
-      <View
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
         style={
-          Array [
-            Object {
-              "borderRadius": 10,
-              "flexDirection": "column",
-              "height": 22,
-              "justifyContent": "center",
-              "marginLeft": 11,
-              "paddingHorizontal": 5,
-            },
-            Object {
-              "backgroundColor": "#000000",
-            },
-          ]
+          Object {
+            "color": "#FFFFFF",
+          }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          disabled={false}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#FFFFFF",
-            }
-          }
-        >
-          0/280
-        </Text>
-      </View>
+        0/280
+      </Text>
     </View>
   </View>
 </View>

@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 
 const window = Dimensions.get('window');
+const barHeight = 45;
 
 export const styles = StyleSheet.create({
   writePostScreen: {
@@ -22,7 +23,7 @@ export const styles = StyleSheet.create({
   postBar: {
     flexDirection: 'row',
     justifyContent: 'center',
-    height: 65,
+    height: barHeight + 20,
     width: window.width,
   },
   postButton: {
@@ -42,7 +43,7 @@ export const styles = StyleSheet.create({
   postOptionsBar: {
     alignItems: 'center',
     flexDirection: 'row',
-    height: 45,
+    height: barHeight,
     width: window.width,
   },
 });
