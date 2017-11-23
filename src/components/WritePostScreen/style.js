@@ -1,11 +1,11 @@
 import {
   Dimensions,
-  Platform,
   StyleSheet,
 } from 'react-native';
 
 const window = Dimensions.get('window');
-const barHeight = 45;
+export const BAR_HEIGHT = 45;
+export const STATUS_BAR_HEIGHT = 20;
 
 export const styles = StyleSheet.create({
   writePostScreen: {
@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
     backgroundColor: '#323232',
   },
   input: {
-    height: 205,
     fontSize: 20,
     backgroundColor: '#FFFFFF',
     color: '#000000',
@@ -26,7 +25,7 @@ export const styles = StyleSheet.create({
   postBar: {
     flexDirection: 'row',
     justifyContent: 'center',
-    height: barHeight + 20,
+    height: BAR_HEIGHT + STATUS_BAR_HEIGHT,
     width: window.width,
   },
   postButton: {
@@ -46,7 +45,7 @@ export const styles = StyleSheet.create({
   postOptionsBar: {
     alignItems: 'center',
     flexDirection: 'row',
-    height: barHeight,
+    height: BAR_HEIGHT,
     width: window.width,
   },
 });
