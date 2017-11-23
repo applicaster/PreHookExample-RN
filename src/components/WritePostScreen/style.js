@@ -1,5 +1,6 @@
 import {
   Dimensions,
+  Platform,
   StyleSheet,
 } from 'react-native';
 
@@ -16,8 +17,10 @@ export const styles = StyleSheet.create({
     height: 205,
     fontSize: 20,
     backgroundColor: '#FFFFFF',
+    color: '#000000',
     paddingHorizontal: 10,
     paddingTop: 15,
+    textAlignVertical: 'top',
     width: window.width,
   },
   postBar: {
@@ -29,7 +32,7 @@ export const styles = StyleSheet.create({
   postButton: {
     position: 'absolute',
     right: 12,
-    top: 32,
+    top: 31,
   },
   postButtonLabel: {
     fontSize: 18,
