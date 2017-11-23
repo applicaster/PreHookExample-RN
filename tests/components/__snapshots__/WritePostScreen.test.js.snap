@@ -111,7 +111,7 @@ exports[`WritePostScreen component renders correctly 1`] = `
           "opacity": 1,
           "position": "absolute",
           "right": 12,
-          "top": 32,
+          "top": 31,
         }
       }
       testID={undefined}
@@ -143,13 +143,17 @@ exports[`WritePostScreen component renders correctly 1`] = `
     multiline={true}
     onChangeText={[Function]}
     placeholder="Write a post..."
+    placeholderTextColor="#BBBAC1"
+    selectionColor="#3350EE"
     style={
       Object {
         "backgroundColor": "#FFFFFF",
+        "color": "#000000",
         "fontSize": 20,
         "height": 205,
         "paddingHorizontal": 10,
         "paddingTop": 15,
+        "textAlignVertical": "top",
         "width": 750,
       }
     }
@@ -316,7 +320,7 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
           "opacity": 1,
           "position": "absolute",
           "right": 12,
-          "top": 32,
+          "top": 31,
         }
       }
       testID={undefined}
@@ -348,13 +352,17 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
     multiline={true}
     onChangeText={[Function]}
     placeholder="Write a post..."
+    placeholderTextColor="#BBBAC1"
+    selectionColor="#3350EE"
     style={
       Object {
         "backgroundColor": "#FFFFFF",
+        "color": "#000000",
         "fontSize": 20,
         "height": 205,
         "paddingHorizontal": 10,
         "paddingTop": 15,
+        "textAlignVertical": "top",
         "width": 750,
       }
     }
@@ -521,7 +529,7 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
           "opacity": 1,
           "position": "absolute",
           "right": 12,
-          "top": 32,
+          "top": 31,
         }
       }
       testID={undefined}
@@ -553,13 +561,17 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
     multiline={true}
     onChangeText={[Function]}
     placeholder="Write a post..."
+    placeholderTextColor="#BBBAC1"
+    selectionColor="#3350EE"
     style={
       Object {
         "backgroundColor": "#FFFFFF",
+        "color": "#000000",
         "fontSize": 20,
         "height": 205,
         "paddingHorizontal": 10,
         "paddingTop": 15,
+        "textAlignVertical": "top",
         "width": 750,
       }
     }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   Alert,
-  KeyboardAvoidingView,
   TextInput,
   Text,
   View,
@@ -144,6 +143,8 @@ class WritePostScreen extends Component {
           multiline
           style={styles.input}
           placeholder="Write a post..."
+          placeholderTextColor={'#BBBAC1'}
+          selectionColor={'#3350EE'}
           onChangeText={this.onTextChange}
           value={this.state.text}
         />
