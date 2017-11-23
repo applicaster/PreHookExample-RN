@@ -146,16 +146,20 @@ exports[`WritePostScreen component renders correctly 1`] = `
     placeholderTextColor="#BBBAC1"
     selectionColor="#3350EE"
     style={
-      Object {
-        "backgroundColor": "#FFFFFF",
-        "color": "#000000",
-        "fontSize": 20,
-        "height": 205,
-        "paddingHorizontal": 10,
-        "paddingTop": 15,
-        "textAlignVertical": "top",
-        "width": 750,
-      }
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "color": "#000000",
+          "fontSize": 20,
+          "paddingHorizontal": 10,
+          "paddingTop": 15,
+          "textAlignVertical": "top",
+          "width": 750,
+        },
+        Object {
+          "height": 1224,
+        },
+      ]
     }
     value=""
   />
@@ -355,16 +359,20 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
     placeholderTextColor="#BBBAC1"
     selectionColor="#3350EE"
     style={
-      Object {
-        "backgroundColor": "#FFFFFF",
-        "color": "#000000",
-        "fontSize": 20,
-        "height": 205,
-        "paddingHorizontal": 10,
-        "paddingTop": 15,
-        "textAlignVertical": "top",
-        "width": 750,
-      }
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "color": "#000000",
+          "fontSize": 20,
+          "paddingHorizontal": 10,
+          "paddingTop": 15,
+          "textAlignVertical": "top",
+          "width": 750,
+        },
+        Object {
+          "height": 1224,
+        },
+      ]
     }
     value=""
   />
@@ -564,16 +572,20 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
     placeholderTextColor="#BBBAC1"
     selectionColor="#3350EE"
     style={
-      Object {
-        "backgroundColor": "#FFFFFF",
-        "color": "#000000",
-        "fontSize": 20,
-        "height": 205,
-        "paddingHorizontal": 10,
-        "paddingTop": 15,
-        "textAlignVertical": "top",
-        "width": 750,
-      }
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "color": "#000000",
+          "fontSize": 20,
+          "paddingHorizontal": 10,
+          "paddingTop": 15,
+          "textAlignVertical": "top",
+          "width": 750,
+        },
+        Object {
+          "height": 1224,
+        },
+      ]
     }
     value=""
   />
