@@ -31,6 +31,7 @@ class WritePostScreen extends Component {
     this.onPostPress = this.onPostPress.bind(this);
     this.keyboardWillShow = this.keyboardWillShow.bind(this);
     this.keyboardWillHide = this.keyboardWillHide.bind(this);
+    this.toggleNetworkSelected = this.toggleNetworkSelected.bind(this);
   }
 
   componentWillMount() {
@@ -85,13 +86,18 @@ class WritePostScreen extends Component {
     this.setState({ keyboardHeight: Math.floor(event.endCoordinates.height) });
   }
 
-  keyboardWillHide(event) {
+  keyboardWillHide() {
     this.setState({ keyboardHeight: 0 });
   }
 
   closeModal() {
     const { toggleModal } = this.props;
     toggleModal({ modal: 'WritePostModal' });
+  }
+  
+  toggleNetworkSelected() {
+    const { socialNetworkSelected } = this.state;
+    this.setState({ socialNetworkSelected: (socialNetworkSelected === 'twitter') ? 'facebook' : 'twitter' });
   }
 
   renderActionBar() {
@@ -106,12 +112,17 @@ class WritePostScreen extends Component {
       : null;
 
     const postSwitcher = (isFacebookAvailable && isTwitterAvailable)
-    ? <PostSwitcher />
+    ? <PostSwitcher socialNetworkSelected={socialNetworkSelected} toggleNetworkSelected={this.toggleNetworkSelected} />
     : null;
 
+    const selectedNetworkPostBarStyles = {
+      justifyContent: (socialNetworkSelected === 'twitter') ? 'space-between' : 'flex-end',
+    };
+
     return (
-      <View style={[styles.postOptionsBar, backgroundColorStyle]}>
+      <View style={[styles.postOptionsBar, backgroundColorStyle, selectedNetworkPostBarStyles]}>
         {characterCounter}
+        {postSwitcher}
       </View>
     );
   }
