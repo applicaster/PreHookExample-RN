@@ -16,6 +16,25 @@ describe('app reducer', () => {
     initialState = appReducer();
   });
 
+  describe('initial state', () => {
+    it('reducer should have correct initial state', () => {
+      const newState = appReducer();
+
+      expect(newState.toJS()).to.deep.equal({
+        environment: null,
+        accountId: null,
+        timelineId: null,
+        timezone: null,
+        isMediaModalVisible: false,
+        isWritePostModalVisible: false,
+        activeEventId: null,
+        eventIdForActiveAudio: null,
+        facebookPageId: null,
+        twitterScreenName: null,
+      });
+    });
+  });
+
   describe('setEnvironment is dispatched', () => {
     it('should set the environment', () => {
       const newState = appReducer(initialState, setEnvironment('production'));

@@ -20,6 +20,8 @@ const appInitialState = Map({
   isWritePostModalVisible: false,
   activeEventId: null,
   eventIdForActiveAudio: null,
+  facebookPageId: null,
+  twitterScreenName: null,
 });
 
 export default (state = appInitialState, action = actionCreator()) => {
