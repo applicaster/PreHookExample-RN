@@ -1,28 +1,30 @@
 import { StyleSheet } from 'react-native';
 
-const optionSize = 33;
-const iconSize = 25;
+const optionSize = 30;
+const iconSize = 18;
 
 export const styles = StyleSheet.create({
   postSwitcherContainer: {
     flexDirection: 'row',
-    borderRadius: 3,
+    borderRadius: 5,
     borderWidth: 1,
     marginRight: 11,
     height: optionSize,
     width: optionSize * 2,
   },
   facebookOption: {
-    height: optionSize,
-    width: optionSize,
+    flex: 0.5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  twitterOption: {
+    flex: 0.5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   facebookOptionImage: {
     height: iconSize,
     width: iconSize,
-  },
-  twitterOption: {
-    height: optionSize,
-    width: optionSize,
   },
   twitterOptionImage: {
     height: iconSize,

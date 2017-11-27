@@ -12,24 +12,24 @@ const TWITTER_POST_ICON = 'feed_rn_twitter_post_icon';
 
 class PostSwitcher extends Component {
   render() {
-    const { selectedOption } = this.props;
-    const { backgroundColor, mainColor, textColor } = this.context;
-
-    const selectedTintColor = { tintColor: textColor };
-    const unSelectedTintColor = { tintColor: textColor };
-
-    const selectedBackgroundColor = { backgroundColor: mainColor };
-    const unSelectedBackgroundColor = { backgroundColor };
-
+    const { socialNetworkSelected, toggleNetworkSelected } = this.props;
+    const { mainColor, textColor } = this.context;
     const borderColorStyle = { borderColor: mainColor };
+    const tintColorStyle = { tintColor: textColor };
+    const twitterSelectedStyles = { backgroundColor: (socialNetworkSelected === 'twitter') ? mainColor : 'transparent' };
+    const facebookSelectedStyles = { backgroundColor: (socialNetworkSelected === 'facebook') ? mainColor : 'transparent' };
 
     return (
       <View style={[styles.postSwitcherContainer, borderColorStyle]}>
-        <TouchableWithoutFeedback style={[styles.facebookOption]}>
-          <Image style={styles.facebookOptionImage} source={{ uri: FB_POST_ICON }} />
+        <TouchableWithoutFeedback onPress={toggleNetworkSelected}>
+          <View style={[styles.facebookOption, facebookSelectedStyles]}>
+            <Image style={[styles.facebookOptionImage, tintColorStyle]} source={{ uri: FB_POST_ICON }} />
+          </View>
         </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback style={[styles.twitterOption]}>
-          <Image style={styles.twitterOptionImage} source={{ uri: TWITTER_POST_ICON }} />
+        <TouchableWithoutFeedback onPress={toggleNetworkSelected}>
+          <View style={[styles.twitterOption, twitterSelectedStyles]}>
+            <Image style={[styles.twitterOptionImage, tintColorStyle]} source={{ uri: TWITTER_POST_ICON }} />
+          </View>
         </TouchableWithoutFeedback>
       </View>
     );
@@ -37,11 +37,11 @@ class PostSwitcher extends Component {
 }
 
 PostSwitcher.propTypes = {
-  selectedOption: PropTypes.string,
+  socialNetworkSelected: PropTypes.string,
+  toggleNetworkSelected: PropTypes.func,
 };
 
 PostSwitcher.contextTypes = {
-  backgroundColor: PropTypes.string,
   mainColor: PropTypes.string,
   textColor: PropTypes.string,
 };
