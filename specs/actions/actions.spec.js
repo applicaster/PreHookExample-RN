@@ -9,6 +9,7 @@ import {
   toggleModal,
   setEventIdForActiveAudio,
   setActiveEventId,
+  setSocialMetadata,
 
   FETCH_SOCIAL_EVENTS_START,
   FETCH_SOCIAL_EVENTS_DONE,
@@ -20,6 +21,7 @@ import {
   TOGGLE_MODAL,
   SET_ACTIVE_EVENT_ID,
   SET_EVENT_ID_FOR_ACTIVE_AUDIO,
+  SET_SOCIAL_METADATA,
 } from '../../src/actions';
 
 describe('actions', () => {
@@ -155,6 +157,20 @@ describe('actions', () => {
         const action = setActiveEventId('foo');
 
         expect(action.payload).to.deep.equal({ eventId: 'foo' });
+      });
+    });
+
+    describe('setSocialMetadata', () => {
+      it('should have correct action type', () => {
+        const action = setSocialMetadata({});
+
+        expect(action.type).to.equal(SET_SOCIAL_METADATA);
+      });
+
+      it('should pass params', () => {
+        const action = setSocialMetadata({ foo: 'bar' });
+
+        expect(action.payload).to.deep.equal({ foo: 'bar' });
       });
     });
   });
