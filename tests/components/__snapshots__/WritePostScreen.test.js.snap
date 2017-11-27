@@ -170,7 +170,6 @@ exports[`WritePostScreen component renders correctly 1`] = `
           "alignItems": "center",
           "flexDirection": "row",
           "height": 45,
-          "justifyContent": "space-between",
           "width": 750,
         },
         Object {
@@ -409,7 +408,6 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
           "alignItems": "center",
           "flexDirection": "row",
           "height": 45,
-          "justifyContent": "space-between",
           "width": 750,
         },
         Object {
@@ -648,7 +646,6 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
           "alignItems": "center",
           "flexDirection": "row",
           "height": 45,
-          "justifyContent": "space-between",
           "width": 750,
         },
         Object {
