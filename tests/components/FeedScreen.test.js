@@ -84,4 +84,55 @@ describe('FeedScreen', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('component renders correctly with no write post button', () => {
+    const tree = renderer.create(
+      <FeedScreen
+        fetchSocialEvents={() => {}}
+        setAccountId={() => {}}
+        setTimelineId={() => {}}
+        setTimezone={() => {}}
+        setEnvironment={() => {}}
+        loading
+        socialEvents={[event(1), event(2)]}
+        isFacebookAvailable={false}
+        isTwitterAvailable={false}
+      />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('component renders correctly with write post button due to facebook availability', () => {
+    const tree = renderer.create(
+      <FeedScreen
+        fetchSocialEvents={() => {}}
+        setAccountId={() => {}}
+        setTimelineId={() => {}}
+        setTimezone={() => {}}
+        setEnvironment={() => {}}
+        loading
+        socialEvents={[event(1), event(2)]}
+        isFacebookAvailable
+        isTwitterAvailable={false}
+      />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('component renders correctly with write post button due to twitter availability', () => {
+    const tree = renderer.create(
+      <FeedScreen
+        fetchSocialEvents={() => {}}
+        setAccountId={() => {}}
+        setTimelineId={() => {}}
+        setTimezone={() => {}}
+        setEnvironment={() => {}}
+        loading
+        socialEvents={[event(1), event(2)]}
+        isFacebookAvailable={false}
+        isTwitterAvailable
+      />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

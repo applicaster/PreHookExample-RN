@@ -12,11 +12,15 @@ import {
 import {
   getSocialEvents,
   getLoading,
+  isFacebookAvailable,
+  isTwitterAvailable,
 } from '../../selectors';
 
 import FeedScreen from './FeedScreen';
 
 const mapStateToProps = state => ({
+  isFacebookAvailable: isFacebookAvailable(state),
+  isTwitterAvailable: isTwitterAvailable(state),
   loading: getLoading(state),
   socialEvents: getSocialEvents(state),
 });

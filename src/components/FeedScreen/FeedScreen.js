@@ -48,7 +48,7 @@ class FeedScreen extends Component {
   }
 
   render() {
-    const { socialEvents, loading, toggleModal } = this.props;
+    const { isFacebookAvailable, isTwitterAvailable, socialEvents, loading, toggleModal } = this.props;
     const backgroundFeedColor = { backgroundColor: this.context.backgroundColor };
     return (
       <View style={[backgroundFeedColor, { flex: 1 }]}>
@@ -65,20 +65,22 @@ class FeedScreen extends Component {
         />
         <MediaDetailsModal />
         <WritePostModal />
-        <WritePostButton />
+        {(isFacebookAvailable || isTwitterAvailable) &&  <WritePostButton />}
       </View>
     );
   }
 }
 
 FeedScreen.propTypes = {
-  loading: PropTypes.bool,
-  socialEvents: PropTypes.array,
   fetchSocialEvents: PropTypes.func,
+  isFacebookAvailable: PropTypes.bool,
+  isTwitterAvailable: PropTypes.bool,
+  loading: PropTypes.bool,
   setAccountId: PropTypes.func,
   setTimelineId: PropTypes.func,
   setTimezone: PropTypes.func,
   setEnvironment: PropTypes.func,
+  socialEvents: PropTypes.array,
   navigation: PropTypes.object,
 };
 
