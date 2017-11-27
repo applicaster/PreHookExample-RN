@@ -6,6 +6,7 @@ import {
     toggleModal,
     setEventIdForActiveAudio,
     setActiveEventId,
+    setSocialMetadata,
 } from '../../src/actions';
 import appReducer from '../../src/reducers/app';
 
@@ -88,6 +89,20 @@ describe('app reducer', () => {
       const newState = appReducer(initialState, setActiveEventId('someId'));
 
       expect(newState.get('activeEventId')).to.equal('someId');
+    });
+  });
+
+  describe('setSocialMetadata is dispatched', () => {
+    it('should set the facebookPageId', () => {
+      const newState = appReducer(initialState, setSocialMetadata({ facebookPageId: 'someId' }));
+
+      expect(newState.get('facebookPageId')).to.equal('someId');
+    });
+
+    it('should set the twitterScreenName', () => {
+      const newState = appReducer(initialState, setSocialMetadata({ twitterScreenName: 'someScreenName' }));
+
+      expect(newState.get('twitterScreenName')).to.equal('someScreenName');
     });
   });
 });

@@ -7,6 +7,7 @@ import {
     TOGGLE_MODAL,
     SET_EVENT_ID_FOR_ACTIVE_AUDIO,
     SET_ACTIVE_EVENT_ID,
+    SET_SOCIAL_METADATA,
 } from '../actions';
 import { actionCreator } from '../actions/actionHelpers';
 
@@ -36,6 +37,13 @@ export default (state = appInitialState, action = actionCreator()) => {
 
     case SET_TIMEZONE:
       return state.set('timezone', payload.timezone);
+
+    case SET_SOCIAL_METADATA:
+      return state.withMutations(mutableState => {
+        mutableState
+          .set('facebookPageId', payload.facebookPageId)
+          .set('twitterScreenName', payload.twitterScreenName);
+      });
 
     case TOGGLE_MODAL:
       if (payload.modal === 'MediaModal') {
