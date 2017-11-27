@@ -6,10 +6,17 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     height: 22,
     justifyContent: 'center',
-    marginLeft: 11,
     paddingHorizontal: 5,
   },
+  charactersRemainingContainerWrapper: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 10,
+    flexDirection: 'column',
+    height: 22,
+    justifyContent: 'center',
+    marginLeft: 11,
+  },
   charactersRemainingLabel: {
-    textAlign: 'center',
+    fontSize: 10,
   },
 });

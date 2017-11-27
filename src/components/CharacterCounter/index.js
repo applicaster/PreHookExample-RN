@@ -8,11 +8,14 @@ import { styles } from './style';
 
 class CharacterCounter extends Component {
   render() {
-    const { backgroundColor = '#FFFFFF', textColor = '#000000' } = this.context;
-    const backgroundColorStyle = { backgroundColor: `${textColor}` };
+    const { backgroundColor = '#FFFFFF' } = this.context;
+    const backgroundColorStyle = { backgroundColor: `${backgroundColor}46` };
+    const defaultBackgroundColorStyle = { backgroundColor: '#FFFFFF' };
+
     let textColorStyle = { color: backgroundColor };
 
-    let { currentCharacters, maxCharacters } = this.props;
+    let { currentCharacters } = this.props;
+    const { maxCharacters } = this.props;
     if (currentCharacters > 999) {
       currentCharacters = '+999';
     }
@@ -24,8 +27,10 @@ class CharacterCounter extends Component {
     const charactersRemainingLabel = `${currentCharacters}/${maxCharacters}`;
 
     return (
-      <View style={[styles.charactersRemainingContainer, backgroundColorStyle]}>
-        <Text style={textColorStyle}>{charactersRemainingLabel}</Text>
+      <View style={[styles.charactersRemainingContainerWrapper, defaultBackgroundColorStyle]}>
+        <View style={[styles.charactersRemainingContainer, backgroundColorStyle]}>
+          <Text style={[styles.charactersRemainingLabel, textColorStyle]}>{charactersRemainingLabel}</Text>
+        </View>
       </View>
     );
   }
@@ -38,7 +43,6 @@ CharacterCounter.propTypes = {
 
 CharacterCounter.contextTypes = {
   backgroundColor: PropTypes.string,
-  textColor: PropTypes.string,
 };
 
 export default CharacterCounter;

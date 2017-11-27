@@ -5,32 +5,54 @@ exports[`CharacterCounter component renders correctly when number of characters 
   style={
     Array [
       Object {
+        "backgroundColor": "#FFFFFF",
         "borderRadius": 10,
         "flexDirection": "column",
         "height": 22,
         "justifyContent": "center",
         "marginLeft": 11,
-        "paddingHorizontal": 5,
       },
       Object {
-        "backgroundColor": "#000000",
+        "backgroundColor": "#FFFFFF",
       },
     ]
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
+  <View
     style={
-      Object {
-        "color": "#FF0000",
-      }
+      Array [
+        Object {
+          "borderRadius": 10,
+          "flexDirection": "column",
+          "height": 22,
+          "justifyContent": "center",
+          "paddingHorizontal": 5,
+        },
+        Object {
+          "backgroundColor": "#FFFFFF46",
+        },
+      ]
     }
   >
-    +999/10
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 10,
+          },
+          Object {
+            "color": "#FF0000",
+          },
+        ]
+      }
+    >
+      +999/10
+    </Text>
+  </View>
 </View>
 `;
 
@@ -39,32 +61,54 @@ exports[`CharacterCounter component renders correctly when number of characters 
   style={
     Array [
       Object {
+        "backgroundColor": "#FFFFFF",
         "borderRadius": 10,
         "flexDirection": "column",
         "height": 22,
         "justifyContent": "center",
         "marginLeft": 11,
-        "paddingHorizontal": 5,
       },
       Object {
-        "backgroundColor": "#000000",
+        "backgroundColor": "#FFFFFF",
       },
     ]
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
+  <View
     style={
-      Object {
-        "color": "#FF0000",
-      }
+      Array [
+        Object {
+          "borderRadius": 10,
+          "flexDirection": "column",
+          "height": 22,
+          "justifyContent": "center",
+          "paddingHorizontal": 5,
+        },
+        Object {
+          "backgroundColor": "#FFFFFF46",
+        },
+      ]
     }
   >
-    11/10
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 10,
+          },
+          Object {
+            "color": "#FF0000",
+          },
+        ]
+      }
+    >
+      11/10
+    </Text>
+  </View>
 </View>
 `;
 
@@ -73,31 +117,53 @@ exports[`CharacterCounter component renders correctly when number of characters 
   style={
     Array [
       Object {
+        "backgroundColor": "#FFFFFF",
         "borderRadius": 10,
         "flexDirection": "column",
         "height": 22,
         "justifyContent": "center",
         "marginLeft": 11,
-        "paddingHorizontal": 5,
       },
       Object {
-        "backgroundColor": "#000000",
+        "backgroundColor": "#FFFFFF",
       },
     ]
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
+  <View
     style={
-      Object {
-        "color": "#FFFFFF",
-      }
+      Array [
+        Object {
+          "borderRadius": 10,
+          "flexDirection": "column",
+          "height": 22,
+          "justifyContent": "center",
+          "paddingHorizontal": 5,
+        },
+        Object {
+          "backgroundColor": "#FFFFFF46",
+        },
+      ]
     }
   >
-    1/10
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 10,
+          },
+          Object {
+            "color": "#FFFFFF",
+          },
+        ]
+      }
+    >
+      1/10
+    </Text>
+  </View>
 </View>
 `;
