@@ -170,10 +170,14 @@ exports[`WritePostScreen component renders correctly 1`] = `
           "alignItems": "center",
           "flexDirection": "row",
           "height": 45,
+          "justifyContent": "space-between",
           "width": 750,
         },
         Object {
           "backgroundColor": undefined,
+        },
+        Object {
+          "justifyContent": "space-between",
         },
       ]
     }
@@ -182,32 +186,54 @@ exports[`WritePostScreen component renders correctly 1`] = `
       style={
         Array [
           Object {
+            "backgroundColor": "#FFFFFF",
             "borderRadius": 10,
             "flexDirection": "column",
             "height": 22,
             "justifyContent": "center",
             "marginLeft": 11,
-            "paddingHorizontal": 5,
           },
           Object {
-            "backgroundColor": "#000000",
+            "backgroundColor": "#FFFFFF",
           },
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
+      <View
         style={
-          Object {
-            "color": "#FFFFFF",
-          }
+          Array [
+            Object {
+              "borderRadius": 10,
+              "flexDirection": "column",
+              "height": 22,
+              "justifyContent": "center",
+              "paddingHorizontal": 5,
+            },
+            Object {
+              "backgroundColor": "#FFFFFF46",
+            },
+          ]
         }
       >
-        0/280
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontSize": 10,
+              },
+              Object {
+                "color": "#FFFFFF",
+              },
+            ]
+          }
+        >
+          0/280
+        </Text>
+      </View>
     </View>
   </View>
 </View>
@@ -383,10 +409,14 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
           "alignItems": "center",
           "flexDirection": "row",
           "height": 45,
+          "justifyContent": "space-between",
           "width": 750,
         },
         Object {
           "backgroundColor": undefined,
+        },
+        Object {
+          "justifyContent": "space-between",
         },
       ]
     }
@@ -395,32 +425,54 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
       style={
         Array [
           Object {
+            "backgroundColor": "#FFFFFF",
             "borderRadius": 10,
             "flexDirection": "column",
             "height": 22,
             "justifyContent": "center",
             "marginLeft": 11,
-            "paddingHorizontal": 5,
           },
           Object {
-            "backgroundColor": "#000000",
+            "backgroundColor": "#FFFFFF",
           },
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
+      <View
         style={
-          Object {
-            "color": "#FFFFFF",
-          }
+          Array [
+            Object {
+              "borderRadius": 10,
+              "flexDirection": "column",
+              "height": 22,
+              "justifyContent": "center",
+              "paddingHorizontal": 5,
+            },
+            Object {
+              "backgroundColor": "#FFFFFF46",
+            },
+          ]
         }
       >
-        0/280
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontSize": 10,
+              },
+              Object {
+                "color": "#FFFFFF",
+              },
+            ]
+          }
+        >
+          0/280
+        </Text>
+      </View>
     </View>
   </View>
 </View>
@@ -596,10 +648,14 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
           "alignItems": "center",
           "flexDirection": "row",
           "height": 45,
+          "justifyContent": "space-between",
           "width": 750,
         },
         Object {
           "backgroundColor": undefined,
+        },
+        Object {
+          "justifyContent": "space-between",
         },
       ]
     }
@@ -608,32 +664,54 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
       style={
         Array [
           Object {
+            "backgroundColor": "#FFFFFF",
             "borderRadius": 10,
             "flexDirection": "column",
             "height": 22,
             "justifyContent": "center",
             "marginLeft": 11,
-            "paddingHorizontal": 5,
           },
           Object {
-            "backgroundColor": "#000000",
+            "backgroundColor": "#FFFFFF",
           },
         ]
       }
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        disabled={false}
-        ellipsizeMode="tail"
+      <View
         style={
-          Object {
-            "color": "#FFFFFF",
-          }
+          Array [
+            Object {
+              "borderRadius": 10,
+              "flexDirection": "column",
+              "height": 22,
+              "justifyContent": "center",
+              "paddingHorizontal": 5,
+            },
+            Object {
+              "backgroundColor": "#FFFFFF46",
+            },
+          ]
         }
       >
-        0/280
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontSize": 10,
+              },
+              Object {
+                "color": "#FFFFFF",
+              },
+            ]
+          }
+        >
+          0/280
+        </Text>
+      </View>
     </View>
   </View>
 </View>
