@@ -9,6 +9,10 @@ export const getMediaModalVisibility = state => state.app.get('isMediaModalVisib
 export const getWritePostModalVisibility = state => state.app.get('isWritePostModalVisible');
 export const getActiveEventId = state => state.app.get('activeEventId');
 export const getEventIdForActiveAudio = state => state.app.get('eventIdForActiveAudio');
+export const getFacebookPageId = state => state.app.get('facebookPageId');
+export const getTwitterScreenName = state => state.app.get('twitterScreenName');
+export const isTwitterAvailable = createSelector(getTwitterScreenName, (twitterScreenName) => !!twitterScreenName);
+export const isFacebookAvailable = createSelector(getFacebookPageId, (facebookPageId) => !!facebookPageId);
 
 // From EVENTS Reducer
 export const getSocialEvents = state => state.events.get('socialEvents');
