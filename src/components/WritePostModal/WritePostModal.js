@@ -23,7 +23,7 @@ class WritePostModal extends Component {
         visible={isWritePostModalVisible}
         onRequestClose={toggleModal}
       >
-        <WritePostScreen isFacebookAvailable isTwitterAvailable />
+        <WritePostScreen />
       </Modal>
     );
   }
