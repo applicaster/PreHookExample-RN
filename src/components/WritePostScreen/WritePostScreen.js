@@ -54,8 +54,8 @@ class WritePostScreen extends Component {
     
 
     if (socialNetworkSelected === 'twitter') {
-      const twitterUserName = '@ArnauMarin9';
-      FeedRNUtils.postTweet(`${twitterUserName} ${text}`)
+      const { twitterScreenName } = this.props;
+      FeedRNUtils.postTweet(`${twitterScreenName} ${text}`)
         .then(() => this.closeModal())
         .catch(error => {
           Alert.alert(
@@ -68,7 +68,7 @@ class WritePostScreen extends Component {
     }
 
     if (socialNetworkSelected === 'facebook') {
-      const facebookPageId = '416219838419558';
+      const { facebookPageId } = this.props;
       FeedRNUtils.postFacebook({ postText: text, facebookPageId })
         .then(() => this.closeModal())
         .catch(error => {
@@ -202,6 +202,8 @@ class WritePostScreen extends Component {
 WritePostScreen.propTypes = {
   isFacebookAvailable: PropTypes.bool,
   isTwitterAvailable: PropTypes.bool,
+  facebookPageId: PropTypes.string,
+  twitterScreenName: PropTypes.string,
   toggleModal: PropTypes.func,
 };
 
