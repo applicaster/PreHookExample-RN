@@ -8,10 +8,7 @@ exports[`ActionBar component renders correctly for instagram 1`] = `
         "flexDirection": "row",
         "height": 30,
         "paddingBottom": 10,
-        "paddingHorizontal": 7,
-      },
-      Object {
-        "marginLeft": 3,
+        "paddingHorizontal": 12,
       },
     ]
   }

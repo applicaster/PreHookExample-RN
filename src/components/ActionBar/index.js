@@ -6,21 +6,19 @@ import {
  } from 'react-native';
 import EventDetailCount from '../EventDetailCount';
 import ShareButton from '../ShareButton';
+import TwitterActionButtons from '../TwitterActionButtons';
 
 const styles = StyleSheet.create({
   buttonBar: {
     flexDirection: 'row',
     height: 30,
-    paddingHorizontal: 7,
     paddingBottom: 10,
-  },
-  instagramBar: {
-    marginLeft: 3,
+    paddingHorizontal: 12,
   },
   shareButtonContainer: {
     position: 'absolute',
-    right: 7,
     bottom: 10,
+    right: 7,
   },
 });
 
@@ -34,7 +32,7 @@ class ActionBar extends Component {
   renderInstagramBar() {
     const { likesCount, commentsCount, eventId, eventOriginUrl } = this.props;
     return (
-      <View style={[styles.buttonBar, styles.instagramBar]}>
+      <View style={[styles.buttonBar]}>
         <EventDetailCount key={'likes'} eventOriginUrl={eventOriginUrl} openOriginUrl eventId={eventId} count={likesCount} label={'Likes'} />
         <EventDetailCount key={'comments'} eventOriginUrl={eventOriginUrl} openOriginUrl eventId={eventId} count={commentsCount} label={'Comments'} />
         {this.renderShareButton()}
@@ -43,20 +41,25 @@ class ActionBar extends Component {
   }
 
   renderTwitterBar() {
-    const { likesCount, commentsCount, eventId } = this.props;
+    const { likesCount, commentsCount, eventId, retweetCount } = this.props;
     return (
-      <View style={[styles.buttonBar, styles.instagramBar]}>
-        <EventDetailCount key={'likes'} eventId={eventId} count={likesCount} label={'Likes'} />
-        <EventDetailCount key={'comments'} eventId={eventId} count={commentsCount} label={'Comments'} />
+      <View style={[styles.buttonBar]}>
+        <TwitterActionButtons
+          eventId={eventId}
+          favoriteCount={likesCount}
+          replyCount={commentsCount}
+          retweetCount={retweetCount}
+        />
         {this.renderShareButton()}
       </View>
+      
     );
   }
 
   renderFacebookBar() {
     const { likesCount, commentsCount, eventId } = this.props;
     return (
-      <View style={[styles.buttonBar, styles.instagramBar]}>
+      <View style={[styles.buttonBar]}>
         <EventDetailCount key={'likes'} eventId={eventId} count={likesCount} label={'Likes'} />
         <EventDetailCount key={'comments'} eventId={eventId} count={commentsCount} label={'Comments'} />
         {this.renderShareButton()}
@@ -79,11 +82,12 @@ class ActionBar extends Component {
 }
 
 ActionBar.propTypes = {
+  commentsCount: PropTypes.number,
   eventId: PropTypes.string,
   eventOriginUrl: PropTypes.string,
-  socialNetwork: PropTypes.string,
   likesCount: PropTypes.number,
-  commentsCount: PropTypes.number,
+  retweetCount: PropTypes.string,
+  socialNetwork: PropTypes.string,
   textToShare: PropTypes.string,
 };
 
