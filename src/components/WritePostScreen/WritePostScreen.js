@@ -49,7 +49,7 @@ class WritePostScreen extends Component {
   onTextChange(text) {
     const { socialNetworkSelected } = this.state;
     if (socialNetworkSelected === 'facebook') {
-      this.setState({ faecbookText: text });
+      this.setState({ facebookText: text });
     } else if (socialNetworkSelected === 'twitter') {
       this.setState({ twitterText: text });
     }
@@ -120,7 +120,7 @@ class WritePostScreen extends Component {
       ? <CharacterCounter currentCharacters={twitterText.length} maxCharacters={280} />
       : null;
 
-    const postSwitcher = (!isFacebookAvailable && isTwitterAvailable)
+    const postSwitcher = (isFacebookAvailable && isTwitterAvailable)
     ? <PostSwitcher socialNetworkSelected={socialNetworkSelected} toggleNetworkSelected={this.toggleNetworkSelected} />
     : null;
 
