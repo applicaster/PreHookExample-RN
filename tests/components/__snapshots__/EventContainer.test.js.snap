@@ -239,10 +239,7 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
           "flexDirection": "row",
           "height": 30,
           "paddingBottom": 10,
-          "paddingHorizontal": 7,
-        },
-        Object {
-          "marginLeft": 3,
+          "paddingHorizontal": 12,
         },
       ]
     }
@@ -571,10 +568,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
           "flexDirection": "row",
           "height": 30,
           "paddingBottom": 10,
-          "paddingHorizontal": 7,
-        },
-        Object {
-          "marginLeft": 3,
+          "paddingHorizontal": 12,
         },
       ]
     }
