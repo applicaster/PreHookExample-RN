@@ -20,8 +20,10 @@ const window = Dimensions.get('window');
 class WritePostScreen extends Component {
   constructor(props) {
     super(props);
+    const { twitterScreenName } = props;
     this.state = {
-      text: '',
+      facebookText: '',
+      twitterText: `@${twitterScreenName} `,
       keyboardHeight: 0,
       socialNetworkSelected: 'twitter',
     };
@@ -45,19 +47,24 @@ class WritePostScreen extends Component {
   }
 
   onTextChange(text) {
-    this.setState({ text });
+    const { socialNetworkSelected } = this.state;
+    if (socialNetworkSelected === 'facebook') {
+      this.setState({ faecbookText: text });
+    } else if (socialNetworkSelected === 'twitter') {
+      this.setState({ twitterText: text });
+    }
   }
 
   onPostPress() {
-    const { text, socialNetworkSelected } = this.state;
-    if (!text.length) return;
-    
+    const { facebookText, twitterText, socialNetworkSelected } = this.state;
 
     if (socialNetworkSelected === 'twitter') {
+      if (!twitterText.length) return;
+
       const { twitterScreenName } = this.props;
-      FeedRNUtils.postTweet(`${twitterScreenName} ${text}`)
+      FeedRNUtils.postTweet(`${twitterScreenName} ${twitterText}`)
         .then(() => this.closeModal())
-        .catch(error => {
+        .catch(() => {
           Alert.alert(
             'Error',
             'Unable to post to Twitter',
@@ -68,10 +75,12 @@ class WritePostScreen extends Component {
     }
 
     if (socialNetworkSelected === 'facebook') {
+      if (!facebookText.length) return;
+
       const { facebookPageId } = this.props;
-      FeedRNUtils.postFacebook({ postText: text, facebookPageId })
+      FeedRNUtils.postFacebook({ postText: facebookText, facebookPageId })
         .then(() => this.closeModal())
-        .catch(error => {
+        .catch(() => {
           Alert.alert(
             'Error',
             'Unable to post to Facebook',
@@ -102,16 +111,16 @@ class WritePostScreen extends Component {
 
   renderActionBar() {
     const { backgroundColor } = this.context;
-    const { socialNetworkSelected, text } = this.state;
+    const { twitterText, socialNetworkSelected } = this.state;
     const { isFacebookAvailable, isTwitterAvailable } = this.props;
-
+  
     const backgroundColorStyle = { backgroundColor };
 
     const characterCounter = (socialNetworkSelected === 'twitter')
-      ? <CharacterCounter currentCharacters={text.length} maxCharacters={280} />
+      ? <CharacterCounter currentCharacters={twitterText.length} maxCharacters={280} />
       : null;
 
-    const postSwitcher = (isFacebookAvailable && isTwitterAvailable)
+    const postSwitcher = (!isFacebookAvailable && isTwitterAvailable)
     ? <PostSwitcher socialNetworkSelected={socialNetworkSelected} toggleNetworkSelected={this.toggleNetworkSelected} />
     : null;
 
@@ -170,16 +179,17 @@ class WritePostScreen extends Component {
 
   render() {
     const { backgroundColor } = this.context;
-    const { keyboardHeight } = this.state;
+    const { keyboardHeight, facebookText, twitterText, socialNetworkSelected } = this.state;
+    const text = (socialNetworkSelected === 'facebook') ? facebookText : twitterText;
+
     const screenBackgroundColor = { backgroundColor };
-    
     const androidOffset = (Platform.OS !== 'ios') ? STATUS_BAR_HEIGHT : 0;
     const textInputHeight = (keyboardHeight)
     ? window.height - (2 * BAR_HEIGHT) - STATUS_BAR_HEIGHT - keyboardHeight - androidOffset
     : window.height - (2 * BAR_HEIGHT) - STATUS_BAR_HEIGHT - androidOffset;
 
     const textInputHeightStyle = { height: textInputHeight };
-  
+
     return (
       <View style={[styles.writePostScreen, screenBackgroundColor]}>
         {this.renderPostBar()}
@@ -191,7 +201,7 @@ class WritePostScreen extends Component {
           placeholderTextColor={'#BBBAC1'}
           selectionColor={'#3350EE'}
           onChangeText={this.onTextChange}
-          value={this.state.text}
+          value={text}
         />
         {this.renderActionBar()}
       </View>

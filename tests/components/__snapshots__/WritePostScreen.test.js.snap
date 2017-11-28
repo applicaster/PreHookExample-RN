@@ -161,7 +161,7 @@ exports[`WritePostScreen component renders correctly 1`] = `
         },
       ]
     }
-    value=""
+    value="@undefined "
   />
   <View
     style={
@@ -230,7 +230,7 @@ exports[`WritePostScreen component renders correctly 1`] = `
             ]
           }
         >
-          0/280
+          11/280
         </Text>
       </View>
     </View>
@@ -399,7 +399,7 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
         },
       ]
     }
-    value=""
+    value="@undefined "
   />
   <View
     style={
@@ -468,7 +468,7 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
             ]
           }
         >
-          0/280
+          11/280
         </Text>
       </View>
     </View>
@@ -637,7 +637,7 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
         },
       ]
     }
-    value=""
+    value="@undefined "
   />
   <View
     style={
@@ -706,8 +706,120 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
             ]
           }
         >
-          0/280
+          11/280
         </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "flexDirection": "row",
+            "height": 30,
+            "marginRight": 11,
+            "width": 60,
+          },
+          Object {
+            "borderColor": undefined,
+          },
+        ]
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 0.5,
+              "justifyContent": "center",
+            },
+            Object {
+              "backgroundColor": "transparent",
+            },
+          ]
+        }
+        testID={undefined}
+      >
+        <Image
+          source={
+            Object {
+              "uri": "feed_rn_fb_post_icon",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "height": 18,
+                "width": 18,
+              },
+              Object {
+                "tintColor": undefined,
+              },
+            ]
+          }
+        />
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 0.5,
+              "justifyContent": "center",
+            },
+            Object {
+              "backgroundColor": undefined,
+            },
+          ]
+        }
+        testID={undefined}
+      >
+        <Image
+          source={
+            Object {
+              "uri": "feed_rn_twitter_post_icon",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "height": 18,
+                "width": 18,
+              },
+              Object {
+                "tintColor": undefined,
+              },
+            ]
+          }
+        />
       </View>
     </View>
   </View>
