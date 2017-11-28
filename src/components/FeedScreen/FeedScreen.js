@@ -65,7 +65,7 @@ class FeedScreen extends Component {
         />
         <MediaDetailsModal />
         <WritePostModal />
-        {(isFacebookAvailable || isTwitterAvailable) &&  <WritePostButton />}
+        <WritePostButton />
       </View>
     );
   }
