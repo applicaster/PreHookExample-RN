@@ -61,8 +61,7 @@ class WritePostScreen extends Component {
     if (socialNetworkSelected === 'twitter') {
       if (!twitterText.length) return;
 
-      const { twitterScreenName } = this.props;
-      FeedRNUtils.postTweet(`${twitterScreenName} ${twitterText}`)
+      FeedRNUtils.postTweet(`${twitterText}`)
         .then(() => this.closeModal())
         .catch(() => {
           Alert.alert(
