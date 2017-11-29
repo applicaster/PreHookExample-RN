@@ -1,26 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  StyleSheet,
-  View,
- } from 'react-native';
+import { View } from 'react-native';
 import EventDetailCount from '../EventDetailCount';
 import ShareButton from '../ShareButton';
 import TwitterActionButtons from '../TwitterActionButtons';
-
-const styles = StyleSheet.create({
-  buttonBar: {
-    flexDirection: 'row',
-    height: 30,
-    paddingBottom: 10,
-    paddingHorizontal: 12,
-  },
-  shareButtonContainer: {
-    position: 'absolute',
-    bottom: 10,
-    right: 7,
-  },
-});
+import { styles } from './style';
 
 class ActionBar extends Component {
   renderShareButton() {
@@ -86,7 +70,7 @@ ActionBar.propTypes = {
   eventId: PropTypes.string,
   eventOriginUrl: PropTypes.string,
   likesCount: PropTypes.number,
-  retweetCount: PropTypes.string,
+  retweetCount: PropTypes.number,
   socialNetwork: PropTypes.string,
   textToShare: PropTypes.string,
 };
