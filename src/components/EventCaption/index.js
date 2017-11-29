@@ -1,20 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  StyleSheet,
-  Text,
-} from 'react-native';
+import { Text } from 'react-native';
 import reactStringReplace from 'react-string-replace';
-
-const styles = StyleSheet.create({
-  eventCaption: {
-    fontSize: 14,
-    paddingHorizontal: 12,
-    paddingTop: 17,
-    paddingBottom: 12,
-    lineHeight: 18,
-  },
-});
+import { styles } from './style';
 
 class EventCaption extends Component {
   highlightHashtagsAndUsers(caption) {
