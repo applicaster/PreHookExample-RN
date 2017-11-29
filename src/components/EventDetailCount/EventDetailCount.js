@@ -7,7 +7,6 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import hexToRgb from 'hex-to-rgb';
 import { styles } from './style';
 
 class EventDetailCount extends Component {
@@ -52,10 +51,8 @@ class EventDetailCount extends Component {
 
   render() {
     const { label, count = 0, openOriginUrl = false } = this.props;
-    const { textColor } = this.context;
-    const rgb = hexToRgb(textColor || '#FFFFFF');
-    const rgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.60)`;
-    const textColorStyle = { color: rgbaColor };
+    const { textColor = '#FFFFFF' } = this.context;
+    const textColorStyle = { color: `${textColor}99` };
     const onPress = (openOriginUrl) ? this.openUrl : this.navigateToComments;
     
     return (
