@@ -5,6 +5,7 @@ import {
  } from 'react-native';
 import { styles } from './style';
 import EventDetailCount from '../EventDetailCount';
+import RetweetButton from '../RetweetButton';
 
 class TwitterActionButtons extends Component {
   render() {
@@ -12,8 +13,8 @@ class TwitterActionButtons extends Component {
     return (
       <View style={[styles.twitterActionButtons]}>
         <EventDetailCount key={'favorites'} eventId={eventId} count={favoriteCount} label={'Favorites'} />
+        <RetweetButton key={'retweetButton'} eventId={eventId} retweetCount={retweetCount} />
         <EventDetailCount key={'replies'} eventId={eventId} count={replyCount} label={'Replies'} />
-        <EventDetailCount key={'retweets'} eventId={eventId} count={retweetCount} label={'Retweets'} />
       </View>
     );
   }
