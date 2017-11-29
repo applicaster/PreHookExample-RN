@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import ActionBar from '../../src/components/ActionBar';
 
 jest.mock('../../src/components/EventDetailCount', () => 'EventDetailCount');
+jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');
 
 describe('ActionBar', () => {
   test('component renders correctly for instagram', () => {
