@@ -162,7 +162,7 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
         Object {
           "fontSize": 14,
           "lineHeight": 18,
-          "paddingBottom": 12,
+          "paddingBottom": 5,
           "paddingHorizontal": 12,
           "paddingTop": 17,
         },
@@ -236,9 +236,10 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
           "flexDirection": "row",
           "height": 30,
-          "paddingBottom": 10,
+          "marginBottom": 7,
           "paddingHorizontal": 12,
         },
       ]
@@ -261,7 +262,7 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
     <View
       style={
         Object {
-          "bottom": 10,
+          "bottom": 3,
           "position": "absolute",
           "right": 7,
         }
@@ -491,7 +492,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
         Object {
           "fontSize": 14,
           "lineHeight": 18,
-          "paddingBottom": 12,
+          "paddingBottom": 5,
           "paddingHorizontal": 12,
           "paddingTop": 17,
         },
@@ -565,9 +566,10 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
           "flexDirection": "row",
           "height": 30,
-          "paddingBottom": 10,
+          "marginBottom": 7,
           "paddingHorizontal": 12,
         },
       ]
@@ -590,7 +592,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
     <View
       style={
         Object {
-          "bottom": 10,
+          "bottom": 3,
           "position": "absolute",
           "right": 7,
         }
