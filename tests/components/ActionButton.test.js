@@ -10,4 +10,11 @@ describe('ActionButton', () => {
     ).toJSON();
     expect(html).toMatchSnapshot();
   });
+
+  test('component renders correctly when button is selected', () => {
+    const html = renderer.create(
+      <ActionButton label={'hi'} source={'some_image_uri'} onPress={() => {}} selected />
+    ).toJSON();
+    expect(html).toMatchSnapshot();
+  });
 });
