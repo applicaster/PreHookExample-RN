@@ -25,13 +25,12 @@ class ActionBar extends Component {
   }
 
   renderTwitterBar() {
-    const { likesCount, commentsCount, eventId, retweetCount } = this.props;
+    const { likesCount, eventId, retweetCount } = this.props;
     return (
       <View style={[styles.buttonBar]}>
         <TwitterActionButtons
           eventId={eventId}
           favoriteCount={likesCount}
-          replyCount={commentsCount}
           retweetCount={retweetCount}
         />
         {this.renderShareButton()}
