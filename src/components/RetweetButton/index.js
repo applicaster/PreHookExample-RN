@@ -10,6 +10,7 @@ class RetweetButton extends Component {
 
     this.state = {
       retweeted: false,
+      selected: false,
       retweetCount: props.retweetCount,
     };
 
@@ -18,26 +19,45 @@ class RetweetButton extends Component {
 
   retweet() {
     const { eventId } = this.props;
-    const { retweetCount, retweeted } = this.state;
-    FeedRNUtils.retweet(eventId).then(() => {}).catch(() => {});
+    const { retweetCount, retweeted, selected } = this.state;
+
+    if (retweeted) return;
+
+    FeedRNUtils.retweet(eventId)
+    .then(() => this.setState({ retweeted: true }))
+    .catch(error => {
+      if (error.code === '500') { // User cancelled login
+        this.setState({
+          selected: false,
+          retweeted: false,
+          retweetCount,
+        });
+      } else if (retweeted) {
+        this.setState({
+          retweetCount: retweetCount - 1,
+          selected: false,
+          retweeted: false,
+        });
+      }
+    });
     
-    if (!retweeted) {
+    if (!selected) {
       this.setState({
         retweetCount: retweetCount + 1,
-        retweeted: true,
+        selected: true,
       });
     }
   }
   
   render() {
-    const { retweetCount, retweeted } = this.state;
+    const { retweetCount, selected } = this.state;
     
     return (
       <ActionButton
         imageUri={RETWEET_ICON}
         label={retweetCount}
         onPress={this.retweet}
-        selected={retweeted}
+        selected={selected}
       />
     );
   }
