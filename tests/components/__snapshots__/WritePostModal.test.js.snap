@@ -4,7 +4,7 @@ exports[`WritePostModal component renders correctly when it is invisible 1`] = `
 <Modal
   animationType="slide"
   hardwareAccelerated={false}
-  onRequestClose={undefined}
+  onRequestClose={[Function]}
   transparent={false}
   visible={false}
 >
@@ -16,7 +16,7 @@ exports[`WritePostModal component renders correctly when it is visible 1`] = `
 <Modal
   animationType="slide"
   hardwareAccelerated={false}
-  onRequestClose={undefined}
+  onRequestClose={[Function]}
   transparent={false}
   visible={true}
 >

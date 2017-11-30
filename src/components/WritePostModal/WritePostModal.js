@@ -11,17 +11,17 @@ class WritePostModal extends Component {
   
   closeModal() {
     const { toggleModal } = this.props;
-    toggleModal({ modal: 'MediaModal' });
+    toggleModal({ modal: 'WritePostModal' });
   }
 
   render() {
-    const { isWritePostModalVisible, toggleModal } = this.props;
+    const { isWritePostModalVisible } = this.props;
     return (
       <Modal
         animationType={'slide'}
         transparent={false}
         visible={isWritePostModalVisible}
-        onRequestClose={toggleModal}
+        onRequestClose={this.closeModal}
       >
         <WritePostScreen />
       </Modal>
