@@ -27,7 +27,7 @@ class ActionButton extends Component {
 }
 
 ActionButton.propTypes = {
-  label: PropTypes.number,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   imageUri: PropTypes.string,
   onPress: PropTypes.func,
   selected: PropTypes.bool,
