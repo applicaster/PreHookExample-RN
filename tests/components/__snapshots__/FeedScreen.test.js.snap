@@ -64,8 +64,7 @@ exports[`FeedScreen component renders correctly while loading 1`] = `
     <RCTRefreshControl />
     <View />
   </RCTScrollView>
-  <MediaDetailsModal />
-  <WritePostModal />
+  <ModalScreen />
   <WritePostButton />
 </View>
 `;
@@ -276,8 +275,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
       </View>
     </View>
   </RCTScrollView>
-  <MediaDetailsModal />
-  <WritePostModal />
+  <ModalScreen />
   <WritePostButton />
 </View>
 `;
@@ -488,8 +486,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
       </View>
     </View>
   </RCTScrollView>
-  <MediaDetailsModal />
-  <WritePostModal />
+  <ModalScreen />
   <WritePostButton />
 </View>
 `;
@@ -700,8 +697,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
       </View>
     </View>
   </RCTScrollView>
-  <MediaDetailsModal />
-  <WritePostModal />
+  <ModalScreen />
   <WritePostButton />
 </View>
 `;
@@ -912,8 +908,7 @@ exports[`FeedScreen component renders correctly with no write post button 1`] = 
       </View>
     </View>
   </RCTScrollView>
-  <MediaDetailsModal />
-  <WritePostModal />
+  <ModalScreen />
   <WritePostButton />
 </View>
 `;
@@ -1124,8 +1119,7 @@ exports[`FeedScreen component renders correctly with write post button due to fa
       </View>
     </View>
   </RCTScrollView>
-  <MediaDetailsModal />
-  <WritePostModal />
+  <ModalScreen />
   <WritePostButton />
 </View>
 `;
@@ -1336,8 +1330,7 @@ exports[`FeedScreen component renders correctly with write post button due to tw
       </View>
     </View>
   </RCTScrollView>
-  <MediaDetailsModal />
-  <WritePostModal />
+  <ModalScreen />
   <WritePostButton />
 </View>
 `;
@@ -1406,8 +1399,7 @@ exports[`FeedScreen component renders correctly without events 1`] = `
     <RCTRefreshControl />
     <View />
   </RCTScrollView>
-  <MediaDetailsModal />
-  <WritePostModal />
+  <ModalScreen />
   <WritePostButton />
 </View>
 `;

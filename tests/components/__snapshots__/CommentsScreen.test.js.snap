@@ -124,7 +124,7 @@ exports[`CommentsScreen component renders correctly with comments 1`] = `
       </View>
     </View>
   </RCTScrollView>
-  <MediaDetailsModal />
+  <ModalScreen />
 </View>
 `;
 
@@ -252,6 +252,6 @@ exports[`CommentsScreen component renders correctly with no comments 1`] = `
       </View>
     </View>
   </RCTScrollView>
-  <MediaDetailsModal />
+  <ModalScreen />
 </View>
 `;
