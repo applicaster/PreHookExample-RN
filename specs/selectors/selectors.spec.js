@@ -7,13 +7,13 @@ import {
   getEnvironment,
   getSocialEvents,
   getLoading,
-  getMediaModalVisibility,
   getActiveEventId,
   getActiveEvent,
   getEventIdForActiveAudio,
-  getWritePostModalVisibility,
   getFacebookPageId,
   getTwitterScreenName,
+  getModalVisibility,
+  getActiveModalName,
   isFacebookAvailable,
   isTwitterAvailable,
   getActiveEventOriginUrl,
@@ -31,9 +31,9 @@ describe('selectors', () => {
         timelineId: 'someTimelineId',
         timezone: 'someTimezone',
         environment: 'someEnvironment',
-        isMediaModalVisible: true,
-        isWritePostModalVisible: true,
         activeEventId: 'someId',
+        activeModalName: 'someModalName',
+        isModalVisible: true,
         eventIdForActiveAudio: 'someId',
         facebookPageId: 'someFacebookPageId',
         twitterScreenName: 'someTwitterScreenName',
@@ -81,15 +81,15 @@ describe('selectors', () => {
     });
   });
 
-  describe('getMediaModalVisibility', () => {
-    it('should get isMediaModalVisible property from the app reducer state', () => {
-      expect(getMediaModalVisibility(store.getState())).to.equal(true);
+  describe('getModalVisibility', () => {
+    it('should get isModalVisible property from the app reducer state', () => {
+      expect(getModalVisibility(store.getState())).to.equal(true);
     });
   });
 
-  describe('getWritePostModalVisibility', () => {
-    it('should get isWritePostModalVisible property from the app reducer state', () => {
-      expect(getWritePostModalVisibility(store.getState())).to.equal(true);
+  describe('getActiveModalName', () => {
+    it('should get activeModalName property from the app reducer state', () => {
+      expect(getActiveModalName(store.getState())).to.equal('someModalName');
     });
   });
 
