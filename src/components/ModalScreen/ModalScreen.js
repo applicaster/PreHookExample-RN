@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-native';
 import MediaDetailsScreen from '../MediaDetailsScreen';
+import ReplyToTweetScreen from '../ReplyToTweetScreen';
 import WritePostScreen from '../WritePostScreen';
 
 class ModalScreen extends Component {
@@ -36,6 +37,8 @@ class ModalScreen extends Component {
         return <WritePostScreen />;
       case 'MediaModal':
         return <MediaDetailsScreen />;
+      case 'ReplyToTweetModal':
+        return <ReplyToTweetScreen />;
       default:
         return null;
     }
