@@ -3,11 +3,15 @@ import configureMockStore from 'redux-mock-store';
 import 'rxjs/add/operator/toArray';
 import { createEpicMiddleware, ActionsObservable } from 'redux-observable';
 import { Map } from 'immutable';
-import { fetchSocialEventsEpic } from '../../src/epics';
+import {
+  fetchSocialEventsEpic,
+  fetchSocialEventsDoneEpic,
+} from '../../src/epics';
 import {
   FETCH_SOCIAL_EVENTS_START,
   FETCH_SOCIAL_EVENTS_DONE,
   FETCH_SOCIAL_EVENTS_FAILED,
+  SET_SOCIAL_METADATA,
 } from '../../src/actions';
 
 const epicMiddleware = createEpicMiddleware(fetchSocialEventsEpic);
@@ -29,7 +33,7 @@ describe('fetchSocialEventsEpic', () => {
     const expectedOutputActions = [{
       type: FETCH_SOCIAL_EVENTS_DONE,
       meta: undefined,
-      payload: { data: [1,2], meta: {}, links: {} },
+      payload: { data: [1, 2], meta: {}, links: {} },
     }];
 
     fetchSocialEventsEpic(action$, store)
@@ -61,5 +65,31 @@ describe('fetchSocialEventsEpic', () => {
         }
       );
     });
+  });
+});
+
+describe('fetchSocialEventsDoneEpic', () => {
+  let action$;
+  beforeEach(() => {
+    action$ = ActionsObservable.of({
+      type: FETCH_SOCIAL_EVENTS_DONE,
+      payload: { metadata: { facebookPageId: 'someId', twitterScreenName: 'screenName' } },
+    });
+  });
+
+  it('dispatches the correct actions with expected payloads', done => {
+    const expectedOutputActions = [{
+      type: SET_SOCIAL_METADATA,
+      meta: undefined,
+      payload: { facebookPageId: 'someId', twitterScreenName: 'screenName' },
+    }];
+
+    fetchSocialEventsDoneEpic(action$)
+      .toArray()
+      .subscribe(actualOutputActions => {
+        expect(actualOutputActions).to.deep.equal(expectedOutputActions);
+        done();
+      }
+    );
   });
 });

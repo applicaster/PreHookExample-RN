@@ -6,6 +6,7 @@ import {
     toggleModal,
     setEventIdForActiveAudio,
     setActiveEventId,
+    setSocialMetadata,
 } from '../../src/actions';
 import appReducer from '../../src/reducers/app';
 
@@ -13,6 +14,25 @@ describe('app reducer', () => {
   let initialState;
   beforeEach(() => {
     initialState = appReducer();
+  });
+
+  describe('initial state', () => {
+    it('reducer should have correct initial state', () => {
+      const newState = appReducer();
+
+      expect(newState.toJS()).to.deep.equal({
+        environment: null,
+        accountId: null,
+        timelineId: null,
+        timezone: null,
+        isMediaModalVisible: false,
+        isWritePostModalVisible: false,
+        activeEventId: null,
+        eventIdForActiveAudio: null,
+        facebookPageId: null,
+        twitterScreenName: null,
+      });
+    });
   });
 
   describe('setEnvironment is dispatched', () => {
@@ -88,6 +108,20 @@ describe('app reducer', () => {
       const newState = appReducer(initialState, setActiveEventId('someId'));
 
       expect(newState.get('activeEventId')).to.equal('someId');
+    });
+  });
+
+  describe('setSocialMetadata is dispatched', () => {
+    it('should set the facebookPageId', () => {
+      const newState = appReducer(initialState, setSocialMetadata({ facebookPageId: 'someId' }));
+
+      expect(newState.get('facebookPageId')).to.equal('someId');
+    });
+
+    it('should set the twitterScreenName', () => {
+      const newState = appReducer(initialState, setSocialMetadata({ twitterScreenName: 'someScreenName' }));
+
+      expect(newState.get('twitterScreenName')).to.equal('someScreenName');
     });
   });
 });

@@ -3,6 +3,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import WritePostModal from '../../src/components/WritePostModal/WritePostModal';
 
+jest.mock('../../src/components/WritePostScreen', () => 'WritePostScreen');
+
 describe('WritePostModal', () => {
   test('component renders correctly when it is visible', () => {
     const html = renderer.create(

@@ -162,7 +162,7 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
         Object {
           "fontSize": 14,
           "lineHeight": 18,
-          "paddingBottom": 12,
+          "paddingBottom": 5,
           "paddingHorizontal": 12,
           "paddingTop": 17,
         },
@@ -236,13 +236,11 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
           "flexDirection": "row",
           "height": 30,
-          "paddingBottom": 10,
-          "paddingHorizontal": 7,
-        },
-        Object {
-          "marginLeft": 3,
+          "marginBottom": 7,
+          "paddingHorizontal": 12,
         },
       ]
     }
@@ -250,17 +248,21 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
     <EventDetailCount
       count={30}
       eventId="someId"
+      eventOriginUrl={undefined}
       label="Likes"
+      openOriginUrl={true}
     />
     <EventDetailCount
       count={0}
       eventId="someId"
+      eventOriginUrl={undefined}
       label="Comments"
+      openOriginUrl={true}
     />
     <View
       style={
         Object {
-          "bottom": 10,
+          "bottom": 3,
           "position": "absolute",
           "right": 7,
         }
@@ -490,7 +492,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
         Object {
           "fontSize": 14,
           "lineHeight": 18,
-          "paddingBottom": 12,
+          "paddingBottom": 5,
           "paddingHorizontal": 12,
           "paddingTop": 17,
         },
@@ -564,13 +566,11 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
     style={
       Array [
         Object {
+          "alignItems": "center",
           "flexDirection": "row",
           "height": 30,
-          "paddingBottom": 10,
-          "paddingHorizontal": 7,
-        },
-        Object {
-          "marginLeft": 3,
+          "marginBottom": 7,
+          "paddingHorizontal": 12,
         },
       ]
     }
@@ -578,17 +578,21 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
     <EventDetailCount
       count={30}
       eventId="someId"
+      eventOriginUrl={undefined}
       label="Likes"
+      openOriginUrl={true}
     />
     <EventDetailCount
       count={0}
       eventId="someId"
+      eventOriginUrl={undefined}
       label="Comments"
+      openOriginUrl={true}
     />
     <View
       style={
         Object {
-          "bottom": 10,
+          "bottom": 3,
           "position": "absolute",
           "right": 7,
         }

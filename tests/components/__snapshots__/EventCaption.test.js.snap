@@ -11,7 +11,7 @@ exports[`EventCaption component renders correctly 1`] = `
       Object {
         "fontSize": 14,
         "lineHeight": 18,
-        "paddingBottom": 12,
+        "paddingBottom": 5,
         "paddingHorizontal": 12,
         "paddingTop": 17,
       },
@@ -36,7 +36,7 @@ exports[`EventCaption component renders correctly with complex caption with user
       Object {
         "fontSize": 14,
         "lineHeight": 18,
-        "paddingBottom": 12,
+        "paddingBottom": 5,
         "paddingHorizontal": 12,
         "paddingTop": 17,
       },

@@ -12,6 +12,10 @@ import {
   getActiveEvent,
   getEventIdForActiveAudio,
   getWritePostModalVisibility,
+  getFacebookPageId,
+  getTwitterScreenName,
+  isFacebookAvailable,
+  isTwitterAvailable,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -30,6 +34,8 @@ describe('selectors', () => {
         isWritePostModalVisible: true,
         activeEventId: 'someId',
         eventIdForActiveAudio: 'someId',
+        facebookPageId: 'someFacebookPageId',
+        twitterScreenName: 'someTwitterScreenName',
       }),
       events: Map({
         socialEvents: [someEvent, 2],
@@ -101,6 +107,30 @@ describe('selectors', () => {
   describe('getEventIdForActiveAudio', () => {
     it('should get the eventId for the video playing audio from the app reducer state', () => {
       expect(getEventIdForActiveAudio(store.getState())).to.deep.equal('someId');
+    });
+  });
+
+  describe('getFacebookPageId', () => {
+    it('should get the facebookPageId from the app reducer state', () => {
+      expect(getFacebookPageId(store.getState())).to.equal('someFacebookPageId');
+    });
+  });
+
+  describe('getTwitterScreenName', () => {
+    it('should get the twitterScreenName from the app reducer state', () => {
+      expect(getTwitterScreenName(store.getState())).to.equal('someTwitterScreenName');
+    });
+  });
+
+  describe('isFacebookAvailable', () => {
+    it('should get boolean for facebook availability from the app reducer state', () => {
+      expect(isFacebookAvailable(store.getState())).to.equal(true);
+    });
+  });
+
+  describe('isTwitterAvailable', () => {
+    it('should get boolean for twitter availability from the app reducer state', () => {
+      expect(isTwitterAvailable(store.getState())).to.equal(true);
     });
   });
 });

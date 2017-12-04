@@ -6,6 +6,7 @@ import { event } from './testDataUtils';
 
 jest.mock('../../src/components/EventMedia', () => 'EventMedia');
 jest.mock('../../src/components/EventDetailCount', () => 'EventDetailCount');
+jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');
 
 describe('EventContainer', () => {
   test('component renders correctly with an image event', () => {

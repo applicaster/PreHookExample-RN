@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, TouchableWithoutFeedback, View } from 'react-native';
-import hexToRgb from 'hex-to-rgb';
+import {
+  Alert,
+  Linking,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import { styles } from './style';
 
 class EventDetailCount extends Component {
   constructor(props) {
     super(props);
     this.navigateToComments = this.navigateToComments.bind(this);
+    this.openUrl = this.openUrl.bind(this);
   }
 
   navigateToComments() {
@@ -21,14 +27,36 @@ class EventDetailCount extends Component {
     }
   }
 
+  openUrl() {
+    const { eventOriginUrl = '' } = this.props;
+    Linking.canOpenURL(eventOriginUrl).then(supported => {
+      if (!supported) {
+        this.showUnableToOpenUrlAlert();
+      } else {
+        return Linking.openURL(eventOriginUrl);
+      }
+    }).catch(() => {
+      this.showUnableToOpenUrlAlert();
+    });
+  }
+
+  showUnableToOpenUrlAlert() {
+    Alert.alert(
+      'ERROR',
+      'Unable to open item',
+      [{ text: 'OK', onPress: () => {} }],
+      { cancelable: false }
+    );
+  }
+
   render() {
-    const { label, count = 0 } = this.props;
-    const { textColor } = this.context;
-    const rgb = hexToRgb(textColor || '#FFFFFF');
-    const rgbaColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.60)`;
-    const textColorStyle = { color: rgbaColor };
+    const { label, count = 0, openOriginUrl = false } = this.props;
+    const { textColor = '#FFFFFF' } = this.context;
+    const textColorStyle = { color: `${textColor}99` };
+    const onPress = (openOriginUrl) ? this.openUrl : this.navigateToComments;
+    
     return (
-      <TouchableWithoutFeedback onPress={this.navigateToComments}>
+      <TouchableWithoutFeedback onPress={onPress}>
         <View style={styles.eventDetailCount}>
           <Text key={'count'} style={[styles.count, textColorStyle]}>{count}</Text>
           <Text key={'label'} style={[styles.label, textColorStyle]}>{label}</Text>
@@ -41,7 +69,9 @@ class EventDetailCount extends Component {
 EventDetailCount.propTypes = {
   count: PropTypes.number,
   eventId: PropTypes.string,
+  eventOriginUrl: PropTypes.string,
   label: PropTypes.string,
+  openOriginUrl: PropTypes.bool,
   setActiveEventId: PropTypes.func,
 };
 

@@ -45,12 +45,14 @@ class EventContainer extends Component {
   }
 
   renderActionBar() {
-    const { source, likesCount, commentsCount, caption, id } = this.props.event;
+    const { source, likesCount, commentsCount, caption, id, originUrl, retweetCount } = this.props.event;
     return (<ActionBar
-      eventId={id}
-      socialNetwork={source}
-      likesCount={likesCount}
       commentsCount={commentsCount}
+      eventId={id}
+      eventOriginUrl={originUrl}
+      likesCount={likesCount}
+      retweetCount={retweetCount}
+      socialNetwork={source}
       textToShare={caption}
     />
     );

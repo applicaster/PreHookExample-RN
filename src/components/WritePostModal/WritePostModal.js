@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Modal, Text } from 'react-native';
-import CloseButton from '../CloseButton';
+import { Modal } from 'react-native';
+import WritePostScreen from '../WritePostScreen';
 
 class WritePostModal extends Component {
   constructor(props) {
@@ -18,13 +18,12 @@ class WritePostModal extends Component {
     const { isWritePostModalVisible, toggleModal } = this.props;
     return (
       <Modal
-        animationType={'fade'}
+        animationType={'slide'}
         transparent={false}
         visible={isWritePostModalVisible}
         onRequestClose={toggleModal}
       >
-        <Text>Write Post Screen Goes Here</Text>
-        <CloseButton onPress={this.closeModal} isForModal />
+        <WritePostScreen />
       </Modal>
     );
   }
