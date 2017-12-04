@@ -11,6 +11,7 @@ import {
   getActiveEventId,
   getActiveEvent,
   getEventIdForActiveAudio,
+  getWritePostModalVisibility,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -26,6 +27,7 @@ describe('selectors', () => {
         timezone: 'someTimezone',
         environment: 'someEnvironment',
         isMediaModalVisible: true,
+        isWritePostModalVisible: true,
         activeEventId: 'someId',
         eventIdForActiveAudio: 'someId',
       }),
@@ -75,6 +77,12 @@ describe('selectors', () => {
   describe('getMediaModalVisibility', () => {
     it('should get isMediaModalVisible property from the app reducer state', () => {
       expect(getMediaModalVisibility(store.getState())).to.equal(true);
+    });
+  });
+
+  describe('getWritePostModalVisibility', () => {
+    it('should get isWritePostModalVisible property from the app reducer state', () => {
+      expect(getWritePostModalVisibility(store.getState())).to.equal(true);
     });
   });
 

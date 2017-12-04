@@ -6,6 +6,7 @@ export const getTimelineId = state => state.app.get('timelineId');
 export const getTimezone = state => state.app.get('timezone');
 export const getEnvironment = state => state.app.get('environment');
 export const getMediaModalVisibility = state => state.app.get('isMediaModalVisible');
+export const getWritePostModalVisibility = state => state.app.get('isWritePostModalVisible');
 export const getActiveEventId = state => state.app.get('activeEventId');
 export const getEventIdForActiveAudio = state => state.app.get('eventIdForActiveAudio');
 

@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Modal,
-} from 'react-native';
+import { Modal } from 'react-native';
 import MediaDetailsScreen from '../MediaDetailsScreen';
 
 class MediaDetailsModal extends Component {
+  constructor(props) {
+    super(props);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  closeModal() {
+    const { toggleModal } = this.props;
+    toggleModal({ modal: 'MediaModal' });
+  }
+
   render() {
-    const { isMediaModalVisible, toggleModal } = this.props;
+    const { isMediaModalVisible } = this.props;
     return (
       <Modal
         animationType={'fade'}
         transparent={false}
         visible={isMediaModalVisible}
-        onRequestClose={toggleModal}
+        onRequestClose={this.closeModal}
       >
         <MediaDetailsScreen />
       </Modal>

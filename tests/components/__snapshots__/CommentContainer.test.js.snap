@@ -11,7 +11,7 @@ exports[`CommentContainer component renders correctly 1`] = `
         "width": 750,
       },
       Object {
-        "borderBottomColor": "undefined4D",
+        "borderBottomColor": "#FFFFFF4D",
       },
     ]
   }

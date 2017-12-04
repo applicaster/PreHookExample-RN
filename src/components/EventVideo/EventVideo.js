@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TouchableWithoutFeedback } from 'react-native';
-import Video from 'react-native-video';
+import Video from '@applicaster/react-native-video';
 import { styles } from './style';
 import { getMediaDimensions } from '../../utils/size';
 

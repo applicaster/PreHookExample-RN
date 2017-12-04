@@ -13,7 +13,7 @@ const eventMediaProps = (height, width, videoUrl) => ({
   showMediaDetailsModal: () => {},
 });
 
-jest.mock('react-native-video', () => 'Video');
+jest.mock('@applicaster/react-native-video', () => 'Video');
 
 describe('EventMedia', () => {
   test('component renders correctly for squared images', () => {

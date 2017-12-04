@@ -9,6 +9,11 @@ import { styles } from './style';
 import CloseButton from '../CloseButton';
 
 class MediaDetailsScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
   getImageSize() {
     const { activeEvent } = this.props;
     const { height: imageHeight, width: imageWidth } = activeEvent.images.default;
@@ -28,15 +33,20 @@ class MediaDetailsScreen extends Component {
     return imageSize;
   }
 
+  closeModal() {
+    const { toggleModal } = this.props;
+    toggleModal({ modal: 'MediaModal' });
+  }
+
   render() {
-    const { activeEvent, toggleModal } = this.props;
+    const { activeEvent } = this.props;
     const { url: imageUrl } = activeEvent.images.default;
     const { backgroundColor } = this.context;
     const screenBackgroundColor = { backgroundColor, flex: 1 };
     
     return (
       <View style={[styles.mediaDetailsScreen, screenBackgroundColor]}>
-        <CloseButton onPress={toggleModal} isForModal />
+        <CloseButton onPress={this.closeModal} isForModal />
         <TransformableImage style={this.getImageSize()} source={{ uri: imageUrl }} />
       </View>
     );

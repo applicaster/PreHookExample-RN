@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WritePostButton component renders correctly 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Object {
+        "bottom": 10,
+        "height": 54,
+        "position": "absolute",
+        "right": 12,
+        "width": 54,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "feed_rn_write_post_button",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "height": 54,
+            "shadowColor": "#000000",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 1,
+            },
+            "shadowOpacity": 0.5,
+            "shadowRadius": 3,
+            "width": 54,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
+      }
+    />
+    <Image
+      source={
+        Object {
+          "uri": "feed_rn_pencil",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 20,
+            "height": 17,
+            "position": "absolute",
+            "right": 18,
+            "width": 17,
+          },
+          Object {
+            "tintColor": undefined,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
