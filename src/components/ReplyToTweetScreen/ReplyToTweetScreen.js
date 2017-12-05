@@ -53,7 +53,7 @@ class ReplyToTweetScreen extends Component {
     if (!twitterText.length) return;
 
     FeedRNUtils.replyToTweet({ tweetText: `${twitterText}`, originalTweetId: eventId })
-      .then(() => {})
+      .then(() => this.closeModal())
       .catch(() => {
         Alert.alert(
           'Error',
@@ -62,8 +62,6 @@ class ReplyToTweetScreen extends Component {
           { cancelable: false }
         );
       });
-      
-    this.closeModal();
   }
 
   keyboardWillShow(event) {
