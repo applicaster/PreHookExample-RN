@@ -1,11 +1,15 @@
-import FeedScreen from './components/FeedScreen';
 import CommentsScreen from './components/CommentsScreen';
+import FeedScreen from './components/FeedScreen';
+import WebViewScreen from './components/WebViewScreen';
 
 export default {
+  Comments: {
+    screen: CommentsScreen,
+  },
   Feed: {
     screen: FeedScreen,
   },
-  Comments: {
-    screen: CommentsScreen,
+  WebView: {
+    screen: WebViewScreen,
   },
 };

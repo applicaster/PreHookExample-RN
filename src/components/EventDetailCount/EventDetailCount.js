@@ -13,6 +13,7 @@ class EventDetailCount extends Component {
   constructor(props) {
     super(props);
     this.navigateToComments = this.navigateToComments.bind(this);
+    this.navigateToWebview = this.navigateToWebview.bind(this);
     this.openUrl = this.openUrl.bind(this);
   }
 
@@ -25,6 +26,14 @@ class EventDetailCount extends Component {
     if (navigation.state.routeName !== 'Comments') {
       navigation.navigate('Comments');
     }
+  }
+
+  navigateToWebview() {
+    const { navigation } = this.context;
+    const { eventId, setActiveEventId } = this.props;
+
+    setActiveEventId(eventId);
+    navigation.navigate('WebView');
   }
 
   openUrl() {
@@ -53,7 +62,7 @@ class EventDetailCount extends Component {
     const { label, count = 0, openOriginUrl = false } = this.props;
     const { textColor = '#FFFFFF' } = this.context;
     const textColorStyle = { color: `${textColor}99` };
-    const onPress = (openOriginUrl) ? this.openUrl : this.navigateToComments;
+    const onPress = (openOriginUrl) ? this.navigateToWebview : this.navigateToComments;
     
     return (
       <TouchableWithoutFeedback onPress={onPress}>

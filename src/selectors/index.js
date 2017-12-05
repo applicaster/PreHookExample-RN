@@ -23,3 +23,8 @@ export const getActiveEvent = createSelector(
   getSocialEvents,
   (activeEventId, socialEvents) => socialEvents.find(event => event.id === activeEventId)
 );
+
+export const getActiveEventOriginUrl = createSelector(
+  getActiveEvent,
+  (activeEvent) => activeEvent.originUrl
+);

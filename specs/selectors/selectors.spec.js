@@ -16,13 +16,14 @@ import {
   getTwitterScreenName,
   isFacebookAvailable,
   isTwitterAvailable,
+  getActiveEventOriginUrl,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
 
 describe('selectors', () => {
   let store;
-  const someEvent = { foo: 'bar', id: 'someId' };
+  const someEvent = { foo: 'bar', id: 'someId', originUrl: 'someOriginUrl' };
   beforeEach(() => {
     store = mockStore({
       app: Map({
@@ -101,6 +102,12 @@ describe('selectors', () => {
   describe('getActiveEvent', () => {
     it('should get the event for the activeEventId property from the events reducer state', () => {
       expect(getActiveEvent(store.getState())).to.deep.equal(someEvent);
+    });
+  });
+
+  describe('getActiveEventOriginUrl', () => {
+    it('should get the originUrl for the activeEvent from the events reducer state', () => {
+      expect(getActiveEventOriginUrl(store.getState())).to.deep.equal('someOriginUrl');
     });
   });
 

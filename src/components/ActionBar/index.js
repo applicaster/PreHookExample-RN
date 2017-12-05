@@ -36,7 +36,6 @@ class ActionBar extends Component {
         />
         {this.renderShareButton()}
       </View>
-      
     );
   }
 
@@ -69,9 +68,9 @@ ActionBar.propTypes = {
   commentsCount: PropTypes.number,
   eventId: PropTypes.string,
   eventOriginUrl: PropTypes.string,
-  likesCount: PropTypes.number,
-  retweetCount: PropTypes.number,
   socialNetwork: PropTypes.string,
+  likesCount: PropTypes.number,
+  commentsCount: PropTypes.number,
   textToShare: PropTypes.string,
 };
 
