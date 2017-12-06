@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoriteTweetButton component renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "height": 30,
+      "marginRight": 7,
+    }
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Image
+      source={
+        Object {
+          "uri": "feed_rn_retweet_button",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "height": 30,
+            "marginRight": 1,
+            "width": 30,
+          },
+          Object {
+            "tintColor": "#FFFFFF",
+          },
+        ]
+      }
+    />
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "fontSize": 12,
+        },
+        Object {
+          "color": "#FFFFFF99",
+        },
+      ]
+    }
+  />
+</View>
+`;
