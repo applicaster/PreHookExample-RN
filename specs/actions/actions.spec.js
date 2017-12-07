@@ -12,12 +12,14 @@ import {
   setEventIdForActiveAudio,
   setActiveEventId,
   setSocialMetadata,
+  updateFavoriteTweets,
 
   FETCH_SOCIAL_EVENTS_START,
   FETCH_SOCIAL_EVENTS_DONE,
   FETCH_SOCIAL_EVENTS_FAILED,
   FETCH_FAVORITE_TWEETS_DONE,
   FETCH_FAVORITE_TWEETS_FAILED,
+  UPDATE_FAVORITE_TWEETS,
   SET_ACCOUNT_ID,
   SET_TIMELINE_ID,
   SET_TIMEZONE,
@@ -95,6 +97,14 @@ describe('actions', () => {
 
         expect(action.payload.error).to.exist;
         expect(action.payload.error.message).to.deep.equal('blah');
+      });
+    });
+
+    describe('updateFavoriteTweets', () => {
+      it('should have correct action type', () => {
+        const action = updateFavoriteTweets();
+
+        expect(action.type).to.equal(UPDATE_FAVORITE_TWEETS);
       });
     });
 
