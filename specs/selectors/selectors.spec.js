@@ -17,6 +17,7 @@ import {
   isFacebookAvailable,
   isTwitterAvailable,
   getActiveEventOriginUrl,
+  getFavoriteTweets,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -41,6 +42,7 @@ describe('selectors', () => {
       events: Map({
         socialEvents: [someEvent, 2],
         loading: false,
+        favoriteTweets: { 1: 1, 2: 2 },
       }),
     });
   });
@@ -138,6 +140,12 @@ describe('selectors', () => {
   describe('isTwitterAvailable', () => {
     it('should get boolean for twitter availability from the app reducer state', () => {
       expect(isTwitterAvailable(store.getState())).to.equal(true);
+    });
+  });
+
+  describe('getFavoriteTweets', () => {
+    it('should get favoriteTweets from event reducer state', () => {
+      expect(getFavoriteTweets(store.getState())).to.deep.equal({ 1: 1, 2: 2 });
     });
   });
 });

@@ -17,6 +17,7 @@ export const isFacebookAvailable = createSelector(getFacebookPageId, (facebookPa
 // From EVENTS Reducer
 export const getSocialEvents = state => state.events.get('socialEvents');
 export const getLoading = state => state.events.get('loading');
+export const getFavoriteTweets = state => state.events.get('favoriteTweets');
 
 export const getActiveEvent = createSelector(
   getActiveEventId,
