@@ -21,7 +21,8 @@ import {
   // ACTION NAMES:
   FETCH_SOCIAL_EVENTS_START,
   FETCH_SOCIAL_EVENTS_DONE,
-
+  UPDATE_FAVORITE_TWEETS,
+  
   // ACTION CREATORS:
   fetchSocialEventsDone,
   fetchSocialEventsFailed,
@@ -48,7 +49,7 @@ export const setSocialMetadataEpic = (action$) =>
       .filter(action => action.type === FETCH_SOCIAL_EVENTS_DONE)
       .map(action => setSocialMetadata(action.payload.metadata));
 
-export const fetchFavoriteTweets = (action$) =>
+export const fetchFavoriteTweetsEpic = (action$) =>
     action$
       .filter(action => action.type === FETCH_SOCIAL_EVENTS_DONE)
       .mergeMap(action => {
@@ -62,8 +63,15 @@ export const fetchFavoriteTweets = (action$) =>
         return Observable.empty();
       });
 
+export const updateFavoriteTweetsEpic = (action$) =>
+  action$
+    .filter(action => action.type === UPDATE_FAVORITE_TWEETS)
+    .mergeMap(Observable.fromPromise(FeedRNUtils.getFavoriteTweets())
+      .map(favoriteTweetIds => fetchFavoriteTweetsDone(favoriteTweetIds))
+      .catch(error => Observable.of(fetchFavoriteTweetsFailed(error))));
+
 export default combineEpics(
   fetchSocialEventsEpic,
   setSocialMetadataEpic,
-  fetchFavoriteTweets,
+  fetchFavoriteTweetsEpic,
 );
