@@ -1,12 +1,14 @@
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/empty';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mapTo';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/mergeMap';
 import { combineEpics } from 'redux-observable';
+import FeedRNUtils from '@applicaster/feed-rn-utils';
 import { fetchSocialEvents } from '../api/social';
 
 import {
@@ -24,6 +26,8 @@ import {
   fetchSocialEventsDone,
   fetchSocialEventsFailed,
   setSocialMetadata,
+  fetchFavoriteTweetsDone,
+  fetchFavoriteTweetsFailed,
 } from '../actions';
 
 export const fetchSocialEventsEpic = (action$, store) =>
@@ -39,12 +43,27 @@ export const fetchSocialEventsEpic = (action$, store) =>
         .catch(error => Observable.of(fetchSocialEventsFailed(error)))
     );
   
-export const fetchSocialEventsDoneEpic = (action$) =>
+export const setSocialMetadataEpic = (action$) =>
     action$
       .filter(action => action.type === FETCH_SOCIAL_EVENTS_DONE)
       .map(action => setSocialMetadata(action.payload.metadata));
 
+export const fetchFavoriteTweets = (action$) =>
+    action$
+      .filter(action => action.type === FETCH_SOCIAL_EVENTS_DONE)
+      .mergeMap(action => {
+        const { metadata } = action.payload;
+        if (metadata && metadata.twitterScreenName) {
+          return Observable.fromPromise(FeedRNUtils.getFavoriteTweets())
+            .map(favoriteTweetIds => fetchFavoriteTweetsDone(favoriteTweetIds))
+            .catch(error => Observable.of(fetchFavoriteTweetsFailed(error)));
+        }
+        
+        return Observable.empty();
+      });
+
 export default combineEpics(
   fetchSocialEventsEpic,
-  fetchSocialEventsDoneEpic,
+  setSocialMetadataEpic,
+  fetchFavoriteTweets,
 );
