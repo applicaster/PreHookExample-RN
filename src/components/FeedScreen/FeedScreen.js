@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
+  DeviceEventEmitter,
   Dimensions,
   FlatList,
   Modal,
@@ -40,6 +41,14 @@ class FeedScreen extends Component {
     this.props.setTimezone('3600');
     this.props.setEnvironment('production');
     this.props.fetchSocialEvents();
+    
+    const { updateFavoriteTweets } = this.props;
+    DeviceEventEmitter.addListener('twitter:updateFavorites', () => updateFavoriteTweets());
+  }
+
+  componentWillUnmount() {
+    const { updateFavoriteTweets } = this.props;
+    DeviceEventEmitter.removeAllListeners();
   }
 
   onRefresh() {
@@ -80,6 +89,7 @@ FeedScreen.propTypes = {
   setEnvironment: PropTypes.func,
   socialEvents: PropTypes.array,
   navigation: PropTypes.object,
+  updateFavoriteTweets: PropTypes.func,
 };
 
 FeedScreen.contextTypes = {

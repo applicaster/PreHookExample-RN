@@ -7,6 +7,7 @@ import {
   setTimezone,
   setEnvironment,
   toggleModal,
+  updateFavoriteTweets,
 } from '../../actions';
 
 import {
@@ -32,6 +33,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   setTimezone,
   setEnvironment,
   toggleModal,
+  updateFavoriteTweets,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeedScreen);
