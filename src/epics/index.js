@@ -66,7 +66,7 @@ export const fetchFavoriteTweetsEpic = (action$) =>
 export const updateFavoriteTweetsEpic = (action$) =>
   action$
     .filter(action => action.type === UPDATE_FAVORITE_TWEETS)
-    .mergeMap(Observable.fromPromise(FeedRNUtils.getFavoriteTweets())
+    .mergeMap(() => Observable.fromPromise(FeedRNUtils.getFavoriteTweets())
       .map(favoriteTweetIds => fetchFavoriteTweetsDone(favoriteTweetIds))
       .catch(error => Observable.of(fetchFavoriteTweetsFailed(error))));
 
@@ -74,4 +74,5 @@ export default combineEpics(
   fetchSocialEventsEpic,
   setSocialMetadataEpic,
   fetchFavoriteTweetsEpic,
+  updateFavoriteTweetsEpic,
 );
