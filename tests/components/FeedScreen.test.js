@@ -4,6 +4,12 @@ import renderer from 'react-test-renderer';
 import { event } from './testDataUtils';
 import FeedScreen from '../../src/components/FeedScreen/FeedScreen';
 
+jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');
+jest.mock('NativeEventEmitter', () => class MockNativeEventEmitter {
+  addListener = () => jest.fn();
+  removeListener = () => jest.fn();
+  removeAllListeners = () => jest.fn();
+});
 jest.mock('../../src/components/EventContainer', () => 'EventContainer');
 jest.mock('../../src/components/ModalScreen', () => 'ModalScreen');
 jest.mock('../../src/components/WritePostButton', () => 'WritePostButton');

@@ -6,9 +6,11 @@ import {
   FlatList,
   Modal,
   View,
+  NativeEventEmitter,
   NativeModules,
   Platform,
 } from 'react-native';
+import FeedRNUtils from '@applicaster/feed-rn-utils';
 import EventContainer from '../EventContainer';
 import ModalScreen from '../ModalScreen';
 import CloseButton from '../CloseButton';
@@ -42,13 +44,26 @@ class FeedScreen extends Component {
     this.props.setEnvironment('production');
     this.props.fetchSocialEvents();
     
+    const TWITTER_UPDATE_FAVORITES = 'twitter:updateFavorites';
     const { updateFavoriteTweets } = this.props;
-    DeviceEventEmitter.addListener('twitter:updateFavorites', () => updateFavoriteTweets());
+    
+    if (Platform.OS === 'ios') {
+      const eventEmitter = new NativeEventEmitter(FeedRNUtils);
+      this.updateTwitterFavoritesSubscription = eventEmitter.addListener(TWITTER_UPDATE_FAVORITES, updateFavoriteTweets);
+    } else {
+      DeviceEventEmitter.addListener(TWITTER_UPDATE_FAVORITES, updateFavoriteTweets);
+    }
   }
 
   componentWillUnmount() {
     const { updateFavoriteTweets } = this.props;
-    DeviceEventEmitter.removeAllListeners();
+    if (Platform.OS === 'ios') {
+      this.updateTwitterFavoritesSubscription.remove();
+      NativeEventEmitter.removeAllListeners();
+    } else {
+      DeviceEventEmitter.removeAllListeners();
+    }
+    
   }
 
   onRefresh() {
