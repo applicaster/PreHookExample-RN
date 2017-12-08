@@ -5,6 +5,7 @@ import {
  } from 'react-native';
 import { styles } from './style';
 import EventDetailCount from '../EventDetailCount';
+import CommentButton from '../CommentButton';
 
 class FacebookActionButtons extends Component {
   render() {
@@ -12,7 +13,7 @@ class FacebookActionButtons extends Component {
     return (
       <View style={[styles.facebookActionButtons]}>
         <EventDetailCount key={'likes'} eventId={eventId} count={likesCount} label={'Likes'} />
-        <EventDetailCount key={'comments'} eventId={eventId} count={commentsCount} label={'Comments'} />
+        <CommentButton key={'comments'} eventId={eventId} commentsCount={commentsCount} />
       </View>
     );
   }
