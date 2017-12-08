@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import EventDetailCount from '../EventDetailCount';
 import ShareButton from '../ShareButton';
+import FacebookActionButtons from '../FacebookActionButtons';
 import TwitterActionButtons from '../TwitterActionButtons';
 import { styles } from './style';
 
@@ -42,8 +43,11 @@ class ActionBar extends Component {
     const { likesCount, commentsCount, eventId } = this.props;
     return (
       <View style={[styles.buttonBar]}>
-        <EventDetailCount key={'likes'} eventId={eventId} count={likesCount} label={'Likes'} />
-        <EventDetailCount key={'comments'} eventId={eventId} count={commentsCount} label={'Comments'} />
+        <FacebookActionButtons
+          eventId={eventId}
+          commentsCount={commentsCount}
+          likesCount={likesCount}
+        />
         {this.renderShareButton()}
       </View>
     );
@@ -69,8 +73,8 @@ ActionBar.propTypes = {
   eventOriginUrl: PropTypes.string,
   socialNetwork: PropTypes.string,
   likesCount: PropTypes.number,
-  commentsCount: PropTypes.number,
   textToShare: PropTypes.string,
+  retweetCount: PropTypes.number,
 };
 
 ActionBar.contextTypes = {
