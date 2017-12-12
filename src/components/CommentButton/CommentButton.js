@@ -6,18 +6,15 @@ import { COMMENT_BUTTON } from '../../icons';
 class CommentButton extends Component {
   constructor(props) {
     super(props);
-    this.navigateToComments = this.navigateToComments.bind(this);
+    this.navigateToWebview = this.navigateToWebview.bind(this);
   }
 
-  navigateToComments() {
+  navigateToWebview() {
     const { navigation } = this.context;
     const { eventId, setActiveEventId } = this.props;
 
     setActiveEventId(eventId);
-
-    if (navigation.state.routeName !== 'Comments') {
-      navigation.navigate('Comments');
-    }
+    navigation.navigate('WebView');
   }
   
   render() {
@@ -26,7 +23,7 @@ class CommentButton extends Component {
       <ActionButton
         imageUri={COMMENT_BUTTON}
         label={commentsCount}
-        onPress={this.navigateToComments}
+        onPress={this.navigateToWebview}
       />
     );
   }
@@ -34,7 +31,7 @@ class CommentButton extends Component {
 
 CommentButton.propTypes = {
   eventId: PropTypes.string,
-  commentsCount: PropTypes.func,
+  commentsCount: PropTypes.number,
   setActiveEventId: PropTypes.func,
 };
 
