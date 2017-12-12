@@ -9,7 +9,7 @@ exports[`ActionBar component renders correctly for facebook 1`] = `
         "flexDirection": "row",
         "height": 30,
         "marginBottom": 7,
-        "paddingHorizontal": 12,
+        "paddingHorizontal": 9,
       },
     ]
   }
@@ -84,7 +84,7 @@ exports[`ActionBar component renders correctly for instagram 1`] = `
         "flexDirection": "row",
         "height": 30,
         "marginBottom": 7,
-        "paddingHorizontal": 12,
+        "paddingHorizontal": 9,
       },
     ]
   }
@@ -161,7 +161,7 @@ exports[`ActionBar component renders correctly for twitter 1`] = `
         "flexDirection": "row",
         "height": 30,
         "marginBottom": 7,
-        "paddingHorizontal": 12,
+        "paddingHorizontal": 9,
       },
     ]
   }

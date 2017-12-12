@@ -14,7 +14,7 @@ class HeartButton extends Component {
     const { eventId, setActiveEventId } = this.props;
 
     setActiveEventId(eventId);
-    navigation.navigate('WebView');
+    navigation.navigate('WebView', { headerTitle: 'instagram' });
   }
   
   render() {
