@@ -2,59 +2,52 @@
 
 exports[`FavoriteTweetButton component renders correctly 1`] = `
 <View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
       "alignItems": "center",
       "flexDirection": "row",
       "height": 30,
       "marginRight": 7,
+      "opacity": 1,
     }
   }
+  testID={undefined}
+  tvParallaxProperties={undefined}
 >
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    collapsable={undefined}
-    hitSlop={undefined}
-    isTVSelectable={true}
-    nativeID={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
+  <Image
+    source={
       Object {
-        "opacity": 1,
+        "uri": "feed_rn_retweet_button",
       }
     }
-    testID={undefined}
-    tvParallaxProperties={undefined}
-  >
-    <Image
-      source={
+    style={
+      Array [
         Object {
-          "uri": "feed_rn_retweet_button",
-        }
-      }
-      style={
-        Array [
-          Object {
-            "height": 30,
-            "marginRight": 1,
-            "width": 30,
-          },
-          Object {
-            "tintColor": "#FFFFFF",
-          },
-        ]
-      }
-    />
-  </View>
+          "height": 30,
+          "marginRight": 1,
+          "width": 30,
+        },
+        Object {
+          "tintColor": "#FFFFFF",
+        },
+      ]
+    }
+  />
   <Text
     accessible={true}
     allowFontScaling={true}

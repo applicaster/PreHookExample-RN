@@ -16,12 +16,10 @@ class ActionButton extends Component {
     const textColorStyle = { color: `${textColor}99` };
 
     return (
-      <View style={styles.actionButton}>
-        <TouchableOpacity onPress={onPress}>
-          <Image source={{ uri: imageUri }} style={[styles.icon, tintColorStyle]} />
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.actionButton} onPress={onPress}>
+        <Image source={{ uri: imageUri }} style={[styles.icon, tintColorStyle]} />
         <Text style={[styles.label, textColorStyle]} >{label}</Text>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
