@@ -11,10 +11,10 @@ class CommentButton extends Component {
 
   navigateToWebview() {
     const { navigation } = this.context;
-    const { eventId, setActiveEventId } = this.props;
+    const { eventId, setActiveEventId, socialNetwork } = this.props;
 
     setActiveEventId(eventId);
-    navigation.navigate('WebView');
+    navigation.navigate('WebView', { headerTitle: socialNetwork });
   }
   
   render() {
@@ -33,6 +33,7 @@ CommentButton.propTypes = {
   eventId: PropTypes.string,
   commentsCount: PropTypes.number,
   setActiveEventId: PropTypes.func,
+  socialNetwork: PropTypes.string,
 };
 
 CommentButton.contextTypes = {

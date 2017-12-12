@@ -13,7 +13,7 @@ class FacebookActionButtons extends Component {
     return (
       <View style={[styles.facebookActionButtons]}>
         <LikeButton key={'likes'} eventId={eventId} likesCount={likesCount} />
-        <CommentButton key={'comments'} eventId={eventId} commentsCount={commentsCount} />
+        <CommentButton key={'comments'} eventId={eventId} commentsCount={commentsCount} socialNetwork={'Facebook'} />
       </View>
     );
   }

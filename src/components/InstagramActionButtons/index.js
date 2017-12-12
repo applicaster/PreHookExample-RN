@@ -13,7 +13,7 @@ class InstagramActionButtons extends Component {
     return (
       <View style={[styles.facebookActionButtons]}>
         <HeartButton key={'likes'} eventId={eventId} likesCount={likesCount} />
-        <CommentButton key={'comments'} eventId={eventId} commentsCount={commentsCount} />
+        <CommentButton key={'comments'} eventId={eventId} commentsCount={commentsCount} socialNetwork={'instagram'} />
       </View>
     );
   }

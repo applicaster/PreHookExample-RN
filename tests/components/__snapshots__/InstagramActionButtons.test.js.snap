@@ -18,6 +18,7 @@ exports[`InstagramActionButtons component renders correctly 1`] = `
   <CommentButton
     commentsCount={undefined}
     eventId={undefined}
+    socialNetwork="instagram"
   />
 </View>
 `;

@@ -7,10 +7,10 @@ import {
 import BackButton from '../BackButton';
 
 class WebViewScreen extends Component {
-  static navigationOptions = ({ navigation, screenProps }) => ({
-    ...screenProps,
-    headerTitle: "instagram",
-    headerLeft: <BackButton onPress={() => {navigation.goBack(); }} />,
+  static navigationOptions = ({ navigation, screenProps, params }) => ({
+      ...screenProps,
+      headerTitle: navigation.state.params.headerTitle,
+      headerLeft: <BackButton onPress={() => {navigation.goBack(); }} />,
   });
 
   constructor(props) {
