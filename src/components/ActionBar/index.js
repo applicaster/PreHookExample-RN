@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import EventDetailCount from '../EventDetailCount';
 import ShareButton from '../ShareButton';
 import FacebookActionButtons from '../FacebookActionButtons';
+import InstagramActionButtons from '../InstagramActionButtons';
 import TwitterActionButtons from '../TwitterActionButtons';
 import { styles } from './style';
 
@@ -15,11 +15,14 @@ class ActionBar extends Component {
   }
   
   renderInstagramBar() {
-    const { likesCount, commentsCount, eventId, eventOriginUrl } = this.props;
+    const { likesCount, commentsCount, eventId } = this.props;
     return (
       <View style={[styles.buttonBar]}>
-        <EventDetailCount key={'likes'} eventOriginUrl={eventOriginUrl} openOriginUrl eventId={eventId} count={likesCount} label={'Likes'} />
-        <EventDetailCount key={'comments'} eventOriginUrl={eventOriginUrl} openOriginUrl eventId={eventId} count={commentsCount} label={'Comments'} />
+        <InstagramActionButtons
+          eventId={eventId}
+          commentsCount={commentsCount}
+          likesCount={likesCount}
+        />
         {this.renderShareButton()}
       </View>
     );
@@ -70,7 +73,6 @@ class ActionBar extends Component {
 ActionBar.propTypes = {
   commentsCount: PropTypes.number,
   eventId: PropTypes.string,
-  eventOriginUrl: PropTypes.string,
   socialNetwork: PropTypes.string,
   likesCount: PropTypes.number,
   textToShare: PropTypes.string,

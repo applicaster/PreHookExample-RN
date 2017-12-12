@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import FacebookActionButtons from '../../src/components/FacebookActionButtons';
 
 jest.mock('../../src/components/CommentButton', () => 'CommentButton');
-jest.mock('../../src/components/EventDetailCount', () => 'EventDetailCount');
+jest.mock('../../src/components/LikeButton', () => 'LikeButton');
 
 describe('FacebookActionButtons', () => {
   test('component renders correctly', () => {

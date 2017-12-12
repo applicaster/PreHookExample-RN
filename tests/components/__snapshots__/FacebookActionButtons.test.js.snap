@@ -11,10 +11,9 @@ exports[`FacebookActionButtons component renders correctly 1`] = `
     ]
   }
 >
-  <EventDetailCount
-    count={undefined}
+  <LikeButton
     eventId={undefined}
-    label="Likes"
+    likesCount={undefined}
   />
   <CommentButton
     commentsCount={undefined}
