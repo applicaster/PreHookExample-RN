@@ -21,10 +21,10 @@ describe('app reducer', () => {
       const newState = appReducer();
 
       expect(newState.toJS()).to.deep.equal({
-        environment: null,
+        environment: 'production',
         accountId: null,
         timelineId: null,
-        timezone: null,
+        timezone: 3600,
         isModalVisible: false,
         activeModalName: null,
         activeEventId: null,
