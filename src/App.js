@@ -27,17 +27,24 @@ class App extends Component {
   }
   
   render() {
-    const { extra_props } = this.props;
-    const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive, environment = 'development' } = extra_props;
-    const { backgroundColor, mainColor, textColor } = this.getAppStyles();
-
+    const { extra_props: initialAppProps } = this.props;
+    const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive } = initialAppProps;
+    let { environment } = initialAppProps;
+    if (environment && environment !== 'production') environment = 'development';
+    
     const initialState = {
-      app: Map(Object.assign(appInitialState.toJS(), { accountId, timelineId, environment })),
+      app: Map(Object.assign(appInitialState.toJS(), {
+        accountId,
+        timelineId,
+        environment,
+      })),
       events: eventsInitialState,
     };
+    
+    const { backgroundColor, mainColor, textColor } = this.getAppStyles();
 
     return (
-      <Provider store={store(initialState, 'production')}>
+      <Provider store={store(initialState, environment = 'production')}>
         <AppNavigator
           headerTitle={feedTitle}
           headerBackgroundColor={backgroundColor}
@@ -54,10 +61,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  feedTitle: PropTypes.string,
-  isLive: PropTypes.bool,
-  liveUrl: PropTypes.string,
-  hasLive: PropTypes.bool,
+  extra_props: PropTypes.object,
   starlightStyles: PropTypes.object,
 };
 
