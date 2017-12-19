@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
+import { Map } from 'immutable';
 import store from './store';
 import AppNavigator from './AppNavigator';
 
@@ -24,8 +25,33 @@ class App extends Component {
   }
   
   render() {
-    const { feedTitle, isLive, liveUrl, hasLive } = this.props;
+    const { extra_props } = this.props;
+    const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive, environment = 'development' } = extra_props;
     const { backgroundColor, mainColor, textColor } = this.getAppStyles();
+
+    const appInitialState = {
+      environment,
+      accountId,
+      timelineId,
+      timezone: 3600,
+      isModalVisible: false,
+      activeModalName: null,
+      activeEventId: null,
+      eventIdForActiveAudio: null,
+      facebookPageId: null,
+      twitterScreenName: null,
+    };
+
+    const eventsInitialState = {
+      loading: false,
+      socialEvents: [],
+      favoriteTweets: null,
+    };
+
+    const initialState = {
+      app: Map(appInitialState),
+      events: Map(eventsInitialState),
+    };
 
     return (
       <Provider store={store(undefined, 'production')}>
