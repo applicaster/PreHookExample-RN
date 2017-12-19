@@ -7,13 +7,13 @@ import {
 } from '../actions';
 import { actionCreator } from '../actions/actionHelpers';
 
-const appInitialState = Map({
+export const eventsInitialState = Map({
   loading: false,
   socialEvents: [],
   favoriteTweets: null,
 });
 
-export default (state = appInitialState, action = actionCreator()) => {
+export default (state = eventsInitialState, action = actionCreator()) => {
   const { type, payload } = action;
   
   switch (type) {

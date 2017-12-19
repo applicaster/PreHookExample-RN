@@ -11,7 +11,7 @@ import {
 } from '../actions';
 import { actionCreator } from '../actions/actionHelpers';
 
-const appInitialState = Map({
+export const appInitialState = Map({
   environment: null,
   accountId: null,
   timelineId: null,
