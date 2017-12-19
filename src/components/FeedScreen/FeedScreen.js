@@ -38,10 +38,6 @@ class FeedScreen extends Component {
   }
 
   componentWillMount() {
-    this.props.setAccountId('59b7a7caf422c00009d974f0');
-    this.props.setTimelineId('59b7cf76044ab9298c61afa3');
-    this.props.setTimezone('3600');
-    this.props.setEnvironment('production');
     this.props.fetchSocialEvents();
     
     const TWITTER_UPDATE_FAVORITES = 'twitter:updateFavorites';
@@ -98,10 +94,6 @@ FeedScreen.propTypes = {
   isFacebookAvailable: PropTypes.bool,
   isTwitterAvailable: PropTypes.bool,
   loading: PropTypes.bool,
-  setAccountId: PropTypes.func,
-  setTimelineId: PropTypes.func,
-  setTimezone: PropTypes.func,
-  setEnvironment: PropTypes.func,
   socialEvents: PropTypes.array,
   navigation: PropTypes.object,
   updateFavoriteTweets: PropTypes.func,
