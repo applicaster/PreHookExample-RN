@@ -12,10 +12,10 @@ import {
 import { actionCreator } from '../actions/actionHelpers';
 
 export const appInitialState = Map({
-  environment: null,
+  environment: 'production',
   accountId: null,
   timelineId: null,
-  timezone: null,
+  timezone: 3600,
   isModalVisible: false,
   activeModalName: null,
   activeEventId: null,
