@@ -9,20 +9,22 @@ import AppNavigator from './AppNavigator';
 
 class App extends Component {
   getChildContext() {
-    const appStyles = this.getAppStyles();
+    const appStyles = this.getColors();
     return {
       ...appStyles,
     };
   }
 
-  getAppStyles() {
-    const { starlightStyles = {} } = this.props;
+  getColors() {
+    const { extra_props: initialAppProps } = this.props;
+    const { colors = {} } = initialAppProps;
+
     return {
-      mainColor: starlightStyles.main_color || '#00D4ED', // '#7ED321'
-      secondaryColor: starlightStyles.secondary_color || '#FFFFFF',
-      textColor: starlightStyles.text_color || '#FFFFFF',
-      secondaryTextColor: starlightStyles.text_color || '#00D4ED', // '#83F901'
-      backgroundColor: starlightStyles.background_color || '#505050', // '#272727'
+      mainColor: (colors.main_color) ? `#${colors.main_color.substring(2, 8)}` : '#00D4ED', // '#7ED321'
+      secondaryColor: (colors.secondary_color) ? `#${colors.secondary_color.substring(2, 8)}` : '#FFFFFF',
+      textColor: (colors.text_color) ? `#${colors.text_color.substring(2, 8)}` : '#FFFFFF',
+      secondaryTextColor: (colors.secondary_color) ? `#${colors.text_color.substring(2, 8)}` : '#00D4ED', // '#83F901'
+      backgroundColor: (colors.background_color) ? `#${colors.background_color.substring(2, 8)}` : '#505050', // '#272727'
     };
   }
   
@@ -41,7 +43,7 @@ class App extends Component {
       events: eventsInitialState,
     };
     
-    const { backgroundColor, mainColor, textColor } = this.getAppStyles();
+    const { backgroundColor, mainColor, textColor } = this.getColors();
 
     return (
       <Provider store={store(initialState, environment = 'production')}>
