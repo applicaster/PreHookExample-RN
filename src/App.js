@@ -10,23 +10,23 @@ import AppNavigator from './AppNavigator';
 
 class App extends Component {
   getChildContext() {
-    const appStyles = this.getColors();
+    const appStyles = this.colors;
     return {
       ...appStyles,
     };
   }
 
-  getColors() {
-    const { extra_props: initialAppProps } = this.props;
+  getColors(initialAppProps) {
     const { colors = {} } = initialAppProps;
-
-    return {
+    this.colors = {
       mainColor: (colors.main_color) ? `#${colors.main_color.substring(2, 8)}` : '#00D4ED',
       secondaryColor: (colors.secondary_color) ? `#${colors.secondary_color.substring(2, 8)}` : '#FFFFFF',
       textColor: (colors.text_color) ? `#${colors.text_color.substring(2, 8)}` : '#FFFFFF',
       secondaryTextColor: (colors.secondary_color) ? `#${colors.text_color.substring(2, 8)}` : '#00D4ED',
       backgroundColor: (colors.background_color) ? `#${colors.background_color.substring(2, 8)}` : '#505050',
     };
+
+    return this.colors;
   }
   
   render() {
@@ -46,7 +46,7 @@ class App extends Component {
       events: eventsInitialState,
     };
     
-    const { backgroundColor, mainColor, textColor } = this.getColors();
+    const { backgroundColor, mainColor, textColor } = this.colors || this.getColors(initialAppProps);
 
     return (
       <Provider store={store(initialState, environment = 'production')}>
