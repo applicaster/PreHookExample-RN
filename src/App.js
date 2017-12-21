@@ -21,11 +21,11 @@ class App extends Component {
     const { colors = {} } = initialAppProps;
 
     return {
-      mainColor: (colors.main_color) ? `#${colors.main_color.substring(2, 8)}` : '#00D4ED', // '#7ED321'
+      mainColor: (colors.main_color) ? `#${colors.main_color.substring(2, 8)}` : '#00D4ED',
       secondaryColor: (colors.secondary_color) ? `#${colors.secondary_color.substring(2, 8)}` : '#FFFFFF',
       textColor: (colors.text_color) ? `#${colors.text_color.substring(2, 8)}` : '#FFFFFF',
-      secondaryTextColor: (colors.secondary_color) ? `#${colors.text_color.substring(2, 8)}` : '#00D4ED', // '#83F901'
-      backgroundColor: (colors.background_color) ? `#${colors.background_color.substring(2, 8)}` : '#505050', // '#272727'
+      secondaryTextColor: (colors.secondary_color) ? `#${colors.text_color.substring(2, 8)}` : '#00D4ED',
+      backgroundColor: (colors.background_color) ? `#${colors.background_color.substring(2, 8)}` : '#505050',
     };
   }
   
