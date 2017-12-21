@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { Map } from 'immutable';
@@ -29,7 +30,9 @@ class App extends Component {
   }
   
   render() {
-    const { extra_props: initialAppProps } = this.props;
+    let { extra_props: initialAppProps } = this.props;
+    if (Platform.OS === 'android') initialAppProps = JSON.parse(initialAppProps);
+
     const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive } = initialAppProps;
     let { environment } = initialAppProps;
     if (environment && environment !== 'production') environment = 'development';
@@ -63,8 +66,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  extra_props: PropTypes.object,
-  starlightStyles: PropTypes.object,
+  extra_props: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 App.childContextTypes = {
