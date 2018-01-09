@@ -56,6 +56,6 @@ exports[`EventTimestamp component renders correctly for a timestamp within a yea
     ]
   }
 >
-  December 4
+  December 4, 2016
 </Text>
 `;
