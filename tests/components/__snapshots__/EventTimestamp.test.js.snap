@@ -16,7 +16,7 @@ exports[`EventTimestamp component renders correctly for a timestamp over a year 
     ]
   }
 >
-  December 4, 2015
+  December 4, 2016
 </Text>
 `;
 
@@ -56,6 +56,6 @@ exports[`EventTimestamp component renders correctly for a timestamp within a yea
     ]
   }
 >
-  December 4, 2016
+  December 4
 </Text>
 `;
