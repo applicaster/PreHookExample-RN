@@ -68,7 +68,6 @@ exports[`CommentsScreen component renders correctly with comments 1`] = `
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
-    onViewableItemsChanged={undefined}
     renderItem={[Function]}
     scrollEventThrottle={50}
     stickyHeaderIndices={Array []}
@@ -80,6 +79,7 @@ exports[`CommentsScreen component renders correctly with comments 1`] = `
       ]
     }
     updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
   >
     <View>
@@ -196,7 +196,6 @@ exports[`CommentsScreen component renders correctly with no comments 1`] = `
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
-    onViewableItemsChanged={undefined}
     renderItem={[Function]}
     scrollEventThrottle={50}
     stickyHeaderIndices={Array []}
@@ -208,6 +207,7 @@ exports[`CommentsScreen component renders correctly with no comments 1`] = `
       ]
     }
     updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
   >
     <View>

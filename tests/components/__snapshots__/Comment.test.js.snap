@@ -4,7 +4,6 @@ exports[`Comment component renders correctly with hashtags and usertags 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -25,7 +24,6 @@ exports[`Comment component renders correctly with hashtags and usertags 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -39,7 +37,6 @@ exports[`Comment component renders correctly with hashtags and usertags 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -53,7 +50,6 @@ exports[`Comment component renders correctly with hashtags and usertags 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -71,7 +67,6 @@ exports[`Comment component renders correctly with plain text 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [

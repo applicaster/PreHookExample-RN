@@ -4,7 +4,6 @@ exports[`EventTimestamp component renders correctly for a timestamp over a year 
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -24,7 +23,6 @@ exports[`EventTimestamp component renders correctly for a timestamp within a wee
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -44,7 +42,6 @@ exports[`EventTimestamp component renders correctly for a timestamp within a yea
 <Text
   accessible={true}
   allowFontScaling={true}
-  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [

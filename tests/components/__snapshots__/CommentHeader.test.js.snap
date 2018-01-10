@@ -45,7 +45,6 @@ exports[`CommentHeader component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         numberOfLines={1}
         style={
@@ -65,7 +64,6 @@ exports[`CommentHeader component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         numberOfLines={1}
         style={
@@ -89,7 +87,6 @@ exports[`CommentHeader component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -155,7 +152,6 @@ exports[`CommentHeader component renders correctly for Facebook comment 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         numberOfLines={1}
         style={
@@ -175,7 +171,6 @@ exports[`CommentHeader component renders correctly for Facebook comment 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         numberOfLines={1}
         style={
@@ -199,7 +194,6 @@ exports[`CommentHeader component renders correctly for Facebook comment 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -265,7 +259,6 @@ exports[`CommentHeader component renders correctly for Twitter or Instagram comm
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         numberOfLines={1}
         style={
@@ -285,7 +278,6 @@ exports[`CommentHeader component renders correctly for Twitter or Instagram comm
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         numberOfLines={1}
         style={
@@ -309,7 +301,6 @@ exports[`CommentHeader component renders correctly for Twitter or Instagram comm
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
