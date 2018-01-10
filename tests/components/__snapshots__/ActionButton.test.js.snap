@@ -51,6 +51,7 @@ exports[`ActionButton component renders correctly 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -119,6 +120,7 @@ exports[`ActionButton component renders correctly when button is selected 1`] = 
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [

@@ -4,6 +4,7 @@ exports[`EventCaption component renders correctly 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
+  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -28,6 +29,7 @@ exports[`EventCaption component renders correctly with complex caption with user
 <Text
   accessible={true}
   allowFontScaling={true}
+  disabled={false}
   ellipsizeMode="tail"
   style={
     Array [
@@ -48,6 +50,7 @@ exports[`EventCaption component renders correctly with complex caption with user
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -61,6 +64,7 @@ exports[`EventCaption component renders correctly with complex caption with user
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -74,6 +78,7 @@ exports[`EventCaption component renders correctly with complex caption with user
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -87,6 +92,7 @@ exports[`EventCaption component renders correctly with complex caption with user
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Object {
@@ -104,6 +110,7 @@ exports[`EventCaption component renders correctly with no caption 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
+  disabled={false}
   ellipsizeMode="tail"
 />
 `;

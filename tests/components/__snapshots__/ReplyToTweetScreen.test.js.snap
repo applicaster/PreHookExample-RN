@@ -73,6 +73,7 @@ exports[`ReplyToTweetScreen component renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -119,6 +120,7 @@ exports[`ReplyToTweetScreen component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -137,7 +139,6 @@ exports[`ReplyToTweetScreen component renders correctly 1`] = `
     </View>
   </View>
   <TextInput
-    allowFontScaling={true}
     autoFocus={true}
     multiline={true}
     onChangeText={[Function]}
@@ -213,6 +214,7 @@ exports[`ReplyToTweetScreen component renders correctly 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          disabled={false}
           ellipsizeMode="tail"
           style={
             Array [

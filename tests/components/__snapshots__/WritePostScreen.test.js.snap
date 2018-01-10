@@ -73,6 +73,7 @@ exports[`WritePostScreen component renders correctly 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
+      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -119,6 +120,7 @@ exports[`WritePostScreen component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -137,7 +139,6 @@ exports[`WritePostScreen component renders correctly 1`] = `
     </View>
   </View>
   <TextInput
-    allowFontScaling={true}
     autoFocus={true}
     multiline={true}
     onChangeText={[Function]}
@@ -216,6 +217,7 @@ exports[`WritePostScreen component renders correctly 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
+          disabled={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -309,6 +311,7 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
     <Text
       accessible={true}
       allowFontScaling={true}
+      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -355,6 +358,7 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -373,7 +377,6 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
     </View>
   </View>
   <TextInput
-    allowFontScaling={true}
     autoFocus={true}
     multiline={true}
     onChangeText={[Function]}
@@ -452,6 +455,7 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
         <Text
           accessible={true}
           allowFontScaling={true}
+          disabled={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -545,6 +549,7 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
     <Text
       accessible={true}
       allowFontScaling={true}
+      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -591,6 +596,7 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -609,7 +615,6 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
     </View>
   </View>
   <TextInput
-    allowFontScaling={true}
     autoFocus={true}
     multiline={true}
     onChangeText={[Function]}
@@ -688,6 +693,7 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
         <Text
           accessible={true}
           allowFontScaling={true}
+          disabled={false}
           ellipsizeMode="tail"
           style={
             Array [

@@ -42,6 +42,7 @@ exports[`FeedScreen component renders correctly while loading 1`] = `
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
+    onViewableItemsChanged={undefined}
     refreshControl={
       <RefreshControlMock
         onRefresh={[Function]}
@@ -64,7 +65,6 @@ exports[`FeedScreen component renders correctly while loading 1`] = `
       ]
     }
     updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
   >
     <RCTRefreshControl />
@@ -180,6 +180,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
+    onViewableItemsChanged={undefined}
     refreshControl={
       <RefreshControlMock
         onRefresh={[Function]}
@@ -202,7 +203,6 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
       ]
     }
     updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
   >
     <RCTRefreshControl />
@@ -397,6 +397,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
+    onViewableItemsChanged={undefined}
     refreshControl={
       <RefreshControlMock
         onRefresh={[Function]}
@@ -419,7 +420,6 @@ exports[`FeedScreen component renders correctly with events 1`] = `
       ]
     }
     updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
   >
     <RCTRefreshControl />
@@ -614,6 +614,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
+    onViewableItemsChanged={undefined}
     refreshControl={
       <RefreshControlMock
         onRefresh={[Function]}
@@ -636,7 +637,6 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
       ]
     }
     updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
   >
     <RCTRefreshControl />
@@ -831,6 +831,7 @@ exports[`FeedScreen component renders correctly with no write post button 1`] = 
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
+    onViewableItemsChanged={undefined}
     refreshControl={
       <RefreshControlMock
         onRefresh={[Function]}
@@ -853,7 +854,6 @@ exports[`FeedScreen component renders correctly with no write post button 1`] = 
       ]
     }
     updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
   >
     <RCTRefreshControl />
@@ -1048,6 +1048,7 @@ exports[`FeedScreen component renders correctly with write post button due to fa
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
+    onViewableItemsChanged={undefined}
     refreshControl={
       <RefreshControlMock
         onRefresh={[Function]}
@@ -1070,7 +1071,6 @@ exports[`FeedScreen component renders correctly with write post button due to fa
       ]
     }
     updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
   >
     <RCTRefreshControl />
@@ -1265,6 +1265,7 @@ exports[`FeedScreen component renders correctly with write post button due to tw
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
+    onViewableItemsChanged={undefined}
     refreshControl={
       <RefreshControlMock
         onRefresh={[Function]}
@@ -1287,7 +1288,6 @@ exports[`FeedScreen component renders correctly with write post button due to tw
       ]
     }
     updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
   >
     <RCTRefreshControl />
@@ -1419,6 +1419,7 @@ exports[`FeedScreen component renders correctly without events 1`] = `
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
+    onViewableItemsChanged={undefined}
     refreshControl={
       <RefreshControlMock
         onRefresh={[Function]}
@@ -1441,7 +1442,6 @@ exports[`FeedScreen component renders correctly without events 1`] = `
       ]
     }
     updateCellsBatchingPeriod={50}
-    viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
   >
     <RCTRefreshControl />

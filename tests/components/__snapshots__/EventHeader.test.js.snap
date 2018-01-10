@@ -46,6 +46,7 @@ exports[`EventHeader component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -64,6 +65,7 @@ exports[`EventHeader component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -86,6 +88,7 @@ exports[`EventHeader component renders correctly 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -189,6 +192,7 @@ exports[`EventHeader component renders correctly for Facebook event 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -211,6 +215,7 @@ exports[`EventHeader component renders correctly for Facebook event 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -312,6 +317,7 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -330,6 +336,7 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -352,6 +359,7 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -453,6 +461,7 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -471,6 +480,7 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -493,6 +503,7 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -594,6 +605,7 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -612,6 +624,7 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
@@ -634,6 +647,7 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
+        disabled={false}
         ellipsizeMode="tail"
         style={
           Array [
