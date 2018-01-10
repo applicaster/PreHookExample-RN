@@ -5,6 +5,10 @@ export const FETCH_SOCIAL_EVENTS_START = 'FETCH_SOCIAL_EVENTS_START';
 export const FETCH_SOCIAL_EVENTS_DONE = 'FETCH_SOCIAL_EVENTS_DONE';
 export const FETCH_SOCIAL_EVENTS_FAILED = 'FETCH_SOCIAL_EVENTS_FAILED';
 
+export const FETCH_FAVORITE_TWEETS_DONE = 'FETCH_FAVORITE_TWEETS_DONE';
+export const FETCH_FAVORITE_TWEETS_FAILED = 'FETCH_FAVORITE_TWEETS_FAILED';
+export const UPDATE_FAVORITE_TWEETS = 'UPDATE_FAVORITE_TWEETS';
+
 export const SET_SOCIAL_METADATA = 'SET_SOCIAL_METADATA';
 export const SET_ACCOUNT_ID = 'SET_ACCOUNT_ID';
 export const SET_TIMELINE_ID = 'SET_TIMELINE_ID';
@@ -30,3 +34,7 @@ export const toggleModal = modalParams => actionCreator(TOGGLE_MODAL, modalParam
 
 export const setEventIdForActiveAudio = eventId => actionCreator(SET_EVENT_ID_FOR_ACTIVE_AUDIO, { eventId });
 export const setActiveEventId = eventId => actionCreator(SET_ACTIVE_EVENT_ID, { eventId });
+
+export const fetchFavoriteTweetsDone = favoriteTweets => actionCreator(FETCH_FAVORITE_TWEETS_DONE, favoriteTweets);
+export const fetchFavoriteTweetsFailed = error => actionCreator(FETCH_FAVORITE_TWEETS_FAILED, { error });
+export const updateFavoriteTweets = () => actionCreator(UPDATE_FAVORITE_TWEETS);

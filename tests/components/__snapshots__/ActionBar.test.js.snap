@@ -1,5 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ActionBar component renders correctly for facebook 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 30,
+        "marginBottom": 7,
+        "paddingHorizontal": 9,
+      },
+    ]
+  }
+>
+  <FeedRNUtils
+    commentsCount={3}
+    eventId={undefined}
+    likesCount={1}
+  />
+  <View
+    style={
+      Object {
+        "bottom": 3,
+        "position": "absolute",
+        "right": 7,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Image
+        source={
+          Object {
+            "uri": "feed_rn_share_button",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 30,
+              "width": 30,
+            },
+            Object {
+              "tintColor": "rgba(255,255,255, 0.60)",
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
 exports[`ActionBar component renders correctly for instagram 1`] = `
 <View
   style={
@@ -9,24 +84,15 @@ exports[`ActionBar component renders correctly for instagram 1`] = `
         "flexDirection": "row",
         "height": 30,
         "marginBottom": 7,
-        "paddingHorizontal": 12,
+        "paddingHorizontal": 9,
       },
     ]
   }
 >
-  <EventDetailCount
-    count={1}
+  <FeedRNUtils
+    commentsCount={3}
     eventId={undefined}
-    eventOriginUrl={undefined}
-    label="Likes"
-    openOriginUrl={true}
-  />
-  <EventDetailCount
-    count={3}
-    eventId={undefined}
-    eventOriginUrl={undefined}
-    label="Comments"
-    openOriginUrl={true}
+    likesCount={1}
   />
   <View
     style={
@@ -85,3 +151,78 @@ exports[`ActionBar component renders correctly for instagram 1`] = `
 `;
 
 exports[`ActionBar component renders correctly for no social network 1`] = `null`;
+
+exports[`ActionBar component renders correctly for twitter 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 30,
+        "marginBottom": 7,
+        "paddingHorizontal": 9,
+      },
+    ]
+  }
+>
+  <FeedRNUtils
+    commentsCount={3}
+    eventId={undefined}
+    likesCount={1}
+  />
+  <View
+    style={
+      Object {
+        "bottom": 3,
+        "position": "absolute",
+        "right": 7,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      collapsable={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Image
+        source={
+          Object {
+            "uri": "feed_rn_share_button",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 30,
+              "width": 30,
+            },
+            Object {
+              "tintColor": "rgba(255,255,255, 0.60)",
+            },
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

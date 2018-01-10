@@ -3,17 +3,19 @@ import { bindActionCreators } from 'redux';
 
 import { toggleModal } from '../../actions';
 import {
-  getWritePostModalVisibility,
+  getModalVisibility,
+  getActiveModalName,
 } from '../../selectors';
 
-import WritePostModal from './WritePostModal';
+import ModalScreen from './ModalScreen';
 
 const mapStateToProps = state => ({
-  isWritePostModalVisible: getWritePostModalVisibility(state),
+  isVisible: getModalVisibility(state),
+  modalName: getActiveModalName(state),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   toggleModal,
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(WritePostModal);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalScreen);

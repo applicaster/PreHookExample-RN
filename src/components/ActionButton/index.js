@@ -4,7 +4,6 @@ import {
   Image,
   Text,
   TouchableOpacity,
-  View,
 } from 'react-native';
 import { styles } from './style';
 
@@ -16,18 +15,16 @@ class ActionButton extends Component {
     const textColorStyle = { color: `${textColor}99` };
 
     return (
-      <View style={styles.actionButton}>
-        <TouchableOpacity onPress={onPress}>
-          <Image source={{ uri: imageUri }} style={[styles.icon, tintColorStyle]} />
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.actionButton} onPress={onPress}>
+        <Image source={{ uri: imageUri }} style={[styles.icon, tintColorStyle]} />
         <Text style={[styles.label, textColorStyle]} >{label}</Text>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
 
 ActionButton.propTypes = {
-  label: PropTypes.number,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   imageUri: PropTypes.string,
   onPress: PropTypes.func,
   selected: PropTypes.bool,

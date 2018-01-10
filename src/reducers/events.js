@@ -3,15 +3,17 @@ import {
   FETCH_SOCIAL_EVENTS_START,
   FETCH_SOCIAL_EVENTS_DONE,
   FETCH_SOCIAL_EVENTS_FAILED,
+  FETCH_FAVORITE_TWEETS_DONE,
 } from '../actions';
 import { actionCreator } from '../actions/actionHelpers';
 
-const appInitialState = Map({
+export const eventsInitialState = Map({
   loading: false,
   socialEvents: [],
+  favoriteTweets: null,
 });
 
-export default (state = appInitialState, action = actionCreator()) => {
+export default (state = eventsInitialState, action = actionCreator()) => {
   const { type, payload } = action;
   
   switch (type) {
@@ -26,6 +28,15 @@ export default (state = appInitialState, action = actionCreator()) => {
       return state
         .set('loading', false)
         .set('socialEvents', events);
+
+    case FETCH_FAVORITE_TWEETS_DONE:
+      const favoriteTweets = payload || [];
+      const favoriteTweetsById = favoriteTweets.reduce((obj, v) => {
+        obj[v.toString()] = v.toString();
+        return obj;
+      }, {});
+      
+      return state.set('favoriteTweets', favoriteTweetsById);
 
     default:
       return state;

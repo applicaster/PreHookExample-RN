@@ -15,7 +15,7 @@ class AppNavigator extends Component {
     return {
       headerBackTitle: null,
       headerTintColor: `${headerTintColor}99`,
-      headerTitle: headerTitle || 'Arnau 360', // 'Feed Title'
+      headerTitle: headerTitle || 'Feed Title',
       headerRight: hasLive && <LiveButton liveUrl={liveUrl} isLive={isLive} />,
       headerStyle: {
         backgroundColor: headerBackgroundColor,

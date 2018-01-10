@@ -5,7 +5,7 @@ import { event, comment } from './testDataUtils';
 import CommentsScreen from '../../src/components/CommentsScreen/CommentsScreen';
 
 jest.mock('../../src/components/EventContainer', () => 'EventContainer');
-jest.mock('../../src/components/MediaDetailsModal', () => 'MediaDetailsModal');
+jest.mock('../../src/components/ModalScreen', () => 'ModalScreen');
 
 const props = () => ({
   event: event('id'),

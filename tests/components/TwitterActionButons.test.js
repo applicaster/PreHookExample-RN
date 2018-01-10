@@ -4,6 +4,8 @@ import renderer from 'react-test-renderer';
 import TwitterActionButtons from '../../src/components/TwitterActionButtons';
 
 jest.mock('../../src/components/EventDetailCount', () => 'EventDetailCount');
+jest.mock('../../src/components/ReplyToTweetButton', () => 'ReplyToTweetButton');
+jest.mock('../../src/components/FavoriteTweetButton', () => 'FavoriteTweetButton');
 jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');
 
 describe('TwitterActionButtons', () => {

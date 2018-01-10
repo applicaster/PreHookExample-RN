@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import EventContainer from '../EventContainer';
 import CommentContainer from '../CommentContainer';
-import MediaDetailsModal from '../MediaDetailsModal';
+import ModalScreen from '../ModalScreen';
 import BackButton from '../BackButton';
 
 class CommentsScreen extends Component {
@@ -49,7 +49,7 @@ class CommentsScreen extends Component {
           onEndReached={() => {}}
           onEndReachedThreshold={2}
         />
-        <MediaDetailsModal />
+        <ModalScreen />
     </View>
         
     );

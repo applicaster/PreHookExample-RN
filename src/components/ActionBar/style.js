@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     height: 30,
-    paddingHorizontal: 12,
+    paddingHorizontal: 9,
     marginBottom: 7,
   },
   shareButtonContainer: {

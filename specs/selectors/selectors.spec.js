@@ -7,22 +7,24 @@ import {
   getEnvironment,
   getSocialEvents,
   getLoading,
-  getMediaModalVisibility,
   getActiveEventId,
   getActiveEvent,
   getEventIdForActiveAudio,
-  getWritePostModalVisibility,
   getFacebookPageId,
   getTwitterScreenName,
+  getModalVisibility,
+  getActiveModalName,
   isFacebookAvailable,
   isTwitterAvailable,
+  getActiveEventOriginUrl,
+  getFavoriteTweets,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
 
 describe('selectors', () => {
   let store;
-  const someEvent = { foo: 'bar', id: 'someId' };
+  const someEvent = { foo: 'bar', id: 'someId', originUrl: 'someOriginUrl' };
   beforeEach(() => {
     store = mockStore({
       app: Map({
@@ -30,9 +32,9 @@ describe('selectors', () => {
         timelineId: 'someTimelineId',
         timezone: 'someTimezone',
         environment: 'someEnvironment',
-        isMediaModalVisible: true,
-        isWritePostModalVisible: true,
         activeEventId: 'someId',
+        activeModalName: 'someModalName',
+        isModalVisible: true,
         eventIdForActiveAudio: 'someId',
         facebookPageId: 'someFacebookPageId',
         twitterScreenName: 'someTwitterScreenName',
@@ -40,6 +42,7 @@ describe('selectors', () => {
       events: Map({
         socialEvents: [someEvent, 2],
         loading: false,
+        favoriteTweets: { 1: 1, 2: 2 },
       }),
     });
   });
@@ -80,15 +83,15 @@ describe('selectors', () => {
     });
   });
 
-  describe('getMediaModalVisibility', () => {
-    it('should get isMediaModalVisible property from the app reducer state', () => {
-      expect(getMediaModalVisibility(store.getState())).to.equal(true);
+  describe('getModalVisibility', () => {
+    it('should get isModalVisible property from the app reducer state', () => {
+      expect(getModalVisibility(store.getState())).to.equal(true);
     });
   });
 
-  describe('getWritePostModalVisibility', () => {
-    it('should get isWritePostModalVisible property from the app reducer state', () => {
-      expect(getWritePostModalVisibility(store.getState())).to.equal(true);
+  describe('getActiveModalName', () => {
+    it('should get activeModalName property from the app reducer state', () => {
+      expect(getActiveModalName(store.getState())).to.equal('someModalName');
     });
   });
 
@@ -101,6 +104,12 @@ describe('selectors', () => {
   describe('getActiveEvent', () => {
     it('should get the event for the activeEventId property from the events reducer state', () => {
       expect(getActiveEvent(store.getState())).to.deep.equal(someEvent);
+    });
+  });
+
+  describe('getActiveEventOriginUrl', () => {
+    it('should get the originUrl for the activeEvent from the events reducer state', () => {
+      expect(getActiveEventOriginUrl(store.getState())).to.deep.equal('someOriginUrl');
     });
   });
 
@@ -131,6 +140,12 @@ describe('selectors', () => {
   describe('isTwitterAvailable', () => {
     it('should get boolean for twitter availability from the app reducer state', () => {
       expect(isTwitterAvailable(store.getState())).to.equal(true);
+    });
+  });
+
+  describe('getFavoriteTweets', () => {
+    it('should get favoriteTweets from event reducer state', () => {
+      expect(getFavoriteTweets(store.getState())).to.deep.equal({ 1: 1, 2: 2 });
     });
   });
 });

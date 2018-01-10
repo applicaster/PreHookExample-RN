@@ -2,11 +2,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
   fetchSocialEvents,
-  setAccountId,
-  setTimelineId,
-  setTimezone,
-  setEnvironment,
   toggleModal,
+  updateFavoriteTweets,
 } from '../../actions';
 
 import {
@@ -27,11 +24,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   fetchSocialEvents,
-  setAccountId,
-  setTimelineId,
-  setTimezone,
-  setEnvironment,
   toggleModal,
+  updateFavoriteTweets,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeedScreen);

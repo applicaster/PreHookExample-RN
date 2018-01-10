@@ -4,17 +4,18 @@ import {
   View,
  } from 'react-native';
 import { styles } from './style';
-import EventDetailCount from '../EventDetailCount';
 import RetweetButton from '../RetweetButton';
+import ReplyToTweetButton from '../ReplyToTweetButton';
+import FavoriteTweetButton from '../FavoriteTweetButton';
 
 class TwitterActionButtons extends Component {
   render() {
-    const { favoriteCount, replyCount, retweetCount, eventId } = this.props;
+    const { favoriteCount, retweetCount, eventId } = this.props;
     return (
       <View style={[styles.twitterActionButtons]}>
-        <EventDetailCount key={'favorites'} eventId={eventId} count={favoriteCount} label={'Favorites'} />
+        <ReplyToTweetButton key={'replyButton'} eventId={eventId} />
         <RetweetButton key={'retweetButton'} eventId={eventId} retweetCount={retweetCount} />
-        <EventDetailCount key={'replies'} eventId={eventId} count={replyCount} label={'Replies'} />
+        <FavoriteTweetButton key={'favoriteTweetButton'} eventId={eventId} favoriteCount={favoriteCount} />
       </View>
     );
   }
@@ -23,7 +24,6 @@ class TwitterActionButtons extends Component {
 TwitterActionButtons.propTypes = {
   eventId: PropTypes.string,
   favoriteCount: PropTypes.number,
-  replyCount: PropTypes.number,
   retweetCount: PropTypes.number,
 };
 

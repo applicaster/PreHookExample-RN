@@ -2,6 +2,7 @@ import {
     fetchSocialEvents,
     fetchSocialEventsDone,
     fetchSocialEventsFailed,
+    fetchFavoriteTweetsDone,
 } from '../../src/actions';
 import appReducer from '../../src/reducers/events';
 
@@ -30,6 +31,14 @@ describe('events reducer', () => {
       const newState = appReducer(initialState, fetchSocialEventsDone({ data: [1, 2], meta: {}, links: {} }));
 
       expect(newState.get('socialEvents')).to.deep.equal([1, 2]);
+    });
+  });
+
+  describe('fetchFavoriteTweetsDone is dispatched', () => {
+    it('should set favoriteTweets', () => {
+      const newState = appReducer(initialState, fetchFavoriteTweetsDone([1, 2]));
+
+      expect(newState.get('favoriteTweets')).to.deep.equal({ 1: '1', 2: '2' });
     });
   });
 

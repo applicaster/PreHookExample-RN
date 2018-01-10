@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FacebookActionButtons component renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <LikeButton
+    eventId={undefined}
+    likesCount={undefined}
+  />
+  <CommentButton
+    commentsCount={undefined}
+    eventId={undefined}
+    socialNetwork="Facebook"
+  />
+</View>
+`;

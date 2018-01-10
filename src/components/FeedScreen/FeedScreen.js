@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
+  DeviceEventEmitter,
   Dimensions,
   FlatList,
   Modal,
   View,
+  NativeEventEmitter,
   NativeModules,
   Platform,
 } from 'react-native';
+import FeedRNUtils from '@applicaster/feed-rn-utils';
 import EventContainer from '../EventContainer';
-import MediaDetailsModal from '../MediaDetailsModal';
-import WritePostModal from '../WritePostModal';
+import ModalScreen from '../ModalScreen';
 import CloseButton from '../CloseButton';
 import WritePostButton from '../WritePostButton';
 import { styles } from './style';
@@ -37,11 +39,28 @@ class FeedScreen extends Component {
   }
 
   componentWillMount() {
-    this.props.setAccountId('59b7a7caf422c00009d974f0');
-    this.props.setTimelineId('59b7cf76044ab9298c61afa3');
-    this.props.setTimezone('3600');
-    this.props.setEnvironment('production');
     this.props.fetchSocialEvents();
+    
+    const TWITTER_UPDATE_FAVORITES = 'twitter:updateFavorites';
+    const { updateFavoriteTweets } = this.props;
+    
+    if (Platform.OS === 'ios') {
+      const eventEmitter = new NativeEventEmitter(FeedRNUtils);
+      this.updateTwitterFavoritesSubscription = eventEmitter.addListener(TWITTER_UPDATE_FAVORITES, updateFavoriteTweets);
+    } else {
+      DeviceEventEmitter.addListener(TWITTER_UPDATE_FAVORITES, updateFavoriteTweets);
+    }
+  }
+
+  componentWillUnmount() {
+    const { updateFavoriteTweets } = this.props;
+    if (Platform.OS === 'ios') {
+      this.updateTwitterFavoritesSubscription.remove();
+      NativeEventEmitter.removeAllListeners();
+    } else {
+      DeviceEventEmitter.removeAllListeners();
+    }
+    
   }
 
   onRefresh() {
@@ -65,8 +84,7 @@ class FeedScreen extends Component {
           onEndReached={() => {}}
           onEndReachedThreshold={1}
         />
-        <MediaDetailsModal />
-        <WritePostModal />
+        <ModalScreen />
         <WritePostButton />
       </View>
     );
@@ -78,12 +96,9 @@ FeedScreen.propTypes = {
   isFacebookAvailable: PropTypes.bool,
   isTwitterAvailable: PropTypes.bool,
   loading: PropTypes.bool,
-  setAccountId: PropTypes.func,
-  setTimelineId: PropTypes.func,
-  setTimezone: PropTypes.func,
-  setEnvironment: PropTypes.func,
   socialEvents: PropTypes.array,
   navigation: PropTypes.object,
+  updateFavoriteTweets: PropTypes.func,
 };
 
 FeedScreen.contextTypes = {

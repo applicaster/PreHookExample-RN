@@ -21,12 +21,12 @@ describe('app reducer', () => {
       const newState = appReducer();
 
       expect(newState.toJS()).to.deep.equal({
-        environment: null,
+        environment: 'production',
         accountId: null,
         timelineId: null,
-        timezone: null,
-        isMediaModalVisible: false,
-        isWritePostModalVisible: false,
+        timezone: 3600,
+        isModalVisible: false,
+        activeModalName: null,
         activeEventId: null,
         eventIdForActiveAudio: null,
         facebookPageId: null,
@@ -76,30 +76,23 @@ describe('app reducer', () => {
   });
 
   describe('toggleModal is dispatched', () => {
-    it('should set isMediaModalVisible to true when it is false', () => {
-      const newState = appReducer(initialState, toggleModal({ modal: 'MediaModal' }));
+    it('should set isModalVisible to true when it is false', () => {
+      const newState = appReducer(initialState, toggleModal({ modal: 'someModalName' }));
 
-      expect(newState.get('isMediaModalVisible')).to.equal(true);
+      expect(newState.get('isModalVisible')).to.equal(true);
     });
 
-    it('should set isMediaModalVisible to false when it is true', () => {
-      const visibleModalState = initialState.set('isMediaModalVisible', true);
-      const newState = appReducer(visibleModalState, toggleModal({ modal: 'MediaModal' }));
+    it('should set isModalVisible to false when it is true', () => {
+      const visibleModalState = initialState.set('isModalVisible', true);
+      const newState = appReducer(visibleModalState, toggleModal({ modal: 'someModalName' }));
       
-      expect(newState.get('isMediaModalVisible')).to.equal(false);
+      expect(newState.get('isModalVisible')).to.equal(false);
     });
 
-    it('should set isWritePostModalVisible to true when it is false', () => {
-      const newState = appReducer(initialState, toggleModal({ modal: 'WritePostModal' }));
+    it('should set activeModalName to the modal name passed', () => {
+      const newState = appReducer(initialState, toggleModal({ modal: 'someModalName' }));
 
-      expect(newState.get('isWritePostModalVisible')).to.equal(true);
-    });
-
-    it('should set isWritePostModalVisible to false when it is true', () => {
-      const visibleModalState = initialState.set('isWritePostModalVisible', true);
-      const newState = appReducer(visibleModalState, toggleModal({ modal: 'WritePostModal' }));
-      
-      expect(newState.get('isWritePostModalVisible')).to.equal(false);
+      expect(newState.get('activeModalName')).to.equal('someModalName');
     });
   });
 

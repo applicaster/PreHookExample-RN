@@ -11,13 +11,13 @@ import {
 } from '../actions';
 import { actionCreator } from '../actions/actionHelpers';
 
-const appInitialState = Map({
-  environment: null,
+export const appInitialState = Map({
+  environment: 'production',
   accountId: null,
   timelineId: null,
-  timezone: null,
-  isMediaModalVisible: false,
-  isWritePostModalVisible: false,
+  timezone: 3600,
+  isModalVisible: false,
+  activeModalName: null,
   activeEventId: null,
   eventIdForActiveAudio: null,
   facebookPageId: null,
@@ -48,13 +48,11 @@ export default (state = appInitialState, action = actionCreator()) => {
       });
 
     case TOGGLE_MODAL:
-      if (payload.modal === 'MediaModal') {
-        return state.update('isMediaModalVisible', visibility => !visibility);
-      }
-      if (payload.modal === 'WritePostModal') {
-        return state.update('isWritePostModalVisible', visibility => !visibility);
-      }
-      return state;
+      return state.withMutations(mutableState => {
+        mutableState
+          .update('isModalVisible', visibility => !visibility)
+          .set('activeModalName', payload.modal);
+      });
 
     case SET_ACTIVE_EVENT_ID:
       return state.set('activeEventId', payload.eventId);

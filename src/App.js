@@ -1,34 +1,55 @@
 import React, { Component } from 'react';
+import { Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
+import { Map } from 'immutable';
 import store from './store';
+import { appInitialState } from './reducers/app';
+import { eventsInitialState } from './reducers/events';
 import AppNavigator from './AppNavigator';
 
 class App extends Component {
   getChildContext() {
-    const appStyles = this.getAppStyles();
+    const appStyles = this.colors;
     return {
       ...appStyles,
     };
   }
 
-  getAppStyles() {
-    const { starlightStyles = {} } = this.props;
-    return {
-      mainColor: starlightStyles.main_color || '#00D4ED', // '#7ED321'
-      secondaryColor: starlightStyles.secondary_color || '#FFFFFF',
-      textColor: starlightStyles.text_color || '#FFFFFF',
-      secondaryTextColor: starlightStyles.text_color || '#00D4ED', // '#83F901'
-      backgroundColor: starlightStyles.background_color || '#505050', // '#272727'
+  getColors(initialAppProps) {
+    const { colors = {} } = initialAppProps;
+    this.colors = {
+      mainColor: (colors.main_color) ? `#${colors.main_color.substring(2, 8)}` : '#00D4ED',
+      secondaryColor: (colors.secondary_color) ? `#${colors.secondary_color.substring(2, 8)}` : '#FFFFFF',
+      textColor: (colors.text_color) ? `#${colors.text_color.substring(2, 8)}` : '#FFFFFF',
+      secondaryTextColor: (colors.secondary_color) ? `#${colors.text_color.substring(2, 8)}` : '#00D4ED',
+      backgroundColor: (colors.background_color) ? `#${colors.background_color.substring(2, 8)}` : '#505050',
     };
+
+    return this.colors;
   }
   
   render() {
-    const { feedTitle, isLive, liveUrl, hasLive } = this.props;
-    const { backgroundColor, mainColor, textColor } = this.getAppStyles();
+    let { extra_props: initialAppProps } = this.props;
+    if (Platform.OS === 'android') initialAppProps = JSON.parse(initialAppProps);
+
+    const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive } = initialAppProps;
+    let { environment } = initialAppProps;
+    if (environment && environment !== 'production') environment = 'development';
+    
+    const initialState = {
+      app: Map(Object.assign(appInitialState.toJS(), {
+        accountId,
+        timelineId,
+        environment,
+      })),
+      events: eventsInitialState,
+    };
+    
+    const { backgroundColor, mainColor, textColor } = this.colors || this.getColors(initialAppProps);
 
     return (
-      <Provider store={store(undefined, 'production')}>
+      <Provider store={store(initialState, environment = 'production')}>
         <AppNavigator
           headerTitle={feedTitle}
           headerBackgroundColor={backgroundColor}
@@ -45,11 +66,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  feedTitle: PropTypes.string,
-  isLive: PropTypes.bool,
-  liveUrl: PropTypes.string,
-  hasLive: PropTypes.bool,
-  starlightStyles: PropTypes.object,
+  extra_props: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 App.childContextTypes = {

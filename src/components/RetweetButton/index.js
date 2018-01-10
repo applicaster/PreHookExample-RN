@@ -68,8 +68,4 @@ RetweetButton.propTypes = {
   retweetCount: PropTypes.number,
 };
 
-RetweetButton.contextTypes = {
-  textColor: PropTypes.string,
-};
-
 export default RetweetButton;

@@ -2,6 +2,8 @@ import {
   fetchSocialEvents,
   fetchSocialEventsDone,
   fetchSocialEventsFailed,
+  fetchFavoriteTweetsDone,
+  fetchFavoriteTweetsFailed,
   setAccountId,
   setTimelineId,
   setTimezone,
@@ -10,10 +12,14 @@ import {
   setEventIdForActiveAudio,
   setActiveEventId,
   setSocialMetadata,
+  updateFavoriteTweets,
 
   FETCH_SOCIAL_EVENTS_START,
   FETCH_SOCIAL_EVENTS_DONE,
   FETCH_SOCIAL_EVENTS_FAILED,
+  FETCH_FAVORITE_TWEETS_DONE,
+  FETCH_FAVORITE_TWEETS_FAILED,
+  UPDATE_FAVORITE_TWEETS,
   SET_ACCOUNT_ID,
   SET_TIMELINE_ID,
   SET_TIMEZONE,
@@ -61,6 +67,44 @@ describe('actions', () => {
 
         expect(action.payload.error).to.exist;
         expect(action.payload.error.message).to.deep.equal('blah');
+      });
+    });
+
+    describe('fetchFavoriteTweetsDone', () => {
+      it('should have correct action type', () => {
+        const action = fetchFavoriteTweetsDone();
+
+        expect(action.type).to.equal(FETCH_FAVORITE_TWEETS_DONE);
+      });
+
+      it('should pass events to payload', () => {
+        const action = fetchFavoriteTweetsDone([1, 2]);
+
+        expect(action.payload).to.exist;
+        expect(action.payload).to.deep.equal([1, 2]);
+      });
+    });
+
+    describe('fetchFavoriteTweetsFailed', () => {
+      it('should have correct action type', () => {
+        const action = fetchFavoriteTweetsFailed(Error('blah'));
+
+        expect(action.type).to.equal(FETCH_FAVORITE_TWEETS_FAILED);
+      });
+
+      it('should pass error to payload', () => {
+        const action = fetchFavoriteTweetsFailed(Error('blah'));
+
+        expect(action.payload.error).to.exist;
+        expect(action.payload.error.message).to.deep.equal('blah');
+      });
+    });
+
+    describe('updateFavoriteTweets', () => {
+      it('should have correct action type', () => {
+        const action = updateFavoriteTweets();
+
+        expect(action.type).to.equal(UPDATE_FAVORITE_TWEETS);
       });
     });
 
