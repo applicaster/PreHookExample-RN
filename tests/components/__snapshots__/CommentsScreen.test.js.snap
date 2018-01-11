@@ -22,8 +22,8 @@ exports[`CommentsScreen component renders correctly with comments 1`] = `
       Array [
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -91,8 +91,8 @@ exports[`CommentsScreen component renders correctly with comments 1`] = `
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
@@ -150,8 +150,8 @@ exports[`CommentsScreen component renders correctly with no comments 1`] = `
       Array [
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -219,8 +219,8 @@ exports[`CommentsScreen component renders correctly with no comments 1`] = `
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,

@@ -103,8 +103,8 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
       Array [
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -133,8 +133,8 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
         },
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -215,8 +215,8 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
@@ -254,8 +254,8 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
@@ -320,8 +320,8 @@ exports[`FeedScreen component renders correctly with events 1`] = `
       Array [
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -350,8 +350,8 @@ exports[`FeedScreen component renders correctly with events 1`] = `
         },
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -432,8 +432,8 @@ exports[`FeedScreen component renders correctly with events 1`] = `
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
@@ -471,8 +471,8 @@ exports[`FeedScreen component renders correctly with events 1`] = `
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
@@ -537,8 +537,8 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
       Array [
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -567,8 +567,8 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
         },
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -649,8 +649,8 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
@@ -688,8 +688,8 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
@@ -754,8 +754,8 @@ exports[`FeedScreen component renders correctly with no write post button 1`] = 
       Array [
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -784,8 +784,8 @@ exports[`FeedScreen component renders correctly with no write post button 1`] = 
         },
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -866,8 +866,8 @@ exports[`FeedScreen component renders correctly with no write post button 1`] = 
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
@@ -905,8 +905,8 @@ exports[`FeedScreen component renders correctly with no write post button 1`] = 
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
@@ -971,8 +971,8 @@ exports[`FeedScreen component renders correctly with write post button due to fa
       Array [
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -1001,8 +1001,8 @@ exports[`FeedScreen component renders correctly with write post button due to fa
         },
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -1083,8 +1083,8 @@ exports[`FeedScreen component renders correctly with write post button due to fa
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
@@ -1122,8 +1122,8 @@ exports[`FeedScreen component renders correctly with write post button due to fa
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
@@ -1188,8 +1188,8 @@ exports[`FeedScreen component renders correctly with write post button due to tw
       Array [
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -1218,8 +1218,8 @@ exports[`FeedScreen component renders correctly with write post button due to tw
         },
         Object {
           "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-      Thanks @azpinstalls for the work, parts, advice and setup.
-      #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
           "comments": Array [],
           "commentsCount": 0,
           "createdAt": 1501886235,
@@ -1300,8 +1300,8 @@ exports[`FeedScreen component renders correctly with write post button due to tw
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,
@@ -1339,8 +1339,8 @@ exports[`FeedScreen component renders correctly with write post button due to tw
           event={
             Object {
               "caption": "Low. Tarmac T2 , CasCam, SPC LCAs.
-            Thanks @azpinstalls for the work, parts, advice and setup.
-            #brz #gt86 #ft86",
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86",
               "comments": Array [],
               "commentsCount": 0,
               "createdAt": 1501886235,

@@ -142,7 +142,7 @@ exports[`CommentContainer component renders correctly 1`] = `
     }
   >
     Low. Tarmac T2 , CasCam, SPC LCAs.
-    Thanks 
+Thanks 
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -156,7 +156,7 @@ exports[`CommentContainer component renders correctly 1`] = `
       @azpinstalls
     </Text>
      for the work, parts, advice and setup.
-    
+
     <Text
       accessible={true}
       allowFontScaling={true}

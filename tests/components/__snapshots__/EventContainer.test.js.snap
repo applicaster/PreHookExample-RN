@@ -169,7 +169,7 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
     }
   >
     Low. Tarmac T2 , CasCam, SPC LCAs.
-    Thanks 
+Thanks 
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -183,7 +183,7 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
       @azpinstalls
     </Text>
      for the work, parts, advice and setup.
-    
+
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -232,8 +232,8 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
     retweetCount={undefined}
     socialNetwork="instagram"
     textToShare="Low. Tarmac T2 , CasCam, SPC LCAs.
-  Thanks @azpinstalls for the work, parts, advice and setup.
-  #brz #gt86 #ft86"
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86"
   />
 </View>
 `;
@@ -421,7 +421,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
     }
   >
     Low. Tarmac T2 , CasCam, SPC LCAs.
-    Thanks 
+Thanks 
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -435,7 +435,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
       @azpinstalls
     </Text>
      for the work, parts, advice and setup.
-    
+
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -484,8 +484,8 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
     retweetCount={undefined}
     socialNetwork="instagram"
     textToShare="Low. Tarmac T2 , CasCam, SPC LCAs.
-  Thanks @azpinstalls for the work, parts, advice and setup.
-  #brz #gt86 #ft86"
+Thanks @azpinstalls for the work, parts, advice and setup.
+#brz #gt86 #ft86"
   />
 </View>
 `;
