@@ -61,7 +61,6 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -82,7 +81,6 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -105,7 +103,6 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -155,7 +152,6 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -177,7 +173,6 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -192,7 +187,6 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -206,7 +200,6 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -220,7 +213,6 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -321,7 +313,6 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -342,7 +333,6 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -365,7 +355,6 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
         <Text
           accessible={true}
           allowFontScaling={true}
-          disabled={false}
           ellipsizeMode="tail"
           style={
             Array [
@@ -415,7 +404,6 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
-    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -437,7 +425,6 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -452,7 +439,6 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -466,7 +452,6 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {
@@ -480,7 +465,6 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Object {

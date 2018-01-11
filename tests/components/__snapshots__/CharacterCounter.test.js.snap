@@ -37,7 +37,6 @@ exports[`CharacterCounter component renders correctly when number of characters 
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -93,7 +92,6 @@ exports[`CharacterCounter component renders correctly when number of characters 
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
@@ -149,7 +147,6 @@ exports[`CharacterCounter component renders correctly when number of characters 
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
       style={
         Array [
