@@ -7,6 +7,10 @@ import store from './store';
 import { appInitialState } from './reducers/app';
 import { eventsInitialState } from './reducers/events';
 import AppNavigator from './AppNavigator';
+import {
+  iosTranslationMapping,
+  androidTranslationMapping,
+} from './utils/localization';
 
 class App extends Component {
   getChildContext() {
@@ -29,11 +33,24 @@ class App extends Component {
     return this.colors;
   }
   
+  processLocalization(localization) {
+    const localeTranslations = localization[Object.keys(localization)[0]];
+    const translations = (Platform.OS === 'ios')
+        ? iosTranslationMapping(localeTranslations)
+        : androidTranslationMapping(localeTranslations);
+
+    return translations;
+  }
+
   render() {
     let { extra_props: initialAppProps } = this.props;
+    const { localization } = this.props;
+
     if (Platform.OS === 'android') initialAppProps = JSON.parse(initialAppProps);
 
+    const translations = this.processLocalization(localization);
     const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive } = initialAppProps;
+    
     let { environment } = initialAppProps;
     if (environment && environment !== 'production') environment = 'development';
     
@@ -44,6 +61,7 @@ class App extends Component {
         environment,
       })),
       events: eventsInitialState,
+      translations,
     };
     
     const { backgroundColor, mainColor, textColor } = this.colors || this.getColors(initialAppProps);
@@ -67,6 +85,7 @@ class App extends Component {
 
 App.propTypes = {
   extra_props: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  localization: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 App.childContextTypes = {
