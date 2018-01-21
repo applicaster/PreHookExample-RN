@@ -9,13 +9,13 @@ import {
 import ReplyToTweetScreen from './ReplyToTweetScreen';
 
 const mapStateToProps = state => ({
-  okButtonText: getTranslations(state).okAlert || 'Ok',
-  errorTitle: getTranslations(state).twitterPostErrorTitle || 'Error',
-  errorMessage: getTranslations(state).twitterPostErrorMessage || 'Unable to post to Twitter',
+  okButtonText: getTranslations(state).okAlert,
+  errorTitle: getTranslations(state).twitterPostErrorTitle,
+  errorMessage: getTranslations(state).twitterPostErrorMessage,
   eventId: getActiveEventId(state),
-  postButtonText: getTranslations(state).postButtonText || 'Post',
-  replyPlaceholderText: getTranslations(state).postPlaceholder || 'Reply to tweet...',
-  screenTitle: getTranslations(state).replyToTweetScreenTitle || 'Twitter Reply',
+  postButtonText: getTranslations(state).postButtonText,
+  replyPlaceholderText: getTranslations(state).postPlaceholder,
+  screenTitle: getTranslations(state).replyToTweetScreenTitle,
   twitterScreenName: getTwitterScreenName(state),
 });
 

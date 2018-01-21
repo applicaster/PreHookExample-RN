@@ -1,18 +1,18 @@
 export const iosTranslationMapping = (translations, feedTitle) => ({
-  defaultShareMessage: translations.Feed2_ShareEvent.replace('%@', feedTitle),
-  shareTitle: feedTitle,
-  replyToTweetScreenTitle: translations.Feed2_ReplyToTweetScreenTitle, // needed
-  postPlaceholder: translations.Feed2_CreatePostPlaceholder,
-  postButtonText: translations.Feed2_CreatePostSend,
-  tweetButtonText: translations.Feed2_CreateTweetSend,
-  writePostScreenTitle: translations.Feed2_WritePostScreenTitle,  // needed
-  writePostScreenTitleTwitter: translations.Feed2_WriteTweetScreenTitle,  // needed
-  facebookPostErrorTitle: translations.Feed2_AlertFacebookSendFailedTitle,
-  facebookPostErrorMessage: translations.Feed2_AlertFacebookSendFailedMessage,
-  twitterPostErrorTitle: translations.Feed2_AlertTwitterSendFailedTitle,
-  twitterPostErrorMessage: translations.Feed2_AlertTwitterSendFailedMessage,
-  alertOk: translations.Feed2_AlertOK,
-  dismiss: translations.Feed2_Dismiss,
+  defaultShareMessage: translations.Feed2_ShareEvent.replace('%@', feedTitle) || 'Download the app now!',
+  shareTitle: feedTitle || 'Feed',
+  replyToTweetScreenTitle: translations.Feed2_ReplyToTweetScreenTitle || 'Reply to Tweet', // needed
+  postPlaceholder: translations.Feed2_CreatePostPlaceholder || 'Write a post...',
+  postButtonText: translations.Feed2_CreatePostSend || 'Post',
+  tweetButtonText: translations.Feed2_CreateTweetSend || 'Tweet',
+  writePostScreenTitle: translations.Feed2_WritePostScreenTitle || 'Write a Post',  // needed
+  writePostScreenTitleTwitter: translations.Feed2_WriteTweetScreenTitle || 'Post a Tweet',  // needed
+  facebookPostErrorTitle: translations.Feed2_AlertFacebookSendFailedTitle || 'Error',
+  facebookPostErrorMessage: translations.Feed2_AlertFacebookSendFailedMessage || 'Unable to post to Facebook',
+  twitterPostErrorTitle: translations.Feed2_AlertTwitterSendFailedTitle || 'Error',
+  twitterPostErrorMessage: translations.Feed2_AlertTwitterSendFailedMessage || 'Unable to post to Twitter',
+  alertOk: translations.Feed2_AlertOK || 'Ok',
+  dismiss: translations.Feed2_Dismiss || 'Dismiss',
 });
 
 export const androidTranslationMapping = (translations, feedTitle) => ({
