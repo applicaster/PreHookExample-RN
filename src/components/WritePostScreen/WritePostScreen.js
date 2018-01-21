@@ -23,7 +23,7 @@ class WritePostScreen extends Component {
     const { twitterScreenName } = props;
     this.state = {
       facebookText: '',
-      twitterText: `@${twitterScreenName} `,
+      twitterText: (twitterScreenName) ? `@${twitterScreenName} ` : '',
       keyboardHeight: 0,
       socialNetworkSelected: 'twitter',
     };
@@ -56,7 +56,19 @@ class WritePostScreen extends Component {
   }
 
   onPostPress() {
-    const { facebookText, twitterText, socialNetworkSelected } = this.state;
+    const {
+      facebookText,
+      twitterText,
+      socialNetworkSelected,
+    } = this.state;
+
+    const {
+      okButtonText,
+      facebookErrorTitle,
+      facebookErrorMessage,
+      twitterErrorTitle,
+      twitterErrorMessage,
+    } = this.props;
 
     if (socialNetworkSelected === 'twitter') {
       if (!twitterText.length) return;
@@ -65,9 +77,9 @@ class WritePostScreen extends Component {
         .then(() => this.closeModal())
         .catch(() => {
           Alert.alert(
-            'Error',
-            'Unable to post to Twitter',
-            [{ text: 'OK', onPress: this.closeModal }],
+            twitterErrorTitle,
+            twitterErrorMessage,
+            [{ text: okButtonText, onPress: this.closeModal }],
             { cancelable: false }
           );
         });
@@ -81,9 +93,9 @@ class WritePostScreen extends Component {
         .then(() => this.closeModal())
         .catch(() => {
           Alert.alert(
-            'Error',
-            'Unable to post to Facebook',
-            [{ text: 'OK', onPress: this.closeModal }],
+            facebookErrorTitle,
+            facebookErrorMessage,
+            [{ text: okButtonText, onPress: this.closeModal }],
             { cancelable: false }
           );
         });
@@ -149,25 +161,27 @@ class WritePostScreen extends Component {
   }
 
   renderWritePostLabel() {
+    const { screenTitleFacebook, screenTitleTwitter } = this.props;
     const { mainColor } = this.context;
     const textColorStyle = { color: mainColor };
-    const { isTwitterAvailable, isFacebookAvailable } = this.props;
+    const { socialNetworkSelected } = this.state;
 
-    const writeAPostLabel = (isTwitterAvailable && !isFacebookAvailable)
-      ? 'Post a Tweet'
-      : 'Write a Post';
+    const writeAPostLabel = (socialNetworkSelected === 'twitter')
+      ? screenTitleTwitter
+      : screenTitleFacebook;
 
     return <Text style={[styles.writePostLabel, textColorStyle]}>{writeAPostLabel}</Text>;
   }
 
   renderPostButton() {
+    const { socialNetworkSelected } = this.state;
+    const { postButtonText, tweetButtonText } = this.props;
     const { textColor } = this.context;
-    const { isTwitterAvailable, isFacebookAvailable } = this.props;
     const textColorStyle = { color: textColor };
 
-    const postButtonLabel = (isTwitterAvailable && !isFacebookAvailable)
-      ? 'Tweet'
-      : 'Post';
+    const postButtonLabel = (socialNetworkSelected === 'twitter')
+      ? tweetButtonText
+      : postButtonText;
 
     return (
       <TouchableOpacity style={styles.postButton} onPress={this.onPostPress}>
@@ -177,6 +191,7 @@ class WritePostScreen extends Component {
   }
 
   render() {
+    const { postPlaceholderText } = this.props;
     const { backgroundColor } = this.context;
     const { keyboardHeight, facebookText, twitterText, socialNetworkSelected } = this.state;
     const text = (socialNetworkSelected === 'facebook') ? facebookText : twitterText;
@@ -196,7 +211,7 @@ class WritePostScreen extends Component {
           autoFocus
           multiline
           style={[styles.input, textInputHeightStyle]}
-          placeholder="Write a post..."
+          placeholder={postPlaceholderText}
           placeholderTextColor={'#BBBAC1'}
           selectionColor={'#3350EE'}
           onChangeText={this.onTextChange}
@@ -209,11 +224,21 @@ class WritePostScreen extends Component {
 }
 
 WritePostScreen.propTypes = {
-  isFacebookAvailable: PropTypes.bool,
-  isTwitterAvailable: PropTypes.bool,
+  okButtonText: PropTypes.string,
+  facebookErrorTitle: PropTypes.string,
+  facebookErrorMessage: PropTypes.string,
+  twitterErrorTitle: PropTypes.string,
+  twitterErrorMessage: PropTypes.string,
+  postPlaceholderText: PropTypes.string,
+  postButtonText: PropTypes.string,
+  tweetButtonText: PropTypes.string,
+  screenTitleTwitter: PropTypes.string,
+  screenTitleFacebook: PropTypes.string,
   facebookPageId: PropTypes.string,
   twitterScreenName: PropTypes.string,
   toggleModal: PropTypes.func,
+  isFacebookAvailable: PropTypes.bool,
+  isTwitterAvailable: PropTypes.bool,
 };
 
 WritePostScreen.contextTypes = {
