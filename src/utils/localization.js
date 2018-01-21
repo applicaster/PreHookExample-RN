@@ -2,7 +2,7 @@ export const iosTranslationMapping = (translations, feedTitle) => ({
   defaultShareMessage: translations.Feed2_ShareEvent.replace('%@', feedTitle),
   shareTitle: feedTitle,
   replyToTweetScreenTitle: translations.Feed2_ReplyToTweetScreenTitle, // needed
-  postPlacerholder: translations.Feed2_CreatePostPlaceholder,
+  postPlaceholder: translations.Feed2_CreatePostPlaceholder,
   postButtonText: translations.Feed2_CreatePostSend,
   tweetButtonText: translations.Feed2_CreateTweetSend,
   writePostScreenTitle: translations.Feed2_WritePostScreenTitle,  // needed

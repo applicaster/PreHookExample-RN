@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
   errorMessage: getTranslations(state).twitterPostErrorMessage || 'Unable to post to Twitter',
   eventId: getActiveEventId(state),
   postButtonText: getTranslations(state).postButtonText || 'Post',
-  replyPlaceholderText: getTranslations(state).postPlacerholder || 'Reply to tweet...',
+  replyPlaceholderText: getTranslations(state).postPlaceholder || 'Reply to tweet...',
   screenTitle: getTranslations(state).replyToTweetScreenTitle || 'Twitter Reply',
   twitterScreenName: getTwitterScreenName(state),
 });

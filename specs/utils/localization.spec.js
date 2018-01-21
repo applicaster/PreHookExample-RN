@@ -26,7 +26,7 @@ describe('localization', () => {
         defaultShareMessage: 'foo bar',
         shareTitle: 'bar',
         replyToTweetScreenTitle: 'foo',
-        postPlacerholder: 'foo',
+        postPlaceholder: 'foo',
         postButtonText: 'foo',
         tweetButtonText: 'foo',
         writePostScreenTitle: 'foo',
