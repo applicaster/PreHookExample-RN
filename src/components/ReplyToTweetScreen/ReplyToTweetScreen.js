@@ -47,7 +47,7 @@ class ReplyToTweetScreen extends Component {
   }
 
   onPostPress() {
-    const { eventId } = this.props;
+    const { errorTitle, errorMessage, eventId, okButtonText } = this.props;
     const { twitterText } = this.state;
     
     if (!twitterText.length) return;
@@ -56,9 +56,9 @@ class ReplyToTweetScreen extends Component {
       .then(() => this.closeModal())
       .catch(() => {
         Alert.alert(
-          'Error',
-          'Unable to post to Twitter',
-          [{ text: 'OK', onPress: this.closeModal }],
+          errorTitle,
+          errorMessage,
+          [{ text: okButtonText, onPress: this.closeModal }],
           { cancelable: false }
         );
       });
@@ -90,6 +90,7 @@ class ReplyToTweetScreen extends Component {
   }
 
   renderPostBar() {
+    const { postButtonText, screenTitle } = this.props;
     const { backgroundColor, mainColor, textColor } = this.context;
     const backgroundColorStyle = { backgroundColor };
     const textColorStyle = { color: mainColor };
@@ -98,15 +99,16 @@ class ReplyToTweetScreen extends Component {
     return (
       <View style={[styles.postBar, backgroundColorStyle]}>
         <CloseButton style={styles.closeButton} onPress={this.closeModal} isForModal />
-        <Text style={[styles.writePostLabel, textColorStyle]}>Twitter Reply</Text>
+        <Text style={[styles.writePostLabel, textColorStyle]}>{screenTitle}</Text>
         <TouchableOpacity style={styles.postButton} onPress={this.onPostPress}>
-          <Text style={[styles.postButtonLabel, postTextColorStyle]}>Post</Text>
+          <Text style={[styles.postButtonLabel, postTextColorStyle]}>{postButtonText}</Text>
         </TouchableOpacity>
       </View>
     );
   }
 
   render() {
+    const { replyPlaceholderText } = this.props;
     const { backgroundColor } = this.context;
     const { keyboardHeight, twitterText } = this.state;
 
@@ -125,7 +127,7 @@ class ReplyToTweetScreen extends Component {
           autoFocus
           multiline
           style={[styles.input, textInputHeightStyle]}
-          placeholder="Reply to tweet..."
+          placeholder={replyPlaceholderText}
           placeholderTextColor={'#BBBAC1'}
           selectionColor={'#3350EE'}
           onChangeText={this.onTextChange}
@@ -138,9 +140,15 @@ class ReplyToTweetScreen extends Component {
 }
 
 ReplyToTweetScreen.propTypes = {
+  okButtonText: PropTypes.string,
+  errorTitle: PropTypes.string,
+  errorMessage: PropTypes.string,
   eventId: PropTypes.string,
-  twitterScreenName: PropTypes.string,
+  postButtonText: PropTypes.string,
+  replyPlaceholderText: PropTypes.string,
+  screenTitle: PropTypes.string,
   toggleModal: PropTypes.func,
+  twitterScreenName: PropTypes.string,
 };
 
 ReplyToTweetScreen.contextTypes = {
