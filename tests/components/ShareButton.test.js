@@ -1,7 +1,7 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import ShareButton from '../../src/components/ShareButton';
+import ShareButton from '../../src/components/ShareButton/ShareButton';
 
 describe('ShareButton', () => {
   test('component renders correctly', () => {

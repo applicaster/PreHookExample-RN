@@ -86,9 +86,7 @@ exports[`ReplyToTweetScreen component renders correctly 1`] = `
           },
         ]
       }
-    >
-      Twitter Reply
-    </Text>
+    />
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -131,9 +129,7 @@ exports[`ReplyToTweetScreen component renders correctly 1`] = `
             },
           ]
         }
-      >
-        Post
-      </Text>
+      />
     </View>
   </View>
   <TextInput
@@ -141,7 +137,7 @@ exports[`ReplyToTweetScreen component renders correctly 1`] = `
     autoFocus={true}
     multiline={true}
     onChangeText={[Function]}
-    placeholder="Reply to tweet..."
+    placeholder={undefined}
     placeholderTextColor="#BBBAC1"
     selectionColor="#3350EE"
     style={

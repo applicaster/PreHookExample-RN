@@ -86,9 +86,7 @@ exports[`WritePostScreen component renders correctly 1`] = `
           },
         ]
       }
-    >
-      Write a Post
-    </Text>
+    />
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -131,9 +129,7 @@ exports[`WritePostScreen component renders correctly 1`] = `
             },
           ]
         }
-      >
-        Post
-      </Text>
+      />
     </View>
   </View>
   <TextInput
@@ -141,7 +137,7 @@ exports[`WritePostScreen component renders correctly 1`] = `
     autoFocus={true}
     multiline={true}
     onChangeText={[Function]}
-    placeholder="Write a post..."
+    placeholder={undefined}
     placeholderTextColor="#BBBAC1"
     selectionColor="#3350EE"
     style={
@@ -160,7 +156,7 @@ exports[`WritePostScreen component renders correctly 1`] = `
         },
       ]
     }
-    value="@undefined "
+    value=""
   />
   <View
     style={
@@ -228,7 +224,7 @@ exports[`WritePostScreen component renders correctly 1`] = `
             ]
           }
         >
-          11/280
+          0/280
         </Text>
       </View>
     </View>
@@ -322,9 +318,7 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
           },
         ]
       }
-    >
-      Write a Post
-    </Text>
+    />
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -367,9 +361,7 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
             },
           ]
         }
-      >
-        Post
-      </Text>
+      />
     </View>
   </View>
   <TextInput
@@ -377,7 +369,7 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
     autoFocus={true}
     multiline={true}
     onChangeText={[Function]}
-    placeholder="Write a post..."
+    placeholder={undefined}
     placeholderTextColor="#BBBAC1"
     selectionColor="#3350EE"
     style={
@@ -396,7 +388,7 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
         },
       ]
     }
-    value="@undefined "
+    value=""
   />
   <View
     style={
@@ -464,7 +456,7 @@ exports[`WritePostScreen component renders correctly when only facebook is avail
             ]
           }
         >
-          11/280
+          0/280
         </Text>
       </View>
     </View>
@@ -558,9 +550,7 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
           },
         ]
       }
-    >
-      Post a Tweet
-    </Text>
+    />
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
@@ -603,9 +593,7 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
             },
           ]
         }
-      >
-        Tweet
-      </Text>
+      />
     </View>
   </View>
   <TextInput
@@ -613,7 +601,7 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
     autoFocus={true}
     multiline={true}
     onChangeText={[Function]}
-    placeholder="Write a post..."
+    placeholder={undefined}
     placeholderTextColor="#BBBAC1"
     selectionColor="#3350EE"
     style={
@@ -632,7 +620,7 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
         },
       ]
     }
-    value="@undefined "
+    value=""
   />
   <View
     style={
@@ -700,7 +688,7 @@ exports[`WritePostScreen component renders correctly when only twitter is availa
             ]
           }
         >
-          11/280
+          0/280
         </Text>
       </View>
     </View>

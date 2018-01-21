@@ -4,9 +4,10 @@ import renderer from 'react-test-renderer';
 import ActionBar from '../../src/components/ActionBar';
 
 jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');
-jest.mock('../../src/components/TwitterActionButtons', () => 'FeedRNUtils');
-jest.mock('../../src/components/FacebookActionButtons', () => 'FeedRNUtils');
-jest.mock('../../src/components/InstagramActionButtons', () => 'FeedRNUtils');
+jest.mock('../../src/components/TwitterActionButtons', () => 'TwitterActionButtons');
+jest.mock('../../src/components/FacebookActionButtons', () => 'FacebookActionButtons');
+jest.mock('../../src/components/InstagramActionButtons', () => 'InstagramActionButtons');
+jest.mock('../../src/components/ShareButton', () => 'ShareButton');
 
 describe('ActionBar', () => {
   test('component renders correctly for instagram', () => {
