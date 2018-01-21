@@ -33,11 +33,11 @@ class App extends Component {
     return this.colors;
   }
   
-  processLocalization(localization) {
+  processLocalization(localization, feedTitle) {
     const localeTranslations = localization[Object.keys(localization)[0]];
     const translations = (Platform.OS === 'ios')
-        ? iosTranslationMapping(localeTranslations)
-        : androidTranslationMapping(localeTranslations);
+        ? iosTranslationMapping(localeTranslations, feedTitle)
+        : androidTranslationMapping(localeTranslations, feedTitle);
 
     return translations;
   }
@@ -48,9 +48,9 @@ class App extends Component {
 
     if (Platform.OS === 'android') initialAppProps = JSON.parse(initialAppProps);
 
-    const translations = this.processLocalization(localization);
     const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive } = initialAppProps;
-    
+    const translations = this.processLocalization(localization, feedTitle);
+
     let { environment } = initialAppProps;
     if (environment && environment !== 'production') environment = 'development';
     
@@ -59,6 +59,7 @@ class App extends Component {
         accountId,
         timelineId,
         environment,
+        feedTitle,
       })),
       events: eventsInitialState,
       translations,
