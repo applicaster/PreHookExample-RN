@@ -29,3 +29,6 @@ export const getActiveEventOriginUrl = createSelector(
   getActiveEvent,
   (activeEvent) => activeEvent.originUrl
 );
+
+// From Translations Reducer
+export const getTranslations = state => state.translations;

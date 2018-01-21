@@ -18,6 +18,7 @@ import {
   isTwitterAvailable,
   getActiveEventOriginUrl,
   getFavoriteTweets,
+  getTranslations,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -44,6 +45,9 @@ describe('selectors', () => {
         loading: false,
         favoriteTweets: { 1: 1, 2: 2 },
       }),
+      translations: {
+        foo: 'bar',
+      },
     });
   });
 
@@ -146,6 +150,12 @@ describe('selectors', () => {
   describe('getFavoriteTweets', () => {
     it('should get favoriteTweets from event reducer state', () => {
       expect(getFavoriteTweets(store.getState())).to.deep.equal({ 1: 1, 2: 2 });
+    });
+  });
+
+  describe('getTranslations', () => {
+    it('should get the translations state', () => {
+      expect(getTranslations(store.getState())).to.deep.equal({ foo: 'bar' });
     });
   });
 });
