@@ -42,4 +42,41 @@ describe('localization', () => {
       expect(iosTranslationMapping(translations, 'bar')).to.deep.equal(expected);
     });
   });
+
+  describe('androidTranslationMapping', () => {
+    it('should return the mapped expected mapped values', () => {
+      const translations = {
+        general_share_text_description: 'foo %s',
+        replyToTweetScrenTitle: 'foo',
+        write_a_post_hint: 'foo',
+        combined_feed_facebook_button_text: 'foo',
+        combined_feed_tweet_button_text: 'foo',
+        writePostScreenTitle: 'foo',
+        writeTweetScreenTitle: 'foo',
+        feed_failed_to_post_on_facebook: 'foo',
+        feed_failed_tweet: 'foo',
+        CommonAlertOK: 'foo',
+        CommonAlertCancel: 'foo',
+      };
+
+      const expected = {
+        defaultShareMessage: 'foo bar',
+        shareTitle: 'bar',
+        replyToTweetScreenTitle: 'foo',
+        postPlaceholder: 'foo',
+        postButtonText: 'foo',
+        tweetButtonText: 'foo',
+        writePostScreenTitle: 'foo',
+        writePostScreenTitleTwitter: 'foo',
+        facebookPostErrorTitle: 'Error',
+        facebookPostErrorMessage: 'foo',
+        twitterPostErrorTitle: 'Error',
+        twitterPostErrorMessage: 'foo',
+        alertOk: 'foo',
+        dismiss: 'foo',
+      };
+
+      expect(androidTranslationMapping(translations, 'bar')).to.deep.equal(expected);
+    });
+  });
 });

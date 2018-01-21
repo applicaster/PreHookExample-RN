@@ -34,7 +34,7 @@ class App extends Component {
   }
   
   processLocalization(localization, feedTitle) {
-    const localeTranslations = localization[Object.keys(localization)[0]];
+    const localeTranslations = (Platform.OS === 'ios') ? localization[Object.keys(localization)[0]] : localization;
     const translations = (Platform.OS === 'ios')
         ? iosTranslationMapping(localeTranslations, feedTitle)
         : androidTranslationMapping(localeTranslations, feedTitle);
@@ -43,10 +43,12 @@ class App extends Component {
   }
 
   render() {
-    let { extra_props: initialAppProps } = this.props;
-    const { localization } = this.props;
+    let { extra_props: initialAppProps, localization } = this.props;
 
-    if (Platform.OS === 'android') initialAppProps = JSON.parse(initialAppProps);
+    if (Platform.OS === 'android') {
+      initialAppProps = JSON.parse(initialAppProps);
+      localization = JSON.parse(localization);
+    }
 
     const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive } = initialAppProps;
     const translations = this.processLocalization(localization, feedTitle);
