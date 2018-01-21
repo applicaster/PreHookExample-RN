@@ -1,18 +1,18 @@
 export const iosTranslationMapping = (translations, feedTitle) => ({
-  DefaultShareMessage: feedTitle,
-  ShareTitle: translations.Feed2_ShareEvent,
-  ReplyToTweetScreenTitle: translations.Feed2_ReplyToTweetScreenTitle, // needed
-  PostPlacerholder: translations.Feed2_CreatePostPlaceholder,
-  PostButtonText: translations.Feed2_CreatePostSend,
-  TweetButtonText: translations.Feed2_CreateTweetSend,
-  WritePostScreenTitle: translations.Feed2_WritePostScreenTitle,  // needed
-  WritePostScreenTitleTwitter: translations.Feed2_WriteTweetScreenTitle,  // needed
-  FacebookPostErrorTitle: translations.Feed2_AlertFacebookSendFailedTitle,
-  FacebookPostErrorMessage: translations.Feed2_AlertFacebookSendFailedMessage,
-  TwitterPostErrorTitle: translations.Feed2_AlertTwitterSendFailedTitle,
-  TwitterPostErrorMessage: translations.Feed2_AlertTwitterSendFailedMessage,
-  AlertOk: translations.Feed2_AlertOK,
-  Dismiss: translations.Feed2_Dismiss,
+  defaultShareMessage: translations.Feed2_ShareEvent.replace('%@', feedTitle),
+  shareTitle: feedTitle,
+  replyToTweetScreenTitle: translations.Feed2_ReplyToTweetScreenTitle, // needed
+  postPlacerholder: translations.Feed2_CreatePostPlaceholder,
+  postButtonText: translations.Feed2_CreatePostSend,
+  tweetButtonText: translations.Feed2_CreateTweetSend,
+  writePostScreenTitle: translations.Feed2_WritePostScreenTitle,  // needed
+  writePostScreenTitleTwitter: translations.Feed2_WriteTweetScreenTitle,  // needed
+  facebookPostErrorTitle: translations.Feed2_AlertFacebookSendFailedTitle,
+  facebookPostErrorMessage: translations.Feed2_AlertFacebookSendFailedMessage,
+  twitterPostErrorTitle: translations.Feed2_AlertTwitterSendFailedTitle,
+  twitterPostErrorMessage: translations.Feed2_AlertTwitterSendFailedMessage,
+  alertOk: translations.Feed2_AlertOK,
+  dismiss: translations.Feed2_Dismiss,
 });
 
 export const androidTranslationMapping = (translations, feedTitle) => ({
