@@ -47,12 +47,12 @@ describe('localization', () => {
     it('should return the mapped expected mapped values', () => {
       const translations = {
         general_share_text_description: 'foo %s',
-        replyToTweetScrenTitle: 'foo',
+        reply_to_tweet_screen_title: 'foo',
         write_a_post_hint: 'foo',
         combined_feed_facebook_button_text: 'foo',
         combined_feed_tweet_button_text: 'foo',
-        writePostScreenTitle: 'foo',
-        writeTweetScreenTitle: 'foo',
+        write_post_screen_title: 'foo',
+        write_tweet_screen_title: 'foo',
         feed_failed_to_post_on_facebook: 'foo',
         feed_failed_tweet: 'foo',
         CommonAlertOK: 'foo',

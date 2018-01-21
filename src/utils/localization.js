@@ -18,12 +18,12 @@ export const iosTranslationMapping = (translations, feedTitle) => ({
 export const androidTranslationMapping = (translations, feedTitle) => ({
   defaultShareMessage: translations.general_share_text_description.replace('%s', feedTitle) || 'Download the app now!',
   shareTitle: feedTitle || 'Feed',
-  replyToTweetScreenTitle: translations.replyToTweetScrenTitle || 'Reply to Tweet', // needed
+  replyToTweetScreenTitle: translations.reply_to_tweet_screen_title || 'Reply to Tweet', // needed
   postPlaceholder: translations.write_a_post_hint || 'Write a post...',
   postButtonText: translations.combined_feed_facebook_button_text || 'Post',
   tweetButtonText: translations.combined_feed_tweet_button_text || 'Tweet',
-  writePostScreenTitle: translations.writePostScreenTitle || 'Write a Post',  // needed
-  writePostScreenTitleTwitter: translations.writeTweetScreenTitle || 'Post a Tweet',  // needed
+  writePostScreenTitle: translations.write_post_screen_title || 'Write a Post',  // needed
+  writePostScreenTitleTwitter: translations.write_tweet_screen_title || 'Post a Tweet',  // needed
   facebookPostErrorTitle: 'Error',
   facebookPostErrorMessage: translations.feed_failed_to_post_on_facebook || 'Unable to post to Facebook',
   twitterPostErrorTitle: 'Error',
