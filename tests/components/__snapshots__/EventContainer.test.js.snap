@@ -158,9 +158,9 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
         Object {
           "fontSize": 14,
           "lineHeight": 18,
-          "paddingBottom": 5,
-          "paddingHorizontal": 12,
-          "paddingTop": 17,
+          "marginBottom": 5,
+          "marginHorizontal": 12,
+          "marginTop": 17,
         },
         Object {
           "color": undefined,
@@ -410,9 +410,9 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
         Object {
           "fontSize": 14,
           "lineHeight": 18,
-          "paddingBottom": 5,
-          "paddingHorizontal": 12,
-          "paddingTop": 17,
+          "marginBottom": 5,
+          "marginHorizontal": 12,
+          "marginTop": 17,
         },
         Object {
           "color": undefined,

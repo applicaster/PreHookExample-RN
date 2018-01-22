@@ -10,9 +10,9 @@ exports[`EventCaption component renders correctly 1`] = `
       Object {
         "fontSize": 14,
         "lineHeight": 18,
-        "paddingBottom": 5,
-        "paddingHorizontal": 12,
-        "paddingTop": 17,
+        "marginBottom": 5,
+        "marginHorizontal": 12,
+        "marginTop": 17,
       },
       Object {
         "color": undefined,
@@ -34,9 +34,9 @@ exports[`EventCaption component renders correctly with complex caption with user
       Object {
         "fontSize": 14,
         "lineHeight": 18,
-        "paddingBottom": 5,
-        "paddingHorizontal": 12,
-        "paddingTop": 17,
+        "marginBottom": 5,
+        "marginHorizontal": 12,
+        "marginTop": 17,
       },
       Object {
         "color": undefined,
