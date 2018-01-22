@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Linking, Text } from 'react-native';
+import { Text } from 'react-native';
 import reactStringReplace from 'react-string-replace';
 import { styles } from './style';
 
 class EventCaption extends Component {
   constructor(props) {
     super(props);
-    this.openLink = this.openLink.bind(this);
+    this.navigateToWebview = this.navigateToWebview.bind(this);
   }
 
   processCaption() {
@@ -28,17 +28,14 @@ class EventCaption extends Component {
     const linkStyle = { color: this.context.mainColor, textDecorationLine: 'underline' };
     const regex = /([(https|http)]*:\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;
     const matchCallback = (match, i) =>
-      (<Text onPress={() => this.openLink(match)} key={`${i}-link`} style={linkStyle}>{match}</Text>);
+      (<Text onPress={() => this.navigateToWebview(match)} key={`${i}-link`} style={linkStyle}>{match}</Text>);
 
     return reactStringReplace(caption, regex, matchCallback);
   }
 
-  openLink(url) {
-    Linking.canOpenURL(url).then(supported => {
-      if (supported) {
-        return Linking.openURL(url);
-      }
-    }).catch();
+  navigateToWebview(url) {
+    const { navigation } = this.context;
+    navigation.navigate('GenericWebView', { headerTitle: 'web', url });
   }
   
   render() {
@@ -58,6 +55,7 @@ EventCaption.propTypes = {
 
 EventCaption.contextTypes = {
   mainColor: PropTypes.string,
+  navigation: PropTypes.object,
   textColor: PropTypes.string,
 };
 

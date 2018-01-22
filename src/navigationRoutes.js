@@ -1,6 +1,7 @@
 import CommentsScreen from './components/CommentsScreen';
 import FeedScreen from './components/FeedScreen';
-import WebViewScreen from './components/WebViewScreen';
+import SocialWebViewScreen from './components/SocialWebViewScreen';
+import GenericWebViewScreen from './components/GenericWebViewScreen';
 
 export default {
   Comments: {
@@ -9,7 +10,10 @@ export default {
   Feed: {
     screen: FeedScreen,
   },
-  WebView: {
-    screen: WebViewScreen,
+  SocialWebView: {
+    screen: SocialWebViewScreen,
+  },
+  GenericWebView: {
+    screen: GenericWebViewScreen,
   },
 };

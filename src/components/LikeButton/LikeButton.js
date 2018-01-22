@@ -14,7 +14,7 @@ class LikeButton extends Component {
     const { eventId, setActiveEventId } = this.props;
 
     setActiveEventId(eventId);
-    navigation.navigate('WebView', { headerTitle: 'Facebook' });
+    navigation.navigate('SocialWebView', { headerTitle: 'Facebook' });
   }
   
   render() {

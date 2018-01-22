@@ -3,10 +3,10 @@ import {
   getActiveEventOriginUrl,
 } from '../../selectors';
 
-import WebViewScreen from './WebViewScreen';
+import SocialWebViewScreen from './SocialWebViewScreen';
 
 const mapStateToProps = state => ({
   eventOriginUrl: getActiveEventOriginUrl(state),
 });
 
-export default connect(mapStateToProps)(WebViewScreen);
+export default connect(mapStateToProps)(SocialWebViewScreen);

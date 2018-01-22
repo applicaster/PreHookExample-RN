@@ -14,7 +14,7 @@ class CommentButton extends Component {
     const { eventId, setActiveEventId, socialNetwork } = this.props;
 
     setActiveEventId(eventId);
-    navigation.navigate('WebView', { headerTitle: socialNetwork });
+    navigation.navigate('SocialWebView', { headerTitle: socialNetwork });
   }
   
   render() {

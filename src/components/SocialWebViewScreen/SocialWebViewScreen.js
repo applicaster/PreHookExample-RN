@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import BackButton from '../BackButton';
 
-class WebViewScreen extends Component {
+class SocialWebViewScreen extends Component {
   static navigationOptions = ({ navigation, screenProps, params }) => ({
       ...screenProps,
       headerTitle: navigation.state.params.headerTitle,
@@ -37,12 +37,12 @@ class WebViewScreen extends Component {
   }
 }
 
-WebViewScreen.propTypes = {
+SocialWebViewScreen.propTypes = {
   eventOriginUrl: PropTypes.string,
 };
 
-WebViewScreen.contextTypes = {
+SocialWebViewScreen.contextTypes = {
   backgroundColor: PropTypes.string,
 };
 
-export default WebViewScreen;
+export default SocialWebViewScreen;

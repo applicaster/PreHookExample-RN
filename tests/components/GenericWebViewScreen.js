@@ -1,14 +1,14 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import WebViewScreen from '../../src/components/WebViewScreen/WebViewScreen';
+import GenericWebViewScreen from '../../src/components/GenericWebViewScreen/GenericWebViewScreen';
 
 jest.mock('WebView', () => 'WebView');
 
-describe('WebViewScreen', () => {
+describe('GenericWebViewScreen', () => {
   test('component renders correctly', () => {
     const tree = renderer.create(
-      <WebViewScreen />
+      <GenericWebViewScreen />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
