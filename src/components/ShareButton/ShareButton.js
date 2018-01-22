@@ -24,9 +24,9 @@ class ShareButton extends Component {
 
   share() {
     const {
-      defaultMessage = 'Download the app now!',
+      defaultMessage = '',
       message = '',
-      url = 'http://its0n.tv/a/jb',
+      url = 'http://its0n.tv/a/jb', // TODO: Fix this to be dynamic
       title = '',
     } = this.props;
 
