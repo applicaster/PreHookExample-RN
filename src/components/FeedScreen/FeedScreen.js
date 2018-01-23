@@ -69,7 +69,8 @@ class FeedScreen extends Component {
 
   render() {
     const { isFacebookAvailable, isTwitterAvailable, socialEvents, loading, toggleModal } = this.props;
-    const backgroundFeedColor = { backgroundColor: `${this.context.backgroundColor}4D` };
+    const backgroundFeedColor = { backgroundColor: `${this.context.backgroundColor}99` };
+    const transparentBackgroundColor = { backgroundColor: `transparent` };
     
     return (
       <View style={[backgroundFeedColor, { flex: 1 }]}>
@@ -77,8 +78,8 @@ class FeedScreen extends Component {
           data={socialEvents}
           renderItem={({item}) => <EventContainer key={item.id} event={item} />}
           keyExtractor={(item) => item.id }
-          style={[backgroundFeedColor, styles.feedList]} contentContainerStyle={[backgroundFeedColor, styles.feedListContent]}
-          refreshing={loading}
+          style={[styles.feedList]} contentContainerStyle={[styles.feedListContent]}
+          refreshing={false}
           onRefresh={this.onRefresh}
           initialNumToRender={4}
           onEndReached={() => {}}
