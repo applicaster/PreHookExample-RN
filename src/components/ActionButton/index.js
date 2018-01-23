@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Image,
   Text,
   TouchableOpacity,
 } from 'react-native';
+import { Image } from 'react-native-animatable';
 import { styles } from './style';
 
 class ActionButton extends Component {
@@ -14,9 +14,12 @@ class ActionButton extends Component {
     const tintColorStyle = { tintColor: (selected) ? mainColor : textColor };
     const textColorStyle = { color: `${textColor}99` };
 
+    const ANIMATION_TYPE = 'rubberBand';
+    const ANIMATION_DURATION = 0;
+    const ANIMATION_DELAY = 400;
     return (
       <TouchableOpacity style={styles.actionButton} onPress={onPress}>
-        <Image source={{ uri: imageUri }} style={[styles.icon, tintColorStyle]} />
+        <Image animation={ANIMATION_TYPE} delay={ANIMATION_DELAY} duration={ANIMATION_DURATION} source={{ uri: imageUri }} style={[styles.icon, tintColorStyle]} />
         <Text style={[styles.label, textColorStyle]} >{label}</Text>
       </TouchableOpacity>
     );

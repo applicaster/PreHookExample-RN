@@ -30,22 +30,27 @@ exports[`HeartButton component renders correctly 1`] = `
   tvParallaxProperties={undefined}
 >
   <Image
+    collapsable={undefined}
     source={
       Object {
         "uri": "feed_rn_heart_button",
       }
     }
     style={
-      Array [
-        Object {
-          "height": 30,
-          "marginRight": 1,
-          "width": 30,
-        },
-        Object {
-          "tintColor": "#FFFFFF",
-        },
-      ]
+      Object {
+        "height": 30,
+        "marginRight": 1,
+        "tintColor": "#FFFFFF",
+        "transform": Array [
+          Object {
+            "scaleX": 1,
+          },
+          Object {
+            "scaleY": 1,
+          },
+        ],
+        "width": 30,
+      }
     }
   />
   <Text

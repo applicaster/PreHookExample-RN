@@ -5,7 +5,7 @@ exports[`FeedScreen component renders correctly while loading 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "undefined4D",
+        "backgroundColor": "undefined99",
       },
       Object {
         "flex": 1,
@@ -17,9 +17,7 @@ exports[`FeedScreen component renders correctly while loading 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingTop": 5,
         },
       ]
@@ -46,19 +44,17 @@ exports[`FeedScreen component renders correctly while loading 1`] = `
       <RefreshControlMock
         onRefresh={[Function]}
         progressViewOffset={undefined}
-        refreshing={true}
+        refreshing={false}
       />
     }
-    refreshing={true}
+    refreshing={false}
     renderItem={[Function]}
     scrollEventThrottle={50}
     stickyHeaderIndices={Array []}
     style={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingBottom": 5,
         },
       ]
@@ -80,7 +76,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
   style={
     Array [
       Object {
-        "backgroundColor": "undefined4D",
+        "backgroundColor": "undefined99",
       },
       Object {
         "flex": 1,
@@ -92,9 +88,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingTop": 5,
         },
       ]
@@ -184,19 +178,17 @@ Thanks @azpinstalls for the work, parts, advice and setup.
       <RefreshControlMock
         onRefresh={[Function]}
         progressViewOffset={undefined}
-        refreshing={true}
+        refreshing={false}
       />
     }
-    refreshing={true}
+    refreshing={false}
     renderItem={[Function]}
     scrollEventThrottle={50}
     stickyHeaderIndices={Array []}
     style={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingBottom": 5,
         },
       ]
@@ -297,7 +289,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "undefined4D",
+        "backgroundColor": "undefined99",
       },
       Object {
         "flex": 1,
@@ -309,9 +301,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingTop": 5,
         },
       ]
@@ -411,9 +401,7 @@ Thanks @azpinstalls for the work, parts, advice and setup.
     style={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingBottom": 5,
         },
       ]
@@ -514,7 +502,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "undefined4D",
+        "backgroundColor": "undefined99",
       },
       Object {
         "flex": 1,
@@ -526,9 +514,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingTop": 5,
         },
       ]
@@ -618,19 +604,17 @@ Thanks @azpinstalls for the work, parts, advice and setup.
       <RefreshControlMock
         onRefresh={[Function]}
         progressViewOffset={undefined}
-        refreshing={true}
+        refreshing={false}
       />
     }
-    refreshing={true}
+    refreshing={false}
     renderItem={[Function]}
     scrollEventThrottle={50}
     stickyHeaderIndices={Array []}
     style={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingBottom": 5,
         },
       ]
@@ -731,7 +715,7 @@ exports[`FeedScreen component renders correctly with no write post button 1`] = 
   style={
     Array [
       Object {
-        "backgroundColor": "undefined4D",
+        "backgroundColor": "undefined99",
       },
       Object {
         "flex": 1,
@@ -743,9 +727,7 @@ exports[`FeedScreen component renders correctly with no write post button 1`] = 
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingTop": 5,
         },
       ]
@@ -835,19 +817,17 @@ Thanks @azpinstalls for the work, parts, advice and setup.
       <RefreshControlMock
         onRefresh={[Function]}
         progressViewOffset={undefined}
-        refreshing={true}
+        refreshing={false}
       />
     }
-    refreshing={true}
+    refreshing={false}
     renderItem={[Function]}
     scrollEventThrottle={50}
     stickyHeaderIndices={Array []}
     style={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingBottom": 5,
         },
       ]
@@ -948,7 +928,7 @@ exports[`FeedScreen component renders correctly with write post button due to fa
   style={
     Array [
       Object {
-        "backgroundColor": "undefined4D",
+        "backgroundColor": "undefined99",
       },
       Object {
         "flex": 1,
@@ -960,9 +940,7 @@ exports[`FeedScreen component renders correctly with write post button due to fa
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingTop": 5,
         },
       ]
@@ -1052,19 +1030,17 @@ Thanks @azpinstalls for the work, parts, advice and setup.
       <RefreshControlMock
         onRefresh={[Function]}
         progressViewOffset={undefined}
-        refreshing={true}
+        refreshing={false}
       />
     }
-    refreshing={true}
+    refreshing={false}
     renderItem={[Function]}
     scrollEventThrottle={50}
     stickyHeaderIndices={Array []}
     style={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingBottom": 5,
         },
       ]
@@ -1165,7 +1141,7 @@ exports[`FeedScreen component renders correctly with write post button due to tw
   style={
     Array [
       Object {
-        "backgroundColor": "undefined4D",
+        "backgroundColor": "undefined99",
       },
       Object {
         "flex": 1,
@@ -1177,9 +1153,7 @@ exports[`FeedScreen component renders correctly with write post button due to tw
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingTop": 5,
         },
       ]
@@ -1269,19 +1243,17 @@ Thanks @azpinstalls for the work, parts, advice and setup.
       <RefreshControlMock
         onRefresh={[Function]}
         progressViewOffset={undefined}
-        refreshing={true}
+        refreshing={false}
       />
     }
-    refreshing={true}
+    refreshing={false}
     renderItem={[Function]}
     scrollEventThrottle={50}
     stickyHeaderIndices={Array []}
     style={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingBottom": 5,
         },
       ]
@@ -1382,7 +1354,7 @@ exports[`FeedScreen component renders correctly without events 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "undefined4D",
+        "backgroundColor": "undefined99",
       },
       Object {
         "flex": 1,
@@ -1394,9 +1366,7 @@ exports[`FeedScreen component renders correctly without events 1`] = `
     contentContainerStyle={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingTop": 5,
         },
       ]
@@ -1433,9 +1403,7 @@ exports[`FeedScreen component renders correctly without events 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "undefined4D",
-        },
-        Object {
+          "backgroundColor": "transparent",
           "paddingBottom": 5,
         },
       ]

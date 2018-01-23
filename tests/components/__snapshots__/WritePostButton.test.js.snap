@@ -31,49 +31,55 @@ exports[`WritePostButton component renders correctly 1`] = `
   tvParallaxProperties={undefined}
 >
   <Image
+    collapsable={undefined}
     source={
       Object {
         "uri": "feed_rn_write_post_button",
       }
     }
     style={
-      Array [
-        Object {
-          "height": 54,
-          "shadowColor": "#000000",
-          "shadowOffset": Object {
-            "height": 1,
-            "width": 1,
+      Object {
+        "height": 54,
+        "opacity": 0,
+        "shadowColor": "#000000",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 1,
+        },
+        "shadowOpacity": 0.5,
+        "shadowRadius": 3,
+        "tintColor": undefined,
+        "transform": Array [
+          Object {
+            "translateY": 100,
           },
-          "shadowOpacity": 0.5,
-          "shadowRadius": 3,
-          "width": 54,
-        },
-        Object {
-          "tintColor": undefined,
-        },
-      ]
+        ],
+        "width": 54,
+      }
     }
   />
   <Image
+    collapsable={undefined}
     source={
       Object {
         "uri": "feed_rn_pencil",
       }
     }
     style={
-      Array [
-        Object {
-          "bottom": 20,
-          "height": 17,
-          "position": "absolute",
-          "right": 18,
-          "width": 17,
-        },
-        Object {
-          "tintColor": undefined,
-        },
-      ]
+      Object {
+        "bottom": 20,
+        "height": 17,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 18,
+        "tintColor": undefined,
+        "transform": Array [
+          Object {
+            "translateY": 100,
+          },
+        ],
+        "width": 17,
+      }
     }
   />
 </View>
