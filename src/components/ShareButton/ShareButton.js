@@ -26,18 +26,18 @@ class ShareButton extends Component {
     const {
       defaultMessage = '',
       message = '',
-      url = 'http://its0n.tv/a/jb', // TODO: Fix this to be dynamic
+      publicPageUrl = '',
       title = '',
     } = this.props;
 
     const textToShare = (Platform.OS === 'ios')
     ? `${defaultMessage} - ${message}`
-    : `${defaultMessage} - ${message} ${url}`;
+    : `${defaultMessage} - ${message} ${publicPageUrl}`;
 
     Share.share({
       message: textToShare,
       title,
-      url,
+      url: publicPageUrl,
     })
     .then(() => {})
     .catch(() => {});
@@ -60,7 +60,7 @@ ShareButton.propTypes = {
   defaultMessage: PropTypes.string,
   message: PropTypes.string,
   title: PropTypes.string,
-  url: PropTypes.string,
+  publicPageUrl: PropTypes.string,
 };
 
 ShareButton.contextTypes = {
