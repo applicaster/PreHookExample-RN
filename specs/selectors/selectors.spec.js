@@ -19,6 +19,7 @@ import {
   getActiveEventOriginUrl,
   getFavoriteTweets,
   getTranslations,
+  getPublicPageUrl,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -39,6 +40,7 @@ describe('selectors', () => {
         eventIdForActiveAudio: 'someId',
         facebookPageId: 'someFacebookPageId',
         twitterScreenName: 'someTwitterScreenName',
+        publicPageUrl: 'somePublicPageUrl',
       }),
       events: Map({
         socialEvents: [someEvent, 2],
@@ -108,6 +110,12 @@ describe('selectors', () => {
   describe('getActiveEvent', () => {
     it('should get the event for the activeEventId property from the events reducer state', () => {
       expect(getActiveEvent(store.getState())).to.deep.equal(someEvent);
+    });
+  });
+
+  describe('getPublicPageUrl', () => {
+    it('should get the publicPageUrl property from the app reducer state', () => {
+      expect(getPublicPageUrl(store.getState())).to.deep.equal('somePublicPageUrl');
     });
   });
 

@@ -31,6 +31,7 @@ describe('app reducer', () => {
         eventIdForActiveAudio: null,
         facebookPageId: null,
         twitterScreenName: null,
+        publicPageUrl: null,
       });
     });
   });

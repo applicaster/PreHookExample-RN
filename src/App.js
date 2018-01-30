@@ -50,7 +50,7 @@ class App extends Component {
       localization = JSON.parse(localization);
     }
 
-    const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive } = initialAppProps;
+    const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive, publicPageUrl } = initialAppProps;
     const translations = this.processLocalization(localization, feedTitle);
 
     let { environment } = initialAppProps;
@@ -62,6 +62,7 @@ class App extends Component {
         timelineId,
         environment,
         feedTitle,
+        publicPageUrl,
       })),
       events: eventsInitialState,
       translations,

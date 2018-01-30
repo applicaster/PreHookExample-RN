@@ -22,6 +22,7 @@ export const appInitialState = Map({
   eventIdForActiveAudio: null,
   facebookPageId: null,
   twitterScreenName: null,
+  publicPageUrl: null,
 });
 
 export default (state = appInitialState, action = actionCreator()) => {
