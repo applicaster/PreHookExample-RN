@@ -11,6 +11,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import FeedRNUtils from '@applicaster/feed-rn-utils';
+import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import {
+  CLOSE_REPLY_TO_TWEET_SCREEN,
+  REPLY_TO_TWEET_SENT,
+} from '../../constants/analyticEvents';
 import { styles, BAR_HEIGHT, STATUS_BAR_HEIGHT } from './style';
 import CloseButton from '../CloseButton';
 import CharacterCounter from '../CharacterCounter';
@@ -53,7 +58,10 @@ class ReplyToTweetScreen extends Component {
     if (!twitterText.length) return;
 
     FeedRNUtils.replyToTweet({ tweetText: `${twitterText}`, originalTweetId: eventId })
-      .then(() => this.closeModal())
+      .then(() => {
+        this.closeModal();
+        sendAnalyticEvent(REPLY_TO_TWEET_SENT, { eventId, twitterText }).then().catch();
+      })
       .catch(() => {
         Alert.alert(
           errorTitle,
@@ -75,6 +83,7 @@ class ReplyToTweetScreen extends Component {
   closeModal() {
     const { toggleModal } = this.props;
     toggleModal({ modal: 'ReplyToTweetModal' });
+    sendAnalyticEvent(CLOSE_REPLY_TO_TWEET_SCREEN, {}).then().catch();
   }
 
   renderActionBar() {

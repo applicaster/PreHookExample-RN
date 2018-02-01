@@ -7,6 +7,11 @@ import {
 } from 'react-native';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import {
+  NATIVE_SHARE_CLICKED,
+  NATIVE_EVENT_SHARED,
+} from '../../constants/analyticEvents';
 
 const buttonSize = 30;
 const styles = StyleSheet.create({
@@ -39,8 +44,9 @@ class ShareButton extends Component {
       title,
       url: publicPageUrl,
     })
-    .then(() => {})
+    .then(() => sendAnalyticEvent(NATIVE_EVENT_SHARED, { textToShare, publicPageUrl }).then().catch())
     .catch(() => {});
+    sendAnalyticEvent(NATIVE_SHARE_CLICKED, { publicPageUrl }).then().catch();
   }
 
   render() {

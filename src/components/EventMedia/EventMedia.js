@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ImageBackground, TouchableWithoutFeedback } from 'react-native';
 import LinearGradient from '@applicaster/react-native-linear-gradient';
+import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { IMAGE_DETAIL_CLICKED } from '../../constants/analyticEvents';
 import { styles } from './style';
 import EventVideo from '../EventVideo';
 import { getMediaDimensions } from '../../utils/size';
@@ -16,6 +18,7 @@ class EventMedia extends Component {
     const { toggleModal, setActiveEventId, eventId } = this.props;
     setActiveEventId(eventId);
     toggleModal({ modal: 'MediaModal' });
+    sendAnalyticEvent(IMAGE_DETAIL_CLICKED, { eventId }).then().catch();
   }
 
   renderVideo() {

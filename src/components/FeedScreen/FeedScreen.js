@@ -11,6 +11,11 @@ import {
   Platform,
 } from 'react-native';
 import FeedRNUtils from '@applicaster/feed-rn-utils';
+import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import {
+  CLOSE_FEED,
+  OPEN_FEED,
+} from '../../constants/analyticEvents';
 import EventContainer from '../EventContainer';
 import ModalScreen from '../ModalScreen';
 import CloseButton from '../CloseButton';
@@ -24,6 +29,7 @@ class FeedScreen extends Component {
   });
 
   static closeFeed() {
+    sendAnalyticEvent(CLOSE_FEED, {}).then().catch();
     return (Platform.OS === 'ios')
       ? NativeModules.ZPReactNativeBridgeListener.postEvent('dismiss_modal_view', { animated: 1 }, () => {})
       : NativeModules.APReactNativeBridge.handleCommand('stop', {});
@@ -50,6 +56,7 @@ class FeedScreen extends Component {
     } else {
       DeviceEventEmitter.addListener(TWITTER_UPDATE_FAVORITES, updateFavoriteTweets);
     }
+    sendAnalyticEvent(OPEN_FEED, {}).then().catch();
   }
 
   componentWillUnmount() {
@@ -60,7 +67,6 @@ class FeedScreen extends Component {
     } else {
       DeviceEventEmitter.removeAllListeners();
     }
-    
   }
 
   onRefresh() {

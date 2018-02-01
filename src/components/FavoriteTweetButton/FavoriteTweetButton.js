@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FeedRNUtils from '@applicaster/feed-rn-utils';
+import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import {
+  FAVORITE_TWEET_CLICKED,
+  UNFAVORITE_TWEET_CLICKED,
+} from '../../constants/analyticEvents';
 import ActionButton from '../ActionButton';
 import { FAVORITE_TWEET_BUTTON } from '../../icons';
 
@@ -45,7 +50,10 @@ class FavoriteTweetButton extends Component {
     const { eventId } = this.props;
 
     FeedRNUtils.unfavoriteTweet(eventId)
-    .then(() => this.setState({ favorited: false }))
+    .then(() => {
+      this.setState({ favorited: false });
+      sendAnalyticEvent(UNFAVORITE_TWEET_CLICKED, { eventId }).then().catch();
+    })
     .catch(error => {
       if (error.code === '500') { // User cancelled login
         this.setState({
@@ -75,7 +83,10 @@ class FavoriteTweetButton extends Component {
     const { favoriteCount, favorited, selected } = this.state;
 
     FeedRNUtils.favoriteTweet(eventId)
-    .then(() => this.setState({ favorited: true }))
+    .then(() => {
+      this.setState({ favorited: true });
+      sendAnalyticEvent(FAVORITE_TWEET_CLICKED, { eventId }).then().catch();
+    })
     .catch(error => {
       if (error.code === '500') { // User cancelled login
         this.setState({
@@ -91,7 +102,7 @@ class FavoriteTweetButton extends Component {
         });
       }
     });
-    
+
     if (!selected) {
       this.setState({
         favoriteCount: favoriteCount + 1,

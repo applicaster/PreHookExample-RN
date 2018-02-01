@@ -11,6 +11,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import FeedRNUtils from '@applicaster/feed-rn-utils';
+import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import {
+  CLOSE_WRITE_POST_SCREEN,
+  FACEBOOK_POST_SENT,
+  SELECT_SOCIAL_NETWORK_TO_POST,
+  TWITTER_POST_SENT,
+} from '../../constants/analyticEvents';
 import { styles, BAR_HEIGHT, STATUS_BAR_HEIGHT } from './style';
 import CloseButton from '../CloseButton';
 import CharacterCounter from '../CharacterCounter';
@@ -74,7 +81,10 @@ class WritePostScreen extends Component {
       if (!twitterText.length) return;
 
       FeedRNUtils.postTweet(`${twitterText}`)
-        .then(() => this.closeModal())
+        .then(() => {
+          sendAnalyticEvent(TWITTER_POST_SENT, { twitterText }).then().catch();
+          this.closeModal();
+        })
         .catch(() => {
           Alert.alert(
             twitterErrorTitle,
@@ -90,7 +100,10 @@ class WritePostScreen extends Component {
 
       const { facebookPageId } = this.props;
       FeedRNUtils.postFacebook({ postText: facebookText, facebookPageId })
-        .then(() => this.closeModal())
+        .then(() => {
+          sendAnalyticEvent(FACEBOOK_POST_SENT, { twitterText }).then().catch();
+          this.closeModal();
+        })
         .catch(() => {
           Alert.alert(
             facebookErrorTitle,
@@ -113,11 +126,13 @@ class WritePostScreen extends Component {
   closeModal() {
     const { toggleModal } = this.props;
     toggleModal({ modal: 'WritePostModal' });
+    sendAnalyticEvent(CLOSE_WRITE_POST_SCREEN, {}).then().catch();
   }
   
   toggleNetworkSelected() {
     const { socialNetworkSelected } = this.state;
     this.setState({ socialNetworkSelected: (socialNetworkSelected === 'twitter') ? 'facebook' : 'twitter' });
+    sendAnalyticEvent(SELECT_SOCIAL_NETWORK_TO_POST, { socialNetworkSelected }).then().catch();
   }
 
   renderActionBar() {

@@ -5,6 +5,8 @@ import {
   View,
 } from 'react-native';
 import TransformableImage from '@applicaster/react-native-transformable-image';
+import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { CLOSE_IMAGE_DETAIL_SCREEN } from '../../constants/analyticEvents';
 import { styles } from './style';
 import CloseButton from '../CloseButton';
 
@@ -36,6 +38,7 @@ class MediaDetailsScreen extends Component {
   closeModal() {
     const { toggleModal } = this.props;
     toggleModal({ modal: 'MediaModal' });
+    sendAnalyticEvent(CLOSE_IMAGE_DETAIL_SCREEN, {}).then().catch();
   }
 
   render() {

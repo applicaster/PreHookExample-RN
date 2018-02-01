@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { FB_LIKE_CLICKED } from '../../constants/analyticEvents';
 import ActionButton from '../ActionButton';
 import { LIKE_BUTTON } from '../../icons';
 
@@ -15,6 +17,7 @@ class LikeButton extends Component {
 
     setActiveEventId(eventId);
     navigation.navigate('SocialWebView', { headerTitle: 'Facebook' });
+    sendAnalyticEvent(FB_LIKE_CLICKED, { eventId }).then().catch();
   }
   
   render() {
