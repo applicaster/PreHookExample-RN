@@ -42,6 +42,7 @@
     "@applicaster/react-native-linear-gradient": "^1.0.3",
     "@applicaster/react-native-transformable-image": "0.0.20",
     "@applicaster/react-native-video": "^1.0.0",
+    "@applicaster/react-native-zapp-bridge": "github:applicaster/react-native-zapp-bridge",
     "applicaster-utils": "^1.0.1",
     "axios": "^0.15.3",
     "hex-to-rgb": "^1.0.1",
