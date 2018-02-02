@@ -3,6 +3,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import LikeButton from '../../src/components/LikeButton/LikeButton';
 
+jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
+
 describe('LikeButton', () => {
   test('component renders correctly', () => {
     const tree = renderer.create(

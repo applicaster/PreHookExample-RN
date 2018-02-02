@@ -15,6 +15,7 @@ const event = ({ width = 100, height = 100, url = 'someUrl' }) => ({
 });
 
 jest.mock('@applicaster/react-native-transformable-image', () => 'TransformableImage');
+jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
 
 describe('MediaDetailsScreen', () => {
   test('component renders correctly', () => {

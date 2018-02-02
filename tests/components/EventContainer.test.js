@@ -7,6 +7,7 @@ import { event } from './testDataUtils';
 jest.mock('../../src/components/ActionBar', () => 'ActionBar');
 jest.mock('../../src/components/EventMedia', () => 'EventMedia');
 jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');
+jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
 
 describe('EventContainer', () => {
   test('component renders correctly with an image event', () => {

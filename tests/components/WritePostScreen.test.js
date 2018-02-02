@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import WritePostScreen from '../../src/components/WritePostScreen/WritePostScreen';
 
 jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');
+jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
 
 describe('WritePostScreen', () => {
   test('component renders correctly', () => {

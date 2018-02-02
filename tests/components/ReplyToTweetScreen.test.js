@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import ReplyToTweetScreen from '../../src/components/ReplyToTweetScreen/ReplyToTweetScreen';
 
 jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');
+jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
 
 describe('ReplyToTweetScreen', () => {
   test('component renders correctly', () => {

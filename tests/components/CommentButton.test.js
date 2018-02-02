@@ -3,6 +3,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import CommentButton from '../../src/components/CommentButton/CommentButton';
 
+jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
+
 describe('CommentButton', () => {
   test('component renders correctly', () => {
     const tree = renderer.create(

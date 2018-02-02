@@ -4,6 +4,9 @@ import renderer from 'react-test-renderer';
 import { event } from './testDataUtils';
 import FeedScreen from '../../src/components/FeedScreen/FeedScreen';
 
+jest.mock('@applicaster/react-native-zapp-bridge', () => ({
+  sendAnalyticEvent: () => Promise.resolve(),
+}));
 jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');
 jest.mock('NativeEventEmitter', () => class MockNativeEventEmitter {
   addListener = () => jest.fn();
@@ -13,6 +16,7 @@ jest.mock('NativeEventEmitter', () => class MockNativeEventEmitter {
 jest.mock('../../src/components/EventContainer', () => 'EventContainer');
 jest.mock('../../src/components/ModalScreen', () => 'ModalScreen');
 jest.mock('../../src/components/WritePostButton', () => 'WritePostButton');
+
 
 describe('FeedScreen', () => {
   test('component renders correctly without events', () => {

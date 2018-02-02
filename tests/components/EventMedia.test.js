@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import EventMedia from '../../src/components/EventMedia/EventMedia';
 
 jest.mock('../../src/components/EventVideo', () => 'EventVideo');
+jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
 
 const eventMediaProps = (height, width, videoUrl) => ({
   imageUrl: 'someurl',
