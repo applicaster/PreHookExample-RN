@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "NODE_ENV=test nyc --clean --reporter=lcovonly --reporter=json --reporter=text mocha --compilers js:babel-core/register specs/setup.js --recursive 'specs/*/*.spec.js' --reporter spec",
-    "jest": "jest tests/*/*.test.js",
+    "jest": "jest -w=2 tests/*/*.test.js",
     "jest-reset": "jest -u tests/*/*.test.js",
     "test-reporter": "NODE_ENV=test mocha -r specs/setup.js --recursive 'specs/*/*.spec.js' --reporter mocha-junit-reporter --compilers js:babel-core/register",
     "beautify": "node_modules/.bin/eslint --fix .",
