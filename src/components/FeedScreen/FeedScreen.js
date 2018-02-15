@@ -11,7 +11,7 @@ import {
   Platform,
 } from 'react-native';
 import FeedRNUtils from '@applicaster/feed-rn-utils';
-import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import {
   CLOSE_FEED,
   OPEN_FEED,

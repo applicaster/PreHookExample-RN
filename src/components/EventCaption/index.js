@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text } from 'react-native';
 import reactStringReplace from 'react-string-replace';
-import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import {
   OPEN_WEBVIEW_FROM_EVENT_CAPTION,
 } from '../../constants/analyticEvents';

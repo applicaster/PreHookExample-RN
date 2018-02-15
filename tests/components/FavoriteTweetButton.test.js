@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import FavoriteTweetButton from '../../src/components/RetweetButton';
 
 jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');
-jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
+jest.mock('react-native-zapp-bridge', () => 'NativeZappBridge');
 
 describe('FavoriteTweetButton', () => {
   test('component renders correctly', () => {

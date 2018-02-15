@@ -3,7 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import EventCaption from '../../src/components/EventCaption';
 
-jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
+jest.mock('react-native-zapp-bridge', () => 'NativeZappBridge');
 
 describe('EventCaption', () => {
   test('component renders correctly', () => {

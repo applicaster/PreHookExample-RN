@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import { COMMENT_CLICKED } from '../../constants/analyticEvents';
 import ActionButton from '../ActionButton';
 import { COMMENT_BUTTON } from '../../icons';

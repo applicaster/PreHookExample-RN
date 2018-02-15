@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import { event } from './testDataUtils';
 import FeedScreen from '../../src/components/FeedScreen/FeedScreen';
 
-jest.mock('@applicaster/react-native-zapp-bridge', () => ({
+jest.mock('react-native-zapp-bridge', () => ({
   sendAnalyticEvent: () => Promise.resolve(),
 }));
 jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');

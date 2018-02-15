@@ -3,7 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import HeartButton from '../../src/components/HeartButton/HeartButton';
 
-jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
+jest.mock('react-native-zapp-bridge', () => 'NativeZappBridge');
 
 describe('HeartButton', () => {
   test('component renders correctly', () => {

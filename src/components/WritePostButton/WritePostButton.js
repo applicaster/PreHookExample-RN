@@ -4,7 +4,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { Image } from 'react-native-animatable';
-import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import { WRITE_POST_BUTTON_CLICKED } from '../../constants/analyticEvents';
 import { styles } from './style';
 

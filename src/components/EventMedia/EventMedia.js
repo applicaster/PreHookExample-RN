@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ImageBackground, TouchableWithoutFeedback } from 'react-native';
 import LinearGradient from '@applicaster/react-native-linear-gradient';
-import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import { IMAGE_DETAIL_CLICKED } from '../../constants/analyticEvents';
 import { styles } from './style';
 import EventVideo from '../EventVideo';

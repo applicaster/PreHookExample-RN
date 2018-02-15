@@ -4,7 +4,7 @@ import {
   View,
   WebView,
 } from 'react-native';
-import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import {
   GO_BACK_FROM_WEB_VIEW,
 } from '../../constants/analyticEvents';

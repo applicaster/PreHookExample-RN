@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FeedRNUtils from '@applicaster/feed-rn-utils';
-import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import {
   FAVORITE_TWEET_CLICKED,
   UNFAVORITE_TWEET_CLICKED,

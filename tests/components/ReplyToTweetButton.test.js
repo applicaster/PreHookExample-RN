@@ -3,7 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import ReplyToTweetButton from '../../src/components/ReplyToTweetButton/ReplyToTweetButton';
 
-jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
+jest.mock('react-native-zapp-bridge', () => 'NativeZappBridge');
 
 describe('ReplyToTweetButton', () => {
   test('component renders correctly', () => {

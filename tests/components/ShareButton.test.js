@@ -3,7 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import ShareButton from '../../src/components/ShareButton/ShareButton';
 
-jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
+jest.mock('react-native-zapp-bridge', () => 'NativeZappBridge');
 
 describe('ShareButton', () => {
   test('component renders correctly', () => {

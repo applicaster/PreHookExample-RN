@@ -7,7 +7,7 @@ jest.mock('../../src/components/EventDetailCount', () => 'EventDetailCount');
 jest.mock('../../src/components/ReplyToTweetButton', () => 'ReplyToTweetButton');
 jest.mock('../../src/components/FavoriteTweetButton', () => 'FavoriteTweetButton');
 jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');
-jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
+jest.mock('react-native-zapp-bridge', () => 'NativeZappBridge');
 
 describe('TwitterActionButtons', () => {
   test('component renders correctly', () => {

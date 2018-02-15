@@ -3,7 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import WritePostButton from '../../src/components/WritePostButton/WritePostButton';
 
-jest.mock('@applicaster/react-native-zapp-bridge', () => 'NativeZappBridge');
+jest.mock('react-native-zapp-bridge', () => 'NativeZappBridge');
 
 describe('WritePostButton', () => {
   test('component renders correctly', () => {

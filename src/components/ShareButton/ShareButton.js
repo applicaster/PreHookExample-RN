@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import {
   NATIVE_SHARE_CLICKED,
   NATIVE_EVENT_SHARED,

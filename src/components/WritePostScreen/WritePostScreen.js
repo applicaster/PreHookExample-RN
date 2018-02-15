@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import FeedRNUtils from '@applicaster/feed-rn-utils';
-import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import {
   CLOSE_WRITE_POST_SCREEN,
   FACEBOOK_POST_SENT,

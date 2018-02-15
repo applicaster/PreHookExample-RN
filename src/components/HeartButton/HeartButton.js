@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { sendAnalyticEvent } from '@applicaster/react-native-zapp-bridge';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import { INSTAGRAM_LIKE_CLICKED } from '../../constants/analyticEvents';
 import ActionButton from '../ActionButton';
 import { HEART_BUTTON } from '../../icons';
