@@ -26,7 +26,7 @@ export const appInitialState = Map({
 });
 
 export default (state = appInitialState, action = actionCreator()) => {
-  const { type, payload } = action;
+  const { type, payload = {} } = action;
 
   switch (type) {
     case SET_ENVIRONMENT:

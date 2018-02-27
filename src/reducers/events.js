@@ -14,7 +14,7 @@ export const eventsInitialState = Map({
 });
 
 export default (state = eventsInitialState, action = actionCreator()) => {
-  const { type, payload } = action;
+  const { type, payload = {} } = action;
   
   switch (type) {
     case FETCH_SOCIAL_EVENTS_START:
