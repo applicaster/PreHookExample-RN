@@ -16,7 +16,7 @@ export const isTwitterAvailable = createSelector(getTwitterScreenName, (twitterS
 export const isFacebookAvailable = createSelector(getFacebookPageId, (facebookPageId) => !!facebookPageId);
 
 // From EVENTS Reducer
-export const getSocialEvents = state => state.events.get('socialEvents');
+export const getSocialEvents = state => state.events.get('socialEvents').filter(event => event.source !== 'cms');
 export const getLoading = state => state.events.get('loading');
 export const getFavoriteTweets = state => state.events.get('favoriteTweets');
 
