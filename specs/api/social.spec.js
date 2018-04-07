@@ -1,13 +1,13 @@
 import axios from 'axios';
-import { fetchSocialEvents } from '../../src/api/social';
+import { fetchEvents } from '../../src/api/events';
 
 describe('api', () => {
-  describe('social', () => {
-    describe('fetchSocialEvents', () => {
+  describe('events', () => {
+    describe('fetchEvents', () => {
       beforeEach(() => {
         sinon.stub(axios, 'get').resolves({ foo: 'bar' });
 
-        fetchSocialEvents({
+        fetchEvents({
           environment: 'production',
           accountId: 'someAccountId',
           timelineId: 'someTimelineId',

@@ -5,17 +5,17 @@ import { createEpicMiddleware, ActionsObservable } from 'redux-observable';
 import { Map } from 'immutable';
 import sinon from 'sinon';
 import {
-  fetchSocialEventsEpic,
-  setSocialMetadataEpic,
+  fetchEventsEpic,
+  setMetadataEpic,
   fetchFavoriteTweetsEpic,
   updateFavoriteTweetsEpic,
 } from '../../src/epics';
 import {
-  FETCH_SOCIAL_EVENTS_START,
-  FETCH_SOCIAL_EVENTS_DONE,
-  FETCH_SOCIAL_EVENTS_FAILED,
+  FETCH_EVENTS_START,
+  FETCH_EVENTS_DONE,
+  FETCH_EVENTS_FAILED,
   FETCH_FAVORITE_TWEETS_DONE,
-  SET_SOCIAL_METADATA,
+  SET_METADATA,
   UPDATE_FAVORITE_TWEETS,
 } from '../../src/actions';
 
@@ -23,29 +23,29 @@ jest.mock('@applicaster/feed-rn-utils', () => ({
   getFavoriteTweets: () => Promise.resolve([1, 2]),
 }));
 
-const epicMiddleware = createEpicMiddleware(fetchSocialEventsEpic);
+const epicMiddleware = createEpicMiddleware(fetchEventsEpic);
 const mockStore = configureMockStore([epicMiddleware]);
 
-describe('fetchSocialEventsEpic', () => {
+describe('fetchEventsEpic', () => {
   let axiosGetStub;
   let store;
   let action$;
   beforeEach(() => {
     axiosGetStub = sinon.stub(axios, 'get').resolves({ data: { data: [1, 2], meta: {}, links: {} } });
     store = mockStore({ app: Map({}) });
-    action$ = ActionsObservable.of({ type: FETCH_SOCIAL_EVENTS_START });
+    action$ = ActionsObservable.of({ type: FETCH_EVENTS_START });
   });
   
   afterEach(() => axios.get.restore());
 
   test('dispatches the correct actions with expected payloads', done => {
     const expectedOutputActions = [{
-      type: FETCH_SOCIAL_EVENTS_DONE,
+      type: FETCH_EVENTS_DONE,
       meta: undefined,
       payload: { data: [1, 2], meta: {}, links: {} },
     }];
 
-    fetchSocialEventsEpic(action$, store)
+    fetchEventsEpic(action$, store)
       .toArray()
       .subscribe(actualOutputActions => {
         expect(actualOutputActions).toEqual(expectedOutputActions);
@@ -61,12 +61,12 @@ describe('fetchSocialEventsEpic', () => {
 
     test('dispatches the correct actions with expected payload', done => {
       const expectedOutputActions = [{
-        type: FETCH_SOCIAL_EVENTS_FAILED,
+        type: FETCH_EVENTS_FAILED,
         meta: undefined,
         payload: { error: { foo: 'bar' } },
       }];
 
-      fetchSocialEventsEpic(action$, store)
+      fetchEventsEpic(action$, store)
         .toArray()
         .subscribe(actualOutputActions => {
           expect(actualOutputActions).toEqual(expectedOutputActions);
@@ -77,23 +77,23 @@ describe('fetchSocialEventsEpic', () => {
   });
 });
 
-describe('setSocialMetadataEpic', () => {
+describe('setMetadataEpic', () => {
   let action$;
   beforeEach(() => {
     action$ = ActionsObservable.of({
-      type: FETCH_SOCIAL_EVENTS_DONE,
+      type: FETCH_EVENTS_DONE,
       payload: { metadata: { facebookPageId: 'someId', twitterScreenName: 'screenName' } },
     });
   });
 
   test('dispatches the correct actions with expected payloads', done => {
     const expectedOutputActions = [{
-      type: SET_SOCIAL_METADATA,
+      type: SET_METADATA,
       meta: undefined,
       payload: { facebookPageId: 'someId', twitterScreenName: 'screenName' },
     }];
 
-    setSocialMetadataEpic(action$)
+    setMetadataEpic(action$)
       .toArray()
       .subscribe(actualOutputActions => {
         expect(actualOutputActions).toEqual(expectedOutputActions);
@@ -108,7 +108,7 @@ describe('fetchFavoriteTweetsEpic', () => {
   let action$;
   beforeEach(() => {
     action$ = ActionsObservable.of({ type:
-      FETCH_SOCIAL_EVENTS_DONE,
+      FETCH_EVENTS_DONE,
       payload: { metadata: { facebookPageId: 'someId', twitterScreenName: 'screenName' } },
     });
   });

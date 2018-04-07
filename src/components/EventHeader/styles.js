@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    width: width - 10,
+    width: width - 20,
     zIndex: 2,
   },
   eventHeaderInfo: {

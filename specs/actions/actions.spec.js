@@ -1,7 +1,7 @@
 import {
-  fetchSocialEvents,
-  fetchSocialEventsDone,
-  fetchSocialEventsFailed,
+  fetchEvents,
+  fetchEventsDone,
+  fetchEventsFailed,
   fetchFavoriteTweetsDone,
   fetchFavoriteTweetsFailed,
   setAccountId,
@@ -11,12 +11,12 @@ import {
   toggleModal,
   setEventIdForActiveAudio,
   setActiveEventId,
-  setSocialMetadata,
+  setMetadata,
   updateFavoriteTweets,
 
-  FETCH_SOCIAL_EVENTS_START,
-  FETCH_SOCIAL_EVENTS_DONE,
-  FETCH_SOCIAL_EVENTS_FAILED,
+  FETCH_EVENTS_START,
+  FETCH_EVENTS_DONE,
+  FETCH_EVENTS_FAILED,
   FETCH_FAVORITE_TWEETS_DONE,
   FETCH_FAVORITE_TWEETS_FAILED,
   UPDATE_FAVORITE_TWEETS,
@@ -27,43 +27,43 @@ import {
   TOGGLE_MODAL,
   SET_ACTIVE_EVENT_ID,
   SET_EVENT_ID_FOR_ACTIVE_AUDIO,
-  SET_SOCIAL_METADATA,
+  SET_METADATA,
 } from '../../src/actions';
 
 describe('actions', () => {
   describe('action creators', () => {
-    describe('fetchSocialEvents', () => {
+    describe('fetchEvents', () => {
       it('should have correct action type', () => {
-        const action = fetchSocialEvents();
+        const action = fetchEvents();
 
-        expect(action.type).to.equal(FETCH_SOCIAL_EVENTS_START);
+        expect(action.type).to.equal(FETCH_EVENTS_START);
       });
     });
 
-    describe('fetchSocialEventsDone', () => {
+    describe('fetchEventsDone', () => {
       it('should have correct action type', () => {
-        const action = fetchSocialEventsDone();
+        const action = fetchEventsDone();
 
-        expect(action.type).to.equal(FETCH_SOCIAL_EVENTS_DONE);
+        expect(action.type).to.equal(FETCH_EVENTS_DONE);
       });
 
       it('should pass events to payload', () => {
-        const action = fetchSocialEventsDone({ data: [1,2], meta: {}, links: {} });
+        const action = fetchEventsDone({ data: [1, 2], meta: {}, links: {} });
 
         expect(action.payload.data).to.exist;
-        expect(action.payload.data).to.deep.equal([1,2]);
+        expect(action.payload.data).to.deep.equal([1, 2]);
       });
     });
 
-    describe('fetchSocialEventsFailed', () => {
+    describe('fetchEventsFailed', () => {
       it('should have correct action type', () => {
-        const action = fetchSocialEventsFailed(Error('blah'));
+        const action = fetchEventsFailed(Error('blah'));
 
-        expect(action.type).to.equal(FETCH_SOCIAL_EVENTS_FAILED);
+        expect(action.type).to.equal(FETCH_EVENTS_FAILED);
       });
 
       it('should pass error to payload', () => {
-        const action = fetchSocialEventsFailed(Error('blah'));
+        const action = fetchEventsFailed(Error('blah'));
 
         expect(action.payload.error).to.exist;
         expect(action.payload.error.message).to.deep.equal('blah');
@@ -204,15 +204,15 @@ describe('actions', () => {
       });
     });
 
-    describe('setSocialMetadata', () => {
+    describe('setMetadata', () => {
       it('should have correct action type', () => {
-        const action = setSocialMetadata({});
+        const action = setMetadata({});
 
-        expect(action.type).to.equal(SET_SOCIAL_METADATA);
+        expect(action.type).to.equal(SET_METADATA);
       });
 
       it('should pass params', () => {
-        const action = setSocialMetadata({ foo: 'bar' });
+        const action = setMetadata({ foo: 'bar' });
 
         expect(action.payload).to.deep.equal({ foo: 'bar' });
       });

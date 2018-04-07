@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/mergeMap';
 import { combineEpics } from 'redux-observable';
 import FeedRNUtils from '@applicaster/feed-rn-utils';
-import { fetchSocialEvents } from '../api/social';
+import { fetchEvents } from '../api/events';
 
 import {
   getAccountId,
@@ -19,39 +19,39 @@ import {
 
 import {
   // ACTION NAMES:
-  FETCH_SOCIAL_EVENTS_START,
-  FETCH_SOCIAL_EVENTS_DONE,
+  FETCH_EVENTS_START,
+  FETCH_EVENTS_DONE,
   UPDATE_FAVORITE_TWEETS,
   
   // ACTION CREATORS:
-  fetchSocialEventsDone,
-  fetchSocialEventsFailed,
-  setSocialMetadata,
+  fetchEventsDone,
+  fetchEventsFailed,
+  setMetadata,
   fetchFavoriteTweetsDone,
   fetchFavoriteTweetsFailed,
 } from '../actions';
 
-export const fetchSocialEventsEpic = (action$, store) =>
+export const fetchEventsEpic = (action$, store) =>
   action$
-    .filter(action => action.type === FETCH_SOCIAL_EVENTS_START)
+    .filter(action => action.type === FETCH_EVENTS_START)
     .mergeMap(() =>
-      Observable.fromPromise(fetchSocialEvents({
+      Observable.fromPromise(fetchEvents({
         environment: getEnvironment(store.getState()),
         accountId: getAccountId(store.getState()),
         timelineId: getTimelineId(store.getState()),
       }))
-        .map(response => fetchSocialEventsDone(response.data))
-        .catch(error => Observable.of(fetchSocialEventsFailed(error)))
+        .map(response => fetchEventsDone(response.data))
+        .catch(error => Observable.of(fetchEventsFailed(error)))
     );
   
-export const setSocialMetadataEpic = (action$) =>
+export const setMetadataEpic = (action$) =>
     action$
-      .filter(action => action.type === FETCH_SOCIAL_EVENTS_DONE)
-      .map(action => setSocialMetadata(action.payload.metadata));
+      .filter(action => action.type === FETCH_EVENTS_DONE)
+      .map(action => setMetadata(action.payload.metadata));
 
 export const fetchFavoriteTweetsEpic = (action$) =>
     action$
-      .filter(action => action.type === FETCH_SOCIAL_EVENTS_DONE)
+      .filter(action => action.type === FETCH_EVENTS_DONE)
       .mergeMap(action => {
         const { metadata } = action.payload;
         if (metadata && metadata.twitterScreenName) {
@@ -71,8 +71,8 @@ export const updateFavoriteTweetsEpic = (action$) =>
       .catch(error => Observable.of(fetchFavoriteTweetsFailed(error))));
 
 export default combineEpics(
-  fetchSocialEventsEpic,
-  setSocialMetadataEpic,
+  fetchEventsEpic,
+  setMetadataEpic,
   fetchFavoriteTweetsEpic,
   updateFavoriteTweetsEpic,
 );

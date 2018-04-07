@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
-  fetchSocialEvents,
+  fetchEvents,
   toggleModal,
   updateFavoriteTweets,
 } from '../../actions';
 
 import {
-  getSocialEvents,
+  getEvents,
   getLoading,
   isFacebookAvailable,
   isTwitterAvailable,
@@ -19,11 +19,11 @@ const mapStateToProps = state => ({
   isFacebookAvailable: isFacebookAvailable(state),
   isTwitterAvailable: isTwitterAvailable(state),
   loading: getLoading(state),
-  socialEvents: getSocialEvents(state),
+  events: getEvents(state),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchSocialEvents,
+  fetchEvents,
   toggleModal,
   updateFavoriteTweets,
 }, dispatch);

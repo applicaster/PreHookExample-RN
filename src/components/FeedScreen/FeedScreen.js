@@ -45,7 +45,7 @@ class FeedScreen extends Component {
   }
 
   componentWillMount() {
-    this.props.fetchSocialEvents();
+    this.props.fetchEvents();
     
     const TWITTER_UPDATE_FAVORITES = 'twitter:updateFavorites';
     const { updateFavoriteTweets } = this.props;
@@ -70,18 +70,18 @@ class FeedScreen extends Component {
   }
 
   onRefresh() {
-    this.props.fetchSocialEvents();
+    this.props.fetchEvents();
   }
 
   render() {
-    const { isFacebookAvailable, isTwitterAvailable, socialEvents, loading, toggleModal } = this.props;
+    const { isFacebookAvailable, isTwitterAvailable, events, loading, toggleModal } = this.props;
     const backgroundFeedColor = { backgroundColor: `${this.context.backgroundColor}99` };
     const transparentBackgroundColor = { backgroundColor: `transparent` };
     
     return (
       <View style={[backgroundFeedColor, { flex: 1 }]}>
         <FlatList
-          data={socialEvents}
+          data={events}
           renderItem={({item}) => <EventContainer key={item.id} event={item} />}
           keyExtractor={(item) => item.id }
           style={[styles.feedList]} contentContainerStyle={[styles.feedListContent]}
@@ -99,11 +99,11 @@ class FeedScreen extends Component {
 }
 
 FeedScreen.propTypes = {
-  fetchSocialEvents: PropTypes.func,
+  fetchEvents: PropTypes.func,
   isFacebookAvailable: PropTypes.bool,
   isTwitterAvailable: PropTypes.bool,
   loading: PropTypes.bool,
-  socialEvents: PropTypes.array,
+  events: PropTypes.array,
   navigation: PropTypes.object,
   updateFavoriteTweets: PropTypes.func,
 };

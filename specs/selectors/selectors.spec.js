@@ -5,7 +5,7 @@ import {
   getTimelineId,
   getTimezone,
   getEnvironment,
-  getSocialEvents,
+  getEvents,
   getLoading,
   getActiveEventId,
   getActiveEvent,
@@ -43,7 +43,7 @@ describe('selectors', () => {
         publicPageUrl: 'somePublicPageUrl',
       }),
       events: Map({
-        socialEvents: [someEvent, 2],
+        events: [someEvent, 2],
         loading: false,
         favoriteTweets: { 1: 1, 2: 2 },
       }),
@@ -77,9 +77,9 @@ describe('selectors', () => {
     });
   });
 
-  describe('getSocialEvents', () => {
-    it('should get the socialEvents from the events reducer state', () => {
-      expect(getSocialEvents(store.getState())).to.deep.equal([someEvent, 2]);
+  describe('getEvents', () => {
+    it('should get the events from the events reducer state', () => {
+      expect(getEvents(store.getState())).to.deep.equal([someEvent, 2]);
     });
   });
 
