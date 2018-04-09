@@ -1,17 +1,21 @@
 import { StyleSheet } from 'react-native';
 
+const HORIZONTAL_MARGIN = 12;
 export const styles = StyleSheet.create({
   eventContainer: {
-    borderRadius: 7,
-    marginBottom: 10,
-    marginHorizontal: 10,
+    borderRadius: 10, // TODO: MAKE THIS CONFIGURABLE
     overflow: 'hidden',
-    shadowColor: 'black',
-    shadowOpacity: 0.4,
-    shadowRadius: 5,
+  },
+  cardContainer: {
+    borderRadius: 10,
+    marginBottom: 25,
+    marginHorizontal: HORIZONTAL_MARGIN,
+    shadowColor: '#DAD8D8',
+    shadowOpacity: 1,
+    shadowRadius: 8,
     shadowOffset: {
-      width: 4,
-      height: 5,
+      width: 1,
+      height: 1,
     },
   },
 });
