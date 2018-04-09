@@ -52,7 +52,7 @@ class EventContainer extends Component {
       eventOriginUrl={originUrl}
       likesCount={likesCount}
       retweetCount={retweetCount}
-      socialNetwork={source}
+      source={source}
       textToShare={caption}
     />
     );

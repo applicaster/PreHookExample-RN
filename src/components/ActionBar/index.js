@@ -56,8 +56,16 @@ class ActionBar extends Component {
     );
   }
 
+  renderBasicBar() {
+    return (
+      <View style={[styles.buttonBar]}>
+        {this.renderShareButton()}
+      </View>
+    );
+  }
+
   render() {
-    switch (this.props.socialNetwork) {
+    switch (this.props.source) {
       case 'instagram':
         return this.renderInstagramBar();
       case 'facebook':
@@ -65,7 +73,7 @@ class ActionBar extends Component {
       case 'twitter':
         return this.renderTwitterBar();
       default:
-        return null;
+        return this.renderBasicBar();
     }
   }
 }
@@ -73,7 +81,7 @@ class ActionBar extends Component {
 ActionBar.propTypes = {
   commentsCount: PropTypes.number,
   eventId: PropTypes.string,
-  socialNetwork: PropTypes.string,
+  source: PropTypes.string,
   likesCount: PropTypes.number,
   textToShare: PropTypes.string,
   retweetCount: PropTypes.number,
