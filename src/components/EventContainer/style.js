@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
+import { SCREEN_MARGIN } from '../../constants/measurements';
 
-const HORIZONTAL_MARGIN = 12;
 export const styles = StyleSheet.create({
   eventContainer: {
     borderRadius: 10, // TODO: MAKE THIS CONFIGURABLE
@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   cardContainer: {
     borderRadius: 10,
     marginBottom: 25,
-    marginHorizontal: HORIZONTAL_MARGIN,
+    marginHorizontal: SCREEN_MARGIN,
     shadowColor: '#DAD8D8',
     shadowOpacity: 1,
     shadowRadius: 8,

@@ -4,6 +4,7 @@ import { TouchableWithoutFeedback } from 'react-native';
 import Video from '@applicaster/react-native-video';
 import { styles } from './style';
 import { getMediaDimensions } from '../../utils/size';
+import { SCREEN_MARGIN } from '../../constants/measurements';
 
 class EventVideo extends Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class EventVideo extends Component {
         muted={muted}
         resizeMode="cover"
         repeat
-        style={[getMediaDimensions({ height, width }), styles.videoItem]}
+        style={[getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN }), styles.videoItem]}
       />
     </TouchableWithoutFeedback>);
   }

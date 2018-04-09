@@ -7,6 +7,7 @@ import { IMAGE_DETAIL_CLICKED } from '../../constants/analyticEvents';
 import { styles } from './style';
 import EventVideo from '../EventVideo';
 import { getMediaDimensions } from '../../utils/size';
+import { SCREEN_MARGIN } from '../../constants/measurements';
 
 class EventMedia extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class EventMedia extends Component {
     return (
       <TouchableWithoutFeedback onPress={this.showMediaDetails}>
         <ImageBackground
-          style={getMediaDimensions({ height, width })}
+          style={getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN })}
           source={{ uri: imageUrl }}
         >
           {videoUrl && this.renderVideo()}

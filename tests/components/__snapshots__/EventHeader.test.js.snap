@@ -105,11 +105,16 @@ exports[`EventHeader component renders correctly 1`] = `
   </View>
   <View
     style={
-      Object {
-        "position": "absolute",
-        "right": 9,
-        "top": 9,
-      }
+      Array [
+        Object {
+          "position": "absolute",
+          "right": 9,
+          "top": 9,
+        },
+        Object {
+          "right": 9,
+        },
+      ]
     }
   >
     <Image
@@ -230,11 +235,16 @@ exports[`EventHeader component renders correctly for Facebook event 1`] = `
   </View>
   <View
     style={
-      Object {
-        "position": "absolute",
-        "right": 9,
-        "top": 9,
-      }
+      Array [
+        Object {
+          "position": "absolute",
+          "right": 9,
+          "top": 9,
+        },
+        Object {
+          "right": 18,
+        },
+      ]
     }
   >
     <Image
@@ -371,11 +381,16 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
   </View>
   <View
     style={
-      Object {
-        "position": "absolute",
-        "right": 9,
-        "top": 9,
-      }
+      Array [
+        Object {
+          "position": "absolute",
+          "right": 9,
+          "top": 9,
+        },
+        Object {
+          "right": 18,
+        },
+      ]
     }
   >
     <Image
@@ -512,11 +527,16 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
   </View>
   <View
     style={
-      Object {
-        "position": "absolute",
-        "right": 9,
-        "top": 9,
-      }
+      Array [
+        Object {
+          "position": "absolute",
+          "right": 9,
+          "top": 9,
+        },
+        Object {
+          "right": 18,
+        },
+      ]
     }
   >
     <Image
@@ -653,11 +673,16 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
   </View>
   <View
     style={
-      Object {
-        "position": "absolute",
-        "right": 9,
-        "top": 9,
-      }
+      Array [
+        Object {
+          "position": "absolute",
+          "right": 9,
+          "top": 9,
+        },
+        Object {
+          "right": 18,
+        },
+      ]
     }
   >
     <Image
