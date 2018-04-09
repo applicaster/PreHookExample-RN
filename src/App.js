@@ -26,7 +26,7 @@ class App extends Component {
       mainColor: (colors.main_color) ? `#${colors.main_color.substring(2, 8)}` : '#00D4ED',
       secondaryColor: (colors.secondary_color) ? `#${colors.secondary_color.substring(2, 8)}` : '#FFFFFF',
       textColor: (colors.text_color) ? `#${colors.text_color.substring(2, 8)}` : '#FFFFFF',
-      secondaryTextColor: (colors.secondary_color) ? `#${colors.text_color.substring(2, 8)}` : '#00D4ED',
+      secondaryTextColor: (colors.secondary_color) ? `#${colors.secondary_text_color.substring(2, 8)}` : '#00D4ED',
       backgroundColor: (colors.background_color) ? `#${colors.background_color.substring(2, 8)}` : '#505050',
     };
 
