@@ -22,7 +22,7 @@ describe('FeedScreen', () => {
   test('component renders correctly without events', () => {
     const tree = renderer.create(
       <FeedScreen
-        fetchSocialEvents={() => {}}
+        fetchEvents={() => {}}
         setAccountId={() => {}}
         setTimelineId={() => {}}
         setTimezone={() => {}}
@@ -37,7 +37,7 @@ describe('FeedScreen', () => {
   test('component renders correctly with events', () => {
     const tree = renderer.create(
       <FeedScreen
-        fetchSocialEvents={() => {}}
+        fetchEvents={() => {}}
         setAccountId={() => {}}
         setTimelineId={() => {}}
         setTimezone={() => {}}
@@ -52,7 +52,7 @@ describe('FeedScreen', () => {
   test('component renders correctly while loading', () => {
     const tree = renderer.create(
       <FeedScreen
-        fetchSocialEvents={() => {}}
+        fetchEvents={() => {}}
         setAccountId={() => {}}
         setTimelineId={() => {}}
         setTimezone={() => {}}
@@ -67,7 +67,7 @@ describe('FeedScreen', () => {
   test('component renders correctly while loading with events', () => {
     const tree = renderer.create(
       <FeedScreen
-        fetchSocialEvents={() => {}}
+        fetchEvents={() => {}}
         setAccountId={() => {}}
         setTimelineId={() => {}}
         setTimezone={() => {}}
@@ -82,7 +82,7 @@ describe('FeedScreen', () => {
   test('component renders correctly with modal on top', () => {
     const tree = renderer.create(
       <FeedScreen
-        fetchSocialEvents={() => {}}
+        fetchEvents={() => {}}
         setAccountId={() => {}}
         setTimelineId={() => {}}
         setTimezone={() => {}}
@@ -97,7 +97,7 @@ describe('FeedScreen', () => {
   test('component renders correctly with no write post button', () => {
     const tree = renderer.create(
       <FeedScreen
-        fetchSocialEvents={() => {}}
+        fetchEvents={() => {}}
         setAccountId={() => {}}
         setTimelineId={() => {}}
         setTimezone={() => {}}
@@ -114,7 +114,7 @@ describe('FeedScreen', () => {
   test('component renders correctly with write post button due to facebook availability', () => {
     const tree = renderer.create(
       <FeedScreen
-        fetchSocialEvents={() => {}}
+        fetchEvents={() => {}}
         setAccountId={() => {}}
         setTimelineId={() => {}}
         setTimezone={() => {}}
@@ -131,7 +131,7 @@ describe('FeedScreen', () => {
   test('component renders correctly with write post button due to twitter availability', () => {
     const tree = renderer.create(
       <FeedScreen
-        fetchSocialEvents={() => {}}
+        fetchEvents={() => {}}
         setAccountId={() => {}}
         setTimelineId={() => {}}
         setTimezone={() => {}}

@@ -148,7 +148,7 @@ exports[`EventHeader component renders correctly for Facebook event 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 740,
+        "width": 730,
         "zIndex": 2,
       },
     ]
@@ -273,7 +273,7 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 740,
+        "width": 730,
         "zIndex": 2,
       },
     ]
@@ -414,7 +414,7 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 740,
+        "width": 730,
         "zIndex": 2,
       },
     ]
@@ -555,7 +555,7 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 740,
+        "width": 730,
         "zIndex": 2,
       },
     ]

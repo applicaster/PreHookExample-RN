@@ -5,10 +5,17 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
   style={
     Array [
       Object {
-        "borderRadius": 5,
-        "marginBottom": 5,
-        "marginHorizontal": 5,
+        "borderRadius": 7,
+        "marginBottom": 10,
+        "marginHorizontal": 10,
         "overflow": "hidden",
+        "shadowColor": "black",
+        "shadowOffset": Object {
+          "height": 5,
+          "width": 4,
+        },
+        "shadowOpacity": 0.4,
+        "shadowRadius": 5,
       },
       Object {
         "backgroundColor": undefined,
@@ -230,7 +237,7 @@ Thanks
     eventOriginUrl={undefined}
     likesCount={30}
     retweetCount={undefined}
-    socialNetwork="instagram"
+    source="instagram"
     textToShare="Low. Tarmac T2 , CasCam, SPC LCAs.
 Thanks @azpinstalls for the work, parts, advice and setup.
 #brz #gt86 #ft86"
@@ -243,10 +250,17 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
   style={
     Array [
       Object {
-        "borderRadius": 5,
-        "marginBottom": 5,
-        "marginHorizontal": 5,
+        "borderRadius": 7,
+        "marginBottom": 10,
+        "marginHorizontal": 10,
         "overflow": "hidden",
+        "shadowColor": "black",
+        "shadowOffset": Object {
+          "height": 5,
+          "width": 4,
+        },
+        "shadowOpacity": 0.4,
+        "shadowRadius": 5,
       },
       Object {
         "backgroundColor": undefined,
@@ -274,7 +288,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
           "left": 0,
           "position": "absolute",
           "top": 0,
-          "width": 740,
+          "width": 730,
           "zIndex": 2,
         },
       ]
@@ -482,7 +496,7 @@ Thanks
     eventOriginUrl={undefined}
     likesCount={30}
     retweetCount={undefined}
-    socialNetwork="instagram"
+    source="instagram"
     textToShare="Low. Tarmac T2 , CasCam, SPC LCAs.
 Thanks @azpinstalls for the work, parts, advice and setup.
 #brz #gt86 #ft86"

@@ -14,11 +14,6 @@ exports[`ActionBar component renders correctly for facebook 1`] = `
     ]
   }
 >
-  <InstagramActionButtons
-    commentsCount={3}
-    eventId={undefined}
-    likesCount={1}
-  />
   <View
     style={
       Object {
@@ -49,11 +44,6 @@ exports[`ActionBar component renders correctly for instagram 1`] = `
     ]
   }
 >
-  <InstagramActionButtons
-    commentsCount={3}
-    eventId={undefined}
-    likesCount={1}
-  />
   <View
     style={
       Object {
@@ -70,7 +60,35 @@ exports[`ActionBar component renders correctly for instagram 1`] = `
 </View>
 `;
 
-exports[`ActionBar component renders correctly for no social network 1`] = `null`;
+exports[`ActionBar component renders correctly for no social network 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 30,
+        "marginBottom": 7,
+        "paddingHorizontal": 9,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "bottom": 3,
+        "position": "absolute",
+        "right": 7,
+      }
+    }
+  >
+    <ShareButton
+      message={undefined}
+    />
+  </View>
+</View>
+`;
 
 exports[`ActionBar component renders correctly for twitter 1`] = `
 <View
@@ -86,11 +104,6 @@ exports[`ActionBar component renders correctly for twitter 1`] = `
     ]
   }
 >
-  <InstagramActionButtons
-    commentsCount={3}
-    eventId={undefined}
-    likesCount={1}
-  />
   <View
     style={
       Object {
