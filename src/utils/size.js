@@ -1,7 +1,7 @@
 import { Dimensions } from 'react-native';
 
-export const getMediaDimensions = ({ height, width }) => {
-  const screenWidth = Dimensions.get('window').width;
+export const getMediaDimensions = ({ height, width, screenMargin = 0 }) => {
+  const screenWidth = Dimensions.get('window').width - (2 * screenMargin);
   let mediaItemStyles = {
     height: screenWidth,
     width: screenWidth,
