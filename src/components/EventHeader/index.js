@@ -12,10 +12,11 @@ import { styles } from './styles';
 class EventHeader extends Component {
   renderSocialIcon() {
     const { overlay: iconOverImage } = this.props;
+    const rightOffsetStyle = { right: (iconOverImage) ? 18 : 9 };
     const tintColorStyle = { tintColor: (iconOverImage) ? this.context.secondaryColor : this.context.textColor };
     
     return (
-      <View style={styles.socialIconContainer}>
+      <View style={[styles.socialIconContainer, rightOffsetStyle]}>
         <SocialIcon socialNetwork={this.props.source} tintColorStyle={tintColorStyle} />
       </View>);
   }
