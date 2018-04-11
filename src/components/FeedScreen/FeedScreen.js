@@ -75,7 +75,7 @@ class FeedScreen extends Component {
 
   render() {
     const { isFacebookAvailable, isTwitterAvailable, events, loading, toggleModal } = this.props;
-    const backgroundFeedColor = { backgroundColor: `${this.context.backgroundColor}99` };
+    const backgroundFeedColor = { backgroundColor: this.context.secondaryTextColor };
     const transparentBackgroundColor = { backgroundColor: `transparent` };
     
     return (
@@ -109,7 +109,7 @@ FeedScreen.propTypes = {
 };
 
 FeedScreen.contextTypes = {
-  backgroundColor: PropTypes.string,
+  secondaryTextColor: PropTypes.string,
 };
 
 FeedScreen.childContextTypes = {
