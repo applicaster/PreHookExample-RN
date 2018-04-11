@@ -3,20 +3,17 @@
 exports[`EventContainer component renders correctly with a text event 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 10,
-        "marginBottom": 25,
-        "marginHorizontal": 15,
-        "shadowColor": "#DAD8D8",
-        "shadowOffset": Object {
-          "height": 1,
-          "width": 1,
-        },
-        "shadowOpacity": 1,
-        "shadowRadius": 8,
+    Object {
+      "borderRadius": 10,
+      "marginBottom": 25,
+      "marginHorizontal": 15,
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 1,
       },
-    ]
+      "shadowOpacity": 0.2,
+      "shadowRadius": 8,
+    }
   }
 >
   <View
@@ -263,20 +260,17 @@ Thanks @azpinstalls for the work, parts, advice and setup.
 exports[`EventContainer component renders correctly with an image event 1`] = `
 <View
   style={
-    Array [
-      Object {
-        "borderRadius": 10,
-        "marginBottom": 25,
-        "marginHorizontal": 15,
-        "shadowColor": "#DAD8D8",
-        "shadowOffset": Object {
-          "height": 1,
-          "width": 1,
-        },
-        "shadowOpacity": 1,
-        "shadowRadius": 8,
+    Object {
+      "borderRadius": 10,
+      "marginBottom": 25,
+      "marginHorizontal": 15,
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 1,
       },
-    ]
+      "shadowOpacity": 0.2,
+      "shadowRadius": 8,
+    }
   }
 >
   <View

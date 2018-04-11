@@ -5,7 +5,7 @@ exports[`FeedScreen component renders correctly while loading 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "undefined99",
+        "backgroundColor": undefined,
       },
       Object {
         "flex": 1,
@@ -76,7 +76,7 @@ exports[`FeedScreen component renders correctly while loading with events 1`] = 
   style={
     Array [
       Object {
-        "backgroundColor": "undefined99",
+        "backgroundColor": undefined,
       },
       Object {
         "flex": 1,
@@ -147,7 +147,7 @@ exports[`FeedScreen component renders correctly with events 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "undefined99",
+        "backgroundColor": undefined,
       },
       Object {
         "flex": 1,
@@ -218,7 +218,7 @@ exports[`FeedScreen component renders correctly with modal on top 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "undefined99",
+        "backgroundColor": undefined,
       },
       Object {
         "flex": 1,
@@ -289,7 +289,7 @@ exports[`FeedScreen component renders correctly with no write post button 1`] = 
   style={
     Array [
       Object {
-        "backgroundColor": "undefined99",
+        "backgroundColor": undefined,
       },
       Object {
         "flex": 1,
@@ -360,7 +360,7 @@ exports[`FeedScreen component renders correctly with write post button due to fa
   style={
     Array [
       Object {
-        "backgroundColor": "undefined99",
+        "backgroundColor": undefined,
       },
       Object {
         "flex": 1,
@@ -431,7 +431,7 @@ exports[`FeedScreen component renders correctly with write post button due to tw
   style={
     Array [
       Object {
-        "backgroundColor": "undefined99",
+        "backgroundColor": undefined,
       },
       Object {
         "flex": 1,
@@ -502,7 +502,7 @@ exports[`FeedScreen component renders correctly without events 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "undefined99",
+        "backgroundColor": undefined,
       },
       Object {
         "flex": 1,
