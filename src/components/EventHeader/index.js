@@ -29,8 +29,8 @@ class EventHeader extends Component {
   }
 
   renderName() {
-    const { name, overlay: textOverImage } = this.props;
-    const colorStyle = { color: (textOverImage) ? this.context.secondaryTextColor : this.context.mainColor };
+    const { name } = this.props;
+    const colorStyle = { color: this.context.mainColor };
 
     return <Text style={[styles.name, colorStyle]}>{name}</Text>;
   }

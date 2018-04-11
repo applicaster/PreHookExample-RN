@@ -59,11 +59,11 @@ class EventContainer extends Component {
   }
 
   render() {
-    const backgroundColor = { backgroundColor: this.context.backgroundColor };
+    const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
 
     return (
-      <View style={[styles.cardContainer]}>
-        <View style={[styles.eventContainer, backgroundColor]}>
+      <View style={styles.cardContainer}>
+        <View style={[styles.eventContainer, backgroundColorStyle]}>
           {this.renderMedia()}
           {this.renderHeader()}
           {this.renderCaption()}

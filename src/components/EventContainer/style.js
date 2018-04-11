@@ -10,8 +10,7 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 25,
     marginHorizontal: SCREEN_MARGIN,
-    shadowColor: '#DAD8D8',
-    shadowOpacity: 1,
+    shadowOpacity: 0.2,
     shadowRadius: 8,
     shadowOffset: {
       width: 1,
