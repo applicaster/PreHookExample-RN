@@ -25,9 +25,9 @@ class WritePostButton extends Component {
   }
 
   render() {
-    const { mainColor, textColor } = this.context;
+    const { mainColor, backgroundColor } = this.context;
     const buttonTintColor = { tintColor: mainColor };
-    const pencilTintColor = { tintColor: textColor };
+    const pencilTintColor = { tintColor: backgroundColor };
 
     const ANIMATION_TYPE = 'fadeInUp';
     const ANIMATION_DURATION = 400;
@@ -43,7 +43,7 @@ class WritePostButton extends Component {
 
 WritePostButton.contextTypes = {
   mainColor: PropTypes.string,
-  textColor: PropTypes.string,
+  backgroundColor: PropTypes.string,
 };
 
 WritePostButton.propTypes = {
