@@ -7,7 +7,7 @@ import InstagramActionButtons from '../InstagramActionButtons';
 import TwitterActionButtons from '../TwitterActionButtons';
 import { styles } from './style';
 
-class ActionBar extends Component {
+class SocialActionBar extends Component {
   renderShareButton() {
     return (<View style={styles.shareButtonContainer}>
       <ShareButton message={this.props.textToShare} />
@@ -78,7 +78,7 @@ class ActionBar extends Component {
   }
 }
 
-ActionBar.propTypes = {
+SocialActionBar.propTypes = {
   commentsCount: PropTypes.number,
   eventId: PropTypes.string,
   source: PropTypes.string,
@@ -87,8 +87,8 @@ ActionBar.propTypes = {
   retweetCount: PropTypes.number,
 };
 
-ActionBar.contextTypes = {
+SocialActionBar.contextTypes = {
   navigation: PropTypes.object,
 };
 
-export default ActionBar;
+export default SocialActionBar;
