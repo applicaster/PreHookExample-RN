@@ -15,7 +15,7 @@ exports[`EventCaption component renders correctly 1`] = `
         "marginTop": 17,
       },
       Object {
-        "color": undefined,
+        "color": "#FFFFFF",
       },
     ]
   }
@@ -39,7 +39,7 @@ exports[`EventCaption component renders correctly with complex caption with user
         "marginTop": 17,
       },
       Object {
-        "color": undefined,
+        "color": "#FFFFFF",
       },
     ]
   }

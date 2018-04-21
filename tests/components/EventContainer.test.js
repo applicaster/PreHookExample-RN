@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import EventContainer from '../../src/components/EventContainer';
 import { event } from './testDataUtils';
 
-jest.mock('../../src/components/ActionBar', () => 'ActionBar');
+jest.mock('../../src/components/SocialActionBar', () => 'SocialActionBar');
 jest.mock('../../src/components/EventMedia', () => 'EventMedia');
 jest.mock('@applicaster/feed-rn-utils', () => 'FeedRNUtils');
 jest.mock('react-native-zapp-bridge', () => 'NativeZappBridge');

@@ -68,7 +68,7 @@ exports[`EventMedia component renders correctly for media items with video 1`] =
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 750,
+        "width": 720,
         "zIndex": 2,
       }
     }
@@ -138,7 +138,7 @@ exports[`EventMedia component renders correctly for squared images 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 750,
+        "width": 720,
         "zIndex": 2,
       }
     }
@@ -208,7 +208,7 @@ exports[`EventMedia component renders correctly for squared images 2`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 750,
+        "width": 720,
         "zIndex": 2,
       }
     }
