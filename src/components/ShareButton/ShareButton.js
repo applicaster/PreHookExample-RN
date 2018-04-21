@@ -52,7 +52,7 @@ class ShareButton extends Component {
   render() {
     const { overlay } = this.props;
     const imageColor = { tintColor: (overlay)
-    ? this.context.secondaryTextColor || '#FFFFFF'
+    ? `${this.context.secondaryTextColor}99` || '#FFFFFF'
     : `${this.context.textColor}99` || '#FFFFFF' };
     
     return (
