@@ -45,7 +45,7 @@ class EventCaption extends Component {
   
   render() {
     const { caption } = this.props;
-    const captionColor = { color: this.context.textColor };
+    const captionColor = { color: this.context.textColor || '#FFFFFF' };
     return (caption)
     ? <Text style={[styles.eventCaption, captionColor]}>
       {this.processCaption(caption)}

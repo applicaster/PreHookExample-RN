@@ -50,7 +50,11 @@ class ShareButton extends Component {
   }
 
   render() {
-    const imageColor = { tintColor: `${this.context.textColor}99` };
+    const { overlay } = this.props;
+    const imageColor = { tintColor: (overlay)
+    ? this.context.secondaryTextColor || '#FFFFFF'
+    : `${this.context.textColor}99` || '#FFFFFF' };
+    
     return (
       <TouchableOpacity onPress={this.share}>
         <Image
@@ -65,12 +69,14 @@ class ShareButton extends Component {
 ShareButton.propTypes = {
   defaultMessage: PropTypes.string,
   message: PropTypes.string,
-  title: PropTypes.string,
+  overlay: PropTypes.bool,
   publicPageUrl: PropTypes.string,
+  title: PropTypes.string,
 };
 
 ShareButton.contextTypes = {
   textColor: PropTypes.string,
+  secondaryTextColor: PropTypes.string,
 };
 
 export default ShareButton;

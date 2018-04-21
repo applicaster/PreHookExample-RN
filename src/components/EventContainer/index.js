@@ -4,13 +4,14 @@ import { View } from 'react-native';
 import EventHeader from '../EventHeader';
 import EventCaption from '../EventCaption';
 import EventMedia from '../EventMedia';
-import ActionBar from '../ActionBar';
+import EventActionBar from '../EventActionBar';
+import SocialActionBar from '../SocialActionBar';
 import { styles } from './style';
 
 class EventContainer extends Component {
   renderMedia() {
-    const { type } = this.props.event;
-    if (type === 'image' || type === 'video' || type === 'gallery') {
+    const { source, type } = this.props.event;
+    if (type === 'image' || type === 'video' || type === 'gallery' || (type === 'link' && source === 'cms')) {
       const { url, height, width } = this.props.event.images.default;
       const { videoUrl, id } = this.props.event;
       return (<EventMedia
@@ -28,7 +29,8 @@ class EventContainer extends Component {
   renderHeader() {
     const { source, type, user, createdAt } = this.props.event;
     const { avatarImageUrl, name, userName } = user;
-    const overlayHeaderOnMedia = (type === 'image') || (type === 'video') || (type === 'gallery');
+    const overlayHeaderOnMedia =
+      (type === 'image') || (type === 'video') || (type === 'gallery') || (type === 'link' && source === 'cms');
 
     return (<EventHeader
       avatarImageUrl={avatarImageUrl}
@@ -41,12 +43,23 @@ class EventContainer extends Component {
   }
 
   renderCaption() {
+    const { type, source } = this.props.event;
+
+    if (type === 'link' && source === 'cms') return null;
     return <EventCaption caption={this.props.event.caption} />;
   }
 
   renderActionBar() {
-    const { source, likesCount, commentsCount, caption, id, originUrl, retweetCount } = this.props.event;
-    return (<ActionBar
+    const { type, source, likesCount, commentsCount, caption, id, originUrl, retweetCount } = this.props.event;
+    if (source === 'cms') {
+      return (<EventActionBar
+        caption={caption}
+        eventOriginUrl={originUrl}
+        overlay={(type === 'link')}
+      />);
+    }
+
+    return (<SocialActionBar
       commentsCount={commentsCount}
       eventId={id}
       eventOriginUrl={originUrl}
