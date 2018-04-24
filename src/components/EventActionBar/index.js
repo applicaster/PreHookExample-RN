@@ -12,12 +12,20 @@ class EventActionBar extends Component {
     </View>);
   }
 
-  render() {
+  renderCaption() {
     const { caption, overlay } = this.props;
     const captionColorStyle = { color: this.context.secondaryTextColor };
+    if (caption && overlay) {
+      return <Text numberOfLines={2} style={[styles.caption, captionColorStyle]}>{caption}</Text>;
+    }
+    
+    return null;
+  }
 
+  render() {
+    const { overlay } = this.props;
     return (<View style={[styles.actionBar, overlay && styles.overlayBar]}>
-      {caption && <Text numberOfLines={2} style={[styles.caption, captionColorStyle]}>{caption}</Text>}
+      {this.renderCaption()}
       {this.renderShareButton()}
     </View>);
   }
@@ -26,13 +34,11 @@ class EventActionBar extends Component {
 EventActionBar.propTypes = {
   caption: PropTypes.string,
   overlay: PropTypes.bool,
-  source: PropTypes.string,
   textToShare: PropTypes.string,
 };
 
 EventActionBar.contextTypes = {
   secondaryTextColor: PropTypes.string,
-  navigation: PropTypes.object,
 };
 
 export default EventActionBar;

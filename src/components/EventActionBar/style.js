@@ -11,13 +11,13 @@ export const styles = StyleSheet.create({
     height: 30,
     paddingHorizontal: 0,
     marginBottom: 7,
+    width: screenWidth - (2 * SCREEN_MARGIN),
   },
   overlayBar: {
     backgroundColor: 'transparent',
     position: 'absolute',
     bottom: 0,
     paddingLeft: 10,
-    width: screenWidth - (2 * SCREEN_MARGIN),
   },
   caption: {
     fontSize: 10.5,
