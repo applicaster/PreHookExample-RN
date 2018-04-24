@@ -2,20 +2,36 @@
 
 exports[`EventContainer component renders correctly with a text event 1`] = `
 <View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
-    Object {
-      "borderRadius": 10,
-      "marginBottom": 25,
-      "marginHorizontal": 15,
-      "shadowColor": "#000000",
-      "shadowOffset": Object {
-        "height": 1,
-        "width": 1,
+    Array [
+      Object {
+        "borderRadius": 10,
+        "marginBottom": 25,
+        "marginHorizontal": 15,
+        "shadowColor": "#000000",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 1,
+        },
+        "shadowOpacity": 0.13,
+        "shadowRadius": 8,
       },
-      "shadowOpacity": 0.13,
-      "shadowRadius": 8,
-    }
+    ]
   }
+  testID={undefined}
 >
   <View
     style={
@@ -260,20 +276,36 @@ Thanks @azpinstalls for the work, parts, advice and setup.
 
 exports[`EventContainer component renders correctly with an image event 1`] = `
 <View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
-    Object {
-      "borderRadius": 10,
-      "marginBottom": 25,
-      "marginHorizontal": 15,
-      "shadowColor": "#000000",
-      "shadowOffset": Object {
-        "height": 1,
-        "width": 1,
+    Array [
+      Object {
+        "borderRadius": 10,
+        "marginBottom": 25,
+        "marginHorizontal": 15,
+        "shadowColor": "#000000",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 1,
+        },
+        "shadowOpacity": 0.13,
+        "shadowRadius": 8,
       },
-      "shadowOpacity": 0.13,
-      "shadowRadius": 8,
-    }
+    ]
   }
+  testID={undefined}
 >
   <View
     style={
@@ -292,6 +324,7 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
       eventId="someId"
       height={504}
       imageUrl="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20590092_108583273161709_7296810043293302784_n.jpg"
+      isInteractive={true}
       videoUrl={undefined}
       width={640}
     />

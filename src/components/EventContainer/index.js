@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
+import CardContainer from '../CardContainer';
 import EventHeader from '../EventHeader';
 import EventCaption from '../EventCaption';
 import EventMedia from '../EventMedia';
@@ -11,6 +12,8 @@ import { styles } from './style';
 class EventContainer extends Component {
   renderMedia() {
     const { source, type } = this.props.event;
+    const isMediaInteractive = !this.isCardClickable();
+
     if (type === 'image' || type === 'video' || type === 'gallery' || (type === 'link' && source === 'cms')) {
       const { url, height, width } = this.props.event.images.default;
       const { videoUrl, id } = this.props.event;
@@ -20,6 +23,7 @@ class EventContainer extends Component {
         width={width}
         height={height}
         videoUrl={videoUrl}
+        isInteractive={isMediaInteractive}
       />);
     }
 
@@ -67,22 +71,30 @@ class EventContainer extends Component {
       retweetCount={retweetCount}
       source={source}
       textToShare={caption}
-    />
-    );
+    />);
+  }
+
+  isCardClickable() {
+    const { event } = this.props;
+    const { type, source } = event;
+    if (type === 'link' && source === 'cms') return true;
+
+    return false;
   }
 
   render() {
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
-
+    const { event } = this.props;
+    const { url = '' } = event;
     return (
-      <View style={styles.cardContainer}>
+      <CardContainer clickable={this.isCardClickable()} url={url}>
         <View style={[styles.eventContainer, backgroundColorStyle]}>
           {this.renderMedia()}
           {this.renderHeader()}
           {this.renderCaption()}
           {this.renderActionBar()}
         </View>
-      </View>
+      </CardContainer>
     );
   }
 }
