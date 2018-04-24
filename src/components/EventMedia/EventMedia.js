@@ -16,7 +16,9 @@ class EventMedia extends Component {
   }
   
   showMediaDetails() {
-    const { toggleModal, setActiveEventId, eventId } = this.props;
+    const { toggleModal, setActiveEventId, eventId, isInteractive } = this.props;
+    if (!isInteractive) return;
+    
     setActiveEventId(eventId);
     toggleModal({ modal: 'MediaModal' });
     sendAnalyticEvent(IMAGE_DETAIL_CLICKED, { eventId }).then().catch();
@@ -28,24 +30,28 @@ class EventMedia extends Component {
   }
 
   render() {
-    const { imageUrl, height, width, videoUrl } = this.props;
-    return (
-      <TouchableWithoutFeedback onPress={this.showMediaDetails}>
-        <ImageBackground
-          style={getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN })}
-          source={{ uri: imageUrl }}
-        >
-          {videoUrl && this.renderVideo()}
-          <LinearGradient style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />
-        </ImageBackground>
-      </TouchableWithoutFeedback>
-    );
+    const { isInteractive, imageUrl, height, width, videoUrl } = this.props;
+    const mediaItem = (
+      <ImageBackground
+        style={getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN })}
+        source={{ uri: imageUrl }}
+      >
+        {videoUrl && this.renderVideo()}
+        <LinearGradient style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />
+      </ImageBackground>);
+
+    if (isInteractive) {
+      return <TouchableWithoutFeedback onPress={this.showMediaDetails}>{mediaItem}</TouchableWithoutFeedback>;
+    }
+
+    return mediaItem;
   }
 }
 
 EventMedia.propTypes = {
   eventId: PropTypes.string,
   imageUrl: PropTypes.string,
+  isInteractive: PropTypes.bool,
   height: PropTypes.number,
   videoUrl: PropTypes.string,
   width: PropTypes.number,
