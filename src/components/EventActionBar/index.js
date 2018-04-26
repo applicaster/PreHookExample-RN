@@ -16,15 +16,16 @@ class EventActionBar extends Component {
     const { caption, overlay } = this.props;
     const captionColorStyle = { color: this.context.secondaryTextColor };
     if (caption && overlay) {
-      return <Text numberOfLines={2} style={[styles.caption, captionColorStyle]}>{caption}</Text>;
+      return <Text ellipsizeMode={'tail'} numberOfLines={2} style={[styles.caption, captionColorStyle]}>{caption}</Text>;
     }
     
     return null;
   }
 
   render() {
-    const { overlay } = this.props;
-    return (<View style={[styles.actionBar, overlay && styles.overlayBar]}>
+    const { caption, overlay } = this.props;
+    const justifyStyles = { justifyContent: (caption && overlay) ? 'space-between' : 'flex-end' };
+    return (<View style={[styles.actionBar, justifyStyles, overlay && styles.overlayBar]}>
       {this.renderCaption()}
       {this.renderShareButton()}
     </View>);
