@@ -1,9 +1,12 @@
 import { StyleSheet } from 'react-native';
-import { SCREEN_MARGIN } from '../../constants/measurements';
+import {
+  BORDER_RADIUS,
+  SCREEN_MARGIN,
+} from '../../constants/measurements';
 
 export const styles = StyleSheet.create({
   cardContainer: {
-    borderRadius: 10,
+    borderRadius: BORDER_RADIUS,
     marginBottom: 25,
     marginHorizontal: SCREEN_MARGIN,
     shadowOpacity: 0.13,
