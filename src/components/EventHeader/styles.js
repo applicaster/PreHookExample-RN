@@ -39,7 +39,6 @@ export const styles = StyleSheet.create({
   name: {
     fontSize: 14,
     marginTop: (Platform.OS === iOS) ? -3 : -4,
-    marginBottom: -2,
     fontWeight: '600',
   },
   userName: {
