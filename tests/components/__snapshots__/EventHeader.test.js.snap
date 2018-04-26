@@ -21,6 +21,7 @@ exports[`EventHeader component renders correctly 1`] = `
     }
     style={
       Object {
+        "borderRadius": 4,
         "height": 40,
         "width": 40,
       }
@@ -105,16 +106,11 @@ exports[`EventHeader component renders correctly 1`] = `
   </View>
   <View
     style={
-      Array [
-        Object {
-          "position": "absolute",
-          "right": 9,
-          "top": 9,
-        },
-        Object {
-          "right": 9,
-        },
-      ]
+      Object {
+        "position": "absolute",
+        "right": 9,
+        "top": 9,
+      }
     }
   >
     <Image
@@ -153,7 +149,7 @@ exports[`EventHeader component renders correctly for Facebook event 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 730,
+        "width": 710,
         "zIndex": 2,
       },
     ]
@@ -167,6 +163,7 @@ exports[`EventHeader component renders correctly for Facebook event 1`] = `
     }
     style={
       Object {
+        "borderRadius": 4,
         "height": 40,
         "width": 40,
       }
@@ -235,16 +232,11 @@ exports[`EventHeader component renders correctly for Facebook event 1`] = `
   </View>
   <View
     style={
-      Array [
-        Object {
-          "position": "absolute",
-          "right": 9,
-          "top": 9,
-        },
-        Object {
-          "right": 18,
-        },
-      ]
+      Object {
+        "position": "absolute",
+        "right": 9,
+        "top": 9,
+      }
     }
   >
     <Image
@@ -283,7 +275,7 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 730,
+        "width": 710,
         "zIndex": 2,
       },
     ]
@@ -297,6 +289,7 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
     }
     style={
       Object {
+        "borderRadius": 4,
         "height": 40,
         "width": 40,
       }
@@ -381,16 +374,11 @@ exports[`EventHeader component renders correctly for Instagram event 1`] = `
   </View>
   <View
     style={
-      Array [
-        Object {
-          "position": "absolute",
-          "right": 9,
-          "top": 9,
-        },
-        Object {
-          "right": 18,
-        },
-      ]
+      Object {
+        "position": "absolute",
+        "right": 9,
+        "top": 9,
+      }
     }
   >
     <Image
@@ -429,7 +417,7 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 730,
+        "width": 710,
         "zIndex": 2,
       },
     ]
@@ -443,6 +431,7 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
     }
     style={
       Object {
+        "borderRadius": 4,
         "height": 40,
         "width": 40,
       }
@@ -527,16 +516,11 @@ exports[`EventHeader component renders correctly for Twitter event 1`] = `
   </View>
   <View
     style={
-      Array [
-        Object {
-          "position": "absolute",
-          "right": 9,
-          "top": 9,
-        },
-        Object {
-          "right": 18,
-        },
-      ]
+      Object {
+        "position": "absolute",
+        "right": 9,
+        "top": 9,
+      }
     }
   >
     <Image
@@ -575,7 +559,7 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 730,
+        "width": 710,
         "zIndex": 2,
       },
     ]
@@ -589,6 +573,7 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
     }
     style={
       Object {
+        "borderRadius": 4,
         "height": 40,
         "width": 40,
       }
@@ -673,16 +658,11 @@ exports[`EventHeader component renders correctly when overlayed 1`] = `
   </View>
   <View
     style={
-      Array [
-        Object {
-          "position": "absolute",
-          "right": 9,
-          "top": 9,
-        },
-        Object {
-          "right": 18,
-        },
-      ]
+      Object {
+        "position": "absolute",
+        "right": 9,
+        "top": 9,
+      }
     }
   >
     <Image

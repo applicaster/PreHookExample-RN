@@ -3,6 +3,7 @@ import {
   Platform,
   StyleSheet,
 } from 'react-native';
+import { SCREEN_MARGIN } from '../../constants/measurements';
 
 const iOS = 'ios';
 const width = Dimensions.get('window').width;
@@ -17,7 +18,7 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    width: width - 20,
+    width: width - (2 * SCREEN_MARGIN),
     zIndex: 2,
   },
   eventHeaderInfo: {
@@ -33,6 +34,7 @@ export const styles = StyleSheet.create({
   avatar: {
     height: 40,
     width: 40,
+    borderRadius: 4,
   },
   name: {
     fontSize: 14,
