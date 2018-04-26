@@ -20,7 +20,8 @@ export const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   caption: {
-    fontSize: 10.5,
+    paddingLeft: 3,
+    fontSize: 12,
   },
   shareButtonContainer: {
     position: 'absolute',
