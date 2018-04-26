@@ -1,2 +1,2 @@
-export const SCREEN_MARGIN = 18;
-export const BORDER_RADIUS = 13;
+export const SCREEN_MARGIN = 20;
+export const BORDER_RADIUS = 15;
