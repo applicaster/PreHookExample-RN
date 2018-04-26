@@ -98,7 +98,6 @@ exports[`EventContainer component renders correctly with a text event 1`] = `
                 Object {
                   "fontSize": 14,
                   "fontWeight": "600",
-                  "marginBottom": -2,
                   "marginTop": -3,
                 },
                 Object {
@@ -383,7 +382,6 @@ exports[`EventContainer component renders correctly with an image event 1`] = `
                 Object {
                   "fontSize": 14,
                   "fontWeight": "600",
-                  "marginBottom": -2,
                   "marginTop": -3,
                 },
                 Object {
