@@ -5,7 +5,7 @@ import {
 export const styles = StyleSheet.create({
   feedListContent: {
     backgroundColor: 'transparent',
-    paddingTop: 10,
+    paddingTop: 15,
   },
   feedList: {
     backgroundColor: 'transparent',
