@@ -26,8 +26,8 @@ exports[`EventVideo component renders correctly 1`] = `
   style={
     Array [
       Object {
-        "height": 714,
-        "width": 714,
+        "height": 710,
+        "width": 710,
       },
       undefined,
     ]

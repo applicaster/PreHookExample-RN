@@ -4,8 +4,8 @@ exports[`EventMedia component renders correctly for media items with video 1`] =
 <View
   style={
     Object {
-      "height": 2142,
-      "width": 714,
+      "height": 2130,
+      "width": 710,
     }
   }
 >
@@ -25,8 +25,8 @@ exports[`EventMedia component renders correctly for media items with video 1`] =
           "top": 0,
         },
         Object {
-          "height": 2142,
-          "width": 714,
+          "height": 2130,
+          "width": 710,
         },
         undefined,
       ]
@@ -54,7 +54,7 @@ exports[`EventMedia component renders correctly for media items with video 1`] =
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 714,
+        "width": 710,
         "zIndex": 2,
       }
     }
@@ -66,8 +66,8 @@ exports[`EventMedia component renders correctly for squared images 1`] = `
 <View
   style={
     Object {
-      "height": 714,
-      "width": 714,
+      "height": 710,
+      "width": 710,
     }
   }
 >
@@ -87,8 +87,8 @@ exports[`EventMedia component renders correctly for squared images 1`] = `
           "top": 0,
         },
         Object {
-          "height": 714,
-          "width": 714,
+          "height": 710,
+          "width": 710,
         },
         undefined,
       ]
@@ -110,7 +110,7 @@ exports[`EventMedia component renders correctly for squared images 1`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 714,
+        "width": 710,
         "zIndex": 2,
       }
     }
@@ -122,8 +122,8 @@ exports[`EventMedia component renders correctly for squared images 2`] = `
 <View
   style={
     Object {
-      "height": 714,
-      "width": 714,
+      "height": 710,
+      "width": 710,
     }
   }
 >
@@ -143,8 +143,8 @@ exports[`EventMedia component renders correctly for squared images 2`] = `
           "top": 0,
         },
         Object {
-          "height": 714,
-          "width": 714,
+          "height": 710,
+          "width": 710,
         },
         undefined,
       ]
@@ -166,7 +166,7 @@ exports[`EventMedia component renders correctly for squared images 2`] = `
         "left": 0,
         "position": "absolute",
         "top": 0,
-        "width": 714,
+        "width": 710,
         "zIndex": 2,
       }
     }
