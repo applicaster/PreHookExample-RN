@@ -9,9 +9,9 @@ test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit
     - npm run test-reporter
-    - npm run jest
+    # - npm run jest
     - cp test-results.xml $CIRCLE_TEST_REPORTS/junit
-    - cp jest-results.xml $CIRCLE_TEST_REPORTS/junit
+    # - cp jest-results.xml $CIRCLE_TEST_REPORTS/junit
 
 deployment:
   production:
