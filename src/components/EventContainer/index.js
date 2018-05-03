@@ -10,6 +10,14 @@ import SocialActionBar from '../SocialActionBar';
 import { styles } from './style';
 
 class EventContainer extends Component {
+  isCardClickable() {
+    const { event } = this.props;
+    const { type, source } = event;
+    if (type === 'link' && source === 'cms') return true;
+
+    return false;
+  }
+
   renderMedia() {
     const { source, type } = this.props.event;
     const isMediaInteractive = !this.isCardClickable();
@@ -72,14 +80,6 @@ class EventContainer extends Component {
       source={source}
       textToShare={caption}
     />);
-  }
-
-  isCardClickable() {
-    const { event } = this.props;
-    const { type, source } = event;
-    if (type === 'link' && source === 'cms') return true;
-
-    return false;
   }
 
   render() {
