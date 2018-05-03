@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   DeviceEventEmitter,
-  Dimensions,
   FlatList,
-  Modal,
   View,
   NativeEventEmitter,
   NativeModules,
@@ -26,10 +24,12 @@ import VideoCard from './cards/VideoCard';
 import { styles } from './style';
 
 export default class HomeScreen extends Component {
-  static navigationOptions = ({ screenProps }) => ({
-    ...screenProps,
-    headerLeft: <CloseButton onPress={HomeScreen.closeFeed} />,
-  });
+  static navigationOptions({ screenProps }) {
+    return {
+      ...screenProps,
+      headerLeft: <CloseButton onPress={HomeScreen.closeFeed} />,
+    };
+  }
 
   static closeFeed() {
     sendAnalyticEvent(CLOSE_FEED, {}).then().catch();
@@ -63,7 +63,6 @@ export default class HomeScreen extends Component {
   }
 
   componentWillUnmount() {
-    const { updateFavoriteTweets } = this.props;
     if (Platform.OS === 'ios') {
       this.updateTwitterFavoritesSubscription.remove();
       NativeEventEmitter.removeAllListeners();
@@ -80,46 +79,51 @@ export default class HomeScreen extends Component {
     const { caption, id, type, source, url, videoUrl } = event;
     const { url: imageUrl, height, width } = (event.images) ? event.images.default : {};
 
-    if (type === 'image')
-      return <ImageCard
+    if (type === 'image') {
+      return (<ImageCard
         caption={caption}
         eventId={id}
         imageHeight={height}
         imageUrl={imageUrl}
         imageWidth={width}
-      />;
+      />);
+    }
 
-    if (type === 'link' && source === 'cms')
-      return <LinkCard
+    if (type === 'link' && source === 'cms') {
+      return (<LinkCard
         caption={caption}
         eventId={id}
         imageHeight={height}
         imageUrl={imageUrl}
         imageWidth={width}
         url={url}
-      />;
+      />);
+    }
     
-    if (type === 'text' || (type === 'link' && source === 'twitter'))
-      return <TextCard
+    if (type === 'text' || (type === 'link' && source === 'twitter')) {
+      return (<TextCard
         caption={caption}
         eventId={id}
-      />;
+      />);
+    }
 
-    if (type === 'video')
-      return <VideoCard
+    if (type === 'video') {
+      return (<VideoCard
         caption={caption}
         eventId={id}
         imageHeight={height}
         imageUrl={imageUrl}
         imageWidth={width}
         videoUrl={videoUrl}
-      />;
+      />);
+    }
+
+    return null;
   }
 
   render() {
-    const { isFacebookAvailable, isTwitterAvailable, events, loading, toggleModal } = this.props;
+    const { events, isFacebookAvailable, isTwitterAvailable } = this.props;
     const backgroundFeedColor = { backgroundColor: this.context.secondaryTextColor };
-    const transparentBackgroundColor = { backgroundColor: `transparent` };
     
     return (
       <View style={[backgroundFeedColor, { flex: 1 }]}>
@@ -135,7 +139,7 @@ export default class HomeScreen extends Component {
           onEndReachedThreshold={1}
         />
         <ModalScreen />
-        <WritePostButton />
+        {(isFacebookAvailable || isTwitterAvailable) && <WritePostButton />}
       </View>
     );
   }
@@ -146,7 +150,6 @@ HomeScreen.propTypes = {
   fetchEvents: PropTypes.func.isRequired,
   isFacebookAvailable: PropTypes.bool.isRequired,
   isTwitterAvailable: PropTypes.bool.isRequired,
-  loading: PropTypes.bool.isRequired,
   navigation: PropTypes.object.isRequired,
   updateFavoriteTweets: PropTypes.func.isRequired,
 };
