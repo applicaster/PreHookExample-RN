@@ -19,7 +19,7 @@ import {
   TWITTER_POST_SENT,
 } from '../../constants/analyticEvents';
 import { styles, BAR_HEIGHT, STATUS_BAR_HEIGHT } from './style';
-import CloseButton from '../../components/CloseButton';
+import CloseButton from '../../buttons/CloseButton';
 import CharacterCounter from './components/CharacterCounter';
 import PostSwitcher from './components/PostSwitcher';
 

@@ -17,7 +17,7 @@ import {
   OPEN_FEED,
 } from '../../constants/analyticEvents';
 import ModalScreen from '../ModalScreen';
-import CloseButton from '../../components/CloseButton';
+import CloseButton from '../../buttons/CloseButton';
 import WritePostButton from './components/WritePostButton';
 import ImageCard from './cards/ImageCard';
 import LinkCard from './cards/LinkCard';

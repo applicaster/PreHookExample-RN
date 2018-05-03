@@ -1,7 +1,7 @@
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import CloseButton from '../../src/components/CloseButton';
+import CloseButton from '../../src/buttons/CloseButton';
 
 describe('CloseButton', () => {
   test('component renders correctly when it is not for modal', () => {

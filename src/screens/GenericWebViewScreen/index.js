@@ -8,7 +8,7 @@ import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import {
   GO_BACK_FROM_WEB_VIEW,
 } from '../../constants/analyticEvents';
-import BackButton from '../../components/BackButton';
+import BackButton from '../../buttons/BackButton';
 
 export default class GenericWebViewScreen extends Component {
   static navigationOptions = ({ navigation, screenProps, params }) => ({
