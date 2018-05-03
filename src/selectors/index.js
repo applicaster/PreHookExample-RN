@@ -23,7 +23,7 @@ export const getFavoriteTweets = state => state.events.get('favoriteTweets');
 export const getActiveEvent = createSelector(
   getActiveEventId,
   getEvents,
-  (activeEventId, events) => events.find(event => event.id === activeEventId)
+  (activeEventId, events) => events[activeEventId]
 );
 
 export const getActiveEventOriginUrl = createSelector(

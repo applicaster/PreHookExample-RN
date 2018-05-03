@@ -26,7 +26,8 @@ const mockStore = configureMockStore();
 
 describe('selectors', () => {
   let store;
-  const someEvent = { foo: 'bar', id: 'someId', originUrl: 'someOriginUrl' };
+  const event1 = { foo: 'bar', id: '1', originUrl: 'someOriginUrl1' };
+  const event2 = { foo: 'bar', id: '2', originUrl: 'someOriginUrl2' };
   beforeEach(() => {
     store = mockStore({
       app: Map({
@@ -34,7 +35,7 @@ describe('selectors', () => {
         timelineId: 'someTimelineId',
         timezone: 'someTimezone',
         environment: 'someEnvironment',
-        activeEventId: 'someId',
+        activeEventId: '1',
         activeModalName: 'someModalName',
         isModalVisible: true,
         eventIdForActiveAudio: 'someId',
@@ -43,7 +44,7 @@ describe('selectors', () => {
         publicPageUrl: 'somePublicPageUrl',
       }),
       events: Map({
-        events: [someEvent, 2],
+        events: { 1: event1, 2: event2 },
         loading: false,
         favoriteTweets: { 1: 1, 2: 2 },
       }),
@@ -79,7 +80,7 @@ describe('selectors', () => {
 
   describe('getEvents', () => {
     it('should get the events from the events reducer state', () => {
-      expect(getEvents(store.getState())).to.deep.equal([someEvent, 2]);
+      expect(getEvents(store.getState())).to.deep.equal({ 1: event1, 2: event2 });
     });
   });
 
@@ -103,13 +104,13 @@ describe('selectors', () => {
 
   describe('getActiveEventId', () => {
     it('should get activeEventId property from the app reducer state', () => {
-      expect(getActiveEventId(store.getState())).to.equal('someId');
+      expect(getActiveEventId(store.getState())).to.equal('1');
     });
   });
 
   describe('getActiveEvent', () => {
     it('should get the event for the activeEventId property from the events reducer state', () => {
-      expect(getActiveEvent(store.getState())).to.deep.equal(someEvent);
+      expect(getActiveEvent(store.getState())).to.deep.equal(event1);
     });
   });
 
@@ -121,7 +122,7 @@ describe('selectors', () => {
 
   describe('getActiveEventOriginUrl', () => {
     it('should get the originUrl for the activeEvent from the events reducer state', () => {
-      expect(getActiveEventOriginUrl(store.getState())).to.deep.equal('someOriginUrl');
+      expect(getActiveEventOriginUrl(store.getState())).to.deep.equal('someOriginUrl1');
     });
   });
 
