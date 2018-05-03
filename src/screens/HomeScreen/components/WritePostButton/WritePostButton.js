@@ -34,8 +34,20 @@ class WritePostButton extends Component {
     const ANIMATION_DELAY = 650;
     return (
       <TouchableOpacity activeOpacity={0.85} style={styles.writePostButtonContainer} onPress={this.onPress}>
-        <Image style={[styles.writePostButton, buttonTintColor]} source={{ uri: WRITE_POST_BUTTON }} animation={ANIMATION_TYPE} delay={ANIMATION_DELAY} duration={ANIMATION_DURATION} />
-        <Image style={[styles.writePostPencil, pencilTintColor]} source={{ uri: PENCIL_IMAGE }} animation={ANIMATION_TYPE} delay={ANIMATION_DELAY} duration={ANIMATION_DURATION} />
+        <Image
+          animation={ANIMATION_TYPE}
+          delay={ANIMATION_DELAY}
+          duration={ANIMATION_DURATION}
+          source={{ uri: WRITE_POST_BUTTON }}
+          style={[styles.writePostButton, buttonTintColor]}
+        />
+        <Image
+          animation={ANIMATION_TYPE}
+          delay={ANIMATION_DELAY}
+          duration={ANIMATION_DURATION}
+          source={{ uri: PENCIL_IMAGE }}
+          style={[styles.writePostPencil, pencilTintColor]}
+        />
       </TouchableOpacity>
     );
   }
