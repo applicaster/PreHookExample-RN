@@ -1,6 +1,6 @@
 import HomeScreen from './screens/HomeScreen';
-import SocialWebViewScreen from './components/SocialWebViewScreen';
-import GenericWebViewScreen from './components/GenericWebViewScreen';
+import SocialWebViewScreen from './screens/SocialWebViewScreen';
+import GenericWebViewScreen from './screens/GenericWebViewScreen';
 
 export default {
   Home: {

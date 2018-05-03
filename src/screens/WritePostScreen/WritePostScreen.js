@@ -19,9 +19,9 @@ import {
   TWITTER_POST_SENT,
 } from '../../constants/analyticEvents';
 import { styles, BAR_HEIGHT, STATUS_BAR_HEIGHT } from './style';
-import CloseButton from '../CloseButton';
-import CharacterCounter from '../CharacterCounter';
-import PostSwitcher from '../PostSwitcher';
+import CloseButton from '../../components/CloseButton';
+import CharacterCounter from './components/CharacterCounter';
+import PostSwitcher from './components/PostSwitcher';
 
 const window = Dimensions.get('window');
 class WritePostScreen extends Component {

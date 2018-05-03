@@ -8,7 +8,7 @@ import TransformableImage from '@applicaster/react-native-transformable-image';
 import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import { CLOSE_IMAGE_DETAIL_SCREEN } from '../../constants/analyticEvents';
 import { styles } from './style';
-import CloseButton from '../CloseButton';
+import CloseButton from '../../components/CloseButton';
 
 class MediaDetailsScreen extends Component {
   constructor(props) {

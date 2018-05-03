@@ -4,7 +4,7 @@ import {
   View,
   WebView,
 } from 'react-native';
-import BackButton from '../BackButton';
+import BackButton from '../../components/BackButton';
 
 class SocialWebViewScreen extends Component {
   static navigationOptions = ({ navigation, screenProps, params }) => ({

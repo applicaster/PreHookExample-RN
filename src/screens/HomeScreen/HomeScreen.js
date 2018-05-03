@@ -16,9 +16,9 @@ import {
   CLOSE_FEED,
   OPEN_FEED,
 } from '../../constants/analyticEvents';
-import ModalScreen from '../../components/ModalScreen';
+import ModalScreen from '../ModalScreen';
 import CloseButton from '../../components/CloseButton';
-import WritePostButton from '../../components/WritePostButton';
+import WritePostButton from './components/WritePostButton';
 import ImageCard from '../../cards/ImageCard';
 import LinkCard from '../../cards/LinkCard';
 import TextCard from '../../cards/TextCard';
