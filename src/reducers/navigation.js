@@ -1,6 +1,6 @@
 import Navigator from '../Navigator';
 
-const initialState = Navigator.router.getStateForAction(Navigator.router.getActionForPathAndParams('Feed'));
+const initialState = Navigator.router.getStateForAction(Navigator.router.getActionForPathAndParams('Home'));
 
 const getCurrentRouteName = (state) => {
   const route = state.routes[state.index];
