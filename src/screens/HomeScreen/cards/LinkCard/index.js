@@ -14,11 +14,11 @@ export default class LinkCard extends Component {
   }
 
   render() {
-    const { caption, eventId, imageHeight, imageUrl, imageWidth } = this.props;
+    const { caption, eventId, imageHeight, imageUrl, imageWidth, url } = this.props;
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
 
     return (
-      <CardContainer>
+      <CardContainer clickable url={url}>
         <View style={[styles.eventContainer, backgroundColorStyle]}>
           <Header eventId={eventId} overlay />
           <MediaImage
