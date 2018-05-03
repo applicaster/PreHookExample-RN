@@ -28,9 +28,9 @@ describe('events reducer', () => {
     });
 
     it('should set socialEvents', () => {
-      const newState = appReducer(initialState, fetchEventsDone({ data: [1, 2], meta: {}, links: {} }));
+      const newState = appReducer(initialState, fetchEventsDone({ data: [{ id: 1 }, { id: 2 }], meta: {}, links: {} }));
 
-      expect(newState.get('events')).to.deep.equal([1, 2]);
+      expect(newState.get('events')).to.deep.equal({ 1: { id: 1 }, 2: { id: 2 } });
     });
   });
 

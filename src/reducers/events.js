@@ -9,7 +9,7 @@ import { actionCreator } from '../actions/actionHelpers';
 
 export const eventsInitialState = Map({
   loading: false,
-  events: [],
+  events: {},
   favoriteTweets: null,
 });
 
@@ -24,7 +24,12 @@ export default (state = eventsInitialState, action = actionCreator()) => {
       return state.set('loading', false);
 
     case FETCH_EVENTS_DONE:
-      const { data: events = [], meta, links } = payload;
+      const { data: eventsArray = [], meta, links } = payload;
+      const events = {};
+      eventsArray.forEach(event => {
+        events[event.id] = event;
+      });
+
       return state
         .set('loading', false)
         .set('events', events);
