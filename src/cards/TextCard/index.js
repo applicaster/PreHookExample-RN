@@ -20,7 +20,7 @@ export default class TextCard extends Component {
     return (
       <CardContainer>
         <View style={[styles.eventContainer, backgroundColorStyle]}>
-          <Header eventId={eventId} />
+          <Header eventId={eventId} overlay={false} />
           <Caption caption={caption} />
           <Footer eventId={eventId} />
         </View>

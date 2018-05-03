@@ -22,7 +22,7 @@ export default class VideoCard extends Component {
     return (
       <CardContainer>
         <View style={[styles.eventContainer, backgroundColorStyle]}>
-          <Header eventId={eventId} />
+          <Header eventId={eventId} overlay />
           <MediaVideo
             eventId={eventId}
             height={imageHeight}

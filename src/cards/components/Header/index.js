@@ -13,7 +13,6 @@ const mapStateToProps = (state, props) => {
     createdAt: event.createdAt,
     isSocial: (event.source !== 'cms'),
     name: user.name,
-    overlay: (event.type !== 'text'),
     source: event.source,
     userName: user.userName || '',
   };

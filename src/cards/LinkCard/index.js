@@ -20,7 +20,7 @@ export default class LinkCard extends Component {
     return (
       <CardContainer>
         <View style={[styles.eventContainer, backgroundColorStyle]}>
-          <Header eventId={eventId} />
+          <Header eventId={eventId} overlay />
           <MediaImage
             height={imageHeight}
             imageUrl={imageUrl}
