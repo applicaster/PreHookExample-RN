@@ -31,7 +31,7 @@ export default class CardContainer extends Component {
 
 CardContainer.propTypes = {
   children: PropTypes.object.isRequired,
-  clickable: PropTypes.bool.isRequired,
+  clickable: PropTypes.bool,
   url: PropTypes.string,
 };
 
