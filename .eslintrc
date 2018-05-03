@@ -39,6 +39,7 @@
     "es-beautifier/jsx-separateline-literals": 0,
     "es-beautifier/jsx-multiline-attributes": 0,
     "react/jsx-first-prop-new-line": 0,
+    "react/prefer-stateless-function": 0,
     "es-beautifier/multiline-object-properties": 0
   }
 }
