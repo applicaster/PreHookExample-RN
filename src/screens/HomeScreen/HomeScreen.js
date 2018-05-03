@@ -19,10 +19,10 @@ import {
 import ModalScreen from '../ModalScreen';
 import CloseButton from '../../components/CloseButton';
 import WritePostButton from './components/WritePostButton';
-import ImageCard from '../../cards/ImageCard';
-import LinkCard from '../../cards/LinkCard';
-import TextCard from '../../cards/TextCard';
-import VideoCard from '../../cards/VideoCard';
+import ImageCard from './cards/ImageCard';
+import LinkCard from './cards/LinkCard';
+import TextCard from './cards/TextCard';
+import VideoCard from './cards/VideoCard';
 import { styles } from './style';
 
 export default class HomeScreen extends Component {
