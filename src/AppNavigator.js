@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import hexToRgb from 'hex-to-rgb';
 import Navigator from './Navigator';
-import LiveButton from './components/LiveButton';
 
 class AppNavigator extends Component {
   screenProperties() {
@@ -16,7 +15,6 @@ class AppNavigator extends Component {
       headerBackTitle: null,
       headerTintColor: `${headerTintColor}99`,
       headerTitle: headerTitle || 'Feed Title',
-      headerRight: hasLive && <LiveButton liveUrl={liveUrl} isLive={isLive} />,
       headerStyle: {
         backgroundColor: headerBackgroundColor,
         borderWidth: StyleSheet.hairlineWidth,
