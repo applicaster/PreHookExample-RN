@@ -1,14 +1,10 @@
-import CommentsScreen from './components/CommentsScreen';
-import FeedScreen from './components/FeedScreen';
+import HomeScreen from './screens/HomeScreen';
 import SocialWebViewScreen from './components/SocialWebViewScreen';
 import GenericWebViewScreen from './components/GenericWebViewScreen';
 
 export default {
-  Comments: {
-    screen: CommentsScreen,
-  },
-  Feed: {
-    screen: FeedScreen,
+  Home: {
+    screen: HomeScreen,
   },
   SocialWebView: {
     screen: SocialWebViewScreen,
