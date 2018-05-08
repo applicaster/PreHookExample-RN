@@ -49,6 +49,7 @@ export default class HomeScreen extends Component {
 
   componentWillMount() {
     this.props.fetchEvents();
+    this.props.fetchZappPipes();
     
     const TWITTER_UPDATE_FAVORITES = 'twitter:updateFavorites';
     const { updateFavoriteTweets } = this.props;
@@ -148,6 +149,7 @@ export default class HomeScreen extends Component {
 HomeScreen.propTypes = {
   events: PropTypes.object.isRequired,
   fetchEvents: PropTypes.func.isRequired,
+  fetchZappPipes: PropTypes.func.isRequired,
   isFacebookAvailable: PropTypes.bool.isRequired,
   isTwitterAvailable: PropTypes.bool.isRequired,
   navigation: PropTypes.object.isRequired,

@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
   fetchEvents,
+  fetchZappPipes,
   toggleModal,
   updateFavoriteTweets,
 } from '../../actions';
@@ -24,6 +25,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   fetchEvents,
+  fetchZappPipes,
   toggleModal,
   updateFavoriteTweets,
 }, dispatch);
