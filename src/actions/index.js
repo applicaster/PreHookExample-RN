@@ -5,6 +5,10 @@ export const FETCH_EVENTS_START = 'FETCH_EVENTS_START';
 export const FETCH_EVENTS_DONE = 'FETCH_EVENTS_DONE';
 export const FETCH_EVENTS_FAILED = 'FETCH_EVENTS_FAILED';
 
+export const FETCH_ZAPP_PIPES_START = 'FETCH_ZAPP_PIPES_START';
+export const FETCH_ZAPP_PIPES_DONE = 'FETCH_ZAPP_PIPES_DONE';
+export const FETCH_ZAPP_PIPES_FAILED = 'FETCH_ZAPP_PIPES_FAILED';
+
 export const FETCH_FAVORITE_TWEETS_DONE = 'FETCH_FAVORITE_TWEETS_DONE';
 export const FETCH_FAVORITE_TWEETS_FAILED = 'FETCH_FAVORITE_TWEETS_FAILED';
 export const UPDATE_FAVORITE_TWEETS = 'UPDATE_FAVORITE_TWEETS';
@@ -23,6 +27,10 @@ export const SET_ACTIVE_EVENT_ID = 'SET_ACTIVE_EVENT_ID';
 export const fetchEvents = () => actionCreator(FETCH_EVENTS_START);
 export const fetchEventsDone = events => actionCreator(FETCH_EVENTS_DONE, events);
 export const fetchEventsFailed = error => actionCreator(FETCH_EVENTS_FAILED, { error });
+
+export const fetchZappPipes = () => actionCreator(FETCH_ZAPP_PIPES_START);
+export const fetchZappPipesDone = pipes => actionCreator(FETCH_ZAPP_PIPES_DONE, pipes);
+export const fetchZappPipesFailed = error => actionCreator(FETCH_ZAPP_PIPES_FAILED, { error });
 
 export const setMetadata = metadata => actionCreator(SET_METADATA, metadata);
 export const setAccountId = accountId => actionCreator(SET_ACCOUNT_ID, { accountId });
