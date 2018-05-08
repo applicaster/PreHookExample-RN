@@ -9,6 +9,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/mergeMap';
 import { combineEpics } from 'redux-observable';
 import FeedRNUtils from '@applicaster/feed-rn-utils';
+import { ZappPipesService } from 'react-native-zapp-bridge';
 import { fetchEvents } from '../api/events';
 
 import {
@@ -22,14 +23,27 @@ import {
   FETCH_EVENTS_START,
   FETCH_EVENTS_DONE,
   UPDATE_FAVORITE_TWEETS,
-  
+  FETCH_ZAPP_PIPES_START,
+
   // ACTION CREATORS:
   fetchEventsDone,
   fetchEventsFailed,
+  fetchZappPipesDone,
+  fetchZappPipesFailed,
   setMetadata,
   fetchFavoriteTweetsDone,
   fetchFavoriteTweetsFailed,
 } from '../actions';
+
+const ZAPP_PIPES_URL = 'azteca-noticias://fetchData?type=section&url=aHR0cDovL3d3dy5henRlY2Fub3RpY2lhcy5jb20ubXgvYXBwbm90aWNpYXMyMDE4L2pzb24vc2VjY2lvbmVzLzExMzQ3Lmpzb24%2Fc3RhcnRGcm9tPTE4'; // TODO: this will be dynamic but hardcoded for testing
+export const fetchZappPipesData = (action$) =>
+  action$
+    .filter(action => action.type === FETCH_ZAPP_PIPES_START)
+    .mergeMap(() =>
+      Observable.fromPromise(ZappPipesService.getDataSourceData(ZAPP_PIPES_URL))
+        .map(pipesData => fetchZappPipesDone(pipesData))
+        .catch(error => Observable.of(fetchZappPipesFailed(error)))
+    );
 
 export const fetchEventsEpic = (action$, store) =>
   action$
@@ -72,6 +86,7 @@ export const updateFavoriteTweetsEpic = (action$) =>
 
 export default combineEpics(
   fetchEventsEpic,
+  fetchZappPipesData,
   setMetadataEpic,
   fetchFavoriteTweetsEpic,
   updateFavoriteTweetsEpic,
