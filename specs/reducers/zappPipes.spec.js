@@ -1,7 +1,6 @@
 import {
   fetchZappPipes,
   fetchZappPipesDone,
-  fetchEventsFailed,
   fetchZappPipesFailed,
 } from '../../src/actions';
 import appReducer from '../../src/reducers/zappPipes';
@@ -10,6 +9,18 @@ describe('zappPipes reducer', () => {
   let initialState;
   beforeEach(() => {
     initialState = appReducer();
+  });
+
+  describe('initial state', () => {
+    it('reducer should have correct initial state', () => {
+      const newState = appReducer();
+
+      expect(newState.toJS()).to.deep.equal({
+        loading: false,
+        dataProviderUrl: '',
+        entries: {},
+      });
+    });
   });
 
   describe('fetchZappPipes is dispatched', () => {

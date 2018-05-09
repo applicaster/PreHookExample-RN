@@ -8,6 +8,7 @@ import { actionCreator } from '../actions/actionHelpers';
 
 export const zappPipesInitialState = Map({
   loading: false,
+  dataProviderUrl: '',
   entries: {},
 });
 
