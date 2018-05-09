@@ -2,6 +2,9 @@ import {
   fetchEvents,
   fetchEventsDone,
   fetchEventsFailed,
+  fetchZappPipes,
+  fetchZappPipesDone,
+  fetchZappPipesFailed,
   fetchFavoriteTweetsDone,
   fetchFavoriteTweetsFailed,
   setAccountId,
@@ -17,6 +20,9 @@ import {
   FETCH_EVENTS_START,
   FETCH_EVENTS_DONE,
   FETCH_EVENTS_FAILED,
+  FETCH_ZAPP_PIPES_START,
+  FETCH_ZAPP_PIPES_DONE,
+  FETCH_ZAPP_PIPES_FAILED,
   FETCH_FAVORITE_TWEETS_DONE,
   FETCH_FAVORITE_TWEETS_FAILED,
   UPDATE_FAVORITE_TWEETS,
@@ -52,6 +58,44 @@ describe('actions', () => {
 
         expect(action.payload.data).to.exist;
         expect(action.payload.data).to.deep.equal([1, 2]);
+      });
+    });
+
+    describe('fetchEventsFailed', () => {
+      it('should have correct action type', () => {
+        const action = fetchEventsFailed(Error('blah'));
+
+        expect(action.type).to.equal(FETCH_EVENTS_FAILED);
+      });
+
+      it('should pass error to payload', () => {
+        const action = fetchEventsFailed(Error('blah'));
+
+        expect(action.payload.error).to.exist;
+        expect(action.payload.error.message).to.deep.equal('blah');
+      });
+    });
+
+    describe('fetchZappPipes', () => {
+      it('should have correct action type', () => {
+        const action = fetchZappPipes();
+
+        expect(action.type).to.equal(FETCH_ZAPP_PIPES_START);
+      });
+    });
+
+    describe('fetchZappPipesDone', () => {
+      it('should have correct action type', () => {
+        const action = fetchZappPipesDone();
+
+        expect(action.type).to.equal(FETCH_ZAPP_PIPES_DONE);
+      });
+
+      it('should pass pipes to payload', () => {
+        const action = fetchZappPipesDone({ pipes: { foo: 'bar' } });
+
+        expect(action.payload.pipes).to.exist;
+        expect(action.payload.pipes).to.deep.equal({ foo: 'bar' });
       });
     });
 
