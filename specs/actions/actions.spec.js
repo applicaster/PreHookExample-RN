@@ -101,13 +101,13 @@ describe('actions', () => {
 
     describe('fetchEventsFailed', () => {
       it('should have correct action type', () => {
-        const action = fetchEventsFailed(Error('blah'));
+        const action = fetchZappPipesFailed(Error('blah'));
 
-        expect(action.type).to.equal(FETCH_EVENTS_FAILED);
+        expect(action.type).to.equal(FETCH_ZAPP_PIPES_FAILED);
       });
 
       it('should pass error to payload', () => {
-        const action = fetchEventsFailed(Error('blah'));
+        const action = fetchZappPipesFailed(Error('blah'));
 
         expect(action.payload.error).to.exist;
         expect(action.payload.error.message).to.deep.equal('blah');
