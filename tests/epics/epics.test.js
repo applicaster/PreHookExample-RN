@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ZappPipesService } from 'react-native-zapp-bridge';
 import configureMockStore from 'redux-mock-store';
 import 'rxjs/add/operator/toArray';
 import { createEpicMiddleware, ActionsObservable } from 'redux-observable';
@@ -9,15 +10,20 @@ import {
   setMetadataEpic,
   fetchFavoriteTweetsEpic,
   updateFavoriteTweetsEpic,
+  fetchZappPipesData,
 } from '../../src/epics';
 import {
   FETCH_EVENTS_START,
   FETCH_EVENTS_DONE,
   FETCH_EVENTS_FAILED,
+  FETCH_ZAPP_PIPES_START,
+  FETCH_ZAPP_PIPES_DONE,
+  FETCH_ZAPP_PIPES_FAILED,
   FETCH_FAVORITE_TWEETS_DONE,
   SET_METADATA,
   UPDATE_FAVORITE_TWEETS,
 } from '../../src/actions';
+
 
 jest.mock('@applicaster/feed-rn-utils', () => ({
   getFavoriteTweets: () => Promise.resolve([1, 2]),
@@ -67,6 +73,57 @@ describe('fetchEventsEpic', () => {
       }];
 
       fetchEventsEpic(action$, store)
+        .toArray()
+        .subscribe(actualOutputActions => {
+          expect(actualOutputActions).toEqual(expectedOutputActions);
+          done();
+        }
+      );
+    });
+  });
+});
+
+describe('fetchZappPipesData', () => {
+  let zappPipesGetStub;
+  let store;
+  let action$;
+  beforeEach(() => {
+    zappPipesGetStub = sinon.stub(ZappPipesService, 'getDataSourceData').resolves([1, 2]);
+    store = mockStore({ app: Map({}) });
+    action$ = ActionsObservable.of({ type: FETCH_ZAPP_PIPES_START });
+  });
+  
+  afterEach(() => axios.get.restore());
+
+  test('dispatches the correct actions with expected payloads', done => {
+    const expectedOutputActions = [{
+      type: FETCH_ZAPP_PIPES_DONE,
+      meta: undefined,
+      payload: { pipes: [1, 2] },
+    }];
+
+    fetchZappPipesData(action$, store)
+      .toArray()
+      .subscribe(actualOutputActions => {
+        expect(actualOutputActions).toEqual(expectedOutputActions);
+        done();
+      }
+    );
+  });
+
+  describe('and get request fails', () => {
+    beforeEach(() => {
+      zappPipesGetStub.rejects({ foo: 'bar' });
+    });
+
+    test('dispatches the correct actions with expected payload', done => {
+      const expectedOutputActions = [{
+        type: FETCH_ZAPP_PIPES_FAILED,
+        meta: undefined,
+        payload: { error: { foo: 'bar' } },
+      }];
+
+      fetchZappPipesData(action$, store)
         .toArray()
         .subscribe(actualOutputActions => {
           expect(actualOutputActions).toEqual(expectedOutputActions);
