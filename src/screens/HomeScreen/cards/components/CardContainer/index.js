@@ -8,11 +8,10 @@ import { styles } from './style';
 
 export default class CardContainer extends Component {
   onPress() {
-    const { clickable, url } = this.props;
+    const { clickable, clickHandler } = this.props;
 
     if (clickable) {
-      const { navigation } = this.context;
-      navigation.navigate('GenericWebView', { headerTitle: '', url });
+      clickHandler();
     }
   }
 
@@ -32,7 +31,7 @@ export default class CardContainer extends Component {
 CardContainer.propTypes = {
   children: PropTypes.object.isRequired,
   clickable: PropTypes.bool,
-  url: PropTypes.string,
+  clickHandler: PropTypes.func,
 };
 
 CardContainer.contextTypes = {
