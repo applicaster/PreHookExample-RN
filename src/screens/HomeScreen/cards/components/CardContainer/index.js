@@ -33,7 +33,3 @@ CardContainer.propTypes = {
   clickable: PropTypes.bool,
   clickHandler: PropTypes.func,
 };
-
-CardContainer.contextTypes = {
-  navigation: PropTypes.object,
-};

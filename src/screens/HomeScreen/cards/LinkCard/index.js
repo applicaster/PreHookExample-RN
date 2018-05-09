@@ -9,16 +9,17 @@ import { styles } from '../style';
 
 export default class LinkCard extends Component {
   clickHandler() {
-    // should open image screen
-    // passed to CardContainer
+    const { url } = this.props;
+    const { navigation } = this.context;
+    navigation.navigate('GenericWebView', { headerTitle: '', url });
   }
 
   render() {
-    const { caption, eventId, imageHeight, imageUrl, imageWidth, url } = this.props;
+    const { caption, eventId, imageHeight, imageUrl, imageWidth } = this.props;
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
 
     return (
-      <CardContainer clickable url={url}>
+      <CardContainer clickable clickHandler={() => this.clickHandler()}>
         <View style={[styles.eventContainer, backgroundColorStyle]}>
           <Header eventId={eventId} overlay />
           <MediaImage
@@ -43,4 +44,5 @@ LinkCard.propTypes = {
 
 LinkCard.contextTypes = {
   backgroundColor: PropTypes.string,
+  navigation: PropTypes.object,
 };
