@@ -8,7 +8,7 @@ import { actionCreator } from '../actions/actionHelpers';
 
 export const zappPipesInitialState = Map({
   loading: false,
-  dataProviderUrl: '',
+  dataSourceProviderUrl: '',
   entries: {},
 });
 
@@ -23,11 +23,11 @@ export default (state = zappPipesInitialState, action = actionCreator()) => {
       return state.set('loading', false);
 
     case FETCH_ZAPP_PIPES_DONE:
-      const { pipes } = payload;
+      const entries = JSON.parse(payload);
 
       return state
         .set('loading', false)
-        .set('entries', pipes);
+        .set('entries', entries);
 
     default:
       return state;
