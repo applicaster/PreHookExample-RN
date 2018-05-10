@@ -19,17 +19,16 @@ export default class CardContainer extends Component {
     const { clickable, clickHandler } = this.props;
     if (clickable) {
       clickHandler();
+      this.grow();
     }
-
-    this.grow();
   }
 
   onPressIn() {
-    this.shrink();
+    if (this.props.clickable) this.shrink();
   }
 
   onPressOut() {
-    this.grow();
+    if (this.props.clickable) this.grow();
   }
 
   shrink() {
