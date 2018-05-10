@@ -6,6 +6,7 @@ import { Map } from 'immutable';
 import store from './store';
 import { appInitialState } from './reducers/app';
 import { eventsInitialState } from './reducers/events';
+import { zappPipesInitialState } from './reducers/zappPipes';
 import AppNavigator from './AppNavigator';
 import {
   iosTranslationMapping,
@@ -49,8 +50,8 @@ class App extends Component {
       initialAppProps = JSON.parse(initialAppProps);
       localization = JSON.parse(localization);
     }
-
-    const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive, publicPageUrl } = initialAppProps;
+     
+    const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive, publicPageUrl, zappPipesUrl } = initialAppProps;
     const translations = this.processLocalization(localization, feedTitle);
 
     let { environment } = initialAppProps;
@@ -66,6 +67,9 @@ class App extends Component {
       })),
       events: eventsInitialState,
       translations,
+      zappPipes: Map(Object.assign(zappPipesInitialState.toJS(), {
+        dataSourceProviderUrl: zappPipesUrl,
+      })),
     };
     
     const { backgroundColor, mainColor, textColor } = this.colors || this.getColors(initialAppProps);
