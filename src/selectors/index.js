@@ -20,6 +20,9 @@ export const getEvents = state => state.events.get('events');
 export const getLoading = state => state.events.get('loading');
 export const getFavoriteTweets = state => state.events.get('favoriteTweets');
 
+// From ZappPipes Reducer
+export const getDataSourceProviderUrl = state => state.zappPipes.get('dataSourceProviderUrl');
+
 export const getActiveEvent = createSelector(
   getActiveEventId,
   getEvents,

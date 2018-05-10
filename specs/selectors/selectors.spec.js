@@ -20,6 +20,7 @@ import {
   getFavoriteTweets,
   getTranslations,
   getPublicPageUrl,
+  getDataSourceProviderUrl,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -48,6 +49,9 @@ describe('selectors', () => {
         loading: false,
         favoriteTweets: { 1: 1, 2: 2 },
       }),
+      zappPipes: Map({
+        dataSourceProviderUrl: 'someDataSourceProviderUrl',
+      }),
       translations: {
         foo: 'bar',
       },
@@ -57,6 +61,12 @@ describe('selectors', () => {
   describe('getAccountid', () => {
     it('should get the account id from the app state', () => {
       expect(getAccountId(store.getState())).to.equal('someAccountId');
+    });
+  });
+
+  describe('getDataSourceProviderUrl', () => {
+    it('should get the data source provider url from zappPipes state', () => {
+      expect(getDataSourceProviderUrl(store.getState())).to.equal('someDataSourceProviderUrl');
     });
   });
 
