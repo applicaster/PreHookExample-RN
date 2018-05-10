@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableWithoutFeedback, View } from 'react-native';
+import { View } from 'react-native';
 import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import { IMAGE_DETAIL_CLICKED } from '../../../../constants/analyticEvents';
 import Caption from '../components/Caption';
@@ -11,12 +11,7 @@ import MediaImage from '../components/MediaImage';
 import { styles } from '../style';
 
 export default class ImageCard extends Component {
-  clickHandler() {
-    // should open image screen
-    // passed to CardContainer
-  }
-
-  showMediaDetails() {
+  activateCard() {
     const { toggleModal, setActiveEventId, eventId } = this.props;
     setActiveEventId(eventId);
     toggleModal({ modal: 'MediaModal' });
@@ -28,18 +23,16 @@ export default class ImageCard extends Component {
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
 
     return (
-      <CardContainer>
+      <CardContainer clickable clickHandler={() => this.activateCard()}>
         <View style={[styles.eventContainer, backgroundColorStyle]}>
           <Header eventId={eventId} overlay />
-          <TouchableWithoutFeedback onPress={() => this.showMediaDetails()}>
-            <View>
-              <MediaImage
-                height={imageHeight}
-                imageUrl={imageUrl}
-                width={imageWidth}
-              />
-            </View>
-          </TouchableWithoutFeedback>
+          <View>
+            <MediaImage
+              height={imageHeight}
+              imageUrl={imageUrl}
+              width={imageWidth}
+            />
+          </View>
           <Caption caption={caption} />
           <Footer eventId={eventId} />
         </View>
