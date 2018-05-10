@@ -8,7 +8,7 @@ import Header from '../components/Header';
 import { styles } from '../style';
 
 export default class TextCard extends Component {
-  clickHandler() {
+  activateCard() {
     // should open image screen
     // passed to CardContainer
   }

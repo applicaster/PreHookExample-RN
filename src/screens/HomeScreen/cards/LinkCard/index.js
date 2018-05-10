@@ -8,7 +8,7 @@ import Header from '../components/Header';
 import { styles } from '../style';
 
 export default class LinkCard extends Component {
-  clickHandler() {
+  activateCard() {
     const { url } = this.props;
     const { navigation } = this.context;
     navigation.navigate('GenericWebView', { headerTitle: '', url });
@@ -19,7 +19,7 @@ export default class LinkCard extends Component {
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
 
     return (
-      <CardContainer clickable clickHandler={() => this.clickHandler()}>
+      <CardContainer clickable clickHandler={() => this.activateCard()}>
         <View style={[styles.eventContainer, backgroundColorStyle]}>
           <Header eventId={eventId} overlay />
           <MediaImage
