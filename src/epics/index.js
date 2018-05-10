@@ -16,6 +16,7 @@ import {
   getAccountId,
   getTimelineId,
   getEnvironment,
+  getDataSourceProviderUrl,
 } from '../selectors';
 
 import {
@@ -35,12 +36,11 @@ import {
   fetchFavoriteTweetsFailed,
 } from '../actions';
 
-const ZAPP_PIPES_URL = 'azteca-noticias://fetchData?type=section&url=aHR0cDovL3d3dy5henRlY2Fub3RpY2lhcy5jb20ubXgvYXBwbm90aWNpYXMyMDE4L2pzb24vc2VjY2lvbmVzLzExMzQ3Lmpzb24%2Fc3RhcnRGcm9tPTE4'; // TODO: this will be dynamic but hardcoded for testing
-export const fetchZappPipesData = (action$) =>
+export const fetchZappPipesData = (action$, store) =>
   action$
     .filter(action => action.type === FETCH_ZAPP_PIPES_START)
     .mergeMap(() =>
-      Observable.fromPromise(ZappPipesService.getDataSourceData(ZAPP_PIPES_URL))
+      Observable.fromPromise(ZappPipesService.getDataSourceData(getDataSourceProviderUrl(store.getState())))
         .map(pipesData => fetchZappPipesDone(pipesData))
         .catch(error => Observable.of(fetchZappPipesFailed(error)))
     );
