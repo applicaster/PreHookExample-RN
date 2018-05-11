@@ -30,7 +30,7 @@ export const fetchEventsFailed = error => actionCreator(FETCH_EVENTS_FAILED, { e
 
 export const fetchZappPipes = () => actionCreator(FETCH_ZAPP_PIPES_START);
 export const fetchZappPipesDone = pipes => actionCreator(FETCH_ZAPP_PIPES_DONE, pipes);
-export const fetchZappPipesFailed = error => actionCreator(FETCH_ZAPP_PIPES_FAILED, { error });
+export const fetchZappPipesFailed = error => actionCreator(FETCH_ZAPP_PIPES_FAILED, error);
 
 export const setMetadata = metadata => actionCreator(SET_METADATA, metadata);
 export const setAccountId = accountId => actionCreator(SET_ACCOUNT_ID, { accountId });

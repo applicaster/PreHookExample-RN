@@ -99,7 +99,7 @@ describe('actions', () => {
       });
     });
 
-    describe('fetchEventsFailed', () => {
+    describe('fetchZappPipesFailed', () => {
       it('should have correct action type', () => {
         const action = fetchZappPipesFailed(Error('blah'));
 
@@ -109,8 +109,8 @@ describe('actions', () => {
       it('should pass error to payload', () => {
         const action = fetchZappPipesFailed(Error('blah'));
 
-        expect(action.payload.error).to.exist;
-        expect(action.payload.error.message).to.deep.equal('blah');
+        expect(action.payload).to.exist;
+        expect(action.payload.message).to.deep.equal('blah');
       });
     });
 
