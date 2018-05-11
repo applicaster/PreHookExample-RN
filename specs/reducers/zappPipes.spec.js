@@ -19,6 +19,7 @@ describe('zappPipes reducer', () => {
         loading: false,
         dataSourceProviderUrl: '',
         entries: {},
+        title: '',
       });
     });
   });
@@ -33,15 +34,21 @@ describe('zappPipes reducer', () => {
 
   describe('fetchZappPipesDone is dispatched', () => {
     it('should set loading to false', () => {
-      const newState = appReducer(initialState, fetchZappPipesDone('[1, 2]'));
+      const newState = appReducer(initialState, fetchZappPipesDone({ entries: [1, 2] }));
 
       expect(newState.get('loading')).to.equal(false);
     });
 
     it('should set entries', () => {
-      const newState = appReducer(initialState, fetchZappPipesDone('[1, 2]'));
+      const newState = appReducer(initialState, fetchZappPipesDone({ entries: [1, 2] }));
 
       expect(newState.get('entries')).to.deep.equal([1, 2]);
+    });
+
+    it('should set title', () => {
+      const newState = appReducer(initialState, fetchZappPipesDone({ entries: [1, 2], title: 'bar' }));
+
+      expect(newState.get('title')).to.deep.equal('bar');
     });
   });
 

@@ -10,6 +10,7 @@ export const zappPipesInitialState = Map({
   loading: false,
   dataSourceProviderUrl: '',
   entries: {},
+  title: '',
 });
 
 export default (state = zappPipesInitialState, action = actionCreator()) => {
@@ -23,10 +24,11 @@ export default (state = zappPipesInitialState, action = actionCreator()) => {
       return state.set('loading', false);
 
     case FETCH_ZAPP_PIPES_DONE:
-      const entries = JSON.parse(payload);
-
+      const { entries, title } = payload;
+      
       return state
         .set('loading', false)
+        .set('title', title)
         .set('entries', entries);
 
     default:
