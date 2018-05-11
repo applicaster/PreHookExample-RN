@@ -6,6 +6,7 @@ import {
   getTimezone,
   getEnvironment,
   getEvents,
+  getEntries,
   getLoading,
   getActiveEventId,
   getActiveEvent,
@@ -51,6 +52,7 @@ describe('selectors', () => {
       }),
       zappPipes: Map({
         dataSourceProviderUrl: 'someDataSourceProviderUrl',
+        entries: { 1: event1, 2: event2 },
       }),
       translations: {
         foo: 'bar',
@@ -67,6 +69,12 @@ describe('selectors', () => {
   describe('getDataSourceProviderUrl', () => {
     it('should get the data source provider url from zappPipes state', () => {
       expect(getDataSourceProviderUrl(store.getState())).to.equal('someDataSourceProviderUrl');
+    });
+  });
+
+  describe('getEntries', () => {
+    it('should get the entries from the zappPipes reducer state', () => {
+      expect(getEntries(store.getState())).to.deep.equal({ 1: event1, 2: event2 });
     });
   });
 

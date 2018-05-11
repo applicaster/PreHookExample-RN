@@ -22,6 +22,7 @@ export const getFavoriteTweets = state => state.events.get('favoriteTweets');
 
 // From ZappPipes Reducer
 export const getDataSourceProviderUrl = state => state.zappPipes.get('dataSourceProviderUrl');
+export const getEntries = state => state.zappPipes.get('entries');
 
 export const getActiveEvent = createSelector(
   getActiveEventId,
