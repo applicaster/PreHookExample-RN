@@ -7,7 +7,31 @@ const mapUser = user => ({
   name: user.name,
 });
 
-const mapImages = (imageUrl, imageSize) => ({
+const mapMediaItem = (mediaGroups, type, aspectRatio) => {
+  for (let i = 0; i < mediaGroups.length; i++) {
+    const mediaItems = mediaGroups[i].media_item;
+    for (let j = 0; j < mediaItems.length; j++) {
+      const mediaItem = mediaItems[j];
+      if (mediaItem.type === type) {
+        return {
+          default: {
+            url: mediaItem.src,
+            width: aspectRatio.width,
+            height: aspectRatio.height,
+          },
+        };
+      }
+    }
+  }
+
+  return { default: {
+    url: '',
+    width: aspectRatio.width,
+    height: aspectRatio.height,
+  } };
+};
+
+const mapImage = (imageUrl, imageSize) => ({
   default: {
     url: imageUrl,
     width: imageSize.width,
@@ -15,37 +39,25 @@ const mapImages = (imageUrl, imageSize) => ({
   },
 });
 
-const mapTextEntry = (entry) => {
-  const { id, timestamp: createdAt, text: caption } = entry;
+const mapImageEntry = (entry, title) => {
+  const { logoUrl, title: caption, content, published: createdAt } = entry;
+  const { src: imageUrl } = content;
+  const user = mapUser({ name: title, avatarImageUrl: logoUrl });
 
   return {
-    id,
+    id: v4(),
     user,
-    createdAt,
-    caption,
-    type: 'text',
-    source: 'cms',
-  };
-};
-
-const mapImageEntry = (entry) => {
-  const { id, timestamp: createdAt, text: caption, image_size: imageSize, image } = entry;
-
-  return {
-    id,
-    user,
-    createdAt,
+    createdAt: date(createdAt),
     caption,
     type: 'image',
-    source: 'cms',
-    images: mapImages(image, imageSize),
+    source: 'zappPipes',
+    images: mapImage(imageUrl, { height: 6, width: 5 }),
   };
 };
 
 const mapVideoEntry = (entry, title) => {
-  const { logoUrl, title: caption, content, published: createdAt, media_group: thumbnails } = entry;
+  const { logoUrl, title: caption, content, published: createdAt, media_group: mediaGroups } = entry;
   const { src: videoUrl } = content;
-  const { src: imageUrl } = thumbnails[0].media_item[0];
   const user = mapUser({ name: title, avatarImageUrl: logoUrl });
 
   return {
@@ -55,24 +67,44 @@ const mapVideoEntry = (entry, title) => {
     caption,
     type: 'video',
     source: 'zappPipes',
-    images: mapImages(imageUrl, { height: 360, width: 640 }),
+    images: mapMediaItem(mediaGroups, 'image', { height: 9, width: 16 }),
     videoUrl,
   };
 };
 
-const mapLinkEntry = (entry) => {
-  const { id, timestamp: createdAt, text: caption, link = {}, image_size: imageSize, image } = entry;
-  const url = link.url;
+const mapLinkEntry = (entry, title) => {
+  const { logoUrl, title: caption, link, published: createdAt, media_group: mediaGroups } = entry;
+  const { href: url } = link;
+  const user = mapUser({ name: title, avatarImageUrl: logoUrl });
 
   return {
-    id,
+    id: v4(),
     user,
-    createdAt,
+    createdAt: date(createdAt),
     caption,
     type: 'link',
-    source: 'cms',
+    source: 'zappPipes',
+    images: mapMediaItem(mediaGroups, 'image', { height: 6, width: 5 }),
     url,
-    images: mapImages(image, imageSize),
+  };
+};
+
+const mapArticleEntry = (entry, title) => {
+  const { logoUrl, title: caption, summary, content, published: createdAt, media_group: mediaGroups } = entry;
+  const { content: body } = content;
+  const user = mapUser({ name: title, avatarImageUrl: logoUrl });
+
+  return {
+    id: v4(),
+    user,
+    summary,
+    body,
+    createdAt: date(createdAt),
+    caption,
+    type: 'article',
+    source: 'zappPipes',
+    images: mapMediaItem(mediaGroups, 'image', { height: 9, width: 16 }),
+    videoUrl: mapMediaItem(mediaGroups, 'video', { height: 9, width: 16 }),
   };
 };
 
@@ -80,14 +112,14 @@ const mapEntry = (entry, title) => {
   const type = entry.type.value.toLowerCase();
 
   switch (type) {
-    // case 'article':
-    //   return mapTextEntry(entry);
-    // case 'image':
-    //   return mapImageEntry(entry);
+    case 'article':
+      return mapArticleEntry(entry);
+    case 'image':
+      return mapImageEntry(entry);
     case 'video':
       return mapVideoEntry(entry, title);
-    // case 'link':
-    //   return mapLinkEntry(entry);
+    case 'link':
+      return mapLinkEntry(entry, title);
     default:
       return false;
   }
