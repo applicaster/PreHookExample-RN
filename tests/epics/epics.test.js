@@ -88,18 +88,18 @@ describe('fetchZappPipesData', () => {
   let store;
   let action$;
   beforeEach(() => {
-    zappPipesGetStub = sinon.stub(ZappPipesService, 'getDataSourceData').resolves([1, 2]);
-    store = mockStore({ app: Map({}) });
+    zappPipesGetStub = sinon.stub(ZappPipesService, 'getDataSourceData').resolves('{"title":"bar","entry":[]}');
+    store = mockStore({ zappPipes: Map({ dataSourceProviderUrl: 'url' }) });
     action$ = ActionsObservable.of({ type: FETCH_ZAPP_PIPES_START });
   });
   
-  afterEach(() => axios.get.restore());
+  afterEach(() => ZappPipesService.getDataSourceData.restore());
 
   test('dispatches the correct actions with expected payloads', done => {
     const expectedOutputActions = [{
       type: FETCH_ZAPP_PIPES_DONE,
       meta: undefined,
-      payload: { pipes: [1, 2] },
+      payload: { title: 'bar', entries: { } },
     }];
 
     fetchZappPipesData(action$, store)
@@ -120,7 +120,7 @@ describe('fetchZappPipesData', () => {
       const expectedOutputActions = [{
         type: FETCH_ZAPP_PIPES_FAILED,
         meta: undefined,
-        payload: { error: { foo: 'bar' } },
+        payload: { foo: 'bar' },
       }];
 
       fetchZappPipesData(action$, store)

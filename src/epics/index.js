@@ -11,6 +11,7 @@ import { combineEpics } from 'redux-observable';
 import FeedRNUtils from '@applicaster/feed-rn-utils';
 import { ZappPipesService } from 'react-native-zapp-bridge';
 import { fetchEvents } from '../api/events';
+import { normalizeZappPipes } from '../logic/zapp-pipes-normalizer';
 
 import {
   getAccountId,
@@ -41,7 +42,7 @@ export const fetchZappPipesData = (action$, store) =>
     .filter(action => action.type === FETCH_ZAPP_PIPES_START)
     .mergeMap(() =>
       Observable.fromPromise(ZappPipesService.getDataSourceData(getDataSourceProviderUrl(store.getState())))
-        .map(pipesData => fetchZappPipesDone(pipesData))
+        .map(pipesData => fetchZappPipesDone(normalizeZappPipes(pipesData)))
         .catch(error => Observable.of(fetchZappPipesFailed(error)))
     );
 
