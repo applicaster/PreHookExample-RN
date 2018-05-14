@@ -1,8 +1,8 @@
-import { v4 } from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 const date = value => (new Date(value).getTime() / 1000);
 const mapUser = user => ({
-  id: v4(),
+  id: user.id || uuid(),
   avatarImageUrl: user.avatarImageUrl || 'https://yt3.ggpht.com/a-/AJLlDp3HA08n05uiS3qExGQ7hYrw6erPfD02j8TZPA=s900-mo-c-c0xffffffff-rj-k-no',
   name: user.name,
 });
@@ -13,6 +13,8 @@ const mapMediaItem = (mediaGroups, type, aspectRatio) => {
     for (let j = 0; j < mediaItems.length; j++) {
       const mediaItem = mediaItems[j];
       if (mediaItem.type === type) {
+        if (type === 'video') return mediaItem.src;
+
         return {
           default: {
             url: mediaItem.src,
@@ -24,11 +26,7 @@ const mapMediaItem = (mediaGroups, type, aspectRatio) => {
     }
   }
 
-  return { default: {
-    url: '',
-    width: aspectRatio.width,
-    height: aspectRatio.height,
-  } };
+  return null;
 };
 
 const mapImage = (imageUrl, imageSize) => ({
@@ -40,12 +38,13 @@ const mapImage = (imageUrl, imageSize) => ({
 });
 
 const mapImageEntry = (entry, title) => {
-  const { logoUrl, title: caption, content, published: createdAt } = entry;
+  const { id, title: caption, content, published: createdAt, extensions } = entry;
   const { src: imageUrl } = content;
-  const user = mapUser({ name: title, avatarImageUrl: logoUrl });
+  const { sourceImageUrl: avatarImageUrl } = extensions;
+  const user = mapUser({ id, name: title, avatarImageUrl });
 
   return {
-    id: v4(),
+    id: id || uuid(),
     user,
     createdAt: date(createdAt),
     caption,
@@ -56,12 +55,13 @@ const mapImageEntry = (entry, title) => {
 };
 
 const mapVideoEntry = (entry, title) => {
-  const { logoUrl, title: caption, content, published: createdAt, media_group: mediaGroups } = entry;
+  const { id, title: caption, content, published: createdAt, media_group: mediaGroups, extensions } = entry;
   const { src: videoUrl } = content;
-  const user = mapUser({ name: title, avatarImageUrl: logoUrl });
+  const { sourceImageUrl: avatarImageUrl } = extensions;
+  const user = mapUser({ id, name: title, avatarImageUrl });
 
   return {
-    id: v4(),
+    id: id || uuid(),
     user,
     createdAt: date(createdAt),
     caption,
@@ -73,12 +73,13 @@ const mapVideoEntry = (entry, title) => {
 };
 
 const mapLinkEntry = (entry, title) => {
-  const { logoUrl, title: caption, link, published: createdAt, media_group: mediaGroups } = entry;
+  const { id, title: caption, link, published: createdAt, media_group: mediaGroups, extensions } = entry;
   const { href: url } = link;
-  const user = mapUser({ name: title, avatarImageUrl: logoUrl });
+  const { sourceImageUrl: avatarImageUrl } = extensions;
+  const user = mapUser({ id, name: title, avatarImageUrl });
 
   return {
-    id: v4(),
+    id: id || uuid(),
     user,
     createdAt: date(createdAt),
     caption,
@@ -90,12 +91,13 @@ const mapLinkEntry = (entry, title) => {
 };
 
 const mapArticleEntry = (entry, title) => {
-  const { logoUrl, title: caption, summary, content, published: createdAt, media_group: mediaGroups } = entry;
+  const { id, title: caption, summary, content, published: createdAt, media_group: mediaGroups, extensions } = entry;
   const { content: body } = content;
-  const user = mapUser({ name: title, avatarImageUrl: logoUrl });
+  const { sourceImageUrl: avatarImageUrl } = extensions;
+  const user = mapUser({ id, name: title, avatarImageUrl });
 
   return {
-    id: v4(),
+    id: id || uuid(),
     user,
     summary,
     body,
@@ -113,9 +115,9 @@ const mapEntry = (entry, title) => {
 
   switch (type) {
     case 'article':
-      return mapArticleEntry(entry);
+      return mapArticleEntry(entry, title);
     case 'image':
-      return mapImageEntry(entry);
+      return mapImageEntry(entry, title);
     case 'video':
       return mapVideoEntry(entry, title);
     case 'link':
@@ -141,97 +143,3 @@ export const normalizeZappPipes = pipes => {
     entries,
   };
 };
-
-const normalizedEntrys = [
-  {
-    id: 'someVideoEntryId',
-    source: 'cms',
-    type: 'video',
-    caption: 'Test Video Entry',
-    videoUrl: 'http://assets-production.applicaster.com/stars/uploads/5a99b55d4ab672355b288754_1520022877183.mp4',
-    createdAt: 1520022995,
-    user: {
-      name: 'Star Feed',
-      avatarImageUrl: 'someThumbnailUrl',
-      id: 'userId',
-    },
-    images: {
-      default: {
-        url: 'http://assets-production.applicaster.com/stars/uploads/5a99b55d4ab672355b288754_1520022877182.jpg',
-        width: 1440,
-        height: 1080,
-      },
-    },
-  },
-  {
-    id: 'someTextEntryId',
-    source: 'cms',
-    type: 'text',
-    caption: 'Test Text Entry',
-    createdAt: 1517861168,
-    user: {
-      name: 'Star Feed',
-      avatarImageUrl: 'someThumbnailUrl',
-      id: 'userId',
-    },
-  },
-  {
-    id: 'someImageEntryId',
-    source: 'cms',
-    type: 'image',
-    caption: 'Test Image Entry',
-    createdAt: 1517861166,
-    user: {
-      name: 'Star Feed',
-      avatarImageUrl: 'someThumbnailUrl',
-      id: 'userId',
-    },
-    images: {
-      default: {
-        url: 'http://assets-production.applicaster.com/stars/uploads/5a78b7136a882062bf8af315_1517860627571.jpg',
-        width: 1440,
-        height: 1080,
-      },
-    },
-  },
-  {
-    id: 'someLinkEntryId',
-    source: 'cms',
-    type: 'link',
-    caption: 'Test Link Entry',
-    createdAt: 1517861163,
-    url: 'http://www.applicaster.com',
-    user: {
-      name: 'Star Feed',
-      avatarImageUrl: 'someThumbnailUrl',
-      id: 'userId',
-    },
-    images: {
-      default: {
-        url: 'http://assets-production.applicaster.com/stars/uploads/5a78b743595bcf072b5ba3e5_1517860675506.jpg',
-        width: 1920,
-        height: 1080,
-      },
-    },
-  },
-  {
-    id: 'someUltimateQuestionEntryId',
-    source: 'cms',
-    type: 'link',
-    caption: 'Test Ultimate Question',
-    createdAt: 1517861160,
-    url: 'https://assets-secure.applicaster.com/static/starlight/grid/1.5/template/index.html?appli-payload=eyJxdWVzdGlvblVybCI6Imh0dHBzOi8vYXNzZXRzLXNlY3VyZS5hcHBsaWNhc3Rlci5jb20vcXVlc3Rpb25zLXByb2R1Y3Rpb24vYXBpL3YxL2FjY291bnRzLzU5NWRlN2FjOGE3YzQzMDAwOTE0YzVhNS9xdWVzdGlvbnMvNzA3NDkwOGMtMGFhZi0xMWU4LWI4MDAtMGEwMTM1OGZmYmJjLmpzb24iLCJjaGFsbGVuZ2VSZWYiOiJhcm46c3RhcnM6NTk1ZGU3YWM4YTdjNDMwMDA5MTRjNWE1OnRpbWVsaW5lOjVhNGZhZGJmNGFiNjcyMGJjY2EzNmM3NCJ9',
-    user: {
-      name: 'Star Feed',
-      avatarImageUrl: 'someThumbnailUrl',
-      id: 'userId',
-    },
-    images: {
-      default: {
-        url: 'http://assets-production.applicaster.com/stars/uploads/5a78b8406a882069138af314_1517860928683.jpg',
-        width: 660,
-        height: 499,
-      },
-    },
-  },
-];
