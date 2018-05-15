@@ -58,6 +58,8 @@ export default class Header extends Component {
 
   renderAvatarImage() {
     const { avatarImageUrl } = this.props;
+    if (!avatarImageUrl) return null;
+    
     return <Image style={styles.avatar} source={{ uri: avatarImageUrl }} />;
   }
 
