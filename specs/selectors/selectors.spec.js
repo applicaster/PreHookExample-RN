@@ -31,8 +31,10 @@ const mockStore = configureMockStore();
 
 describe('selectors', () => {
   let store;
-  const event1 = { foo: 'bar', id: '1', originUrl: 'someOriginUrl1' };
-  const event2 = { foo: 'bar', id: '2', originUrl: 'someOriginUrl2' };
+  const event1 = { foo: 'bar', id: '1', originUrl: 'someOriginUrl1', createdAt: 2 };
+  const event2 = { foo: 'bar', id: '2', originUrl: 'someOriginUrl2', createdAt: 4 };
+  const entry1 = { foo: 'bar', id: '3', originUrl: 'someOriginUrl3', createdAt: 1 };
+  const entry2 = { foo: 'bar', id: '4', originUrl: 'someOriginUrl4', createdAt: 3 };
   beforeEach(() => {
     store = mockStore({
       app: Map({
@@ -55,7 +57,7 @@ describe('selectors', () => {
       }),
       zappPipes: Map({
         dataSourceProviderUrl: 'someDataSourceProviderUrl',
-        entries: { 1: event1, 2: event2 },
+        entries: { 3: entry1, 4: entry2 },
         loading: false,
       }),
       translations: {
@@ -78,7 +80,7 @@ describe('selectors', () => {
 
   describe('getEntries', () => {
     it('should get the entries from the zappPipes reducer state', () => {
-      expect(getEntries(store.getState())).to.deep.equal({ 1: event1, 2: event2 });
+      expect(getEntries(store.getState())).to.deep.equal({ 3: entry1, 4: entry2 });
     });
   });
 
@@ -198,13 +200,23 @@ describe('selectors', () => {
 
   describe('getCards', () => {
     it('should get an object of entries and events combined into one', () => {
-      expect(getCards(store.getState())).to.deep.equal(false);
+      expect(getCards(store.getState())).to.deep.equal({
+        1: event1,
+        2: event2,
+        3: entry1,
+        4: entry2,
+      });
     });
   });
 
   describe('getSortedCardsByDate', () => {
     it('should get a list of cards sorted by descending date', () => {
-      expect(getSortedCardsByDate(store.getState())).to.deep.equal(false);
+      expect(getSortedCardsByDate(store.getState())).to.deep.equal([
+        event2,
+        entry2,
+        event1,
+        entry1,
+      ]);
     });
   });
 });
