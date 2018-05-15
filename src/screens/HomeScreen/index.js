@@ -8,19 +8,13 @@ import {
 } from '../../actions';
 
 import {
-  getEvents,
-  getLoading,
-  isFacebookAvailable,
-  isTwitterAvailable,
+  getSortedCardsByDate,
 } from '../../selectors';
 
 import HomeScreen from './HomeScreen';
 
 const mapStateToProps = state => ({
-  isFacebookAvailable: isFacebookAvailable(state),
-  isTwitterAvailable: isTwitterAvailable(state),
-  loading: getLoading(state),
-  events: getEvents(state),
+  cards: getSortedCardsByDate(state),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

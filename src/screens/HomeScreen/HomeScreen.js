@@ -90,7 +90,7 @@ export default class HomeScreen extends Component {
       />);
     }
 
-    if (type === 'link' && source === 'cms') {
+    if (type === 'link' && (source === 'cms' || source === 'zappPipes')) {
       return (<LinkCard
         caption={caption}
         eventId={id}
@@ -123,13 +123,13 @@ export default class HomeScreen extends Component {
   }
 
   render() {
-    const { events, isFacebookAvailable, isTwitterAvailable } = this.props;
+    const { cards } = this.props;
     const backgroundFeedColor = { backgroundColor: this.context.secondaryTextColor };
     
     return (
       <View style={[backgroundFeedColor, { flex: 1 }]}>
         <FlatList
-          data={Object.values(events)}
+          data={cards}
           renderItem={this.renderItem}
           keyExtractor={(item) => item.id }
           style={[styles.feedList]} contentContainerStyle={[styles.feedListContent]}
@@ -140,18 +140,16 @@ export default class HomeScreen extends Component {
           onEndReachedThreshold={1}
         />
         <ModalScreen />
-        {(isFacebookAvailable || isTwitterAvailable) && <WritePostButton />}
+        <WritePostButton />
       </View>
     );
   }
 }
 
 HomeScreen.propTypes = {
-  events: PropTypes.object.isRequired,
+  cards: PropTypes.array.isRequired,
   fetchEvents: PropTypes.func.isRequired,
   fetchZappPipes: PropTypes.func.isRequired,
-  isFacebookAvailable: PropTypes.bool.isRequired,
-  isTwitterAvailable: PropTypes.bool.isRequired,
   navigation: PropTypes.object.isRequired,
   updateFavoriteTweets: PropTypes.func.isRequired,
 };
