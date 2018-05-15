@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
-import { getEvents } from '../../../../../selectors';
+import { getCards } from '../../../../../selectors';
 
 import Footer from './Footer';
 
 const mapStateToProps = (state, props) => {
   const { eventId } = props;
-  const event = getEvents(state)[eventId];
+  const event = getCards(state)[eventId];
   return {
     caption: event.caption,
     commentsCount: event.commentsCount || 0,
     id: event.id,
-    isSocial: event.source !== 'cms',
+    isSocial: (event.source !== 'cms' && event.source !== 'zappPipes'),
     likesCount: event.likesCount || 0,
     originUrl: event.originUrl || '',
     overlay: event.type === 'link',
