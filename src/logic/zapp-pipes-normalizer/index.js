@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 const date = value => (new Date(value).getTime() / 1000);
 const mapUser = user => ({
   id: user.id || uuid(),
-  avatarImageUrl: user.avatarImageUrl || 'https://yt3.ggpht.com/a-/AJLlDp3HA08n05uiS3qExGQ7hYrw6erPfD02j8TZPA=s900-mo-c-c0xffffffff-rj-k-no',
+  avatarImageUrl: user.avatarImageUrl || '',
   name: user.name,
 });
 
