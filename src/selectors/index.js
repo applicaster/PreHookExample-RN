@@ -17,13 +17,18 @@ export const isFacebookAvailable = createSelector(getFacebookPageId, (facebookPa
 
 // From EVENTS Reducer
 export const getEvents = state => state.events.get('events');
-export const getLoading = state => state.events.get('loading');
+export const getEventsLoading = state => state.events.get('loading');
 export const getFavoriteTweets = state => state.events.get('favoriteTweets');
 
 // From ZappPipes Reducer
 export const getDataSourceProviderUrl = state => state.zappPipes.get('dataSourceProviderUrl');
 export const getEntries = state => state.zappPipes.get('entries');
+export const getZappPipesLoading = state => state.zappPipes.get('loading');
 
+// From Translations Reducer
+export const getTranslations = state => state.translations;
+
+// Composed Selectors
 export const getActiveEvent = createSelector(
   getActiveEventId,
   getEvents,
@@ -35,5 +40,23 @@ export const getActiveEventOriginUrl = createSelector(
   (activeEvent) => activeEvent.originUrl
 );
 
-// From Translations Reducer
-export const getTranslations = state => state.translations;
+export const isLoading = createSelector(
+  getEventsLoading,
+  getZappPipesLoading,
+  (eventsLoading, zappPipesLoading) => eventsLoading || zappPipesLoading
+);
+
+export const getCards = createSelector(
+  getEvents,
+  getEntries,
+  (events, entries) => Object.assign(events, entries)
+);
+
+export const getSortedCardsByDate = createSelector(
+  getCards,
+  isLoading,
+  (cards, loadingState) => {
+    const cardsList = Object.values(cards);
+    return (loadingState) ? [] : cardsList.sort((a, b) => b.createdAt - a.createdAt);
+  }
+);

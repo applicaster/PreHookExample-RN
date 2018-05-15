@@ -7,7 +7,7 @@ import {
   getEnvironment,
   getEvents,
   getEntries,
-  getLoading,
+  getEventsLoading,
   getActiveEventId,
   getActiveEvent,
   getEventIdForActiveAudio,
@@ -22,6 +22,9 @@ import {
   getTranslations,
   getPublicPageUrl,
   getDataSourceProviderUrl,
+  isLoading,
+  getSortedCardsByDate,
+  getCards,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -53,6 +56,7 @@ describe('selectors', () => {
       zappPipes: Map({
         dataSourceProviderUrl: 'someDataSourceProviderUrl',
         entries: { 1: event1, 2: event2 },
+        loading: false,
       }),
       translations: {
         foo: 'bar',
@@ -104,7 +108,7 @@ describe('selectors', () => {
 
   describe('loading', () => {
     it('should get loading property from the events reducer state', () => {
-      expect(getLoading(store.getState())).to.equal(false);
+      expect(getEventsLoading(store.getState())).to.equal(false);
     });
   });
 
@@ -183,6 +187,24 @@ describe('selectors', () => {
   describe('getTranslations', () => {
     it('should get the translations state', () => {
       expect(getTranslations(store.getState())).to.deep.equal({ foo: 'bar' });
+    });
+  });
+
+  describe('isLoading', () => {
+    it('should get the composed state of loaders to determine if a reducers data is loading', () => {
+      expect(isLoading(store.getState())).to.equal(false);
+    });
+  });
+
+  describe('getCards', () => {
+    it('should get an object of entries and events combined into one', () => {
+      expect(getCards(store.getState())).to.deep.equal(false);
+    });
+  });
+
+  describe('getSortedCardsByDate', () => {
+    it('should get a list of cards sorted by descending date', () => {
+      expect(getSortedCardsByDate(store.getState())).to.deep.equal(false);
     });
   });
 });
