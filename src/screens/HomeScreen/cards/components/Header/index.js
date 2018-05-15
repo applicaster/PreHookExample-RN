@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { getEvents } from '../../../../../selectors';
+import { getCards } from '../../../../../selectors';
 
 import Header from './Header';
 
 const mapStateToProps = (state, props) => {
   const { eventId } = props;
-  const event = getEvents(state)[eventId];
+  const event = getCards(state)[eventId];
   const user = event.user;
 
   return {
