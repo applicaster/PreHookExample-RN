@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import MediaVideo from './MediaVideo';
+import MediaVideo from '../components/MediaVideo';
 import Caption from '../components/Caption';
 import CardContainer from '../components/CardContainer';
 import Footer from '../components/Footer';
