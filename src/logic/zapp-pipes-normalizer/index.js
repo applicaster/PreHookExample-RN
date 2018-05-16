@@ -91,14 +91,16 @@ const mapLinkEntry = (entry, title) => {
 };
 
 const mapArticleEntry = (entry, title) => {
-  const { id, title: caption, summary, content, published: createdAt, media_group: mediaGroups, extensions } = entry;
+  const { id, title: caption, category, summary, content, published: createdAt, media_group: mediaGroups, author, extensions } = entry;
   const { content: body } = content;
+  const { name } = author;
   const { sourceImageUrl: avatarImageUrl } = extensions;
-  const user = mapUser({ id, name: title, avatarImageUrl });
+  const user = mapUser({ id, name, avatarImageUrl });
 
   return {
     id: id || uuid(),
     user,
+    category,
     summary,
     body,
     createdAt: date(createdAt),

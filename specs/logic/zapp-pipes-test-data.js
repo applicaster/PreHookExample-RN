@@ -90,6 +90,7 @@ export const articlesFeedSample = {
   entry: [
     {
       title: 'Test Article',
+      category: 'Category',
       type: {
         value: 'article',
       },
@@ -136,6 +137,7 @@ export const articlesFeedSample = {
       },
       id: 'Id2',
       title: 'Example Article Title #2',
+      category: 'Category',
       author: {
         name: 'Author Name',
       },
@@ -274,10 +276,11 @@ export const normalizedArticlesFeedSample = {
       body: '<some html content>',
       summary: 'Example Summary',
       caption: 'Test Article',
+      category: 'Category',
       createdAt: 1112821200,
       videoUrl: null,
       user: {
-        name: 'Test Articles Feed',
+        name: 'Author Name',
         avatarImageUrl: 'sourceImageUrl.png',
         id: 'Id1',
       },
@@ -296,10 +299,11 @@ export const normalizedArticlesFeedSample = {
       body: '<some html content>',
       summary: 'Example Video Article Summary',
       caption: 'Example Article Title #2',
+      category: 'Category',
       createdAt: 1112821200,
       videoUrl: 'http://domain.com/video.mp4',
       user: {
-        name: 'Test Articles Feed',
+        name: 'Author Name',
         avatarImageUrl: 'sourceImageUrl.png',
         id: 'Id2',
       },
