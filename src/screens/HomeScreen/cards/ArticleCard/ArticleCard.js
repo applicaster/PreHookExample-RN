@@ -36,6 +36,7 @@ export default class ArticleCard extends Component {
           imageUrl={imageUrl}
           videoUrl={videoUrl}
           width={imageWidth}
+          isZoomed
         />
       );
     }
@@ -45,6 +46,7 @@ export default class ArticleCard extends Component {
         height={imageHeight}
         imageUrl={imageUrl}
         width={imageWidth}
+        isZoomed
       />
     );
   }
