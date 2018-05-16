@@ -1,7 +1,9 @@
 import { Dimensions } from 'react-native';
 
-export const getMediaDimensions = ({ height, width, screenMargin = 0 }) => {
-  const screenWidth = Dimensions.get('window').width - (2 * screenMargin);
+export const getMediaDimensions = ({ height, width, screenMargin = 0, isZoomed = false }) => {
+  const windowWidth = Dimensions.get('window').width;
+  const screenWidth = (isZoomed) ? windowWidth : windowWidth - (2 * screenMargin);
+  
   let mediaItemStyles = {
     height: screenWidth,
     width: screenWidth,
@@ -13,6 +15,10 @@ export const getMediaDimensions = ({ height, width, screenMargin = 0 }) => {
       height: (screenWidth / aspectRatio),
       width: screenWidth,
     };
+  }
+
+  if (isZoomed) {
+    mediaItemStyles.marginLeft = -screenMargin;
   }
 
   return mediaItemStyles;
