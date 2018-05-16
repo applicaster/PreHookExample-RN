@@ -36,7 +36,7 @@ export default class ArticleCard extends Component {
     return (
       <CardContainer clickable clickHandler={() => this.activateCard()}>
         <View style={[styles.eventContainer, backgroundColorStyle]}>
-          <Header eventId={eventId} overlay />
+          <Header eventId={eventId} overlay isEditorial />
           <View>
             <MediaImage
               height={imageHeight}
@@ -47,7 +47,6 @@ export default class ArticleCard extends Component {
           <Text style={[articleStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>
           <Text style={[articleStyles.title, titleColorStyle]}>{caption}</Text>
           <Text style={[articleStyles.summary, textColorStyle]}>{summary}</Text>
-          <Footer eventId={eventId} />
         </View>
       </CardContainer>);
   }
