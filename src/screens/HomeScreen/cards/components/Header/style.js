@@ -30,6 +30,9 @@ export const styles = StyleSheet.create({
   eventHeaderInfoWithoutUserName: {
     justifyContent: 'center',
   },
+  eventHeaderOnlyTimestamp: {
+    justifyContent: 'flex-start',
+  },
   avatar: {
     height: 40,
     width: 40,

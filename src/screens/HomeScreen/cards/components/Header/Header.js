@@ -42,13 +42,23 @@ export default class Header extends Component {
   }
 
   renderHeaderInfo() {
-    const { userName } = this.props;
+    const { userName, isEditorial } = this.props;
+    const userInfo = (
+      <View style={styles.userInfoContainer}>
+        {this.renderName()}
+        {this.renderUserName()}
+      </View>
+    );
+
+    const headerStyles = [
+      styles.eventHeaderInfo,
+      !userName && styles.eventHeaderInfoWithoutUserName,
+      isEditorial && styles.eventHeaderOnlyTimestamp,
+    ];
+
     return (
-      <View style={[styles.eventHeaderInfo, !userName && styles.eventHeaderInfoWithoutUserName]}>
-        <View style={styles.userInfoContainer}>
-          {this.renderName()}
-          {this.renderUserName()}
-        </View>
+      <View style={headerStyles}>
+        {!isEditorial && userInfo}
         <View style={styles.timestampContainer}>
           {this.renderTimestamp()}
         </View>
@@ -64,10 +74,10 @@ export default class Header extends Component {
   }
 
   render() {
-    const { isSocial, overlay } = this.props;
+    const { isSocial, isEditorial, overlay } = this.props;
     return (
       <View style={[styles.eventHeader, overlay && styles.eventHeaderOverlay]}>
-        {this.renderAvatarImage()}
+        {this.renderAvatarImage() && !isEditorial}
         {this.renderHeaderInfo()}
         {isSocial && this.renderSocialIcon()}
       </View>
@@ -79,6 +89,7 @@ Header.propTypes = {
   avatarImageUrl: PropTypes.string.isRequired,
   createdAt: PropTypes.number.isRequired,
   isSocial: PropTypes.bool.isRequired,
+  isEditorial: PropTypes.bool,
   name: PropTypes.string.isRequired,
   overlay: PropTypes.bool.isRequired,
   source: PropTypes.string.isRequired,
