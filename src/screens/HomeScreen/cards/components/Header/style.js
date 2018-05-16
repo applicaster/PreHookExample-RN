@@ -10,7 +10,7 @@ const width = Dimensions.get('window').width;
 export const styles = StyleSheet.create({
   eventHeader: {
     flexDirection: 'row',
-    paddingHorizontal: 12,
+    paddingHorizontal: 13,
     paddingTop: 12,
   },
   eventHeaderOverlay: {
@@ -24,7 +24,6 @@ export const styles = StyleSheet.create({
   eventHeaderInfo: {
     flexDirection: 'column',
     justifyContent: 'space-between',
-    paddingLeft: 10,
     height: 43,
     width: 220,
   },
@@ -35,6 +34,7 @@ export const styles = StyleSheet.create({
     height: 40,
     width: 40,
     borderRadius: 4,
+    marginRight: 10,
   },
   name: {
     fontSize: 14,
