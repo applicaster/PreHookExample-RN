@@ -60,8 +60,8 @@ export default class CardContainer extends Component {
     const cardScaleStyles = {
       transform: [
         { scale: this.scaleValue.interpolate({
-          inputRange: [0, 0.5, 1],
-          outputRange: [1, 0.982, 0.964],
+          inputRange: [0, 1],
+          outputRange: [1, 0.964],
         }) },
       ],
     };
