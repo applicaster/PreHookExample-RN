@@ -37,7 +37,7 @@ export default class MediaVideo extends Component {
   }
 
   render() {
-    const { imageUrl, height, width, videoUrl } = this.props;
+    const { imageUrl, isZoomed, height, width, videoUrl } = this.props;
     const { muted } = this.state;
 
     return (
@@ -51,7 +51,7 @@ export default class MediaVideo extends Component {
             muted={muted}
             resizeMode="cover"
             repeat
-            style={[getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN }), styles.videoItem]}
+            style={[getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN, isZoomed }), styles.videoItem]}
           />
         </TouchableWithoutFeedback>
         <LinearGradient style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />
@@ -65,9 +65,14 @@ MediaVideo.propTypes = {
   eventIdForActiveAudio: PropTypes.string,
   imageUrl: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
+  isZoomed: PropTypes.bool.isRequired,
   setEventIdForActiveAudio: PropTypes.func,
   videoUrl: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
+};
+
+MediaVideo.defaultProps = {
+  isZoomed: false,
 };
 
 MediaVideo.contextTypes = {
