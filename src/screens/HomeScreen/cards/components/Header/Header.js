@@ -77,7 +77,7 @@ export default class Header extends Component {
     const { isSocial, isEditorial, overlay } = this.props;
     return (
       <View style={[styles.eventHeader, overlay && styles.eventHeaderOverlay]}>
-        {this.renderAvatarImage() && !isEditorial}
+        {!isEditorial && this.renderAvatarImage()}
         {this.renderHeaderInfo()}
         {isSocial && this.renderSocialIcon()}
       </View>
@@ -94,6 +94,11 @@ Header.propTypes = {
   overlay: PropTypes.bool.isRequired,
   source: PropTypes.string.isRequired,
   userName: PropTypes.string.isRequired,
+};
+
+Header.defaultProps = {
+  isEditorial: false,
+  isSocial: false,
 };
 
 Header.contextTypes = {
