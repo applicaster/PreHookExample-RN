@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
-import Caption from '../components/Caption';
 import CardContainer from '../components/CardContainer';
-import Footer from '../components/Footer';
 import Header from '../components/Header';
 import MediaImage from '../components/MediaImage';
+import MediaVideo from '../components/MediaVideo';
 import { styles } from '../style';
 import { styles as articleStyles } from './style';
 
@@ -26,9 +25,32 @@ export default class ArticleCard extends Component {
     setActiveEventId(eventId);
     // TODO: Open article full screen here
   }
+  
+  renderMedia() {
+    const { eventId, imageHeight, imageWidth, imageUrl, videoUrl } = this.props;
+    if (videoUrl) {
+      return (
+        <MediaVideo
+          eventId={eventId}
+          height={imageHeight}
+          imageUrl={imageUrl}
+          videoUrl={videoUrl}
+          width={imageWidth}
+        />
+      );
+    }
+
+    return (
+      <MediaImage
+        height={imageHeight}
+        imageUrl={imageUrl}
+        width={imageWidth}
+      />
+    );
+  }
 
   render() {
-    const { caption, category, eventId, imageHeight, imageUrl, imageWidth, summary } = this.props;
+    const { caption, category, eventId, summary } = this.props;
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
     const textColorStyle = { color: this.context.textColor || '#FFFFFF' };
     const titleColorStyle = { color: this.getTitleColor() };
@@ -37,13 +59,7 @@ export default class ArticleCard extends Component {
       <CardContainer clickable clickHandler={() => this.activateCard()}>
         <View style={[styles.eventContainer, backgroundColorStyle]}>
           <Header eventId={eventId} overlay isEditorial />
-          <View>
-            <MediaImage
-              height={imageHeight}
-              imageUrl={imageUrl}
-              width={imageWidth}
-            />
-          </View>
+          {this.renderMedia()}
           <Text style={[articleStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>
           <Text style={[articleStyles.title, titleColorStyle]}>{caption}</Text>
           <Text style={[articleStyles.summary, textColorStyle]}>{summary}</Text>
@@ -59,6 +75,7 @@ ArticleCard.propTypes = {
   imageHeight: PropTypes.number.isRequired,
   imageUrl: PropTypes.string.isRequired,
   imageWidth: PropTypes.number.isRequired,
+  videoUrl: PropTypes.string,
   setActiveEventId: PropTypes.func.isRequired,
   summary: PropTypes.string.isRequired,
 };
