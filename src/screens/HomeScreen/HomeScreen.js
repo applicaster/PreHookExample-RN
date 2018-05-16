@@ -20,6 +20,7 @@ import WritePostButton from './components/WritePostButton';
 import ImageCard from './cards/ImageCard';
 import LinkCard from './cards/LinkCard';
 import TextCard from './cards/TextCard';
+import ArticleCard from './cards/ArticleCard';
 import VideoCard from './cards/VideoCard';
 import { styles } from './style';
 
@@ -77,7 +78,7 @@ export default class HomeScreen extends Component {
   }
 
   renderItem({ item: event }) {
-    const { caption, id, type, source, url, videoUrl } = event;
+    const { caption, category, id, type, source, url, videoUrl, summary } = event;
     const { url: imageUrl, height, width } = (event.images) ? event.images.default : {};
 
     if (type === 'image') {
@@ -116,6 +117,19 @@ export default class HomeScreen extends Component {
         imageUrl={imageUrl}
         imageWidth={width}
         videoUrl={videoUrl}
+      />);
+    }
+    
+    if (type === 'article') {
+      return (<ArticleCard
+        caption={caption}
+        category={category}
+        eventId={id}
+        imageHeight={height}
+        imageUrl={imageUrl}
+        imageWidth={width}
+        videoUrl={videoUrl}
+        summary={summary}
       />);
     }
 
