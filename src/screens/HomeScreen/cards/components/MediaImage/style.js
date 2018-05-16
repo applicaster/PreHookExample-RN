@@ -8,7 +8,7 @@ const screenWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
   headerVisor: {
-    height: 130,
+    height: 80,
     width: screenWidth - (2 * SCREEN_MARGIN),
     position: 'absolute',
     top: 0,
