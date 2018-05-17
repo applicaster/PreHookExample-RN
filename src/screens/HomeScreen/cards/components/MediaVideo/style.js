@@ -4,12 +4,6 @@ import { SCREEN_MARGIN } from '../../../../../constants/measurements';
 const screenWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
-  eventVideo: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    zIndex: 1,
-  },
   headerVisor: {
     height: 130,
     width: screenWidth - (2 * SCREEN_MARGIN),
@@ -17,5 +11,12 @@ export const styles = StyleSheet.create({
     top: 0,
     left: 0,
     zIndex: 2,
+  },
+  videoAudioButton: {
+    width: 48,
+    height: 48,
+    position: 'absolute',
+    bottom: 15,
+    right: 15,
   },
 });
