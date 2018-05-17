@@ -85,6 +85,8 @@ export default class MediaVideo extends Component {
           resizeMode="cover"
           repeat
           style={[getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN, isZoomed })]}
+          playInBackground={false}
+          playWhenInactive={false}
         />
         {this.renderAudioButton()}
         <LinearGradient style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />
