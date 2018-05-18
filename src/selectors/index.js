@@ -12,6 +12,7 @@ export const getTwitterScreenName = state => state.app.get('twitterScreenName');
 export const getActiveModalName = state => state.app.get('activeModalName');
 export const getModalVisibility = state => state.app.get('isModalVisible');
 export const getPublicPageUrl = state => state.app.get('publicPageUrl');
+export const getViewableItems = state => state.app.get('viewableItems');
 export const isTwitterAvailable = createSelector(getTwitterScreenName, (twitterScreenName) => !!twitterScreenName);
 export const isFacebookAvailable = createSelector(getFacebookPageId, (facebookPageId) => !!facebookPageId);
 

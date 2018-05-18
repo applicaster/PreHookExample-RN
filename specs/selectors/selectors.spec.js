@@ -25,6 +25,7 @@ import {
   isLoading,
   getSortedCardsByDate,
   getCards,
+  getViewableItems,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -49,6 +50,7 @@ describe('selectors', () => {
         facebookPageId: 'someFacebookPageId',
         twitterScreenName: 'someTwitterScreenName',
         publicPageUrl: 'somePublicPageUrl',
+        viewableItems: { 1: {} },
       }),
       events: Map({
         events: { 1: event1, 2: event2 },
@@ -217,6 +219,12 @@ describe('selectors', () => {
         event1,
         entry1,
       ]);
+    });
+  });
+
+  describe('getViewableItems', () => {
+    it('should get the the viewableItems', () => {
+      expect(getViewableItems(store.getState())).to.deep.equal({ 1: {} });
     });
   });
 });
