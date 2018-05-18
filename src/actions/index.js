@@ -22,6 +22,7 @@ export const SET_ENVIRONMENT = 'SET_ENVIRONMENT';
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 export const SET_EVENT_ID_FOR_ACTIVE_AUDIO = 'SET_EVENT_ID_FOR_ACTIVE_AUDIO';
 export const SET_ACTIVE_EVENT_ID = 'SET_ACTIVE_EVENT_ID';
+export const SET_VIEWABLE_ITEMS = 'SET_VIEWABLE_ITEMS';
 
 /* ACTIONS */
 export const fetchEvents = () => actionCreator(FETCH_EVENTS_START);
@@ -42,6 +43,8 @@ export const toggleModal = modalParams => actionCreator(TOGGLE_MODAL, modalParam
 
 export const setEventIdForActiveAudio = eventId => actionCreator(SET_EVENT_ID_FOR_ACTIVE_AUDIO, { eventId });
 export const setActiveEventId = eventId => actionCreator(SET_ACTIVE_EVENT_ID, { eventId });
+export const setViewableItems = (viewableItems, changedItems) =>
+  actionCreator(SET_VIEWABLE_ITEMS, { viewableItems, changedItems });
 
 export const fetchFavoriteTweetsDone = favoriteTweets => actionCreator(FETCH_FAVORITE_TWEETS_DONE, favoriteTweets);
 export const fetchFavoriteTweetsFailed = error => actionCreator(FETCH_FAVORITE_TWEETS_FAILED, { error });

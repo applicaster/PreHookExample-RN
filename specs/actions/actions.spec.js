@@ -34,6 +34,8 @@ import {
   SET_ACTIVE_EVENT_ID,
   SET_EVENT_ID_FOR_ACTIVE_AUDIO,
   SET_METADATA,
+  setViewableItems,
+  SET_VIEWABLE_ITEMS,
 } from '../../src/actions';
 
 describe('actions', () => {
@@ -259,6 +261,20 @@ describe('actions', () => {
         const action = setMetadata({ foo: 'bar' });
 
         expect(action.payload).to.deep.equal({ foo: 'bar' });
+      });
+    });
+
+    describe('setViewableItems', () => {
+      it('should have correct action type', () => {
+        const action = setViewableItems({ changed: [], viewableItems: [] });
+
+        expect(action.type).to.equal(SET_VIEWABLE_ITEMS);
+      });
+
+      it('should pass params', () => {
+        const action = setViewableItems([1], [2]);
+
+        expect(action.payload).to.deep.equal({ changedItems: [2], viewableItems: [1] });
       });
     });
   });
