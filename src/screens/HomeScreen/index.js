@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import {
   fetchEvents,
   fetchZappPipes,
+  setViewableItems,
   toggleModal,
   updateFavoriteTweets,
 } from '../../actions';
@@ -20,6 +21,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
   fetchEvents,
   fetchZappPipes,
+  setViewableItems,
   toggleModal,
   updateFavoriteTweets,
 }, dispatch);

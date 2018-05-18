@@ -10,10 +10,7 @@ import {
 } from 'react-native';
 import FeedRNUtils from '@applicaster/feed-rn-utils';
 import { sendAnalyticEvent } from 'react-native-zapp-bridge';
-import {
-  CLOSE_FEED,
-  OPEN_FEED,
-} from '../../constants/analyticEvents';
+import { CLOSE_FEED, OPEN_FEED } from '../../constants/analyticEvents';
 import ModalScreen from '../ModalScreen';
 import CloseButton from '../../buttons/CloseButton';
 import WritePostButton from './components/WritePostButton';
@@ -41,7 +38,16 @@ export default class HomeScreen extends Component {
 
   constructor(props) {
     super(props);
+    
     this.onRefresh = this.onRefresh.bind(this);
+    this.handleItemsInViewport = this.handleItemsInViewport.bind(this);
+
+    const viewabilityConfigForItemsInViewport = {
+      viewabilityConfig: { minimumViewTime: 500, itemVisiblePercentThreshold: 90 },
+      onViewableItemsChanged: this.handleItemsInViewport,
+    };
+
+    this.viewabilityConfigCallbackPairs = [viewabilityConfigForItemsInViewport];
   }
 
   getChildContext() {
@@ -75,6 +81,12 @@ export default class HomeScreen extends Component {
 
   onRefresh() {
     this.props.fetchEvents();
+  }
+  
+  handleItemsInViewport(items) {
+    const { changedItems, viewableItems } = items;
+    const { setViewableItems } = this.props;
+    setViewableItems(viewableItems, changedItems);
   }
 
   renderItem({ item: event }) {
@@ -149,9 +161,8 @@ export default class HomeScreen extends Component {
           style={[styles.feedList]} contentContainerStyle={[styles.feedListContent]}
           refreshing={false}
           onRefresh={this.onRefresh}
-          initialNumToRender={4}
-          onEndReached={() => {}}
-          onEndReachedThreshold={1}
+          initialNumToRender={3}
+          viewabilityConfigCallbackPairs={this.viewabilityConfigCallbackPairs}
         />
         <ModalScreen />
         <WritePostButton />
@@ -166,6 +177,7 @@ HomeScreen.propTypes = {
   fetchZappPipes: PropTypes.func.isRequired,
   navigation: PropTypes.object.isRequired,
   updateFavoriteTweets: PropTypes.func.isRequired,
+  setViewableItems: PropTypes.func.isRequired,
 };
 
 HomeScreen.contextTypes = {
