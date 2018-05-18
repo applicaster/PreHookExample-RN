@@ -8,9 +8,6 @@ export default class FadeContainer extends Component {
     this.state = {
       visible: props.visible,
     };
-  }
-
-  componentWillMount() {
     this.visibility = new Animated.Value(this.props.visible ? 1 : 0);
   }
 
