@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Animated,
-  Easing,
   Image,
   ImageBackground,
   TouchableWithoutFeedback,
@@ -46,7 +44,7 @@ export default class MediaVideo extends Component {
     const { eventId, muted } = this.state;
 
     const audioOnButton = (
-      <FadeContainer key={`${eventId}-audioOnBtn`} visible={!muted}>
+      <FadeContainer key={`${eventId}-audioOnBtn`} visible={!muted} duration={350}>
         <TouchableWithoutFeedback onPress={this.toggleAudio}>
           <Image
             style={[styles.videoAudioButton]}
@@ -57,7 +55,7 @@ export default class MediaVideo extends Component {
     );
 
     const audioMutedbutton = (
-      <FadeContainer key={`${eventId}-mutedBtn`} visible={muted}>
+      <FadeContainer key={`${eventId}-mutedBtn`} visible={muted} duration={350}>
         <TouchableWithoutFeedback onPress={this.toggleAudio}>
           <Image
             style={[styles.videoAudioButton]}
