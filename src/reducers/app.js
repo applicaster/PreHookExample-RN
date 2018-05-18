@@ -8,6 +8,7 @@ import {
     SET_EVENT_ID_FOR_ACTIVE_AUDIO,
     SET_ACTIVE_EVENT_ID,
     SET_METADATA,
+    SET_VIEWABLE_ITEMS,
 } from '../actions';
 import { actionCreator } from '../actions/actionHelpers';
 
@@ -19,6 +20,7 @@ export const appInitialState = Map({
   isModalVisible: false,
   activeModalName: null,
   activeEventId: null,
+  viewableItems: {},
   eventIdForActiveAudio: null,
   facebookPageId: null,
   twitterScreenName: null,
@@ -60,6 +62,14 @@ export default (state = appInitialState, action = actionCreator()) => {
     
     case SET_EVENT_ID_FOR_ACTIVE_AUDIO:
       return state.set('eventIdForActiveAudio', payload.eventId);
+
+    case SET_VIEWABLE_ITEMS:
+      const { viewableItems } = payload;
+      const viewableItemsById = {};
+      viewableItems.forEach(viewableItem => {
+        viewableItemsById[viewableItem.item.id] = viewableItem.item;
+      });
+      return state.set('viewableItems', viewableItemsById);
 
     default:
       return state;

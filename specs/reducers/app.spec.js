@@ -7,6 +7,7 @@ import {
     setEventIdForActiveAudio,
     setActiveEventId,
     setMetadata,
+    setViewableItems,
 } from '../../src/actions';
 import appReducer from '../../src/reducers/app';
 
@@ -32,6 +33,7 @@ describe('app reducer', () => {
         facebookPageId: null,
         twitterScreenName: null,
         publicPageUrl: null,
+        viewableItems: {},
       });
     });
   });
@@ -116,6 +118,16 @@ describe('app reducer', () => {
       const newState = appReducer(initialState, setMetadata({ twitterScreenName: 'someScreenName' }));
 
       expect(newState.get('twitterScreenName')).to.equal('someScreenName');
+    });
+  });
+
+  describe('setViewableItems is dispatched', () => {
+    it('should set the viewableItems', () => {
+      const newState = appReducer(initialState, setViewableItems([{ item: { id: 1 } }]));
+
+      expect(newState.get('viewableItems')).to.deep.equal({
+        1: { id: 1 },
+      });
     });
   });
 });
