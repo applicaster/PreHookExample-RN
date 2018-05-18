@@ -13,23 +13,46 @@ import { getMediaDimensions } from '../../../../../utils/size';
 import { SCREEN_MARGIN } from '../../../../../constants/measurements';
 import { VIDEO_AUDIO_ON_BUTTON, VIDEO_AUDIO_MUTED_BUTTON } from '../../../../../icons';
 
-
 export default class MediaVideo extends Component {
   constructor(props) {
     super(props);
+    const { isInViewport } = props;
     this.state = {
       muted: true,
+      paused: !isInViewport,
     };
 
     this.toggleAudio = this.toggleAudio.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    const { eventId } = this.props;
-    const { eventIdForActiveAudio: nextEventIdForActiveAudio } = nextProps;
+    const { eventId, isInViewport } = this.props;
+    const { muted, paused } = this.state;
+    const { eventIdForActiveAudio: nextEventIdForActiveAudio, isInViewport: nextIsInViewport } = nextProps;
 
-    if (eventId !== nextEventIdForActiveAudio) {
-      this.setState({ muted: true });
+    const leftViewport = (isInViewport !== nextIsInViewport && !nextIsInViewport);
+    const enteredViewport = (isInViewport !== nextIsInViewport && nextIsInViewport);
+    const otherVideoAudioActivated = (eventId !== nextEventIdForActiveAudio);
+
+    let muteStateToSet = muted;
+    let pausedStateToSet = paused;
+
+    if (otherVideoAudioActivated) {
+      muteStateToSet = true;
+    }
+
+    if (leftViewport) {
+      muteStateToSet = true;
+      pausedStateToSet = true;
+    } else if (enteredViewport) {
+      pausedStateToSet = false;
+    }
+
+    if (muteStateToSet !== muted || pausedStateToSet !== paused) {
+      this.setState({
+        muted: muteStateToSet,
+        paused: pausedStateToSet,
+      });
     }
   }
 
@@ -70,7 +93,7 @@ export default class MediaVideo extends Component {
 
   render() {
     const { imageUrl, isZoomed, height, width, videoUrl } = this.props;
-    const { muted } = this.state;
+    const { muted, paused } = this.state;
 
     return (
       <ImageBackground
@@ -80,6 +103,7 @@ export default class MediaVideo extends Component {
         <Video
           source={{ uri: videoUrl }}
           muted={muted}
+          paused={paused}
           resizeMode="cover"
           repeat
           style={[getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN, isZoomed })]}
@@ -88,8 +112,7 @@ export default class MediaVideo extends Component {
         />
         {this.renderAudioButton()}
         <LinearGradient style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />
-      </ImageBackground>
-    );
+      </ImageBackground>);
   }
 }
 
@@ -99,6 +122,7 @@ MediaVideo.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
   isZoomed: PropTypes.bool.isRequired,
+  isInViewport: PropTypes.bool.isRequired,
   setEventIdForActiveAudio: PropTypes.func,
   videoUrl: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
@@ -106,8 +130,5 @@ MediaVideo.propTypes = {
 
 MediaVideo.defaultProps = {
   isZoomed: false,
-};
-
-MediaVideo.contextTypes = {
-  navigation: PropTypes.object,
+  isInViewport: false,
 };
