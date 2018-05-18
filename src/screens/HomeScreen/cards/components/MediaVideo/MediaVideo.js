@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
+  Animated,
+  Easing,
   Image,
   ImageBackground,
   TouchableWithoutFeedback,
@@ -13,16 +15,20 @@ import { getMediaDimensions } from '../../../../../utils/size';
 import { SCREEN_MARGIN } from '../../../../../constants/measurements';
 import { VIDEO_AUDIO_ON_BUTTON, VIDEO_AUDIO_MUTED_BUTTON } from '../../../../../icons';
 
+const AUDIO_CONTROL_FADE_DURATION = 500;
+
 export default class MediaVideo extends Component {
   constructor(props) {
     super(props);
     const { isInViewport } = props;
     this.state = {
+      audioControlsVisible: true,
       muted: true,
       paused: !isInViewport,
     };
 
     this.toggleAudio = this.toggleAudio.bind(this);
+    this.audioControlsVisibilityValue = new Animated.Value(0);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -44,8 +50,12 @@ export default class MediaVideo extends Component {
     if (leftViewport) {
       muteStateToSet = true;
       pausedStateToSet = true;
+      this.fadeAudioControl({ fadeIn: false });
+      clearTimeout(this.audioVisibilityTimer);
     } else if (enteredViewport) {
       pausedStateToSet = false;
+      this.fadeAudioControl({ fadeIn: true });
+      this.setAudioControlFadeTimer();
     }
 
     if (muteStateToSet !== muted || pausedStateToSet !== paused) {
@@ -56,39 +66,60 @@ export default class MediaVideo extends Component {
     }
   }
 
+  setAudioControlFadeTimer() {
+    const AUDIO_CONTROLS_IDLE_DURATION = 4000;
+    clearTimeout(this.audioVisibilityTimer);
+    this.audioVisibilityTimer = setTimeout(() => {
+      this.fadeAudioControl({ fadeIn: false });
+    }, AUDIO_CONTROLS_IDLE_DURATION);
+  }
+
+  fadeAudioControl(fadeConfig) {
+    const { fadeIn } = fadeConfig;
+    const animationToValue = (fadeIn) ? 1 : 0;
+    const controlsVisibility = !!fadeIn;
+
+    Animated.timing(
+      this.audioControlsVisibilityValue,
+      {
+        toValue: animationToValue,
+        duration: AUDIO_CONTROL_FADE_DURATION,
+        easing: Easing.linear,
+        useNativeDriver: true,
+      }
+    ).start(() => this.setState({ audioControlsVisible: controlsVisibility }));
+  }
+
   toggleAudio() {
     const { eventId, setEventIdForActiveAudio } = this.props;
-    const { muted } = this.state;
-    this.setState({ muted: !muted });
-    setEventIdForActiveAudio(eventId);
+    
+    if (this.state.audioControlsVisible) {
+      this.setState({ muted: !this.state.muted });
+      setEventIdForActiveAudio(eventId);
+      this.setAudioControlFadeTimer();
+    }
   }
 
   renderAudioButton() {
     const { eventId, muted } = this.state;
-
-    const audioOnButton = (
-      <FadeContainer key={`${eventId}-audioOnBtn`} visible={!muted} duration={350}>
+    const audioButton = (mutedState, buttonIcon) => (
+      <FadeContainer key={`${eventId}-${buttonIcon}`} visible={mutedState} duration={350}>
         <TouchableWithoutFeedback onPress={this.toggleAudio}>
           <Image
             style={[styles.videoAudioButton]}
-            source={{ uri: VIDEO_AUDIO_ON_BUTTON }}
+            source={{ uri: buttonIcon }}
           />
         </TouchableWithoutFeedback>
       </FadeContainer>
     );
 
-    const audioMutedbutton = (
-      <FadeContainer key={`${eventId}-mutedBtn`} visible={muted} duration={350}>
-        <TouchableWithoutFeedback onPress={this.toggleAudio}>
-          <Image
-            style={[styles.videoAudioButton]}
-            source={{ uri: VIDEO_AUDIO_MUTED_BUTTON }}
-          />
-        </TouchableWithoutFeedback>
-      </FadeContainer>
-    );
-
-    return [audioOnButton, audioMutedbutton];
+    const audioOnButton = audioButton(!muted, VIDEO_AUDIO_ON_BUTTON);
+    const audioMutedbutton = audioButton(muted, VIDEO_AUDIO_MUTED_BUTTON);
+    const audioControlsStyles = {
+      opacity: this.audioControlsVisibilityValue,
+    };
+    
+    return <Animated.View style={audioControlsStyles}>{[audioOnButton, audioMutedbutton]}</Animated.View>;
   }
 
   render() {
