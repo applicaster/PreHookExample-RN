@@ -12,6 +12,17 @@ export const styles = StyleSheet.create({
     left: 0,
     zIndex: 2,
   },
+  playVideoOverlay: {
+    alignSelf: 'center',
+    position: 'absolute',
+    height: 65,
+    width: 65,
+    zIndex: 3,
+  },
+  imagePlaceHolder: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
   videoAudioButton: {
     width: 48,
     height: 48,

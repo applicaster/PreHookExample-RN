@@ -13,7 +13,7 @@ import FadeContainer from '../FadeContainer';
 import { styles } from './style';
 import { getMediaDimensions } from '../../../../../utils/size';
 import { SCREEN_MARGIN } from '../../../../../constants/measurements';
-import { VIDEO_AUDIO_ON_BUTTON, VIDEO_AUDIO_MUTED_BUTTON } from '../../../../../icons';
+import { PLAY_VIDEO_OVERLAY, VIDEO_AUDIO_ON_BUTTON, VIDEO_AUDIO_MUTED_BUTTON } from '../../../../../icons';
 
 const AUDIO_CONTROL_FADE_DURATION = 500;
 
@@ -29,6 +29,7 @@ export default class MediaVideo extends Component {
 
     this.toggleAudio = this.toggleAudio.bind(this);
     this.audioControlsVisibilityValue = new Animated.Value(0);
+    this.playOverlayVisibilityValue = new Animated.Value(1);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -50,11 +51,13 @@ export default class MediaVideo extends Component {
     if (leftViewport) {
       muteStateToSet = true;
       pausedStateToSet = true;
-      this.fadeAudioControl({ fadeIn: false });
+      this.fade({ fadeIn: true, animationValue: this.playOverlayVisibilityValue });
+      this.fade({ fadeIn: false, animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: false }) });
       clearTimeout(this.audioVisibilityTimer);
     } else if (enteredViewport) {
       pausedStateToSet = false;
-      this.fadeAudioControl({ fadeIn: true });
+      this.fade({ fadeIn: false, animationValue: this.playOverlayVisibilityValue });
+      this.fade({ fadeIn: true, animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: true }) });
       this.setAudioControlFadeTimer();
     }
 
@@ -68,26 +71,29 @@ export default class MediaVideo extends Component {
 
   setAudioControlFadeTimer() {
     const AUDIO_CONTROLS_IDLE_DURATION = 4000;
+
     clearTimeout(this.audioVisibilityTimer);
+
     this.audioVisibilityTimer = setTimeout(() => {
-      this.fadeAudioControl({ fadeIn: false });
+      this.fade({
+        fadeIn: false,
+        animationValue: this.audioControlsVisibilityValue,
+        doneCallback: () => this.setState({ audioControlsVisible: false })
+      });
     }, AUDIO_CONTROLS_IDLE_DURATION);
   }
 
-  fadeAudioControl(fadeConfig) {
-    const { fadeIn } = fadeConfig;
-    const animationToValue = (fadeIn) ? 1 : 0;
-    const controlsVisibility = !!fadeIn;
-
+  fade(fadeConfig) {
+    const { fadeIn, animationValue, doneCallback = () => {} } = fadeConfig;
     Animated.timing(
-      this.audioControlsVisibilityValue,
+      animationValue,
       {
-        toValue: animationToValue,
+        toValue: (fadeIn) ? 1 : 0,
         duration: AUDIO_CONTROL_FADE_DURATION,
         easing: Easing.linear,
         useNativeDriver: true,
       }
-    ).start(() => this.setState({ audioControlsVisible: controlsVisibility }));
+    ).start(doneCallback);
   }
 
   toggleAudio() {
@@ -122,15 +128,24 @@ export default class MediaVideo extends Component {
     return <Animated.View style={audioControlsStyles}>{[audioOnButton, audioMutedbutton]}</Animated.View>;
   }
 
+  renderPlayOverlay() {
+    const playVideoOverlayOpacityStyles = { opacity: this.playOverlayVisibilityValue };
+    return (<Animated.Image
+      style={[styles.playVideoOverlay, playVideoOverlayOpacityStyles]}
+      source={{ uri: PLAY_VIDEO_OVERLAY }}
+    />);
+  }
+
   render() {
     const { imageUrl, isZoomed, height, width, videoUrl } = this.props;
     const { muted, paused } = this.state;
 
     return (
       <ImageBackground
-        style={getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN, isZoomed })}
+        style={[styles.imagePlaceHolder, getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN, isZoomed })]}
         source={{ uri: imageUrl }}
       >
+        {this.renderPlayOverlay()}
         <Video
           source={{ uri: videoUrl }}
           muted={muted}
