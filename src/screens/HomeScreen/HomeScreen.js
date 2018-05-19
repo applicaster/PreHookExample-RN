@@ -129,7 +129,6 @@ export default class HomeScreen extends Component {
         imageUrl={imageUrl}
         imageWidth={width}
         videoUrl={videoUrl}
-        isEditorial={source === 'zappPipes'}
       />);
     }
     
