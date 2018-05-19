@@ -5,3 +5,4 @@ export const FAVORITE_TWEET_BUTTON = 'feed_rn_heart_button';
 export const HEART_BUTTON = 'feed_rn_heart_button';
 export const VIDEO_AUDIO_MUTED_BUTTON = 'feed_rn_video_audio_muted_button';
 export const VIDEO_AUDIO_ON_BUTTON = 'feed_rn_video_audio_on_button';
+export const PLAY_VIDEO_OVERLAY = 'feed_rn_play_video_overlay';
