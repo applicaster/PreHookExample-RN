@@ -41,7 +41,7 @@ export default class VideoCard extends Component {
     return (
       <CardContainer clickable clickHandler={() => this.activateCard()}>
         <View style={[styles.eventContainer, backgroundColorStyle]}>
-          <Header eventId={eventId} overlay />
+          <Header eventId={eventId} overlay isEditorial />
           <MediaVideo
             eventId={eventId}
             height={imageHeight}
