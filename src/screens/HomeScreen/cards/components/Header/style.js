@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     top: 0,
     left: 0,
     width: width - (2 * SCREEN_MARGIN),
-    zIndex: 2,
+    zIndex: 3,
   },
   eventHeaderInfo: {
     flexDirection: 'column',

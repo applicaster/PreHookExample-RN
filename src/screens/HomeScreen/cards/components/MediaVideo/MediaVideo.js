@@ -125,7 +125,10 @@ export default class MediaVideo extends Component {
       opacity: this.audioControlsVisibilityValue,
     };
     
-    return <Animated.View style={audioControlsStyles}>{[audioOnButton, audioMutedbutton]}</Animated.View>;
+    return (
+      <Animated.View key={'audioButtons'} style={audioControlsStyles}>
+        {[audioOnButton, audioMutedbutton]}
+      </Animated.View>);
   }
 
   renderPlayOverlay() {
@@ -140,8 +143,9 @@ export default class MediaVideo extends Component {
     const { imageUrl, isZoomed, height, width, videoUrl } = this.props;
     const { muted, paused } = this.state;
 
-    return (
+    return ([
       <ImageBackground
+        key={'imageBackground'}
         style={[styles.imagePlaceHolder, getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN, isZoomed })]}
         source={{ uri: imageUrl }}
       >
@@ -156,9 +160,11 @@ export default class MediaVideo extends Component {
           playInBackground={false}
           playWhenInactive={false}
         />
-        {this.renderAudioButton()}
-        <LinearGradient style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />
-      </ImageBackground>);
+        
+      </ImageBackground>,
+      this.renderAudioButton(),
+      <LinearGradient key={'headerGradient'} style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />,
+    ]);
   }
 }
 

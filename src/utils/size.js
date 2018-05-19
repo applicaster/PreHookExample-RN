@@ -18,7 +18,7 @@ export const getMediaDimensions = ({ height, width, screenMargin = 0, isZoomed =
   }
 
   if (isZoomed) {
-    mediaItemStyles.marginLeft = -screenMargin;
+    mediaItemStyles.left = -screenMargin;
   }
 
   return mediaItemStyles;
