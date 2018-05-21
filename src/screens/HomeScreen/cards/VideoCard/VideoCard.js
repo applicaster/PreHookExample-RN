@@ -38,18 +38,17 @@ export default class VideoCard extends Component {
   }
 
   render() {
-    const { eventId, imageHeight, imageUrl, imageWidth, isEditorial, videoUrl } = this.props;
+    const { eventId, imageHeight, imageUrl, imageWidth, videoUrl } = this.props;
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
     
     return (
       <CardContainer clickable clickHandler={() => this.activateCard()}>
         <View style={[styles.eventContainer, backgroundColorStyle]}>
-          <Header eventId={eventId} overlay isEditorial />
+          <Header eventId={eventId} overlay />
           <MediaVideo
             eventId={eventId}
             height={imageHeight}
             imageUrl={imageUrl}
-            isZoomed={isEditorial}
             videoUrl={videoUrl}
             width={imageWidth}
           />
@@ -67,7 +66,6 @@ VideoCard.propTypes = {
   imageHeight: PropTypes.number.isRequired,
   imageUrl: PropTypes.string.isRequired,
   imageWidth: PropTypes.number.isRequired,
-  isEditorial: PropTypes.bool.isRequired,
   videoUrl: PropTypes.string.isRequired,
 };
 
