@@ -10,10 +10,11 @@ export const styles = StyleSheet.create({
     marginTop: 16,
   },
   title: {
-    fontSize: 23,
+    fontSize: 21,
+    lineHeight: 24,
     fontWeight: '800',
     paddingHorizontal: 13,
-    marginTop: 8,
+    marginTop: 6,
     color: '#000000',
   },
   summary: {
@@ -21,7 +22,7 @@ export const styles = StyleSheet.create({
     lineHeight: 23,
     color: '#353333',
     paddingHorizontal: 13,
-    marginTop: 8,
-    marginBottom: 20,
+    marginTop: 6,
+    marginBottom: 0,
   },
 });
