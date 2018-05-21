@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
 import CardContainer from '../components/CardContainer';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import MediaImage from '../components/MediaImage';
 import MediaVideo from '../components/MediaVideo';
 import { styles } from '../style';
@@ -65,6 +66,7 @@ export default class ArticleCard extends Component {
           <Text style={[articleStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>
           <Text style={[articleStyles.title, titleColorStyle]}>{caption}</Text>
           <Text style={[articleStyles.summary, textColorStyle]}>{summary}</Text>
+          <Footer eventId={eventId} />
         </View>
       </CardContainer>);
   }
