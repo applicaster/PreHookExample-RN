@@ -11,7 +11,8 @@ const mapStateToProps = (state, props) => {
   return {
     avatarImageUrl: user.avatarImageUrl,
     createdAt: event.createdAt,
-    isSocial: (event.source !== 'cms'),
+    isSocial: (event.source !== 'cms' && event.source !== 'zappPipes'),
+    isEditorial: (event.source === 'zappPipes'),
     name: user.name,
     source: event.source,
     userName: user.userName || '',

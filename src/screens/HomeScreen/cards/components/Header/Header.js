@@ -89,7 +89,7 @@ Header.propTypes = {
   avatarImageUrl: PropTypes.string.isRequired,
   createdAt: PropTypes.number.isRequired,
   isSocial: PropTypes.bool.isRequired,
-  isEditorial: PropTypes.bool,
+  isEditorial: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
   overlay: PropTypes.bool.isRequired,
   source: PropTypes.string.isRequired,
