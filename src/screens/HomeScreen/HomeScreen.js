@@ -124,6 +124,7 @@ export default class HomeScreen extends Component {
     if (type === 'video') {
       return (<VideoCard
         caption={caption}
+        category={category}
         eventId={id}
         imageHeight={height}
         imageUrl={imageUrl}

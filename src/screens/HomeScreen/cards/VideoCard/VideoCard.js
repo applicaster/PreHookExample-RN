@@ -26,9 +26,12 @@ export default class VideoCard extends Component {
   }
 
   renderVideoTitle() {
-    const { caption, isEditorial } = this.props;
+    const { caption, isEditorial, category } = this.props;
     if (isEditorial) {
-      return <Text style={[videoStyles.videoTitle, { color: this.getTitleColor() }]}>{caption}</Text>;
+      return ([
+        <Text key={'category'} style={[videoStyles.category]}>{category}</Text>,
+        <Text key={'title'} style={[videoStyles.videoTitle, { color: this.getTitleColor() }]}>{caption}</Text>,  
+      ]);
     }
 
     return <Caption caption={caption} />;
@@ -51,7 +54,7 @@ export default class VideoCard extends Component {
             width={imageWidth}
           />
           {this.renderVideoTitle()}
-          {!isEditorial && <Footer eventId={eventId} />}
+          <Footer eventId={eventId} />
         </View>
       </CardContainer>);
   }
@@ -59,6 +62,7 @@ export default class VideoCard extends Component {
 
 VideoCard.propTypes = {
   caption: PropTypes.string.isRequired,
+  category: PropTypes.string,
   eventId: PropTypes.string.isRequired,
   imageHeight: PropTypes.number.isRequired,
   imageUrl: PropTypes.string.isRequired,
