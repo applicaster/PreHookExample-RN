@@ -26,6 +26,7 @@ export const videosFeedSample = {
       id: 'Id1',
       title: 'Example Video Title #1',
       summary: 'Example summary',
+      category: 'Example category',
       published: '2005-04-06T13:00:00-08:00',
       updated: '2005-04-06T20:25:05-08:00',
       media_group: [
@@ -258,6 +259,7 @@ export const normalizedVideosFeedSample = {
       source: 'zappPipes',
       type: 'video',
       caption: 'Example Video Title #1',
+      category: 'Example category',
       createdAt: 1112821200,
       user: {
         name: 'Test Videos Feed',
