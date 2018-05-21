@@ -1,15 +1,11 @@
 import React from 'react';
-import { AppRegistry, Platform, SafeAreaView } from 'react-native';
+import { AppRegistry, SafeAreaView } from 'react-native';
 import PropTypes from 'prop-types';
 
 import App from './src/App';
 
 const RNRoot = props => {
-  let { extra_props: initialAppProps } = props;
-  if (Platform.OS === 'android') {
-    initialAppProps = JSON.parse(initialAppProps);
-  }
-
+  const { extra_props: initialAppProps } = props;
   const { colors } = initialAppProps;
   const backgroundColor = `#${colors.background_color.substring(2, 8)}`;
 
