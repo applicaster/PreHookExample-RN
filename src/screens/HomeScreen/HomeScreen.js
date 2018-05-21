@@ -43,7 +43,7 @@ export default class HomeScreen extends Component {
     this.handleItemsInViewport = this.handleItemsInViewport.bind(this);
 
     const viewabilityConfigForItemsInViewport = {
-      viewabilityConfig: { minimumViewTime: 400, itemVisiblePercentThreshold: 50 },
+      viewabilityConfig: { minimumViewTime: 400, itemVisiblePercentThreshold: 55 },
       onViewableItemsChanged: this.handleItemsInViewport,
     };
 
