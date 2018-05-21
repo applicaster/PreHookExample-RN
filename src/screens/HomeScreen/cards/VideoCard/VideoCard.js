@@ -66,6 +66,7 @@ VideoCard.propTypes = {
   imageHeight: PropTypes.number.isRequired,
   imageUrl: PropTypes.string.isRequired,
   imageWidth: PropTypes.number.isRequired,
+  isEditorial: PropTypes.bool.isRequired,
   videoUrl: PropTypes.string.isRequired,
 };
 
