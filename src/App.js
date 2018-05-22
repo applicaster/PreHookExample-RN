@@ -51,7 +51,7 @@ class App extends Component {
       localization = JSON.parse(localization);
     }
      
-    const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive, publicPageUrl, zappPipesUrl } = initialAppProps;
+    const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive, publicPageUrl, zappPipesUrl, zappPipesUrlScheme, zappPipesType } = initialAppProps;
     const translations = this.processLocalization(localization, feedTitle);
 
     let { environment } = initialAppProps;
@@ -69,7 +69,7 @@ class App extends Component {
       events: eventsInitialState,
       translations,
       zappPipes: Map(Object.assign(zappPipesInitialState.toJS(), {
-        dataSourceProviderUrl: zappPipesUrl,
+        dataSourceProviderUrl: `${zappPipesUrlScheme}://fetchData?type=${zappPipesType}&url=${zappPipesUrl}`,
       })),
     };
     
