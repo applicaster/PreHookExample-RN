@@ -64,6 +64,7 @@ class App extends Component {
         environment,
         feedTitle,
         publicPageUrl,
+        platform: Platform.OS,
       })),
       events: eventsInitialState,
       translations,
