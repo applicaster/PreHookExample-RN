@@ -17,6 +17,7 @@ import {
   getAccountId,
   getTimelineId,
   getEnvironment,
+  getPlatform,
   getDataSourceProviderUrl,
 } from '../selectors';
 
@@ -42,7 +43,7 @@ export const fetchZappPipesData = (action$, store) =>
     .filter(action => action.type === FETCH_ZAPP_PIPES_START)
     .mergeMap(() =>
       Observable.fromPromise(ZappPipesService.getDataSourceData(getDataSourceProviderUrl(store.getState())))
-        .map(pipesData => fetchZappPipesDone(normalizeZappPipes(pipesData)))
+        .map(pipesData => fetchZappPipesDone(normalizeZappPipes(pipesData, getPlatform(store.getState()))))
         .catch(error => Observable.of(fetchZappPipesFailed(error)))
     );
 

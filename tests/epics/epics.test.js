@@ -89,7 +89,7 @@ describe('fetchZappPipesData', () => {
   let action$;
   beforeEach(() => {
     zappPipesGetStub = sinon.stub(ZappPipesService, 'getDataSourceData').resolves('{"title":"bar","entry":[]}');
-    store = mockStore({ zappPipes: Map({ dataSourceProviderUrl: 'url' }) });
+    store = mockStore({ app: Map({ platform: 'ios' }), zappPipes: Map({ dataSourceProviderUrl: 'url' }) });
     action$ = ActionsObservable.of({ type: FETCH_ZAPP_PIPES_START });
   });
   
