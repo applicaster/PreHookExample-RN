@@ -34,6 +34,7 @@ describe('app reducer', () => {
         twitterScreenName: null,
         publicPageUrl: null,
         viewableItems: {},
+        platform: null,
       });
     });
   });

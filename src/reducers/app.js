@@ -25,6 +25,7 @@ export const appInitialState = Map({
   facebookPageId: null,
   twitterScreenName: null,
   publicPageUrl: null,
+  platform: null,
 });
 
 export default (state = appInitialState, action = actionCreator()) => {
