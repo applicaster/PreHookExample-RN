@@ -51,6 +51,41 @@ export const videosFeedSample = {
   ],
 };
 
+export const androidFeedSample = {
+  title: 'Test Videos Feed',
+  entry: [
+    {
+      type: {
+        value: 'video',
+      },
+      id: 'Id1',
+      title: 'Example Video Title #1',
+      summary: 'Example summary',
+      published: '2005-04-06T13:00:00-08:00',
+      updated: '2005-04-06T20:25:05-08:00',
+      media_group: [
+        {
+          type: 'image',
+          media_item: [
+            {
+              src: 'http://example.org/image-large.png',
+              key: 'image_base',
+              form: 'image',
+            },
+          ],
+        },
+      ],
+      content: {
+        type: 'video/hls',
+        src: 'http://domain.com/video1.m3u8',
+      },
+      extensions: {
+        sourceImageUrl: 'sourceImageUrl.png',
+      },
+    },
+  ],
+};
+
 export const imagesFeedSample = {
   title: 'Test Images Feed',
   entry: [
@@ -340,6 +375,32 @@ export const normalizedLinksFeedSample = {
         },
       },
       url: 'http://somelink.com',
+    },
+  },
+};
+
+export const normalizedAndroidFeedSample = {
+  title: 'Test Videos Feed',
+  entries: {
+    Id1: {
+      id: 'Id1',
+      source: 'zappPipes',
+      type: 'video',
+      caption: 'Example Video Title #1',
+      createdAt: 1112821200,
+      user: {
+        name: 'Test Videos Feed',
+        avatarImageUrl: 'sourceImageUrl.png',
+        id: 'Id1',
+      },
+      videoUrl: 'http://domain.com/video1.m3u8',
+      images: {
+        default: {
+          url: 'http://example.org/image-large.png',
+          width: 16,
+          height: 9,
+        },
+      },
     },
   },
 };

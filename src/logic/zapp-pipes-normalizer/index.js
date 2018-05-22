@@ -12,7 +12,7 @@ const mapMediaItem = (mediaGroups, type, aspectRatio) => {
     const mediaItems = mediaGroups[i].media_item;
     for (let j = 0; j < mediaItems.length; j++) {
       const mediaItem = mediaItems[j];
-      if (mediaItem.type === type) {
+      if (mediaItem.type === type || mediaItem.form === type) {
         if (type === 'video') return mediaItem.src;
 
         return {
@@ -129,10 +129,14 @@ const mapEntry = (entry, title) => {
   }
 };
 
-export const normalizeZappPipes = pipes => {
-  const { title, entry: entriesArray = [] } = JSON.parse(pipes);
+export const normalizeZappPipes = (pipes, platform) => {
+  let { title, entry: entriesArray = [] } = JSON.parse(pipes);
   const entries = {};
   
+  if (platform === 'android') {
+    entriesArray = entriesArray.map(entry => entry.data);
+  }
+
   entriesArray
     .map(entry => mapEntry(entry, title))
     .filter(entry => !!entry)
