@@ -5,6 +5,7 @@ export const getAccountId = state => state.app.get('accountId');
 export const getTimelineId = state => state.app.get('timelineId');
 export const getTimezone = state => state.app.get('timezone');
 export const getEnvironment = state => state.app.get('environment');
+export const getPlatform = state => state.app.get('platform');
 export const getActiveEventId = state => state.app.get('activeEventId');
 export const getEventIdForActiveAudio = state => state.app.get('eventIdForActiveAudio');
 export const getFacebookPageId = state => state.app.get('facebookPageId');

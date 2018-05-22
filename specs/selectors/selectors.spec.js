@@ -26,6 +26,7 @@ import {
   getSortedCardsByDate,
   getCards,
   getViewableItems,
+  getPlatform,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -51,6 +52,7 @@ describe('selectors', () => {
         twitterScreenName: 'someTwitterScreenName',
         publicPageUrl: 'somePublicPageUrl',
         viewableItems: { 1: {} },
+        platform: 'android',
       }),
       events: Map({
         events: { 1: event1, 2: event2 },
@@ -225,6 +227,12 @@ describe('selectors', () => {
   describe('getViewableItems', () => {
     it('should get the the viewableItems', () => {
       expect(getViewableItems(store.getState())).to.deep.equal({ 1: {} });
+    });
+  });
+
+  describe('getPlatform', () => {
+    it('should get the the platform from the app reducer', () => {
+      expect(getPlatform(store.getState())).to.equal('android');
     });
   });
 });
