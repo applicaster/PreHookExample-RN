@@ -131,11 +131,12 @@ const mapEntry = (entry, title) => {
 };
 
 export const normalizeZappPipes = (pipes, platform) => {
-  let { title, entry: entriesArray = [] } = JSON.parse(pipes);
+  const parsedData = JSON.parse(pipes);
+  let { title, entry: entriesArray = [] } = parsedData;
   const entries = {};
   
   if (platform === 'android') {
-    entriesArray = entriesArray.map(entry => entry.data);
+    entriesArray = entriesArray.map(entry => (entry.data) ? entry.data : entry);
   }
 
   entriesArray
