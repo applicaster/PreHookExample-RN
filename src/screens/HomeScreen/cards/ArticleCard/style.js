@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: '#4A4A4A',
     opacity: 0.75,
-    fontWeight: 'bold',
+    fontWeight: '700',
     marginTop: 16,
   },
   title: {
@@ -22,11 +22,13 @@ export const styles = StyleSheet.create({
     marginTop: 6,
     marginBottom: 0,
   },
-  body: {},
   author: {
-
+    fontSize: 15.2,
+    color: '#353333',
+    fontWeight: '600',
+    marginTop: 8,
   },
   timestamp: {
-
+    // TODO: 
   },
 });
