@@ -28,8 +28,9 @@ export default class VideoCard extends Component {
   renderVideoTitle() {
     const { caption, isEditorial, category } = this.props;
     if (isEditorial) {
+      const textColorStyle = { color: this.context.textColor || '#FFFFFF' };
       return ([
-        <Text key={'category'} style={[videoStyles.category]}>{category}</Text>,
+        <Text key={'category'} style={[videoStyles.category, textColorStyle]}>{category}</Text>,
         <Text key={'title'} style={[videoStyles.videoTitle, { color: this.getTitleColor() }]}>{caption}</Text>,  
       ]);
     }
@@ -72,4 +73,5 @@ VideoCard.propTypes = {
 
 VideoCard.contextTypes = {
   backgroundColor: PropTypes.string,
+  textColor: PropTypes.string,
 };
