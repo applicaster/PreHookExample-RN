@@ -2,19 +2,11 @@ import {
   StyleSheet,
 } from 'react-native';
 
-const closeButtonSize = 25;
+const closeButtonSize = 38;
 
 export const styles = StyleSheet.create({
   closeButton: {
-    tintColor: '#FFFFFF',
     height: closeButtonSize,
     width: closeButtonSize,
-    marginLeft: 5,
-  },
-  modalCloseButton: {
-    position: 'absolute',
-    top: 30,
-    left: 0,
-    zIndex: 5,
   },
 });

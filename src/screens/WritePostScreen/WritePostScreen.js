@@ -168,7 +168,7 @@ class WritePostScreen extends Component {
 
     return (
       <View style={[styles.postBar, backgroundColorStyle]}>
-        <CloseButton style={styles.closeButton} onPress={this.closeModal} isForModal />
+        <CloseButton onPress={this.closeModal} style={styles.closeButton} />
         {this.renderWritePostLabel()}
         {this.renderPostButton()}
       </View>

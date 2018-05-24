@@ -3,20 +3,22 @@ import PropTypes from 'prop-types';
 import {
   Image,
   TouchableWithoutFeedback,
+  View,
 } from 'react-native';
 import { styles } from './style';
+import { CLOSE_ROUND_BUTTON } from '../../icons';
 
-const CLOSE_BUTTON = 'feed_rn_close_button';
 class CloseButton extends Component {
   render() {
-    const { onPress, isForModal } = this.props;
+    const { style: buttonContainerStyles, onPress } = this.props;
     const { textColor = '#FFFFFF' } = this.context;
     const closeButtonColor = { tintColor: `${textColor}99` };
-    const isForModalStyles = (isForModal) ? styles.modalCloseButton : null;
 
     return (
       <TouchableWithoutFeedback onPress={onPress}>
-        <Image style={[styles.closeButton, isForModalStyles, closeButtonColor]} source={{ uri: CLOSE_BUTTON }} />
+        <View style={buttonContainerStyles}>
+          <Image style={[styles.closeButton, closeButtonColor]} source={{ uri: CLOSE_ROUND_BUTTON }} />
+        </View>
       </TouchableWithoutFeedback>
     );
   }
@@ -24,7 +26,7 @@ class CloseButton extends Component {
 
 CloseButton.propTypes = {
   onPress: PropTypes.func,
-  isForModal: PropTypes.bool,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
 };
 
 CloseButton.contextTypes = {

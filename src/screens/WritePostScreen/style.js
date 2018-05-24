@@ -48,4 +48,10 @@ export const styles = StyleSheet.create({
     height: BAR_HEIGHT,
     width: window.width,
   },
+  closeButton: {
+    position: 'absolute',
+    top: 22,
+    left: 10,
+    zIndex: 5,
+  },
 });

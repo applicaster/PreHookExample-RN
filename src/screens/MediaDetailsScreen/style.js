@@ -1,9 +1,8 @@
 import {
   Dimensions,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 
-const closeButtonSize = 25;
 const screenWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
@@ -21,5 +20,11 @@ export const styles = StyleSheet.create({
   imageSize: {
     width: screenWidth,
     height: screenWidth,
+  },
+  closeButton: {
+    position: 'absolute',
+    top: 45,
+    right: 15,
+    zIndex: 5,
   },
 });

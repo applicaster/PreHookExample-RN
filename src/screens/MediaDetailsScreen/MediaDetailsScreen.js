@@ -49,7 +49,7 @@ class MediaDetailsScreen extends Component {
     
     return (
       <View style={[styles.mediaDetailsScreen, screenBackgroundColor]}>
-        <CloseButton onPress={this.closeModal} isForModal />
+        <CloseButton onPress={this.closeModal} style={styles.closeButton} />
         <TransformableImage style={this.getImageSize()} source={{ uri: imageUrl }} />
       </View>
     );

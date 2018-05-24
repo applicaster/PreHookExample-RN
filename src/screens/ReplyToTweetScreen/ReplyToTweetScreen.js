@@ -107,7 +107,7 @@ class ReplyToTweetScreen extends Component {
 
     return (
       <View style={[styles.postBar, backgroundColorStyle]}>
-        <CloseButton style={styles.closeButton} onPress={this.closeModal} isForModal />
+        <CloseButton onPress={this.closeModal} style={styles.closeButton} />
         <Text style={[styles.writePostLabel, textColorStyle]}>{screenTitle}</Text>
         <TouchableOpacity style={styles.postButton} onPress={this.onPostPress}>
           <Text style={[styles.postButtonLabel, postTextColorStyle]}>{postButtonText}</Text>
