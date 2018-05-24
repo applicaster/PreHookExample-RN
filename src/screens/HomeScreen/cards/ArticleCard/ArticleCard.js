@@ -11,8 +11,8 @@ import MediaVideo from '../components/MediaVideo';
 import { styles } from '../style';
 import { styles as articleStyles } from './style';
 import { BORDER_RADIUS, SCREEN_MARGIN } from '../../../../constants/measurements';
+import { CARD_ACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
 
-const CARD_ACTIVATE_ANIMATION_DURATION = 500;
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const FULL_SCREEN_SCALE = SCREEN_WIDTH / (SCREEN_WIDTH - (SCREEN_MARGIN / 2));
 const TEXT_HORIZONTAL_PADDING = 13;
@@ -60,10 +60,10 @@ export default class ArticleCard extends Component {
         
         - build article container to have:
 
-          - author
+          - DONE author
           - timestamp
-          - summary
-          - article body
+          - DONE summary
+          - DONE article body
           
 
     */
@@ -75,19 +75,46 @@ export default class ArticleCard extends Component {
   
   renderArticleContent() {
     const { isCardActive } = this.state;
-    const { body, summary } = this.props;
-    const textColorStyle = { color: this.context.textColor || '#FFFFFF' };
+    const { author, body, summary } = this.props;
+    const dynamicTextColor = this.getTitleColor();
+
     const bodyContainerStyles = {
+      opacity: this.activateCardAnimationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [1, 0],
+      }),
       paddingHorizontal: this.activateCardAnimationValue.interpolate({
         inputRange: [0, 1],
         outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
       }),
+      height: this.activateCardAnimationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [600, 0], // TODO: calculate this height dynamically
+      }),
     };
 
-    return (isCardActive &&
+    const summaryInArticleStyles = {
+      color: dynamicTextColor,
+      fontWeight: '700',
+      marginTop: 8,
+    };
+
+    const baseFontStyle = {
+      color: this.context.textColor,
+      fontSize: 17,
+      lineHeight: 21,
+    };
+    
+    return (
       <Animated.View style={[bodyContainerStyles]}>
-        <Text style={[articleStyles.summary, textColorStyle]}>{summary}</Text>
-        <HtmlView html={body} />
+        {!!author && <Text style={[articleStyles.author, { color: dynamicTextColor }]}>{author}</Text>}
+        <Text style={[articleStyles.summary, summaryInArticleStyles]}>{summary}</Text>
+        <HtmlView
+          html={body}
+          onLinkPress={() => {}} // TODO: open webview?
+          baseFontStyle={baseFontStyle}
+          textSelectable={false}
+        />
       </Animated.View>
     );
   }
@@ -141,7 +168,7 @@ export default class ArticleCard extends Component {
       }),
       transform: [
         { scale: this.activateCardAnimationValue.interpolate({
-          inputRange: [0, 0.85, 1],
+          inputRange: [0, 0.9, 1],
           outputRange: [FULL_SCREEN_SCALE, FULL_SCREEN_SCALE * 1.01, 1],
         }) },
       ],
@@ -151,7 +178,15 @@ export default class ArticleCard extends Component {
       opacity: this.activateCardAnimationValue,
     };
 
-    const textContainerStyles = {
+    const categoryAndTitleContainerStyles = {
+      paddingHorizontal: this.activateCardAnimationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
+      }),
+    };
+
+    const summaryContainerStyles = {
+      opacity: this.activateCardAnimationValue,
       paddingHorizontal: this.activateCardAnimationValue.interpolate({
         inputRange: [0, 1],
         outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
@@ -167,24 +202,28 @@ export default class ArticleCard extends Component {
           
           {this.renderMedia()}
 
-          <Animated.View style={textContainerStyles}>
+          <Animated.View style={categoryAndTitleContainerStyles}>
             <Text style={[articleStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>
             <Text style={[articleStyles.title, titleColorStyle]}>{caption}</Text>
-            <Text style={[articleStyles.summary, textColorStyle]}>{summary}</Text>
           </Animated.View>
           
+          {this.renderArticleContent()}
+          
+          <Animated.View style={summaryContainerStyles}>
+            <Text style={[articleStyles.summary, textColorStyle]}>{summary}</Text>
+          </Animated.View>
           
           <Animated.View style={opacityStyles}>
             <Footer eventId={eventId} />
           </Animated.View>
           
-          {this.renderArticleContent()}
         </Animated.View>
       </CardContainer>);
   }
 }
 
 ArticleCard.propTypes = {
+  author: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   caption: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
