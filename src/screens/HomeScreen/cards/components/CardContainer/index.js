@@ -39,6 +39,7 @@ export default class CardContainer extends Component {
         toValue: 1,
         duration: SCALE_ANIMATION_DURATION,
         easing: Easing.easeOutBounce,
+        useNativeDriver: true,
       }
     ).start();
   }
@@ -51,6 +52,7 @@ export default class CardContainer extends Component {
         toValue: 0,
         duration: SCALE_ANIMATION_DURATION,
         easing: Easing.easeOutBounce,
+        useNativeDriver: true,
       }
     ).start();
   }
