@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, Dimensions, Text } from 'react-native';
-import HtmlView from 'react-native-render-html';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MediaImage from '../components/MediaImage';
 import MediaVideo from '../components/MediaVideo';
+import ArticleContent from './ArticleContent';
 import { styles } from '../style';
 import { styles as articleStyles } from './style';
 import { BORDER_RADIUS, SCREEN_MARGIN } from '../../../../constants/measurements';
@@ -20,11 +20,11 @@ const TEXT_HORIZONTAL_PADDING = 13;
 export default class ArticleCard extends Component {
   constructor(props) {
     super(props);
-    this.state = { isCardActive: false };
+    this.state = { isCardActive: false, articleContentHeight: 0 };
 
     this.activateCardAnimationValue = new Animated.Value(1);
   }
-  
+
   getTitleColor() {
     const COLOR_CHANGE_TRESHHOLD = 0x999999;
     const { backgroundColor } = this.context;
@@ -50,22 +50,11 @@ export default class ArticleCard extends Component {
     
     /*
       On Card Activate:
-        - borderRadius to 0 DONE
-        - Fade out Footer DONE
-        - Fade out Header DONE
-        - Fade out summary
-        - marginHorizontal to 0 on view DONE
-        - marginHorizontal to 0 on miedia items DONE
-        - slide down the container for the article
-        
         - build article container to have:
-
           - DONE author
           - timestamp
           - DONE summary
           - DONE article body
-          
-
     */
   }
   
@@ -76,46 +65,14 @@ export default class ArticleCard extends Component {
   renderArticleContent() {
     const { isCardActive } = this.state;
     const { author, body, summary } = this.props;
-    const dynamicTextColor = this.getTitleColor();
-
-    const bodyContainerStyles = {
-      opacity: this.activateCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [1, 0],
-      }),
-      paddingHorizontal: this.activateCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
-      }),
-      height: this.activateCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [600, 0], // TODO: calculate this height dynamically
-      }),
-    };
-
-    const summaryInArticleStyles = {
-      color: dynamicTextColor,
-      fontWeight: '700',
-      marginTop: 8,
-    };
-
-    const baseFontStyle = {
-      color: this.context.textColor,
-      fontSize: 17,
-      lineHeight: 21,
-    };
     
     return (
-      <Animated.View style={[bodyContainerStyles]}>
-        {!!author && <Text style={[articleStyles.author, { color: dynamicTextColor }]}>{author}</Text>}
-        <Text style={[articleStyles.summary, summaryInArticleStyles]}>{summary}</Text>
-        <HtmlView
-          html={body}
-          onLinkPress={() => {}} // TODO: open webview?
-          baseFontStyle={baseFontStyle}
-          textSelectable={false}
-        />
-      </Animated.View>
+      <ArticleContent
+        author={author}
+        body={body}
+        isExpanded={isCardActive}
+        summary={summary}
+      />
     );
   }
 
