@@ -26,9 +26,14 @@ export const styles = StyleSheet.create({
   videoAudioButton: {
     width: 48,
     height: 48,
-    zIndex: 3,
   },
   videoAudioButtonContainer: {
+    width: 48,
+    height: 48,
+    position: 'absolute',
+    zIndex: 3,
+  },
+  videoAudioButtonsWrapper: {
     position: 'absolute',
     width: 48,
     height: 48,

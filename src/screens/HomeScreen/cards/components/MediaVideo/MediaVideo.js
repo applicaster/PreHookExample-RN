@@ -113,8 +113,9 @@ export default class MediaVideo extends Component {
 
   renderAudioButton() {
     const { eventId, muted } = this.state;
+
     const audioButton = (mutedState, buttonIcon) => (
-      <FadeContainer key={`${eventId}-${buttonIcon}`} visible={mutedState} duration={350}>
+      <FadeContainer style={styles.videoAudioButtonContainer} key={`${eventId}-${buttonIcon}`} visible={mutedState} duration={350}>
         <TouchableWithoutFeedback onPress={this.toggleAudio}>
           <Image
             style={[styles.videoAudioButton]}
@@ -131,7 +132,7 @@ export default class MediaVideo extends Component {
     };
     
     return (
-      <Animated.View key={'audioButtons'} style={[styles.videoAudioButtonContainer, audioControlsStyles]}>
+      <Animated.View key={'audioButtons'} style={[styles.videoAudioButtonsWrapper, audioControlsStyles]}>
         {[audioOnButton, audioMutedbutton]}
       </Animated.View>);
   }
