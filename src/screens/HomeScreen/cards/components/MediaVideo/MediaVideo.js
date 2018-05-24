@@ -30,6 +30,7 @@ export default class MediaVideo extends Component {
     this.toggleAudio = this.toggleAudio.bind(this);
     this.audioControlsVisibilityValue = new Animated.Value(0);
     this.playOverlayVisibilityValue = new Animated.Value(1);
+    this.audioVisibilityTimer = null;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -67,6 +68,10 @@ export default class MediaVideo extends Component {
         paused: pausedStateToSet,
       });
     }
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.audioVisibilityTimer);
   }
 
   setAudioControlFadeTimer() {
@@ -126,7 +131,7 @@ export default class MediaVideo extends Component {
     };
     
     return (
-      <Animated.View key={'audioButtons'} style={audioControlsStyles}>
+      <Animated.View key={'audioButtons'} style={[styles.videoAudioButtonContainer, audioControlsStyles]}>
         {[audioOnButton, audioMutedbutton]}
       </Animated.View>);
   }
@@ -150,6 +155,7 @@ export default class MediaVideo extends Component {
         source={{ uri: imageUrl }}
       >
         {this.renderPlayOverlay()}
+        {this.renderAudioButton()}
         <Video
           source={{ uri: videoUrl }}
           muted={muted}
@@ -162,7 +168,6 @@ export default class MediaVideo extends Component {
         />
         
       </ImageBackground>,
-      this.renderAudioButton(),
       <LinearGradient key={'headerGradient'} style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />,
     ]);
   }
