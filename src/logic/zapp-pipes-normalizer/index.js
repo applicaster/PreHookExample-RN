@@ -54,7 +54,7 @@ const mapImageEntry = (entry, title) => {
   };
 };
 
-const mapVideoEntry = (entry, title) => {
+const mapVideoEntry = (entry, title = '') => {
   const { id, title: caption, category, content, published: createdAt, media_group: mediaGroups, extensions } = entry;
   const { src: videoUrl } = content;
   const { sourceImageUrl: avatarImageUrl } = extensions;
