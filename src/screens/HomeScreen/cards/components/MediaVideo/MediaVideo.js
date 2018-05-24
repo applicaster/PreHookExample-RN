@@ -83,7 +83,7 @@ export default class MediaVideo extends Component {
       this.fade({
         fadeIn: false,
         animationValue: this.audioControlsVisibilityValue,
-        doneCallback: () => this.setState({ audioControlsVisible: false })
+        doneCallback: () => this.setState({ audioControlsVisible: false }),
       });
     }, AUDIO_CONTROLS_IDLE_DURATION);
   }
