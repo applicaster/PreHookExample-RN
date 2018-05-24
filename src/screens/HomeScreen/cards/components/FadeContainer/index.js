@@ -18,6 +18,7 @@ export default class FadeContainer extends Component {
     Animated.timing(this.visibility, {
       toValue: nextProps.visible ? 1 : 0,
       duration: this.props.duration,
+      useNativeDriver: true,
     }).start(() => {
       this.setState({ visible: nextProps.visible });
     });
