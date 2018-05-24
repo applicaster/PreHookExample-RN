@@ -4,7 +4,6 @@ import { Animated, Text, View } from 'react-native';
 import HtmlView from 'react-native-render-html';
 import { styles as articleStyles } from '../style';
 import { SCREEN_MARGIN } from '../../../../../constants/measurements';
-import { CARD_ACTIVATE_ANIMATION_DURATION } from '../../../../../constants/animations';
 
 const TEXT_HORIZONTAL_PADDING = 13;
 
@@ -23,19 +22,6 @@ export default class ArticleContent extends Component {
     this.state = { articleContentHeight: 0, isHeightCalculated: false };
 
     this.setArticleContentHeight = this.setArticleContentHeight.bind(this);
-    this.articleExpandAnimationValue = new Animated.Value(0);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { isExpanded: nextIsExpanded } = nextProps;
-    const { isExpanded } = this.props;
-
-    if (nextIsExpanded !== isExpanded) {
-      Animated.timing(this.articleExpandAnimationValue, {
-        toValue: (nextIsExpanded) ? 1 : 0,
-        duration: CARD_ACTIVATE_ANIMATION_DURATION,
-      }).start();
-    }
   }
 
   setArticleContentHeight(event) {
@@ -108,15 +94,19 @@ export default class ArticleContent extends Component {
 
   render() {
     const { articleContentHeight } = this.state;
+    const { animationValue } = this.props;
     const bodyContainerStyles = {
-      opacity: this.articleExpandAnimationValue,
-      paddingHorizontal: this.articleExpandAnimationValue.interpolate({
+      opacity: animationValue.interpolate({
         inputRange: [0, 1],
-        outputRange: [TEXT_HORIZONTAL_PADDING, TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN],
+        outputRange: [1, 0],
       }),
-      height: this.articleExpandAnimationValue.interpolate({
+      paddingHorizontal: animationValue.interpolate({
         inputRange: [0, 1],
-        outputRange: [0, articleContentHeight],
+        outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
+      }),
+      height: animationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [articleContentHeight, 0],
       }),
     };
 
@@ -131,16 +121,12 @@ export default class ArticleContent extends Component {
 
 ArticleContent.propTypes = {
   author: PropTypes.string.isRequired,
+  animationValue: PropTypes.object.isRequired,
   body: PropTypes.string.isRequired,
-  isExpanded: PropTypes.bool.isRequired,
   summary: PropTypes.string.isRequired,
 };
 
 ArticleContent.contextTypes = {
   backgroundColor: PropTypes.string,
   textColor: PropTypes.string,
-};
-
-ArticleContent.defaultProps = {
-  isExpanded: false,
 };

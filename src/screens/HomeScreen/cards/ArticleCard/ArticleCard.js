@@ -63,7 +63,6 @@ export default class ArticleCard extends Component {
   }
   
   renderArticleContent() {
-    const { isCardActive } = this.state;
     const { author, body, summary } = this.props;
     
     return (
@@ -71,7 +70,6 @@ export default class ArticleCard extends Component {
         author={author}
         animationValue={this.activateCardAnimationValue}
         body={body}
-        isExpanded={isCardActive}
         summary={summary}
       />
     );
