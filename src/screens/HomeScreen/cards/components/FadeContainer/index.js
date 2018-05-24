@@ -59,7 +59,7 @@ FadeContainer.propTypes = {
   children: PropTypes.object.isRequired,
   duration: PropTypes.number,
   pressScale: PropTypes.number,
-  style: PropTypes.oneOf([PropTypes.number, PropTypes.object]),
+  style: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
   visible: PropTypes.bool.isRequired,
 };
 
