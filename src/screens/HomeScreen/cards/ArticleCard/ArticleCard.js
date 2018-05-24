@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import MediaImage from '../components/MediaImage';
 import MediaVideo from '../components/MediaVideo';
 import ArticleContent from './ArticleContent';
+import CloseButton from '../../../../buttons/CloseButton';
 import { styles } from '../style';
 import { styles as articleStyles } from './style';
 import { BORDER_RADIUS, SCREEN_MARGIN } from '../../../../constants/measurements';
@@ -22,6 +23,7 @@ export default class ArticleCard extends Component {
     super(props);
     this.state = { isCardActive: false, articleContentHeight: 0 };
 
+    this.activateCard = this.activateCard.bind(this);
     this.activateCardAnimationValue = new Animated.Value(1);
   }
 
@@ -109,7 +111,7 @@ export default class ArticleCard extends Component {
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
     const textColorStyle = { color: this.context.textColor || '#FFFFFF' };
     const titleColorStyle = { color: this.getTitleColor() };
-    const headerFadeContainerStyles = { position: 'absolute', zIndex: 3 };
+    const fadeContainerStyles = { position: 'absolute', zIndex: 3 };
     const borderRadiusStyles = {
       borderRadius: this.activateCardAnimationValue.interpolate({
         inputRange: [0, 1],
@@ -150,12 +152,14 @@ export default class ArticleCard extends Component {
     };
 
     return (
-      <CardContainer clickable clickHandler={() => this.activateCard()} styles={cardContainerStyles}>
+      <CardContainer clickable clickHandler={this.activateCard} styles={cardContainerStyles}>
         <Animated.View style={[styles.eventContainer, backgroundColorStyle, borderRadiusStyles]}>
-          <FadeContainer visible={!isCardActive} style={headerFadeContainerStyles}>
+          <FadeContainer visible={!isCardActive} style={fadeContainerStyles}>
             <Header eventId={eventId} overlay isEditorial />
           </FadeContainer>
-          
+          <FadeContainer visible={isCardActive} style={articleStyles.closeButton}>
+            <CloseButton onPress={this.activateCard} style={articleStyles.closeButton} />
+          </FadeContainer>
           {this.renderMedia()}
 
           <Animated.View style={categoryAndTitleContainerStyles}>

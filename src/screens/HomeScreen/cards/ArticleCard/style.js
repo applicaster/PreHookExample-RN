@@ -31,4 +31,10 @@ export const styles = StyleSheet.create({
   timestamp: {
     // TODO: 
   },
+  closeButton: {
+    position: 'absolute',
+    top: 7,
+    right: 7,
+    zIndex: 3,
+  },
 });
