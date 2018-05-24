@@ -1,4 +1,4 @@
-import { Dimensions, Platform, StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import { SCREEN_MARGIN } from '../../../../../constants/measurements';
 
 const screenWidth = Dimensions.get('window').width;
@@ -39,6 +39,6 @@ export const styles = StyleSheet.create({
     height: 48,
     zIndex: 3,
     bottom: 15,
-    right: Platform.OS === 'android' ? 30 : 15,
+    right: 35,
   },
 });
