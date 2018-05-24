@@ -98,7 +98,7 @@ export default class HomeScreen extends Component {
   }
 
   renderItem({ item: event }) {
-    const { body, caption, category, id, type, source, url, videoUrl, summary } = event;
+    const { body, caption, category, id, type, source, url, user, videoUrl, summary } = event;
     const { url: imageUrl, height, width } = (event.images) ? event.images.default : {};
 
     if (type === 'image') {
@@ -143,6 +143,7 @@ export default class HomeScreen extends Component {
     
     if (type === 'article') {
       return (<ArticleCard
+        author={user.name}
         body={body}
         caption={caption}
         category={category}
