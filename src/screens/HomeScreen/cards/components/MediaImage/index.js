@@ -5,6 +5,7 @@ import LinearGradient from '@applicaster/react-native-linear-gradient';
 import { styles } from './style';
 import { getMediaDimensions } from '../../../../../utils/size';
 import { SCREEN_MARGIN } from '../../../../../constants/measurements';
+import { CARD_ACTIVATE_ANIMATION_DURATION } from '../../../../../constants/animations';
 
 class MediaImage extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class MediaImage extends Component {
           this.imageAnimatedValue,
           {
             toValue: (nextIsExpanded) ? 0 : 1,
-            duration: 500,
+            duration: CARD_ACTIVATE_ANIMATION_DURATION,
           }),
         Animated.timing(
           this.grandientAnimatedValue,
