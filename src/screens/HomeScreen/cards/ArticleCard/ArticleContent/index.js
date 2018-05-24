@@ -20,17 +20,10 @@ const TEXT_HORIZONTAL_PADDING = 13;
 export default class ArticleContent extends Component {
   constructor(props) {
     super(props);
-    this.state = { articleContentHeight: 0 };
+    this.state = { articleContentHeight: 0, isHeightCalculated: false };
 
     this.setArticleContentHeight = this.setArticleContentHeight.bind(this);
-    this.articleExpandAnimationValue = new Animated.Value(1);
-  }
-  
-  componentDidMount() {
-    Animated.timing(this.articleExpandAnimationValue, {
-      toValue: 0,
-      duration: 0,
-    }).start();
+    this.articleExpandAnimationValue = new Animated.Value(0);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -46,9 +39,14 @@ export default class ArticleContent extends Component {
   }
 
   setArticleContentHeight(event) {
-    this.setState({
-      articleContentHeight: event.nativeEvent.layout.height,
-    });
+    const { isHeightCalculated } = this.state;
+
+    if (!isHeightCalculated) {
+      this.setState({
+        articleContentHeight: event.nativeEvent.layout.height,
+        isHeightCalculated: true,
+      });
+    }
   }
 
   getTitleColor() {
@@ -62,22 +60,27 @@ export default class ArticleContent extends Component {
     return '#000000';
   }
 
-  render() {
-    const { articleContentHeight } = this.state;
+  renderCopyOffScreen() {
+    const { isHeightCalculated } = this.state;
+    if (isHeightCalculated) return null;
+
+    const offScreenStyles = {
+      position: 'absolute',
+      bottom: -5000,
+    };
+
+    const copy = (
+      <View key={'clone'} style={offScreenStyles} onLayout={this.setArticleContentHeight}>
+        {this.renderContent()}
+      </View>
+    );
+
+    return copy;
+  }
+
+  renderContent() {
     const { author, body, summary } = this.props;
     const dynamicTextColor = this.getTitleColor();
-
-    const bodyContainerStyles = {
-      opacity: this.articleExpandAnimationValue,
-      paddingHorizontal: this.articleExpandAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [TEXT_HORIZONTAL_PADDING, TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN],
-      }),
-      height: this.articleExpandAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, 600],
-      }),
-    };
 
     const summaryInArticleStyles = {
       color: dynamicTextColor,
@@ -91,20 +94,38 @@ export default class ArticleContent extends Component {
       lineHeight: 21,
     };
     
-    return (
-      <Animated.View style={[bodyContainerStyles]}>
-        <View onLayout={this.setArticleContentHeight}>
-          {!!author && <Text style={[articleStyles.author, { color: dynamicTextColor }]}>{author}</Text>}
-          <Text style={[articleStyles.summary, summaryInArticleStyles]}>{summary}</Text>
-          <HtmlView
-            html={body}
-            onLinkPress={() => {}} // TODO: open webview?
-            baseFontStyle={baseFontStyle}
-            textSelectable={false}
-          />
-        </View>
-      </Animated.View>
-    );
+    return ([
+      !!author && <Text style={[articleStyles.author, { color: dynamicTextColor }]} key={'author'}>{author}</Text>,
+      <Text style={[articleStyles.summary, summaryInArticleStyles]} key={'summary'}>{summary}</Text>,
+      <HtmlView
+        key={'body'}
+        html={body}
+        onLinkPress={() => {}} // TODO: open webview?
+        baseFontStyle={baseFontStyle}
+        textSelectable={false}
+      />]);
+  }
+
+  render() {
+    const { articleContentHeight } = this.state;
+    const bodyContainerStyles = {
+      opacity: this.articleExpandAnimationValue,
+      paddingHorizontal: this.articleExpandAnimationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [TEXT_HORIZONTAL_PADDING, TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN],
+      }),
+      height: this.articleExpandAnimationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [0, articleContentHeight],
+      }),
+    };
+
+    return ([
+      <Animated.View key={'article'} style={[bodyContainerStyles]}>
+        {this.renderContent()}
+      </Animated.View>,
+      this.renderCopyOffScreen(),
+    ]);
   }
 }
 

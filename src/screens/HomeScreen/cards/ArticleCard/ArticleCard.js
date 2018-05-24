@@ -69,6 +69,7 @@ export default class ArticleCard extends Component {
     return (
       <ArticleContent
         author={author}
+        animationValue={this.activateCardAnimationValue}
         body={body}
         isExpanded={isCardActive}
         summary={summary}
