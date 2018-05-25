@@ -78,7 +78,7 @@ export default class ArticleContent extends Component {
       !!author && <Text style={[articleStyles.author, { color: dynamicTextColor }]} key={'author'}>{author}</Text>,
       <Text style={[articleStyles.timestamp, { color: dynamicTextColor }]} key={'timestamp'}>{timeFromNow(timestamp)}</Text>,
       <Text style={[articleStyles.summary, summaryInArticleStyles]} key={'summary'}>{summary}</Text>,
-      <HtmlView
+      !!body && <HtmlView
         key={'body'}
         html={body}
         onLinkPress={() => {}} // TODO: open webview?
