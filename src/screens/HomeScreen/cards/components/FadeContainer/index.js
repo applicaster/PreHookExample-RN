@@ -5,9 +5,7 @@ import { Animated } from 'react-native';
 export default class FadeContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      visible: props.visible,
-    };
+    this.state = { visible: props.visible };
     this.visibility = new Animated.Value(this.props.visible ? 1 : 0);
   }
 
@@ -28,12 +26,7 @@ export default class FadeContainer extends Component {
     const { pressScale, style, children } = this.props;
     const { visible } = this.state;
 
-    const containerStyle = {
-      opacity: this.visibility.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, 1],
-      }),
-    };
+    const containerStyle = { opacity: this.visibility };
 
     if (pressScale !== 1) {
       containerStyle.transform = [
