@@ -10,9 +10,9 @@ import { CLOSE_ROUND_BUTTON } from '../../icons';
 
 class CloseButton extends Component {
   render() {
-    const { style: buttonContainerStyles, onPress } = this.props;
+    const { style: buttonContainerStyles, onPress, tintColor } = this.props;
     const { textColor = '#FFFFFF' } = this.context;
-    const closeButtonColor = { tintColor: `${textColor}99` };
+    const closeButtonColor = { tintColor: tintColor || `${textColor}99` };
 
     return (
       <TouchableWithoutFeedback onPress={onPress}>
@@ -27,6 +27,7 @@ class CloseButton extends Component {
 CloseButton.propTypes = {
   onPress: PropTypes.func,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+  tintColor: PropTypes.string,
 };
 
 CloseButton.contextTypes = {
