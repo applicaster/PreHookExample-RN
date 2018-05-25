@@ -21,6 +21,7 @@
   "rules": {
     "radix": 0,
     "es-beautifier/multiline-array-elements": 0,
+    "es-beautifier/multiline-block-statements": 0,
     "no-unused-expressions": 0,
     "react/no-unescaped-entities": 0,
     "react/jsx-filename-extension": 0,
