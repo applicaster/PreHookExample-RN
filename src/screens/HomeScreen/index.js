@@ -10,6 +10,7 @@ import {
 
 import {
   isLoading,
+  getActiveEventId,
   getSortedCardsByDate,
 } from '../../selectors';
 
@@ -17,6 +18,7 @@ import HomeScreen from './HomeScreen';
 
 const mapStateToProps = state => ({
   cards: getSortedCardsByDate(state),
+  isCardActive: !!getActiveEventId(state),
   isLoading: isLoading(state),
 });
 

@@ -161,19 +161,20 @@ export default class HomeScreen extends Component {
   }
 
   render() {
-    const { cards, isLoading } = this.props;
+    const { cards, isCardActive, isLoading } = this.props;
     const backgroundFeedColor = { backgroundColor: this.context.secondaryTextColor };
     
     return (
       <View style={[backgroundFeedColor, { flex: 1 }]}>
         <FlatList
           data={cards}
-          renderItem={this.renderItem}
+          initialNumToRender={2}
+          scrollEnabled={!isCardActive}
           keyExtractor={(item) => item.id }
           style={[styles.feedList]} contentContainerStyle={[styles.feedListContent]}
           refreshing={isLoading}
+          renderItem={this.renderItem}
           onRefresh={this.onRefresh}
-          initialNumToRender={2}
           viewabilityConfigCallbackPairs={this.viewabilityConfigCallbackPairs}
           ListEmptyComponent={() => this.renderEmptyList()}
         />
@@ -188,6 +189,7 @@ HomeScreen.propTypes = {
   cards: PropTypes.array.isRequired,
   fetchEvents: PropTypes.func.isRequired,
   fetchZappPipes: PropTypes.func.isRequired,
+  isCardActive: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   navigation: PropTypes.object.isRequired,
   updateFavoriteTweets: PropTypes.func.isRequired,
@@ -201,4 +203,8 @@ HomeScreen.contextTypes = {
 
 HomeScreen.childContextTypes = {
   navigation: PropTypes.object,
+};
+
+HomeScreen.defaultProps = {
+  isCardActive: false,
 };
