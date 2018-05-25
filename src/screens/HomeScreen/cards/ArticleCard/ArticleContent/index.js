@@ -79,10 +79,10 @@ export default class ArticleContent extends Component {
       <Text style={[articleStyles.timestamp, { color: dynamicTextColor }]} key={'timestamp'}>{timeFromNow(timestamp)}</Text>,
       <Text style={[articleStyles.summary, summaryInArticleStyles]} key={'summary'}>{summary}</Text>,
       !!body && <HtmlView
-        key={'body'}
-        html={body}
-        onLinkPress={() => {}} // TODO: open webview?
         baseFontStyle={baseFontStyle}
+        html={body}
+        key={'body'}
+        onLinkPress={() => {}} // TODO: open webview?
         textSelectable={false}
       />]);
   }

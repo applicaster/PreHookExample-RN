@@ -24,10 +24,9 @@ export default class CardContainer extends Component {
   }
 
   onPress() {
-    const { clickable, clickHandler, isCardActive } = this.props;
+    const { clickable, clickHandler } = this.props;
     if (clickable) {
       clickHandler();
-      // if (!isCardActive) this.grow();
     }
   }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Dimensions, Text, View } from 'react-native';
+import { Animated, Dimensions, Text, View, ScrollView } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
@@ -15,8 +15,9 @@ import { styles as articleStyles } from './style';
 import { BORDER_RADIUS, SCREEN_MARGIN, TOP_CARD_LIST_PADDING } from '../../../../constants/measurements';
 import { CARD_ACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const FULL_SCREEN_SCALE = SCREEN_WIDTH / (SCREEN_WIDTH - (SCREEN_MARGIN / 2));
+const WINDOW_HEIGHT = Dimensions.get('window').height;
+const WINDOW_WIDTH = Dimensions.get('window').width;
+const FULL_SCREEN_SCALE = WINDOW_WIDTH / (WINDOW_WIDTH - (SCREEN_MARGIN / 2));
 const TEXT_HORIZONTAL_PADDING = 13;
 const STATUS_BAR_HEIGHT = getStatusBarHeight();
 
@@ -112,13 +113,88 @@ export default class ArticleCard extends Component {
     );
   }
 
-  render() {
+  renderCloseButton() {
     const { isCardActive } = this.state;
-    const { caption, category, eventId, summary } = this.props;
-    const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
+    return (
+      <FadeContainer visible={isCardActive} style={articleStyles.closeButton}>
+        <CloseButton onPress={this.activateCard} style={articleStyles.closeButton} tintColor={'#FFFFFF'} />
+      </FadeContainer>
+    );
+  }
+
+  renderHeader() {
+    const { eventId } = this.props;
+    const { isCardActive } = this.state;
+    const fadeContainerStyles = { position: 'absolute', zIndex: 3 };
+
+    return (
+      <FadeContainer visible={!isCardActive} style={fadeContainerStyles}>
+        <Header eventId={eventId} overlay isEditorial />
+      </FadeContainer>
+    );
+  }
+  
+  renderFooter() {
+    const { eventId } = this.props;
+    const footerStyles = {
+      opacity: this.activateCardAnimationValue,
+    };
+
+    return (
+      <Animated.View style={footerStyles}>
+        <Footer eventId={eventId} />
+      </Animated.View>
+    );
+  }
+
+  renderSummary() {
+    const { summary } = this.props;
+    const summaryContainerStyles = {
+      opacity: this.activateCardAnimationValue,
+      paddingHorizontal: this.activateCardAnimationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
+      }),
+    };
+
+    const summaryTextColor = {
+      color: this.context.textColor || '#FFFFFF',
+    };
+
+    return (
+      <Animated.View style={summaryContainerStyles}>
+        <Text style={[articleStyles.summary, summaryTextColor]}>{summary}</Text>
+      </Animated.View>
+    );
+  }
+
+  renderCategoryAndTitle() {
+    const { category, caption } = this.props;
     const textColorStyle = { color: this.context.textColor || '#FFFFFF' };
     const titleColorStyle = { color: this.getTitleColor() };
-    const fadeContainerStyles = { position: 'absolute', zIndex: 3 };
+    const categoryAndTitleContainerStyles = {
+      paddingHorizontal: this.activateCardAnimationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
+      }),
+      marginBottom: this.activateCardAnimationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [40, 0],
+      }),
+    };
+    
+    return (
+      <Animated.View style={categoryAndTitleContainerStyles}>
+        <Text style={[articleStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>
+        <Text style={[articleStyles.title, titleColorStyle]}>{caption}</Text>
+      </Animated.View>
+    );
+  }
+
+  render() {
+    const { isCardActive } = this.state;
+    const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
+    
     const borderRadiusStyles = {
       borderRadius: this.activateCardAnimationValue.interpolate({
         inputRange: [0, 1],
@@ -138,62 +214,25 @@ export default class ArticleCard extends Component {
         }) },
         { translateY: this.activateCardAnimationValue.interpolate({
           inputRange: [0, 0.65, 1],
-          outputRange: [-this.frameOffsetY + (STATUS_BAR_HEIGHT + TOP_CARD_LIST_PADDING), -this.frameOffsetY + TOP_CARD_LIST_PADDING, 0],
+          outputRange: [
+            -this.frameOffsetY + (STATUS_BAR_HEIGHT + TOP_CARD_LIST_PADDING),
+            -this.frameOffsetY + TOP_CARD_LIST_PADDING,
+            0],
         }) },
       ],
     });
-    
-    const opacityStyles = {
-      opacity: this.activateCardAnimationValue,
-    };
-
-    const categoryAndTitleContainerStyles = {
-      paddingHorizontal: this.activateCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
-      }),
-      marginBottom: this.activateCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [40, 0],
-      }),
-    };
-
-    const summaryContainerStyles = {
-      opacity: this.activateCardAnimationValue,
-      paddingHorizontal: this.activateCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
-      }),
-    };
 
     return (
       <View ref={view => { this.cardContainer = view; }}>
         <CardContainer clickable clickHandler={this.activateCard} isCardActive={isCardActive} styles={cardContainerStyles}>
           <Animated.View style={[styles.eventContainer, backgroundColorStyle, borderRadiusStyles]}>
-          
-            <FadeContainer visible={!isCardActive} style={fadeContainerStyles}>
-              <Header eventId={eventId} overlay isEditorial />
-            </FadeContainer>
-            <FadeContainer visible={isCardActive} style={articleStyles.closeButton}>
-              <CloseButton onPress={this.activateCard} style={articleStyles.closeButton} tintColor={'#FFFFFF'} />
-            </FadeContainer>
+            {this.renderHeader()}
+            {this.renderCloseButton()}
             {this.renderMedia()}
-
-            <Animated.View style={categoryAndTitleContainerStyles}>
-              <Text style={[articleStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>
-              <Text style={[articleStyles.title, titleColorStyle]}>{caption}</Text>
-            </Animated.View>
-            
+            {this.renderCategoryAndTitle()}
             {this.renderArticleContent()}
-            
-            <Animated.View style={summaryContainerStyles}>
-              <Text style={[articleStyles.summary, textColorStyle]}>{summary}</Text>
-            </Animated.View>
-            
-            <Animated.View style={opacityStyles}>
-              <Footer eventId={eventId} />
-            </Animated.View>
-          
+            {this.renderSummary()}
+            {this.renderFooter()}
           </Animated.View>
         </CardContainer>
       </View>);
