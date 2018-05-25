@@ -141,6 +141,10 @@ export default class ArticleCard extends Component {
         inputRange: [0, 1],
         outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
       }),
+      marginBottom: this.activateCardAnimationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [40, 0],
+      }),
     };
 
     const summaryContainerStyles = {

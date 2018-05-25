@@ -72,6 +72,8 @@ export default class ArticleContent extends Component {
       color: dynamicTextColor,
       fontWeight: '700',
       marginTop: 8,
+      marginBottom: 2,
+      fontSize: 17,
     };
 
     const baseFontStyle = {
@@ -82,6 +84,7 @@ export default class ArticleContent extends Component {
     
     return ([
       !!author && <Text style={[articleStyles.author, { color: dynamicTextColor }]} key={'author'}>{author}</Text>,
+      <Text style={[articleStyles.timestamp, { color: dynamicTextColor }]} key={'timestamp'}>3 hours ago</Text>,
       <Text style={[articleStyles.summary, summaryInArticleStyles]} key={'summary'}>{summary}</Text>,
       <HtmlView
         key={'body'}

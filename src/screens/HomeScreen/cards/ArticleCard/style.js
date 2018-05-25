@@ -20,16 +20,17 @@ export const styles = StyleSheet.create({
     lineHeight: 23,
     color: '#353333',
     marginTop: 6,
-    marginBottom: 0,
   },
   author: {
     fontSize: 15.2,
     color: '#353333',
     fontWeight: '600',
     marginTop: 8,
+    marginBottom: 2,
   },
   timestamp: {
-    // TODO: 
+    fontSize: 13,
+    marginBottom: 2,
   },
   closeButton: {
     position: 'absolute',
