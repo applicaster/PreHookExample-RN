@@ -56,7 +56,6 @@ class MediaImage extends Component {
     const imageStyles = this.getImageStyles();
     const headerVisorContainerStyles = {
       opacity: this.grandientAnimatedValue,
-      position: 'absolute',
     };
 
     return (
@@ -65,7 +64,7 @@ class MediaImage extends Component {
           style={imageStyles}
           source={{ uri: imageUrl }}
         />
-        <Animated.View style={headerVisorContainerStyles}>
+        <Animated.View style={[styles.headerVisor, headerVisorContainerStyles]}>
           <LinearGradient style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />
         </Animated.View>
       </View>);
