@@ -14,6 +14,7 @@ import {
   toggleModal,
   setEventIdForActiveAudio,
   setActiveEventId,
+  setNoActiveEvent,
   setMetadata,
   updateFavoriteTweets,
 
@@ -36,6 +37,7 @@ import {
   SET_METADATA,
   setViewableItems,
   SET_VIEWABLE_ITEMS,
+  SET_NO_ACTIVE_EVENT,
 } from '../../src/actions';
 
 describe('actions', () => {
@@ -247,6 +249,14 @@ describe('actions', () => {
         const action = setActiveEventId('foo');
 
         expect(action.payload).to.deep.equal({ eventId: 'foo' });
+      });
+    });
+
+    describe('setNoActiveEvent', () => {
+      it('should have correct action type', () => {
+        const action = setNoActiveEvent();
+
+        expect(action.type).to.equal(SET_NO_ACTIVE_EVENT);
       });
     });
 
