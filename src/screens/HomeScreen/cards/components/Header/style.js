@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 13,
     paddingTop: 12,
+    height: 43,
   },
   eventHeaderOverlay: {
     backgroundColor: 'transparent',

@@ -1,5 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
+import { SCREEN_MARGIN } from '../../../../constants/measurements';
 
+const width = Dimensions.get('window').width;
 export const styles = StyleSheet.create({
   category: {
     fontSize: 14,
@@ -37,5 +39,11 @@ export const styles = StyleSheet.create({
     top: 7,
     right: 7,
     zIndex: 3,
+  },
+  headerContainer: {
+    position: 'absolute',
+    zIndex: 3,
+    height: 43,
+    width: width - (2 * SCREEN_MARGIN),
   },
 });

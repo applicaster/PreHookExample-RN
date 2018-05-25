@@ -125,10 +125,9 @@ export default class ArticleCard extends Component {
   renderHeader() {
     const { eventId } = this.props;
     const { isCardActive } = this.state;
-    const fadeContainerStyles = { position: 'absolute', zIndex: 3 };
 
     return (
-      <FadeContainer visible={!isCardActive} style={fadeContainerStyles}>
+      <FadeContainer visible={!isCardActive} style={articleStyles.headerContainer}>
         <Header eventId={eventId} overlay isEditorial />
       </FadeContainer>
     );
