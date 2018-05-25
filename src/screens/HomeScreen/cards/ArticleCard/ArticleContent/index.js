@@ -2,19 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, Text, View } from 'react-native';
 import HtmlView from 'react-native-render-html';
+import { timeFromNow } from '../../../../../utils/time';
 import { styles as articleStyles } from '../style';
 import { SCREEN_MARGIN } from '../../../../../constants/measurements';
 
 const TEXT_HORIZONTAL_PADDING = 13;
-
-/*
-      On Card Activate:
-        - build article container to have:
-          - DONE author
-          - timestamp
-          - DONE summary
-          - DONE article body
-    */
 
 export default class ArticleContent extends Component {
   constructor(props) {
@@ -65,7 +57,7 @@ export default class ArticleContent extends Component {
   }
 
   renderContent() {
-    const { author, body, summary } = this.props;
+    const { author, body, summary, timestamp } = this.props;
     const dynamicTextColor = this.getTitleColor();
 
     const summaryInArticleStyles = {
@@ -84,7 +76,7 @@ export default class ArticleContent extends Component {
     
     return ([
       !!author && <Text style={[articleStyles.author, { color: dynamicTextColor }]} key={'author'}>{author}</Text>,
-      <Text style={[articleStyles.timestamp, { color: dynamicTextColor }]} key={'timestamp'}>3 hours ago</Text>,
+      <Text style={[articleStyles.timestamp, { color: dynamicTextColor }]} key={'timestamp'}>{timeFromNow(timestamp)}</Text>,
       <Text style={[articleStyles.summary, summaryInArticleStyles]} key={'summary'}>{summary}</Text>,
       <HtmlView
         key={'body'}
@@ -127,6 +119,7 @@ ArticleContent.propTypes = {
   animationValue: PropTypes.object.isRequired,
   body: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
+  timestamp: PropTypes.number.isRequired,
 };
 
 ArticleContent.contextTypes = {

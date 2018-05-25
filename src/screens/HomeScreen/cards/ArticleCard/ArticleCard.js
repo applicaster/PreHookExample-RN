@@ -65,7 +65,7 @@ export default class ArticleCard extends Component {
   }
   
   renderArticleContent() {
-    const { author, body, summary } = this.props;
+    const { author, body, summary, timestamp } = this.props;
     
     return (
       <ArticleContent
@@ -73,6 +73,7 @@ export default class ArticleCard extends Component {
         animationValue={this.activateCardAnimationValue}
         body={body}
         summary={summary}
+        timestamp={timestamp}
       />
     );
   }
@@ -198,6 +199,7 @@ ArticleCard.propTypes = {
   videoUrl: PropTypes.string,
   setActiveEventId: PropTypes.func.isRequired,
   summary: PropTypes.string.isRequired,
+  timestamp: PropTypes.number.isRequired,
 };
 
 ArticleCard.contextTypes = {
