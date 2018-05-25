@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from 'moment-with-locales-es6';
 
 const REFERENCE = moment();
 const A_WEEK_OLD = REFERENCE.clone().subtract(7, 'days').startOf('day');

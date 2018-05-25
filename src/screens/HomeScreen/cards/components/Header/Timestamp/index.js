@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text } from 'react-native';
-import moment from 'moment';
+import moment from 'moment-with-locales-es6';
 import {
   isWithinAWeek,
   isWithinAYear,
@@ -10,6 +10,7 @@ import { styles } from './style';
 
 class Timestamp extends Component {
   renderTime() {
+    moment.locale('es');
     const timestamp = this.props.timestamp;
     const eventMoment = moment.unix(timestamp);
 
@@ -25,8 +26,9 @@ class Timestamp extends Component {
   render() {
     const { colorStyle } = this.props;
     const time = this.renderTime();
+    const capitalizeFirstLetter = (string) => string[0].toUpperCase() + string.slice(1);
     
-    return (<Text style={[styles.timestamp, colorStyle]}>{time}</Text>);
+    return (<Text style={[styles.timestamp, colorStyle]}>{capitalizeFirstLetter(time)}</Text>);
   }
 }
 
