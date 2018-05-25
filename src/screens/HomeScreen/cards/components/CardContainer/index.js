@@ -24,19 +24,21 @@ export default class CardContainer extends Component {
   }
 
   onPress() {
-    const { clickable, clickHandler } = this.props;
+    const { clickable, clickHandler, isCardActive } = this.props;
     if (clickable) {
       clickHandler();
-      this.grow();
+      if (!isCardActive) this.grow();
     }
   }
 
   onPressIn() {
-    if (this.props.clickable) this.shrink();
+    const { clickable, isCardActive } = this.props;
+    if (clickable && !isCardActive) this.shrink();
   }
 
   onPressOut() {
-    if (this.props.clickable) this.grow();
+    const { clickable, isCardActive } = this.props;
+    if (clickable && !isCardActive) this.grow();
   }
 
   shrink() {
@@ -94,6 +96,12 @@ export default class CardContainer extends Component {
 
 CardContainer.propTypes = {
   children: PropTypes.object.isRequired,
-  clickable: PropTypes.bool,
+  clickable: PropTypes.bool.isRequired,
   clickHandler: PropTypes.func,
+  isCardActive: PropTypes.bool.isRequired,
+};
+
+CardContainer.defaultProps = {
+  isCardActive: false,
+  clickable: false,
 };
