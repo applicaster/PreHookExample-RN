@@ -168,8 +168,9 @@ export default class ArticleCard extends Component {
 
     return (
       <View ref={view => { this.cardContainer = view; }}>
-        <CardContainer clickable clickHandler={this.activateCard} styles={cardContainerStyles}>
+        <CardContainer clickable clickHandler={this.activateCard} isCardActive={isCardActive} styles={cardContainerStyles}>
           <Animated.View style={[styles.eventContainer, backgroundColorStyle, borderRadiusStyles]}>
+          
             <FadeContainer visible={!isCardActive} style={fadeContainerStyles}>
               <Header eventId={eventId} overlay isEditorial />
             </FadeContainer>
@@ -192,7 +193,7 @@ export default class ArticleCard extends Component {
             <Animated.View style={opacityStyles}>
               <Footer eventId={eventId} />
             </Animated.View>
-            
+          
           </Animated.View>
         </CardContainer>
       </View>);
