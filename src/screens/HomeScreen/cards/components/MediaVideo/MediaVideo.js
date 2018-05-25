@@ -113,6 +113,7 @@ export default class MediaVideo extends Component {
 
   renderAudioButton() {
     const { eventId, muted } = this.state;
+    const { isZoomed } = this.props;
 
     const audioButton = (mutedState, buttonIcon) => (
       <FadeContainer style={styles.videoAudioButtonContainer} key={`${eventId}-${buttonIcon}`} visible={mutedState} duration={350}>
@@ -127,9 +128,7 @@ export default class MediaVideo extends Component {
 
     const audioOnButton = audioButton(!muted, VIDEO_AUDIO_ON_BUTTON);
     const audioMutedbutton = audioButton(muted, VIDEO_AUDIO_MUTED_BUTTON);
-    const audioControlsStyles = {
-      opacity: this.audioControlsVisibilityValue,
-    };
+    const audioControlsStyles = { opacity: this.audioControlsVisibilityValue, right: (isZoomed) ? 35 : 15 };
     
     return (
       <Animated.View key={'audioButtons'} style={[styles.videoAudioButtonsWrapper, audioControlsStyles]}>
