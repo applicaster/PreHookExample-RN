@@ -162,7 +162,7 @@ export default class HomeScreen extends Component {
           style={[styles.feedList]} contentContainerStyle={[styles.feedListContent]}
           refreshing={false}
           onRefresh={this.onRefresh}
-          initialNumToRender={3}
+          initialNumToRender={2}
           viewabilityConfigCallbackPairs={this.viewabilityConfigCallbackPairs}
         />
         <ModalScreen />
