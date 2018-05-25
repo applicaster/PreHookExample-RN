@@ -1,5 +1,6 @@
 import moment from 'moment-with-locales-es6';
 
+moment.locale('es');
 const REFERENCE = moment();
 const A_WEEK_OLD = REFERENCE.clone().subtract(7, 'days').startOf('day');
 const A_MONTH_OLD = REFERENCE.clone().subtract(1, 'month').startOf('month');
