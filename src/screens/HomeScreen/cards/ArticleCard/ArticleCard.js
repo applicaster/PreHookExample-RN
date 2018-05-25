@@ -126,8 +126,8 @@ export default class ArticleCard extends Component {
       }),
       transform: [
         { scale: this.activateCardAnimationValue.interpolate({
-          inputRange: [0, 0.9, 1],
-          outputRange: [FULL_SCREEN_SCALE, FULL_SCREEN_SCALE * 1.01, 1],
+          inputRange: [0, 1],
+          outputRange: [FULL_SCREEN_SCALE, 1],
         }) },
         { translateY: this.activateCardAnimationValue.interpolate({
           inputRange: [0, 0.65, 1],
