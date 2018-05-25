@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, Dimensions, Text, View } from 'react-native';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
 import Header from '../components/Header';
@@ -11,12 +12,13 @@ import ArticleContent from './ArticleContent';
 import CloseButton from '../../../../buttons/CloseButton';
 import { styles } from '../style';
 import { styles as articleStyles } from './style';
-import { BORDER_RADIUS, SCREEN_MARGIN } from '../../../../constants/measurements';
+import { BORDER_RADIUS, SCREEN_MARGIN, TOP_CARD_LIST_PADDING } from '../../../../constants/measurements';
 import { CARD_ACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const FULL_SCREEN_SCALE = SCREEN_WIDTH / (SCREEN_WIDTH - (SCREEN_MARGIN / 2));
 const TEXT_HORIZONTAL_PADDING = 13;
+const STATUS_BAR_HEIGHT = getStatusBarHeight();
 
 export default class ArticleCard extends Component {
   constructor(props) {
@@ -129,7 +131,7 @@ export default class ArticleCard extends Component {
         }) },
         { translateY: this.activateCardAnimationValue.interpolate({
           inputRange: [0, 0.65, 1],
-          outputRange: [-this.frameOffsetY + 40, -this.frameOffsetY + 25, 0],
+          outputRange: [-this.frameOffsetY + (STATUS_BAR_HEIGHT + TOP_CARD_LIST_PADDING), -this.frameOffsetY + TOP_CARD_LIST_PADDING, 0],
         }) },
       ],
     });

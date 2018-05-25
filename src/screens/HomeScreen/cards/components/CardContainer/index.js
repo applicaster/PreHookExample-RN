@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Animated,
-  Easing,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import { Animated, Easing, TouchableWithoutFeedback } from 'react-native';
 import { styles } from './style';
 
 const SCALE_ANIMATION_DURATION = 200;
