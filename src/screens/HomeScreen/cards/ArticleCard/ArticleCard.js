@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Dimensions, Text } from 'react-native';
+import { Animated, Dimensions, Text, View } from 'react-native';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
 import Header from '../components/Header';
@@ -23,6 +23,8 @@ export default class ArticleCard extends Component {
     super(props);
     this.state = { isCardActive: false, articleContentHeight: 0 };
 
+    this.cardContainer = null;
+    this.frameOffsetY = 0;
     this.activateCard = this.activateCard.bind(this);
     this.activateCardAnimationValue = new Animated.Value(1);
   }
@@ -42,22 +44,17 @@ export default class ArticleCard extends Component {
     const { isCardActive } = this.state;
     const { setActiveEventId, eventId } = this.props;
     setActiveEventId(eventId);
-    
-    this.setState({ isCardActive: !isCardActive });
 
-    Animated.timing(this.activateCardAnimationValue, {
-      toValue: isCardActive ? 1 : 0,
-      duration: CARD_ACTIVATE_ANIMATION_DURATION,
-    }).start();
-    
-    /*
-      On Card Activate:
-        - build article container to have:
-          - DONE author
-          - timestamp
-          - DONE summary
-          - DONE article body
-    */
+    this.cardContainer.measure((fx, fy, width, height, px, py) => {
+      this.frameOffsetY = py;
+      
+      Animated.timing(this.activateCardAnimationValue, {
+        toValue: isCardActive ? 1 : 0,
+        duration: CARD_ACTIVATE_ANIMATION_DURATION,
+      }).start();
+      
+      this.setState({ isCardActive: !isCardActive });
+    });
   }
   
   deActivateCard() {
@@ -130,6 +127,10 @@ export default class ArticleCard extends Component {
           inputRange: [0, 0.9, 1],
           outputRange: [FULL_SCREEN_SCALE, FULL_SCREEN_SCALE * 1.01, 1],
         }) },
+        { translateY: this.activateCardAnimationValue.interpolate({
+          inputRange: [0, 0.65, 1],
+          outputRange: [-this.frameOffsetY + 40, -this.frameOffsetY + 25, 0],
+        }) },
       ],
     });
     
@@ -157,33 +158,35 @@ export default class ArticleCard extends Component {
     };
 
     return (
-      <CardContainer clickable clickHandler={this.activateCard} styles={cardContainerStyles}>
-        <Animated.View style={[styles.eventContainer, backgroundColorStyle, borderRadiusStyles]}>
-          <FadeContainer visible={!isCardActive} style={fadeContainerStyles}>
-            <Header eventId={eventId} overlay isEditorial />
-          </FadeContainer>
-          <FadeContainer visible={isCardActive} style={articleStyles.closeButton}>
-            <CloseButton onPress={this.activateCard} style={articleStyles.closeButton} tintColor={'#FFFFFF'} />
-          </FadeContainer>
-          {this.renderMedia()}
+      <View ref={view => { this.cardContainer = view; }}>
+        <CardContainer clickable clickHandler={this.activateCard} styles={cardContainerStyles}>
+          <Animated.View style={[styles.eventContainer, backgroundColorStyle, borderRadiusStyles]}>
+            <FadeContainer visible={!isCardActive} style={fadeContainerStyles}>
+              <Header eventId={eventId} overlay isEditorial />
+            </FadeContainer>
+            <FadeContainer visible={isCardActive} style={articleStyles.closeButton}>
+              <CloseButton onPress={this.activateCard} style={articleStyles.closeButton} tintColor={'#FFFFFF'} />
+            </FadeContainer>
+            {this.renderMedia()}
 
-          <Animated.View style={categoryAndTitleContainerStyles}>
-            <Text style={[articleStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>
-            <Text style={[articleStyles.title, titleColorStyle]}>{caption}</Text>
+            <Animated.View style={categoryAndTitleContainerStyles}>
+              <Text style={[articleStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>
+              <Text style={[articleStyles.title, titleColorStyle]}>{caption}</Text>
+            </Animated.View>
+            
+            {this.renderArticleContent()}
+            
+            <Animated.View style={summaryContainerStyles}>
+              <Text style={[articleStyles.summary, textColorStyle]}>{summary}</Text>
+            </Animated.View>
+            
+            <Animated.View style={opacityStyles}>
+              <Footer eventId={eventId} />
+            </Animated.View>
+            
           </Animated.View>
-          
-          {this.renderArticleContent()}
-          
-          <Animated.View style={summaryContainerStyles}>
-            <Text style={[articleStyles.summary, textColorStyle]}>{summary}</Text>
-          </Animated.View>
-          
-          <Animated.View style={opacityStyles}>
-            <Footer eventId={eventId} />
-          </Animated.View>
-          
-        </Animated.View>
-      </CardContainer>);
+        </CardContainer>
+      </View>);
   }
 }
 
