@@ -6,6 +6,7 @@ import {
     toggleModal,
     setEventIdForActiveAudio,
     setActiveEventId,
+    setNoActiveEvent,
     setMetadata,
     setViewableItems,
 } from '../../src/actions';
@@ -105,6 +106,14 @@ describe('app reducer', () => {
       const newState = appReducer(initialState, setActiveEventId('someId'));
 
       expect(newState.get('activeEventId')).to.equal('someId');
+    });
+  });
+
+  describe('setNoActiveEvent is dispatched', () => {
+    it('should set the activeEventId to undefined', () => {
+      const newState = appReducer(initialState, setNoActiveEvent());
+
+      expect(newState.get('activeEventId')).to.equal(null);
     });
   });
 

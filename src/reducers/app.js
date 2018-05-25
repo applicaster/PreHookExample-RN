@@ -9,6 +9,7 @@ import {
     SET_ACTIVE_EVENT_ID,
     SET_METADATA,
     SET_VIEWABLE_ITEMS,
+    SET_NO_ACTIVE_EVENT,
 } from '../actions';
 import { actionCreator } from '../actions/actionHelpers';
 
@@ -60,6 +61,9 @@ export default (state = appInitialState, action = actionCreator()) => {
 
     case SET_ACTIVE_EVENT_ID:
       return state.set('activeEventId', payload.eventId);
+    
+    case SET_NO_ACTIVE_EVENT:
+      return state.set('activeEventId', null);
     
     case SET_EVENT_ID_FOR_ACTIVE_AUDIO:
       return state.set('eventIdForActiveAudio', payload.eventId);
