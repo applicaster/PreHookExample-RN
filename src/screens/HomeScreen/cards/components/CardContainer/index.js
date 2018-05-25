@@ -13,6 +13,18 @@ export default class CardContainer extends Component {
   constructor(props) {
     super(props);
     this.scaleValue = new Animated.Value(0);
+    this.opacityValue = new Animated.Value(0);
+  }
+
+  componentWillMount() {
+    Animated.timing(
+      this.opacityValue,
+      {
+        toValue: 1,
+        duration: 250,
+        useNativeDriver: true,
+      }
+    ).start();
   }
 
   onPress() {
@@ -68,13 +80,15 @@ export default class CardContainer extends Component {
       ],
     };
 
+    const cardOpacityStyles = { opacity: this.opacityValue };
+
     return (
       <TouchableWithoutFeedback
         onPress={() => this.onPress()}
         onPressIn={() => this.onPressIn()}
         onPressOut={() => this.onPressOut()}
       >
-        <Animated.View style={[styles.cardContainer, cardScaleStyles]}>
+        <Animated.View style={[styles.cardContainer, cardScaleStyles, cardOpacityStyles]}>
           {children}
         </Animated.View>
       </TouchableWithoutFeedback>
