@@ -162,7 +162,7 @@ export default class ArticleCard extends Component {
             <Header eventId={eventId} overlay isEditorial />
           </FadeContainer>
           <FadeContainer visible={isCardActive} style={articleStyles.closeButton}>
-            <CloseButton onPress={this.activateCard} style={articleStyles.closeButton} />
+            <CloseButton onPress={this.activateCard} style={articleStyles.closeButton} tintColor={'#FFFFFF'} />
           </FadeContainer>
           {this.renderMedia()}
 
