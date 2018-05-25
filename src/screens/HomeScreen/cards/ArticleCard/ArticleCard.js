@@ -44,9 +44,14 @@ export default class ArticleCard extends Component {
 
   activateCard() {
     const { isCardActive } = this.state;
-    const { setActiveEventId, eventId } = this.props;
-    setActiveEventId(eventId);
-
+    const { setActiveEventId, setNoActiveEvent, eventId } = this.props;
+    
+    if (!isCardActive) {
+      setActiveEventId(eventId);
+    } else {
+      setNoActiveEvent();
+    }
+     
     this.cardContainer.measure((fx, fy, width, height, px, py) => {
       this.frameOffsetY = py;
       
@@ -60,7 +65,9 @@ export default class ArticleCard extends Component {
   }
   
   deActivateCard() {
+    const { setNoActiveEvent } = this.props;
     this.setState({ isCardActive: false });
+    setNoActiveEvent();
   }
   
   renderArticleContent() {
@@ -203,6 +210,7 @@ ArticleCard.propTypes = {
   imageWidth: PropTypes.number.isRequired,
   videoUrl: PropTypes.string,
   setActiveEventId: PropTypes.func.isRequired,
+  setNoActiveEvent: PropTypes.func.isRequired,
   summary: PropTypes.string.isRequired,
   timestamp: PropTypes.number.isRequired,
 };
