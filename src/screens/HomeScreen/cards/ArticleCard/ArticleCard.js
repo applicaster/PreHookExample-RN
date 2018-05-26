@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Dimensions, Platform, Text, View } from 'react-native';
+import { Animated, Dimensions, Platform, ScrollView, Text, View } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
@@ -15,6 +15,7 @@ import { styles as articleStyles } from './style';
 import { BORDER_RADIUS, SCREEN_MARGIN, TOP_CARD_LIST_PADDING } from '../../../../constants/measurements';
 import { CARD_ACTIVATE_ANIMATION_DURATION, CARD_DEACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
 
+const WINDOW_HEIGHT = Dimensions.get('window').height;
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const FULL_SCREEN_SCALE = WINDOW_WIDTH / (WINDOW_WIDTH - (SCREEN_MARGIN / 2));
 const TEXT_HORIZONTAL_PADDING = 13;
@@ -224,6 +225,10 @@ export default class ArticleCard extends Component {
         }) });
     }
 
+    if (isCardActive) {
+      cardContainerStyles.height = WINDOW_HEIGHT;
+    }
+
     return (
       <View ref={view => { this.cardContainer = view; }}>
         <CardContainer
@@ -233,13 +238,17 @@ export default class ArticleCard extends Component {
           isCardActive={isCardActive}
         >
           <Animated.View style={[styles.eventContainer, backgroundColorStyle, cardContainerStyles]}>
-            {this.renderHeader()}
-            {this.renderCloseButton()}
-            {this.renderMedia()}
-            {this.renderCategoryAndTitle()}
-            {this.renderArticleContent()}
-            {this.renderSummary()}
-            {this.renderFooter()}
+            <ScrollView>
+              <View onStartShouldSetResponder={() => isCardActive} >
+                {this.renderHeader()}
+                {this.renderCloseButton()}
+                {this.renderMedia()}
+                {this.renderCategoryAndTitle()}
+                {this.renderArticleContent()}
+                {this.renderSummary()}
+                {this.renderFooter()}
+              </View>
+            </ScrollView>
           </Animated.View>
         </CardContainer>
       </View>);
