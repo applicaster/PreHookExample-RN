@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Dimensions, Text, View, ScrollView } from 'react-native';
+import { Animated, Dimensions, Platform, Text, View } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
@@ -15,7 +15,6 @@ import { styles as articleStyles } from './style';
 import { BORDER_RADIUS, SCREEN_MARGIN, TOP_CARD_LIST_PADDING } from '../../../../constants/measurements';
 import { CARD_ACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
 
-const WINDOW_HEIGHT = Dimensions.get('window').height;
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const FULL_SCREEN_SCALE = WINDOW_WIDTH / (WINDOW_WIDTH - (SCREEN_MARGIN / 2));
 const TEXT_HORIZONTAL_PADDING = 13;
@@ -201,35 +200,39 @@ export default class ArticleCard extends Component {
       }),
     };
 
-    const cardContainerStyles = Object.assign(borderRadiusStyles, {
+    const cardContainerStyles = Object.assign({
       marginHorizontal: this.activateCardAnimationValue.interpolate({
         inputRange: [0, 1],
-        outputRange: [-SCREEN_MARGIN, 0],
+        outputRange: [0, SCREEN_MARGIN],
       }),
       transform: [
         { scale: this.activateCardAnimationValue.interpolate({
           inputRange: [0, 1],
           outputRange: [FULL_SCREEN_SCALE, 1],
         }) },
+      ],
+    }, borderRadiusStyles);
+
+    if (Platform.OS === 'ios') {
+      cardContainerStyles.transform.push(
         { translateY: this.activateCardAnimationValue.interpolate({
           inputRange: [0, 0.65, 1],
           outputRange: [
             -this.frameOffsetY + (STATUS_BAR_HEIGHT + TOP_CARD_LIST_PADDING),
             -this.frameOffsetY + TOP_CARD_LIST_PADDING,
             0],
-        }) },
-      ],
-    });
+        }) });
+    }
 
     return (
       <View ref={view => { this.cardContainer = view; }}>
         <CardContainer
+          applyMargins={false}
           clickable
           clickHandler={this.activateCard}
           isCardActive={isCardActive}
-          styles={cardContainerStyles}
         >
-          <Animated.View style={[styles.eventContainer, backgroundColorStyle, borderRadiusStyles]}>
+          <Animated.View style={[styles.eventContainer, backgroundColorStyle, cardContainerStyles]}>
             {this.renderHeader()}
             {this.renderCloseButton()}
             {this.renderMedia()}
