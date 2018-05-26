@@ -116,7 +116,7 @@ export default class ArticleCard extends Component {
   renderCloseButton() {
     const { isCardActive } = this.state;
     return (
-      <FadeContainer visible={isCardActive} style={articleStyles.closeButton}>
+      <FadeContainer visible={isCardActive} style={articleStyles.closeButtonContainer}>
         <CloseButton onPress={this.activateCard} style={articleStyles.closeButton} tintColor={'#FFFFFF'} />
       </FadeContainer>
     );
@@ -223,7 +223,12 @@ export default class ArticleCard extends Component {
 
     return (
       <View ref={view => { this.cardContainer = view; }}>
-        <CardContainer clickable clickHandler={this.activateCard} isCardActive={isCardActive} styles={cardContainerStyles}>
+        <CardContainer
+          clickable
+          clickHandler={this.activateCard}
+          isCardActive={isCardActive}
+          styles={cardContainerStyles}
+        >
           <Animated.View style={[styles.eventContainer, backgroundColorStyle, borderRadiusStyles]}>
             {this.renderHeader()}
             {this.renderCloseButton()}

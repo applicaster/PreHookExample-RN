@@ -35,9 +35,16 @@ export const styles = StyleSheet.create({
     marginBottom: 2,
   },
   closeButton: {
+    height: 38,
+    width: 38,
+    zIndex: 3,
+  },
+  closeButtonContainer: {
     position: 'absolute',
-    top: 7,
-    right: 7,
+    top: 15,
+    right: 15,
+    height: 38,
+    width: 38,
     zIndex: 3,
   },
   headerContainer: {
