@@ -238,10 +238,10 @@ export default class ArticleCard extends Component {
           isCardActive={isCardActive}
         >
           <Animated.View style={[styles.eventContainer, backgroundColorStyle, cardContainerStyles]}>
+            {this.renderCloseButton()}
             <ScrollView>
-              <View onStartShouldSetResponder={() => isCardActive} >
+              <View onStartShouldSetResponder={() => isCardActive}>
                 {this.renderHeader()}
-                {this.renderCloseButton()}
                 {this.renderMedia()}
                 {this.renderCategoryAndTitle()}
                 {this.renderArticleContent()}
