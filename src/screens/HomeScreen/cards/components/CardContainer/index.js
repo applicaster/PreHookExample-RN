@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, Easing, TouchableWithoutFeedback } from 'react-native';
+import { SCREEN_MARGIN } from '../../../../../constants/measurements';
 import { styles } from './style';
 
 const SCALE_ANIMATION_DURATION = 200;
@@ -67,7 +68,8 @@ export default class CardContainer extends Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { applyMargins, children } = this.props;
+
     const cardScaleStyles = {
       transform: [
         { scale: this.scaleValue.interpolate({
@@ -78,6 +80,7 @@ export default class CardContainer extends Component {
     };
 
     const cardOpacityStyles = { opacity: this.opacityValue };
+    const marginHorizontalStyles = { marginHorizontal: SCREEN_MARGIN };
 
     return (
       <TouchableWithoutFeedback
@@ -85,7 +88,7 @@ export default class CardContainer extends Component {
         onPressIn={() => this.onPressIn()}
         onPressOut={() => this.onPressOut()}
       >
-        <Animated.View style={[styles.cardContainer, cardScaleStyles, cardOpacityStyles]}>
+        <Animated.View style={[styles.cardContainer, cardScaleStyles, cardOpacityStyles, applyMargins && marginHorizontalStyles]}>
           {children}
         </Animated.View>
       </TouchableWithoutFeedback>
@@ -94,6 +97,7 @@ export default class CardContainer extends Component {
 }
 
 CardContainer.propTypes = {
+  applyMargins: PropTypes.bool.isRequired,
   children: PropTypes.object.isRequired,
   clickable: PropTypes.bool.isRequired,
   clickHandler: PropTypes.func,
@@ -103,4 +107,5 @@ CardContainer.propTypes = {
 CardContainer.defaultProps = {
   isCardActive: false,
   clickable: false,
+  applyMargins: true,
 };
