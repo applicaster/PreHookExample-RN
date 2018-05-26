@@ -13,7 +13,7 @@ import CloseButton from '../../../../buttons/CloseButton';
 import { styles } from '../style';
 import { styles as articleStyles } from './style';
 import { BORDER_RADIUS, SCREEN_MARGIN, TOP_CARD_LIST_PADDING } from '../../../../constants/measurements';
-import { CARD_ACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
+import { CARD_ACTIVATE_ANIMATION_DURATION, CARD_DEACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const FULL_SCREEN_SCALE = WINDOW_WIDTH / (WINDOW_WIDTH - (SCREEN_MARGIN / 2));
@@ -57,7 +57,7 @@ export default class ArticleCard extends Component {
       
       Animated.timing(this.activateCardAnimationValue, {
         toValue: isCardActive ? 1 : 0,
-        duration: CARD_ACTIVATE_ANIMATION_DURATION,
+        duration: (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION,
       }).start();
       
       this.setState({ isCardActive: !isCardActive });
