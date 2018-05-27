@@ -9,6 +9,7 @@ import {
 } from '../../actions';
 
 import {
+  isLoading,
   getSortedCardsByDate,
 } from '../../selectors';
 
@@ -16,6 +17,7 @@ import HomeScreen from './HomeScreen';
 
 const mapStateToProps = state => ({
   cards: getSortedCardsByDate(state),
+  isLoading: isLoading(state),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

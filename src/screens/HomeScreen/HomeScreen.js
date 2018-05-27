@@ -158,7 +158,7 @@ export default class HomeScreen extends Component {
   }
 
   render() {
-    const { cards } = this.props;
+    const { cards, isLoading } = this.props;
     const backgroundFeedColor = { backgroundColor: this.context.secondaryTextColor };
     
     return (
@@ -168,7 +168,7 @@ export default class HomeScreen extends Component {
           renderItem={this.renderItem}
           keyExtractor={(item) => item.id }
           style={[styles.feedList]} contentContainerStyle={[styles.feedListContent]}
-          refreshing={false}
+          refreshing={isLoading}
           onRefresh={this.onRefresh}
           initialNumToRender={2}
           viewabilityConfigCallbackPairs={this.viewabilityConfigCallbackPairs}
@@ -185,6 +185,7 @@ HomeScreen.propTypes = {
   cards: PropTypes.array.isRequired,
   fetchEvents: PropTypes.func.isRequired,
   fetchZappPipes: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
   navigation: PropTypes.object.isRequired,
   updateFavoriteTweets: PropTypes.func.isRequired,
   setViewableItems: PropTypes.func.isRequired,
