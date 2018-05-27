@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import {
   DeviceEventEmitter,
   FlatList,
-  View,
   NativeEventEmitter,
   NativeModules,
   Platform,
+  View,
 } from 'react-native';
 import FeedRNUtils from '@applicaster/feed-rn-utils';
 import { sendAnalyticEvent } from 'react-native-zapp-bridge';
@@ -19,6 +19,7 @@ import LinkCard from './cards/LinkCard';
 import TextCard from './cards/TextCard';
 import ArticleCard from './cards/ArticleCard';
 import VideoCard from './cards/VideoCard';
+import PlaceHolderCard from './cards/PlacerHolderCard';
 import { styles } from './style';
 
 export default class HomeScreen extends Component {
@@ -87,6 +88,13 @@ export default class HomeScreen extends Component {
     const { changedItems, viewableItems } = items;
     const { setViewableItems } = this.props;
     setViewableItems(viewableItems, changedItems);
+  }
+
+  renderEmptyList() {
+    return ([
+      <PlaceHolderCard key={1} />,
+      <PlaceHolderCard key={2} />,
+    ]);
   }
 
   renderItem({ item: event }) {
@@ -164,6 +172,7 @@ export default class HomeScreen extends Component {
           onRefresh={this.onRefresh}
           initialNumToRender={2}
           viewabilityConfigCallbackPairs={this.viewabilityConfigCallbackPairs}
+          ListEmptyComponent={() => this.renderEmptyList()}
         />
         <ModalScreen />
         <WritePostButton />
@@ -183,6 +192,7 @@ HomeScreen.propTypes = {
 
 HomeScreen.contextTypes = {
   secondaryTextColor: PropTypes.string,
+  textColor: PropTypes.string,
 };
 
 HomeScreen.childContextTypes = {
