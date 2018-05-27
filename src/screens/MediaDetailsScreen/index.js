@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
+  setNoActiveEvent,
   toggleModal,
 } from '../../actions';
 import {
@@ -14,6 +15,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+  setNoActiveEvent,
   toggleModal,
 }, dispatch);
 

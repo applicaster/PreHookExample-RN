@@ -36,8 +36,9 @@ class MediaDetailsScreen extends Component {
   }
 
   closeModal() {
-    const { toggleModal } = this.props;
+    const { setNoActiveEvent, toggleModal } = this.props;
     toggleModal({ modal: 'MediaModal' });
+    setNoActiveEvent();
     sendAnalyticEvent(CLOSE_IMAGE_DETAIL_SCREEN, {}).then().catch();
   }
 
@@ -57,8 +58,9 @@ class MediaDetailsScreen extends Component {
 }
 
 MediaDetailsScreen.propTypes = {
-  activeEvent: PropTypes.object,
-  toggleModal: PropTypes.func,
+  activeEvent: PropTypes.object.isRequired,
+  setNoActiveEvent: PropTypes.func.isRequired,
+  toggleModal: PropTypes.func.isRequired,
 };
 
 MediaDetailsScreen.contextTypes = {
