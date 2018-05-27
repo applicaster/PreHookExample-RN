@@ -33,8 +33,8 @@ export default class PlaceHolderCard extends Component {
           {this.renderLine({ height: 18, spacing: 5, widthPercentage: 96 })}
           {this.renderLine({ height: 18, spacing: 12, widthPercentage: 65 })}
           {this.renderLine({ height: 10, spacing: 5, widthPercentage: 100 })}
-          {this.renderLine({ height: 10, spacing: 5, widthPercentage: 97 })}
-          {this.renderLine({ height: 10, spacing: 15, widthPercentage: 100 })}
+          {this.renderLine({ height: 10, spacing: 45, widthPercentage: 100 })}
+          <View style={[placeholderStyles.ghostShareButton, ghostBackgroundStyle]} />
         </View>
       </CardContainer>);
   }

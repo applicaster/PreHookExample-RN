@@ -18,4 +18,12 @@ export const styles = StyleSheet.create({
   ghostLine: {
     borderRadius: BORDER_RADIUS_FOR_GHOSTS,
   },
+  ghostShareButton: {
+    borderRadius: BORDER_RADIUS_FOR_GHOSTS,
+    bottom: 10,
+    height: 25,
+    position: 'absolute',
+    right: 15,
+    width: 25,
+  },
 });
