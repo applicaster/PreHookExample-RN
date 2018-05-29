@@ -168,15 +168,15 @@ export default class HomeScreen extends Component {
       <View style={[backgroundFeedColor, { flex: 1 }]}>
         <FlatList
           data={cards}
-          initialNumToRender={2}
-          scrollEnabled={!isCardActive}
+          initialNumToRender={3}
           keyExtractor={(item) => item.id }
-          style={[styles.feedList]} contentContainerStyle={[styles.feedListContent]}
+          ListEmptyComponent={() => this.renderEmptyList()}
+          onRefresh={this.onRefresh}
           refreshing={isLoading}
           renderItem={this.renderItem}
-          onRefresh={this.onRefresh}
+          scrollEnabled={!isCardActive}
+          style={[styles.feedList]} contentContainerStyle={[styles.feedListContent]}
           viewabilityConfigCallbackPairs={this.viewabilityConfigCallbackPairs}
-          ListEmptyComponent={() => this.renderEmptyList()}
         />
         <ModalScreen />
         <WritePostButton />
