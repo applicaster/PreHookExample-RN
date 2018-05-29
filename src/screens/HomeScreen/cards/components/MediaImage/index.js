@@ -10,27 +10,37 @@ import { CARD_ACTIVATE_ANIMATION_DURATION, CARD_DEACTIVATE_ANIMATION_DURATION } 
 class MediaImage extends Component {
   constructor(props) {
     super(props);
-    this.imageAnimatedValue = new Animated.Value(1);
-    this.grandientAnimatedValue = new Animated.Value(1);
+
+    const { shouldAnimate } = props;
+    this.imageAnimatedValue = new Animated.Value(shouldAnimate ? 1 : 0);
+    this.grandientAnimatedValue = new Animated.Value(shouldAnimate ? 1 : 0);
   }
   
   componentWillReceiveProps(nextProps) {
     const { isExpanded: nextIsExpanded } = nextProps;
-    const { isExpanded } = this.props;
+    const { isExpanded, shouldAnimate } = this.props;
+    
+    if (!shouldAnimate) return;
+
+    const gradientAnimationDuration = (nextIsExpanded) ? 200 : 1000;
+    const imageAnimationDuration = (nextIsExpanded)
+      ? CARD_ACTIVATE_ANIMATION_DURATION
+      : CARD_DEACTIVATE_ANIMATION_DURATION;
   
+
     if (nextIsExpanded !== isExpanded) {
       Animated.parallel([
         Animated.timing(
           this.imageAnimatedValue,
           {
             toValue: (nextIsExpanded) ? 0 : 1,
-            duration: (nextIsExpanded) ? CARD_ACTIVATE_ANIMATION_DURATION : CARD_DEACTIVATE_ANIMATION_DURATION,
+            duration: imageAnimationDuration,
           }),
         Animated.timing(
           this.grandientAnimatedValue,
           {
             toValue: (nextIsExpanded) ? 0 : 1,
-            duration: (nextIsExpanded) ? 200 : 1000,
+            duration: gradientAnimationDuration,
           }),
       ]).start();
     }
@@ -52,10 +62,10 @@ class MediaImage extends Component {
   }
 
   render() {
-    const { imageUrl } = this.props;
+    const { imageUrl, shouldAnimate } = this.props;
     const imageStyles = this.getImageStyles();
     const headerVisorContainerStyles = {
-      opacity: this.grandientAnimatedValue,
+      opacity: shouldAnimate ? this.grandientAnimatedValue : 0,
     };
 
     return (
@@ -72,6 +82,7 @@ class MediaImage extends Component {
 }
 
 MediaImage.propTypes = {
+  shouldAnimate: PropTypes.bool.isRequired,
   imageUrl: PropTypes.string.isRequired,
   isZoomed: PropTypes.bool.isRequired,
   isExpanded: PropTypes.bool.isRequired,
@@ -82,6 +93,7 @@ MediaImage.propTypes = {
 MediaImage.defaultProps = {
   isZoomed: false,
   isExpanded: false,
+  shouldAnimate: true,
 };
 
 export default MediaImage;
