@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 23,
     color: '#353333',
+    fontWeight: '600',
     marginTop: 6,
   },
   author: {
