@@ -209,11 +209,12 @@ export default class ArticleCard extends Component {
     }, borderRadiusStyles);
 
     if (Platform.OS === 'ios') {
+      const SCROLLING_CARD_Y_OFFSET = (0.02248 * (this.frameOffsetY - STATUS_BAR_HEIGHT - TOP_CARD_LIST_PADDING));
       cardContainerStyles.transform.push(
         { translateY: this.activateCardAnimationValue.interpolate({
-          inputRange: [0, 0.65, 1],
+          inputRange: (isCardActive) ? [0, 0.65, 1] : [0, 0.25, 1],
           outputRange: [
-            -this.frameOffsetY + (STATUS_BAR_HEIGHT + TOP_CARD_LIST_PADDING),
+            -this.frameOffsetY + (STATUS_BAR_HEIGHT + (TOP_CARD_LIST_PADDING / 2) + SCROLLING_CARD_Y_OFFSET),
             -this.frameOffsetY + TOP_CARD_LIST_PADDING,
             0],
         }) });
