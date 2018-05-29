@@ -44,7 +44,7 @@ export default class ArticleContent extends Component {
 
     const offScreenStyles = {
       position: 'absolute',
-      bottom: -5000,
+      bottom: -2000,
     };
 
     const copy = (
