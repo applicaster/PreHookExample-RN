@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Dimensions, Platform, ScrollView, Text, View } from 'react-native';
+import { Animated, Dimensions, ScrollView, Text, View } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
@@ -208,17 +208,15 @@ export default class ArticleCard extends Component {
       ],
     }, borderRadiusStyles);
 
-    if (Platform.OS === 'ios') {
-      const SCROLLING_CARD_Y_OFFSET = (0.02248 * (this.frameOffsetY - STATUS_BAR_HEIGHT - TOP_CARD_LIST_PADDING));
-      cardContainerStyles.transform.push(
-        { translateY: this.activateCardAnimationValue.interpolate({
-          inputRange: (isCardActive) ? [0, 0.65, 1] : [0, 0.25, 1],
-          outputRange: [
-            -this.frameOffsetY + (STATUS_BAR_HEIGHT + (TOP_CARD_LIST_PADDING / 2) + SCROLLING_CARD_Y_OFFSET),
-            -this.frameOffsetY + TOP_CARD_LIST_PADDING,
-            0],
-        }) });
-    }
+    const SCROLLING_CARD_Y_OFFSET = (0.02248 * (this.frameOffsetY - STATUS_BAR_HEIGHT - TOP_CARD_LIST_PADDING));
+    cardContainerStyles.transform.push(
+      { translateY: this.activateCardAnimationValue.interpolate({
+        inputRange: (isCardActive) ? [0, 0.65, 1] : [0, 0.25, 1],
+        outputRange: [
+          -this.frameOffsetY + (STATUS_BAR_HEIGHT + (TOP_CARD_LIST_PADDING / 2) + SCROLLING_CARD_Y_OFFSET),
+          -this.frameOffsetY + TOP_CARD_LIST_PADDING,
+          0],
+      }) });
 
     if (isCardActive) {
       cardContainerStyles.height = WINDOW_HEIGHT;
