@@ -142,8 +142,10 @@ export default class ArticleCard extends Component {
 
   renderSummary() {
     const { summary } = this.props;
+    const { isCardActive } = this.state;
+    
     const summaryContainerStyles = {
-      opacity: this.activateCardAnimationValue,
+      opacity: isCardActive ? 0 : 1,
       paddingHorizontal: this.activateCardAnimationValue.interpolate({
         inputRange: [0, 1],
         outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
