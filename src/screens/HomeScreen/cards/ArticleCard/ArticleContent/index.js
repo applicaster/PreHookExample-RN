@@ -18,10 +18,11 @@ export default class ArticleContent extends Component {
 
   setArticleContentHeight(event) {
     const { isHeightCalculated } = this.state;
-
+    const HEIGHT_OFFSET = 100;
+    
     if (!isHeightCalculated) {
       this.setState({
-        articleContentHeight: event.nativeEvent.layout.height,
+        articleContentHeight: event.nativeEvent.layout.height + HEIGHT_OFFSET,
         isHeightCalculated: true,
       });
     }
