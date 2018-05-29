@@ -27,9 +27,11 @@ export default class ArticleCard extends Component {
     this.state = { isCardActive: false };
 
     this.cardContainer = null;
+    this.cardHeight = 0;
     this.frameOffsetY = 0;
     this.toggleCard = this.toggleCard.bind(this);
     this.activateCardAnimationValue = new Animated.Value(1);
+    this.transformCardAnimationValue = new Animated.Value(1);
   }
 
   getTitleColor() {
@@ -55,11 +57,20 @@ export default class ArticleCard extends Component {
     
     this.cardContainer.measure((fx, fy, width, height, px, py) => {
       this.frameOffsetY = py;
-      
-      Animated.timing(this.activateCardAnimationValue, {
-        toValue: isCardActive ? 1 : 0,
-        duration: (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION,
-      }).start();
+      this.cardHeight = height;
+
+      Animated.parallel([
+        Animated.timing(this.activateCardAnimationValue, {
+          toValue: isCardActive ? 1 : 0,
+          duration: (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION,
+        }),
+        Animated.spring(this.transformCardAnimationValue, {
+          toValue: isCardActive ? 1 : 0,
+          duration: (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION,
+          friction: 5,
+          tensions: 8,
+        }),
+      ]).start();
       
       this.setState({ isCardActive: !isCardActive });
     });
@@ -142,10 +153,9 @@ export default class ArticleCard extends Component {
 
   renderSummary() {
     const { summary } = this.props;
-    const { isCardActive } = this.state;
     
     const summaryContainerStyles = {
-      opacity: isCardActive ? 0 : 1,
+      opacity: this.activateCardAnimationValue,
       paddingHorizontal: this.activateCardAnimationValue.interpolate({
         inputRange: [0, 1],
         outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
@@ -212,16 +222,16 @@ export default class ArticleCard extends Component {
 
     const SCROLLING_CARD_Y_OFFSET = (0.02248 * (this.frameOffsetY - STATUS_BAR_HEIGHT - TOP_CARD_LIST_PADDING));
     cardContainerStyles.transform.push(
-      { translateY: this.activateCardAnimationValue.interpolate({
-        inputRange: (isCardActive) ? [0, 0.65, 1] : [0, 0.25, 1],
-        outputRange: [
-          -this.frameOffsetY + (STATUS_BAR_HEIGHT + (TOP_CARD_LIST_PADDING / 2) + SCROLLING_CARD_Y_OFFSET),
-          -this.frameOffsetY + TOP_CARD_LIST_PADDING,
-          0],
+      { translateY: this.transformCardAnimationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [-this.frameOffsetY + (STATUS_BAR_HEIGHT + (TOP_CARD_LIST_PADDING / 2) + SCROLLING_CARD_Y_OFFSET), 0],
       }) });
 
     if (isCardActive) {
-      cardContainerStyles.height = WINDOW_HEIGHT;
+      cardContainerStyles.height = this.activateCardAnimationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [WINDOW_HEIGHT, this.cardHeight],
+      });
     }
 
     return (
