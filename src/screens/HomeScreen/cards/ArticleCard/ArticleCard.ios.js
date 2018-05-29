@@ -28,7 +28,7 @@ export default class ArticleCard extends Component {
 
     this.cardContainer = null;
     this.frameOffsetY = 0;
-    this.activateCard = this.activateCard.bind(this);
+    this.toggleCard = this.toggleCard.bind(this);
     this.activateCardAnimationValue = new Animated.Value(1);
   }
 
@@ -43,7 +43,7 @@ export default class ArticleCard extends Component {
     return '#000000';
   }
 
-  activateCard() {
+  toggleCard() {
     const { isCardActive } = this.state;
     const { setActiveEventId, setNoActiveEvent, eventId } = this.props;
     
@@ -52,7 +52,7 @@ export default class ArticleCard extends Component {
     } else {
       setNoActiveEvent();
     }
-     
+    
     this.cardContainer.measure((fx, fy, width, height, px, py) => {
       this.frameOffsetY = py;
       
@@ -63,12 +63,6 @@ export default class ArticleCard extends Component {
       
       this.setState({ isCardActive: !isCardActive });
     });
-  }
-  
-  deActivateCard() {
-    const { setNoActiveEvent } = this.props;
-    this.setState({ isCardActive: false });
-    setNoActiveEvent();
   }
   
   renderArticleContent() {
@@ -117,7 +111,7 @@ export default class ArticleCard extends Component {
     const { isCardActive } = this.state;
     return (
       <FadeContainer visible={isCardActive} style={articleStyles.closeButtonContainer}>
-        <CloseButton onPress={this.activateCard} style={articleStyles.closeButton} tintColor={'#FFFFFF'} />
+        <CloseButton onPress={this.toggleCard} style={articleStyles.closeButton} tintColor={'#FFFFFF'} />
       </FadeContainer>
     );
   }
@@ -234,7 +228,7 @@ export default class ArticleCard extends Component {
         <CardContainer
           applyMargins={false}
           clickable
-          clickHandler={this.activateCard}
+          clickHandler={this.toggleCard}
           isCardActive={isCardActive}
         >
           <Animated.View style={[styles.eventContainer, backgroundColorStyle, cardContainerStyles]}>
