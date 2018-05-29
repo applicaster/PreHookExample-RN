@@ -14,7 +14,6 @@ const TEXT_HORIZONTAL_PADDING = 13;
 export default class ArticleCard extends Component {
   constructor(props) {
     super(props);
-    this.state = { isCardActive: false };
 
     this.cardContainer = null;
     this.frameOffsetY = 0;
@@ -33,21 +32,14 @@ export default class ArticleCard extends Component {
   }
 
   activateCard() {
-    const { isCardActive } = this.state;
-    const { setActiveEventId, setNoActiveEvent, eventId } = this.props;
-    
-    if (!isCardActive) {
-      setActiveEventId(eventId);
-    } else {
-      setNoActiveEvent();
-    }
-      
-    this.setState({ isCardActive: !isCardActive });
+    const { setActiveEventId, eventId } = this.props;    
+    setActiveEventId(eventId);
+    const { navigation } = this.context;
+    navigation.navigate('Article');
   }
   
   deActivateCard() {
     const { setNoActiveEvent } = this.props;
-    this.setState({ isCardActive: false });
     setNoActiveEvent();
   }
 
@@ -113,7 +105,6 @@ export default class ArticleCard extends Component {
   }
 
   render() {
-    const { isCardActive } = this.state;
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
     
     const borderRadiusStyles = {
@@ -130,7 +121,7 @@ export default class ArticleCard extends Component {
           applyMargins={false}
           clickable
           clickHandler={this.activateCard}
-          isCardActive={isCardActive}
+          isCardActive
         >
           <View style={[styles.eventContainer, backgroundColorStyle, cardContainerStyles]}>
             {this.renderHeader()}
@@ -160,4 +151,5 @@ ArticleCard.propTypes = {
 ArticleCard.contextTypes = {
   backgroundColor: PropTypes.string,
   textColor: PropTypes.string,
+  navigation: PropTypes.object,
 };
