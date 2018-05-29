@@ -14,6 +14,10 @@ class ArticleScreen extends Component {
     this.closeArticle = this.closeArticle.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.setNoActiveEvent();
+  }
+
   getTitleColor() {
     const COLOR_CHANGE_TRESHHOLD = 0x999999;
     const { backgroundColor } = this.context;
@@ -119,6 +123,7 @@ ArticleScreen.propTypes = {
   imageHeight: PropTypes.number.isRequired,
   imageUrl: PropTypes.string.isRequired,
   imageWidth: PropTypes.number.isRequired,
+  setNoActiveEvent: PropTypes.func.isRequired,
   summary: PropTypes.string.isRequired,
   timestamp: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,

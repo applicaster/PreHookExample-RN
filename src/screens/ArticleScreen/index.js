@@ -1,11 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {
-} from '../../actions';
-
-import {
-  getActiveEvent,
-} from '../../selectors';
+import { setNoActiveEvent } from '../../actions';
+import { getActiveEvent } from '../../selectors';
 
 import ArticleScreen from './ArticleScreen';
 
@@ -30,6 +26,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+  setNoActiveEvent,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleScreen);
