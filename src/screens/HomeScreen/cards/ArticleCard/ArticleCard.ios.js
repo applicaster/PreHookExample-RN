@@ -24,7 +24,7 @@ const STATUS_BAR_HEIGHT = getStatusBarHeight();
 export default class ArticleCard extends Component {
   constructor(props) {
     super(props);
-    this.state = { isCardActive: false, articleContentHeight: 0 };
+    this.state = { isCardActive: false };
 
     this.cardContainer = null;
     this.frameOffsetY = 0;
