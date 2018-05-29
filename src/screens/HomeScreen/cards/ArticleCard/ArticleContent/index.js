@@ -74,9 +74,11 @@ export default class ArticleContent extends Component {
       lineHeight: 21,
     };
     
+    const capitalizeFirstLetter = (string) => string[0].toUpperCase() + string.slice(1);
+
     return ([
       !!author && <Text style={[articleStyles.author, { color: dynamicTextColor }]} key={'author'}>{author}</Text>,
-      <Text style={[articleStyles.timestamp, { color: dynamicTextColor }]} key={'timestamp'}>{timeFromNow(timestamp)}</Text>,
+      <Text style={[articleStyles.timestamp, { color: dynamicTextColor }]} key={'timestamp'}>{capitalizeFirstLetter(timeFromNow(timestamp))}</Text>,
       <Text style={[articleStyles.summary, summaryInArticleStyles]} key={'summary'}>{summary}</Text>,
       !!body && <HtmlView
         baseFontStyle={baseFontStyle}
