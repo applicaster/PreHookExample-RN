@@ -5,6 +5,7 @@ import { SCREEN_MARGIN } from '../../../../../constants/measurements';
 import { styles } from './style';
 
 const SCALE_ANIMATION_DURATION = 200;
+const FADE_IN_ANIMATION_DURATION = 450;
 
 export default class CardContainer extends Component {
   constructor(props) {
@@ -12,13 +13,13 @@ export default class CardContainer extends Component {
     this.scaleValue = new Animated.Value(0);
     this.opacityValue = new Animated.Value(0);
   }
-
-  componentWillMount() {
+  
+  componentDidMount() {
     Animated.timing(
       this.opacityValue,
       {
         toValue: 1,
-        duration: 250,
+        duration: FADE_IN_ANIMATION_DURATION,
         useNativeDriver: true,
       }
     ).start();
