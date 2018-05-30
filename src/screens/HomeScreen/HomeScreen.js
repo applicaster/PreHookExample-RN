@@ -45,7 +45,7 @@ export default class HomeScreen extends Component {
     this.cardList = null;
 
     const viewabilityConfigForItemsInViewport = {
-      viewabilityConfig: { minimumViewTime: 400, itemVisiblePercentThreshold: 55 },
+      viewabilityConfig: { minimumViewTime: 400, itemVisiblePercentThreshold: 75 },
       onViewableItemsChanged: this.handleItemsInViewport,
     };
 
