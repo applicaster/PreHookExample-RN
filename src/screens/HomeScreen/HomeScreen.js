@@ -42,6 +42,7 @@ export default class HomeScreen extends Component {
     
     this.onRefresh = this.onRefresh.bind(this);
     this.handleItemsInViewport = this.handleItemsInViewport.bind(this);
+    this.cardList = null;
 
     const viewabilityConfigForItemsInViewport = {
       viewabilityConfig: { minimumViewTime: 400, itemVisiblePercentThreshold: 55 },
@@ -97,7 +98,7 @@ export default class HomeScreen extends Component {
     ]);
   }
 
-  renderItem({ item: event }) {
+  renderItem({ item: event, index, listRef }) {
     const { body, caption, category, createdAt, id, type, source, url, user, videoUrl, summary } = event;
     const { url: imageUrl, height, width } = (event.images) ? event.images.default : {};
 
@@ -151,6 +152,8 @@ export default class HomeScreen extends Component {
         imageHeight={height}
         imageUrl={imageUrl}
         imageWidth={width}
+        index={index}
+        listRef={listRef}
         videoUrl={videoUrl}
         summary={summary}
         timestamp={createdAt}
@@ -173,8 +176,9 @@ export default class HomeScreen extends Component {
           ListEmptyComponent={() => this.renderEmptyList()}
           onRefresh={this.onRefresh}
           refreshing={isLoading}
-          renderItem={this.renderItem}
-          scrollEnabled={!isCardActive}
+          renderItem={({ item, index }) => this.renderItem({ item, index, listRef: this.cardList }) }
+          ref={view => { this.cardList = view; }}
+          scrollEnabled={!isCardActive && !isLoading}
           style={[styles.feedList]} contentContainerStyle={[styles.feedListContent]}
           viewabilityConfigCallbackPairs={this.viewabilityConfigCallbackPairs}
         />
