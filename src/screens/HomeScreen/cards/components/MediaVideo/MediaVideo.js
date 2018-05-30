@@ -75,7 +75,7 @@ export default class MediaVideo extends Component {
   }
 
   setAudioControlFadeTimer() {
-    const AUDIO_CONTROLS_IDLE_DURATION = 4000;
+    const AUDIO_CONTROLS_IDLE_DURATION = 6000;
 
     clearTimeout(this.audioVisibilityTimer);
 
