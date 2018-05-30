@@ -34,6 +34,7 @@ describe('app reducer', () => {
         facebookPageId: null,
         twitterScreenName: null,
         publicPageUrl: null,
+        presentationStyle: 'fullScreen',
         viewableItems: {},
         platform: null,
       });
