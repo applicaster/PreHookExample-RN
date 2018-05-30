@@ -27,7 +27,7 @@ export const appInitialState = Map({
   twitterScreenName: null,
   publicPageUrl: null,
   platform: null,
-  presentationStyle: 'fullScreen',
+  navigationStyle: 'fullScreen',
 });
 
 export default (state = appInitialState, action = actionCreator()) => {

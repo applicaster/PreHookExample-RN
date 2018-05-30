@@ -54,7 +54,7 @@ describe('selectors', () => {
         publicPageUrl: 'somePublicPageUrl',
         viewableItems: { 1: {} },
         platform: 'android',
-        presentationStyle: 'fullScreen',
+        navigationStyle: 'fullScreen',
       }),
       events: Map({
         events: { 1: event1, 2: event2 },
@@ -239,7 +239,7 @@ describe('selectors', () => {
   });
 
   describe('getPresentationStyle', () => {
-    it('should get the presentationStyle from the app reducer', () => {
+    it('should get the navigationStyle from the app reducer', () => {
       expect(getPresentationStyle(store.getState())).to.equal('fullScreen');
     });
   });
