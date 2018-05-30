@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Dimensions, ScrollView, Text, View } from 'react-native';
+import { Animated, Dimensions, ListView, ScrollView, Text, View } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
@@ -47,7 +47,7 @@ export default class ArticleCard extends Component {
 
   toggleCard() {
     const { isCardActive } = this.state;
-    const { setActiveEventId, setNoActiveEvent, eventId } = this.props;
+    const { setActiveEventId, setNoActiveEvent, eventId, index } = this.props;
     
     if (!isCardActive) {
       setActiveEventId(eventId);
@@ -56,23 +56,33 @@ export default class ArticleCard extends Component {
     }
     
     this.cardContainer.measure((fx, fy, width, height, px, py) => {
-      this.frameOffsetY = py;
-      this.cardHeight = height;
+      if (py < 0) {
+        this.props.listRef.scrollToIndex({
+          index,
+          viewOffset: TOP_CARD_LIST_PADDING,
+          viewPosition: 0,
+        });
+      }
 
-      Animated.parallel([
-        Animated.timing(this.activateCardAnimationValue, {
-          toValue: isCardActive ? 1 : 0,
-          duration: (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION,
-        }),
-        Animated.spring(this.transformCardAnimationValue, {
-          toValue: isCardActive ? 1 : 0,
-          duration: (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION,
-          friction: 5,
-          tensions: 8,
-        }),
-      ]).start();
-      
-      this.setState({ isCardActive: !isCardActive });
+      this.cardContainer.measure((fx1, fy1, width1, height1, px1, py1) => {
+        this.frameOffsetY = (py < 0) ? (STATUS_BAR_HEIGHT + TOP_CARD_LIST_PADDING) : py1;
+        this.cardHeight = height;
+  
+        Animated.parallel([
+          Animated.timing(this.activateCardAnimationValue, {
+            toValue: isCardActive ? 1 : 0,
+            duration: (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION,
+          }),
+          Animated.spring(this.transformCardAnimationValue, {
+            toValue: isCardActive ? 1 : 0,
+            duration: (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION,
+            friction: 5,
+            tensions: 8,
+          }),
+        ]).start();
+        
+        this.setState({ isCardActive: !isCardActive });
+      });
     });
   }
   
@@ -269,6 +279,8 @@ ArticleCard.propTypes = {
   imageHeight: PropTypes.number.isRequired,
   imageUrl: PropTypes.string.isRequired,
   imageWidth: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
+  listRef: PropTypes.object.isRequired,
   videoUrl: PropTypes.string,
   setActiveEventId: PropTypes.func.isRequired,
   setNoActiveEvent: PropTypes.func.isRequired,
