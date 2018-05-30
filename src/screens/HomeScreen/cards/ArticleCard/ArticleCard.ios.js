@@ -281,6 +281,7 @@ ArticleCard.propTypes = {
   imageWidth: PropTypes.number.isRequired,
   index: PropTypes.number.isRequired,
   listRef: PropTypes.object.isRequired,
+  navigationStyle: PropTypes.string.isRequired,
   videoUrl: PropTypes.string,
   setActiveEventId: PropTypes.func.isRequired,
   setNoActiveEvent: PropTypes.func.isRequired,
