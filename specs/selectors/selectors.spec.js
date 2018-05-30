@@ -27,6 +27,7 @@ import {
   getCards,
   getViewableItems,
   getPlatform,
+  getPresentationStyle,
 } from '../../src/selectors';
 
 const mockStore = configureMockStore();
@@ -53,6 +54,7 @@ describe('selectors', () => {
         publicPageUrl: 'somePublicPageUrl',
         viewableItems: { 1: {} },
         platform: 'android',
+        presentationStyle: 'fullScreen',
       }),
       events: Map({
         events: { 1: event1, 2: event2 },
@@ -233,6 +235,12 @@ describe('selectors', () => {
   describe('getPlatform', () => {
     it('should get the the platform from the app reducer', () => {
       expect(getPlatform(store.getState())).to.equal('android');
+    });
+  });
+
+  describe('getPresentationStyle', () => {
+    it('should get the presentationStyle from the app reducer', () => {
+      expect(getPresentationStyle(store.getState())).to.equal('fullScreen');
     });
   });
 });
