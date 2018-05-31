@@ -5,7 +5,10 @@ import LinearGradient from '@applicaster/react-native-linear-gradient';
 import { styles } from './style';
 import { getMediaDimensions } from '../../../../../utils/size';
 import { SCREEN_MARGIN } from '../../../../../constants/measurements';
-import { CARD_ACTIVATE_ANIMATION_DURATION, CARD_DEACTIVATE_ANIMATION_DURATION } from '../../../../../constants/animations';
+import {
+  CARD_ACTIVATE_ANIMATION_DURATION,
+  CARD_DEACTIVATE_ANIMATION_DURATION,
+} from '../../../../../constants/animations';
 
 class MediaImage extends Component {
   constructor(props) {
@@ -35,24 +38,23 @@ class MediaImage extends Component {
           {
             toValue: (nextIsExpanded) ? 0 : 1,
             duration: imageAnimationDuration,
+            useNativeDriver: true,
           }),
         Animated.timing(
           this.grandientAnimatedValue,
           {
             toValue: (nextIsExpanded) ? 0 : 1,
             duration: gradientAnimationDuration,
+            useNativeDriver: true,
           }),
       ]).start();
     }
   }
 
   getImageStyles() {
-    const { isZoomed, height, width } = this.props;
+    const { isZoomed, isExpanded, height, width } = this.props;
     const imageDimensions = getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN, isZoomed });
-    const leftValueWhenZoomed = this.imageAnimatedValue.interpolate({
-      inputRange: [0, 1],
-      outputRange: [0, -SCREEN_MARGIN],
-    });
+    const leftValueWhenZoomed = isExpanded ? 0 : -SCREEN_MARGIN;
 
     return {
       height: imageDimensions.height,
