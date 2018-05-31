@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Dimensions, ScrollView, Text, View } from 'react-native';
+import { Animated, Dimensions, LayoutAnimation, ScrollView, Text, View } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
@@ -32,6 +32,12 @@ export default class ArticleCard extends Component {
     this.toggleCard = this.toggleCard.bind(this);
     this.activateCardAnimationValue = new Animated.Value(1);
     this.transformCardAnimationValue = new Animated.Value(1);
+    this.opacityAnimationValue = new Animated.Value(1);
+  }
+
+  getAnimationDuration() {
+    const { isCardActive } = this.state;
+    return (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION;
   }
 
   getYoffset() {
@@ -70,20 +76,31 @@ export default class ArticleCard extends Component {
       this.cardContainer.measure((fx1, fy1, width1, height1, px1, py1) => {
         this.frameOffsetY = (py < 0) ? (TOP_CARD_LIST_PADDING) : Math.ceil(py1);
         this.cardHeight = height;
-  
+        
+        const duration = this.getAnimationDuration();
+        const animationConfig = Object.assign({ duration }, LayoutAnimation.Presets.easeInEaseOut);
+        LayoutAnimation.configureNext(animationConfig);
+        
         Animated.parallel([
           Animated.timing(this.activateCardAnimationValue, {
             toValue: isCardActive ? 1 : 0,
-            duration: (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION,
+            duration,
+            useNativeDriver: true,
+          }),
+          Animated.timing(this.opacityAnimationValue, {
+            toValue: isCardActive ? 1 : 0,
+            duration: duration * (isCardActive ? 2.5 : 0.1),
+            useNativeDriver: true,
           }),
           Animated.spring(this.transformCardAnimationValue, {
             toValue: isCardActive ? 1 : 0,
-            duration: (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION,
+            duration,
             friction: 5,
             tensions: 8,
+            useNativeDriver: true,
           }),
         ]).start();
-        
+
         if (!isCardActive) {
           setActiveEventId(eventId);
         } else {
@@ -96,12 +113,14 @@ export default class ArticleCard extends Component {
   
   renderArticleContent() {
     const { author, body, summary, timestamp } = this.props;
+    const { isCardActive } = this.state;
     
     return (
       <ArticleContent
         author={author}
         animationValue={this.activateCardAnimationValue}
         body={body}
+        isPresented={isCardActive}
         summary={summary}
         timestamp={timestamp}
       />
@@ -138,8 +157,10 @@ export default class ArticleCard extends Component {
 
   renderCloseButton() {
     const { isCardActive } = this.state;
+    const duration = this.getAnimationDuration();
+
     return (
-      <FadeContainer visible={isCardActive} style={articleStyles.closeButtonContainer}>
+      <FadeContainer visible={isCardActive} style={articleStyles.closeButtonContainer} duration={duration}>
         <CloseButton onPress={this.toggleCard} style={articleStyles.closeButton} tintColor={'#FFFFFF'} />
       </FadeContainer>
     );
@@ -171,13 +192,13 @@ export default class ArticleCard extends Component {
 
   renderSummary() {
     const { summary } = this.props;
+    const { isCardActive } = this.state;
     
     const summaryContainerStyles = {
-      opacity: this.activateCardAnimationValue,
-      paddingHorizontal: this.activateCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
-      }),
+      opacity: this.opacityAnimationValue,
+      paddingHorizontal: (isCardActive)
+        ? TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN
+        : TEXT_HORIZONTAL_PADDING,
     };
 
     const summaryTextColor = {
@@ -193,17 +214,15 @@ export default class ArticleCard extends Component {
 
   renderCategoryAndTitle() {
     const { category, caption } = this.props;
+    const { isCardActive } = this.state;
+
     const textColorStyle = { color: this.context.textColor || '#FFFFFF' };
     const titleColorStyle = { color: this.getTitleColor() };
     const categoryAndTitleContainerStyles = {
-      paddingHorizontal: this.activateCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
-      }),
-      marginBottom: this.activateCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [40, 0],
-      }),
+      marginHorizontal: (isCardActive)
+        ? TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN
+        : TEXT_HORIZONTAL_PADDING,
+      marginBottom: (isCardActive) ? 40 : 0,
     };
     
     return (
@@ -219,17 +238,11 @@ export default class ArticleCard extends Component {
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
     
     const borderRadiusStyles = {
-      borderRadius: this.activateCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, BORDER_RADIUS],
-      }),
+      borderRadius: (isCardActive) ? 0 : BORDER_RADIUS,
     };
 
     const cardContainerStyles = Object.assign({
-      marginHorizontal: this.activateCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, SCREEN_MARGIN],
-      }),
+      marginHorizontal: (isCardActive) ? 0 : SCREEN_MARGIN,
       transform: [
         { scale: this.activateCardAnimationValue.interpolate({
           inputRange: [0, 1],
@@ -244,10 +257,7 @@ export default class ArticleCard extends Component {
     
 
     if (isCardActive) {
-      cardContainerStyles.height = this.activateCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [WINDOW_HEIGHT, this.cardHeight],
-      });
+      cardContainerStyles.height = (isCardActive) ? WINDOW_HEIGHT : this.cardHeight;
     }
 
     return (
