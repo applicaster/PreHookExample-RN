@@ -18,7 +18,7 @@ export default class ArticleContent extends Component {
 
   setArticleContentHeight(event) {
     const { isHeightCalculated } = this.state;
-    const HEIGHT_OFFSET = 100;
+    const HEIGHT_OFFSET = 200; // TODO: make this dynamic based on html, presentationStyle or find real fix
     
     if (!isHeightCalculated) {
       this.setState({
