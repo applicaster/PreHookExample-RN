@@ -89,7 +89,7 @@ export default class ArticleCard extends Component {
           }),
           Animated.timing(this.opacityAnimationValue, {
             toValue: isCardActive ? 1 : 0,
-            duration: duration * (isCardActive ? 2.5 : 0.1),
+            duration: duration * (isCardActive ? 2 : 0.1),
             useNativeDriver: true,
           }),
           Animated.spring(this.transformCardAnimationValue, {
