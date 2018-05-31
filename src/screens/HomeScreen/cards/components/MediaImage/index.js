@@ -15,10 +15,12 @@ class MediaImage extends Component {
     super(props);
 
     const { shouldAnimate } = props;
+    this.onLoad = this.onLoad.bind(this);
     this.imageAnimatedValue = new Animated.Value(shouldAnimate ? 1 : 0);
+    this.onLoadImageAnimatedValue = new Animated.Value(0);
     this.grandientAnimatedValue = new Animated.Value(shouldAnimate ? 1 : 0);
   }
-  
+
   componentWillReceiveProps(nextProps) {
     const { isExpanded: nextIsExpanded } = nextProps;
     const { isExpanded, shouldAnimate } = this.props;
@@ -51,6 +53,14 @@ class MediaImage extends Component {
     }
   }
 
+  onLoad() {
+    Animated.timing(this.onLoadImageAnimatedValue, {
+      toValue: 1,
+      duration: 500,
+      useNativeDriver: true,
+    }).start();
+  }
+
   getImageStyles() {
     const { isZoomed, isExpanded, height, width } = this.props;
     const imageDimensions = getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN, isZoomed });
@@ -58,8 +68,9 @@ class MediaImage extends Component {
 
     return {
       height: imageDimensions.height,
-      width: imageDimensions.width,
       left: (isZoomed) ? leftValueWhenZoomed : 0,
+      opacity: this.onLoadImageAnimatedValue,
+      width: imageDimensions.width,
     };
   }
 
@@ -73,6 +84,7 @@ class MediaImage extends Component {
     return (
       <View>
         <Animated.Image
+          onLoad={this.onLoad}
           style={imageStyles}
           source={{ uri: imageUrl }}
         />
