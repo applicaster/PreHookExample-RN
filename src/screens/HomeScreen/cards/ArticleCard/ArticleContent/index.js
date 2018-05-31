@@ -95,8 +95,8 @@ export default class ArticleContent extends Component {
     const { animationValue, isPresented } = this.props;
     const bodyContainerStyles = {
       opacity: animationValue.interpolate({
-        inputRange: [0, 0.9, 1],
-        outputRange: [1, 0, 0],
+        inputRange: isPresented ? [0, 1]  : [0, 0.60, 1],
+        outputRange: isPresented ? [1, 0] : [1, 0, 0],
       }),
       marginHorizontal: (isPresented)
         ? TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN
