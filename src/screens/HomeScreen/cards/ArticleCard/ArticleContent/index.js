@@ -45,7 +45,7 @@ export default class ArticleContent extends Component {
 
     const offScreenStyles = {
       position: 'absolute',
-      bottom: -2000,
+      bottom: -4000,
     };
 
     const copy = (
@@ -92,20 +92,16 @@ export default class ArticleContent extends Component {
 
   render() {
     const { articleContentHeight } = this.state;
-    const { animationValue } = this.props;
+    const { animationValue, isPresented } = this.props;
     const bodyContainerStyles = {
       opacity: animationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [1, 0],
+        inputRange: [0, 0.9, 1],
+        outputRange: [1, 0, 0],
       }),
-      paddingHorizontal: animationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN, TEXT_HORIZONTAL_PADDING],
-      }),
-      height: animationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [articleContentHeight, 0],
-      }),
+      marginHorizontal: (isPresented)
+        ? TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN
+        : TEXT_HORIZONTAL_PADDING,
+      height: (isPresented) ? articleContentHeight : 0,
     };
 
     return ([
@@ -121,6 +117,7 @@ ArticleContent.propTypes = {
   author: PropTypes.string.isRequired,
   animationValue: PropTypes.object.isRequired,
   body: PropTypes.string.isRequired,
+  isPresented: PropTypes.bool.isRequired,
   summary: PropTypes.string.isRequired,
   timestamp: PropTypes.number.isRequired,
 };
@@ -128,4 +125,8 @@ ArticleContent.propTypes = {
 ArticleContent.contextTypes = {
   backgroundColor: PropTypes.string,
   textColor: PropTypes.string,
+};
+
+ArticleContent.defaultProps = {
+  isPresented: false,
 };
