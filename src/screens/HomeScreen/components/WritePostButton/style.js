@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
   writePostButtonContainer: {
     position: 'absolute',
     bottom: 10,
-    right: 12,
+    right: 10,
     height: buttonSize,
     width: buttonSize,
   },

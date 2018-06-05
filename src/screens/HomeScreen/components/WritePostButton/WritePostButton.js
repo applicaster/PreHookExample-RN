@@ -26,9 +26,8 @@ class WritePostButton extends Component {
 
   render() {
     const { mainColor, backgroundColor } = this.context;
-    const { isFacebookAvailable, isTwitterAvailable } = this.props;
-    
-    if (!isFacebookAvailable && !isTwitterAvailable) return null;
+    const { isCardActive, isFacebookAvailable, isSocialPostingEnabled, isTwitterAvailable } = this.props;
+    if (isCardActive || !isSocialPostingEnabled || (!isFacebookAvailable && !isTwitterAvailable)) return null;
     
     const buttonTintColor = { tintColor: mainColor };
     const pencilTintColor = { tintColor: backgroundColor };
@@ -63,9 +62,18 @@ WritePostButton.contextTypes = {
 };
 
 WritePostButton.propTypes = {
+  isCardActive: PropTypes.bool.isRequired,
   isFacebookAvailable: PropTypes.bool.isRequired,
   isTwitterAvailable: PropTypes.bool.isRequired,
+  isSocialPostingEnabled: PropTypes.bool.isRequired,
   openWritePostModal: PropTypes.func,
+};
+
+WritePostButton.defaultProps = {
+  isCardActive: false,
+  isFacebookAvailable: false,
+  isTwitterAvailable: false,
+  isSocialPostingEnabled: true,
 };
 
 export default WritePostButton;
