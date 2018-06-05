@@ -37,6 +37,7 @@ describe('app reducer', () => {
         navigationStyle: 'fullScreen',
         viewableItems: {},
         platform: null,
+        isSocialPostingEnabled: true,
       });
     });
   });

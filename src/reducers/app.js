@@ -28,6 +28,7 @@ export const appInitialState = Map({
   publicPageUrl: null,
   platform: null,
   navigationStyle: 'fullScreen',
+  isSocialPostingEnabled: true,
 });
 
 export default (state = appInitialState, action = actionCreator()) => {
