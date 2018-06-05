@@ -51,7 +51,20 @@ class App extends Component {
       localization = JSON.parse(localization);
     }
      
-    const { accountId, timelineId, feedTitle, isLive, liveUrl, hasLive, publicPageUrl, navigationStyle, zappPipesUrl, zappPipesUrlScheme, zappPipesType } = initialAppProps;
+    const {
+      accountId,
+      timelineId,
+      feedTitle,
+      isLive,
+      liveUrl,
+      hasLive,
+      publicPageUrl,
+      navigationStyle,
+      isSocialPostingEnabled,
+      zappPipesUrl,
+      zappPipesUrlScheme,
+      zappPipesType,
+    } = initialAppProps;
     const translations = this.processLocalization(localization, feedTitle);
 
     let { environment } = initialAppProps;
@@ -66,6 +79,7 @@ class App extends Component {
         feedTitle,
         publicPageUrl,
         platform: Platform.OS,
+        isSocialPostingEnabled,
       })),
       events: eventsInitialState,
       translations,
