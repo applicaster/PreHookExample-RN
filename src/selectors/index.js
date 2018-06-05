@@ -15,6 +15,7 @@ export const getModalVisibility = state => state.app.get('isModalVisible');
 export const getPublicPageUrl = state => state.app.get('publicPageUrl');
 export const getViewableItems = state => state.app.get('viewableItems');
 export const getPresentationStyle = state => state.app.get('navigationStyle');
+export const isSocialPostingEnabled = state => state.app.get('isSocialPostingEnabled');
 export const isTwitterAvailable = createSelector(getTwitterScreenName, (twitterScreenName) => !!twitterScreenName);
 export const isFacebookAvailable = createSelector(getFacebookPageId, (facebookPageId) => !!facebookPageId);
 

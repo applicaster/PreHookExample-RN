@@ -23,6 +23,7 @@ import {
   getPublicPageUrl,
   getDataSourceProviderUrl,
   isLoading,
+  isSocialPostingEnabled,
   getSortedCardsByDate,
   getCards,
   getViewableItems,
@@ -55,6 +56,7 @@ describe('selectors', () => {
         viewableItems: { 1: {} },
         platform: 'android',
         navigationStyle: 'fullScreen',
+        isSocialPostingEnabled: true,
       }),
       events: Map({
         events: { 1: event1, 2: event2 },
@@ -183,6 +185,12 @@ describe('selectors', () => {
   describe('isTwitterAvailable', () => {
     it('should get boolean for twitter availability from the app reducer state', () => {
       expect(isTwitterAvailable(store.getState())).to.equal(true);
+    });
+  });
+
+  describe('isSocialPostingEnabled', () => {
+    it('should get boolean for social posting ability from the app reducer state', () => {
+      expect(isSocialPostingEnabled(store.getState())).to.equal(true);
     });
   });
 
