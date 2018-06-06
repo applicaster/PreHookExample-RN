@@ -50,7 +50,9 @@ class App extends Component {
       initialAppProps = JSON.parse(initialAppProps);
       localization = JSON.parse(localization);
     }
-     
+    
+    const appInitialStateProps = appInitialState.toJS();
+
     const {
       accountId,
       timelineId,
@@ -59,8 +61,8 @@ class App extends Component {
       liveUrl,
       hasLive,
       publicPageUrl,
-      navigationStyle,
-      isSocialPostingEnabled,
+      navigationStyle = appInitialStateProps.navigationStyle,
+      isSocialPostingEnabled = appInitialStateProps.isSocialPostingEnabled,
       zappPipesUrl,
       zappPipesUrlScheme,
       zappPipesType,
