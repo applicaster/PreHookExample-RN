@@ -79,7 +79,7 @@ class App extends Component {
         feedTitle,
         publicPageUrl,
         platform: Platform.OS,
-        isSocialPostingEnabled: JSON.parse(isSocialPostingEnabled),
+        isSocialPostingEnabled: JSON.parse(!!isSocialPostingEnabled),
       })),
       events: eventsInitialState,
       translations,
