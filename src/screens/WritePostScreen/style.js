@@ -1,3 +1,4 @@
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 import {
   Dimensions,
   StyleSheet,
@@ -5,7 +6,7 @@ import {
 
 const window = Dimensions.get('window');
 export const BAR_HEIGHT = 45;
-export const STATUS_BAR_HEIGHT = 20;
+export const STATUS_BAR_HEIGHT = getStatusBarHeight();
 
 export const styles = StyleSheet.create({
   writePostScreen: {
@@ -24,14 +25,14 @@ export const styles = StyleSheet.create({
   },
   postBar: {
     flexDirection: 'row',
-    justifyContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+    paddingTop: 20,
     height: BAR_HEIGHT + STATUS_BAR_HEIGHT,
     width: window.width,
   },
   postButton: {
-    position: 'absolute',
-    right: 12,
-    top: 31,
   },
   postButtonLabel: {
     fontSize: 18,
@@ -40,7 +41,6 @@ export const styles = StyleSheet.create({
   writePostLabel: {
     fontWeight: '600',
     fontSize: 18,
-    top: 32,
   },
   postOptionsBar: {
     alignItems: 'center',
@@ -49,9 +49,7 @@ export const styles = StyleSheet.create({
     width: window.width,
   },
   closeButton: {
-    position: 'absolute',
-    top: 22,
-    left: 10,
-    zIndex: 5,
+    height: 38,
+    width: 38,
   },
 });
