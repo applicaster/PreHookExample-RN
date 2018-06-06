@@ -196,7 +196,7 @@ export default class ArticleCard extends Component {
     
     const summaryContainerStyles = {
       opacity: this.opacityAnimationValue,
-      paddingHorizontal: (isCardActive)
+      marginHorizontal: (isCardActive)
         ? TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN
         : TEXT_HORIZONTAL_PADDING,
     };
