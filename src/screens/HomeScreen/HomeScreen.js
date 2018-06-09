@@ -138,6 +138,8 @@ export default class HomeScreen extends Component {
         imageHeight={height}
         imageUrl={imageUrl}
         imageWidth={width}
+        index={index}
+        listRef={listRef}
         videoUrl={videoUrl}
       />);
     }
