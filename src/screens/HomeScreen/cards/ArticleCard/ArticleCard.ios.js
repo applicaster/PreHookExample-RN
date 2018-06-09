@@ -172,7 +172,7 @@ export default class ArticleCard extends Component {
 
     return (
       <FadeContainer visible={!isCardActive} style={articleStyles.headerContainer}>
-        <Header eventId={eventId} overlay isEditorial />
+        <Header eventId={eventId} overlay />
       </FadeContainer>
     );
   }
