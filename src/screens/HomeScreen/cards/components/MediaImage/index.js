@@ -5,10 +5,6 @@ import LinearGradient from '@applicaster/react-native-linear-gradient';
 import { styles } from './style';
 import { getMediaDimensions } from '../../../../../utils/size';
 import { SCREEN_MARGIN } from '../../../../../constants/measurements';
-import {
-  CARD_ACTIVATE_ANIMATION_DURATION,
-  CARD_DEACTIVATE_ANIMATION_DURATION,
-} from '../../../../../constants/animations';
 
 class MediaImage extends Component {
   constructor(props) {
@@ -16,7 +12,6 @@ class MediaImage extends Component {
 
     const { shouldAnimate } = props;
     this.onLoad = this.onLoad.bind(this);
-    this.imageAnimatedValue = new Animated.Value(shouldAnimate ? 1 : 0);
     this.onLoadImageAnimatedValue = new Animated.Value(0);
     this.grandientAnimatedValue = new Animated.Value(shouldAnimate ? 1 : 0);
   }
@@ -28,28 +23,15 @@ class MediaImage extends Component {
     if (!shouldAnimate) return;
 
     const gradientAnimationDuration = (nextIsExpanded) ? 200 : 1000;
-    const imageAnimationDuration = (nextIsExpanded)
-      ? CARD_ACTIVATE_ANIMATION_DURATION
-      : CARD_DEACTIVATE_ANIMATION_DURATION;
   
-
     if (nextIsExpanded !== isExpanded) {
-      Animated.parallel([
-        Animated.timing(
-          this.imageAnimatedValue,
-          {
-            toValue: (nextIsExpanded) ? 0 : 1,
-            duration: imageAnimationDuration,
-            useNativeDriver: true,
-          }),
-        Animated.timing(
-          this.grandientAnimatedValue,
-          {
-            toValue: (nextIsExpanded) ? 0 : 1,
-            duration: gradientAnimationDuration,
-            useNativeDriver: true,
-          }),
-      ]).start();
+      Animated.timing(
+        this.grandientAnimatedValue,
+        {
+          toValue: (nextIsExpanded) ? 0 : 1,
+          duration: gradientAnimationDuration,
+          useNativeDriver: true,
+        }).start();
     }
   }
 
