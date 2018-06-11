@@ -140,8 +140,7 @@ export default class ArticleCard extends Component {
           width={imageWidth}
           isExpanded={isCardActive}
           isZoomed
-        />
-      );
+        />);
     }
 
     return (
@@ -151,8 +150,7 @@ export default class ArticleCard extends Component {
         width={imageWidth}
         isExpanded={isCardActive}
         isZoomed
-      />
-    );
+      />);
   }
 
   renderCloseButton() {

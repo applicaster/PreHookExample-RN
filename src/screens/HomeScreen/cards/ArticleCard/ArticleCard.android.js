@@ -16,7 +16,6 @@ export default class ArticleCard extends Component {
     super(props);
 
     this.cardContainer = null;
-    this.frameOffsetY = 0;
     this.activateCard = this.activateCard.bind(this);
   }
 
@@ -121,7 +120,6 @@ export default class ArticleCard extends Component {
           applyMargins={false}
           clickable
           clickHandler={this.activateCard}
-          isCardActive
         >
           <View style={[styles.eventContainer, backgroundColorStyle, cardContainerStyles]}>
             {this.renderHeader()}
