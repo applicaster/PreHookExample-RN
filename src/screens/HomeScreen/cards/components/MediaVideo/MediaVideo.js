@@ -4,8 +4,8 @@ import {
   Animated,
   Easing,
   Image,
-  ImageBackground,
   TouchableWithoutFeedback,
+  View,
 } from 'react-native';
 import LinearGradient from '@applicaster/react-native-linear-gradient';
 import Video from '@applicaster/react-native-video';
@@ -20,7 +20,7 @@ const AUDIO_CONTROL_FADE_DURATION = 500;
 export default class MediaVideo extends Component {
   constructor(props) {
     super(props);
-    const { isInViewport } = props;
+    const { isInViewport, shouldAnimate } = props;
     this.state = {
       audioControlsVisible: true,
       muted: true,
@@ -30,13 +30,14 @@ export default class MediaVideo extends Component {
     this.toggleAudio = this.toggleAudio.bind(this);
     this.audioControlsVisibilityValue = new Animated.Value(0);
     this.playOverlayVisibilityValue = new Animated.Value(1);
+    this.grandientAnimatedValue = new Animated.Value(shouldAnimate ? 1 : 0);
     this.audioVisibilityTimer = null;
   }
 
   componentWillReceiveProps(nextProps) {
-    const { eventId, isInViewport } = this.props;
+    const { eventId, isInViewport, isExpanded, shouldAnimate } = this.props;
     const { muted, paused } = this.state;
-    const { eventIdForActiveAudio: nextEventIdForActiveAudio, isInViewport: nextIsInViewport } = nextProps;
+    const { eventIdForActiveAudio: nextEventIdForActiveAudio, isInViewport: nextIsInViewport, isExpanded: nextIsExpanded } = nextProps;
 
     const leftViewport = (isInViewport !== nextIsInViewport && !nextIsInViewport);
     const enteredViewport = (isInViewport !== nextIsInViewport && nextIsInViewport);
@@ -62,11 +63,41 @@ export default class MediaVideo extends Component {
       this.setAudioControlFadeTimer();
     }
 
+    if (nextIsExpanded || isExpanded) {
+      if (nextIsExpanded) {
+        clearTimeout(this.audioVisibilityTimer);
+        this.fade({ fadeIn: false, animationValue: this.playOverlayVisibilityValue });
+        this.fade({ fadeIn: true, animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: true }) });
+        pausedStateToSet = false;
+        if (!muted) muteStateToSet = false;
+      } else {
+        this.fade({ fadeIn: !nextIsInViewport, animationValue: this.playOverlayVisibilityValue });
+        this.fade({ fadeIn: true, animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: true }) });
+        this.setAudioControlFadeTimer();
+        muteStateToSet = true;
+        pausedStateToSet = !isInViewport;
+      }
+    }
+
     if (muteStateToSet !== muted || pausedStateToSet !== paused) {
       this.setState({
         muted: muteStateToSet,
         paused: pausedStateToSet,
       });
+    }
+
+    if (!shouldAnimate) return;
+
+    const gradientAnimationDuration = (nextIsExpanded) ? 200 : 1000;
+  
+    if (nextIsExpanded !== isExpanded) {
+      Animated.timing(
+        this.grandientAnimatedValue,
+        {
+          toValue: (nextIsExpanded) ? 0 : 1,
+          duration: gradientAnimationDuration,
+          useNativeDriver: true,
+        }).start();
     }
   }
 
@@ -88,6 +119,17 @@ export default class MediaVideo extends Component {
     }, AUDIO_CONTROLS_IDLE_DURATION);
   }
 
+  getMediaStyles() {
+    const { isZoomed, isExpanded, height, width } = this.props;
+    const mediaDimensions = getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN, isZoomed });
+    const leftValueWhenZoomed = isExpanded ? 0 : -SCREEN_MARGIN;
+
+    return {
+      ...mediaDimensions,
+      left: (isZoomed) ? leftValueWhenZoomed : 0,
+    };
+  }
+
   fade(fadeConfig) {
     const { fadeIn, animationValue, doneCallback = () => {} } = fadeConfig;
     Animated.timing(
@@ -102,18 +144,17 @@ export default class MediaVideo extends Component {
   }
 
   toggleAudio() {
-    const { eventId, setEventIdForActiveAudio } = this.props;
+    const { eventId, setEventIdForActiveAudio, isExpanded } = this.props;
     
     if (this.state.audioControlsVisible) {
       this.setState({ muted: !this.state.muted });
       setEventIdForActiveAudio(eventId);
-      this.setAudioControlFadeTimer();
+      !isExpanded && this.setAudioControlFadeTimer();
     }
   }
 
   renderAudioButton() {
     const { eventId, muted } = this.state;
-    const { isZoomed } = this.props;
 
     const audioButton = (mutedState, buttonIcon) => (
       <FadeContainer style={styles.videoAudioButtonContainer} key={`${eventId}-${buttonIcon}`} visible={mutedState} duration={350}>
@@ -128,7 +169,7 @@ export default class MediaVideo extends Component {
 
     const audioOnButton = audioButton(!muted, VIDEO_AUDIO_ON_BUTTON);
     const audioMutedbutton = audioButton(muted, VIDEO_AUDIO_MUTED_BUTTON);
-    const audioControlsStyles = { opacity: this.audioControlsVisibilityValue, right: (isZoomed) ? 35 : 15 };
+    const audioControlsStyles = { opacity: this.audioControlsVisibilityValue };
     
     return (
       <Animated.View key={'audioButtons'} style={[styles.videoAudioButtonsWrapper, audioControlsStyles]}>
@@ -145,14 +186,17 @@ export default class MediaVideo extends Component {
   }
 
   render() {
-    const { imageUrl, isZoomed, height, width, videoUrl } = this.props;
+    const { shouldAnimate, videoUrl } = this.props;
     const { muted, paused } = this.state;
 
+    const headerVisorContainerStyles = {
+      opacity: shouldAnimate ? this.grandientAnimatedValue : 0,
+    };
+
     return ([
-      <ImageBackground
+      <View
         key={'imageBackground'}
-        style={[styles.imagePlaceHolder, getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN, isZoomed })]}
-        source={{ uri: imageUrl }}
+        style={[styles.videoContainer]}
       >
         {this.renderPlayOverlay()}
         {this.renderAudioButton()}
@@ -162,13 +206,14 @@ export default class MediaVideo extends Component {
           paused={paused}
           resizeMode="cover"
           repeat
-          style={[getMediaDimensions({ height, width, screenMargin: SCREEN_MARGIN, isZoomed })]}
+          style={this.getMediaStyles()}
           playInBackground={false}
           playWhenInactive={false}
         />
-        
-      </ImageBackground>,
-      <LinearGradient key={'headerGradient'} style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />,
+      </View>,
+      <Animated.View key={'headerGradient'} style={[styles.headerVisor, headerVisorContainerStyles]}>
+        <LinearGradient style={ styles.headerVisor } colors={['rgba(0,0,0,0.7)', 'transparent']} />
+      </Animated.View>,
     ]);
   }
 }
@@ -176,16 +221,19 @@ export default class MediaVideo extends Component {
 MediaVideo.propTypes = {
   eventId: PropTypes.string.isRequired,
   eventIdForActiveAudio: PropTypes.string,
-  imageUrl: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
   isZoomed: PropTypes.bool.isRequired,
+  isExpanded: PropTypes.bool.isRequired,
   isInViewport: PropTypes.bool.isRequired,
   setEventIdForActiveAudio: PropTypes.func,
+  shouldAnimate: PropTypes.bool.isRequired,
   videoUrl: PropTypes.string.isRequired,
   width: PropTypes.number.isRequired,
 };
 
 MediaVideo.defaultProps = {
   isZoomed: false,
+  isExpanded: false,
   isInViewport: false,
+  shouldAnimate: true,
 };

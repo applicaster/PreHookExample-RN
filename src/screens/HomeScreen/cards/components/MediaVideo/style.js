@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     width: 65,
     zIndex: 3,
   },
-  imagePlaceHolder: {
+  videoContainer: {
     flexDirection: 'column',
     justifyContent: 'center',
   },
@@ -39,6 +39,6 @@ export const styles = StyleSheet.create({
     height: 48,
     zIndex: 3,
     bottom: 15,
-    right: 35,
+    right: 15,
   },
 });
