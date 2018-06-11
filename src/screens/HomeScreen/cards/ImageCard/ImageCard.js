@@ -31,6 +31,7 @@ export default class ImageCard extends Component {
               height={imageHeight}
               imageUrl={imageUrl}
               width={imageWidth}
+              isZoomed
             />
           </View>
           <Caption caption={caption} />
