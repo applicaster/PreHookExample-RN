@@ -52,6 +52,7 @@ class App extends Component {
     }
     
     const appInitialStateProps = appInitialState.toJS();
+    const getStringBooleanValue = (defaultValue, stringBoolean) => typeof stringBoolean === 'string' ? stringBoolean === 'true' : defaultValue;
 
     const {
       accountId,
@@ -62,7 +63,7 @@ class App extends Component {
       hasLive,
       publicPageUrl,
       navigationStyle = appInitialStateProps.navigationStyle,
-      isSocialPostingEnabled = appInitialStateProps.isSocialPostingEnabled,
+      isSocialPostingEnabled,
       zappPipesUrl,
       zappPipesUrlScheme,
       zappPipesType,
@@ -81,7 +82,7 @@ class App extends Component {
         feedTitle,
         publicPageUrl,
         platform: Platform.OS,
-        isSocialPostingEnabled: JSON.parse(!!isSocialPostingEnabled),
+        isSocialPostingEnabled: getStringBooleanValue(appInitialStateProps.isSocialPostingEnabled, isSocialPostingEnabled),
       })),
       events: eventsInitialState,
       translations,
