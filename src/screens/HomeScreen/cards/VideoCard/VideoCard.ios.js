@@ -1,0 +1,285 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Animated, Dimensions, LayoutAnimation, Text, View } from 'react-native';
+import CardContainer from '../components/CardContainer';
+import FadeContainer from '../components/FadeContainer';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import MediaVideo from '../components/MediaVideo';
+import CloseButton from '../../../../buttons/CloseButton';
+import { styles } from '../style';
+import { styles as videoStyles } from './style';
+import { BORDER_RADIUS, SCREEN_MARGIN, TOP_CARD_LIST_PADDING } from '../../../../constants/measurements';
+import { CARD_ACTIVATE_ANIMATION_DURATION, CARD_DEACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
+
+const WINDOW_HEIGHT = Dimensions.get('window').height;
+const WINDOW_WIDTH = Dimensions.get('window').width;
+const FULL_SCREEN_SCALE = WINDOW_WIDTH / (WINDOW_WIDTH - (SCREEN_MARGIN / 2));
+const TEXT_HORIZONTAL_PADDING = 13;
+
+export default class VideoCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isCardActive: false };
+
+    this.cardContainer = null;
+    this.cardHeight = 0;
+    this.frameOffsetY = 0;
+    this.toggleCard = this.toggleCard.bind(this);
+    this.activateCardAnimationValue = new Animated.Value(1);
+    this.transformCardAnimationValue = new Animated.Value(1);
+    this.opacityAnimationValue = new Animated.Value(1);
+  }
+
+  getAnimationDuration() {
+    const { isCardActive } = this.state;
+    return (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION;
+  }
+
+  getYoffset() {
+    const { navigationStyle } = this.props;
+    if (navigationStyle === 'navbarWithTabbar') {
+      return TOP_CARD_LIST_PADDING - ((WINDOW_HEIGHT / this.frameOffsetY) * 0.09);
+    }
+    
+    return TOP_CARD_LIST_PADDING;
+  }
+
+  getTitleColor() {
+    const COLOR_CHANGE_TRESHHOLD = 0x999999;
+    const { backgroundColor } = this.context;
+    const backgroundColorValue = parseInt(backgroundColor.substring(1), 16);
+    if (backgroundColorValue < COLOR_CHANGE_TRESHHOLD) {
+      return '#FFFFFF';
+    }
+
+    return '#000000';
+  }
+
+  toggleCard() {
+    const { isCardActive } = this.state;
+    const { setActiveEventId, setNoActiveEvent, eventId, index } = this.props;
+    
+    this.cardContainer.measure((fx, fy, width, height, px, py) => {
+      if (py < 0) {
+        this.props.listRef.scrollToIndex({
+          index,
+          viewOffset: TOP_CARD_LIST_PADDING,
+          viewPosition: 0,
+        });
+      }
+
+      this.cardContainer.measure((fx1, fy1, width1, height1, px1, py1) => {
+        this.frameOffsetY = (py < 0) ? (TOP_CARD_LIST_PADDING) : Math.ceil(py1);
+        this.cardHeight = height;
+        
+        const duration = this.getAnimationDuration();
+        const animationConfig = Object.assign({ duration }, LayoutAnimation.Presets.easeInEaseOut);
+        LayoutAnimation.configureNext(animationConfig);
+        
+        Animated.parallel([
+          Animated.timing(this.activateCardAnimationValue, {
+            toValue: isCardActive ? 1 : 0,
+            duration,
+            useNativeDriver: true,
+          }),
+          Animated.timing(this.opacityAnimationValue, {
+            toValue: isCardActive ? 1 : 0,
+            duration,
+            useNativeDriver: true,
+          }),
+          Animated.spring(this.transformCardAnimationValue, {
+            toValue: isCardActive ? 1 : 0,
+            duration,
+            friction: 5,
+            tensions: 8,
+            useNativeDriver: true,
+          }),
+        ]).start();
+
+        if (!isCardActive) {
+          setActiveEventId(eventId);
+        } else {
+          setNoActiveEvent();
+        }
+        this.setState({ isCardActive: !isCardActive });
+      });
+    });
+  }
+
+  renderMedia() {
+    const { isCardActive } = this.state;
+    const { eventId, imageHeight, imageWidth, imageUrl, videoUrl } = this.props;
+    if (videoUrl) {
+      const mediaVideoContainerStyles = {
+        marginTop: isCardActive ? '33%' : 0,
+      };
+      return (
+        <View style={mediaVideoContainerStyles}>
+          <MediaVideo
+            eventId={eventId}
+            height={imageHeight}
+            imageUrl={imageUrl}
+            videoUrl={videoUrl}
+            width={imageWidth}
+            isExpanded={isCardActive}
+            isZoomed
+          />
+        </View>
+      );
+    }
+
+    return null;
+  }
+
+  renderCloseButton() {
+    const { isCardActive } = this.state;
+    const duration = this.getAnimationDuration();
+
+    return (
+      <FadeContainer visible={isCardActive} style={videoStyles.closeButtonContainer} duration={duration}>
+        <CloseButton onPress={this.toggleCard} style={videoStyles.closeButton} tintColor={'#FFFFFF'} />
+      </FadeContainer>
+    );
+  }
+
+  renderHeader() {
+    const { eventId } = this.props;
+    const { isCardActive } = this.state;
+    const headerContainerStyles = { marginTop: isCardActive ? '33%' : 0 };
+
+    return (
+      <FadeContainer visible={!isCardActive} style={[videoStyles.headerContainer, headerContainerStyles]}>
+        <Header eventId={eventId} overlay />
+      </FadeContainer>
+    );
+  }
+  
+  renderFooter() {
+    const { eventId } = this.props;
+    const footerStyles = {
+      opacity: this.activateCardAnimationValue,
+    };
+
+    return (
+      <Animated.View style={footerStyles}>
+        <Footer eventId={eventId} />
+      </Animated.View>
+    );
+  }
+
+  renderCategoryAndTitle() {
+    const { category, caption } = this.props;
+    const { isCardActive } = this.state;
+
+    const textColorStyle = { color: this.context.textColor || '#FFFFFF' };
+    const titleColorStyle = { color: this.getTitleColor() };
+    const categoryAndTitleContainerStyles = {
+      opacity: this.opacityAnimationValue,
+      marginHorizontal: (isCardActive)
+        ? TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN
+        : TEXT_HORIZONTAL_PADDING,
+      marginBottom: (isCardActive) ? 40 : 0,
+    };
+    
+    return (
+      <Animated.View style={categoryAndTitleContainerStyles}>
+        {category && <Text style={[videoStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>}
+        <Text style={[videoStyles.titleEditorial, titleColorStyle]}>{caption}</Text>
+      </Animated.View>
+    );
+  }
+
+  renderTitle() {
+    const { caption } = this.props;
+    const { isCardActive } = this.state;
+    
+    const titleContainerStyles = {
+      opacity: this.opacityAnimationValue,
+      marginHorizontal: (isCardActive)
+        ? TEXT_HORIZONTAL_PADDING + SCREEN_MARGIN
+        : TEXT_HORIZONTAL_PADDING,
+    };
+
+    const titleTextColor = {
+      color: this.context.textColor || '#FFFFFF',
+    };
+
+    return (
+      <Animated.View style={titleContainerStyles}>
+        <Text style={[videoStyles.title, titleTextColor]}>{caption}</Text>
+      </Animated.View>
+    );
+  }
+
+  render() {
+    const { isCardActive } = this.state;
+    const { isEditorial } = this.props;
+
+    const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
+    
+    const borderRadiusStyles = {
+      borderRadius: (isCardActive) ? 0 : BORDER_RADIUS,
+    };
+
+    const cardContainerStyles = Object.assign({
+      marginHorizontal: (isCardActive) ? 0 : SCREEN_MARGIN,
+      transform: [
+        { scale: this.activateCardAnimationValue.interpolate({
+          inputRange: [0, 1],
+          outputRange: [FULL_SCREEN_SCALE, 1],
+        }) },
+        { translateY: this.transformCardAnimationValue.interpolate({
+          inputRange: [0, 1],
+          outputRange: [-this.frameOffsetY + this.getYoffset(), 0],
+        }) },
+      ],
+    }, borderRadiusStyles);
+    
+
+    if (isCardActive) {
+      cardContainerStyles.height = (isCardActive) ? WINDOW_HEIGHT : this.cardHeight;
+    }
+
+    return (
+      <View ref={view => { this.cardContainer = view; }}>
+        <CardContainer
+          applyMargins={false}
+          clickable
+          clickHandler={this.toggleCard}
+          isCardActive={isCardActive}
+        >
+          <Animated.View style={[styles.eventContainer, backgroundColorStyle, cardContainerStyles]}>
+            {this.renderCloseButton()}
+            <View>
+              {this.renderHeader()}
+              {this.renderMedia()}
+              {isEditorial ? this.renderCategoryAndTitle() : this.renderTitle()}
+              {this.renderFooter()}
+            </View>
+          </Animated.View>
+        </CardContainer>
+      </View>);
+  }
+}
+
+VideoCard.propTypes = {
+  caption: PropTypes.string.isRequired,
+  category: PropTypes.string,
+  eventId: PropTypes.string.isRequired,
+  imageHeight: PropTypes.number.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  imageWidth: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
+  isEditorial: PropTypes.bool.isRequired,
+  listRef: PropTypes.object.isRequired,
+  navigationStyle: PropTypes.string.isRequired,
+  videoUrl: PropTypes.string,
+  setActiveEventId: PropTypes.func.isRequired,
+  setNoActiveEvent: PropTypes.func.isRequired,
+};
+
+VideoCard.contextTypes = {
+  backgroundColor: PropTypes.string,
+  textColor: PropTypes.string,
+};

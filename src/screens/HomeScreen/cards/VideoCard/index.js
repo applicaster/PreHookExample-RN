@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { getCards } from '../../../../selectors';
-
+import { bindActionCreators } from 'redux';
+import { getCards, getPresentationStyle } from '../../../../selectors';
+import { setActiveEventId, setNoActiveEvent } from '../../../../actions';
 import VideoCard from './VideoCard';
 
 const mapStateToProps = (state, props) => {
@@ -9,7 +10,13 @@ const mapStateToProps = (state, props) => {
 
   return {
     isEditorial: (event.source === 'zappPipes'),
+    navigationStyle: getPresentationStyle(state),
   };
 };
 
-export default connect(mapStateToProps)(VideoCard);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  setActiveEventId,
+  setNoActiveEvent,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(VideoCard);
