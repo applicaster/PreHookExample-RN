@@ -8,11 +8,13 @@ const mapUser = user => ({
 });
 
 const mapMediaItem = (mediaGroups, type, aspectRatio) => {
+  
+
   for (let i = 0; i < mediaGroups.length; i++) {
     const mediaItems = mediaGroups[i].media_item;
     for (let j = 0; j < mediaItems.length; j++) {
       const mediaItem = mediaItems[j];
-      if (mediaItem.type === type || mediaItem.form === type) {
+      if (mediaItem.type === type || mediaItem.form === type || (type == 'image' && mediaItem.type === 'thumbnail')) {
         if (type === 'video') return mediaItem.src;
 
         return {
@@ -91,11 +93,11 @@ const mapLinkEntry = (entry, title) => {
   };
 };
 
-const mapArticleEntry = (entry, title) => {
-  const { id, title: caption, category, summary, content, published: createdAt, media_group: mediaGroups, author, extensions } = entry;
+const mapArticleEntry = (entry) => {
+  const { id, title: caption, category = '', summary, content, published: createdAt, media_group: mediaGroups, author = {}, extensions = {} } = entry;
   const { content: body } = content;
-  const { name } = author;
-  const { sourceImageUrl: avatarImageUrl } = extensions;
+  const { name = '' } = author;
+  const { sourceImageUrl: avatarImageUrl = '' } = extensions;
   const user = mapUser({ id, name, avatarImageUrl });
 
   return {
