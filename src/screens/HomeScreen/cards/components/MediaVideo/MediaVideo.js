@@ -33,6 +33,16 @@ export default class MediaVideo extends Component {
     this.grandientAnimatedValue = new Animated.Value(shouldAnimate ? 1 : 0);
     this.audioVisibilityTimer = null;
   }
+  
+  componentDidMount() {
+    const { isExpanded } = this.props;
+    if (isExpanded) {
+      this.fade({ fadeDirection: 'out', animationValue: this.playOverlayVisibilityValue });
+      this.fade({ fadeDirection: 'in', animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: true }) });
+      clearTimeout(this.audioVisibilityTimer);
+    }
+  }
+  
 
   componentWillReceiveProps(nextProps) {
     const { eventId, isInViewport, isExpanded, shouldAnimate } = this.props;
@@ -53,26 +63,26 @@ export default class MediaVideo extends Component {
     if (leftViewport) {
       muteStateToSet = true;
       pausedStateToSet = true;
-      this.fade({ fadeIn: true, animationValue: this.playOverlayVisibilityValue });
-      this.fade({ fadeIn: false, animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: false }) });
+      this.fade({ fadeDirection: 'in', animationValue: this.playOverlayVisibilityValue });
+      this.fade({ fadeDirection: 'out', animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: false }) });
       clearTimeout(this.audioVisibilityTimer);
     } else if (enteredViewport) {
       pausedStateToSet = false;
-      this.fade({ fadeIn: false, animationValue: this.playOverlayVisibilityValue });
-      this.fade({ fadeIn: true, animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: true }) });
+      this.fade({ fadeDirection: 'out', animationValue: this.playOverlayVisibilityValue });
+      this.fade({ fadeDirection: 'in', animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: true }) });
       this.setAudioControlFadeTimer();
     }
 
     if (nextIsExpanded || isExpanded) {
       if (nextIsExpanded) {
         clearTimeout(this.audioVisibilityTimer);
-        this.fade({ fadeIn: false, animationValue: this.playOverlayVisibilityValue });
-        this.fade({ fadeIn: true, animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: true }) });
+        this.fade({ fadeDirection: 'out', animationValue: this.playOverlayVisibilityValue });
+        this.fade({ fadeDirection: 'in', animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: true }) });
         pausedStateToSet = false;
         if (!muted) muteStateToSet = false;
       } else {
         this.fade({ fadeIn: !nextIsInViewport, animationValue: this.playOverlayVisibilityValue });
-        this.fade({ fadeIn: true, animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: true }) });
+        this.fade({ fadeDirection: 'in', animationValue: this.audioControlsVisibilityValue, doneCallback: () => this.setState({ audioControlsVisible: true }) });
         this.setAudioControlFadeTimer();
         muteStateToSet = true;
         pausedStateToSet = !isInViewport;
@@ -112,7 +122,7 @@ export default class MediaVideo extends Component {
 
     this.audioVisibilityTimer = setTimeout(() => {
       this.fade({
-        fadeIn: false,
+        fadeDirection: 'out',
         animationValue: this.audioControlsVisibilityValue,
         doneCallback: () => this.setState({ audioControlsVisible: false }),
       });
@@ -131,11 +141,11 @@ export default class MediaVideo extends Component {
   }
 
   fade(fadeConfig) {
-    const { fadeIn, animationValue, doneCallback = () => {} } = fadeConfig;
+    const { fadeDirection, animationValue, doneCallback = () => {} } = fadeConfig;
     Animated.timing(
       animationValue,
       {
-        toValue: (fadeIn) ? 1 : 0,
+        toValue: (fadeDirection === 'in') ? 1 : 0,
         duration: AUDIO_CONTROL_FADE_DURATION,
         easing: Easing.linear,
         useNativeDriver: true,
