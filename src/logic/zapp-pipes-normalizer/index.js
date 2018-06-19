@@ -8,13 +8,11 @@ const mapUser = user => ({
 });
 
 const mapMediaItem = (mediaGroups, type, aspectRatio) => {
-  
-
   for (let i = 0; i < mediaGroups.length; i++) {
     const mediaItems = mediaGroups[i].media_item;
     for (let j = 0; j < mediaItems.length; j++) {
       const mediaItem = mediaItems[j];
-      if (mediaItem.type === type || mediaItem.form === type || (type == 'image' && mediaItem.type === 'thumbnail')) {
+      if (mediaItem.type === type || mediaItem.form === type || (type === 'image' && mediaItem.type === 'thumbnail')) {
         if (type === 'video') return mediaItem.src;
 
         return {
@@ -40,9 +38,9 @@ const mapImage = (imageUrl, imageSize) => ({
 });
 
 const mapImageEntry = (entry, title) => {
-  const { id, title: caption, content, published: createdAt, extensions } = entry;
+  const { id, title: caption, content, published: createdAt, extensions = {} } = entry;
   const { src: imageUrl } = content;
-  const { sourceImageUrl: avatarImageUrl } = extensions;
+  const { sourceImageUrl: avatarImageUrl = '' } = extensions;
   const user = mapUser({ id, name: title, avatarImageUrl });
 
   return {
@@ -57,9 +55,9 @@ const mapImageEntry = (entry, title) => {
 };
 
 const mapVideoEntry = (entry, title = '') => {
-  const { id, title: caption, category, content, published: createdAt, media_group: mediaGroups, extensions } = entry;
+  const { id, title: caption, category = '', content, published: createdAt, media_group: mediaGroups, extensions = {} } = entry;
   const { src: videoUrl } = content;
-  const { sourceImageUrl: avatarImageUrl } = extensions;
+  const { sourceImageUrl: avatarImageUrl = '' } = extensions;
   const user = mapUser({ id, name: title, avatarImageUrl });
 
   return {
@@ -76,7 +74,7 @@ const mapVideoEntry = (entry, title = '') => {
 };
 
 const mapLinkEntry = (entry, title) => {
-  const { id, title: caption, link, published: createdAt, media_group: mediaGroups, extensions } = entry;
+  const { id, title: caption, link, published: createdAt, media_group: mediaGroups, extensions = {} } = entry;
   const { href: url } = link;
   const { sourceImageUrl: avatarImageUrl } = extensions;
   const user = mapUser({ id, name: title, avatarImageUrl });
