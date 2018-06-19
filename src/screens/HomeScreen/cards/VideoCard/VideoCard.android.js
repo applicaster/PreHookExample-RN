@@ -17,7 +17,8 @@ export default class VideoCard extends Component {
     this.state = { isCardActive: false };
 
     this.cardContainer = null;
-    this.toggleCard = this.toggleCard.bind(this);
+    this.activateCard = this.activateCard.bind(this);
+    this.deActivateCard = this.deActivateCard.bind(this);
   }
 
   getTitleColor() {
@@ -31,16 +32,16 @@ export default class VideoCard extends Component {
     return '#000000';
   }
 
-  toggleCard() {
-    const { isCardActive } = this.state;
-    const { setActiveEventId, setNoActiveEvent, eventId } = this.props;
-    
-    if (!isCardActive) {
-      setActiveEventId(eventId);
-    } else {
-      setNoActiveEvent();
-    }
-    this.setState({ isCardActive: !isCardActive });
+  activateCard() {
+    const { setActiveEventId, eventId } = this.props;
+    setActiveEventId(eventId);
+    const { navigation } = this.context;
+    navigation.navigate('VideoScreen');
+  }
+  
+  deActivateCard() {
+    const { setNoActiveEvent } = this.props;
+    setNoActiveEvent();
   }
 
   renderMedia() {
@@ -117,7 +118,7 @@ export default class VideoCard extends Component {
         <CardContainer
           applyMargins={false}
           clickable
-          clickHandler={this.toggleCard}
+          clickHandler={this.activateCard}
         >
           <View style={[styles.eventContainer, backgroundColorStyle, cardContainerStyles]}>
             <View>
@@ -147,5 +148,6 @@ VideoCard.propTypes = {
 
 VideoCard.contextTypes = {
   backgroundColor: PropTypes.string,
+  navigation: PropTypes.object,
   textColor: PropTypes.string,
 };
