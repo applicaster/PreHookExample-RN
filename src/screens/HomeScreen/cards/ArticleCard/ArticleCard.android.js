@@ -31,10 +31,10 @@ export default class ArticleCard extends Component {
   }
 
   activateCard() {
-    const { setActiveEventId, eventId } = this.props;    
+    const { setActiveEventId, eventId } = this.props;
     setActiveEventId(eventId);
     const { navigation } = this.context;
-    navigation.navigate('Article');
+    navigation.navigate('ArticleScreen');
   }
   
   deActivateCard() {
