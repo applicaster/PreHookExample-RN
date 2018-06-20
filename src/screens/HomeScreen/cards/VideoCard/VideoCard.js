@@ -21,13 +21,14 @@ export default class VideoCard extends Component {
   constructor(props) {
     super(props);
     this.state = { isCardActive: false };
+    const { platform } = props;
 
     this.cardContainer = null;
     this.cardHeight = 0;
     this.frameOffsetY = 0;
     this.toggleCard = this.toggleCard.bind(this);
     this.activateCardAnimationValue = new Animated.Value(1);
-    this.transformCardAnimationValue = new Animated.Value(1);
+    this.transformCardAnimationValue = platform === 'ios' ? new Animated.Value(1) : null;
     this.opacityAnimationValue = new Animated.Value(1);
   }
 
@@ -58,13 +59,13 @@ export default class VideoCard extends Component {
 
   toggleCard() {
     const { isCardActive } = this.state;
-    const { setActiveEventId, setNoActiveEvent, eventId, index } = this.props;
+    const { setActiveEventId, setNoActiveEvent, eventId, index, platform } = this.props;
     
     this.cardContainer.measure((fx, fy, width, height, px, py) => {
-      if (py < 0) {
+      if (py < 0 || platform === 'android') {
         this.props.listRef.scrollToIndex({
           index,
-          viewOffset: TOP_CARD_LIST_PADDING,
+          viewOffset: (platform === 'ios' || (platform === 'android' && isCardActive)) ? TOP_CARD_LIST_PADDING : 0,
           viewPosition: 0,
         });
       }
@@ -77,7 +78,7 @@ export default class VideoCard extends Component {
         const animationConfig = Object.assign({ duration }, LayoutAnimation.Presets.easeInEaseOut);
         LayoutAnimation.configureNext(animationConfig);
         
-        Animated.parallel([
+        const animations = [
           Animated.timing(this.activateCardAnimationValue, {
             toValue: isCardActive ? 1 : 0,
             duration,
@@ -88,14 +89,19 @@ export default class VideoCard extends Component {
             duration,
             useNativeDriver: true,
           }),
-          Animated.spring(this.transformCardAnimationValue, {
+        ];
+
+        if (platform === 'ios') {
+          animations.push(Animated.spring(this.transformCardAnimationValue, {
             toValue: isCardActive ? 1 : 0,
             duration,
             friction: 5,
             tensions: 8,
             useNativeDriver: true,
-          }),
-        ]).start();
+          }));
+        }
+
+        Animated.parallel(animations).start();
 
         if (!isCardActive) {
           setActiveEventId(eventId);
@@ -214,28 +220,26 @@ export default class VideoCard extends Component {
 
   render() {
     const { isCardActive } = this.state;
-    const { isEditorial } = this.props;
+    const { isEditorial, platform } = this.props;
 
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
-    
-    const borderRadiusStyles = {
+    const cardContainerStyles = {
       borderRadius: (isCardActive) ? 0 : BORDER_RADIUS,
-    };
-
-    const cardContainerStyles = Object.assign({
       marginHorizontal: (isCardActive) ? 0 : SCREEN_MARGIN,
       transform: [
         { scale: this.activateCardAnimationValue.interpolate({
           inputRange: [0, 1],
           outputRange: [FULL_SCREEN_SCALE, 1],
         }) },
-        { translateY: this.transformCardAnimationValue.interpolate({
-          inputRange: [0, 1],
-          outputRange: [-this.frameOffsetY + this.getYoffset(), 0],
-        }) },
       ],
-    }, borderRadiusStyles);
-    
+    };
+
+    if (platform === 'ios') {
+      cardContainerStyles.transform.push({ translateY: this.transformCardAnimationValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [-this.frameOffsetY + this.getYoffset(), 0],
+      }) });
+    }
 
     if (isCardActive) {
       cardContainerStyles.height = (isCardActive) ? WINDOW_HEIGHT : this.cardHeight;
@@ -274,6 +278,7 @@ VideoCard.propTypes = {
   isEditorial: PropTypes.bool.isRequired,
   listRef: PropTypes.object.isRequired,
   navigationStyle: PropTypes.string.isRequired,
+  platform: PropTypes.string.isRequired,
   videoUrl: PropTypes.string,
   setActiveEventId: PropTypes.func.isRequired,
   setNoActiveEvent: PropTypes.func.isRequired,
