@@ -5,6 +5,7 @@ const TEXT_HORIZONTAL_PADDING = 13 + SCREEN_MARGIN;
 export const styles = StyleSheet.create({
   articleContent: {
     paddingHorizontal: TEXT_HORIZONTAL_PADDING,
+    paddingBottom: 100,
   },
   category: {
     fontSize: 14,
