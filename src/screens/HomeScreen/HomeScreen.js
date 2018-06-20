@@ -168,10 +168,11 @@ export default class HomeScreen extends Component {
   render() {
     const { cards, isCardActive, isLoading } = this.props;
     const backgroundFeedColor = { backgroundColor: this.context.secondaryTextColor };
-    
+
     return (
       <View style={[backgroundFeedColor, { flex: 1 }]}>
         <FlatList
+          contentContainerStyle={[styles.feedListContent]}
           data={cards}
           initialNumToRender={3}
           keyExtractor={(item) => item.id }
@@ -181,7 +182,7 @@ export default class HomeScreen extends Component {
           renderItem={({ item, index }) => this.renderItem({ item, index, listRef: this.cardList }) }
           ref={view => { this.cardList = view; }}
           scrollEnabled={!isCardActive && !isLoading}
-          style={[styles.feedList]} contentContainerStyle={[styles.feedListContent]}
+          style={[styles.feedList]}
           viewabilityConfigCallbackPairs={this.viewabilityConfigCallbackPairs}
         />
         <ModalScreen />
