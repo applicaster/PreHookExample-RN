@@ -201,7 +201,7 @@ export default class ArticleCard extends Component {
   renderSummary() {
     const { summary } = this.props;
     const { isCardActive, completeSummary } = this.state;
-    const MAX_SUMMARY_LENGTH = 100;
+    const MAX_SUMMARY_LENGTH = 90;
 
     const summaryContainerStyles = {
       opacity: this.opacityAnimationValue,

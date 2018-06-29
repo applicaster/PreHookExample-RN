@@ -14,9 +14,13 @@ const TEXT_HORIZONTAL_PADDING = 13;
 export default class ArticleCard extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      completeSummary: false,
+    };
 
     this.cardContainer = null;
     this.activateCard = this.activateCard.bind(this);
+    this.showCompleteSummary = this.showCompleteSummary.bind(this);
   }
 
   getTitleColor() {
@@ -36,10 +40,16 @@ export default class ArticleCard extends Component {
     const { navigation } = this.context;
     navigation.navigate('ArticleScreen');
   }
-  
+
   deActivateCard() {
     const { setNoActiveEvent } = this.props;
     setNoActiveEvent();
+  }
+
+  showCompleteSummary() {
+    this.setState({
+      completeSummary: true,
+    });
   }
 
   renderMedia() {
@@ -73,7 +83,7 @@ export default class ArticleCard extends Component {
     const { eventId } = this.props;
     return <Header eventId={eventId} overlay isEditorial />;
   }
-  
+
   renderFooter() {
     const { eventId } = this.props;
     return <Footer eventId={eventId} />;
@@ -81,12 +91,28 @@ export default class ArticleCard extends Component {
 
   renderSummary() {
     const { summary } = this.props;
+    const { completeSummary } = this.state;
+
+    const MAX_SUMMARY_LENGTH = 90;
+
+    const trimSummary = summary.length > MAX_SUMMARY_LENGTH;
+
+    const displayMoreText = 'más';
+
+
     const summaryStyles = {
       color: this.context.textColor || '#FFFFFF',
       paddingHorizontal: TEXT_HORIZONTAL_PADDING,
     };
 
-    return <Text style={[articleStyles.summary, summaryStyles]}>{summary}</Text>;
+    const showSummary = () => {
+      if (trimSummary && !completeSummary) {
+        return `${summary.substring(0, MAX_SUMMARY_LENGTH)}... ${displayMoreText}`;
+      }
+      return summary;
+    };
+
+    return <Text style={[articleStyles.summary, summaryStyles]}>{showSummary()}</Text>;
   }
 
   renderCategoryAndTitle() {
@@ -94,7 +120,7 @@ export default class ArticleCard extends Component {
     const textColorStyle = { color: this.context.textColor || '#FFFFFF' };
     const titleColorStyle = { color: this.getTitleColor() };
     const categoryAndTitleContainerStyles = { paddingHorizontal: TEXT_HORIZONTAL_PADDING };
-    
+
     return (
       <View style={categoryAndTitleContainerStyles}>
         <Text style={[articleStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>
@@ -105,7 +131,7 @@ export default class ArticleCard extends Component {
 
   render() {
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
-    
+
     const borderRadiusStyles = {
       borderRadius: BORDER_RADIUS,
     };
