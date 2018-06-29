@@ -24,12 +24,16 @@ const STATUS_BAR_HEIGHT = getStatusBarHeight();
 export default class ArticleCard extends Component {
   constructor(props) {
     super(props);
-    this.state = { isCardActive: false };
+    this.state = {
+      isCardActive: false,
+      completeSummary: false,
+    };
 
     this.cardContainer = null;
     this.cardHeight = 0;
     this.frameOffsetY = 0;
     this.toggleCard = this.toggleCard.bind(this);
+    this.showCompleteSummary = this.showCompleteSummary.bind(this);
     this.activateCardAnimationValue = new Animated.Value(1);
     this.transformCardAnimationValue = new Animated.Value(1);
     this.opacityAnimationValue = new Animated.Value(1);
@@ -45,7 +49,7 @@ export default class ArticleCard extends Component {
     if (navigationStyle === 'navbarWithTabbar') {
       return TOP_CARD_LIST_PADDING - ((WINDOW_HEIGHT / this.frameOffsetY) * 0.09);
     }
-    
+
     return TOP_CARD_LIST_PADDING;
   }
 
@@ -63,7 +67,7 @@ export default class ArticleCard extends Component {
   toggleCard() {
     const { isCardActive } = this.state;
     const { setActiveEventId, setNoActiveEvent, eventId, index } = this.props;
-    
+
     this.cardContainer.measure((fx, fy, width, height, px, py) => {
       if (py < 0) {
         this.props.listRef.scrollToIndex({
@@ -76,11 +80,11 @@ export default class ArticleCard extends Component {
       this.cardContainer.measure((fx1, fy1, width1, height1, px1, py1) => {
         this.frameOffsetY = (py < 0) ? (TOP_CARD_LIST_PADDING) : Math.ceil(py1);
         this.cardHeight = height;
-        
+
         const duration = this.getAnimationDuration();
         const animationConfig = Object.assign({ duration }, LayoutAnimation.Presets.easeInEaseOut);
         LayoutAnimation.configureNext(animationConfig);
-        
+
         Animated.parallel([
           Animated.timing(this.activateCardAnimationValue, {
             toValue: isCardActive ? 1 : 0,
@@ -110,11 +114,17 @@ export default class ArticleCard extends Component {
       });
     });
   }
-  
+
+  showCompleteSummary() {
+    this.setState({
+      completeSummary: true,
+    });
+  }
+
   renderArticleContent() {
     const { author, body, summary, timestamp } = this.props;
     const { isCardActive } = this.state;
-    
+
     return (
       <ArticleContent
         author={author}
@@ -174,7 +184,7 @@ export default class ArticleCard extends Component {
       </FadeContainer>
     );
   }
-  
+
   renderFooter() {
     const { eventId } = this.props;
     const footerStyles = {
@@ -190,8 +200,9 @@ export default class ArticleCard extends Component {
 
   renderSummary() {
     const { summary } = this.props;
-    const { isCardActive } = this.state;
-    
+    const { isCardActive, completeSummary } = this.state;
+    const MAX_SUMMARY_LENGTH = 100;
+
     const summaryContainerStyles = {
       opacity: this.opacityAnimationValue,
       marginHorizontal: (isCardActive)
@@ -203,9 +214,25 @@ export default class ArticleCard extends Component {
       color: this.context.textColor || '#FFFFFF',
     };
 
+    const trimSummary = summary.length > MAX_SUMMARY_LENGTH;
+
+    const displayMoreText = 'más';
+
+    const showSummary = () => {
+      if (trimSummary && !completeSummary) {
+        return `${summary.substring(0, MAX_SUMMARY_LENGTH)}... ${displayMoreText}`;
+      }
+      return summary;
+    };
+
     return (
       <Animated.View style={summaryContainerStyles}>
-        <Text style={[articleStyles.summary, summaryTextColor]}>{summary}</Text>
+        <Text
+          style={[articleStyles.summary, summaryTextColor]}
+          onPress={this.showCompleteSummary}
+        >
+          {showSummary()}
+        </Text>
       </Animated.View>
     );
   }
@@ -222,7 +249,7 @@ export default class ArticleCard extends Component {
         : TEXT_HORIZONTAL_PADDING,
       marginBottom: (isCardActive) ? 40 : 0,
     };
-    
+
     return (
       <Animated.View style={categoryAndTitleContainerStyles}>
         <Text style={[articleStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>
@@ -234,7 +261,7 @@ export default class ArticleCard extends Component {
   render() {
     const { isCardActive } = this.state;
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
-    
+
     const borderRadiusStyles = {
       borderRadius: (isCardActive) ? 0 : BORDER_RADIUS,
     };
@@ -242,17 +269,21 @@ export default class ArticleCard extends Component {
     const cardContainerStyles = Object.assign({
       marginHorizontal: (isCardActive) ? 0 : SCREEN_MARGIN,
       transform: [
-        { scale: this.activateCardAnimationValue.interpolate({
-          inputRange: [0, 1],
-          outputRange: [FULL_SCREEN_SCALE, 1],
-        }) },
-        { translateY: this.transformCardAnimationValue.interpolate({
-          inputRange: [0, 1],
-          outputRange: [-this.frameOffsetY + this.getYoffset(), 0],
-        }) },
+        {
+          scale: this.activateCardAnimationValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: [FULL_SCREEN_SCALE, 1],
+          }),
+        },
+        {
+          translateY: this.transformCardAnimationValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: [-this.frameOffsetY + this.getYoffset(), 0],
+          }),
+        },
       ],
     }, borderRadiusStyles);
-    
+
 
     if (isCardActive) {
       cardContainerStyles.height = (isCardActive) ? WINDOW_HEIGHT : this.cardHeight;
