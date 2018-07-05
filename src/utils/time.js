@@ -11,7 +11,8 @@ export const isWithinAMonth = (momentDate) => momentDate.isAfter(A_MONTH_OLD);
 export const isWithinAYear = (momentDate) => momentDate.isAfter(A_YEAR_OLD);
 
 export const timeFromNow = (timestamp) => {
-  const eventMoment = moment.unix(timestamp);
+  const time = moment.unix(timestamp);
+  const eventMoment = time.isDST() ? time.subtract(1, 'hour') : time;
 
   if (isWithinAWeek(eventMoment)) {
     return eventMoment.fromNow();
