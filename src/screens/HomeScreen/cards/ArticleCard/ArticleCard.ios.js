@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, Dimensions, LayoutAnimation, ScrollView, Text, View } from 'react-native';
-import { getStatusBarHeight } from 'react-native-status-bar-height';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MediaImage from '../components/MediaImage';
 import MediaVideo from '../components/MediaVideo';
+import ExpandText from '../components/ExpandText';
 import ArticleContent from './ArticleContent';
 import CloseButton from '../../../../buttons/CloseButton';
 import { styles } from '../style';
@@ -30,14 +30,12 @@ export default class ArticleCard extends Component {
     super(props);
     this.state = {
       isCardActive: false,
-      isSummaryExpanded: false,
     };
 
     this.cardContainer = null;
     this.cardHeight = 0;
     this.frameOffsetY = 0;
     this.toggleCard = this.toggleCard.bind(this);
-    this.expandSummary = this.expandSummary.bind(this);
     this.activateCardAnimationValue = new Animated.Value(1);
     this.transformCardAnimationValue = new Animated.Value(1);
     this.opacityAnimationValue = new Animated.Value(1);
@@ -119,12 +117,6 @@ export default class ArticleCard extends Component {
     });
   }
 
-  expandSummary() {
-    this.setState({
-      isSummaryExpanded: true,
-    });
-  }
-
   renderArticleContent() {
     const { author, body, summary, timestamp } = this.props;
     const { isCardActive } = this.state;
@@ -203,8 +195,8 @@ export default class ArticleCard extends Component {
   }
 
   renderSummary() {
-    const { summary, expandTextButton } = this.props;
-    const { isCardActive, isSummaryExpanded } = this.state;
+    const { summary, expandText } = this.props;
+    const { isCardActive } = this.state;
 
     const summaryContainerStyles = {
       opacity: this.opacityAnimationValue,
@@ -217,23 +209,16 @@ export default class ArticleCard extends Component {
       color: this.context.textColor || '#FFFFFF',
     };
 
-    const trimSummary = summary.length > MAX_SUMMARY_LENGTH;
-
-    const showSummary = () => {
-      if (trimSummary && !isSummaryExpanded) {
-        return `${summary.substring(0, MAX_SUMMARY_LENGTH)}... ${expandTextButton}`;
-      }
-      return summary;
-    };
+    console.log(expandText, 'JOJOJO')
 
     return (
       <Animated.View style={summaryContainerStyles}>
-        <Text
-          style={[articleStyles.summary, summaryTextColor]}
-          onPress={this.expandSummary}
-        >
-          {showSummary()}
-        </Text>
+        <ExpandText
+          content={summary}
+          expandText={expandText}
+          textStyle={[articleStyles.summary, summaryTextColor]}
+          maxChar={MAX_SUMMARY_LENGTH}
+        />
       </Animated.View>
     );
   }
@@ -333,7 +318,7 @@ ArticleCard.propTypes = {
   setNoActiveEvent: PropTypes.func.isRequired,
   summary: PropTypes.string.isRequired,
   timestamp: PropTypes.number.isRequired,
-  expandTextButton: PropTypes.string.isRequired,
+  expandText: PropTypes.string.isRequired,
 };
 
 ArticleCard.contextTypes = {
