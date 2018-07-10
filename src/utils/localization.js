@@ -13,7 +13,7 @@ export const iosTranslationMapping = (translations, feedTitle) => ({
   twitterPostErrorMessage: translations.Feed2_AlertTwitterSendFailedMessage || 'Unable to post to Twitter',
   alertOk: translations.Feed2_AlertOK || 'Ok',
   dismiss: translations.Feed2_Dismiss || 'Dismiss',
-  expandTextButton: translations.expandTextButton || 'más',
+  expandText: translations.expandText || 'más',
 });
 
 export const androidTranslationMapping = (translations, feedTitle) => ({
@@ -31,5 +31,5 @@ export const androidTranslationMapping = (translations, feedTitle) => ({
   twitterPostErrorMessage: translations.feed_failed_tweet || 'Unable to post to Twitter',
   alertOk: translations.CommonAlertOK || 'Ok',
   dismiss: translations.CommonAlertCancel || 'Cancel',
-  expandTextButton: translations.expandTextButton || 'más',
+  expandText: translations.expandText || 'más',
 });

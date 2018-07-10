@@ -6,7 +6,7 @@ import ArticleCard from './ArticleCard';
 
 const mapStateToProps = state => ({
   navigationStyle: getPresentationStyle(state),
-  expandTextButton: getTranslations(state).shareTitle,
+  expandText: getTranslations(state).expandText,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
