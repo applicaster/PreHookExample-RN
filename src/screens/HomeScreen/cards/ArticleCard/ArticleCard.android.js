@@ -8,7 +8,7 @@ import MediaImage from '../components/MediaImage';
 import MediaVideo from '../components/MediaVideo';
 import { styles } from '../style';
 import { styles as articleStyles } from './style';
-import { BORDER_RADIUS, SCREEN_MARGIN } from '../../../../constants/measurements';
+import { BORDER_RADIUS, SCREEN_MARGIN, MAX_SUMMARY_LENGTH } from '../../../../constants/measurements';
 
 const TEXT_HORIZONTAL_PADDING = 13;
 export default class ArticleCard extends Component {
@@ -20,7 +20,7 @@ export default class ArticleCard extends Component {
 
     this.cardContainer = null;
     this.activateCard = this.activateCard.bind(this);
-    this.showCompleteSummary = this.showCompleteSummary.bind(this);
+    this.expandSummary = this.expandSummary.bind(this);
   }
 
   getTitleColor() {
@@ -46,7 +46,7 @@ export default class ArticleCard extends Component {
     setNoActiveEvent();
   }
 
-  showCompleteSummary() {
+  expandSummary() {
     this.setState({
       completeSummary: true,
     });
@@ -92,8 +92,6 @@ export default class ArticleCard extends Component {
   renderSummary() {
     const { summary } = this.props;
     const { completeSummary } = this.state;
-
-    const MAX_SUMMARY_LENGTH = 90;
 
     const trimSummary = summary.length > MAX_SUMMARY_LENGTH;
 

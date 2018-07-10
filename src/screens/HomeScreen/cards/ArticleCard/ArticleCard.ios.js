@@ -12,7 +12,12 @@ import ArticleContent from './ArticleContent';
 import CloseButton from '../../../../buttons/CloseButton';
 import { styles } from '../style';
 import { styles as articleStyles } from './style';
-import { BORDER_RADIUS, SCREEN_MARGIN, TOP_CARD_LIST_PADDING } from '../../../../constants/measurements';
+import {
+  BORDER_RADIUS,
+  SCREEN_MARGIN,
+  TOP_CARD_LIST_PADDING,
+  MAX_SUMMARY_LENGTH,
+} from '../../../../constants/measurements';
 import { CARD_ACTIVATE_ANIMATION_DURATION, CARD_DEACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
 
 const WINDOW_HEIGHT = Dimensions.get('window').height;
@@ -26,14 +31,14 @@ export default class ArticleCard extends Component {
     super(props);
     this.state = {
       isCardActive: false,
-      completeSummary: false,
+      isSummaryExpanded: false,
     };
 
     this.cardContainer = null;
     this.cardHeight = 0;
     this.frameOffsetY = 0;
     this.toggleCard = this.toggleCard.bind(this);
-    this.showCompleteSummary = this.showCompleteSummary.bind(this);
+    this.expandSummary = this.expandSummary.bind(this);
     this.activateCardAnimationValue = new Animated.Value(1);
     this.transformCardAnimationValue = new Animated.Value(1);
     this.opacityAnimationValue = new Animated.Value(1);
@@ -115,9 +120,9 @@ export default class ArticleCard extends Component {
     });
   }
 
-  showCompleteSummary() {
+  expandSummary() {
     this.setState({
-      completeSummary: true,
+      isSummaryExpanded: true,
     });
   }
 
@@ -200,8 +205,7 @@ export default class ArticleCard extends Component {
 
   renderSummary() {
     const { summary } = this.props;
-    const { isCardActive, completeSummary } = this.state;
-    const MAX_SUMMARY_LENGTH = 90;
+    const { isCardActive, isSummaryExpanded } = this.state;
 
     const summaryContainerStyles = {
       opacity: this.opacityAnimationValue,
@@ -219,7 +223,7 @@ export default class ArticleCard extends Component {
     const displayMoreText = 'más';
 
     const showSummary = () => {
-      if (trimSummary && !completeSummary) {
+      if (trimSummary && !isSummaryExpanded) {
         return `${summary.substring(0, MAX_SUMMARY_LENGTH)}... ${displayMoreText}`;
       }
       return summary;
@@ -229,7 +233,7 @@ export default class ArticleCard extends Component {
       <Animated.View style={summaryContainerStyles}>
         <Text
           style={[articleStyles.summary, summaryTextColor]}
-          onPress={this.showCompleteSummary}
+          onPress={this.expandSummary}
         >
           {showSummary()}
         </Text>
