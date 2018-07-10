@@ -90,13 +90,10 @@ export default class ArticleCard extends Component {
   }
 
   renderSummary() {
-    const { summary } = this.props;
+    const { summary, expandTextButton } = this.props;
     const { completeSummary } = this.state;
 
     const trimSummary = summary.length > MAX_SUMMARY_LENGTH;
-
-    const displayMoreText = 'más';
-
 
     const summaryStyles = {
       color: this.context.textColor || '#FFFFFF',
@@ -105,7 +102,7 @@ export default class ArticleCard extends Component {
 
     const showSummary = () => {
       if (trimSummary && !completeSummary) {
-        return `${summary.substring(0, MAX_SUMMARY_LENGTH)}... ${displayMoreText}`;
+        return `${summary.substring(0, MAX_SUMMARY_LENGTH)}... ${expandTextButton}`;
       }
       return summary;
     };
@@ -168,6 +165,7 @@ ArticleCard.propTypes = {
   setActiveEventId: PropTypes.func.isRequired,
   setNoActiveEvent: PropTypes.func.isRequired,
   summary: PropTypes.string.isRequired,
+  expandTextButton: PropTypes.string.isRequired,
 };
 
 ArticleCard.contextTypes = {

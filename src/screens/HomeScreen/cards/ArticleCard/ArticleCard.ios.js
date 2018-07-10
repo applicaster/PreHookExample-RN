@@ -24,7 +24,6 @@ const WINDOW_HEIGHT = Dimensions.get('window').height;
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const FULL_SCREEN_SCALE = WINDOW_WIDTH / (WINDOW_WIDTH - (SCREEN_MARGIN / 2));
 const TEXT_HORIZONTAL_PADDING = 13;
-const STATUS_BAR_HEIGHT = getStatusBarHeight();
 
 export default class ArticleCard extends Component {
   constructor(props) {
@@ -204,7 +203,7 @@ export default class ArticleCard extends Component {
   }
 
   renderSummary() {
-    const { summary } = this.props;
+    const { summary, expandTextButton } = this.props;
     const { isCardActive, isSummaryExpanded } = this.state;
 
     const summaryContainerStyles = {
@@ -220,11 +219,9 @@ export default class ArticleCard extends Component {
 
     const trimSummary = summary.length > MAX_SUMMARY_LENGTH;
 
-    const displayMoreText = 'más';
-
     const showSummary = () => {
       if (trimSummary && !isSummaryExpanded) {
-        return `${summary.substring(0, MAX_SUMMARY_LENGTH)}... ${displayMoreText}`;
+        return `${summary.substring(0, MAX_SUMMARY_LENGTH)}... ${expandTextButton}`;
       }
       return summary;
     };
@@ -336,6 +333,7 @@ ArticleCard.propTypes = {
   setNoActiveEvent: PropTypes.func.isRequired,
   summary: PropTypes.string.isRequired,
   timestamp: PropTypes.number.isRequired,
+  expandTextButton: PropTypes.string.isRequired,
 };
 
 ArticleCard.contextTypes = {
