@@ -15,7 +15,7 @@ export default class ArticleCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      completeSummary: false,
+      isSummaryExpanded: false,
     };
 
     this.cardContainer = null;
@@ -48,7 +48,7 @@ export default class ArticleCard extends Component {
 
   expandSummary() {
     this.setState({
-      completeSummary: true,
+      isSummaryExpanded: true,
     });
   }
 
@@ -91,7 +91,7 @@ export default class ArticleCard extends Component {
 
   renderSummary() {
     const { summary, expandTextButton } = this.props;
-    const { completeSummary } = this.state;
+    const { isSummaryExpanded } = this.state;
 
     const trimSummary = summary.length > MAX_SUMMARY_LENGTH;
 
@@ -101,7 +101,7 @@ export default class ArticleCard extends Component {
     };
 
     const showSummary = () => {
-      if (trimSummary && !completeSummary) {
+      if (trimSummary && !isSummaryExpanded) {
         return `${summary.substring(0, MAX_SUMMARY_LENGTH)}... ${expandTextButton}`;
       }
       return summary;
