@@ -31,5 +31,5 @@ export const androidTranslationMapping = (translations, feedTitle) => ({
   twitterPostErrorMessage: translations.feed_failed_tweet || 'Unable to post to Twitter',
   alertOk: translations.CommonAlertOK || 'Ok',
   dismiss: translations.CommonAlertCancel || 'Cancel',
-  expandText: translations.expandText || 'más',
+  expandText: translations.expandText || 'more',
 });
