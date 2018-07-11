@@ -195,7 +195,7 @@ export default class ArticleCard extends Component {
   }
 
   renderSummary() {
-    const { summary, expandText } = this.props;
+    const { summary } = this.props;
     const { isCardActive } = this.state;
 
     const summaryContainerStyles = {
@@ -209,13 +209,10 @@ export default class ArticleCard extends Component {
       color: this.context.textColor || '#FFFFFF',
     };
 
-    console.log(expandText, 'JOJOJO')
-
     return (
       <Animated.View style={summaryContainerStyles}>
         <ExpandText
           content={summary}
-          expandText={expandText}
           textStyle={[articleStyles.summary, summaryTextColor]}
           maxChar={MAX_SUMMARY_LENGTH}
         />
