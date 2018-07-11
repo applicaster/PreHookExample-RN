@@ -315,7 +315,6 @@ ArticleCard.propTypes = {
   setNoActiveEvent: PropTypes.func.isRequired,
   summary: PropTypes.string.isRequired,
   timestamp: PropTypes.number.isRequired,
-  expandText: PropTypes.string.isRequired,
 };
 
 ArticleCard.contextTypes = {

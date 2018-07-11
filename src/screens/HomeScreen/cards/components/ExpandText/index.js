@@ -1,61 +1,21 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Text } from 'react-native';
-import { styles } from './styles';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getPresentationStyle, getTranslations } from '../../../../../selectors';
+import { setActiveEventId, setNoActiveEvent } from '../../../../../actions';
+import ExpandText from './ExpandText';
 
-class ExpandText extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isContentExpanded: false,
-    };
+const mapStateToProps = (state, ownProps) => ({
+  navigationStyle: getPresentationStyle(state),
+  expandLabel: getTranslations(state).expandText,
+  content: ownProps.content,
+  textStyle: ownProps.textStyle,
+  maxChar: ownProps.maxChar,
 
-    this.expandContent = this.expandContent.bind(this);
-  }
+});
 
-  expandContent() {
-    this.setState({
-      isContentExpanded: true,
-    });
-  }
+const mapDispatchToProps = dispatch => bindActionCreators({
+  setActiveEventId,
+  setNoActiveEvent,
+}, dispatch);
 
-  render() {
-    const { content, expandLabel, textStyle, maxChar } = this.props;
-    const { isContentExpanded } = this.state;
-
-    const trimContent = content.length > maxChar;
-
-    const expandTextButton = (
-      <Text style={[styles.expandText, { color: `${this.context.textColor}BF` }]}>
-        {expandLabel}
-      </Text>
-    );
-
-    const showContent = () => {
-      if (trimContent && !isContentExpanded) {
-        return `${content.substring(0, maxChar)}... `;
-      }
-      return content;
-    };
-
-    return (
-      <Text style={textStyle} onPress={this.expandContent}>
-        {showContent()}
-        {trimContent && !isContentExpanded && expandTextButton}
-      </Text>
-    );
-  }
-}
-
-ExpandText.propTypes = {
-  content: PropTypes.string.isRequired,
-  expandLabel: PropTypes.string.isRequired,
-  textStyle: PropTypes.array.isRequired,
-  maxChar: PropTypes.number.isRequired,
-};
-
-ExpandText.contextTypes = {
-  textColor: PropTypes.string,
-};
-
-export default ExpandText;
+export default connect(mapStateToProps, mapDispatchToProps)(ExpandText);
