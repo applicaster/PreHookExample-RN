@@ -20,14 +20,14 @@ class ExpandText extends Component {
   }
 
   render() {
-    const { content, expandText, textStyle, maxChar } = this.props;
+    const { content, expandLabel, textStyle, maxChar } = this.props;
     const { isContentExpanded } = this.state;
 
     const trimContent = content.length > maxChar;
 
     const expandTextButton = (
       <Text style={[styles.expandText, { color: `${this.context.textColor}BF` }]}>
-        {expandText}
+        {expandLabel}
       </Text>
     );
 
@@ -49,14 +49,12 @@ class ExpandText extends Component {
 
 ExpandText.propTypes = {
   content: PropTypes.string.isRequired,
-  expandText: PropTypes.string.isRequired,
+  expandLabel: PropTypes.string.isRequired,
   textStyle: PropTypes.array.isRequired,
   maxChar: PropTypes.number.isRequired,
 };
 
 ExpandText.contextTypes = {
-  mainColor: PropTypes.string,
-  navigation: PropTypes.object,
   textColor: PropTypes.string,
 };
 
