@@ -9,8 +9,15 @@ import MediaVideo from '../components/MediaVideo';
 import CloseButton from '../../../../buttons/CloseButton';
 import { styles } from '../style';
 import { styles as videoStyles } from './style';
-import { BORDER_RADIUS, SCREEN_MARGIN, TOP_CARD_LIST_PADDING } from '../../../../constants/measurements';
+import {
+  BORDER_RADIUS,
+  SCREEN_MARGIN,
+  TOP_CARD_LIST_PADDING,
+  MAX_SUMMARY_LENGTH,
+} from '../../../../constants/measurements';
+
 import { CARD_ACTIVATE_ANIMATION_DURATION, CARD_DEACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
+import ExpandText from '../components/ExpandText';
 
 const WINDOW_HEIGHT = Dimensions.get('window').height;
 const WINDOW_WIDTH = Dimensions.get('window').width;
@@ -42,7 +49,7 @@ export default class VideoCard extends Component {
     if (navigationStyle === 'navbarWithTabbar') {
       return TOP_CARD_LIST_PADDING - ((WINDOW_HEIGHT / this.frameOffsetY) * 0.09);
     }
-    
+
     return TOP_CARD_LIST_PADDING;
   }
 
@@ -60,7 +67,7 @@ export default class VideoCard extends Component {
   toggleCard() {
     const { isCardActive } = this.state;
     const { setActiveEventId, setNoActiveEvent, eventId, index, platform } = this.props;
-    
+
     this.cardContainer.measure((fx, fy, width, height, px, py) => {
       if (py < 0 || platform === 'android') {
         this.props.listRef.scrollToIndex({
@@ -73,11 +80,11 @@ export default class VideoCard extends Component {
       this.cardContainer.measure((fx1, fy1, width1, height1, px1, py1) => {
         this.frameOffsetY = (py < 0) ? (TOP_CARD_LIST_PADDING) : Math.ceil(py1);
         this.cardHeight = height;
-        
+
         const duration = this.getAnimationDuration();
         const animationConfig = Object.assign({ duration }, LayoutAnimation.Presets.easeInEaseOut);
         LayoutAnimation.configureNext(animationConfig);
-        
+
         const animations = [
           Animated.timing(this.activateCardAnimationValue, {
             toValue: isCardActive ? 1 : 0,
@@ -160,7 +167,7 @@ export default class VideoCard extends Component {
       </FadeContainer>
     );
   }
-  
+
   renderFooter() {
     const { eventId } = this.props;
     const footerStyles = {
@@ -187,11 +194,15 @@ export default class VideoCard extends Component {
         : TEXT_HORIZONTAL_PADDING,
       marginBottom: (isCardActive) ? 40 : 0,
     };
-    
+
     return (
       <Animated.View style={categoryAndTitleContainerStyles}>
         {category && <Text style={[videoStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>}
-        <Text style={[videoStyles.titleEditorial, titleColorStyle]}>{caption}</Text>
+        <ExpandText
+          content={caption}
+          textStyle={[videoStyles.titleEditorial, titleColorStyle]}
+          maxChar={MAX_SUMMARY_LENGTH}
+        />
       </Animated.View>
     );
   }
@@ -199,7 +210,7 @@ export default class VideoCard extends Component {
   renderTitle() {
     const { caption } = this.props;
     const { isCardActive } = this.state;
-    
+
     const titleContainerStyles = {
       opacity: this.opacityAnimationValue,
       marginHorizontal: (isCardActive)
@@ -213,7 +224,11 @@ export default class VideoCard extends Component {
 
     return (
       <Animated.View style={titleContainerStyles}>
-        <Text style={[videoStyles.title, titleTextColor]}>{caption}</Text>
+        <ExpandText
+          content={caption}
+          textStyle={[videoStyles.title, titleTextColor]}
+          maxChar={MAX_SUMMARY_LENGTH}
+        />
       </Animated.View>
     );
   }
@@ -227,18 +242,22 @@ export default class VideoCard extends Component {
       borderRadius: (isCardActive) ? 0 : BORDER_RADIUS,
       marginHorizontal: (isCardActive) ? 0 : SCREEN_MARGIN,
       transform: [
-        { scale: this.activateCardAnimationValue.interpolate({
-          inputRange: [0, 1],
-          outputRange: [FULL_SCREEN_SCALE, 1],
-        }) },
+        {
+          scale: this.activateCardAnimationValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: [FULL_SCREEN_SCALE, 1],
+          })
+        },
       ],
     };
 
     if (platform === 'ios') {
-      cardContainerStyles.transform.push({ translateY: this.transformCardAnimationValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [-this.frameOffsetY + this.getYoffset(), 0],
-      }) });
+      cardContainerStyles.transform.push({
+        translateY: this.transformCardAnimationValue.interpolate({
+          inputRange: [0, 1],
+          outputRange: [-this.frameOffsetY + this.getYoffset(), 0],
+        })
+      });
     }
 
     if (isCardActive) {
