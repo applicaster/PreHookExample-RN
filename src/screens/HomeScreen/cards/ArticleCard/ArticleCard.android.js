@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MediaImage from '../components/MediaImage';
 import MediaVideo from '../components/MediaVideo';
+import ExpandText from '../components/ExpandText';
 import { styles } from '../style';
 import { styles as articleStyles } from './style';
 import { BORDER_RADIUS, SCREEN_MARGIN, MAX_SUMMARY_LENGTH } from '../../../../constants/measurements';
@@ -14,13 +15,9 @@ const TEXT_HORIZONTAL_PADDING = 13;
 export default class ArticleCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isSummaryExpanded: false,
-    };
 
     this.cardContainer = null;
     this.activateCard = this.activateCard.bind(this);
-    this.expandSummary = this.expandSummary.bind(this);
   }
 
   getTitleColor() {
@@ -44,12 +41,6 @@ export default class ArticleCard extends Component {
   deActivateCard() {
     const { setNoActiveEvent } = this.props;
     setNoActiveEvent();
-  }
-
-  expandSummary() {
-    this.setState({
-      isSummaryExpanded: true,
-    });
   }
 
   renderMedia() {
@@ -90,24 +81,20 @@ export default class ArticleCard extends Component {
   }
 
   renderSummary() {
-    const { summary, expandTextButton } = this.props;
-    const { isSummaryExpanded } = this.state;
-
-    const trimSummary = summary.length > MAX_SUMMARY_LENGTH;
+    const { summary } = this.props;
 
     const summaryStyles = {
       color: this.context.textColor || '#FFFFFF',
       paddingHorizontal: TEXT_HORIZONTAL_PADDING,
     };
 
-    const showSummary = () => {
-      if (trimSummary && !isSummaryExpanded) {
-        return `${summary.substring(0, MAX_SUMMARY_LENGTH)}... ${expandTextButton}`;
-      }
-      return summary;
-    };
-
-    return <Text style={[articleStyles.summary, summaryStyles]}>{showSummary()}</Text>;
+    return (
+      <ExpandText
+        content={summary}
+        textStyle={[articleStyles.summary, summaryStyles]}
+        maxChar={MAX_SUMMARY_LENGTH}
+      />
+    );
   }
 
   renderCategoryAndTitle() {
