@@ -42,7 +42,7 @@ class ExpandText extends Component {
     const { isContentExpanded } = this.state;
 
     const expandTextButton = (
-      <Text style={[styles.expandText, { color: `${this.context.textColor}BF` }]}>
+      <Text key={Math.random() * content.length} style={[styles.expandText, { color: `${this.context.textColor}BF` }]}>
         {expandLabel}
       </Text>
     );
@@ -54,7 +54,7 @@ class ExpandText extends Component {
       const charLimit = (item) => item.length > maxChar || textCounter + item.length > maxChar;
       const isContentString = (item) => typeof item === 'string';
 
-      const expandButton = this.shouldExpand(content) ? ['... ', expandTextButton] : [];
+      const expandButton = this.shouldExpand(content) && !isContentExpanded ? ['... ', expandTextButton] : [];
 
       const stringItem = (item) => {
         const availableChars = maxChar - textCounter;
@@ -71,7 +71,7 @@ class ExpandText extends Component {
         return null;
       };
 
-      const symbolItem = (item) => {
+      const symbolItem = (item, i) => {
         const availableChars = maxChar - textCounter;
 
         if (isContentExpanded) {
@@ -81,7 +81,7 @@ class ExpandText extends Component {
         if (!counterLimit) {
           charLimit(item.props.children) ? textCounter = maxChar : textCounter += item.props.children.length;
           return (
-            <Text {...item.props}>
+            <Text {...item.props} key={i}>
               {isContentExpanded ? item.props.children : item.props.children.substring(0, availableChars)}
             </Text>
           );
@@ -94,7 +94,7 @@ class ExpandText extends Component {
         return isContentExpanded ? content : [`${content.substring(0, maxChar)}`, ...expandButton];
       }
 
-      const mixContent = content.map(item => isContentString(item) ? stringItem(item) : symbolItem(item));
+      const mixContent = content.map((item, i) => isContentString(item) ? stringItem(item) : symbolItem(item, i));
       return [...mixContent, ...expandButton];
     };
 
