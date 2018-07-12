@@ -20,6 +20,7 @@ describe('localization', () => {
         Feed2_AlertTwitterSendFailedMessage: 'foo',
         Feed2_AlertOK: 'foo',
         Feed2_Dismiss: 'foo',
+        Feed2_ExpandText: 'foo',
       };
 
       const expected = {
@@ -37,6 +38,7 @@ describe('localization', () => {
         twitterPostErrorMessage: 'foo',
         alertOk: 'foo',
         dismiss: 'foo',
+        expandText: 'foo',
       };
 
       expect(iosTranslationMapping(translations, 'bar')).to.deep.equal(expected);
@@ -57,6 +59,7 @@ describe('localization', () => {
         feed_failed_tweet: 'foo',
         CommonAlertOK: 'foo',
         CommonAlertCancel: 'foo',
+        expandText: 'foo',
       };
 
       const expected = {
@@ -74,6 +77,7 @@ describe('localization', () => {
         twitterPostErrorMessage: 'foo',
         alertOk: 'foo',
         dismiss: 'foo',
+        expandText: 'foo',
       };
 
       expect(androidTranslationMapping(translations, 'bar')).to.deep.equal(expected);
