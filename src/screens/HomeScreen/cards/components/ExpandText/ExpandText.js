@@ -23,8 +23,6 @@ class ExpandText extends Component {
     const { content, expandLabel, textStyle, maxChar } = this.props;
     const { isContentExpanded } = this.state;
 
-    const trimContent = content.length > maxChar;
-
     const expandTextButton = (
       <Text style={[styles.expandText, { color: `${this.context.textColor}BF` }]}>
         {expandLabel}
@@ -32,23 +30,67 @@ class ExpandText extends Component {
     );
 
     const showContent = () => {
-      if (trimContent && !isContentExpanded) {
-        return `${content.substring(0, maxChar)}... `;
+      let textCounter = 0;
+      const counterLimit = textCounter >= maxChar;
+
+      const charLimit = (item) => item.length > maxChar || textCounter + item.length > maxChar;
+      const isContentString = (item) => typeof item === 'string';
+
+      const stringItem = (item) => {
+        const availableChars = maxChar - textCounter;
+
+        if (isContentExpanded) {
+          return item;
+        }
+
+        if (!counterLimit) {
+          charLimit(item) ? textCounter = maxChar : textCounter += item.length;
+          return isContentExpanded ? item : `${item.substring(0, availableChars)}`;
+        }
+
+        return null;
+      };
+
+      const symbolItem = (item) => {
+        const availableChars = maxChar - textCounter;
+
+        if (isContentExpanded) {
+          return item;
+        }
+
+        if (!counterLimit) {
+          charLimit(item.props.children) ? textCounter = maxChar : textCounter += item.props.children.length;
+          return (
+            <Text {...item.props}>
+              {isContentExpanded ? item.props.children : item.props.children.substring(0, availableChars)}
+            </Text>
+          );
+        }
+
+        return null;
+      };
+
+      if (isContentString(content)) {
+        return isContentExpanded ? content : `${content.substring(0, maxChar)}`;
       }
-      return content;
+
+      const mixContent = content.map(item => isContentString(item) ? stringItem(item) : symbolItem(item));
+      return mixContent;
     };
 
     return (
       <Text style={textStyle} onPress={this.expandContent}>
-        {showContent()}
-        {trimContent && !isContentExpanded && expandTextButton}
+        {showContent()}{!isContentExpanded && expandTextButton}
       </Text>
     );
   }
 }
 
 ExpandText.propTypes = {
-  content: PropTypes.string.isRequired,
+  content: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+  ]).isRequired,
   expandLabel: PropTypes.string.isRequired,
   textStyle: PropTypes.array.isRequired,
   maxChar: PropTypes.number.isRequired,
