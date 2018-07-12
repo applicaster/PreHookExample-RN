@@ -10,7 +10,25 @@ class ExpandText extends Component {
       isContentExpanded: false,
     };
 
+    this.shouldExpand = this.shouldExpand.bind(this);
     this.expandContent = this.expandContent.bind(this);
+  }
+
+  shouldExpand(content) {
+    const { maxChar } = this.props;
+    const isContentString = (item) => typeof item === 'string';
+
+    let counter = 0;
+
+    if (isContentString(content)) {
+      counter += content.length;
+    } else {
+      content.forEach((element) => {
+        const elementLength = isContentString(element) ? element.length : element.props.children.length;
+        counter += elementLength;
+      });
+    }
+    return counter > maxChar;
   }
 
   expandContent() {
@@ -35,6 +53,8 @@ class ExpandText extends Component {
 
       const charLimit = (item) => item.length > maxChar || textCounter + item.length > maxChar;
       const isContentString = (item) => typeof item === 'string';
+
+      const expandButton = this.shouldExpand(content) ? ['... ', expandTextButton] : [];
 
       const stringItem = (item) => {
         const availableChars = maxChar - textCounter;
@@ -71,16 +91,16 @@ class ExpandText extends Component {
       };
 
       if (isContentString(content)) {
-        return isContentExpanded ? content : `${content.substring(0, maxChar)}`;
+        return isContentExpanded ? content : [`${content.substring(0, maxChar)}`, ...expandButton];
       }
 
       const mixContent = content.map(item => isContentString(item) ? stringItem(item) : symbolItem(item));
-      return mixContent;
+      return [...mixContent, ...expandButton];
     };
 
     return (
       <Text style={textStyle} onPress={this.expandContent}>
-        {showContent()}{!isContentExpanded && expandTextButton}
+        {showContent()}
       </Text>
     );
   }
