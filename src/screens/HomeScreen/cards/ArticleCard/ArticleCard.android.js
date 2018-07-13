@@ -92,7 +92,6 @@ export default class ArticleCard extends Component {
       <ExpandText
         content={summary}
         textStyle={[articleStyles.summary, summaryStyles]}
-        maxChar={MAX_SUMMARY_LENGTH}
       />
     );
   }
