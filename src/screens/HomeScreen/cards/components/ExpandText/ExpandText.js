@@ -99,9 +99,9 @@ class ExpandText extends Component {
     };
 
     return (
-      <Text style={textStyle} onPress={this.expandContent}>
-        {showContent()}
-      </Text>
+      isContentExpanded
+        ? <Text style={textStyle}>{showContent()}</Text>
+        : <Text style={textStyle} onPress={this.expandContent}>{showContent()}</Text>
     );
   }
 }
