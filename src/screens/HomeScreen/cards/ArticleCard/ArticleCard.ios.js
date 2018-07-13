@@ -7,7 +7,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MediaImage from '../components/MediaImage';
 import MediaVideo from '../components/MediaVideo';
-import ExpandText from '../components/ExpandText';
 import ArticleContent from './ArticleContent';
 import CloseButton from '../../../../buttons/CloseButton';
 import { styles } from '../style';
@@ -210,10 +209,7 @@ export default class ArticleCard extends Component {
 
     return (
       <Animated.View style={summaryContainerStyles}>
-        <ExpandText
-          content={summary}
-          textStyle={[articleStyles.summary, summaryTextColor]}
-        />
+        <Text style={[articleStyles.summary, summaryTextColor]}>{summary}</Text>
       </Animated.View>
     );
   }

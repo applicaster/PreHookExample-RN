@@ -6,7 +6,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MediaImage from '../components/MediaImage';
 import MediaVideo from '../components/MediaVideo';
-import ExpandText from '../components/ExpandText';
 import { styles } from '../style';
 import { styles as articleStyles } from './style';
 import { BORDER_RADIUS, SCREEN_MARGIN } from '../../../../constants/measurements';
@@ -89,10 +88,7 @@ export default class ArticleCard extends Component {
     };
 
     return (
-      <ExpandText
-        content={summary}
-        textStyle={[articleStyles.summary, summaryStyles]}
-      />
+      <Text style={[articleStyles.summary, summaryStyles]}>{summary}</Text>
     );
   }
 
