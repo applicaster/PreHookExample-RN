@@ -68,10 +68,14 @@ class ShareButton extends Component {
 
 ShareButton.propTypes = {
   defaultMessage: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
+  message: PropTypes.string,
   overlay: PropTypes.bool.isRequired,
   publicPageUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+};
+
+ShareButton.defaultProps = {
+  message: '',
 };
 
 ShareButton.contextTypes = {
