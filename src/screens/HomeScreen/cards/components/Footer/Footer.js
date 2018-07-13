@@ -28,7 +28,7 @@ class Footer extends Component {
 }
 
 Footer.propTypes = {
-  caption: PropTypes.string.isRequired,
+  caption: PropTypes.string,
   commentsCount: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
   isSocial: PropTypes.bool.isRequired,
@@ -37,6 +37,10 @@ Footer.propTypes = {
   overlay: PropTypes.bool.isRequired,
   retweetCount: PropTypes.number.isRequired,
   source: PropTypes.string.isRequired,
+};
+
+Footer.defaultProps = {
+  caption: '',
 };
 
 export default Footer;
