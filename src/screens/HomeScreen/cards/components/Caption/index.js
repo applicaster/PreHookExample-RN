@@ -44,12 +44,13 @@ class Caption extends Component {
   }
 
   render() {
-    const { caption } = this.props;
+    const { caption, maxChar } = this.props;
     const captionColor = { color: this.context.textColor || '#FFFFFF' };
     const content = this.processCaption(caption);
     return (caption)
       ? <ExpandText
         content={content}
+        maxChar={maxChar}
         textStyle={[styles.eventCaption, captionColor]}
       />
       : <Text />;
@@ -58,6 +59,7 @@ class Caption extends Component {
 
 Caption.propTypes = {
   caption: PropTypes.string.isRequired,
+  maxChar: PropTypes.number,
 };
 
 Caption.contextTypes = {
