@@ -16,7 +16,6 @@ import {
   BORDER_RADIUS,
   SCREEN_MARGIN,
   TOP_CARD_LIST_PADDING,
-  MAX_SUMMARY_LENGTH,
 } from '../../../../constants/measurements';
 import { CARD_ACTIVATE_ANIMATION_DURATION, CARD_DEACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
 
@@ -214,7 +213,6 @@ export default class ArticleCard extends Component {
         <ExpandText
           content={summary}
           textStyle={[articleStyles.summary, summaryTextColor]}
-          maxChar={MAX_SUMMARY_LENGTH}
         />
       </Animated.View>
     );

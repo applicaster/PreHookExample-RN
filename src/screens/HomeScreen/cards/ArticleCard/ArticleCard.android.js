@@ -9,7 +9,7 @@ import MediaVideo from '../components/MediaVideo';
 import ExpandText from '../components/ExpandText';
 import { styles } from '../style';
 import { styles as articleStyles } from './style';
-import { BORDER_RADIUS, SCREEN_MARGIN, MAX_SUMMARY_LENGTH } from '../../../../constants/measurements';
+import { BORDER_RADIUS, SCREEN_MARGIN } from '../../../../constants/measurements';
 
 const TEXT_HORIZONTAL_PADDING = 13;
 export default class ArticleCard extends Component {

@@ -5,7 +5,6 @@ import reactStringReplace from 'react-string-replace';
 import { sendAnalyticEvent } from 'react-native-zapp-bridge';
 import { OPEN_WEBVIEW_FROM_EVENT_CAPTION } from '../../../../../constants/analyticEvents';
 import ExpandText from '../ExpandText';
-import { MAX_SUMMARY_LENGTH } from '../../../../../constants/measurements';
 
 import { styles } from './style';
 
@@ -52,7 +51,6 @@ class Caption extends Component {
       ? <ExpandText
         content={content}
         textStyle={[styles.eventCaption, captionColor]}
-        maxChar={MAX_SUMMARY_LENGTH}
       />
       : <Text />;
   }

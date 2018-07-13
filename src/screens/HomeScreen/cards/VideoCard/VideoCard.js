@@ -13,7 +13,6 @@ import {
   BORDER_RADIUS,
   SCREEN_MARGIN,
   TOP_CARD_LIST_PADDING,
-  MAX_SUMMARY_LENGTH,
 } from '../../../../constants/measurements';
 
 import { CARD_ACTIVATE_ANIMATION_DURATION, CARD_DEACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
@@ -201,7 +200,6 @@ export default class VideoCard extends Component {
         <ExpandText
           content={caption}
           textStyle={[videoStyles.titleEditorial, titleColorStyle]}
-          maxChar={MAX_SUMMARY_LENGTH}
         />
       </Animated.View>
     );
@@ -227,7 +225,6 @@ export default class VideoCard extends Component {
         <ExpandText
           content={caption}
           textStyle={[videoStyles.title, titleTextColor]}
-          maxChar={MAX_SUMMARY_LENGTH}
         />
       </Animated.View>
     );
@@ -246,7 +243,7 @@ export default class VideoCard extends Component {
           scale: this.activateCardAnimationValue.interpolate({
             inputRange: [0, 1],
             outputRange: [FULL_SCREEN_SCALE, 1],
-          })
+          }),
         },
       ],
     };
@@ -256,7 +253,7 @@ export default class VideoCard extends Component {
         translateY: this.transformCardAnimationValue.interpolate({
           inputRange: [0, 1],
           outputRange: [-this.frameOffsetY + this.getYoffset(), 0],
-        })
+        }),
       });
     }
 
