@@ -42,13 +42,17 @@ export default class ImageCard extends Component {
 }
 
 ImageCard.propTypes = {
-  caption: PropTypes.string.isRequired,
+  caption: PropTypes.string,
   eventId: PropTypes.string.isRequired,
   imageHeight: PropTypes.number.isRequired,
   imageUrl: PropTypes.string.isRequired,
   imageWidth: PropTypes.number.isRequired,
   setActiveEventId: PropTypes.func.isRequired,
   toggleModal: PropTypes.func.isRequired,
+};
+
+ImageCard.defaultProps = {
+  caption: '',
 };
 
 ImageCard.contextTypes = {
