@@ -152,7 +152,6 @@ ArticleCard.propTypes = {
   setActiveEventId: PropTypes.func.isRequired,
   setNoActiveEvent: PropTypes.func.isRequired,
   summary: PropTypes.string.isRequired,
-  expandTextButton: PropTypes.string.isRequired,
 };
 
 ArticleCard.contextTypes = {

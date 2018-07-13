@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text } from 'react-native';
+import { v4 as uuid } from 'uuid';
 import { styles } from './styles';
 
 class ExpandText extends Component {
@@ -40,9 +41,8 @@ class ExpandText extends Component {
   render() {
     const { content, expandLabel, textStyle, maxChar } = this.props;
     const { isContentExpanded } = this.state;
-
     const expandTextButton = (
-      <Text key={Math.random() * content.length} style={[styles.expandText, { color: `${this.context.textColor}BF` }]}>
+      <Text key={uuid()} style={[styles.expandText, { color: `${this.context.textColor}BF` }]}>
         {expandLabel}
       </Text>
     );
@@ -79,7 +79,7 @@ class ExpandText extends Component {
         }
 
         if (!counterLimit) {
-          charLimit(item.props.children) ? textCounter = maxChar : textCounter += item.props.children.length;
+          textCounter = charLimit(item.props.children) ? maxChar : textCounter + item.props.children.length;
           return (
             <Text {...item.props} key={i}>
               {isContentExpanded ? item.props.children : item.props.children.substring(0, availableChars)}
