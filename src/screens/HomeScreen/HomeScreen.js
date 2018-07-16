@@ -83,6 +83,7 @@ export default class HomeScreen extends Component {
 
   onRefresh() {
     this.props.fetchEvents();
+    this.props.fetchZappPipes();
   }
   
   handleItemsInViewport(items) {
