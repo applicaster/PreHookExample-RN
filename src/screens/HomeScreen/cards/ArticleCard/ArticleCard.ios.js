@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, Dimensions, LayoutAnimation, ScrollView, Text, View, Platform } from 'react-native';
+import { Animated, Dimensions, LayoutAnimation, ScrollView, Text, View } from 'react-native';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
 import Header from '../components/Header';
@@ -14,12 +15,12 @@ import { styles as articleStyles } from './style';
 import {
   BORDER_RADIUS,
   SCREEN_MARGIN,
+  TOP_CARD_LIST_PADDING,
 } from '../../../../constants/measurements';
 import { CARD_ACTIVATE_ANIMATION_DURATION, CARD_DEACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
 
 const WINDOW_HEIGHT = Dimensions.get('window').height;
 const TEXT_HORIZONTAL_PADDING = 13;
-const isIPhoneX = !Platform.isPad && !Platform.isTVOS && WINDOW_HEIGHT === 812;
 
 export default class ArticleCard extends Component {
   constructor(props) {
@@ -56,48 +57,58 @@ export default class ArticleCard extends Component {
 
   toggleCard() {
     const { isCardActive } = this.state;
-    const { setActiveEventId, setNoActiveEvent, eventId, navigationStyle } = this.props;
+    const { setActiveEventId, setNoActiveEvent, eventId, navigationStyle, index } = this.props;
 
-    if (navigationStyle === 'navbarWithTopbar') {
+    if (navigationStyle === 'navbarWithTabbar') {
       this.statusBarHeight = 0;
     } else {
-      this.statusBarHeight = isIPhoneX ? 44 : 20;
+      this.statusBarHeight = getStatusBarHeight();
     }
 
-    this.cardContainer.measure((fx1, fy1, width1, height, px1, py1) => {
-      this.frameOffsetY = py1;
-      this.cardHeight = height;
-
-      const duration = this.getAnimationDuration();
-      const animationConfig = Object.assign({ duration }, LayoutAnimation.Presets.easeInEaseOut);
-      LayoutAnimation.configureNext(animationConfig);
-
-      Animated.parallel([
-        Animated.timing(this.activateCardAnimationValue, {
-          toValue: isCardActive ? 1 : 0,
-          duration,
-          useNativeDriver: true,
-        }),
-        Animated.timing(this.opacityAnimationValue, {
-          toValue: isCardActive ? 1 : 0,
-          duration,
-          useNativeDriver: true,
-        }),
-        Animated.spring(this.transformCardAnimationValue, {
-          toValue: isCardActive ? 1 : 0,
-          duration,
-          friction: 5,
-          tensions: 8,
-          useNativeDriver: true,
-        }),
-      ]).start();
-
-      if (!isCardActive) {
-        setActiveEventId(eventId);
-      } else {
-        setNoActiveEvent();
+    this.cardContainer.measure((fx, fy, width, height, px, py) => {
+      if (py < 0) {
+        this.props.listRef.scrollToIndex({
+          index,
+          viewOffset: TOP_CARD_LIST_PADDING,
+          viewPosition: 0,
+        });
       }
-      this.setState({ isCardActive: !isCardActive });
+
+      this.cardContainer.measure((fx1, fy1, width1, height1, px1, py1) => {
+        this.frameOffsetY = (py < 0) ? (TOP_CARD_LIST_PADDING) : Math.ceil(py1);
+        this.cardHeight = height;
+  
+        const duration = this.getAnimationDuration();
+        const animationConfig = Object.assign({ duration }, LayoutAnimation.Presets.easeInEaseOut);
+        LayoutAnimation.configureNext(animationConfig);
+  
+        Animated.parallel([
+          Animated.timing(this.activateCardAnimationValue, {
+            toValue: isCardActive ? 1 : 0,
+            duration,
+            useNativeDriver: true,
+          }),
+          Animated.timing(this.opacityAnimationValue, {
+            toValue: isCardActive ? 1 : 0,
+            duration,
+            useNativeDriver: true,
+          }),
+          Animated.spring(this.transformCardAnimationValue, {
+            toValue: isCardActive ? 1 : 0,
+            duration,
+            friction: 5,
+            tensions: 8,
+            useNativeDriver: true,
+          }),
+        ]).start();
+  
+        if (!isCardActive) {
+          setActiveEventId(eventId);
+        } else {
+          setNoActiveEvent();
+        }
+        this.setState({ isCardActive: !isCardActive });
+      });
     });
   }
 
@@ -233,12 +244,6 @@ export default class ArticleCard extends Component {
       marginHorizontal: (isCardActive) ? 0 : SCREEN_MARGIN,
       transform: [
         {
-          scale: this.activateCardAnimationValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: [1, 1],
-          }),
-        },
-        {
           translateY: this.transformCardAnimationValue.interpolate({
             inputRange: [0, 1],
             outputRange: [-this.frameOffsetY + this.statusBarHeight, 0],
@@ -287,6 +292,8 @@ ArticleCard.propTypes = {
   imageHeight: PropTypes.number.isRequired,
   imageUrl: PropTypes.string.isRequired,
   imageWidth: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
+  listRef: PropTypes.object.isRequired,
   navigationStyle: PropTypes.string.isRequired,
   videoUrl: PropTypes.string,
   setActiveEventId: PropTypes.func.isRequired,
