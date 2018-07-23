@@ -37,6 +37,12 @@ export default class ArticleCard extends Component {
     this.activateCardAnimationValue = new Animated.Value(1);
     this.transformCardAnimationValue = new Animated.Value(1);
     this.opacityAnimationValue = new Animated.Value(1);
+    
+    if (props.navigationStyle === 'navbarWithTabbar') {
+      this.statusBarHeight = 0;
+    } else {
+      this.statusBarHeight = getStatusBarHeight();
+    }
   }
 
   getAnimationDuration() {
@@ -57,13 +63,7 @@ export default class ArticleCard extends Component {
 
   toggleCard() {
     const { isCardActive } = this.state;
-    const { setActiveEventId, setNoActiveEvent, eventId, navigationStyle, index } = this.props;
-
-    if (navigationStyle === 'navbarWithTabbar') {
-      this.statusBarHeight = 0;
-    } else {
-      this.statusBarHeight = getStatusBarHeight();
-    }
+    const { setActiveEventId, setNoActiveEvent, eventId, index } = this.props;
 
     this.cardContainer.measure((fx, fy, width, height, px, py) => {
       if (py < 0) {
