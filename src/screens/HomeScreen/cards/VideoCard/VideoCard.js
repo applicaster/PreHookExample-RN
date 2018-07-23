@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, Dimensions, LayoutAnimation, Text, View } from 'react-native';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
 import Header from '../components/Header';
@@ -19,15 +20,13 @@ import { CARD_ACTIVATE_ANIMATION_DURATION, CARD_DEACTIVATE_ANIMATION_DURATION } 
 import ExpandText from '../components/ExpandText';
 
 const WINDOW_HEIGHT = Dimensions.get('window').height;
-const WINDOW_WIDTH = Dimensions.get('window').width;
-const FULL_SCREEN_SCALE = WINDOW_WIDTH / (WINDOW_WIDTH - (SCREEN_MARGIN / 2));
 const TEXT_HORIZONTAL_PADDING = 13;
 
 export default class VideoCard extends Component {
   constructor(props) {
     super(props);
     this.state = { isCardActive: false };
-    const { platform } = props;
+    const { platform,navigationStyle } = props;
 
     this.cardContainer = null;
     this.cardHeight = 0;
@@ -36,20 +35,17 @@ export default class VideoCard extends Component {
     this.activateCardAnimationValue = new Animated.Value(1);
     this.transformCardAnimationValue = platform === 'ios' ? new Animated.Value(1) : null;
     this.opacityAnimationValue = new Animated.Value(1);
+
+    if (navigationStyle === 'navbarWithTabbar') {
+      this.statusBarHeight = 0;
+    } else {
+      this.statusBarHeight = getStatusBarHeight();
+    }
   }
 
   getAnimationDuration() {
     const { isCardActive } = this.state;
     return (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION;
-  }
-
-  getYoffset() {
-    const { navigationStyle } = this.props;
-    if (navigationStyle === 'navbarWithTabbar') {
-      return TOP_CARD_LIST_PADDING - ((WINDOW_HEIGHT / this.frameOffsetY) * 0.09);
-    }
-
-    return TOP_CARD_LIST_PADDING;
   }
 
   getTitleColor() {
@@ -126,6 +122,7 @@ export default class VideoCard extends Component {
       const mediaVideoContainerStyles = {
         marginTop: isCardActive ? '33%' : 0,
       };
+
       return (
         <View style={mediaVideoContainerStyles}>
           <MediaVideo
@@ -238,23 +235,15 @@ export default class VideoCard extends Component {
     const cardContainerStyles = {
       borderRadius: (isCardActive) ? 0 : BORDER_RADIUS,
       marginHorizontal: (isCardActive) ? 0 : SCREEN_MARGIN,
-      transform: [
-        {
-          scale: this.activateCardAnimationValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: [FULL_SCREEN_SCALE, 1],
-          }),
-        },
-      ],
     };
 
     if (platform === 'ios') {
-      cardContainerStyles.transform.push({
+      cardContainerStyles.transform = [{
         translateY: this.transformCardAnimationValue.interpolate({
           inputRange: [0, 1],
-          outputRange: [-this.frameOffsetY + this.getYoffset(), 0],
+          outputRange: [-this.frameOffsetY + this.statusBarHeight, 0],
         }),
-      });
+      }];
     }
 
     if (isCardActive) {
