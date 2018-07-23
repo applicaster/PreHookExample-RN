@@ -10,14 +10,8 @@ import MediaVideo from '../components/MediaVideo';
 import CloseButton from '../../../../buttons/CloseButton';
 import { styles } from '../style';
 import { styles as videoStyles } from './style';
-import {
-  BORDER_RADIUS,
-  SCREEN_MARGIN,
-  TOP_CARD_LIST_PADDING,
-} from '../../../../constants/measurements';
-
+import { BORDER_RADIUS, SCREEN_MARGIN, TOP_CARD_LIST_PADDING } from '../../../../constants/measurements';
 import { CARD_ACTIVATE_ANIMATION_DURATION, CARD_DEACTIVATE_ANIMATION_DURATION } from '../../../../constants/animations';
-import ExpandText from '../components/ExpandText';
 
 const WINDOW_HEIGHT = Dimensions.get('window').height;
 const TEXT_HORIZONTAL_PADDING = 13;
@@ -26,7 +20,7 @@ export default class VideoCard extends Component {
   constructor(props) {
     super(props);
     this.state = { isCardActive: false };
-    const { platform,navigationStyle } = props;
+    const { platform, navigationStyle } = props;
 
     this.cardContainer = null;
     this.cardHeight = 0;
@@ -194,10 +188,7 @@ export default class VideoCard extends Component {
     return (
       <Animated.View style={categoryAndTitleContainerStyles}>
         {category && <Text style={[videoStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>}
-        <ExpandText
-          content={caption}
-          textStyle={[videoStyles.titleEditorial, titleColorStyle]}
-        />
+        <Text style={[videoStyles.titleEditorial, titleColorStyle]}>{caption}</Text>
       </Animated.View>
     );
   }
