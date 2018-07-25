@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, Dimensions, LayoutAnimation, Text, View } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
+import ExpandText from '../components/ExpandText';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
 import Header from '../components/Header';
