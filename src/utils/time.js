@@ -1,6 +1,8 @@
 import moment from 'moment-with-locales-es6';
+import FeedRNUtils from '@applicaster/feed-rn-utils';
 
-moment.locale('es');
+const locale = FeedRNUtils.locale || 'en';
+moment.locale(locale);
 const REFERENCE = moment();
 const A_WEEK_OLD = REFERENCE.clone().subtract(7, 'days').startOf('day');
 const A_MONTH_OLD = REFERENCE.clone().subtract(1, 'month').startOf('month');
