@@ -1,12 +1,12 @@
 export const iosTranslationMapping = (translations, feedTitle) => ({
   defaultShareMessage: translations.Feed2_ShareEvent.replace('%@', feedTitle) || 'Download the app now!',
   shareTitle: feedTitle || 'Feed',
-  replyToTweetScreenTitle: translations.Feed2_ReplyToTweetScreenTitle || 'Reply to Tweet', // needed
+  replyToTweetScreenTitle: translations.Feed2_ReplyToTweetScreenTitle || 'Reply to Tweet',
   postPlaceholder: translations.Feed2_CreatePostPlaceholder || 'Write a post...',
   postButtonText: translations.Feed2_CreatePostSend || 'Post',
   tweetButtonText: translations.Feed2_CreateTweetSend || 'Tweet',
-  writePostScreenTitle: translations.Feed2_WritePostScreenTitle || 'Write a Post',  // needed
-  writePostScreenTitleTwitter: translations.Feed2_WriteTweetScreenTitle || 'Post a Tweet',  // needed
+  writePostScreenTitle: translations.Feed2_WritePostScreenTitle || 'Write a Post',
+  writePostScreenTitleTwitter: translations.Feed2_WriteTweetScreenTitle || 'Post a Tweet',
   facebookPostErrorTitle: translations.Feed2_AlertFacebookSendFailedTitle || 'Error',
   facebookPostErrorMessage: translations.Feed2_AlertFacebookSendFailedMessage || 'Unable to post to Facebook',
   twitterPostErrorTitle: translations.Feed2_AlertTwitterSendFailedTitle || 'Error',
@@ -19,12 +19,12 @@ export const iosTranslationMapping = (translations, feedTitle) => ({
 export const androidTranslationMapping = (translations, feedTitle) => ({
   defaultShareMessage: translations.general_share_text_description.replace('%s', feedTitle) || 'Download the app now!',
   shareTitle: feedTitle || 'Feed',
-  replyToTweetScreenTitle: translations.reply_to_tweet_screen_title || 'Reply to Tweet', // needed
+  replyToTweetScreenTitle: translations.reply_to_tweet_screen_title || 'Reply to Tweet',
   postPlaceholder: translations.write_a_post_hint || 'Write a post...',
   postButtonText: translations.combined_feed_facebook_button_text || 'Post',
   tweetButtonText: translations.combined_feed_tweet_button_text || 'Tweet',
-  writePostScreenTitle: translations.write_post_screen_title || 'Write a Post',  // needed
-  writePostScreenTitleTwitter: translations.write_tweet_screen_title || 'Post a Tweet',  // needed
+  writePostScreenTitle: translations.write_post_screen_title || 'Write a Post',
+  writePostScreenTitleTwitter: translations.write_tweet_screen_title || 'Post a Tweet',
   facebookPostErrorTitle: 'Error',
   facebookPostErrorMessage: translations.feed_failed_to_post_on_facebook || 'Unable to post to Facebook',
   twitterPostErrorTitle: 'Error',
