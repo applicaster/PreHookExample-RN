@@ -5,6 +5,7 @@ import MediaImage from '../components/MediaImage';
 import CardContainer from '../components/CardContainer';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import Caption from '../components/Caption';
 import { styles } from '../style';
 
 export default class LinkCard extends Component {
@@ -15,7 +16,7 @@ export default class LinkCard extends Component {
   }
 
   render() {
-    const { caption, eventId, imageHeight, imageUrl, imageWidth } = this.props;
+    const { caption, eventId, imageHeight, imageUrl, imageWidth, source } = this.props;
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
 
     return (
@@ -27,19 +28,25 @@ export default class LinkCard extends Component {
             imageUrl={imageUrl}
             width={imageWidth}
           />
-          <Footer caption={caption} eventId={eventId} overlay />
+          {source !== 'cms' && <Caption caption={caption} />}
+          <Footer caption={caption} eventId={eventId} overlay={source === 'cms'} />
         </View>
       </CardContainer>);
   }
 }
 
 LinkCard.propTypes = {
-  caption: PropTypes.string.isRequired,
+  caption: PropTypes.string,
   eventId: PropTypes.string.isRequired,
   imageHeight: PropTypes.number.isRequired,
   imageUrl: PropTypes.string.isRequired,
   imageWidth: PropTypes.number.isRequired,
+  source: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
+};
+
+LinkCard.defaultProps = {
+  caption: '',
 };
 
 LinkCard.contextTypes = {
