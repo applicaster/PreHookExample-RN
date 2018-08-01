@@ -113,13 +113,14 @@ export default class HomeScreen extends Component {
       />);
     }
 
-    if (type === 'link' && (source === 'cms' || source === 'zappPipes')) {
+    if (type === 'link') {
       return (<LinkCard
         caption={caption}
         eventId={id}
         imageHeight={height}
         imageUrl={imageUrl}
         imageWidth={width}
+        source={source}
         url={url}
       />);
     }
