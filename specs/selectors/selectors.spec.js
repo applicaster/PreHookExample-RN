@@ -213,10 +213,23 @@ describe('selectors', () => {
   });
 
   describe('getCards', () => {
-    it('should get an object of entries and events combined into one', () => {
+    it('should get an object of entries and events combined into one and keep events and entries inctact after', () => {
+      const eventsEntries = store.getState().events.get('events');
+      const zappPipesEntries = store.getState().zappPipes.get('entries');
+
       expect(getCards(store.getState())).to.deep.equal({
         1: event1,
         2: event2,
+        3: entry1,
+        4: entry2,
+      });
+
+      expect(eventsEntries).to.deep.equal({
+        1: event1,
+        2: event2,
+      });
+
+      expect(zappPipesEntries).to.deep.equal({
         3: entry1,
         4: entry2,
       });
