@@ -53,7 +53,7 @@ export const isLoading = createSelector(
 export const getCards = createSelector(
   getEvents,
   getEntries,
-  (events, entries) => Object.assign(events, entries)
+  (events, entries) => Object.assign({}, events, entries)
 );
 
 export const getSortedCardsByDate = createSelector(
