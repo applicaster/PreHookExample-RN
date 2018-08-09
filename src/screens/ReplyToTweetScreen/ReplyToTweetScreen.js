@@ -87,7 +87,7 @@ class ReplyToTweetScreen extends Component {
   }
 
   renderActionBar() {
-    const { backgroundColor } = this.context;
+    const { backgroundColor } = this.context.styles;
     const { twitterText } = this.state;
     const backgroundColorStyle = { backgroundColor };
 
@@ -100,7 +100,7 @@ class ReplyToTweetScreen extends Component {
 
   renderPostBar() {
     const { postButtonText, screenTitle } = this.props;
-    const { backgroundColor, mainColor, textColor } = this.context;
+    const { backgroundColor, mainColor, textColor } = this.context.styles;
     const backgroundColorStyle = { backgroundColor };
     const textColorStyle = { color: mainColor };
     const postTextColorStyle = { color: textColor };
@@ -118,7 +118,7 @@ class ReplyToTweetScreen extends Component {
 
   render() {
     const { replyPlaceholderText } = this.props;
-    const { backgroundColor } = this.context;
+    const { backgroundColor } = this.context.styles;
     const { keyboardHeight, twitterText } = this.state;
 
     const screenBackgroundColor = { backgroundColor };
@@ -161,9 +161,7 @@ ReplyToTweetScreen.propTypes = {
 };
 
 ReplyToTweetScreen.contextTypes = {
-  mainColor: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 export default ReplyToTweetScreen;

@@ -12,7 +12,8 @@ import { styles } from './style';
 export default class Header extends Component {
   renderSocialIcon() {
     const { overlay: iconOverImage } = this.props;
-    const tintColorStyle = { tintColor: (iconOverImage) ? this.context.secondaryColor : this.context.textColor };
+    const { secondaryColor, textColor } = this.context.styles;
+    const tintColorStyle = { tintColor: (iconOverImage) ? secondaryColor : textColor };
     
     return (
       <View style={styles.socialIconContainer}>
@@ -22,21 +23,25 @@ export default class Header extends Component {
 
   renderUserName() {
     const { userName, overlay: textOverImage } = this.props;
-    const colorStyle = { color: (textOverImage) ? this.context.secondaryColor : this.context.textColor };
+    const { secondaryColor, textColor } = this.context.styles;
+
+    const colorStyle = { color: (textOverImage) ? secondaryColor : textColor };
     
     return (userName) ? <Text style={[styles.userName, colorStyle]}>@{userName}</Text> : null;
   }
 
   renderName() {
     const { name } = this.props;
-    const colorStyle = { color: this.context.mainColor };
+    const colorStyle = { color: this.context.styles.mainColor };
 
     return <Text style={[styles.name, colorStyle]}>{name}</Text>;
   }
 
   renderTimestamp() {
     const { createdAt, overlay: textOverImage } = this.props;
-    const colorStyle = { color: (textOverImage) ? this.context.secondaryColor : this.context.textColor };
+    const { secondaryColor, textColor } = this.context.styles;
+
+    const colorStyle = { color: (textOverImage) ? secondaryColor : textColor };
 
     return <Timestamp timestamp={createdAt} colorStyle={colorStyle} />;
   }
@@ -102,8 +107,5 @@ Header.defaultProps = {
 };
 
 Header.contextTypes = {
-  mainColor: PropTypes.string,
-  secondaryColor: PropTypes.string,
-  textColor: PropTypes.string,
-  secondaryTextColor: PropTypes.string,
+  styles: PropTypes.object,
 };

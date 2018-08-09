@@ -21,7 +21,7 @@ export default class ArticleCard extends Component {
 
   getTitleColor() {
     const COLOR_CHANGE_TRESHHOLD = 0x999999;
-    const { backgroundColor } = this.context;
+    const { backgroundColor } = this.context.styles;
     const backgroundColorValue = parseInt(backgroundColor.substring(1), 16);
     if (backgroundColorValue < COLOR_CHANGE_TRESHHOLD) {
       return '#FFFFFF';
@@ -83,7 +83,7 @@ export default class ArticleCard extends Component {
     const { summary } = this.props;
 
     const summaryStyles = {
-      color: this.context.textColor || '#FFFFFF',
+      color: this.context.styles.textColor || '#FFFFFF',
       paddingHorizontal: TEXT_HORIZONTAL_PADDING,
     };
 
@@ -94,7 +94,7 @@ export default class ArticleCard extends Component {
 
   renderCategoryAndTitle() {
     const { category, caption } = this.props;
-    const textColorStyle = { color: this.context.textColor || '#FFFFFF' };
+    const textColorStyle = { color: this.context.styles.textColor || '#FFFFFF' };
     const titleColorStyle = { color: this.getTitleColor() };
     const categoryAndTitleContainerStyles = { paddingHorizontal: TEXT_HORIZONTAL_PADDING };
 
@@ -150,7 +150,6 @@ ArticleCard.propTypes = {
 };
 
 ArticleCard.contextTypes = {
-  backgroundColor: PropTypes.string,
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
   navigation: PropTypes.object,
 };

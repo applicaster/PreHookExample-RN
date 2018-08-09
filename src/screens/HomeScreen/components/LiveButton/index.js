@@ -26,7 +26,7 @@ class LiveButton extends Component {
   
   getButtonColor() {
     const { isLive } = this.props;
-    const { textColor, mainColor } = this.context;
+    const { textColor, mainColor } = this.context.styles;
     const rgb = hexToRgb(textColor || '#FFFFFF');
     const offlineColor = `rgba(${rgb[0]},${rgb[1]},${rgb[2]}, 0.60)`;
     return isLive ? { tintColor: mainColor } : { tintColor: offlineColor };
@@ -61,8 +61,7 @@ LiveButton.propTypes = {
 };
 
 LiveButton.contextTypes = {
-  textColor: PropTypes.string,
-  mainColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 export default LiveButton;

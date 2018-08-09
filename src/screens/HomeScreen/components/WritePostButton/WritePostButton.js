@@ -25,7 +25,7 @@ class WritePostButton extends Component {
   }
 
   render() {
-    const { mainColor, backgroundColor } = this.context;
+    const { mainColor, backgroundColor } = this.context.styles;
     const { isCardActive, isFacebookAvailable, isSocialPostingEnabled, isTwitterAvailable } = this.props;
     if (isCardActive || !isSocialPostingEnabled || (!isFacebookAvailable && !isTwitterAvailable)) return null;
     
@@ -57,8 +57,7 @@ class WritePostButton extends Component {
 }
 
 WritePostButton.contextTypes = {
-  mainColor: PropTypes.string,
-  backgroundColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 WritePostButton.propTypes = {

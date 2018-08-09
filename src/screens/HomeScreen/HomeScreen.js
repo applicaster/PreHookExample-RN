@@ -168,8 +168,9 @@ export default class HomeScreen extends Component {
   }
 
   render() {
+    console.log(this.context, 'jojojo')
     const { cards, isCardActive, isLoading } = this.props;
-    const backgroundFeedColor = { backgroundColor: this.context.secondaryTextColor };
+    const backgroundFeedColor = { backgroundColor: this.context.styles.secondaryTextColor };
 
     return (
       <View style={[backgroundFeedColor, { flex: 1 }]}>
@@ -206,8 +207,7 @@ HomeScreen.propTypes = {
 };
 
 HomeScreen.contextTypes = {
-  secondaryTextColor: PropTypes.string,
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 HomeScreen.childContextTypes = {

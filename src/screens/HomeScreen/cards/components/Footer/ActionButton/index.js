@@ -10,7 +10,7 @@ import { styles } from './style';
 class ActionButton extends Component {
   render() {
     const { imageUri, label, onPress, selected } = this.props;
-    const { mainColor = '#FFFFFF', textColor = '#FFFFFF' } = this.context;
+    const { mainColor = '#FFFFFF', textColor = '#FFFFFF' } = this.context.styles;
     const tintColorStyle = { tintColor: (selected) ? mainColor : textColor };
     const textColorStyle = { color: `${textColor}99` };
 
@@ -40,8 +40,7 @@ ActionButton.propTypes = {
 };
 
 ActionButton.contextTypes = {
-  mainColor: PropTypes.string,
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 export default ActionButton;

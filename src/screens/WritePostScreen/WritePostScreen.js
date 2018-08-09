@@ -136,7 +136,7 @@ class WritePostScreen extends Component {
   }
 
   renderActionBar() {
-    const { backgroundColor } = this.context;
+    const { backgroundColor } = this.context.styles;
     const { twitterText, socialNetworkSelected } = this.state;
     const { isFacebookAvailable, isTwitterAvailable } = this.props;
   
@@ -163,7 +163,7 @@ class WritePostScreen extends Component {
   }
 
   renderPostBar() {
-    const { backgroundColor } = this.context;
+    const { backgroundColor } = this.context.styles;
     const backgroundColorStyle = { backgroundColor };
 
     return (
@@ -177,7 +177,7 @@ class WritePostScreen extends Component {
 
   renderWritePostLabel() {
     const { screenTitleFacebook, screenTitleTwitter } = this.props;
-    const { mainColor } = this.context;
+    const { mainColor } = this.context.styles;
     const textColorStyle = { color: mainColor };
     const { socialNetworkSelected } = this.state;
 
@@ -191,7 +191,7 @@ class WritePostScreen extends Component {
   renderPostButton() {
     const { socialNetworkSelected } = this.state;
     const { postButtonText, tweetButtonText } = this.props;
-    const { textColor } = this.context;
+    const { textColor } = this.context.styles;
     const textColorStyle = { color: textColor };
 
     const postButtonLabel = (socialNetworkSelected === 'twitter')
@@ -207,7 +207,7 @@ class WritePostScreen extends Component {
 
   render() {
     const { postPlaceholderText } = this.props;
-    const { backgroundColor } = this.context;
+    const { backgroundColor } = this.context.styles;
     const { keyboardHeight, facebookText, twitterText, socialNetworkSelected } = this.state;
     const text = (socialNetworkSelected === 'facebook') ? facebookText : twitterText;
 
@@ -257,9 +257,7 @@ WritePostScreen.propTypes = {
 };
 
 WritePostScreen.contextTypes = {
-  mainColor: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 export default WritePostScreen;

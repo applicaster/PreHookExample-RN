@@ -20,7 +20,7 @@ export default class GenericWebViewScreen extends Component {
 
   render() {
     const { url } = this.props.navigation.state.params;
-    const backgroundFeedColor = { backgroundColor: this.context.backgroundColor };
+    const backgroundFeedColor = { backgroundColor: this.context.styles.backgroundColor };
   
     return (
       <WebView source={{ uri: url }} style={[backgroundFeedColor]} />
@@ -34,5 +34,5 @@ GenericWebViewScreen.propTypes = {
 };
 
 GenericWebViewScreen.contextTypes = {
-  backgroundColor: PropTypes.string,
+  styles: PropTypes.object,
 };

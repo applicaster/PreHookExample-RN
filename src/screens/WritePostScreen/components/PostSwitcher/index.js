@@ -13,7 +13,7 @@ const TWITTER_POST_ICON = 'feed_rn_twitter_post_icon';
 class PostSwitcher extends Component {
   render() {
     const { socialNetworkSelected, toggleNetworkSelected } = this.props;
-    const { mainColor, textColor } = this.context;
+    const { mainColor, textColor } = this.context.styles;
     const borderColorStyle = { borderColor: mainColor };
     const tintColorStyle = { tintColor: textColor };
     const twitterSelectedStyles = { backgroundColor: (socialNetworkSelected === 'twitter') ? mainColor : 'transparent' };
@@ -42,8 +42,7 @@ PostSwitcher.propTypes = {
 };
 
 PostSwitcher.contextTypes = {
-  mainColor: PropTypes.string,
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 export default PostSwitcher;

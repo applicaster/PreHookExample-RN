@@ -20,7 +20,8 @@ export default class LinkCard extends Component {
 
   render() {
     const { caption, eventId, imageHeight, imageUrl, imageWidth, source } = this.props;
-    const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
+    const { backgroundColor, secondaryColor, textColor } = this.context.styles;
+    const backgroundColorStyle = { backgroundColor };
     const mediaImage = (imageUrl)
       ? (<MediaImage
         height={imageHeight}
@@ -31,7 +32,7 @@ export default class LinkCard extends Component {
 
     const overlayContentOverHeader = !!imageUrl;
     const isSocial = (source === 'twitter' || source === 'facebook' || source === 'instagram');
-    const linkTintColorStyle = { tintColor: (overlayContentOverHeader) ? this.context.secondaryColor : this.context.textColor };
+    const linkTintColorStyle = { tintColor: (overlayContentOverHeader) ? secondaryColor : textColor };
 
     return (
       <CardContainer clickable clickHandler={() => this.activateCard()}>
@@ -64,8 +65,6 @@ LinkCard.defaultProps = {
 };
 
 LinkCard.contextTypes = {
-  backgroundColor: PropTypes.string,
-  textColor: PropTypes.string,
-  secondaryColor: PropTypes.string,
+  styles: PropTypes.object,
   navigation: PropTypes.object,
 };

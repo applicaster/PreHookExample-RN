@@ -10,7 +10,7 @@ const BACK_BUTTON = 'feed_rn_back_button';
 class BackButton extends Component {
   render() {
     const { onPress } = this.props;
-    const { textColor = '#FFFFFF' } = this.context;
+    const { textColor = '#FFFFFF' } = this.context.styles;
     const backButtonColor = { tintColor: `${textColor}99` };
 
     return (
@@ -26,7 +26,7 @@ BackButton.propTypes = {
 };
 
 BackButton.contextTypes = {
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 export default BackButton;

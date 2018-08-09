@@ -52,7 +52,7 @@ export default class ArticleCard extends Component {
 
   getTitleColor() {
     const COLOR_CHANGE_TRESHHOLD = 0x999999;
-    const { backgroundColor } = this.context;
+    const { backgroundColor } = this.context.styles;
     const backgroundColorValue = parseInt(backgroundColor.substring(1), 16);
     if (backgroundColorValue < COLOR_CHANGE_TRESHHOLD) {
       return '#FFFFFF';
@@ -201,7 +201,7 @@ export default class ArticleCard extends Component {
     };
 
     const summaryTextColor = {
-      color: this.context.textColor || '#FFFFFF',
+      color: this.context.styles.textColor || '#FFFFFF',
     };
 
     return (
@@ -215,7 +215,7 @@ export default class ArticleCard extends Component {
     const { category, caption } = this.props;
     const { isCardActive } = this.state;
 
-    const textColorStyle = { color: this.context.textColor || '#FFFFFF' };
+    const textColorStyle = { color: this.context.styles.textColor || '#FFFFFF' };
     const titleColorStyle = { color: this.getTitleColor() };
     const categoryAndTitleContainerStyles = {
       marginHorizontal: (isCardActive)
@@ -234,7 +234,7 @@ export default class ArticleCard extends Component {
 
   render() {
     const { isCardActive } = this.state;
-    const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
+    const backgroundColorStyle = { backgroundColor: this.context.styles.backgroundColor };
 
     const borderRadiusStyles = {
       borderRadius: (isCardActive) ? 0 : BORDER_RADIUS(),
@@ -303,6 +303,5 @@ ArticleCard.propTypes = {
 };
 
 ArticleCard.contextTypes = {
-  backgroundColor: PropTypes.string,
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
 };

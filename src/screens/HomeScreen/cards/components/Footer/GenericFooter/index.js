@@ -14,7 +14,7 @@ class GenericFooter extends Component {
 
   renderCaption() {
     const { caption, overlay } = this.props;
-    const captionColorStyle = { color: this.context.secondaryTextColor };
+    const captionColorStyle = { color: this.context.styles.secondaryTextColor };
     if (caption && overlay) {
       return <Text ellipsizeMode={'tail'} numberOfLines={2} style={[styles.caption, captionColorStyle]}>{caption}</Text>;
     }
@@ -39,7 +39,7 @@ GenericFooter.propTypes = {
 };
 
 GenericFooter.contextTypes = {
-  secondaryTextColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 export default GenericFooter;

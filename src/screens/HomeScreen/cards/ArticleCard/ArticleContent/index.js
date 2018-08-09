@@ -30,7 +30,7 @@ export default class ArticleContent extends Component {
 
   getTitleColor() {
     const COLOR_CHANGE_TRESHHOLD = 0x999999;
-    const { backgroundColor } = this.context;
+    const { backgroundColor } = this.context.styles;
     const backgroundColorValue = parseInt(backgroundColor.substring(1), 16);
     if (backgroundColorValue < COLOR_CHANGE_TRESHHOLD) {
       return '#FFFFFF';
@@ -70,7 +70,7 @@ export default class ArticleContent extends Component {
     };
 
     const baseFontStyle = {
-      color: this.context.textColor,
+      color: this.context.styles.textColor,
       fontSize: 17,
       lineHeight: 21,
     };
@@ -123,8 +123,7 @@ ArticleContent.propTypes = {
 };
 
 ArticleContent.contextTypes = {
-  backgroundColor: PropTypes.string,
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 ArticleContent.defaultProps = {

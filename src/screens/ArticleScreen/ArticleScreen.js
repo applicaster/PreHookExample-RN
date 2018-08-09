@@ -20,7 +20,7 @@ class ArticleScreen extends Component {
 
   getTitleColor() {
     const COLOR_CHANGE_TRESHHOLD = 0x999999;
-    const { backgroundColor } = this.context;
+    const { backgroundColor } = this.context.styles;
     const backgroundColorValue = parseInt(backgroundColor.substring(1), 16);
     if (backgroundColorValue < COLOR_CHANGE_TRESHHOLD) {
       return '#FFFFFF';
@@ -35,6 +35,7 @@ class ArticleScreen extends Component {
 
   renderContent() {
     const { author, body, category, summary, timestamp, title } = this.props;
+    const { textColor } = this.context.styles;
     const dynamicTextColor = this.getTitleColor();
 
     const summaryInArticleStyles = {
@@ -46,14 +47,14 @@ class ArticleScreen extends Component {
     };
 
     const baseFontStyle = {
-      color: this.context.textColor,
+      color: textColor,
       fontSize: 17,
       lineHeight: 21,
     };
 
-    const textColorStyle = { color: this.context.textColor || '#FFFFFF' };
+    const textColorStyle = { color: textColor || '#FFFFFF' };
     const titleColorStyle = { color: this.getTitleColor() };
-    
+
     return ([
       <Text style={[styles.category, textColorStyle]} key={'category'}>{category.toUpperCase()}</Text>,
       <Text style={[styles.title, titleColorStyle]} key={'title'}>{title}</Text>,
@@ -64,7 +65,7 @@ class ArticleScreen extends Component {
         baseFontStyle={baseFontStyle}
         html={body}
         key={'body'}
-        onLinkPress={() => {}} // TODO: open webview?
+        onLinkPress={() => { }} // TODO: open webview?
         textSelectable={false}
       />]);
   }
@@ -100,7 +101,7 @@ class ArticleScreen extends Component {
   render() {
     const { backgroundColor } = this.context;
     const screenBackgroundColorStyles = { backgroundColor, flex: 1 };
-    
+
     return (
       <View style={[styles.articleScreen, screenBackgroundColorStyles]}>
         <CloseButton onPress={this.closeArticle} style={styles.closeButton} />
@@ -131,9 +132,8 @@ ArticleScreen.propTypes = {
 };
 
 ArticleScreen.contextTypes = {
-  backgroundColor: PropTypes.string,
+  styles: PropTypes.object,
   navigation: PropTypes.object,
-  textColor: PropTypes.string,
 };
 
 export default ArticleScreen;

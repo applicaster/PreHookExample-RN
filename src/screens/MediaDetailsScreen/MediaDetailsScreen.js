@@ -45,7 +45,7 @@ class MediaDetailsScreen extends Component {
   render() {
     const { activeEvent } = this.props;
     const { url: imageUrl } = activeEvent.images.default;
-    const { backgroundColor } = this.context;
+    const { backgroundColor } = this.context.styles;
     const screenBackgroundColor = { backgroundColor, flex: 1 };
     
     return (
@@ -64,8 +64,7 @@ MediaDetailsScreen.propTypes = {
 };
 
 MediaDetailsScreen.contextTypes = {
-  backgroundColor: PropTypes.string,
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 MediaDetailsScreen.defaultProps = {

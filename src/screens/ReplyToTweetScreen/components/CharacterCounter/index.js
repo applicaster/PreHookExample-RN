@@ -8,7 +8,7 @@ import { styles } from './style';
 
 class CharacterCounter extends Component {
   render() {
-    const { backgroundColor = '#FFFFFF' } = this.context;
+    const { backgroundColor = '#FFFFFF' } = this.context.styles;
     const backgroundColorStyle = { backgroundColor: `${backgroundColor}46` };
     const defaultBackgroundColorStyle = { backgroundColor: '#FFFFFF' };
 
@@ -42,7 +42,7 @@ CharacterCounter.propTypes = {
 };
 
 CharacterCounter.contextTypes = {
-  backgroundColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 export default CharacterCounter;

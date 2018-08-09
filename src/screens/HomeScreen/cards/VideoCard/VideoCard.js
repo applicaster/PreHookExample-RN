@@ -45,7 +45,7 @@ export default class VideoCard extends Component {
 
   getTitleColor() {
     const COLOR_CHANGE_TRESHHOLD = 0x999999;
-    const { backgroundColor } = this.context;
+    const { backgroundColor } = this.context.styles;
     const backgroundColorValue = parseInt(backgroundColor.substring(1), 16);
     if (backgroundColorValue < COLOR_CHANGE_TRESHHOLD) {
       return '#FFFFFF';
@@ -176,7 +176,7 @@ export default class VideoCard extends Component {
     const { category, caption } = this.props;
     const { isCardActive } = this.state;
 
-    const textColorStyle = { color: this.context.textColor || '#FFFFFF' };
+    const textColorStyle = { color: this.context.styles.textColor || '#FFFFFF' };
     const titleColorStyle = { color: this.getTitleColor() };
     const categoryAndTitleContainerStyles = {
       opacity: this.opacityAnimationValue,
@@ -206,7 +206,7 @@ export default class VideoCard extends Component {
     };
 
     const titleTextColor = {
-      color: this.context.textColor || '#FFFFFF',
+      color: this.context.styles.textColor || '#FFFFFF',
     };
 
     return (
@@ -223,7 +223,7 @@ export default class VideoCard extends Component {
     const { isCardActive } = this.state;
     const { isEditorial, platform } = this.props;
 
-    const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
+    const backgroundColorStyle = { backgroundColor: this.context.styles.backgroundColor };
     const cardContainerStyles = {
       borderRadius: (isCardActive) ? 0 : BORDER_RADIUS(),
       marginHorizontal: (isCardActive) ? 0 : SCREEN_MARGIN,
@@ -282,6 +282,5 @@ VideoCard.propTypes = {
 };
 
 VideoCard.contextTypes = {
-  backgroundColor: PropTypes.string,
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
 };

@@ -11,7 +11,7 @@ import { CLOSE_ROUND_BUTTON } from '../../icons';
 class CloseButton extends Component {
   render() {
     const { style: buttonContainerStyles, onPress, tintColor } = this.props;
-    const { textColor = '#FFFFFF' } = this.context;
+    const { textColor = '#FFFFFF' } = this.context.styles;
     const closeButtonColor = { tintColor: tintColor || `${textColor}99` };
 
     return (
@@ -31,7 +31,7 @@ CloseButton.propTypes = {
 };
 
 CloseButton.contextTypes = {
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 export default CloseButton;

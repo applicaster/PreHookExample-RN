@@ -20,7 +20,7 @@ export default class ImageCard extends Component {
 
   render() {
     const { caption, eventId, imageHeight, imageUrl, imageWidth } = this.props;
-    const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
+    const backgroundColorStyle = { backgroundColor: this.context.styles.backgroundColor };
 
     return (
       <CardContainer clickable clickHandler={() => this.activateCard()}>
@@ -56,5 +56,5 @@ ImageCard.defaultProps = {
 };
 
 ImageCard.contextTypes = {
-  backgroundColor: PropTypes.string,
+  styles: PropTypes.object,
 };

@@ -29,7 +29,7 @@ class SocialWebViewScreen extends Component {
 
   render() {
     const { url } = this.state;
-    const backgroundFeedColor = { backgroundColor: this.context.backgroundColor };
+    const backgroundFeedColor = { backgroundColor: this.context.styles.backgroundColor };
   
     return (
       <WebView source={{uri: url }} style={[backgroundFeedColor]} onNavigationStateChange={this.onNavigationStateChange} />
@@ -42,7 +42,7 @@ SocialWebViewScreen.propTypes = {
 };
 
 SocialWebViewScreen.contextTypes = {
-  backgroundColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 export default SocialWebViewScreen;

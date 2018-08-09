@@ -12,7 +12,7 @@ const cardWidth = width - (2 * SCREEN_MARGIN);
 export default class PlaceHolderCard extends Component {
   renderLine({ height, spacing, widthPercentage }) {
     const lineDimensionStyles = {
-      backgroundColor: this.context.secondaryTextColor,
+      backgroundColor: this.context.styles.secondaryTextColor,
       height,
       width: ((cardWidth - 30) * (widthPercentage / 100)),
       marginBottom: spacing,
@@ -22,8 +22,9 @@ export default class PlaceHolderCard extends Component {
   }
 
   render() {
-    const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
-    const ghostBackgroundStyle = { backgroundColor: this.context.secondaryTextColor };
+    const { backgroundColor, secondaryTextColor } = this.context.styles;
+    const backgroundColorStyle = { backgroundColor };
+    const ghostBackgroundStyle = { backgroundColor: secondaryTextColor };
 
     return (
       <CardContainer clickable clickHandler={() => {}}>
@@ -41,6 +42,5 @@ export default class PlaceHolderCard extends Component {
 }
 
 PlaceHolderCard.contextTypes = {
-  backgroundColor: PropTypes.string,
-  secondaryTextColor: PropTypes.string,
+  styles: PropTypes.object,
 };

@@ -42,7 +42,7 @@ class ExpandText extends Component {
     const { content, expandLabel, textStyle, maxChar } = this.props;
     const { isContentExpanded } = this.state;
     const expandTextButton = (
-      <Text key={uuid()} style={[styles.expandText, { color: `${this.context.textColor}BF` }]}>
+      <Text key={uuid()} style={[styles.expandText, { color: `${this.context.styles.textColor}BF` }]}>
         {expandLabel}
       </Text>
     );
@@ -117,7 +117,7 @@ ExpandText.propTypes = {
 };
 
 ExpandText.contextTypes = {
-  textColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 export default ExpandText;

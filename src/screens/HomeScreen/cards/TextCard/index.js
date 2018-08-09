@@ -16,7 +16,7 @@ export default class TextCard extends Component {
 
   render() {
     const { caption, eventId } = this.props;
-    const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
+    const backgroundColorStyle = { backgroundColor: this.context.styles.backgroundColor };
 
     return (
       <CardContainer>
@@ -35,5 +35,5 @@ TextCard.propTypes = {
 };
 
 TextCard.contextTypes = {
-  backgroundColor: PropTypes.string,
+  styles: PropTypes.object,
 };

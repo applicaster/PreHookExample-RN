@@ -22,14 +22,14 @@ class Caption extends Component {
   }
 
   highlightHashtagsAndUsers(caption) {
-    const highlightColor = { color: this.context.mainColor };
+    const highlightColor = { color: this.context.styles.mainColor };
     const regex = /([@|#][\w](?:(?:[\w]|(?:\.(?!\.))){0,28}(?:[\w]))?)/g;
     const matchCallback = (match, i) => (<Text key={i} style={highlightColor}>{match}</Text>);
     return reactStringReplace(caption, regex, matchCallback);
   }
 
   highlightLinks(caption) {
-    const linkStyle = { color: this.context.mainColor, textDecorationLine: 'underline' };
+    const linkStyle = { color: this.context.styles.mainColor, textDecorationLine: 'underline' };
     const regex = /([(https|http)]*:\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;
     const matchCallback = (match, i) =>
       (<Text onPress={() => this.navigateToWebview(match)} key={`${i}-link`} style={linkStyle}>{match}</Text>);
@@ -45,7 +45,7 @@ class Caption extends Component {
 
   render() {
     const { caption, maxChar } = this.props;
-    const captionColor = { color: this.context.textColor || '#FFFFFF' };
+    const captionColor = { color: this.context.styles.textColor || '#FFFFFF' };
     const content = this.processCaption(caption);
     return (caption)
       ? <ExpandText
@@ -63,9 +63,8 @@ Caption.propTypes = {
 };
 
 Caption.contextTypes = {
-  mainColor: PropTypes.string,
+  styles: PropTypes.object,
   navigation: PropTypes.object,
-  textColor: PropTypes.string,
 };
 
 export default Caption;
