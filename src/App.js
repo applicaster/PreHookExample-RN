@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { Map } from 'immutable';
-import store from './store';
+import initialStore from './store';
 import { appInitialState } from './reducers/app';
 import { eventsInitialState } from './reducers/events';
 import { zappPipesInitialState } from './reducers/zappPipes';
@@ -12,6 +12,8 @@ import {
   iosTranslationMapping,
   androidTranslationMapping,
 } from './utils/localization';
+
+export const store = {};
 
 class App extends Component {
   getChildContext() {
@@ -33,12 +35,12 @@ class App extends Component {
 
     return this.colors;
   }
-  
+
   processLocalization(localization, feedTitle) {
     const localeTranslations = (Platform.OS === 'ios') ? localization[Object.keys(localization)[0]] : localization;
     const translations = (Platform.OS === 'ios')
-        ? iosTranslationMapping(localeTranslations, feedTitle)
-        : androidTranslationMapping(localeTranslations, feedTitle);
+      ? iosTranslationMapping(localeTranslations, feedTitle)
+      : androidTranslationMapping(localeTranslations, feedTitle);
 
     return translations;
   }
@@ -50,7 +52,7 @@ class App extends Component {
       initialAppProps = JSON.parse(initialAppProps);
       localization = JSON.parse(localization);
     }
-    
+
     const appInitialStateProps = appInitialState.toJS();
     const getStringBooleanValue = (defaultValue, stringBoolean) => typeof stringBoolean === 'string' ? stringBoolean === 'true' : defaultValue;
 
@@ -63,6 +65,7 @@ class App extends Component {
       hasLive,
       publicPageUrl,
       navigationStyle = appInitialStateProps.navigationStyle,
+      squareBorders,
       isSocialPostingEnabled,
       zappPipesUrl,
       zappPipesUrlScheme,
@@ -72,7 +75,7 @@ class App extends Component {
 
     let { environment } = initialAppProps;
     if (environment && environment !== 'production') environment = 'development';
-    
+
     const initialState = {
       app: Map(Object.assign(appInitialState.toJS(), {
         accountId,
@@ -82,7 +85,9 @@ class App extends Component {
         feedTitle,
         publicPageUrl,
         platform: Platform.OS,
-        isSocialPostingEnabled: getStringBooleanValue(appInitialStateProps.isSocialPostingEnabled, isSocialPostingEnabled),
+        squareBorders: !!squareBorders,
+        isSocialPostingEnabled:
+          getStringBooleanValue(appInitialStateProps.isSocialPostingEnabled, isSocialPostingEnabled),
       })),
       events: eventsInitialState,
       translations,
@@ -90,11 +95,13 @@ class App extends Component {
         dataSourceProviderUrl: `${zappPipesUrlScheme}://fetchData?type=${zappPipesType}&url=${zappPipesUrl}`,
       })),
     };
-    
+
     const { backgroundColor, mainColor, textColor } = this.colors || this.getColors(initialAppProps);
 
+    Object.assign(store, initialStore(initialState, environment = 'production'))
+
     return (
-      <Provider store={store(initialState, environment = 'production')}>
+      <Provider store={store}>
         <AppNavigator
           headerTitle={feedTitle}
           headerBackgroundColor={backgroundColor}
