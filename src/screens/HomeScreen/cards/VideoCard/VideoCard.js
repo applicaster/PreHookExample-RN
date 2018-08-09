@@ -225,7 +225,7 @@ export default class VideoCard extends Component {
 
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
     const cardContainerStyles = {
-      borderRadius: (isCardActive) ? 0 : BORDER_RADIUS,
+      borderRadius: (isCardActive) ? 0 : BORDER_RADIUS(),
       marginHorizontal: (isCardActive) ? 0 : SCREEN_MARGIN,
     };
 

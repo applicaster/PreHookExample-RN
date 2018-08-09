@@ -237,7 +237,7 @@ export default class ArticleCard extends Component {
     const backgroundColorStyle = { backgroundColor: this.context.backgroundColor };
 
     const borderRadiusStyles = {
-      borderRadius: (isCardActive) ? 0 : BORDER_RADIUS,
+      borderRadius: (isCardActive) ? 0 : BORDER_RADIUS(),
     };
 
     const cardContainerStyles = Object.assign({
