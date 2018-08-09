@@ -126,7 +126,14 @@ App.propTypes = {
 };
 
 App.childContextTypes = {
-  styles: PropTypes.object,
+  styles: PropTypes.shape({
+    mainColor: PropTypes.string,
+    secondaryColor: PropTypes.string,
+    textColor: PropTypes.string,
+    secondaryTextColor: PropTypes.string,
+    backgroundColor: PropTypes.string,
+    borderType: PropTypes.string,
+  }),
 };
 
 export default App;
