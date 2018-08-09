@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { Map } from 'immutable';
-import initialStore from './store';
+import store from './store';
 import { appInitialState } from './reducers/app';
 import { eventsInitialState } from './reducers/events';
 import { zappPipesInitialState } from './reducers/zappPipes';
@@ -13,13 +13,15 @@ import {
   androidTranslationMapping,
 } from './utils/localization';
 
-export const store = {};
-
 class App extends Component {
   getChildContext() {
     const appStyles = this.colors;
+    const borderType = this.borderType;
     return {
-      ...appStyles,
+      styles: {
+        ...appStyles,
+        borderType,
+      },
     };
   }
 
@@ -65,12 +67,15 @@ class App extends Component {
       hasLive,
       publicPageUrl,
       navigationStyle = appInitialStateProps.navigationStyle,
-      squareBorders,
+      borderType,
       isSocialPostingEnabled,
       zappPipesUrl,
       zappPipesUrlScheme,
       zappPipesType,
     } = initialAppProps;
+
+    this.borderType = borderType;
+
     const translations = this.processLocalization(localization, feedTitle);
 
     let { environment } = initialAppProps;
@@ -85,7 +90,7 @@ class App extends Component {
         feedTitle,
         publicPageUrl,
         platform: Platform.OS,
-        squareBorders: !!squareBorders,
+        borderType,
         isSocialPostingEnabled:
           getStringBooleanValue(appInitialStateProps.isSocialPostingEnabled, isSocialPostingEnabled),
       })),
@@ -98,10 +103,8 @@ class App extends Component {
 
     const { backgroundColor, mainColor, textColor } = this.colors || this.getColors(initialAppProps);
 
-    Object.assign(store, initialStore(initialState, environment = 'production'));
-
     return (
-      <Provider store={store}>
+      <Provider store={store(initialState, environment = 'production')}>
         <AppNavigator
           headerTitle={feedTitle}
           headerBackgroundColor={backgroundColor}
@@ -123,11 +126,7 @@ App.propTypes = {
 };
 
 App.childContextTypes = {
-  mainColor: PropTypes.string,
-  secondaryColor: PropTypes.string,
-  textColor: PropTypes.string,
-  secondaryTextColor: PropTypes.string,
-  backgroundColor: PropTypes.string,
+  styles: PropTypes.object,
 };
 
 export default App;
