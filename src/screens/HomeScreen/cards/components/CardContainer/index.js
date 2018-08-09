@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, Easing, TouchableWithoutFeedback } from 'react-native';
-import { SCREEN_MARGIN } from '../../../../../constants/measurements';
+import { SCREEN_MARGIN, BORDER_RADIUS } from '../../../../../constants/measurements';
 import { styles } from './style';
 
 const SCALE_ANIMATION_DURATION = 200;
@@ -13,7 +13,7 @@ export default class CardContainer extends Component {
     this.scaleValue = new Animated.Value(0);
     this.opacityValue = new Animated.Value(0);
   }
-  
+
   componentDidMount() {
     Animated.timing(
       this.opacityValue,
@@ -73,10 +73,12 @@ export default class CardContainer extends Component {
 
     const cardScaleStyles = {
       transform: [
-        { scale: this.scaleValue.interpolate({
-          inputRange: [0, 1],
-          outputRange: [1, 0.964],
-        }) },
+        {
+          scale: this.scaleValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: [1, 0.964],
+          })
+        },
       ],
     };
 
@@ -89,7 +91,15 @@ export default class CardContainer extends Component {
         onPressIn={() => this.onPressIn()}
         onPressOut={() => this.onPressOut()}
       >
-        <Animated.View style={[styles.cardContainer, cardScaleStyles, cardOpacityStyles, applyMargins && marginHorizontalStyles]}>
+        <Animated.View
+          style={[
+            styles.cardContainer,
+            cardScaleStyles,
+            cardOpacityStyles,
+            { borderRadius: BORDER_RADIUS(this.context.styles.borderType) },
+            applyMargins && marginHorizontalStyles,
+          ]}
+        >
           {children}
         </Animated.View>
       </TouchableWithoutFeedback>
@@ -103,6 +113,10 @@ CardContainer.propTypes = {
   clickable: PropTypes.bool.isRequired,
   clickHandler: PropTypes.func,
   isCardActive: PropTypes.bool.isRequired,
+};
+
+CardContainer.contextTypes = {
+  styles: PropTypes.object,
 };
 
 CardContainer.defaultProps = {

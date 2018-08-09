@@ -20,7 +20,7 @@ export default class LinkCard extends Component {
 
   render() {
     const { caption, eventId, imageHeight, imageUrl, imageWidth, source } = this.props;
-    const { backgroundColor, secondaryColor, textColor } = this.context.styles;
+    const { backgroundColor, secondaryColor, textColor, borderType } = this.context.styles;
     const backgroundColorStyle = { backgroundColor };
     const mediaImage = (imageUrl)
       ? (<MediaImage
@@ -36,7 +36,7 @@ export default class LinkCard extends Component {
 
     return (
       <CardContainer clickable clickHandler={() => this.activateCard()}>
-        <View style={[styles.eventContainer, backgroundColorStyle, { borderRadius: BORDER_RADIUS() }]}>
+        <View style={[styles.eventContainer, backgroundColorStyle, { borderRadius: BORDER_RADIUS(borderType) }]}>
           <Image style={[linkStyles.linkIcon, linkTintColorStyle, isSocial && linkStyles.socialLink]} source={require('../../../../assets/images/link_icon.png')} />
           <Header eventId={eventId} overlay={!!imageUrl} />
           {mediaImage}

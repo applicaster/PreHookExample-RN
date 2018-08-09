@@ -22,13 +22,13 @@ export default class PlaceHolderCard extends Component {
   }
 
   render() {
-    const { backgroundColor, secondaryTextColor } = this.context.styles;
+    const { backgroundColor, secondaryTextColor, borderType } = this.context.styles;
     const backgroundColorStyle = { backgroundColor };
     const ghostBackgroundStyle = { backgroundColor: secondaryTextColor };
 
     return (
       <CardContainer clickable clickHandler={() => {}}>
-        <View style={[styles.eventContainer, placeholderStyles.ghostCard, backgroundColorStyle, { borderRadius: BORDER_RADIUS() }]}>
+        <View style={[styles.eventContainer, placeholderStyles.ghostCard, backgroundColorStyle, { borderRadius: BORDER_RADIUS(borderType) }]}>
           <View style={[placeholderStyles.ghostMedia, ghostBackgroundStyle]} />
           {this.renderLine({ height: 12, spacing: 7, widthPercentage: 40 })}
           {this.renderLine({ height: 18, spacing: 5, widthPercentage: 96 })}

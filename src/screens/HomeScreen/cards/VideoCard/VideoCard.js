@@ -222,10 +222,11 @@ export default class VideoCard extends Component {
   render() {
     const { isCardActive } = this.state;
     const { isEditorial, platform } = this.props;
+    const { backgroundColor, borderType } = this.context.styles;
 
-    const backgroundColorStyle = { backgroundColor: this.context.styles.backgroundColor };
+    const backgroundColorStyle = { backgroundColor };
     const cardContainerStyles = {
-      borderRadius: (isCardActive) ? 0 : BORDER_RADIUS(),
+      borderRadius: (isCardActive) ? 0 : BORDER_RADIUS(borderType),
       marginHorizontal: (isCardActive) ? 0 : SCREEN_MARGIN,
     };
 
