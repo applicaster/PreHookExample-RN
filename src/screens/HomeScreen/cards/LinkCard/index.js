@@ -8,6 +8,8 @@ import Header from '../components/Header';
 import Caption from '../components/Caption';
 import { styles } from '../style';
 import { styles as linkStyles } from './style';
+import { BORDER_RADIUS } from '../../../../constants/measurements';
+
 
 export default class LinkCard extends Component {
   activateCard() {
@@ -26,14 +28,14 @@ export default class LinkCard extends Component {
         width={imageWidth}
       />)
       : null;
-    
+
     const overlayContentOverHeader = !!imageUrl;
     const isSocial = (source === 'twitter' || source === 'facebook' || source === 'instagram');
     const linkTintColorStyle = { tintColor: (overlayContentOverHeader) ? this.context.secondaryColor : this.context.textColor };
 
     return (
       <CardContainer clickable clickHandler={() => this.activateCard()}>
-        <View style={[styles.eventContainer, backgroundColorStyle]}>
+        <View style={[styles.eventContainer, backgroundColorStyle, { borderRadius: BORDER_RADIUS() }]}>
           <Image style={[linkStyles.linkIcon, linkTintColorStyle, isSocial && linkStyles.socialLink]} source={require('../../../../assets/images/link_icon.png')} />
           <Header eventId={eventId} overlay={!!imageUrl} />
           {mediaImage}

@@ -98,7 +98,7 @@ class App extends Component {
 
     const { backgroundColor, mainColor, textColor } = this.colors || this.getColors(initialAppProps);
 
-    Object.assign(store, initialStore(initialState, environment = 'production'))
+    Object.assign(store, initialStore(initialState, environment = 'production'));
 
     return (
       <Provider store={store}>
