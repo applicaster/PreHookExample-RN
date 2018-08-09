@@ -28,7 +28,7 @@ export const appInitialState = Map({
   publicPageUrl: null,
   platform: null,
   navigationStyle: 'fullScreen',
-  squareBorders: false,
+  borderType: 'round',
   isSocialPostingEnabled: true,
 });
 
