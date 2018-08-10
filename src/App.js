@@ -90,7 +90,6 @@ class App extends Component {
         feedTitle,
         publicPageUrl,
         platform: Platform.OS,
-        borderType,
         isSocialPostingEnabled:
           getStringBooleanValue(appInitialStateProps.isSocialPostingEnabled, isSocialPostingEnabled),
       })),
