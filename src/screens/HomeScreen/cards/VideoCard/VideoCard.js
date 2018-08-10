@@ -173,7 +173,7 @@ export default class VideoCard extends Component {
   }
 
   renderCategoryAndTitle() {
-    const { category, caption } = this.props;
+    const { category, caption, isEditorial } = this.props;
     const { isCardActive } = this.state;
 
     const textColorStyle = { color: this.context.styles.textColor || '#FFFFFF' };
@@ -188,7 +188,7 @@ export default class VideoCard extends Component {
 
     return (
       <Animated.View style={categoryAndTitleContainerStyles}>
-        {category && <Text style={[videoStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>}
+        {isEditorial && <Text style={[videoStyles.category, textColorStyle]}>{category.toUpperCase()}</Text>}
         <Text style={[videoStyles.titleEditorial, titleColorStyle]}>{caption}</Text>
       </Animated.View>
     );
