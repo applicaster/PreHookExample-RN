@@ -50,5 +50,5 @@ jobs:
         path: /tmp/circleci-test-results
 
     - deploy:
-      name: S3 Bundle deployment
-      command: bash .circleci/deploy.sh ${CIRCLE_BRANCH}
+        name: S3 Bundle deployment
+        command: bash .circleci/deploy.sh ${CIRCLE_BRANCH}
