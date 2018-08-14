@@ -141,8 +141,24 @@ describe('selectors', () => {
   });
 
   describe('getActiveEvent', () => {
-    it('should get the event for the activeEventId property from the events reducer state', () => {
+    it('should get the event for the activeEventId property from the cards reducer state', () => {
       expect(getActiveEvent(store.getState())).to.deep.equal(event1);
+    });
+
+    const storeWithZappEntry = mockStore({
+      app: Map({
+        activeEventId: '3',
+      }),
+      events: Map({
+        events: { 1: event1, 2: event2 },
+      }),
+      zappPipes: Map({
+        entries: { 3: entry1, 4: entry2 },
+      }),
+    });
+
+    it('should get the entry from zappPipes for the activeEventId property from the cards reducer state', () => {
+      expect(getActiveEvent(storeWithZappEntry.getState())).to.deep.equal(entry1);
     });
   });
 
