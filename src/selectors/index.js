@@ -32,10 +32,16 @@ export const getZappPipesLoading = state => state.zappPipes.get('loading');
 // From Translations Reducer
 export const getTranslations = state => state.translations;
 
+export const getCards = createSelector(
+  getEvents,
+  getEntries,
+  (events, entries) => Object.assign({}, events, entries)
+);
+
 // Composed Selectors
 export const getActiveEvent = createSelector(
   getActiveEventId,
-  getEvents,
+  getCards,
   (activeEventId, events) => events[activeEventId]
 );
 
@@ -48,12 +54,6 @@ export const isLoading = createSelector(
   getEventsLoading,
   getZappPipesLoading,
   (eventsLoading, zappPipesLoading) => eventsLoading || zappPipesLoading
-);
-
-export const getCards = createSelector(
-  getEvents,
-  getEntries,
-  (events, entries) => Object.assign({}, events, entries)
 );
 
 export const getSortedCardsByDate = createSelector(

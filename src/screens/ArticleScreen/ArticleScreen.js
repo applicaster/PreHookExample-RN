@@ -65,7 +65,7 @@ class ArticleScreen extends Component {
         baseFontStyle={baseFontStyle}
         html={body}
         key={'body'}
-        onLinkPress={() => { }} // TODO: open webview?
+        onLinkPress={() => {}} // TODO: open webview?
         textSelectable={false}
       />]);
   }
@@ -99,7 +99,7 @@ class ArticleScreen extends Component {
   }
 
   render() {
-    const { backgroundColor } = this.context;
+    const { backgroundColor } = this.context.styles;
     const screenBackgroundColorStyles = { backgroundColor, flex: 1 };
 
     return (
