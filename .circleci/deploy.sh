@@ -3,12 +3,12 @@
 ci_branch=$1
 
 function deploy_master {
-  npm run deploy
+  npm run stage-circle
   exit_if_push_failed
 }
 
 function deploy_production {
-  npm run deploy-staging
+  npm run deploy-circle
   exit_if_push_failed
 }
 
