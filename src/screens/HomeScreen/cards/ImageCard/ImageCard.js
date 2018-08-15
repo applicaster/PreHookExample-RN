@@ -8,6 +8,7 @@ import CardContainer from '../components/CardContainer';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import MediaImage from '../components/MediaImage';
+import { BORDER_RADIUS } from '../../../../constants/measurements';
 import { styles } from '../style';
 
 export default class ImageCard extends Component {
@@ -20,11 +21,16 @@ export default class ImageCard extends Component {
 
   render() {
     const { caption, eventId, imageHeight, imageUrl, imageWidth } = this.props;
-    const backgroundColorStyle = { backgroundColor: this.context.styles.backgroundColor };
+    const { backgroundColor, borderType } = this.context.styles;
+    const backgroundColorStyle = { backgroundColor };
 
     return (
       <CardContainer clickable clickHandler={() => this.activateCard()}>
-        <View style={[styles.eventContainer, backgroundColorStyle]}>
+        <View style={[
+          styles.eventContainer,
+          backgroundColorStyle,
+          { borderRadius: BORDER_RADIUS(borderType) }]}
+        >
           <Header eventId={eventId} overlay />
           <View>
             <MediaImage
