@@ -13,7 +13,8 @@ function deploy_production {
 }
 
 function skip_build {
-  echo '$ci_branch is not a deployment branch. Skipping deployment to S3 step.'
+  echo $ci_branch 
+  echo 'is not a deployment branch. Skipping deployment to S3 step.'
 }
 
 function exit_if_push_failed {
