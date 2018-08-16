@@ -260,7 +260,7 @@ export const normalizedVideosFeedSample = {
       type: 'video',
       caption: 'Example Video Title #1',
       category: 'Example category',
-      createdAt: 1112821200,
+      createdAt: 1112821200000,
       user: {
         name: 'Test Videos Feed',
         avatarImageUrl: 'sourceImageUrl.png',
@@ -286,7 +286,7 @@ export const normalizedImagesFeedSample = {
       source: 'zappPipes',
       type: 'image',
       caption: 'Example Image Title #1',
-      createdAt: 1112821200,
+      createdAt: 1112821200000,
       user: {
         name: 'Test Images Feed',
         avatarImageUrl: 'sourceImageUrl.png',
@@ -314,7 +314,7 @@ export const normalizedArticlesFeedSample = {
       summary: 'Example Summary',
       caption: 'Test Article',
       category: 'Category',
-      createdAt: 1112821200,
+      createdAt: 1112821200000,
       videoUrl: null,
       user: {
         name: 'Author Name',
@@ -337,7 +337,7 @@ export const normalizedArticlesFeedSample = {
       summary: 'Example Video Article Summary',
       caption: 'Example Article Title #2',
       category: 'Category',
-      createdAt: 1112821200,
+      createdAt: 1112821200000,
       videoUrl: 'http://domain.com/video.mp4',
       user: {
         name: 'Author Name',
@@ -363,7 +363,7 @@ export const normalizedLinksFeedSample = {
       source: 'zappPipes',
       type: 'link',
       caption: 'Example Link #1',
-      createdAt: 1112821200,
+      createdAt: 1112821200000,
       user: {
         name: 'Test Links Feed',
         avatarImageUrl: 'sourceImageUrl.png',
@@ -389,7 +389,7 @@ export const normalizedAndroidFeedSample = {
       source: 'zappPipes',
       type: 'video',
       caption: 'Example Video Title #1',
-      createdAt: 1112821200,
+      createdAt: 1112821200000,
       user: {
         name: 'Test Videos Feed',
         avatarImageUrl: 'sourceImageUrl.png',
