@@ -13,14 +13,13 @@ export const isWithinAMonth = (momentDate) => momentDate.isAfter(A_MONTH_OLD);
 export const isWithinAYear = (momentDate) => momentDate.isAfter(A_YEAR_OLD);
 
 export const timeFromNow = (timestamp) => {
-  const time = moment.unix(timestamp);
-  const eventMoment = time.isDST() ? time.subtract(1, 'hour') : time;
+  const time = moment(timestamp);
 
-  if (isWithinAWeek(eventMoment)) {
-    return eventMoment.fromNow();
-  } else if (isWithinAYear(eventMoment)) {
-    return eventMoment.format('MMMM D');
+  if (isWithinAWeek(time)) {
+    return time.fromNow();
+  } else if (isWithinAYear(time)) {
+    return time.format('MMMM D');
   }
   
-  return eventMoment.format('MMMM D, YYYY');
+  return time.format('MMMM D, YYYY');
 };
