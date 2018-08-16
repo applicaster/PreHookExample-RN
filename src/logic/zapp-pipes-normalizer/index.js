@@ -1,6 +1,7 @@
 import { v4 as uuid } from 'uuid';
 
-const date = value => (new Date(value).getTime() / 1000);
+const date = value => new Date(value).getTime();
+
 const mapUser = user => ({
   id: user.id || uuid(),
   avatarImageUrl: user.avatarImageUrl || '',
