@@ -12,14 +12,15 @@ export const isWithinAWeek = (momentDate) => momentDate.isAfter(A_WEEK_OLD);
 export const isWithinAMonth = (momentDate) => momentDate.isAfter(A_MONTH_OLD);
 export const isWithinAYear = (momentDate) => momentDate.isAfter(A_YEAR_OLD);
 
+
 export const timeFromNow = (timestamp) => {
-  const time = moment(timestamp);
+  const time = moment.unix(timestamp);
 
   if (isWithinAWeek(time)) {
     return time.fromNow();
   } else if (isWithinAYear(time)) {
     return time.format('MMMM D');
   }
-  
+
   return time.format('MMMM D, YYYY');
 };

@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 
-const date = value => new Date(value).getTime();
+const date = value => (new Date(value).getTime() / 1000);
 
 const mapUser = user => ({
   id: user.id || uuid(),
@@ -135,7 +135,7 @@ export const normalizeZappPipes = (pipes, platform) => {
   const parsedData = JSON.parse(pipes);
   let { title, entry: entriesArray = [] } = parsedData;
   const entries = {};
-  
+
   if (platform === 'android') {
     entriesArray = entriesArray.map(entry => (entry.data) ? entry.data : entry);
   }
