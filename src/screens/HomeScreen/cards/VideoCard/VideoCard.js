@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, Dimensions, LayoutAnimation, Text, View } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
+import { OPEN_VIDEO_CARD, CLOSE_VIDEO_CARD } from '../../../../constants/analyticEvents';
 import ExpandText from '../components/ExpandText';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
@@ -102,8 +104,10 @@ export default class VideoCard extends Component {
 
         if (!isCardActive) {
           setActiveEventId(eventId);
+          sendAnalyticEvent(OPEN_VIDEO_CARD, {});
         } else {
           setNoActiveEvent();
+          sendAnalyticEvent(CLOSE_VIDEO_CARD, {});
         }
         this.setState({ isCardActive: !isCardActive });
       });

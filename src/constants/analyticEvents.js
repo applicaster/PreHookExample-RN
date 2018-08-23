@@ -21,4 +21,5 @@ export const OPEN_FEED = `${prefix}OPEN_FEED`;
 export const SELECT_SOCIAL_NETWORK_TO_POST = `${prefix}SELECT_SOCIAL_NETWORK_TO_POST`;
 export const OPEN_ARTICLE_CARD = `${prefix}OPEN_ARTICLE_CARD`;
 export const CLOSE_ARTICLE_CARD = `${prefix}CLOSE_ARTICLE_CARD`;
-
+export const OPEN_VIDEO_CARD = `${prefix}OPEN_VIDEO_CARD`;
+export const CLOSE_VIDEO_CARD = `${prefix}CLOSE_VIDEO_CARD`;
