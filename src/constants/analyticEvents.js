@@ -19,3 +19,6 @@ export const IMAGE_DETAIL_CLICKED = `${prefix}IMAGE_DETAIL_CLICKED`;
 export const CLOSE_FEED = `${prefix}CLOSE_FEED`;
 export const OPEN_FEED = `${prefix}OPEN_FEED`;
 export const SELECT_SOCIAL_NETWORK_TO_POST = `${prefix}SELECT_SOCIAL_NETWORK_TO_POST`;
+export const OPEN_ARTICLE_CARD = `${prefix}OPEN_ARTICLE_CARD`;
+export const CLOSE_ARTICLE_CARD = `${prefix}CLOSE_ARTICLE_CARD`;
+

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Animated, Dimensions, LayoutAnimation, ScrollView, Text, View } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
+import { OPEN_ARTICLE_CARD, CLOSE_ARTICLE_CARD } from '../../../../constants/analyticEvents';
 import CardContainer from '../components/CardContainer';
 import FadeContainer from '../components/FadeContainer';
 import Header from '../components/Header';
@@ -44,7 +46,7 @@ export default class ArticleCard extends Component {
       this.statusBarHeight = getStatusBarHeight();
     }
   }
-
+ 
   getAnimationDuration() {
     const { isCardActive } = this.state;
     return (isCardActive) ? CARD_DEACTIVATE_ANIMATION_DURATION : CARD_ACTIVATE_ANIMATION_DURATION;
@@ -104,8 +106,10 @@ export default class ArticleCard extends Component {
   
         if (!isCardActive) {
           setActiveEventId(eventId);
+          sendAnalyticEvent(OPEN_ARTICLE_CARD, {});
         } else {
           setNoActiveEvent();
+          sendAnalyticEvent(CLOSE_ARTICLE_CARD, {});
         }
         this.setState({ isCardActive: !isCardActive });
       });
