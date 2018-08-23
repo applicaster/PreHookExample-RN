@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ScrollView, Text, View } from 'react-native';
 import HtmlView from 'react-native-render-html';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
+import { CLOSE_ARTICLE_CARD } from '../../constants/analyticEvents';
 import { styles } from './style';
 import MediaImage from '../HomeScreen/cards/components/MediaImage';
 import MediaVideo from '../HomeScreen/cards/components/MediaVideo';
@@ -30,6 +32,7 @@ class ArticleScreen extends Component {
   }
 
   closeArticle() {
+    sendAnalyticEvent(CLOSE_ARTICLE_CARD, {});
     this.context.navigation.goBack();
   }
 

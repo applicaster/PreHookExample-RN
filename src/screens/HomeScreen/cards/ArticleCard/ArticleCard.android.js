@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
+import { sendAnalyticEvent } from 'react-native-zapp-bridge';
+import { OPEN_ARTICLE_CARD } from '../../../../constants/analyticEvents';
 import CardContainer from '../components/CardContainer';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -34,6 +36,7 @@ export default class ArticleCard extends Component {
     const { setActiveEventId, eventId } = this.props;
     setActiveEventId(eventId);
     const { navigation } = this.context;
+    sendAnalyticEvent(OPEN_ARTICLE_CARD, {});
     navigation.navigate('ArticleScreen');
   }
 
