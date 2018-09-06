@@ -1,4 +1,4 @@
-const prefix = 'Feed:';
+const prefix = 'Nilo:';
 export const OPEN_WEBVIEW_FROM_EVENT_CAPTION = `${prefix}OPEN_WEBVIEW_FROM_EVENT_CAPTION`;
 export const GO_BACK_FROM_WEB_VIEW = `${prefix}GO_BACK_FROM_WEB_VIEW`;
 export const FAVORITE_TWEET_CLICKED = `${prefix}FAVORITE_TWEET_CLICKED`;
