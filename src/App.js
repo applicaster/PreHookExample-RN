@@ -18,6 +18,7 @@ class App extends Component {
     const appStyles = this.colors;
     const borderType = this.borderType;
     return {
+      platform: Platform.OS,
       styles: {
         ...appStyles,
         borderType,
@@ -125,6 +126,7 @@ App.propTypes = {
 };
 
 App.childContextTypes = {
+  platform: PropTypes.string,
   styles: PropTypes.shape({
     mainColor: PropTypes.string,
     secondaryColor: PropTypes.string,

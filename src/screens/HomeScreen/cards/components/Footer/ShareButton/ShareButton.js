@@ -44,9 +44,11 @@ class ShareButton extends Component {
       title,
       url: publicPageUrl,
     })
-    .then(() => sendAnalyticEvent(NATIVE_EVENT_SHARED, { textToShare, publicPageUrl }).then().catch())
+    .then(() => sendAnalyticEvent(
+      NATIVE_EVENT_SHARED, { textToShare, publicPageUrl }, this.context.platform === 'ios'
+    ).then().catch())
     .catch(() => {});
-    sendAnalyticEvent(NATIVE_SHARE_CLICKED, { publicPageUrl }).then().catch();
+    sendAnalyticEvent(NATIVE_SHARE_CLICKED, { publicPageUrl }, this.context.platform === 'ios').then().catch();
   }
 
   render() {
@@ -81,6 +83,7 @@ ShareButton.defaultProps = {
 
 ShareButton.contextTypes = {
   styles: PropTypes.object,
+  platform: PropTypes.string,
 };
 
 export default ShareButton;

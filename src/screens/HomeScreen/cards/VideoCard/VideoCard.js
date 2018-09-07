@@ -104,10 +104,10 @@ export default class VideoCard extends Component {
 
         if (!isCardActive) {
           setActiveEventId(eventId);
-          sendAnalyticEvent(OPEN_VIDEO_CARD, {});
+          sendAnalyticEvent(OPEN_VIDEO_CARD, {}, this.context.platform === 'ios');
         } else {
           setNoActiveEvent();
-          sendAnalyticEvent(CLOSE_VIDEO_CARD, {});
+          sendAnalyticEvent(CLOSE_VIDEO_CARD, {}, this.context.platform === 'ios');
         }
         this.setState({ isCardActive: !isCardActive });
       });
@@ -288,4 +288,5 @@ VideoCard.propTypes = {
 
 VideoCard.contextTypes = {
   styles: PropTypes.object,
+  platform: PropTypes.string,
 };

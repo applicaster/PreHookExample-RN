@@ -12,7 +12,7 @@ export default class GenericWebViewScreen extends Component {
       headerTitle: navigation.state.params.headerTitle,
       headerLeft: <BackButton onPress={() => {
         navigation.goBack();
-        sendAnalyticEvent(GO_BACK_FROM_WEB_VIEW, {}).then().catch();
+        sendAnalyticEvent(GO_BACK_FROM_WEB_VIEW, {}, this.context.platform === 'ios').then().catch();
       }}
       />,
     };
@@ -35,4 +35,5 @@ GenericWebViewScreen.propTypes = {
 
 GenericWebViewScreen.contextTypes = {
   styles: PropTypes.object,
+  platform: PropTypes.string,
 };

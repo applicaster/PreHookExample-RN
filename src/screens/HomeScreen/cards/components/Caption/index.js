@@ -39,7 +39,7 @@ class Caption extends Component {
 
   navigateToWebview(url) {
     const { navigation } = this.context;
-    sendAnalyticEvent(OPEN_WEBVIEW_FROM_EVENT_CAPTION, { url }).then().catch();
+    sendAnalyticEvent(OPEN_WEBVIEW_FROM_EVENT_CAPTION, { url }, this.context.platform === 'ios').then().catch();
     navigation.navigate('GenericWebView', { headerTitle: 'web', url });
   }
 
@@ -65,6 +65,7 @@ Caption.propTypes = {
 Caption.contextTypes = {
   styles: PropTypes.object,
   navigation: PropTypes.object,
+  platform: PropTypes.string,
 };
 
 export default Caption;

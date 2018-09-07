@@ -32,7 +32,7 @@ class ArticleScreen extends Component {
   }
 
   closeArticle() {
-    sendAnalyticEvent(CLOSE_ARTICLE_CARD, {});
+    sendAnalyticEvent(CLOSE_ARTICLE_CARD, {}, this.context.platform === 'ios');
     this.context.navigation.goBack();
   }
 
@@ -135,6 +135,7 @@ ArticleScreen.propTypes = {
 };
 
 ArticleScreen.contextTypes = {
+  platform: PropTypes.string,
   styles: PropTypes.object,
   navigation: PropTypes.object,
 };

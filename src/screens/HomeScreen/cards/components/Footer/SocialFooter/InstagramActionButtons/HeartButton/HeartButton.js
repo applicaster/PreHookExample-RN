@@ -17,7 +17,7 @@ class HeartButton extends Component {
 
     setActiveEventId(eventId);
     navigation.navigate('SocialWebView', { headerTitle: 'instagram' });
-    sendAnalyticEvent(INSTAGRAM_LIKE_CLICKED, { eventId }).then().catch();
+    sendAnalyticEvent(INSTAGRAM_LIKE_CLICKED, { eventId }, this.context.platform === 'ios').then().catch();
   }
   
   render() {
@@ -41,6 +41,7 @@ HeartButton.propTypes = {
 
 HeartButton.contextTypes = {
   navigation: PropTypes.object,
+  platform: PropTypes.string,
 };
 
 export default HeartButton;

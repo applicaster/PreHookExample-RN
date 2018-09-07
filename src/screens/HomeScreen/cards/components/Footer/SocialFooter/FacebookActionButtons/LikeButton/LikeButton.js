@@ -17,7 +17,7 @@ class LikeButton extends Component {
 
     setActiveEventId(eventId);
     navigation.navigate('SocialWebView', { headerTitle: 'Facebook' });
-    sendAnalyticEvent(FB_LIKE_CLICKED, { eventId }).then().catch();
+    sendAnalyticEvent(FB_LIKE_CLICKED, { eventId }, this.context.platform === 'ios').then().catch();
   }
   
   render() {
@@ -41,6 +41,7 @@ LikeButton.propTypes = {
 
 LikeButton.contextTypes = {
   navigation: PropTypes.object,
+  platform: PropTypes.string,
 };
 
 export default LikeButton;

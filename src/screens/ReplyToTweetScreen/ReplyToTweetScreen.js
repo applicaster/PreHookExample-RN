@@ -60,7 +60,7 @@ class ReplyToTweetScreen extends Component {
     FeedRNUtils.replyToTweet({ tweetText: `${twitterText}`, originalTweetId: eventId })
       .then(() => {
         this.closeModal();
-        sendAnalyticEvent(REPLY_TO_TWEET_SENT, { eventId, twitterText }).then().catch();
+        sendAnalyticEvent(REPLY_TO_TWEET_SENT, { eventId, twitterText }, this.context.platform === 'ios').then().catch();
       })
       .catch(() => {
         Alert.alert(
@@ -83,7 +83,7 @@ class ReplyToTweetScreen extends Component {
   closeModal() {
     const { toggleModal } = this.props;
     toggleModal({ modal: 'ReplyToTweetModal' });
-    sendAnalyticEvent(CLOSE_REPLY_TO_TWEET_SCREEN, {}).then().catch();
+    sendAnalyticEvent(CLOSE_REPLY_TO_TWEET_SCREEN, {}, this.context.platform === 'ios').then().catch();
   }
 
   renderActionBar() {
@@ -162,6 +162,7 @@ ReplyToTweetScreen.propTypes = {
 
 ReplyToTweetScreen.contextTypes = {
   styles: PropTypes.object,
+  platform: PropTypes.string,
 };
 
 export default ReplyToTweetScreen;

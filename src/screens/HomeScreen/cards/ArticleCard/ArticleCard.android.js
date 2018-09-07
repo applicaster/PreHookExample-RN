@@ -36,7 +36,7 @@ export default class ArticleCard extends Component {
     const { setActiveEventId, eventId } = this.props;
     setActiveEventId(eventId);
     const { navigation } = this.context;
-    sendAnalyticEvent(OPEN_ARTICLE_CARD, {});
+    sendAnalyticEvent(OPEN_ARTICLE_CARD, {}, this.context.platform === 'ios');
     navigation.navigate('ArticleScreen');
   }
 
@@ -154,6 +154,7 @@ ArticleCard.propTypes = {
 };
 
 ArticleCard.contextTypes = {
+  platform: PropTypes.string,
   styles: PropTypes.object,
   navigation: PropTypes.object,
 };

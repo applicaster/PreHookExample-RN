@@ -17,7 +17,7 @@ class CommentButton extends Component {
 
     setActiveEventId(eventId);
     navigation.navigate('SocialWebView', { headerTitle: 'Facebook' });
-    sendAnalyticEvent(COMMENT_CLICKED, { eventId }).then().catch();
+    sendAnalyticEvent(COMMENT_CLICKED, { eventId }, this.context.platform === 'ios').then().catch();
   }
   
   render() {
@@ -41,6 +41,7 @@ CommentButton.propTypes = {
 
 CommentButton.contextTypes = {
   navigation: PropTypes.object,
+  platform: PropTypes.string,
 };
 
 export default CommentButton;

@@ -21,7 +21,7 @@ class WritePostButton extends Component {
     const { openWritePostModal } = this.props;
     
     openWritePostModal({ modal: 'WritePostModal' });
-    sendAnalyticEvent(WRITE_POST_BUTTON_CLICKED, {}).then().catch();
+    sendAnalyticEvent(WRITE_POST_BUTTON_CLICKED, {}, this.context.platform === 'ios').then().catch();
   }
 
   render() {
@@ -58,6 +58,7 @@ class WritePostButton extends Component {
 
 WritePostButton.contextTypes = {
   styles: PropTypes.object,
+  platform: PropTypes.string,
 };
 
 WritePostButton.propTypes = {

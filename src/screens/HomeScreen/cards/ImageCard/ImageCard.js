@@ -16,7 +16,7 @@ export default class ImageCard extends Component {
     const { toggleModal, setActiveEventId, eventId } = this.props;
     setActiveEventId(eventId);
     toggleModal({ modal: 'MediaModal' });
-    sendAnalyticEvent(IMAGE_DETAIL_CLICKED, { eventId }).then().catch();
+    sendAnalyticEvent(IMAGE_DETAIL_CLICKED, { eventId }, this.context.platform === 'ios').then().catch();
   }
 
   render() {
@@ -63,4 +63,5 @@ ImageCard.defaultProps = {
 
 ImageCard.contextTypes = {
   styles: PropTypes.object,
+  platform: PropTypes.string,
 };

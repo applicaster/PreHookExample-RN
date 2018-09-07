@@ -31,7 +31,7 @@ export default class HomeScreen extends Component {
   }
 
   static closeFeed() {
-    sendAnalyticEvent(CLOSE_FEED, {}).then().catch();
+    sendAnalyticEvent(CLOSE_FEED, {}, this.context.platform === 'ios').then().catch();
     return (Platform.OS === 'ios')
       ? NativeModules.ZPReactNativeBridgeListener.postEvent('dismiss_modal_view', { animated: 1 }, () => {})
       : NativeModules.APReactNativeBridge.handleCommand('stop', {});
@@ -69,7 +69,7 @@ export default class HomeScreen extends Component {
     } else {
       DeviceEventEmitter.addListener(TWITTER_UPDATE_FAVORITES, updateFavoriteTweets);
     }
-    sendAnalyticEvent(OPEN_FEED, {}).then().catch();
+    sendAnalyticEvent(OPEN_FEED, {}, this.context.platform === 'ios').then().catch();
   }
 
   componentWillUnmount() {
@@ -207,6 +207,7 @@ HomeScreen.propTypes = {
 
 HomeScreen.contextTypes = {
   styles: PropTypes.object,
+  platform: PropTypes.string
 };
 
 HomeScreen.childContextTypes = {

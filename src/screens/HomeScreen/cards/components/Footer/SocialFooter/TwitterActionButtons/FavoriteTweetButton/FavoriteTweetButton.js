@@ -52,7 +52,7 @@ class FavoriteTweetButton extends Component {
     FeedRNUtils.unfavoriteTweet(eventId)
     .then(() => {
       this.setState({ favorited: false });
-      sendAnalyticEvent(UNFAVORITE_TWEET_CLICKED, { eventId }).then().catch();
+      sendAnalyticEvent(UNFAVORITE_TWEET_CLICKED, { eventId }, this.context.platform === 'ios').then().catch();
     })
     .catch(error => {
       if (error.code === '500') { // User cancelled login
@@ -85,7 +85,7 @@ class FavoriteTweetButton extends Component {
     FeedRNUtils.favoriteTweet(eventId)
     .then(() => {
       this.setState({ favorited: true });
-      sendAnalyticEvent(FAVORITE_TWEET_CLICKED, { eventId }).then().catch();
+      sendAnalyticEvent(FAVORITE_TWEET_CLICKED, { eventId }, this.context.platform === 'ios').then().catch();
     })
     .catch(error => {
       if (error.code === '500') { // User cancelled login
@@ -129,6 +129,10 @@ FavoriteTweetButton.propTypes = {
   eventId: PropTypes.string.isRequired,
   favoriteCount: PropTypes.number.isRequired,
   favorites: PropTypes.object.isRequired,
+};
+
+FavoriteTweetButton.contextTypes = {
+  platform: PropTypes.string,
 };
 
 export default FavoriteTweetButton;

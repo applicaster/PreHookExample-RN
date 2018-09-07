@@ -82,7 +82,7 @@ class WritePostScreen extends Component {
 
       FeedRNUtils.postTweet(`${twitterText}`)
         .then(() => {
-          sendAnalyticEvent(TWITTER_POST_SENT, { twitterText }).then().catch();
+          sendAnalyticEvent(TWITTER_POST_SENT, { twitterText }, this.context.platform === 'ios').then().catch();
           this.closeModal();
         })
         .catch(() => {
@@ -101,7 +101,7 @@ class WritePostScreen extends Component {
       const { facebookPageId } = this.props;
       FeedRNUtils.postFacebook({ postText: facebookText, facebookPageId })
         .then(() => {
-          sendAnalyticEvent(FACEBOOK_POST_SENT, { twitterText }).then().catch();
+          sendAnalyticEvent(FACEBOOK_POST_SENT, { twitterText }, this.context.platform === 'ios').then().catch();
           this.closeModal();
         })
         .catch(() => {
@@ -126,13 +126,15 @@ class WritePostScreen extends Component {
   closeModal() {
     const { toggleModal } = this.props;
     toggleModal({ modal: 'WritePostModal' });
-    sendAnalyticEvent(CLOSE_WRITE_POST_SCREEN, {}).then().catch();
+    sendAnalyticEvent(CLOSE_WRITE_POST_SCREEN, {}, this.context.platform === 'ios').then().catch();
   }
   
   toggleNetworkSelected() {
     const { socialNetworkSelected } = this.state;
     this.setState({ socialNetworkSelected: (socialNetworkSelected === 'twitter') ? 'facebook' : 'twitter' });
-    sendAnalyticEvent(SELECT_SOCIAL_NETWORK_TO_POST, { socialNetworkSelected }).then().catch();
+    sendAnalyticEvent(
+      SELECT_SOCIAL_NETWORK_TO_POST, { socialNetworkSelected }, this.context.platform === 'ios'
+    ).then().catch();
   }
 
   renderActionBar() {
@@ -258,6 +260,7 @@ WritePostScreen.propTypes = {
 
 WritePostScreen.contextTypes = {
   styles: PropTypes.object,
+  platform: PropTypes.string,
 };
 
 export default WritePostScreen;

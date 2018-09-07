@@ -15,7 +15,7 @@ class ReplyToTweetButton extends Component {
     const { eventId, setActiveEventId, toggleModal } = this.props;
     setActiveEventId(eventId);
     toggleModal({ modal: 'ReplyToTweetModal' });
-    sendAnalyticEvent(REPLY_TO_TWEET_CLICKED, { eventId }).then().catch();
+    sendAnalyticEvent(REPLY_TO_TWEET_CLICKED, { eventId }, this.context.platform === 'ios').then().catch();
   }
   
   render() {
@@ -34,6 +34,10 @@ ReplyToTweetButton.propTypes = {
   eventId: PropTypes.string,
   toggleModal: PropTypes.func,
   setActiveEventId: PropTypes.func,
+};
+
+ReplyToTweetButton.contextTypes = {
+  platform: PropTypes.string,
 };
 
 export default ReplyToTweetButton;

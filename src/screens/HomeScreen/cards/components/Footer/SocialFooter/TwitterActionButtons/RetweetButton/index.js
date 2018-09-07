@@ -50,7 +50,7 @@ class RetweetButton extends Component {
       });
     }
 
-    sendAnalyticEvent(RETWEET_CLICKED, { eventId, retweetCount }).then().catch();
+    sendAnalyticEvent(RETWEET_CLICKED, { eventId, retweetCount }, this.context.platform === 'ios').then().catch();
   }
   
   render() {
@@ -70,6 +70,10 @@ class RetweetButton extends Component {
 RetweetButton.propTypes = {
   eventId: PropTypes.string.isRequired,
   retweetCount: PropTypes.number.isRequired,
+};
+
+RetweetButton.contextTypes = {
+  platform: PropTypes.string,
 };
 
 export default RetweetButton;
