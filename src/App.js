@@ -55,11 +55,13 @@ class App extends Component {
 
   canPresentCallback() {
     this.state.set({ canPresent: true });
+    HookManager.allowPresentScreenPlugin(true);
   }
 
   requestPostLaunchCallback(params) {
     const { hook_presentation_index, data_dict } = params;
     this.state.set({ requestPostLaunchCallback: true });
+    HookManager.recurringPostLaunchHook(true);
   }
 
   executeHookCallback() {
@@ -87,14 +89,6 @@ class App extends Component {
         <View>
           <TouchableOpacity onPress={() => { ScreenPlugin.hookFinishedWork(true); }}>
             <Text style={styles.button}>Hook Finished Work</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => { ScreenPlugin.allowPresentScreenPlugin(true); }}>
-            <Text style={styles.button}>Allow Present Screen Plugin</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => { ScreenPlugin.recurringPostLaunchHook(true); }}>
-            <Text style={styles.button}>Recurring Post Launch Hook</Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => { ScreenPlugin.removeScreenPluginFromScreen(); }}>
