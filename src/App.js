@@ -1,7 +1,25 @@
 import React, { Component } from 'react';
-import { Button, NativeEventEmitter, NativeModules, Platform, Text, View } from 'react-native';
+import { NativeEventEmitter, NativeModules, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const { HookManager, ScreenPlugin } = NativeModules;
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: 'blue',
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 12,
+    color: 'white',
+    fontSize: 24,
+    fontWeight: 'bold',
+    overflow: 'hidden',
+    padding: 12,
+    textAlign: 'center',
+  },
+  container: {
+    flex: 1,
+  },
+});
 
 class App extends Component {
   constructor(props) {
@@ -59,7 +77,7 @@ class App extends Component {
             screenDimissed } = this.state;
 
     return (
-      <View style={ { flex: 1 } }>
+      <View style={ styles.container }>
         <View>
           <Text>`Can Present Plugin: ${canPresent}`</Text>
           <Text>`Request Post Launch Completion Received: ${requestPostLaunchCompletion}`</Text>
@@ -67,11 +85,25 @@ class App extends Component {
           <Text>`Screen Dimissed Event: ${screenDimissed}`</Text>
         </View>
         <View>
-          <Button onPress={() => { ScreenPlugin.hookFinishedWork(true); }}>Hook Finished Work</Button>
-          <Button onPress={() => { ScreenPlugin.allowPresentScreenPlugin(true); }}>Allow Present Screen Plugin</Button>
-          <Button onPress={() => { ScreenPlugin.recurringPostLaunchHook(true); }}>Recurring Post Launch Hook</Button>
-          <Button onPress={() => { ScreenPlugin.removeScreenPluginFromScreen(); }}>Remove Screen Plugin From Screen</Button>
-          <Button onPress={() => { ScreenPlugin.removeScreenPluginFromNavigationStack(); }}>Remove Screen Plugin From Navigation Stack</Button>
+          <TouchableOpacity onPress={() => { ScreenPlugin.hookFinishedWork(true); }}>
+            <Text style={styles.button}>Hook Finished Work</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => { ScreenPlugin.allowPresentScreenPlugin(true); }}>
+            <Text style={styles.button}>Allow Present Screen Plugin</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => { ScreenPlugin.recurringPostLaunchHook(true); }}>
+            <Text style={styles.button}>Recurring Post Launch Hook</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => { ScreenPlugin.removeScreenPluginFromScreen(); }}>
+            <Text style={styles.button}>Remove Screen Plugin From Screen</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => { ScreenPlugin.removeScreenPluginFromNavigationStack(); }}>
+            <Text style={styles.button}>Remove Screen Plugin From Navigation Stack</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
