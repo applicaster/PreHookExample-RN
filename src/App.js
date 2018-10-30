@@ -60,10 +60,19 @@ class App extends Component {
 
     return (
       <View style={ { flex: 1 } }>
-        <Text>`Can Present Plugin: ${canPresent}`</Text>
-        <Text>`Request Post Launch Completion Received: ${requestPostLaunchCompletion}`</Text>
-        <Text>`Ready To Execute Plugin: ${readyToExecute}`</Text>
-        <Text>`Screen Dimissed Event: ${screenDimissed}`</Text>
+        <View>
+          <Text>`Can Present Plugin: ${canPresent}`</Text>
+          <Text>`Request Post Launch Completion Received: ${requestPostLaunchCompletion}`</Text>
+          <Text>`Ready To Execute Plugin: ${readyToExecute}`</Text>
+          <Text>`Screen Dimissed Event: ${screenDimissed}`</Text>
+        </View>
+        <View>
+          <Button onPress={() => { ScreenPlugin.hookFinishedWork(true); }}>Hook Finished Work</Button>
+          <Button onPress={() => { ScreenPlugin.allowPresentScreenPlugin(true); }}>Allow Present Screen Plugin</Button>
+          <Button onPress={() => { ScreenPlugin.recurringPostLaunchHook(true); }}>Recurring Post Launch Hook</Button>
+          <Button onPress={() => { ScreenPlugin.removeScreenPluginFromScreen(); }}>Remove Screen Plugin From Screen</Button>
+          <Button onPress={() => { ScreenPlugin.removeScreenPluginFromNavigationStack(); }}>Remove Screen Plugin From Navigation Stack</Button>
+        </View>
       </View>
     );
   }
