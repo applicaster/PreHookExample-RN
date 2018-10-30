@@ -1,0 +1,40 @@
+{
+  "api": {
+    "require_startup_execution": false,
+    "class_name": "ZappReactNativeAdapter.ZPReactNativeDefaultProvider"
+  },
+  "dependency_repository_url": [
+
+  ],
+  "platform": "ios",
+  "author_name": "Carlos Pinto",
+  "author_email": "c.pinto@applicaster.com",
+  "manifest_version": "0.1.0",
+  "screen": true,
+  "name": "Hooks Test App",
+  "description": "App to Test Hooks Logic",
+  "type": "general",
+  "identifier": "prehook_rn",
+  "ui_builder_support": true,
+  "whitelisted_account_ids": [
+    "57d7bee06466610018000000"
+  ],
+  "min_zapp_sdk": "4.5.4-dev",
+  "deprecated_since_zapp_sdk": "",
+  "unsupported_since_zapp_sdk": "",
+  "react_native": true,
+  "react_bundle_url": "https://assets-secure.applicaster.com/zapp/react-native-bundles/Hooks-RN/ios/index.ios.bundle",
+  "extra_dependencies": [
+    {
+      "RNVectorIcons": ":path => 'node_modules/react-native-vector-icons'"
+    },
+    {
+      "FeedRNUtils": ":path => 'node_modules/@applicaster/feed-rn-utils/ios'"
+    }
+  ],
+  "npm_dependencies": [
+    "react-native-vector-icons@4.2.0",
+    "@applicaster/feed-rn-utils@^1.0.19"
+  ],
+  "configuration_panel_disabled": true
+}

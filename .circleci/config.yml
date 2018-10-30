@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/applicaster/Feed-RN
+    working_directory: ~/applicaster/Hooks-RN
     parallelism: 1
     shell: /bin/bash --login
     environment:
@@ -19,17 +19,17 @@ jobs:
 
     - run:
         name: Install node 8.1.4
-        working_directory: ~/applicaster/Feed-RN
+        working_directory: ~/applicaster/Hooks-RN
         command: nvm install 8.1.4 && nvm alias default 8.1.4
     
     - run:
         name: Install npm
-        working_directory: ~/applicaster/Feed-RN
+        working_directory: ~/applicaster/Hooks-RN
         command: npm i -g npm@5.4.2
 
     - run:
         name: Install react-native@0.50.4
-        working_directory: ~/applicaster/Feed-RN
+        working_directory: ~/applicaster/Hooks-RN
         command: npm i -g react-native@0.50.4
 
     - run: 
