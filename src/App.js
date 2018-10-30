@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { NativeEventEmitter, Platform, Text, Button, NativeModules, View } from 'react-native';
-import PropTypes from 'prop-types';
+import { Button, NativeEventEmitter, NativeModules, Platform, Text, View } from 'react-native';
+
 const { HookManager, ScreenPlugin } = NativeModules;
 
 class App extends Component {
@@ -77,9 +77,5 @@ class App extends Component {
     );
   }
 }
-
-App.propTypes = {
-  extra_props: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-};
 
 export default App;
