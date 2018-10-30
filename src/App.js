@@ -36,9 +36,7 @@ class App extends Component {
       readyToExecute: false,
       screenDimissed: false,
     };
-  }
-  
-  componentWillMount() {
+
     const CAN_PRESENT_SCREEN_PLUGIN_EVENT = 'can_present_screen_plugin';
     const REQUEST_RECURRING_POST_LAUNCH_COMPLETION = 'request_reccuring_post_launch_completion';
     const EXECUTE_HOOK_EVENT = 'execute_hook';
@@ -81,13 +79,13 @@ class App extends Component {
     return (
       <View style={ styles.container }>
         <View>
-          <Text>`Can Present Plugin: ${canPresent}`</Text>
-          <Text>`Request Post Launch Completion Received: ${requestPostLaunchCompletion}`</Text>
-          <Text>`Ready To Execute Plugin: ${readyToExecute}`</Text>
-          <Text>`Screen Dimissed Event: ${screenDimissed}`</Text>
+          <Text>{`Can Present Plugin: ${canPresent}`}</Text>
+          <Text>{`Request Post Launch Completion Received: ${requestPostLaunchCompletion}`}</Text>
+          <Text>{`Ready To Execute Plugin: ${readyToExecute}`}</Text>
+          <Text>{`Screen Dimissed Event: ${screenDimissed}`}</Text>
         </View>
         <View>
-          <TouchableOpacity onPress={() => { ScreenPlugin.hookFinishedWork(true); }}>
+          <TouchableOpacity onPress={() => { HookManager.hookFinishedWork(true, null, { foo: 'bar' }, false); }}>
             <Text style={styles.button}>Hook Finished Work</Text>
           </TouchableOpacity>
 
