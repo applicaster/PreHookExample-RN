@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NativeEventEmitter, NativeModules, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { DeviceEventEmitter, NativeEventEmitter, NativeModules, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const { HookManager, ScreenPlugin } = NativeModules;
 
@@ -38,6 +38,17 @@ class App extends Component {
     if (Platform.OS === 'ios') {
       const eventEmitter = new NativeEventEmitter(HookManager);
       this.screenWillDismissSubscription = eventEmitter.addListener(SCREEN_WILL_DISMISS, this.screenWillDismissCallback);
+    } else {
+      DeviceEventEmitter.addListener(SCREEN_WILL_DISMISS, this.screenWillDismissCallback);
+    }
+  }
+
+  componentWillUnmount() {
+    if (Platform.OS === 'ios') {
+      this.screenWillDismissSubscription.remove();
+      NativeEventEmitter.removeAllListeners();
+    } else {
+      DeviceEventEmitter.removeAllListeners();
     }
   }
 
