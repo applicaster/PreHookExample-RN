@@ -26,14 +26,10 @@
   "react_bundle_url": "https://assets-secure.applicaster.com/zapp/react-native-bundles/Hooks-RN/ios/index.ios.bundle",
   "extra_dependencies": [
     {
-      "RNVectorIcons": ":path => 'node_modules/react-native-vector-icons'"
-    },
-    {
       "FeedRNUtils": ":path => 'node_modules/@applicaster/feed-rn-utils/ios'"
     }
   ],
   "npm_dependencies": [
-    "react-native-vector-icons@4.2.0",
     "@applicaster/feed-rn-utils@^1.0.19"
   ],
   "configuration_panel_disabled": true
