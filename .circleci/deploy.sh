@@ -30,7 +30,7 @@ case $ci_branch in
 "master")
   deploy_master 
   ;;
-"production")
+"anton")
   deploy_production
   ;;
 *)
