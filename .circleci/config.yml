@@ -36,23 +36,6 @@ jobs:
         name: NPM install
         command: npm install
 
-    - run: mkdir -p $CIRCLE_TEST_REPORTS/junit
-    - run:
-        name: Mocha Unit Tests
-        command: npm run test-reporter
-    - run: cp test-results.xml $CIRCLE_TEST_REPORTS/junit
-
-    - run:
-        name: Jest Unit Tests
-        command: npm run jest
-
-    - store_test_results:
-        path: /tmp/circleci-test-results
-    - store_artifacts:
-        path: /tmp/circleci-artifacts
-    - store_artifacts:
-        path: /tmp/circleci-test-results
-
     - deploy:
         name: S3 Bundle deployment
         command: bash .circleci/deploy.sh ${CIRCLE_BRANCH}

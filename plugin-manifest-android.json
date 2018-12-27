@@ -6,7 +6,7 @@
   "dependency_repository_url": [
 
   ],
-  "platform": "ios",
+  "platform": "android",
   "author_name": "Carlos Pinto",
   "author_email": "c.pinto@applicaster.com",
   "manifest_version": "0.1.0",
@@ -23,10 +23,10 @@
   "deprecated_since_zapp_sdk": "",
   "unsupported_since_zapp_sdk": "",
   "react_native": true,
-  "react_bundle_url": "https://assets-secure.applicaster.com/zapp/react-native-bundles/Hooks-RN/ios/index.ios.bundle",
+  "react_bundle_url": "https://assets-secure.applicaster.com/zapp/react-native-bundles/Hooks-RN/android/index.android.bundle",
   "extra_dependencies": [
     {
-      "FeedRNUtils": ":path => 'node_modules/@applicaster/feed-rn-utils/ios'"
+      "FeedRNUtils": ":path => 'node_modules/@applicaster/feed-rn-utils/android'"
     }
   ],
   "npm_dependencies": [
