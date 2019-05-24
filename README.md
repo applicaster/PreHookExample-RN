@@ -5,7 +5,7 @@
 - npm = 5.0.4
 
 ## How to run the project:
-- `npm install -g react-native@0.47.1`
+- `npm install -g react-native@0.50.4`
 - `npm install`
 - `npm login`
 
