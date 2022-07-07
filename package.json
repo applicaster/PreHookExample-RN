@@ -42,7 +42,7 @@
     "axios": "^0.15.3",
     "hex-to-rgb": "^1.0.1",
     "immutable": "^3.8.1",
-    "moment": "^2.22.1",
+    "moment": "^2.29.4",
     "moment-with-locales-es6": "^1.0.1",
     "prop-types": "^15.5.10",
     "react": "^16.2.0",
