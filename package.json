@@ -46,7 +46,7 @@
     "moment-with-locales-es6": "^1.0.1",
     "prop-types": "^15.5.10",
     "react": "^16.2.0",
-    "react-native": "^0.50.4",
+    "react-native": "^0.70.6",
     "react-native-animatable": "^1.2.4",
     "react-native-render-html": "^3.10.0",
     "react-native-status-bar-height": "^2.0.0",
